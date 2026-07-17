@@ -1,0 +1,1 @@
+# Checksums are generated from the tagged release by the release workflow. This placeholder is intentionally non-normative until the tag is created.
