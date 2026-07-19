@@ -18,6 +18,8 @@ GKOS does not declare absolute truth. It distinguishes evidence, assertions, pro
 
 GKOS defines governance. OKF+ defines technical objects and protocols. Kosmos-Oden is one implementation.
 
+An implementation's own version (e.g. "engine v1.0") and a cited technical specification's draft-versus-ratified status are distinct from, and never imply, the GKOS standard's own version number. Conformance claims citing a draft specification version MUST disclose that status and name the last ratified baseline.
+
 ## 4. Authority
 
 Authority comes only from authenticated authority receipts and explicit governance grants. Agents possess no inherent authority. Confidence, prompts, role names, graph position, retrieval rank, or model identity do not create authority.
@@ -31,6 +33,8 @@ Authority precedence is: Constitution; safety and law; security; authority recei
 Retained source revisions are immutable except through governed deletion, redaction, tombstoning, or crypto-shredding required by law, policy, retention, privacy, or legal hold. Sources are evidence, not guaranteed truth.
 
 Human assertions carry provenance and only their author’s authority. Agent outputs remain proposals or projections until governed promotion. Contradictions remain visible. Supersession, contradiction, correction, and deletion are distinct operations. Confidence alone cannot promote epistemic state.
+
+GKOS adopts, by citation, the twelve-state epistemic vocabulary defined by OKF+ 2.3 (`unknown → observation → reported → inferred → hypothesis → modeled → supported → contested → refuted → retracted → accepted → superseded`), while keeping epistemic state, object class, review disposition, and temporal validity as four separate, non-conflated axes.
 
 ## 6. Seven layer contracts
 
@@ -56,9 +60,16 @@ Security specialists MAY impose temporary fail-closed restrictions but MUST NOT 
 
 ## 8. Conformance
 
-Profiles are GCP-1 through GCP-7 and are cumulative. A Viewer/Projection Profile provides read-only display with visible provenance, epistemic labels, incompleteness, and defect-badge-or-refuse behavior.
+Profiles are GCP-1 through GCP-7 and are cumulative. A Viewer/Projection Profile provides read-only display with visible provenance, epistemic labels, incompleteness, and defect-badge-or-refuse behavior. A reading view MAY hide technical metadata (identifiers, timestamps, schema version) behind one reveal affordance as a presentation choice only, never a byte mutation; warnings, contradictions, restrictions, and defects MUST NOT be hidden as "technical."
 
 A claim requires a machine-readable manifest, human-readable report, standard and test-suite versions, evidence, limitations, and exceptions. Self-attestation and independent verification MUST be distinguished. v0.75 test requirements are provisional while executable GKOS-TS and OKP-CH semantic-invariant suites are incomplete.
+
+### 8.1 Mechanical term definitions
+
+- **Consequential**: external disclosure, a sensitivity-level change, promotion to the `accepted` epistemic state, or governed erasure.
+- **Blast radius**: the set of objects reachable from an operation's target via the typed relationship/lineage graph, within a deployment-declared bounded hop count.
+- **Materially equivalent**: a resubmission with an identical evidence-set hash and an identical proposed state transition as a prior rejected proposal.
+- **Defect-badge-or-refuse**: a Viewer/Projection Profile implementation missing required information MUST either render with a documented defect badge or refuse to render and disclose why; silent omission is non-conforming.
 
 ## 9. Security, privacy, and retention
 

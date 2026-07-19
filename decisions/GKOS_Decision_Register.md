@@ -37,3 +37,7 @@ R7-058 through R7-068 establish fail-closed sensitivity, governed erasure, sensi
 - R8-073: CC BY 4.0 covers documentation and original graphics; Apache-2.0 covers software-oriented material.
 - R8-074: Contributions intended for merge require DCO 1.1 sign-off.
 - R8-075: GitHub remains canonical until a separately governed project site exists.
+
+## Round 9 — v0.76 documentation clarifications
+
+R9-076 through R9-081 establish: the OKF+ 2.3 epistemic-state vocabulary adopted by citation; mechanical proxy definitions for consequential, blast radius, materially equivalent, and defect-badge-or-refuse; an informative layer-to-artifact mapping annex; the version-relationship clarification separating implementation and GKOS-standard version numbers; progressive-disclosure requirements for the Viewer/Projection Profile; and a provisional, not-yet-normative authority-receipt field list.
