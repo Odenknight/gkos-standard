@@ -1,1 +1,4 @@
-# Checksums are generated from the tagged release by the release workflow. This placeholder is intentionally non-normative until the tag is created.
+# SHA256 checksums generated 2026-07-19. GPG/SSH signing of this manifest remains pending per the release notes.
+7afe8b4af297f2f1c8f5ebb0f6d6861dead17d5117c7fbbfa875ed86dcc1ed8e *README.md
+d01251c73425fafa917660746169a1f6a15b823d0bd1793478ed6726e8d3d234 *RELEASE_MANIFEST.yml
+86aaa60bfa8d4249c35508263355014d71a17507513350854e319ea7beb1decc *RELEASE_NOTES.md
