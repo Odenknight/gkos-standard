@@ -1,4 +1,8 @@
-# GKOS ratified decision register
+# GKOS development decision register
+
+## Status of v0.x records
+
+R1 through R9 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.
 
 ## Round 1 — Identity and publication
 
@@ -30,7 +34,7 @@ R7-058 through R7-068 establish fail-closed sensitivity, governed erasure, sensi
 
 ## Round 8 — Publication administration
 
-- R8-069: Canonical v0.75 repository is `Odenknight/gkos-standard`; later migration requires governance.
+- R8-069: Canonical repository is `Odenknight/gkos-standard`; later migration requires a development or governance decision.
 - R8-070: Use GitHub Discussions and private vulnerability reporting until dedicated project addresses exist.
 - R8-071: Copyright notices identify Shaun “Oden” Marshall.
 - R8-072: Adopt the shield-and-governed-network design as provisional working logo.
@@ -38,6 +42,15 @@ R7-058 through R7-068 establish fail-closed sensitivity, governed erasure, sensi
 - R8-074: Contributions intended for merge require DCO 1.1 sign-off.
 - R8-075: GitHub remains canonical until a separately governed project site exists.
 
-## Round 9 — v0.76 documentation clarifications
+## Round 9 — v0.76 concept-refinement decisions
 
-R9-076 through R9-081 establish: the OKF+ 2.3 epistemic-state vocabulary adopted by citation; mechanical proxy definitions for consequential, blast radius, materially equivalent, and defect-badge-or-refuse; an informative layer-to-artifact mapping annex; the version-relationship clarification separating implementation and GKOS-standard version numbers; progressive-disclosure requirements for the Viewer/Projection Profile; and a provisional, not-yet-normative authority-receipt field list.
+- **R9-076:** Freeze the twelve-state epistemic vocabulary directly in GKOS v0.76; cite OKF+ 2.3 informatively rather than as a mutable normative dependency.
+- **R9-077:** Adopt full mechanical definitions for consequential use, blast radius, materially equivalent proposals, and defect-badge-or-refuse behavior.
+- **R9-078:** Publish the layer-to-artifact mapping as an informative annex.
+- **R9-079:** Separate GKOS, technical-specification, and implementation version claims.
+- **R9-080:** Adopt progressive-disclosure requirements while keeping decision-material warnings visible by default.
+- **R9-081:** Publish a provisional authority-receipt field list without claiming a complete receipt mechanism.
+- **R9-082:** Treat all v0.x modifications as testing-and-refinement development decisions; formal consensus ratification begins only under the future v1.0 governance model.
+- **R9-083:** Publish GKOS-2026-07-20 v0.76 and retain engine and Specialist Reviewer material as standalone informative documents outside the normative scope.
+
+See `R9_V0.76_Development_Decision_Record.md` for evidence, review basis, limitations, and release authorization.
