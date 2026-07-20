@@ -1,0 +1,23 @@
+name: Markdown lint diagnostic
+
+on:
+  push:
+    branches:
+      - release/2026-07-20-v0.76
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture markdownlint output
+        run: |
+          npx --yes markdownlint-cli2 "**/*.md" > markdownlint-output.txt 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-output
+          path: markdownlint-output.txt
+          if-no-files-found: error
