@@ -4,7 +4,7 @@
 
 **Release:** GKOS-2026-07-20 v0.76  
 **Status:** Public pre-standard and concept-refinement release  
-**Canonical repository:** https://github.com/Odenknight/gkos-standard
+**Canonical repository:** [Odenknight/gkos-standard](https://github.com/Odenknight/gkos-standard)
 
 GKOS is a domain-neutral governance standard for preserving evidence, structuring knowledge, recording relationships and lineage, enforcing controls, governing review, compiling reproducible context, and authorizing consequential use by humans or computational agents.
 
@@ -17,7 +17,7 @@ The v0.x series is for testing and refining the concept. Changes are documented 
 ## Seven-layer reference model
 
 | Layer | Responsibility | Governing artifact |
-|---|---|---|
+| --- | --- | --- |
 | 7. Authorized Use | Permit and record consequential use | Authorized Use Record |
 | 6. Context Presentation | Compile purpose-bound context | Context Manifest |
 | 5. Review and Workflow | Bind an authorized disposition | Decision Record |
