@@ -3,7 +3,7 @@
 Illustrates one conforming realization of each layer artifact required by §6. Informative only; conformance binds to the artifact's required properties, not to this or any other serialization.
 
 | Layer | Governing artifact | Illustrative realization |
-|---|---|---|
+| --- | --- | --- |
 | 1 Original Sources | Source Record | Provenance fields, content fingerprint, revision store keyed by content hash |
 | 2 Structure and Identity | Structured Knowledge Object | Stable UID, type, schema version, canonical representation, metadata |
 | 3 Relationships and Lineage | Assertion and lineage records | Typed relationship fields with per-field origin and temporal-validity metadata |

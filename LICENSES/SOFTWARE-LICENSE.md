@@ -2,7 +2,7 @@
 
 Schemas, fixtures, workflows, scripts, and reference code in this repository are licensed under the Apache License, Version 2.0.
 
-Canonical license text: https://www.apache.org/licenses/LICENSE-2.0
+Canonical license text: [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 Copyright 2026 Shaun “Oden” Marshall
 

@@ -3,7 +3,7 @@
 Each layer contract defines purpose, accepted inputs, required operations, outputs, preserved invariants, authority boundary, prohibited behavior, failure behavior, receipts, and re-entry rules.
 
 | Layer | Output | Blocking invariant |
-|---|---|---|
+| --- | --- | --- |
 | L1 | Source Record | Revision and provenance preserved |
 | L2 | Structured Knowledge Object | Stable identity; filename is not identity |
 | L3 | Assertion and lineage records | Typed, sourced, temporal, scoped relationships |
