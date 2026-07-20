@@ -2,13 +2,17 @@
 
 > **How knowledge becomes trustworthy**
 
-**Release:** GKOS-2026-07-17 v0.75  
-**Status:** Public pre-standard and implementation draft  
+**Release:** GKOS-2026-07-20 v0.76  
+**Status:** Public pre-standard and concept-refinement release  
 **Canonical repository:** https://github.com/Odenknight/gkos-standard
 
 GKOS is a domain-neutral governance standard for preserving evidence, structuring knowledge, recording relationships and lineage, enforcing controls, governing review, compiling reproducible context, and authorizing consequential use by humans or computational agents.
 
 GKOS does not compute absolute truth. It records how evidence, assertions, proposals, validation findings, decisions, and authorized projections relate so use can be examined, reproduced, challenged, corrected, and governed.
+
+## Development-phase governance
+
+The v0.x series is for testing and refining the concept. Changes are documented development decisions by the Founder and Initial Editor after technical review; they are not formal consensus ratifications, certification, accreditation, or regulator approval. Multi-stakeholder governance is a v1.0 gate.
 
 ## Seven-layer reference model
 
@@ -28,32 +32,34 @@ The layers are cumulative responsibilities, not a mandatory synchronous pipeline
 
 - **GKOS** defines governance, responsibility, authority, lifecycle, and conformance.
 - **OKF+** defines technical objects, schemas, identities, relationships, receipts, and protocols.
-- **Kosmos-Oden** is one implementation and cannot redefine either specification.
-
-## Specialized Agents
-
-Specialization grants capability, not authority. Every governed Specialized Agent requires a versioned Agent Contract, and no actor may approve, review, authorize, or certify its own work.
+- **Kosmos-Oden** and the **GKOS Engine** are implementations and cannot redefine either specification.
 
 ## Repository map
 
 - [Master standard](standard/00_GKOS_Master_Standard.md)
 - [Annexes](standard/annexes/)
-- [Decision register](decisions/GKOS_Decision_Register.md)
+- [Development decision register](decisions/GKOS_Decision_Register.md)
+- [v0.76 development decision](decisions/R9_V0.76_Development_Decision_Record.md)
 - [Conformance](conformance/README.md)
 - [Schemas](schemas/README.md)
 - [Fixtures](fixtures/README.md)
 - [Examples](examples/README.md)
 - [Graphics](graphics/README.md)
+- [Implementation references](docs/implementation/README.md)
 - [Roadmap](ROADMAP.md)
 
-## Amendments
+## v0.76 highlights
 
-Public discussion and proposed amendments are welcome. Normative changes begin in GitHub Discussions or a classified issue, proceed through an evidence-backed proposal and recorded disposition, and are merged only under [GOVERNANCE.md](GOVERNANCE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+- Freezes a twelve-state GKOS epistemic vocabulary without making the standard depend on the changing OKF+ 2.3 draft.
+- Defines consequential use, blast radius, materially equivalent proposals, and defect-badge-or-refuse behavior.
+- Adds progressive-disclosure requirements to the Viewer/Projection Profile.
+- Publishes informative layer-artifact and provisional authority-receipt annexes.
+- Clarifies pre-v1.0 development governance and version relationships.
 
 ## License and attribution
 
 Documentation and original graphics are licensed under CC BY 4.0. Schemas, fixtures, workflows, scripts, and reference code are licensed under Apache-2.0. Trademarks are governed separately.
 
-> Governed Knowledge Operations Standard (GKOS), GKOS-2026-07-17 v0.75, by Shaun “Oden” Marshall, licensed under CC BY 4.0. Changes, if any, are identified by the modifier.
+> Governed Knowledge Operations Standard (GKOS), GKOS-2026-07-20 v0.76, by Shaun “Oden” Marshall, licensed under CC BY 4.0. Changes, if any, are identified by the modifier.
 
-GKOS v0.75 is suitable for public review, research, prototyping, fixture development, and independent implementation work. It is not an accredited standard, certification regime, legal opinion, or regulatory compliance assurance.
+GKOS v0.76 is suitable for public review, research, prototyping, fixture development, and independent implementation work. It is not an accredited standard, certification regime, legal opinion, regulatory compliance assurance, or guarantee of truth or safety.
