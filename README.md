@@ -45,6 +45,7 @@ The layers are cumulative responsibilities, not a mandatory synchronous pipeline
 - [Fixtures](fixtures/README.md)
 - [Examples](examples/README.md)
 - [Graphics](graphics/README.md)
+- [Illustrated edition](illustrated/GKOS-v0.76-Illustrated-Edition.md)
 - [Implementation references](docs/implementation/README.md)
 - [Roadmap](ROADMAP.md)
 
