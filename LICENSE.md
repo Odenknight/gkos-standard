@@ -12,6 +12,6 @@ Schemas, fixtures, workflows, scripts, and reference code are licensed under the
 
 ## Attribution
 
-> Governed Knowledge Operations Standard (GKOS), GKOS-2026-07-17 v0.75, by Shaun “Oden” Marshall, licensed under CC BY 4.0. Changes, if any, are identified by the modifier.
+> Governed Knowledge Operations Standard (GKOS), GKOS-2026-07-20 v0.76, by Shaun “Oden” Marshall, licensed under CC BY 4.0. Changes, if any, are identified by the modifier.
 
 The licenses do not grant trademark, certification, endorsement, or accreditation rights. Materials are provided as-is without warranty.

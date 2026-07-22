@@ -8,4 +8,4 @@ Include the affected release or component, impact, reproduction conditions, evid
 
 The project may impose temporary fail-closed restrictions while a report is evaluated. Coordinated disclosure timing will be based on risk, remediation readiness, and affected-party safety.
 
-GKOS v0.75 is a pre-standard and does not constitute a security certification or assurance that any implementation is safe.
+GKOS v0.76 is a pre-standard and does not constitute a security certification or assurance that any implementation is safe.

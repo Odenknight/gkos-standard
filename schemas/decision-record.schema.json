@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+  "title": "Decision Record (L5)",
+  "description": "One immutable file per decision (.okf/decisions/<decision-id>.yaml), recording rejection, deferral, withdrawal, expiry, and supersession identically to acceptance. prev_decision_id/prev_hash chain the record; the chain is a derived index and detects corruption or naive edits — it does not authenticate the writer. A fork (two heads after a sync merge) is diagnosed (OKF-DECISION-002), not treated as tampering.",
+  "type": "object",
+  "required": ["decision_id", "proposal_id", "proposal_hash", "disposition", "actor", "decided_at"],
+  "properties": {
+    "decision_id": { "type": "string", "minLength": 1 },
+    "proposal_id": { "type": "string", "minLength": 1 },
+    "proposal_hash": { "$ref": "okf-common.defs.json#/$defs/contentHash" },
+    "disposition": {
+      "type": "string",
+      "enum": ["accepted", "rejected", "deferred", "withdrawn", "expired", "superseded", "referred", "self-accepted"]
+    },
+    "actor": { "$ref": "okf-common.defs.json#/$defs/actorIdentity" },
+    "authority_receipt": {
+      "description": "Pending the v0.8 receipt mechanism, the only honest values are a receipt locator (future) or the explicit disclosure string 'none (single-actor profile)'. disposition: self-accepted REQUIRES this disclosure.",
+      "type": "string"
+    },
+    "rationale": { "type": "string" },
+    "reason_code": { "type": "string" },
+    "evidence_refs": { "type": "array", "items": { "type": "string" } },
+    "effective_scope": { "type": "string" },
+    "expires_at": { "$ref": "okf-common.defs.json#/$defs/timestamp" },
+    "decided_at": { "$ref": "okf-common.defs.json#/$defs/timestamp" },
+    "plan_hash": { "$ref": "okf-common.defs.json#/$defs/contentHash" },
+    "prev_decision_id": { "oneOf": [{ "type": "string" }, { "type": "null" }] },
+    "prev_hash": { "oneOf": [{ "$ref": "okf-common.defs.json#/$defs/contentHash" }, { "type": "null" }] }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "disposition": { "const": "self-accepted" } } },
+      "then": { "required": ["authority_receipt"] }
+    }
+  ],
+  "additionalProperties": false
+}

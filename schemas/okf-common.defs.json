@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/okf-common.defs.json",
+  "title": "OKF+ / GKOS shared definitions",
+  "description": "Shared vocabulary for GKOS schema program. Enumerations are frozen per GKOS-2026-07-20 v0.76 (epistemic vocabulary, GKOS Master Standard) and grounded in the OKF+ 2.3 reference implementation (gkos-engine v1.0.5, src/okf23.ts, src/types.ts).",
+  "$defs": {
+    "uid": {
+      "description": "Stable identity: UUID (v4 accepted, v7 preferred) or policy-permitted namespaced id. Filenames and paths are not identity.",
+      "type": "string",
+      "anyOf": [
+        { "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" },
+        { "pattern": "^[a-z][a-z0-9_.-]*:[a-z0-9][a-z0-9_.:/-]{2,}$" }
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "contentHash": {
+      "description": "Algorithm-prefixed content hash (e.g. sha256:<hex64>, fnv1a32:<value>).",
+      "type": "string",
+      "pattern": "^[a-z0-9]+:[A-Za-z0-9._:-]+$"
+    },
+    "timestamp": {
+      "description": "Timezone-aware ISO 8601 instant. Zulu or numeric offset; naive wall-clock time is non-conforming.",
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "epistemicState": {
+      "description": "Twelve-state vocabulary frozen in GKOS v0.76 §6.1.",
+      "type": "string",
+      "enum": ["unknown", "observation", "reported", "inferred", "hypothesis", "modeled", "supported", "contested", "refuted", "retracted", "accepted", "superseded"]
+    },
+    "sensitivity": {
+      "description": "Seven-level sensitivity ladder. Missing or invalid values MUST fail closed to a restricted deployment default.",
+      "type": "string",
+      "enum": ["public", "internal", "restricted", "confidential", "regulated", "phi", "secret"]
+    },
+    "origin": {
+      "description": "Four-way origin separation. `approved` requires a corroborating Decision Record; it cannot be fabricated by authoring the word.",
+      "type": "string",
+      "enum": ["authored", "derived", "proposed", "approved"]
+    },
+    "relationType": {
+      "type": "string",
+      "enum": ["depends_on", "supports", "derives_from", "derived_from", "contradicts", "refines", "implements", "blocks", "documents", "cites", "quotes", "interprets", "tests", "replicates", "fails_to_replicate", "extends", "narrows", "generalizes", "governed_by", "reviewed_by", "approved_by", "supersedes", "superseded_by", "part_of", "has_part", "related_to"]
+    },
+    "wikilinkOrUid": {
+      "description": "Relation/lineage target: uid (rename-proof standalone convention) or whole-value quoted wikilink (Obsidian convention).",
+      "type": "string",
+      "anyOf": [
+        { "$ref": "#/$defs/uid" },
+        { "pattern": "^\\[\\[[^\\[\\]]+\\]\\]$" }
+      ]
+    },
+    "diagnostic": {
+      "type": "object",
+      "required": ["code", "severity", "message", "deterministic"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^OKF-[A-Z]+-\\d{3}$" },
+        "severity": { "type": "string", "enum": ["info", "warning", "error", "critical"] },
+        "field": { "type": "string" },
+        "message": { "type": "string" },
+        "deterministic": { "type": "boolean" },
+        "remediation": { "type": "string" },
+        "sourcePath": { "type": "string" },
+        "targetUid": { "$ref": "#/$defs/uid" }
+      },
+      "additionalProperties": false
+    },
+    "actorIdentity": {
+      "description": "Proposer/decider identity. Free-form pending the v0.8 actor-identity model; the shapes below are the reference implementation's convention.",
+      "type": "string",
+      "pattern": "^(human|plugin:[a-z0-9_-]+|agent:[A-Za-z0-9_.:-]+|tool:[a-z0-9_-]+)$"
+    }
+  }
+}
