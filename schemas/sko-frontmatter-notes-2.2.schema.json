@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/sko-frontmatter-notes-2.2.schema.json",
+  "title": "OKF+ Notes (2.2) — frontmatter",
+  "description": "The complete human note profile: flat Properties surface covering identity, type, title, description, timestamp, epistemic state, sensitivity, tags, and lineage/relationship wikilinks. Terminal product for personal-vault use with no agent participation.",
+  "type": "object",
+  "required": ["okf_version", "uid", "title", "type", "timestamp"],
+  "properties": {
+    "okf_version": { "const": "2.2" },
+    "uid": { "$ref": "okf-common.defs.json#/$defs/uid" },
+    "title": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "timestamp": { "$ref": "okf-common.defs.json#/$defs/timestamp" },
+    "epistemic_state": { "$ref": "okf-common.defs.json#/$defs/epistemicState" },
+    "sensitivity": { "$ref": "okf-common.defs.json#/$defs/sensitivity" },
+    "scope": { "type": "string" },
+    "scope_id": { "type": "string" },
+    "resource": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "supersedes": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "superseded_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "forked_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "forked_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "related_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "depends_on": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "supports": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "contradicts": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } }
+  },
+  "additionalProperties": true,
+  "$comment": "2.2 is intentionally permissive on additional flat properties; it is a human authoring surface, not a governance envelope. Version conversion to flat 2.3 is a governed operation (hash-bound plan/preview/backup), not a hand edit."
+}

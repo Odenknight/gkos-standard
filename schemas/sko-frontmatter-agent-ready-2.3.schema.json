@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/sko-frontmatter-agent-ready-2.3.schema.json",
+  "title": "OKF+ Agent-Ready Notes (flat 2.3) — frontmatter",
+  "description": "The human-visible canonical serialization of an OKF+ 2.3 Structured Knowledge Object: scalars and flat string lists only, no nested mappings. Governance machinery lives in the projection and .okf/ sidecars, never in the note. Required scalars per reference implementation diagnostic OKF-SCHEMA-004: okf_version, uid, title, type, created_at, plus an epistemic state.",
+  "type": "object",
+  "required": ["okf_version", "uid", "title", "type", "created_at", "epistemic_state"],
+  "properties": {
+    "okf_version": { "const": "2.3" },
+    "uid": { "$ref": "okf-common.defs.json#/$defs/uid" },
+    "title": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "created_at": { "$ref": "okf-common.defs.json#/$defs/timestamp" },
+    "updated_at": { "$ref": "okf-common.defs.json#/$defs/timestamp" },
+    "epistemic_state": { "$ref": "okf-common.defs.json#/$defs/epistemicState" },
+    "sensitivity": { "$ref": "okf-common.defs.json#/$defs/sensitivity" },
+    "authorship_origin": { "$ref": "okf-common.defs.json#/$defs/origin" },
+    "scope": { "type": "string" },
+    "scope_id": { "type": "string" },
+    "resource": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "description": "Flat human-curated citation list; the projection maps entries to minimal L1 evidence records.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "supersedes": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "superseded_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "forked_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "forked_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "depends_on": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "supports": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "contradicts": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "derives_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "related_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "part_of": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
+    "governed_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } }
+  },
+  "patternProperties": {
+    "^(refines|implements|blocks|documents|cites|quotes|interprets|tests|replicates|fails_to_replicate|extends|narrows|generalizes|reviewed_by|approved_by|has_part|derived_from)$": {
+      "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" }
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "Flat grammar invariant: no property value may be a mapping or an array of mappings. Nested OKF+ 2.3 governance blocks (authorship, epistemic, provenance, relationships, evidence, lineage, review, assessment, authorization, labels) are the Machine Dialect and MUST NOT appear in a human-edited note."
+}

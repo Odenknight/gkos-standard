@@ -1,0 +1,62 @@
+{
+  "catalog_version": "0.1.0",
+  "gkos_release": "GKOS-2026-07-20 v0.76",
+  "description": "Starter fixture catalog. Each fixture binds: fixture class, target GCP profile, schema expectation (validated against schemas/), and projection expectation (required/forbidden diagnostic codes plus effective-state assertions). Volatile fields (calculatedAt, generated_at, engine paths) are masked by the runner; determinism binds to bytes + engine version + policy hash.",
+  "mask_rules": ["assessment.calculatedAt", "assessment.assessmentId", "*.generated_at", "*.sourcePath"],
+  "fixtures": [
+    {
+      "fixture_id": "GCP1-P01", "class": "positive", "profile": "GCP-1",
+      "file": "corpus/gcp1-p01-agent-ready-minimal.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "valid" },
+      "projection": { "forbid_severities": ["error", "critical"], "allow_codes": ["OKF-PROVENANCE-001"] }
+    },
+    {
+      "fixture_id": "GCP1-N01", "class": "negative", "profile": "GCP-1",
+      "file": "corpus/gcp1-n01-missing-required.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "invalid", "expect_paths": ["uid", "type", "created_at"] },
+      "projection": { "require_codes": [{ "code": "OKF-SCHEMA-004", "min_count": 3, "severity": "error" }] }
+    },
+    {
+      "fixture_id": "GCP1-N02", "class": "negative", "profile": "GCP-1",
+      "file": "corpus/gcp1-n02-invalid-epistemic.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "invalid", "expect_paths": ["epistemic_state"] },
+      "projection": { "require_codes": [{ "code": "OKF-EPISTEMIC-002", "severity": "error" }] },
+      "open_question": "Should an invalid epistemic state project into effective state as-authored (current engine behavior: effective state = 'gospel') or fall back to a defaulted valid state with defaulted-marking? See DIVERGENCES.md DIV-003."
+    },
+    {
+      "fixture_id": "GCP1-N03", "class": "negative", "profile": "GCP-1",
+      "file": "corpus/gcp1-n03-naive-timestamp.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "invalid", "expect_paths": ["created_at"] },
+      "projection": { "require_codes": [{ "code": "OKF-TEMPORAL-*", "severity": "warning-or-error" }] },
+      "known_divergence": "DIV-001"
+    },
+    {
+      "fixture_id": "GCP1-B01", "class": "boundary", "profile": "GCP-1",
+      "file": "corpus/gcp1-b01-missing-sensitivity.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "valid" },
+      "projection": { "require_codes": [{ "code": "OKF-SENSITIVITY-001", "severity": "warning" }], "effective_sensitivity": "restricted-or-stricter" },
+      "known_divergence": "DIV-002"
+    },
+    {
+      "fixture_id": "GCP3-C01", "class": "contradiction", "profile": "GCP-3",
+      "file": "corpus/gcp3-c01-claim.md", "pair": "corpus/gcp3-c02-counter.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "valid" },
+      "projection": { "forbid_codes": ["OKF-RELATIONSHIP-001"], "graph_expect": { "typed_edge": "contradicts", "resolves": true } }
+    },
+    {
+      "fixture_id": "GCP3-L01", "class": "lineage", "profile": "GCP-3",
+      "file": "corpus/gcp3-l01-superseded.md", "pair": "corpus/gcp3-l02-successor.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "valid" },
+      "projection": { "forbid_codes": ["OKF-LINEAGE-003"], "graph_expect": { "supersession_chain": ["6f7a8b9c-0d1e-4f2a-8b3c-4d5e6f7a8b9c", "8b9c0d1e-2f3a-4b4c-8d5e-6f7a8b9c0d1e"], "uid_first_resolution": true } }
+    },
+    {
+      "fixture_id": "GCP3-L02", "class": "promotion-gate", "profile": "GCP-3",
+      "file": "corpus/gcp3-l02-successor.md",
+      "schema": { "against": "sko-frontmatter-agent-ready-2.3.schema.json", "expect": "valid" },
+      "projection": { "require_codes": [{ "code": "OKF-EPISTEMIC-004", "severity": "warning" }] },
+      "note": "GKOS v0.76 §6.1: promotion to accepted requires a corroborating Decision Record; the fixture has none, so the gate diagnostic MUST fire."
+    }
+  ],
+  "planned_classes_not_yet_covered": ["sensitivity", "delegation", "replay", "erasure", "context-reproduction", "authorized-use"],
+  "profiles_not_yet_covered": ["GCP-4", "GCP-5", "GCP-6", "GCP-7", "Viewer-Projection-Profile"]
+}
