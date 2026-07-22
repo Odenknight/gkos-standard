@@ -1,6 +1,7 @@
-<!-- markdownlint-disable MD025 MD001 -->
-<!-- This edition intentionally uses multiple H1s as part dividers and
-     non-incrementing heading levels; source structure preserved verbatim. -->
+<!-- markdownlint-disable MD025 MD001 MD036 -->
+<!-- This edition intentionally uses multiple H1s as part dividers,
+     non-incrementing heading levels, and an emphasized tagline;
+     source structure preserved verbatim. -->
 # Governed Knowledge Operations Standard (GKOS)
 
 ## GKOS-2026-07-20 v0.76 — Complete Illustrated Edition
