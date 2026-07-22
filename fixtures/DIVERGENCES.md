@@ -7,6 +7,7 @@ hidden. Disposition of each belongs to the engine repo (fix) or the standard
 (relax), via the normal decision path — not to this file.
 
 ## DIV-001 — Naive wall-clock timestamps pass projection silently
+
 `created_at: 2026-07-20 12:00:00` (no Z, no numeric offset) produces **no
 diagnostic** from `buildOkf23Projection`. The engine's own test suite asserts
 timestamp validation "rejects naive wall-clock" — that validation lives in the
@@ -16,6 +17,7 @@ stamper path (`timestamps.ts`), not the projection. The schema
 (add projection-side temporal diagnostic).
 
 ## DIV-002 — Missing sensitivity defaults to `internal`, not a restricted value
+
 `OKF-SENSITIVITY-001` fires correctly, but effective sensitivity resolves to
 `internal`. The definitions sheet ("fail-closed sensitivity") documents the
 default as `secret`; GKOS §11 requires failing closed "to a restricted
@@ -25,6 +27,7 @@ a documented deployment-profile parameter with a restrictive default — but the
 current behavior contradicts the project's own written contract.
 
 ## DIV-003 — Invalid epistemic state flows into effective state as-authored
+
 With `epistemic_state: gospel`, `OKF-EPISTEMIC-002` fires (error), but the
 effective projection still reports `gospel` as the effective epistemic state.
 Downstream consumers reading effective state without checking diagnostics see a
