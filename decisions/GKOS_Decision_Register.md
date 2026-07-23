@@ -2,7 +2,7 @@
 
 ## Status of v0.x records
 
-R1 through R9 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.
+R1 through R10 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.
 
 ## Round 1 — Identity and publication
 
@@ -54,3 +54,14 @@ R7-058 through R7-068 establish fail-closed sensitivity, governed erasure, sensi
 - **R9-083:** Publish GKOS-2026-07-20 v0.76 and retain engine and Specialist Reviewer material as standalone informative documents outside the normative scope.
 
 See `R9_V0.76_Development_Decision_Record.md` for evidence, review basis, limitations, and release authorization.
+
+## Round 10 — Schema slice, fixture catalog, and conformance runner
+
+- **R10-084:** Publish the shared-definitions schema and seven normative-candidate schemas (L2 note profiles, L4 assessment/diagnostics, L5 proposal/decision, conformance manifest) under `schemas/`.
+- **R10-085:** Publish the L1/L6/L7 drafts under `schemas/provisional/` with the no-conformance-claim rule.
+- **R10-086:** Publish fixture catalog 0.1.0 (nine fixtures, GCP-1/GCP-3 classes) with engine-generated golden outputs and mask rules.
+- **R10-087:** Publish `fixtures/DIVERGENCES.md` as the recorded register of standard/implementation disagreements; disposition of each divergence is a separate engine or standard decision.
+- **R10-088:** Publish the GKOS-TS starter runner and informative gkos-engine adapter under `conformance/runner/`.
+- **R10-089:** Retire stale current-state v0.75 self-references (SECURITY, LICENSE attribution, TRADEMARKS period wording, Known Limitations annex, and the three program READMEs), leaving historical records untouched.
+
+See `R10_Schema_Fixture_Conformance_Dev_Decision_Record.md` for evidence, review basis, limitations, and release authorization.

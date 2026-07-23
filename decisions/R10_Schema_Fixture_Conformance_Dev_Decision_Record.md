@@ -1,11 +1,11 @@
-# R10 Schema, Fixture, and Conformance-Runner Development Decision Record — DRAFT
+# R10 Schema, Fixture, and Conformance-Runner Development Decision Record
 
-**Record ID:** GKOS-DR-2026-07-XX-R10 (assign on adoption)
+**Record ID:** GKOS-DR-2026-07-23-R10
 **Release:** GKOS-2026-07-20 v0.76 (in-series ecosystem improvement; no version bump)
-**Status:** DRAFT — pending review and authorization by the Founder and Initial Editor
-**Authorizing editor:** (unsigned until adopted)
+**Status:** Developmental adoption — not consensus ratification
+**Authorizing editor:** Shaun “Oden” Marshall, Founder and Initial Editor
 **Technical reviewer:** Claude Fable 5 (Anthropic), advisory review only — grounded in execution against gkos-engine v1.0.5 (122/122 engine tests passing; fixture catalog executed end-to-end on 2026-07-22)
-**Decision date:** (on adoption)
+**Decision date:** 2026-07-23
 
 ## Governance status
 
