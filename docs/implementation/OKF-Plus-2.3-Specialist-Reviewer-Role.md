@@ -2,7 +2,11 @@
 
 **Status:** Informative role and execution-contract design  
 **Normative authority:** None  
-**Governance reference:** GKOS-2026-07-20 v0.76
+**Governance reference:** GKOS-2026-07-20 v0.76  
+**Reflects:** GKOS-Engine v1.1.3 proposal/assessment surfaces (assignment and
+output contract unchanged; see [`GKOS-Engine-Implementation-Guide.md`](GKOS-Engine-Implementation-Guide.md)
+for current CLI, sensitivity, and epistemic-state behavior this role's
+findings interact with)
 
 A Specialist Reviewer is a human or computational actor assigned to evaluate material within a declared field of competence. Its output is advisory unless a separate authenticated grant provides decision authority.
 
