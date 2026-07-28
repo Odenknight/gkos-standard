@@ -43,7 +43,7 @@
     },
     "relationType": {
       "type": "string",
-      "enum": ["depends_on", "supports", "derives_from", "derived_from", "contradicts", "refines", "implements", "blocks", "documents", "cites", "quotes", "interprets", "tests", "replicates", "fails_to_replicate", "extends", "narrows", "generalizes", "governed_by", "reviewed_by", "approved_by", "supersedes", "superseded_by", "part_of", "has_part", "related_to"]
+      "enum": ["depends_on", "supports", "derives_from", "derived_from", "contradicts", "contradicted_by", "refines", "implements", "blocks", "documents", "cites", "quotes", "interprets", "tests", "replicates", "fails_to_replicate", "extends", "narrows", "generalizes", "governed_by", "reviewed_by", "approved_by", "supersedes", "superseded_by", "part_of", "has_part", "related_to"]
     },
     "wikilinkOrUid": {
       "description": "Relation/lineage target: uid (rename-proof standalone convention) or whole-value quoted wikilink (Obsidian convention).",

@@ -121,7 +121,7 @@ documentation-and-support score is not a truth score.
 summary: 187 sufficient, 21 partial, 6 insufficient
 
 $ okf graph ./corpus --relation contradicts,contradicted_by
-graph: 214 nodes, 37 typed edges (26 relation types available)
+graph: 214 nodes, 37 typed edges (27 relation types available)
 contradicts: 9 edges · contradicted_by: 9 edges (paired, bidirectional)
 
 $ okf export graphiti ./corpus --sensitivity-ceiling internal
