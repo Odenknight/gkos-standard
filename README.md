@@ -38,7 +38,7 @@ The layers are cumulative responsibilities, not a mandatory synchronous pipeline
 ## Architecture separation
 
 - **GKOS** defines governance, responsibility, authority, lifecycle, and conformance.
-- **OKF+** defines technical objects, schemas, identities, relationships, receipts, and protocols.
+- **GKX** defines technical exchange objects, schemas, identities, relationships, receipts, and protocols. Existing OKF+ identifiers are compatibility aliases during the governed migration.
 - **Kosmos-Oden** and the **GKOS Engine** are implementations and cannot redefine either specification.
 
 ## Repository map
@@ -55,6 +55,7 @@ The layers are cumulative responsibilities, not a mandatory synchronous pipeline
 - [Illustrated edition](illustrated/GKOS-v0.76-Illustrated-Edition.md)
 - [Implementation references](docs/implementation/README.md)
 - [Roadmap](ROADMAP.md)
+- [Ecosystem organization](docs/ECOSYSTEM-ORGANIZATION.md)
 
 ## v0.76 highlights
 
