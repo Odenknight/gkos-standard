@@ -1,5 +1,14 @@
 # GKOS development decision register
 
+## R11 — GKX naming transition
+
+- **Date:** 2026-08-02
+- **Status:** Accepted development decision; compatibility migration in progress
+- **Decision:** Rename the technical exchange model from OKF+ to GKX (Governed
+  Knowledge Exchange), retain legacy identifiers as compatibility aliases, and
+  require a separately versioned migration before machine-facing removals.
+- **Record:** [R11_GKX_Naming_Transition_Development_Decision_Record.md](R11_GKX_Naming_Transition_Development_Decision_Record.md)
+
 ## Status of v0.x records
 
 R1 through R10 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.

@@ -6,6 +6,13 @@
 **Status:** Public pre-standard and concept-refinement release  
 **Canonical repository:** [Odenknight/gkos-standard](https://github.com/Odenknight/gkos-standard)
 
+> **Naming transition:** **GKX (Governed Knowledge Exchange)** is the current
+> name for the technical exchange model previously published as **OKF+**.
+> Existing OKF+ 2.2/2.3 identifiers remain compatibility aliases until the
+> versioned migration described in
+> [R11](decisions/R11_GKX_Naming_Transition_Development_Decision_Record.md) is
+> completed. This transition does not rename GKOS itself.
+
 GKOS is a domain-neutral governance standard for preserving evidence, structuring knowledge, recording relationships and lineage, enforcing controls, governing review, compiling reproducible context, and authorizing consequential use by humans or computational agents.
 
 GKOS does not compute absolute truth. It records how evidence, assertions, proposals, validation findings, decisions, and authorized projections relate so use can be examined, reproduced, challenged, corrected, and governed.
