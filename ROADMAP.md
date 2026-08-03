@@ -13,10 +13,12 @@ still require the amendment and decision-record process in the GKOS standard.
 | `Kosmos-Oden` (KRS) | Active | Reference end-user application and Obsidian integration consuming GKOS-Engine |
 | `Kosmos-Oden-Lite` (KRS-Lite) | Frozen | Stable 1.0.x maintenance line; compatibility, security, data-integrity, and documentation fixes only |
 
-Dependency direction is one-way: **GKOS/GKX specification → GKOS-Engine →
-distributions and applications**. Implementations may supply evidence and
-proposals, but cannot redefine the standard. KRS-Lite is not an upstream
-dependency and is not expected to track current-engine parity.
+Normative dependency direction is one-way: **GKOS/GKX specification →
+GKOS-Engine → distributions and applications**. Implementations may run
+explicitly experimental behavior ahead of the standard and supply field
+evidence and proposals, but shipped behavior becomes normative only through
+review and an accepted Decision Record. KRS-Lite is not an upstream dependency
+and is not expected to track current-engine parity.
 
 See [Ecosystem organization](docs/ECOSYSTEM-ORGANIZATION.md) for decision rights,
 cross-repository change rules, and release coordination.
@@ -62,7 +64,8 @@ gates on behalf of the standard.
 
 ## Coordination gates
 
-1. A normative or GKX contract change lands in `gkos-standard` first.
+1. A normative or GKX contract change lands in `gkos-standard` first;
+   experimental product behavior may precede it only when clearly non-normative.
 2. GKOS-Engine adopts the versioned contract and publishes compatibility evidence.
 3. Engine-Lite and KRS adopt the engine release without duplicating its core.
 4. KRS-Lite receives a backport only when its maintenance policy permits it;

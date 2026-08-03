@@ -1,5 +1,15 @@
 # GKOS development decision register
 
+## R12 — Ecosystem compatibility contract
+
+- **Date:** 2026-08-03
+- **Status:** Accepted development decision
+- **Decision:** Define Engine-Lite semantic equivalence and maximum drift,
+  prohibit a reduced Lite validator, govern the experimental field-test loop,
+  continue the GKX 2.3 version line, scope Google OKF 0.2 interoperability,
+  define Engine dependency rules, and correct interoperability provenance.
+- **Record:** [R12_Ecosystem_Compatibility_Development_Decision_Record.md](R12_Ecosystem_Compatibility_Development_Decision_Record.md)
+
 ## R11 — GKX naming transition
 
 - **Date:** 2026-08-02

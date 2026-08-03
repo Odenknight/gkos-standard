@@ -70,6 +70,13 @@ Adopts the engine version **verbatim**. A CLI release is a same-day
 pin-bump to the new engine version plus a matching `vX.Y.Z` tag — the CLI
 never carries its own MAJOR.MINOR.PATCH distinct from the engine it wraps.
 
+The normal target is still the same-day release above. As an outer operational
+limit, a release described as current Engine-Lite may lag the Engine by no more
+than one MINOR and never by a MAJOR. This allowance is not a planned cadence and
+does not defer critical security, data-integrity, fail-closed, or
+schema-authority fixes. A build outside the limit must be labeled a frozen
+compatibility release. See R12-090.
+
 The **desktop app** is a separate product with its own namespace,
 `desktop-vA.B.C`, and does not inherit this verbatim rule; it tracks the
 CLI/engine pin it bundles but versions its own packaging independently.

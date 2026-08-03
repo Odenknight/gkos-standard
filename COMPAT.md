@@ -7,8 +7,13 @@ One-page train status per [VERSIONING.md](VERSIONING.md). This file is a
 factual snapshot, not a normative document — it does not amend
 `standard/`, `releases/`, or `decisions/`.
 
+Engine-Lite's one-minor allowance is the maximum current-release drift, not the
+normal cadence. Its deterministic claims are always relative to the exact
+pinned Engine and policy. KRS-Lite's separately frozen baseline is not governed
+by that one-minor limit.
+
 | Repo | Shipped version | Engine relation | Last verified |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GKOS-Engine | v1.2.0 (HEAD tagged) | is the anchor | 2026-07-27 |
 | GKOS-Engine-Lite CLI | v1.1.3, pin `#v1.1.3` (SHA-resolved) | lags anchor by one minor (engine now v1.2.0); engine-verbatim bump pending | 2026-07-27 |
 | GKOS-Engine-Lite desktop | desktop-v0.2.0 | bundles the CLI/engine pin above; own packaging namespace | 2026-07-27 |
