@@ -160,7 +160,7 @@ const projection = engine.project(corpus, {
 
 The 7-level sensitivity lattice, from least to most restrictive, is:
 
-```
+```text
 public < internal < restricted < confidential < sensitive < classified < secret
 ```
 
@@ -168,7 +168,7 @@ public < internal < restricted < confidential < sensitive < classified < secret
 
 The engine recognizes twelve epistemic states:
 
-```
+```text
 unknown, observation, reported, inferred, hypothesis, modeled,
 supported, contested, refuted, retracted, accepted, superseded
 ```
