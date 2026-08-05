@@ -15,7 +15,7 @@ This track blocks only a GKX/GKOS v1.0 conformance claim or ratification. Suite 
 
 ## Portfolio-publication alignment track
 
-Required evidence: accurate Suite S0 provenance and identity, KRR disposition and naming, and aligned downstream claims including TheMarshal.
+Required evidence: accurate Suite S0 provenance and identity, KRR disposition and naming, and aligned downstream claims. Private products are excluded unless a separate disclosure decision authorizes a specific public artifact.
 
 This track blocks publication of an aligned portfolio narrative. It does not itself authorize a normative GKX release claim.
 

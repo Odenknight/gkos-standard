@@ -4,6 +4,17 @@
 **Status:** Public pre-standard and concept-refinement release  
 **Normative terms:** MUST, MUST NOT, SHOULD, SHOULD NOT, MAY
 
+> **Post-release naming note (informative):**
+> [R11](../decisions/R11_GKX_Naming_Transition_Development_Decision_Record.md)
+> renamed the technical exchange model from OKF+ to **GKX (Governed Knowledge
+> Exchange)** while preserving historical and machine-facing compatibility
+> identifiers.
+> [R12](../decisions/R12_Ecosystem_Compatibility_Development_Decision_Record.md)
+> limits Google Cloud OKF interoperability to a declared, version-scoped 0.2
+> subset and corrects unsupported independence/priority language. The retained
+> OKF+ wording below records the v0.76 release terminology; it is read as GKX for
+> current-facing use unless a compatibility identifier is expressly preserved.
+
 ## 0. Development status
 
 GKOS v0.76 remains in the pre-v1.0 testing and refinement phase. Changes recorded during the v0.x series are developmental adoptions by the Founder and Initial Editor after documented technical review. They are not consensus ratifications, independent certifications, accredited standards decisions, or claims that the complete future governance body has been seated.

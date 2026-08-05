@@ -1,5 +1,16 @@
 # GKOS development decision register
 
+## R12 — Ecosystem compatibility and provenance
+
+- **Date:** 2026-08-03
+- **Status:** Accepted development decision
+- **Decision:** Preserve one deterministic semantics authority; define
+  Engine-Lite equivalence and bounded drift; govern experimental field-test
+  evidence; continue GKX 2.3 from the OKF+ 2.2/2.3 line; limit Google Cloud OKF
+  interoperability to a versioned 0.2 subset; and correct unsupported
+  independence/priority language.
+- **Record:** [R12_Ecosystem_Compatibility_Development_Decision_Record.md](R12_Ecosystem_Compatibility_Development_Decision_Record.md)
+
 ## R11 — GKX naming transition
 
 - **Date:** 2026-08-02
@@ -11,7 +22,7 @@
 
 ## Status of v0.x records
 
-R1 through R10 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.
+R1 through R12 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.
 
 ## Round 1 — Identity and publication
 
@@ -74,3 +85,24 @@ See `R9_V0.76_Development_Decision_Record.md` for evidence, review basis, limita
 - **R10-089:** Retire stale current-state v0.75 self-references (SECURITY, LICENSE attribution, TRADEMARKS period wording, Known Limitations annex, and the three program READMEs), leaving historical records untouched.
 
 See `R10_Schema_Fixture_Conformance_Dev_Decision_Record.md` for evidence, review basis, limitations, and release authorization.
+
+## Round 12 — Ecosystem compatibility and interoperability provenance
+
+- **R12-090:** Engine-Lite uses its pinned Engine's deterministic path for the
+  four commands, with normalized byte-equivalence rules and at most one minor
+  version of current-release drift.
+- **R12-091:** Engine-Lite removes interfaces and workflows, not validation
+  semantics; it is not a second validator or permissive subset.
+- **R12-092:** Experimental implementations may run ahead behind an explicit
+  boundary; implementation evidence can propose but cannot amend the standard.
+- **R12-093:** GKX 2.3 continues the OKF+ 2.2/2.3 line under the current name.
+- **R12-094:** Google Cloud OKF interoperability is optional, version-scoped to
+  a declared 0.2 subset, and requires mappings, loss rules, and fixtures.
+- **R12-095:** GKOS-Engine remains the deterministic semantics authority for the
+  active product family; frozen or independent implementations require explicit
+  evidence and limitations.
+- **R12-096:** Remove unsupported “without reference to” provenance language and
+  avoid priority, foundation, sponsorship, and endorsement overclaims.
+
+See `R12_Ecosystem_Compatibility_Development_Decision_Record.md` for the exact
+decision text, limitations, compatibility impact, and follow-up evidence.

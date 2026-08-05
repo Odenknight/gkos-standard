@@ -7,6 +7,12 @@ One-page train status per [VERSIONING.md](VERSIONING.md). This file is a
 factual snapshot, not a normative document — it does not amend
 `standard/`, `releases/`, or `decisions/`.
 
+Engine-Lite's one-minor allowance is a maximum current-release drift, not the
+normal cadence. Its deterministic claims are relative to the exact pinned
+Engine and policy. A frozen product baseline is governed separately and does
+not inherit that current-release allowance. See
+[R12](decisions/R12_Ecosystem_Compatibility_Development_Decision_Record.md).
+
 | Repo | Shipped version | Engine relation | Last verified |
 |---|---|---|---|
 | GKOS-Engine | v1.2.0 (HEAD tagged) | is the anchor | 2026-07-27 |

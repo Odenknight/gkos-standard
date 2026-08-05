@@ -1,74 +1,246 @@
 # Governed Knowledge Operations Standard (GKOS)
 
-> **How knowledge becomes trustworthy**
+<!-- markdownlint-disable MD013 -->
 
-**Release:** GKOS-2026-07-20 v0.76  
-**Status:** Public pre-standard and concept-refinement release  
-**Canonical repository:** [Odenknight/gkos-standard](https://github.com/Odenknight/gkos-standard)
+> A public pre-standard for keeping evidence, claims, authority, context, and
+> agent actions distinguishable and auditable.
 
-> **Naming transition:** **GKX (Governed Knowledge Exchange)** is the current
-> name for the technical exchange model previously published as **OKF+**.
-> Existing OKF+ 2.2/2.3 identifiers remain compatibility aliases until the
-> versioned migration described in
-> [R11](decisions/R11_GKX_Naming_Transition_Development_Decision_Record.md) is
-> completed. This transition does not rename GKOS itself.
+- **Current public release:** GKOS-2026-07-20 v0.76
+- **Maturity:** public pre-standard; testing and concept refinement
+- **Technical exchange model:** GKX — Governed Knowledge Exchange
+- **Canonical repository:** `Odenknight/gkos-standard`
+- **Last orientation review:** 2026-08-04
 
-GKOS is a domain-neutral governance standard for preserving evidence, structuring knowledge, recording relationships and lineage, enforcing controls, governing review, compiling reproducible context, and authorizing consequential use by humans or computational agents.
+GKOS defines how knowledge should move from source evidence to consequential
+use without silently turning model output, retrieval rank, confidence, or tool
+access into authority.
 
-GKOS does not compute absolute truth. It records how evidence, assertions, proposals, validation findings, decisions, and authorized projections relate so use can be examined, reproduced, challenged, corrected, and governed.
+It does **not** decide absolute truth. It makes the path from evidence to action
+explicit enough to inspect, reproduce, challenge, correct, and govern.
 
-## Development-phase governance
+For implementation detail, read [TECHNICAL_README.md](TECHNICAL_README.md).
+The [master standard](standard/00_GKOS_Master_Standard.md) and adopted
+[development decisions](decisions/GKOS_Decision_Register.md) remain
+authoritative when an overview differs from normative text.
 
-The v0.x series is for testing and refining the concept. Changes are documented development decisions by the Founder and Initial Editor after technical review; they are not formal consensus ratifications, certification, accreditation, or regulator approval. Multi-stakeholder governance is a v1.0 gate.
+## The problem in plain language
 
-## Seven-layer reference model
+Agentic systems can retrieve thousands of documents, combine them, propose
+changes, call tools, and act faster than a person can review each intermediate
+step. Conventional knowledge systems often preserve the final answer but lose
+the distinctions that matter:
 
-| Layer | Responsibility | Governing artifact |
+- What was the original evidence?
+- What did a person or agent infer from it?
+- Which deterministic checks actually ran?
+- Who had authority to accept the proposal?
+- What exact context was shown to the acting agent?
+- What action occurred, under which permission, and with what result?
+
+When those questions collapse into one opaque “trusted” status, confidence can
+be mistaken for authority, old context can be presented as current, and an
+agent can act from a conclusion that nobody actually approved.
+
+GKOS keeps those steps separate and links them with reviewable records.
+
+## A 90-second walkthrough
+
+Suppose an agent proposes changing a production retention policy.
+
+1. **Preserve the source.** Store the policy, ticket, regulation, and their
+   acquisition history without silently rewriting them.
+2. **Give each object stable identity.** A filename or database path may change;
+   the governed identity and version history do not.
+3. **Record claims and lineage.** The agent's interpretation is an assertion
+   linked to evidence, time, scope, and actor—not a newly created fact.
+4. **Run deterministic controls.** Schema, sensitivity, permission, conflict,
+   and policy checks produce diagnostics and receipts. Mandatory failures block
+   promotion.
+5. **Record an authorized decision.** A reviewer accepts, rejects, limits,
+   defers, or withdraws the proposal in an append-only Decision Record.
+6. **Compile purpose-bound context.** The acting agent receives the accepted
+   assertions, evidence anchors, contradictions, restrictions, versions, and
+   expiry that apply to this task.
+7. **Authorize and receipt the use.** The system records the actor, action,
+   authority, context, dependencies, outcome, and compensation or recovery
+   route.
+
+If the result later becomes evidence, it re-enters as a new source. It does not
+rewrite the history that produced it.
+
+## Five rules to remember
+
+1. **Evidence is not automatically truth.** Preserve what was received and
+   separately record what an actor claims it means.
+2. **Capability is not authority.** An agent may be able to analyze or act
+   without being authorized to approve or execute.
+3. **Confidence is not authority.** Model confidence, similarity, retrieval
+   rank, graph centrality, and claimed expertise never authorize promotion.
+4. **Restrictions only tighten without authority.** Lower-precedence inputs
+   cannot widen a higher-precedence safety, security, or governance boundary.
+5. **Consequential use leaves a receipt.** The action remains linked to the
+   exact context and authority under which it occurred.
+
+## Names and lineage: GKOS, GKX, OKF+, and Google OKF
+
+These names refer to different things.
+
+| Name | Meaning | Current status |
 | --- | --- | --- |
-| 7. Authorized Use | Permit and record consequential use | Authorized Use Record |
-| 6. Context Presentation | Compile purpose-bound context | Context Manifest |
-| 5. Review and Workflow | Bind an authorized disposition | Decision Record |
-| 4. Validation and Control | Enforce policy and restrictions | Diagnostics and control receipts |
-| 3. Relationships and Lineage | Record provenance, time, conflict, and typed assertions | Assertion and lineage records |
-| 2. Structure and Identity | Assign stable identity, type, schema, and metadata | Structured Knowledge Object |
-| 1. Original Sources | Preserve evidence and acquisition history | Source Record |
+| **GKOS** | The governance standard: responsibilities, authority, lifecycle, controls, and conformance | Current |
+| **GKX** | The technical exchange model: governed objects, schemas, identities, relationships, diagnostics, receipts, and protocols | Current |
+| **OKF+** | The former public name of GKX and the source of retained 2.2/2.3 compatibility identifiers | Historical/compatibility name |
+| **[Google Cloud OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)** | Google's separate Open Knowledge Format | Optional external interoperability target, currently limited to a declared 0.2 subset |
 
-The layers are cumulative responsibilities, not a mandatory synchronous pipeline.
+[R11](decisions/R11_GKX_Naming_Transition_Development_Decision_Record.md)
+renamed the project's technical model from **OKF+** to **GKX** without silently
+breaking documents or integrations. Historical releases and machine-facing
+identifiers such as `okf_version`, `.okf/`, `okf*` commands, profile URIs, and
+diagnostic codes remain until a versioned migration supplies replacements and a
+deprecation window.
 
-## Architecture separation
+Google Cloud OKF is a [separate specification](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md).
+GKX's later interoperability work
+was informed by and incorporates mappings for Google Cloud OKF 0.2. The
+dependency direction is a bounded projection/import profile: Google OKF is not
+the normative foundation or schema authority for GKX, and support for 0.2 does
+not imply support for later Google releases. GKOS and GKX are not affiliated
+with, sponsored by, or endorsed by Google. See
+[Third-Party Notices](THIRD-PARTY-NOTICES.md).
 
-- **GKOS** defines governance, responsibility, authority, lifecycle, and conformance.
-- **GKX** defines technical exchange objects, schemas, identities, relationships, receipts, and protocols. Existing OKF+ identifiers are compatibility aliases during the governed migration.
-- **Kosmos-Oden** and the **GKOS Engine** are implementations and cannot redefine either specification.
+## The seven-layer model
+
+The layers are cumulative responsibilities, not a required synchronous
+pipeline and not a claim that every product implements all seven.
+
+| Layer | Question | Required output | Core boundary |
+| --- | --- | --- | --- |
+| **1. Original Sources** | What evidence was received or observed? | Source Record | Preserve revision, provenance, custody, sensitivity, retention, and receipt |
+| **2. Structure and Identity** | What object is this? | Structured Knowledge Object | Stable identity; filename and location are not identity |
+| **3. Relationships and Lineage** | What supports, contradicts, depends on, or supersedes what? | Assertion and lineage records | Relationships remain typed, sourced, temporal, scoped, and attributable |
+| **4. Validation and Control** | Which deterministic rules and restrictions apply? | Diagnostics and control receipts | Mandatory failures block promotion |
+| **5. Review and Workflow** | Who accepted, rejected, deferred, or limited the proposal? | Decision Record | Authorized, append-only disposition; no claimed self-approval where separation of duties applies |
+| **6. Context Presentation** | What exact context was presented for this purpose? | Context Manifest | Warnings, contradictions, restrictions, omissions, versions, recipient, and expiry remain visible |
+| **7. Authorized Use** | May this actor take this action, and what happened? | Authorized Use Record | Action is linked to context, authority, dependencies, outcome, and recovery route |
+
+## Why this matters for agents and AgenticOS
+
+An AgenticOS needs more than model routing, tools, memory, and scheduling. It
+also needs a knowledge-control plane that answers:
+
+- which evidence and assertions may enter working context;
+- which restrictions follow them;
+- which agent may propose, review, approve, or act;
+- whether an action is reproducible from the same governed context;
+- how contradictions and supersession remain visible; and
+- how later review can trace an outcome back to evidence and authority.
+
+GKOS is designed for that control plane. It does not replace an agent runtime,
+workflow engine, identity provider, policy engine, database, provenance format,
+or cryptographic signing system. It defines the responsibilities and records
+that let those components work together without treating intelligence as
+authority.
+
+## Relationship to established specifications
+
+GKOS should interoperate with established work where responsibilities overlap.
+It should not recreate mature provenance, supply-chain, media-authenticity, or
+signing mechanisms.
+
+| Existing work | What it does especially well | GKOS relationship |
+| --- | --- | --- |
+| [W3C PROV](https://www.w3.org/TR/prov-o/) | Interchange of entities, activities, agents, and derivation | Candidate export for Layers 1–3; GKOS-specific epistemic and authority semantics require explicit extensions or loss markers |
+| [in-toto](https://in-toto.io/docs/specs/) | Signed statements about software supply-chain steps and subjects | Candidate envelope for GKOS test, validation, and release attestations |
+| [SLSA 1.2](https://slsa.dev/spec/v1.2/) | Incremental source/build supply-chain assurance | Adoption pattern and complementary release assurance, not a knowledge-governance substitute |
+| [Sigstore](https://docs.sigstore.dev/cosign/signing/overview/) | Identity-bound signing and transparency | Candidate public signing profile; confidential deployments may require a different governed trust profile |
+| [C2PA](https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html) | Content credentials, asset binding, assertions, and media provenance | A C2PA manifest can be preserved as source evidence; it does not by itself grant GKOS authority |
+| [MCP authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization) | Authorization protocol for MCP resources and operations | Transport/tool authorization can carry or enforce grants; GKOS governs knowledge state, purpose-bound context, promotion, and use records |
+
+The detailed, claim-limited mapping is in
+[GKOS and the Provenance Landscape](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md).
+
+## Conformance today
+
+GKOS defines cumulative provisional profiles GCP-1 through GCP-7 plus a
+Viewer/Projection Profile. Claims must name the exact standard, profile, test
+suite, evidence, limitations, exceptions, and whether the result is
+self-attested or independently verified.
+
+The executable suite is incomplete. Fixture catalog 0.1.0 covers only an early
+GCP-1/GCP-3 slice, and the starter runner does not yet evaluate its declared
+graph-level expectations. No implementation may convert “not yet evaluated”
+into a pass. No current implementation satisfies the v1.0 second-independent-
+implementation gate.
+
+See [Conformance](conformance/README.md), [Fixtures](fixtures/README.md), and
+[Known Divergences](fixtures/DIVERGENCES.md).
+
+## Current maturity and claim boundary
+
+GKOS v0.76 is suitable for public review, research, prototypes, controlled
+pilots, fixture development, and independent implementation work.
+
+It is **not**:
+
+- an accredited national or international standard;
+- a certification or accreditation program;
+- proof that a product is truthful, safe, secure, or legally compliant;
+- a legal opinion or regulatory authorization;
+- a replacement for professional judgment; or
+- evidence that the future GKOS v1.0 gates have been met.
+
+The v0.x series is governed by Shaun “Oden” Marshall as Founder and Initial
+Editor. Adopted changes are disclosed development decisions, not independent
+approval or consensus ratification. Multi-stakeholder authority, complete
+conformance, independently demonstrated implementation, appeals, succession,
+and signed archival publication remain v1.0 work.
+
+## Start here
+
+| If you are… | Read or do this first |
+| --- | --- |
+| Evaluating the idea | Read this README, then the [illustrated edition](illustrated/GKOS-v0.76-Illustrated-Edition.md) |
+| Implementing GKOS/GKX | Read [TECHNICAL_README.md](TECHNICAL_README.md), the [master standard](standard/00_GKOS_Master_Standard.md), and [layer contracts](standard/annexes/Layer_Interface_Contracts.md) |
+| Testing an implementation | Start with [conformance/README.md](conformance/README.md) and [fixtures/README.md](fixtures/README.md) |
+| Comparing standards | Read the [provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
+| Proposing a change | Follow [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md) |
+| Reviewing current risk | Read the [critique assessment and remediation](docs/reviews/2026-08-04_CRITIQUE_ASSESSMENT_AND_REMEDIATION.md) and [roadmap](ROADMAP.md) |
 
 ## Repository map
 
 - [Master standard](standard/00_GKOS_Master_Standard.md)
-- [Annexes](standard/annexes/)
+- [Normative and informative annexes](standard/annexes/)
 - [Development decision register](decisions/GKOS_Decision_Register.md)
-- [v0.76 development decision](decisions/R9_V0.76_Development_Decision_Record.md)
-- [Conformance](conformance/README.md)
 - [Schemas](schemas/README.md)
-- [Fixtures](fixtures/README.md)
+- [Fixtures and divergences](fixtures/README.md)
+- [Conformance runner](conformance/README.md)
 - [Examples](examples/README.md)
-- [Graphics](graphics/README.md)
-- [Illustrated edition](illustrated/GKOS-v0.76-Illustrated-Edition.md)
 - [Implementation references](docs/implementation/README.md)
+- [Governance](GOVERNANCE.md)
 - [Roadmap](ROADMAP.md)
-- [Ecosystem organization](docs/ECOSYSTEM-ORGANIZATION.md)
+- [Licensing](LICENSE.md)
 
-## v0.76 highlights
+## Licensing, attribution, and acknowledgments
 
-- Freezes a twelve-state GKOS epistemic vocabulary without making the standard depend on the changing OKF+ 2.3 draft.
-- Defines consequential use, blast radius, materially equivalent proposals, and defect-badge-or-refuse behavior.
-- Adds progressive-disclosure requirements to the Viewer/Projection Profile.
-- Publishes informative layer-artifact and provisional authority-receipt annexes.
-- Clarifies pre-v1.0 development governance and version relationships.
+Documentation and original graphics are licensed under CC BY 4.0. Schemas,
+fixtures, workflows, scripts, and reference code are licensed under
+Apache-2.0. Trademark, certification, endorsement, and accreditation rights are
+separate. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
+[TRADEMARKS.md](TRADEMARKS.md).
 
-## License and attribution
+Suggested citation:
 
-Documentation and original graphics are licensed under CC BY 4.0. Schemas, fixtures, workflows, scripts, and reference code are licensed under Apache-2.0. Trademarks are governed separately.
+> Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS),
+> GKOS-2026-07-20 v0.76.* CC BY 4.0. Changes, if any, should be identified by
+> the modifier.
 
-> Governed Knowledge Operations Standard (GKOS), GKOS-2026-07-20 v0.76, by Shaun “Oden” Marshall, licensed under CC BY 4.0. Changes, if any, are identified by the modifier.
+The project also acknowledges Andrej Karpathy's LLM Wiki as inspiration for
+making technical knowledge more approachable and navigable. See
+[ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md). This acknowledgment does not imply
+code incorporation, affiliation, sponsorship, or endorsement.
 
-GKOS v0.76 is suitable for public review, research, prototyping, fixture development, and independent implementation work. It is not an accredited standard, certification regime, legal opinion, regulatory compliance assurance, or guarantee of truth or safety.
+## The practical promise
+
+Preserve what happened. Record what was claimed. Show how it was checked.
+Identify who accepted responsibility. Compile the context that was actually
+used. Retain a receipt for the action that followed.
