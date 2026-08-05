@@ -1,8 +1,14 @@
-# Governed Knowledge Operations Standard (GKOS)
+# GKOS — Governed Knowledge Operations Standard
+
+> **Portfolio position** · Product: GKOS — Governed Knowledge Operations Standard · Repository: `Odenknight/gkos-standard`
+> Tier: T0 · GKX schema: defines GKX
+> Engine dependency: none
+> Lifecycle: Active · Relationships: none
+> Authority for this block: GKOS-REGISTRY-001
 
 > **How knowledge becomes trustworthy**
 
-**Release:** GKOS-2026-07-17 v0.75  
+**Release:** GKOS v0.77 (2026-08-05)
 **Status:** Public pre-standard and implementation draft  
 **Canonical repository:** https://github.com/Odenknight/gkos-standard
 
@@ -27,7 +33,7 @@ The layers are cumulative responsibilities, not a mandatory synchronous pipeline
 ## Architecture separation
 
 - **GKOS** defines governance, responsibility, authority, lifecycle, and conformance.
-- **OKF+** defines technical objects, schemas, identities, relationships, receipts, and protocols.
+- **GKX** defines technical objects, schemas, identities, relationships, receipts, and protocols. Existing `OKF+` machine identifiers remain compatibility identifiers, not product or schema ownership claims.
 - **Kosmos-Oden** is one implementation and cannot redefine either specification.
 
 ## Specialized Agents
