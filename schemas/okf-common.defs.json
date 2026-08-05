@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/okf-common.defs.json",
-  "title": "OKF+ / GKOS shared definitions",
-  "description": "Shared vocabulary for GKOS schema program. Enumerations are frozen per GKOS-2026-07-20 v0.76 (epistemic vocabulary, GKOS Master Standard) and grounded in the OKF+ 2.3 reference implementation (gkos-engine v1.0.5, src/okf23.ts, src/types.ts).",
+  "title": "GKX shared definitions (retained okf compatibility identifier)",
+  "description": "Normative-candidate shared vocabulary adopted under R10. The twelve-state epistemic vocabulary is frozen in GKOS-2026-07-20 v0.76; other enumerations and serialization details carry disclosed reference-implementation evidence and require clause traceability before qualifying use.",
   "$defs": {
     "uid": {
-      "description": "Stable identity: UUID (v4 accepted, v7 preferred) or policy-permitted namespaced id. Filenames and paths are not identity.",
+      "description": "Stable identity reader grammar: UUID version 1-8 or policy-permitted namespaced id. Profile-specific UUID generation and migration rules remain unresolved. Filenames and paths are not identity.",
       "type": "string",
       "anyOf": [
         { "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" },

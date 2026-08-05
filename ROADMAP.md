@@ -12,12 +12,12 @@ still require the amendment and decision-record process in the GKOS standard.
 | `gkos-standard` | Active, canonical | Normative governance, GKX exchange specification, conformance gates, schemas, fixtures, and ecosystem policy |
 | `GKOS-Engine` | Active | Canonical deterministic, platform-neutral implementation of GKX under GKOS |
 | `GKOS-Engine-Lite` | Active, thin distribution | CLI and desktop distribution of GKOS-Engine; no independent governance semantics |
-| `Kosmos-Oden` (KRS) | Active | Reference end-user application and Obsidian integration consuming GKOS-Engine |
-| `Kosmos-Oden-Lite` (KRS-Lite) | Frozen | Stable 1.0.x maintenance line; compatibility, security, data-integrity, and documentation fixes only |
+| `Kosmos-Oden` | Active | Reference end-user application and Obsidian integration consuming GKOS-Engine |
+| `Kosmos-Oden-Lite` | Frozen | Stable 1.0.x maintenance line; compatibility, security, data-integrity, and documentation fixes only |
 
 Dependency direction is one-way: **GKOS/GKX specification → GKOS-Engine →
 distributions and applications**. Implementations may supply evidence and
-proposals, but cannot redefine the standard. KRS-Lite is not an upstream
+proposals, but cannot redefine the standard. `Kosmos-Oden-Lite` is not an upstream
 dependency and is not expected to track current-engine parity.
 
 Private product repositories are excluded from public conformance or adoption
@@ -36,8 +36,8 @@ identifiers where compatibility requires them.
 - Route normative and exchange-model changes to `gkos-standard`.
 - Keep shared deterministic behavior in `GKOS-Engine`; prohibit re-vendoring in
   active downstream products.
-- Keep Engine-Lite thin and KRS product-specific.
-- Enforce the KRS-Lite frozen-core boundary and document selective backports.
+- Keep Engine-Lite thin and `Kosmos-Oden` product-specific.
+- Enforce the `Kosmos-Oden-Lite` frozen-core boundary and document selective backports.
 - Use linked issues or PRs for changes spanning ownership boundaries; merge
   upstream before downstream adoption.
 - Enforce current-facing terminology: GKOS for governance, GKX for exchange,
@@ -126,7 +126,7 @@ This is the highest-priority technical gate before broad external outreach.
 - Trademark/name administration and final brand guide.
 - Canonical signed publication and persistent archival identifier.
 
-No implementation release, including KRS or either Lite product, satisfies
+No implementation release, including `Kosmos-Oden` or either Lite product, satisfies
 these gates on behalf of the standard. No private product may be used as public
 gate evidence without an explicit disclosure record.
 
@@ -148,8 +148,8 @@ gate evidence without an explicit disclosure record.
 
 1. A normative or GKX contract change lands in `gkos-standard` first.
 2. GKOS-Engine adopts the versioned contract and publishes compatibility evidence.
-3. Engine-Lite and KRS adopt the Engine release without duplicating its core.
-4. KRS-Lite receives a backport only when its maintenance policy permits it;
+3. Engine-Lite and `Kosmos-Oden` adopt the Engine release without duplicating its core.
+4. `Kosmos-Oden-Lite` receives a backport only when its maintenance policy permits it;
    otherwise the difference is recorded as intentional.
 5. Each repository maintains its own release notes and tests. Ecosystem status is
    reported here without turning product milestones into normative claims.

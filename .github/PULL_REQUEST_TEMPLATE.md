@@ -7,6 +7,7 @@ Compatibility impact:
 Security/privacy impact:
 Migration requirement:
 Required fixtures:
+Doc impact: none | README | standard-clause | divergence
 Rollback or supersession path:
 
 ## Evidence and rationale

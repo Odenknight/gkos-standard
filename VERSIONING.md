@@ -97,9 +97,11 @@ contract is behavioral stability, not feature parity.
 - **Kosmos_Research_Suite** pins to the engine as its keymap authority
   (frontmatter-keymap re-pin). A Suite re-pin follows the same
   changelog/README CI gates as any other version-bump commit.
-- **KRS-Lite** pins to a specific GKOS conformance version (e.g. GCP-3) for
-  its conformance claim and must update that claim when the underlying
-  claim changes, even if KRS-Lite's own version only moves PATCH.
+- **Kosmos_Research_Studio_Lite** must pin any future GKOS conformance claim to
+  an exact standard, requirement, fixture, runner, and evidence baseline. Its
+  current independent-implementation audit is blocked/indeterminate, so no GCP
+  qualification is established. A later claim change requires an explicit
+  product release record even if its own version only moves PATCH.
 
 ## Precedence
 

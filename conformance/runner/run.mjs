@@ -48,7 +48,8 @@ const frontmatter = raw => { const m = /^---\n([\s\S]*?)\n---/.exec(raw); return
 const codeMatch = (want, got) => want.endsWith("*") ? got.startsWith(want.slice(0, -1)) : got === want;
 const SENS_ORDER = ["public", "internal", "restricted", "confidential", "regulated", "phi", "secret"];
 
-const results = []; let passed = 0, failed = 0, skipped = 0, divergent = 0;
+const results = [];
+let passed = 0, failed = 0, skipped = 0, divergent = 0, unevaluated = 0;
 for (const fx of manifest.fixtures) {
   const detail = [];
   let ok = true;
@@ -81,28 +82,64 @@ for (const fx of manifest.fixtures) {
     if (idx < SENS_ORDER.indexOf("restricted")) { ok = false; detail.push(`projection: effective sensitivity '${proj.effective?.sensitivity}' is more open than 'restricted'`); }
   }
 
-  // 3. outcome, honoring declared known divergences
+  // 3. Explicitly block any expectation this starter runner cannot execute.
+  // A partial schema/projection check is not a pass for the whole fixture.
+  const unexecuted = [];
+  if (fx.pair) unexecuted.push("pair");
+  if (fx.projection?.graph_expect) unexecuted.push("projection.graph_expect");
+  if (unexecuted.length) {
+    detail.push(`unevaluated expectations: ${unexecuted.join(", ")}`);
+  }
+
+  // 4. outcome, honoring declared known divergences only after every required
+  // expectation has actually been evaluated.
   let outcome;
-  if (ok) { outcome = "pass"; passed++; }
+  if (unexecuted.length) { outcome = "unevaluated"; unevaluated++; }
+  else if (ok) { outcome = "pass"; passed++; }
   else if (fx.known_divergence) { outcome = "known-divergence"; divergent++; }
   else { outcome = "fail"; failed++; }
-  results.push({ fixture_id: fx.fixture_id, outcome, ...(fx.known_divergence ? { divergence_ref: fx.known_divergence } : {}), ...(detail.length ? { detail: detail.join("; ") } : {}) });
+  results.push({ fixture_id: fx.fixture_id, outcome, ...(outcome === "known-divergence" ? { divergence_ref: fx.known_divergence } : {}), ...(detail.length ? { detail: detail.join("; ") } : {}) });
   console.log(`${outcome.toUpperCase().padEnd(17)} ${fx.fixture_id}${detail.length ? "  — " + detail.join("; ") : ""}`);
 }
+
+const qualifyingProfiles = new Set(manifest.qualifying_profiles ?? []);
+const cumulativeProfiles = ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5", "GCP-6", "GCP-7"];
+const fixturesForProfile = (profile) => {
+  const level = cumulativeProfiles.indexOf(profile);
+  if (level < 0) return manifest.fixtures.filter((fixture) => fixture.profile === profile);
+  return manifest.fixtures.filter((fixture) => {
+    const fixtureLevel = cumulativeProfiles.indexOf(fixture.profile);
+    return fixtureLevel >= 0 && fixtureLevel <= level;
+  });
+};
+const profilesClaimed = [...qualifyingProfiles].filter((profile) => {
+  const profileFixtures = fixturesForProfile(profile);
+  return profileFixtures.length > 0 && profileFixtures.every((fixture) =>
+    results.find((result) => result.fixture_id === fixture.fixture_id)?.outcome === "pass"
+  );
+});
+const unevaluatedDetails = results
+  .filter((result) => result.outcome === "unevaluated")
+  .map((result) => `${result.fixture_id}: ${result.detail}`);
+const limitations = [
+  "single-actor separation-of-duties waiver (disposition: self-accepted)",
+  ...(qualifyingProfiles.size === 0 ? [`catalog ${manifest.catalog_version} is a starter slice and declares no complete qualifying profile`] : []),
+  ...(unevaluatedDetails.length ? [`unevaluated expectations — ${unevaluatedDetails.join("; ")}`] : []),
+];
 
 const claim = {
   claim_id: `claim-${new Date().toISOString().slice(0, 10)}-${adapter.implementation.name}`,
   implementation: adapter.implementation,
-  standard: { gkos_release: manifest.gkos_release, technical_spec: "OKF+ 2.3 (draft)", technical_spec_status: "draft", last_ratified_baseline: "OKF+ 2.2" },
-  profiles_claimed: [...new Set(manifest.fixtures.map(f => f.profile))],
+  standard: { gkos_release: manifest.gkos_release, technical_spec: "GKX 2.3 (draft)", technical_spec_status: "draft", last_ratified_baseline: "GKX 2.2 (formerly OKF+ 2.2)" },
+  profiles_claimed: profilesClaimed,
   attestation: { mode: "self-attested", attested_by: attestedBy },
-  fixtures: { catalog_version: manifest.catalog_version, executed: results.length, passed, failed, skipped, results },
-  limitations: ["single-actor separation-of-duties waiver (disposition: self-accepted)", "catalog 0.1.0 covers GCP-1/GCP-3 classes only; see fixtures/README.md"],
+  fixtures: { catalog_version: manifest.catalog_version, executed: results.length, fully_evaluated: results.length - skipped - unevaluated, passed, failed, skipped, unevaluated, results },
+  limitations,
   exceptions: results.filter(r => r.outcome === "known-divergence").map(r => `${r.fixture_id}: ${r.divergence_ref} (see fixtures/DIVERGENCES.md)`),
   generated_at: new Date().toISOString().replace(/(\.\d{3})\d*Z$/, "$1Z"),
 };
 const vClaim = ajv.getSchema("conformance-manifest.schema.json");
 if (!vClaim(claim)) { console.error("Generated claim does not satisfy conformance-manifest.schema.json:", vClaim.errors); process.exit(3); }
 writeFileSync(outPath, JSON.stringify(claim, null, 2));
-console.log(`\nclaim written: ${outPath}  (passed=${passed} failed=${failed} known-divergences=${divergent})`);
-process.exit(failed > 0 ? 1 : 0);
+console.log(`\nclaim written: ${outPath}  (passed=${passed} failed=${failed} known-divergences=${divergent} unevaluated=${unevaluated})`);
+process.exit(failed > 0 || unevaluated > 0 ? 1 : 0);

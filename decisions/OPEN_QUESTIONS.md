@@ -15,3 +15,14 @@ These questions remain unresolved after R1–R9 and do not override recorded dev
 11. What fixture set is required for each GCP profile?
 12. What qualifies as an independent implementation?
 13. Which standards development organization, if any, should be approached after the v1.0 gates are met?
+14. Which clause-stable requirement-ID namespace and retirement rules will bind
+    fixtures independently of implementation diagnostic codes?
+15. Which graph behaviors beyond the existing v0.76 Layer-3 contract become
+    normative: inverse normalization, cycle preservation, HEAD derivation,
+    unresolved-edge rejection, and the multiple-successor tiebreak?
+16. Is the GKX 2.2 human-authoring UID contract lowercase UUIDv4 only, while
+    broader GKX 2.3/internal identities permit UUIDv7 or namespaced IDs; or does
+    one version-neutral UID contract govern both profiles? What migration and
+    reader-compatibility rule follows?
+17. Which public product, if any, may use the abbreviation `KRS` after the
+    complete product/repository inventory and upstream naming gates are resolved?

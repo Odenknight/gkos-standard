@@ -1,11 +1,13 @@
 # GKOS schemas
 
 v0.76 introduced the first machine-readable schema slice (JSON Schema
-2020-12). Schemas preserve the master standard's authority, provenance,
-temporal, sensitivity, and identity invariants; enumerations (twelve-state
-epistemic vocabulary, seven-level sensitivity ladder, four-way origin
-separation, typed relation set) are frozen per the v0.76 master standard and
-grounded in the reference implementation.
+2020-12). The twelve-state epistemic vocabulary is frozen directly in the
+master standard. The seven-level sensitivity ladder, four-way origin
+separation, typed relation set, and serialization details are
+**normative-candidate** artifacts adopted under R10 with disclosed
+reference-implementation evidence; they are not all independently enumerated by
+v0.76 normative prose. They require clause traceability and complete fixtures
+before they can support a qualifying profile claim.
 
 | Schema | Layer | Status |
 |---|---|---|
@@ -27,4 +29,7 @@ model, and the upward-receipt attestation chain. "Normative-candidate" means
 published for review under the development-phase governance in the repository
 README; promotion to normative requires a recorded development decision.
 Schema proposals must preserve the master standard's authority, provenance,
-temporal, sensitivity, and identity invariants.
+temporal, sensitivity, and identity invariants. The current shared UID grammar
+does not settle profile-specific UUID version requirements; that question is
+preserved in `../decisions/OPEN_QUESTIONS.md` and must not be inferred from the
+schema's permissive reader grammar.

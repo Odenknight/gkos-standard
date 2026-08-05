@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/sko-frontmatter-agent-ready-2.3.schema.json",
-  "title": "OKF+ Agent-Ready Notes (flat 2.3) — frontmatter",
-  "description": "The human-visible canonical serialization of an OKF+ 2.3 Structured Knowledge Object: scalars and flat string lists only, no nested mappings. Governance machinery lives in the projection and .okf/ sidecars, never in the note. Required scalars per reference implementation diagnostic OKF-SCHEMA-004: okf_version, uid, title, type, created_at, plus an epistemic state.",
+  "title": "GKX Agent-Ready Notes (flat 2.3) — frontmatter",
+  "description": "Normative-candidate human-visible serialization of a GKX 2.3 Structured Knowledge Object: scalars and flat string lists only, no nested mappings. Governance machinery lives in the projection and .okf/ sidecars, never in the note. The R10 provisional required set is okf_version, uid, title, type, created_at, and epistemic_state; it does not become independently qualifying until clause-traceable requirements and fixtures are adopted.",
   "type": "object",
   "required": ["okf_version", "uid", "title", "type", "created_at", "epistemic_state"],
   "properties": {

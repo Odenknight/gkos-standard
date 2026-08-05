@@ -17,14 +17,21 @@ adapter-neutral runner that executes `../fixtures/fixtures.manifest.json`
 against any implementation exposing the small adapter contract documented in
 `runner/run.mjs`, and emits a schema-valid conformance claim. An informative
 gkos-engine adapter is included. The executable suite remains incomplete:
-catalog 0.1.0 covers GCP-1/GCP-3 classes only, and known standard/implementation
-divergences are recorded in `../fixtures/DIVERGENCES.md` rather than hidden. Graph-level expectations (`graph_expect`) declared in the catalog are not yet evaluated by the starter runner; they bind future runner work.
+catalog 0.1.1 covers GCP-1/GCP-3 classes only, and known standard/implementation
+divergences are recorded in `../fixtures/DIVERGENCES.md` rather than hidden.
+Graph-level expectations (`graph_expect`) declared in the catalog are not yet
+evaluated by the starter runner. The runner now reports those fixtures as
+`UNEVALUATED`, emits no profile claim, and exits non-zero; it cannot silently
+turn partial execution into GCP-3 evidence.
 
 ## Current qualification boundary
 
-- Fixture catalog 0.1.0 is not a complete qualifying profile.
+- Fixture catalog 0.1.1 declares no complete qualifying profile. A run therefore
+  emits an empty `profiles_claimed` array even when every executable slice passes.
 - Declared graph expectations must become executable before a GCP-3 result can support external qualification.
-- PASS, FAIL, PARTIAL, and UNEVALUATED are distinct outcomes; PARTIAL and UNEVALUATED are not profile passes.
+- PASS, FAIL, PARTIAL, and UNEVALUATED are distinct report states; PARTIAL and
+  UNEVALUATED are not profile passes. The starter runner currently emits
+  per-fixture PASS, FAIL, KNOWN-DIVERGENCE, SKIP, or UNEVALUATED.
 - No current implementation has satisfied the v1.0 second-independent-implementation gate.
 - Engine-Lite cannot satisfy that gate because using the pinned Engine's deterministic execution path is its compatibility contract.
 

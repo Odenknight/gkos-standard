@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/sko-frontmatter-notes-2.2.schema.json",
-  "title": "OKF+ Notes (2.2) — frontmatter",
+  "title": "GKX Notes (formerly OKF+ 2.2) — frontmatter",
   "description": "The complete human note profile: flat Properties surface covering identity, type, title, description, timestamp, epistemic state, sensitivity, tags, and lineage/relationship wikilinks. Terminal product for personal-vault use with no agent participation.",
   "type": "object",
   "required": ["okf_version", "uid", "title", "type", "timestamp"],

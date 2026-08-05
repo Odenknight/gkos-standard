@@ -204,7 +204,7 @@ and signed archival publication remain v1.0 work.
 | Testing an implementation | Start with [conformance/README.md](conformance/README.md) and [fixtures/README.md](fixtures/README.md) |
 | Comparing standards | Read the [provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
 | Proposing a change | Follow [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md) |
-| Reviewing current risk | Read the [critique assessment and remediation](docs/reviews/2026-08-04_CRITIQUE_ASSESSMENT_AND_REMEDIATION.md) and [roadmap](ROADMAP.md) |
+| Reviewing current risk | Read the [critique assessment and remediation](docs/reviews/2026-08-04_CRITIQUE_ASSESSMENT_AND_REMEDIATION.md), [Engine/standard drift assessment](docs/reviews/2026-08-04_ENGINE_GRAPH_DRIFT_ASSESSMENT.md), and [roadmap](ROADMAP.md) |
 
 ## Repository map
 
@@ -216,6 +216,7 @@ and signed archival publication remain v1.0 work.
 - [Conformance runner](conformance/README.md)
 - [Examples](examples/README.md)
 - [Implementation references](docs/implementation/README.md)
+- [Canonical naming and compatibility policy](docs/NAMING.md)
 - [Governance](GOVERNANCE.md)
 - [Roadmap](ROADMAP.md)
 - [Licensing](LICENSE.md)

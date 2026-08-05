@@ -266,7 +266,8 @@ read-only profile. A claim includes:
 - unevaluated requirements; and
 - assessment type: self-attested or independently verified.
 
-Current catalog 0.1.0 is incomplete. It covers an early GCP-1/GCP-3 slice, and
+Current catalog 0.1.1 is incomplete and declares no qualifying profile. It
+covers an early GCP-1/GCP-3 slice, and
 the starter runner does not evaluate declared graph expectations. Graph checks
 must become executable before a credible GCP-3 claim can support broader public
 adoption. Minimum required graph cases include:
@@ -280,6 +281,18 @@ adoption. Minimum required graph cases include:
 An output table should use PASS, FAIL, PARTIAL, and UNEVALUATED distinctly.
 PARTIAL is a disclosure state, not a profile claim. “GCP-3 except lineage” is
 not GCP-3 conformance.
+
+### Classification defaults and read ceilings
+
+An effective sensitivity default and a consumer read ceiling are different
+controls. The former classifies an unlabeled object during projection; the
+latter limits which already-classified objects a consumer may receive. They
+compose by applying both controls: an object projected as `secret` is excluded
+by an `internal` read ceiling. A consumer ceiling never reclassifies the object
+and never weakens the projection default. This explains how an Engine that
+ships with a `secret` unlabeled-object default can coherently serve an API whose
+ordinary read ceiling is `internal`, without treating either value as the
+other's replacement.
 
 ## 13. Independent implementation rule
 

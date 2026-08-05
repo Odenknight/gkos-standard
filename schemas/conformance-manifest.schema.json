@@ -23,17 +23,18 @@
       "required": ["gkos_release"],
       "properties": {
         "gkos_release": { "type": "string", "examples": ["GKOS-2026-07-20 v0.76"] },
-        "technical_spec": { "type": "string", "examples": ["OKF+ 2.3 (draft)"] },
+        "technical_spec": { "type": "string", "examples": ["GKX 2.3 (draft)"] },
         "technical_spec_status": { "type": "string", "enum": ["ratified", "draft"] },
-        "last_ratified_baseline": { "type": "string", "examples": ["OKF+ 2.2"] }
+        "last_ratified_baseline": { "type": "string", "examples": ["GKX 2.2 (formerly OKF+ 2.2)"] }
       },
       "if": { "properties": { "technical_spec_status": { "const": "draft" } } },
       "then": { "required": ["last_ratified_baseline"] },
       "additionalProperties": false
     },
     "profiles_claimed": {
+      "description": "Profiles for which the cited catalog declares complete qualifying coverage and every required expectation passed. An empty array means that the run produced evidence but no profile claim.",
       "type": "array",
-      "minItems": 1,
+      "uniqueItems": true,
       "items": { "type": "string", "enum": ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5", "GCP-6", "GCP-7", "Viewer-Projection-Profile"] }
     },
     "attestation": {
@@ -54,9 +55,11 @@
       "properties": {
         "catalog_version": { "type": "string" },
         "executed": { "type": "integer", "minimum": 0 },
+        "fully_evaluated": { "type": "integer", "minimum": 0 },
         "passed": { "type": "integer", "minimum": 0 },
         "failed": { "type": "integer", "minimum": 0 },
         "skipped": { "type": "integer", "minimum": 0 },
+        "unevaluated": { "type": "integer", "minimum": 0 },
         "results": {
           "type": "array",
           "items": {
@@ -64,7 +67,7 @@
             "required": ["fixture_id", "outcome"],
             "properties": {
               "fixture_id": { "type": "string" },
-              "outcome": { "type": "string", "enum": ["pass", "fail", "skip", "known-divergence"] },
+              "outcome": { "type": "string", "enum": ["pass", "fail", "skip", "known-divergence", "unevaluated"] },
               "divergence_ref": { "type": "string" },
               "detail": { "type": "string" }
             },

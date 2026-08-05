@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — proposed conformance-honesty remediation
+
+- Mark unexecuted pair and graph expectations `UNEVALUATED`, block profile
+  claims, disclose limitations, and return a non-qualifying exit status.
+- Declare fixture catalog 0.1.1 a non-qualifying starter slice and permit an
+  evidence manifest to carry an empty `profiles_claimed` array.
+- Add a runner regression test and CI job.
+- Publish the Engine/standard drift assessment, naming policy, and controlled
+  documentation/engineering alignment proposal.
+- Preserve unresolved requirement-ID, graph, UID-profile, and product-name
+  questions instead of deriving their answers from implementation behavior.
+
 ## GKOS-2026-07-20 v0.76
 
 Concept-refinement and documentation-clarification release. This is a developmental adoption under the v0.x governance model, not a consensus ratification or independent certification.

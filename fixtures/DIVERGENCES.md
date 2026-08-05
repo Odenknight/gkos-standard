@@ -1,10 +1,15 @@
-# Known divergences — fixture catalog 0.1.0 vs gkos-engine v1.0.5
+# Historical divergences — fixture catalog 0.1.0 vs gkos-engine v1.0.5
 
 Found by executing this catalog against the reference implementation on
 2026-07-22. Each is a fixture doing its job: the standard's expectation and the
 implementation's behavior disagree, and the disagreement is recorded instead of
 hidden. Disposition of each belongs to the engine repo (fix) or the standard
 (relax), via the normal decision path — not to this file.
+
+GKOS-Engine 1.2.0 now contains regression tests for all three cases. This file
+preserves the discovery baseline; it is not a claim that the same divergences
+remain present in current Engine code. Catalog 0.1.1 references these entries by
+identifier only, so the narrative question has one home.
 
 ## DIV-001 — Naive wall-clock timestamps pass projection silently
 
