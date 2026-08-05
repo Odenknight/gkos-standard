@@ -29,7 +29,10 @@ model, and the upward-receipt attestation chain. "Normative-candidate" means
 published for review under the development-phase governance in the repository
 README; promotion to normative requires a recorded development decision.
 Schema proposals must preserve the master standard's authority, provenance,
-temporal, sensitivity, and identity invariants. The current shared UID grammar
-does not settle profile-specific UUID version requirements; that question is
-preserved in `../decisions/OPEN_QUESTIONS.md` and must not be inferred from the
-schema's permissive reader grammar.
+temporal, sensitivity, and identity invariants. R13 separates the two identity
+contracts: authored GKX note `uid` fields accept lowercase UUIDv7 for new notes
+and valid lowercase UUIDv4 for permanent legacy notes; relationship fields use
+the broader `relationshipTarget` grammar (UUID or policy-permitted namespaced
+target, or a whole-value quoted wikilink). This preserves historical and
+cross-system references without permitting a new authored note to take a
+namespaced or non-lowercase UUID identity.

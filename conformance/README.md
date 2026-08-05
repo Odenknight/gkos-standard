@@ -24,6 +24,13 @@ evaluated by the starter runner. The runner now reports those fixtures as
 `UNEVALUATED`, emits no profile claim, and exits non-zero; it cannot silently
 turn partial execution into GCP-3 evidence.
 
+The accepted v0.77 development target adds permanent requirement allocations in
+[`../requirements/REGISTRY.md`](../requirements/REGISTRY.md). Fixtures cite
+those GKOS IDs, while implementation observations remain in non-normative
+adapter maps such as
+[`adapters/gkos-engine.requirements.json`](adapters/gkos-engine.requirements.json).
+The target is explicitly unpublished and does not alter the v0.76 package.
+
 ## Current qualification boundary
 
 - Fixture catalog 0.1.1 declares no complete qualifying profile. A run therefore

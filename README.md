@@ -6,6 +6,8 @@
 > agent actions distinguishable and auditable.
 
 - **Current public release:** GKOS-2026-07-20 v0.76
+- **Next material:** GKOS-2026-08-05 v0.77 is prepared but **UNPUBLISHED**;
+  it is not a current release, tag, or ratification.
 - **Maturity:** public pre-standard; testing and concept refinement
 - **Technical exchange model:** GKX — Governed Knowledge Exchange
 - **Canonical repository:** `Odenknight/gkos-standard`

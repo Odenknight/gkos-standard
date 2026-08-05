@@ -20,6 +20,19 @@
   require a separately versioned migration before machine-facing removals.
 - **Record:** [R11_GKX_Naming_Transition_Development_Decision_Record.md](R11_GKX_Naming_Transition_Development_Decision_Record.md)
 
+## R13 — Conformance honesty and alignment
+
+- **Date:** 2026-08-05
+- **Status:** Accepted development decision; v0.x non-consensus authority
+- **Decision:** Require honest non-qualifying runner output; reserve
+  `GKOS-<AREA>-<NNN>` for clause-stable requirements; keep implementation
+  diagnostics behind adapter mappings; adopt controlled clause derivation;
+  retain GKX naming compatibility; and make R13-101 the sole identity-and-
+  lineage decision, with permanent lowercase UUIDv7/legacy lowercase UUIDv4,
+  branch-preservation, earliest-valid-successor `invalid_at`, and
+  no-authoritative-tiebreak allocations in `requirements/REGISTRY.md`.
+- **Record:** [R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md](R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md)
+
 ## Status of v0.x records
 
 R1 through R12 are development decisions from the pre-v1.0 testing and refinement phase. They record the evolving design and the Founder and Initial Editor's dispositions. They are not formal consensus ratifications, independent certifications, accredited standards decisions, or regulator approvals.

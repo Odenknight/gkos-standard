@@ -4,10 +4,13 @@ Executable starting with catalog 0.1.0; current catalog 0.1.1 contains eight
 fixtures across positive,
 negative, boundary, contradiction, lineage, and promotion-gate classes for
 GCP-1 and GCP-3, with schema expectations bound to `../schemas/` and projection
-expectations currently bound to implementation diagnostic codes. That binding
-is a known implementation-neutrality defect and cannot support an external
-qualification claim until GKOS-owned requirement IDs and adapter mappings are
-adopted. `fixtures.manifest.json` is the
+expectations observed through implementation diagnostic codes. Each fixture now
+cites permanent GKOS requirement IDs from `../requirements/REGISTRY.md`; the
+separate non-normative Engine map is
+`../conformance/adapters/gkos-engine.requirements.json`. Those
+observations do not make `OKF-*` diagnostics normative. Catalog 0.1.1 remains
+non-qualifying because its pair/graph expectations are not fully executable and
+the remaining graph topics have not been allocated. `fixtures.manifest.json` is the
 machine-readable catalog; `expected/` holds engine-generated golden outputs;
 `DIVERGENCES.md` records where the reference implementation and the standard's
 expectation disagreed at the recorded Engine v1.0.5 baseline (three historical

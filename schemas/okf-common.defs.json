@@ -4,13 +4,22 @@
   "title": "GKX shared definitions (retained okf compatibility identifier)",
   "description": "Normative-candidate shared vocabulary adopted under R10. The twelve-state epistemic vocabulary is frozen in GKOS-2026-07-20 v0.76; other enumerations and serialization details carry disclosed reference-implementation evidence and require clause traceability before qualifying use.",
   "$defs": {
-    "uid": {
-      "description": "Stable identity reader grammar: UUID version 1-8 or policy-permitted namespaced id. Profile-specific UUID generation and migration rules remain unresolved. Filenames and paths are not identity.",
+    "authoredNoteUid": {
+      "description": "Authored GKX note identity. Writers MUST create lowercase UUIDv7. Existing lowercase UUIDv4 note identities are permanent legacy identities and remain valid. Any migration is branch-preserving lineage, never identity replacement.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[47][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "targetIdentifier": {
+      "description": "Relationship target reader grammar: UUID version 1-8 or policy-permitted namespaced identifier. Targets remain broader than authored note identities for historical and cross-system references. Filenames and paths are not identity.",
       "type": "string",
       "anyOf": [
         { "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" },
         { "pattern": "^[a-z][a-z0-9_.-]*:[a-z0-9][a-z0-9_.:/-]{2,}$" }
       ]
+    },
+    "uid": {
+      "description": "Backward-compatible generic identity alias. New authored GKX notes MUST use authoredNoteUid; relationship targets MUST use targetIdentifier.",
+      "$ref": "#/$defs/targetIdentifier"
     },
     "sha256": {
       "type": "string",
@@ -45,13 +54,17 @@
       "type": "string",
       "enum": ["depends_on", "supports", "derives_from", "derived_from", "contradicts", "contradicted_by", "refines", "implements", "blocks", "documents", "cites", "quotes", "interprets", "tests", "replicates", "fails_to_replicate", "extends", "narrows", "generalizes", "governed_by", "reviewed_by", "approved_by", "supersedes", "superseded_by", "part_of", "has_part", "related_to"]
     },
-    "wikilinkOrUid": {
-      "description": "Relation/lineage target: uid (rename-proof standalone convention) or whole-value quoted wikilink (Obsidian convention).",
+    "relationshipTarget": {
+      "description": "Relation/lineage target: target identifier (rename-proof standalone convention) or whole-value quoted wikilink (Obsidian convention).",
       "type": "string",
       "anyOf": [
-        { "$ref": "#/$defs/uid" },
+        { "$ref": "#/$defs/targetIdentifier" },
         { "pattern": "^\\[\\[[^\\[\\]]+\\]\\]$" }
       ]
+    },
+    "wikilinkOrUid": {
+      "description": "Backward-compatible alias for relationshipTarget.",
+      "$ref": "#/$defs/relationshipTarget"
     },
     "diagnostic": {
       "type": "object",

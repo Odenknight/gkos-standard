@@ -1,6 +1,17 @@
 # Changelog
 
-## Unreleased — proposed conformance-honesty remediation
+## Unpublished — GKOS-2026-08-05 v0.77 development material
+
+**Not a public release, tag, consensus ratification, or conformance claim.**
+
+- Accept R13: honest `UNEVALUATED` reporting, non-qualifying catalog 0.1.1,
+  clause-stable `GKOS-<AREA>-<NNN>` requirement IDs, controlled
+  implementation comparison, and GKX compatibility terminology.
+- Adopt lowercase UUIDv7 for newly created identities while permanently
+  retaining valid lowercase UUIDv4 identities and branch-preserving lineage.
+- Preserve the published v0.76 release package without amendment.
+
+## Unreleased — conformance-honesty remediation (implemented evidence)
 
 - Mark unexecuted pair and graph expectations `UNEVALUATED`, block profile
   claims, disclose limitations, and return a non-qualifying exit status.

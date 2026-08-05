@@ -1,12 +1,16 @@
-# R13 — Conformance honesty and documentation alignment proposal
+# R13 — Conformance honesty and documentation alignment proposal (superseded)
 
-**Status:** Proposed development decision; not adopted  
+**Status:** Superseded by accepted development decision R13 on 2026-08-05
 **Date:** 2026-08-04  
-**Authorizing editor:** Pending Founder and Initial Editor disposition  
+**Authorizing editor:** Founder and Initial Editor
 **Review basis:** Source inspection, executed GKOS-Engine 1.2.0 test suite, and
 the independent drift assessment linked below
 
-## Problem
+This proposal is retained as the pre-decision record. Its accepted dispositions,
+including the UUIDv7 forward policy and requirement-ID format, are recorded in
+[R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md](R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md).
+
+## Original problem statement
 
 The starter runner can publish profile claims for labels present in an
 incomplete catalog while ignoring declared pair and graph expectations. The
@@ -14,7 +18,7 @@ catalog also binds expectations directly to reference-implementation diagnostic
 codes. Separately, graph behavior is more operationally complete in the Engine
 than in clause-stable normative text.
 
-## Proposed dispositions
+## Original proposed dispositions (superseded)
 
 - **R13-097 — Runner honesty (normative-compatible correction):** a fixture with
   an unexecuted required expectation is `UNEVALUATED`, not PASS; the run exits

@@ -3,11 +3,22 @@
 <!-- markdownlint-disable MD013 -->
 
 **Applies to:** GKOS-2026-07-20 v0.76 plus adopted post-release development
-decisions through 2026-08-03  
+decisions through 2026-08-05
 **Audience:** implementers, platform architects, security engineers, reviewers,
 standards evaluators, and AgenticOS designers  
 **Status:** informative orientation; the normative standard and adopted decision
 records control
+
+## R13 development-decision boundary
+
+R13 makes catalog 0.1.1 explicitly non-qualifying, requires `UNEVALUATED` and
+an empty profile claim for incomplete required expectations, and reserves
+`GKOS-<AREA>-<NNN>` for clause-stable requirements. Fixtures must eventually
+cite those requirements while adapters map implementation diagnostics and
+observations. New identities use lowercase UUIDv7; existing lowercase UUIDv4
+identities remain permanent, and any migration preserves every lineage branch.
+These are adopted v0.x development decisions, not an independently verified
+conformance result or a published v0.77 release.
 
 ## 1. System boundary
 

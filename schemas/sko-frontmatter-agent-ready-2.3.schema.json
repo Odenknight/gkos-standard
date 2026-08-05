@@ -7,7 +7,7 @@
   "required": ["okf_version", "uid", "title", "type", "created_at", "epistemic_state"],
   "properties": {
     "okf_version": { "const": "2.3" },
-    "uid": { "$ref": "okf-common.defs.json#/$defs/uid" },
+    "uid": { "$ref": "okf-common.defs.json#/$defs/authoredNoteUid" },
     "title": { "type": "string", "minLength": 1 },
     "type": { "type": "string", "minLength": 1 },
     "description": { "type": "string" },
@@ -25,21 +25,21 @@
       "type": "array",
       "items": { "type": "string" }
     },
-    "supersedes": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "superseded_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "forked_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "forked_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "depends_on": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "supports": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "contradicts": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "derives_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "related_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "part_of": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } },
-    "governed_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" } }
+    "supersedes": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "superseded_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "forked_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "forked_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "depends_on": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "supports": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "contradicts": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "derives_from": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "related_to": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "part_of": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } },
+    "governed_by": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" } }
   },
   "patternProperties": {
     "^(refines|implements|blocks|documents|cites|quotes|interprets|tests|replicates|fails_to_replicate|extends|narrows|generalizes|reviewed_by|approved_by|has_part|derived_from)$": {
-      "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/wikilinkOrUid" }
+      "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/relationshipTarget" }
     }
   },
   "additionalProperties": false,
