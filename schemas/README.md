@@ -11,9 +11,8 @@ before they can support a qualifying profile claim.
 
 | Schema | Layer | Status |
 |---|---|---|
-| `okf-common.defs.json` | shared | normative-candidate |
-| `sko-frontmatter-notes-2.2.schema.json` | L2 | normative-candidate (ratified 2.2 baseline) |
-| `sko-frontmatter-agent-ready-2.3.schema.json` | L2 | normative-candidate (draft 2.3 profile; disclosure per §4.1) |
+| `gkx-common.defs.json` | shared | normative-candidate |
+| `gkx-frontmatter-2.0.schema.json` | L2 | normative-candidate (GKX 2.0 breaking profile) |
 | `assessment.schema.json` | L4 | normative-candidate |
 | `diagnostics-sidecar.schema.json` | L4 | normative-candidate |
 | `proposal-envelope.schema.json` | L5 | normative-candidate |

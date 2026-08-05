@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 6f7a8b9c-0d1e-4f2a-8b3c-4d5e6f7a8b9c
 title: GCP3-L01 Superseded original
 type: semantic

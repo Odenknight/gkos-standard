@@ -10,7 +10,7 @@ if (!dist) throw new Error("Set GKOS_ENGINE_DIST to gkos-engine's dist/kosmos-co
 const core = await import(dist);
 export const implementation = { name: "gkos-engine", version: core.ENGINE_VERSION, repository: "https://github.com/Odenknight/GKOS-Engine" };
 export function project(content, path) {
-  const p = core.buildOkf23Projection(content, path, "fixture:" + path, null);
+  const p = core.buildGkx23Projection(content, path, "fixture:" + path, null);
   return {
     diagnostics: (p?.diagnostics ?? []).map(d => ({ code: d.code, severity: d.severity, field: d.field ?? null })),
     effective: { sensitivity: p?.effective?.sensitivity ?? null, epistemicState: p?.effective?.epistemicState ?? null },

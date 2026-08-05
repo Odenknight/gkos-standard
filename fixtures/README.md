@@ -8,7 +8,7 @@ expectations observed through implementation diagnostic codes. Each fixture now
 cites permanent GKOS requirement IDs from `../requirements/REGISTRY.md`; the
 separate non-normative Engine map is
 `../conformance/adapters/gkos-engine.requirements.json`. Those
-observations do not make `OKF-*` diagnostics normative. Catalog 0.1.1 remains
+observations do not make `GKX-*` diagnostics normative. Catalog 0.1.1 remains
 non-qualifying because its pair/graph expectations are not fully executable and
 the remaining graph topics have not been allocated. `fixtures.manifest.json` is the
 machine-readable catalog; `expected/` holds engine-generated golden outputs;

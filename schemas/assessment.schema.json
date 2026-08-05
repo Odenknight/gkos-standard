@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/assessment.schema.json",
   "title": "Deterministic assessment (L4 control receipt)",
-  "description": "Reproducible documentation-quality assessment: same bytes + engine version + policy hash => same output. Interpretation is fixed: documentation-and-support quality, not truth. Sidecar location: .okf/assessments/<uid>.assessment.yaml (serialized YAML/JSON of this shape).",
+  "description": "Reproducible documentation-quality assessment: same bytes + engine version + policy hash => same output. Interpretation is fixed: documentation-and-support quality, not truth. Sidecar location: .gkx/assessments/<uid>.assessment.yaml (serialized YAML/JSON of this shape).",
   "type": "object",
   "required": ["assessmentId", "targetUid", "profile", "policy", "assessor", "inputHash", "calculatedAt", "scores", "interpretation"],
   "properties": {
     "assessmentId": { "type": "string", "minLength": 1 },
-    "targetUid": { "oneOf": [ { "$ref": "okf-common.defs.json#/$defs/uid" }, { "type": "null" } ] },
-    "profile": { "const": "okf-plus-2.3-validating-projection" },
+    "targetUid": { "oneOf": [ { "$ref": "gkx-common.defs.json#/$defs/authoredNoteUid" }, { "type": "null" } ] },
+    "profile": { "const": "gkx-2.0-validating-projection" },
     "policy": {
       "type": "object",
       "required": ["id", "version", "hash", "weights", "missingValueBehavior"],
@@ -25,13 +25,13 @@
       "type": "object",
       "required": ["id", "engineVersion"],
       "properties": {
-        "id": { "$ref": "okf-common.defs.json#/$defs/actorIdentity" },
+        "id": { "$ref": "gkx-common.defs.json#/$defs/actorIdentity" },
         "engineVersion": { "type": "string" }
       },
       "additionalProperties": false
     },
-    "inputHash": { "$ref": "okf-common.defs.json#/$defs/contentHash" },
-    "calculatedAt": { "$ref": "okf-common.defs.json#/$defs/timestamp" },
+    "inputHash": { "$ref": "gkx-common.defs.json#/$defs/contentHash" },
+    "calculatedAt": { "$ref": "gkx-common.defs.json#/$defs/timestamp" },
     "scores": {
       "type": "object",
       "required": ["structural_completeness", "provenance_quality", "evidence_support", "relationship_integrity", "temporal_freshness", "contradiction_status", "review_readiness", "overall"],
@@ -54,7 +54,7 @@
       "properties": { "derived": { "type": "array", "items": { "type": "string" } } },
       "additionalProperties": false
     },
-    "diagnostics": { "type": "array", "items": { "$ref": "okf-common.defs.json#/$defs/diagnostic" } },
+    "diagnostics": { "type": "array", "items": { "$ref": "gkx-common.defs.json#/$defs/diagnostic" } },
     "interpretation": { "const": "documentation-and-support-quality-not-truth" }
   },
   "additionalProperties": false

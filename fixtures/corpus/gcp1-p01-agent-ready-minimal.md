@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 3f2a1b4c-5d6e-4f70-8a9b-0c1d2e3f4a5b
 title: GCP1-P01 Agent-Ready minimal
 type: semantic

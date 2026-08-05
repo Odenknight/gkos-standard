@@ -5,8 +5,8 @@
 > A public pre-standard for keeping evidence, claims, authority, context, and
 > agent actions distinguishable and auditable.
 
-- **Current release:** GKOS-2026-08-05 v0.77 — authorized developmental
-  publication under signed tag `v0.77`
+- **Current release:** GKOS-2026-08-05 v0.78 — authorized developmental
+  publication under signed tag `v0.78`
 - **Maturity:** public pre-standard; testing and concept refinement
 - **Technical exchange model:** GKX — Governed Knowledge Exchange
 - **Canonical repository:** `Odenknight/gkos-standard`
@@ -82,32 +82,19 @@ rewrite the history that produced it.
 5. **Consequential use leaves a receipt.** The action remains linked to the
    exact context and authority under which it occurred.
 
-## Names and lineage: GKOS, GKX, OKF+, and Google OKF
+## Names and technical boundary
 
 These names refer to different things.
 
 | Name | Meaning | Current status |
 | --- | --- | --- |
 | **GKOS** | The governance standard: responsibilities, authority, lifecycle, controls, and conformance | Current |
-| **GKX** | The technical exchange model: governed objects, schemas, identities, relationships, diagnostics, receipts, and protocols | Current |
-| **OKF+** | The former public name of GKX and the source of retained 2.2/2.3 compatibility identifiers | Historical/compatibility name |
-| **[Google Cloud OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)** | Google's separate Open Knowledge Format | Optional external interoperability target, currently limited to a declared 0.2 subset |
+| **GKX** | The technical exchange model: governed objects, schemas, identities, relationships, diagnostics, receipts, and protocols | GKX 2.0 current machine namespace |
 
-[R11](decisions/R11_GKX_Naming_Transition_Development_Decision_Record.md)
-renamed the project's technical model from **OKF+** to **GKX** without silently
-breaking documents or integrations. Historical releases and machine-facing
-identifiers such as `okf_version`, `.okf/`, `okf*` commands, profile URIs, and
-diagnostic codes remain until a versioned migration supplies replacements and a
-deprecation window.
-
-Google Cloud OKF is a [separate specification](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md).
-GKX's later interoperability work
-was informed by and incorporates mappings for Google Cloud OKF 0.2. The
-dependency direction is a bounded projection/import profile: Google OKF is not
-the normative foundation or schema authority for GKX, and support for 0.2 does
-not imply support for later Google releases. GKOS and GKX are not affiliated
-with, sponsored by, or endorsed by Google. See
-[Third-Party Notices](THIRD-PARTY-NOTICES.md).
+[R14](decisions/R14_GKX_2_0_Breaking_Machine_Namespace_Development_Decision_Record.md)
+adopts the breaking GKX 2.0 machine namespace: `gkx_version`, `.gkx/`,
+`GKX-*`, and `gkx`. Prior release directories remain historical evidence and
+are not inputs to current GKX 2.0 conformance claims.
 
 ## The seven-layer model
 
@@ -178,7 +165,7 @@ See [Conformance](conformance/README.md), [Fixtures](fixtures/README.md), and
 
 ## Current maturity and claim boundary
 
-GKOS v0.77 is suitable for public review, research, prototypes, controlled
+GKOS v0.78 is suitable for public review, research, prototypes, controlled
 pilots, fixture development, and independent implementation work.
 
 It is **not**:
@@ -217,7 +204,7 @@ and signed archival publication remain v1.0 work.
 - [Conformance runner](conformance/README.md)
 - [Examples](examples/README.md)
 - [Implementation references](docs/implementation/README.md)
-- [Canonical naming and compatibility policy](docs/NAMING.md)
+- [GKX 2.0 breaking decision](decisions/R14_GKX_2_0_Breaking_Machine_Namespace_Development_Decision_Record.md)
 - [Governance](GOVERNANCE.md)
 - [Roadmap](ROADMAP.md)
 - [Licensing](LICENSE.md)
@@ -233,7 +220,7 @@ separate. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
 Suggested citation:
 
 > Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS),
-> GKOS-2026-08-05 v0.77.* CC BY 4.0. Changes, if any, should be identified by
+> GKOS-2026-08-05 v0.78.* CC BY 4.0. Changes, if any, should be identified by
 > the modifier.
 
 The project also acknowledges Andrej Karpathy's LLM Wiki as inspiration for

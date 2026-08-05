@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 8b9c0d1e-2f3a-4b4c-8d5e-6f7a8b9c0d1e
 title: GCP3-L02 Successor
 type: semantic
@@ -12,4 +12,4 @@ supersedes:
 # GCP3-L02
 
 Lineage fixture: successor via uid-valued supersedes. `accepted` without a Decision
-Record intentionally draws OKF-EPISTEMIC-004 (GCP-3 promotion gate).
+Record intentionally draws GKX-EPISTEMIC-004 (GCP-3 promotion gate).

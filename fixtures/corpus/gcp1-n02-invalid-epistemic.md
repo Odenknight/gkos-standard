@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 7c8d9e0f-1a2b-4c3d-8e4f-5a6b7c8d9e0f
 title: GCP1-N02 Invalid epistemic state
 type: semantic

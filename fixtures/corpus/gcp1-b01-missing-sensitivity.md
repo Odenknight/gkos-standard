@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 1a2b3c4d-5e6f-4a7b-8c8d-9e0f1a2b3c4d
 title: GCP1-B01 Missing sensitivity fails closed
 type: semantic

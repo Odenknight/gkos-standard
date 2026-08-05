@@ -10,6 +10,9 @@ Shaun “Oden” Marshall serves as Founder and Initial Editor during the v0.x c
 
 A v0.x change may be adopted by the Founder and Initial Editor after documented technical review, compatibility analysis, and repository validation. Such an adoption is a **development decision**, not a consensus ratification, independent certification, accredited standards decision, or proof that the future v1.0 governance body has approved it.
 
+R14 is an owner-authorized breaking v0.x decision for GKX 2.0. It is explicitly
+non-consensus and does not retroactively alter immutable release artifacts.
+
 The editor MUST disclose:
 
 - the evidence and review considered;

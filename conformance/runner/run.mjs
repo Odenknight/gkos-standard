@@ -130,7 +130,7 @@ const limitations = [
 const claim = {
   claim_id: `claim-${new Date().toISOString().slice(0, 10)}-${adapter.implementation.name}`,
   implementation: adapter.implementation,
-  standard: { gkos_release: manifest.gkos_release, technical_spec: "GKX 2.3 (draft)", technical_spec_status: "draft", last_ratified_baseline: "GKX 2.2 (formerly OKF+ 2.2)" },
+  standard: { gkos_release: manifest.gkos_release, technical_spec: "GKX 2.0", technical_spec_status: "developmental", last_ratified_baseline: "GKX 2.0" },
   profiles_claimed: profilesClaimed,
   attestation: { mode: "self-attested", attested_by: attestedBy },
   fixtures: { catalog_version: manifest.catalog_version, executed: results.length, fully_evaluated: results.length - skipped - unevaluated, passed, failed, skipped, unevaluated, results },

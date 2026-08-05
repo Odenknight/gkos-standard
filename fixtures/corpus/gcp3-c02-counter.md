@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 4d5e6f7a-8b9c-4d0e-8f1a-2b3c4d5e6f7a
 title: GCP3-C02 Counter-claim
 type: semantic

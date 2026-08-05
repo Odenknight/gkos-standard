@@ -35,14 +35,14 @@
     {
       "requirement_id": "GKOS-CONFORMANCE-003",
       "observation_kind": "adapter boundary",
-      "observations": ["OKF-SCHEMA-004", "OKF-EPISTEMIC-002", "OKF-TEMPORAL-*", "OKF-SENSITIVITY-001", "OKF-RELATIONSHIP-001", "OKF-LINEAGE-003", "OKF-EPISTEMIC-004"],
+      "observations": ["GKX-SCHEMA-004", "GKX-EPISTEMIC-002", "GKX-TEMPORAL-*", "GKX-SENSITIVITY-001", "GKX-RELATIONSHIP-001", "GKX-LINEAGE-003", "GKX-EPISTEMIC-004"],
       "evidence": ["fixtures/fixtures.manifest.json"],
       "coverage": "partial observation inventory; codes are not requirements"
     },
     {
       "requirement_id": "GKOS-IDENTITY-001",
       "observation_kind": "diagnostic observation",
-      "observations": ["OKF-IDENTITY-001"],
+      "observations": ["GKX-IDENTITY-001"],
       "evidence": ["docs/reconciliations/GKOS-ENGINE-TO-STANDARD-RECONCILIATION-v0.2.md"],
       "coverage": "informative implementation observation only"
     },
@@ -50,7 +50,7 @@
       "requirement_id": "GKOS-IDENTITY-002",
       "observation_kind": "reader compatibility",
       "observations": ["legacy lowercase UUIDv4 accepted by authored-note schemas"],
-      "evidence": ["schemas/okf-common.defs.json", "fixtures/fixtures.manifest.json"],
+      "evidence": ["schemas/gkx-common.defs.json", "fixtures/fixtures.manifest.json"],
       "coverage": "standard schema evidence; no required Engine diagnostic"
     },
     {
@@ -84,7 +84,7 @@
     {
       "requirement_id": "GKOS-LINEAGE-003",
       "observation_kind": "diagnostic observation",
-      "observations": ["OKF-LINEAGE-003", "no successor tiebreak treated as authority"],
+      "observations": ["GKX-LINEAGE-003", "no successor tiebreak treated as authority"],
       "evidence": ["fixtures/fixtures.manifest.json", "docs/reconciliations/GKOS-ENGINE-TO-STANDARD-RECONCILIATION-v0.2.md"],
       "coverage": "fixture expectation remains UNEVALUATED"
     }

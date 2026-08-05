@@ -1,5 +1,5 @@
 ---
-okf_version: "2.3"
+gkx_version: "2.0"
 uid: 9e0f1a2b-3c4d-4e5f-8a6b-7c8d9e0f1a2b
 title: GCP1-N03 Naive timestamp
 type: semantic

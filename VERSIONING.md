@@ -14,10 +14,10 @@ during the v0.x development period.
 
 ## The model: one train, four cars
 
-There is exactly one version anchor for OKF semantics: **GKOS-Engine**.
+There is exactly one version anchor for GKX 2.0 semantics: **GKOS-Engine**.
 Everything else is a car on that train — it either adopts the engine's
 version directly, or tracks the engine's version and derives its own from
-it. No other repository is permitted to define OKF-observable semantics
+it. No other repository is permitted to define GKX-observable semantics
 independently of the engine.
 
 ## SemVer, sharpened
