@@ -1,8 +1,10 @@
 # Changelog
 
-## Unpublished — GKOS-2026-08-05 v0.77 development material
+## GKOS-2026-08-05 v0.77
 
-**Not a public release, tag, consensus ratification, or conformance claim.**
+**Authorized developmental publication; non-consensus.** The intended tag is
+`v0.77`; this local worktree does not create that tag, push it, or create a
+hosting-provider release object.
 
 - Accept R13: honest `UNEVALUATED` reporting, non-qualifying catalog 0.1.1,
   clause-stable `GKOS-<AREA>-<NNN>` requirement IDs, controlled

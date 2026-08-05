@@ -29,7 +29,8 @@ The accepted v0.77 development target adds permanent requirement allocations in
 those GKOS IDs, while implementation observations remain in non-normative
 adapter maps such as
 [`adapters/gkos-engine.requirements.json`](adapters/gkos-engine.requirements.json).
-The target is explicitly unpublished and does not alter the v0.76 package.
+The target is authorized for developmental publication, remains non-consensus,
+and does not alter the v0.76 package.
 
 ## Current qualification boundary
 

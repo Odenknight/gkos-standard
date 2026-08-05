@@ -5,9 +5,8 @@
 > A public pre-standard for keeping evidence, claims, authority, context, and
 > agent actions distinguishable and auditable.
 
-- **Current public release:** GKOS-2026-07-20 v0.76
-- **Next material:** GKOS-2026-08-05 v0.77 is prepared but **UNPUBLISHED**;
-  it is not a current release, tag, or ratification.
+- **Current release:** GKOS-2026-08-05 v0.77 — authorized developmental
+  publication under signed tag `v0.77`
 - **Maturity:** public pre-standard; testing and concept refinement
 - **Technical exchange model:** GKX — Governed Knowledge Exchange
 - **Canonical repository:** `Odenknight/gkos-standard`
@@ -179,7 +178,7 @@ See [Conformance](conformance/README.md), [Fixtures](fixtures/README.md), and
 
 ## Current maturity and claim boundary
 
-GKOS v0.76 is suitable for public review, research, prototypes, controlled
+GKOS v0.77 is suitable for public review, research, prototypes, controlled
 pilots, fixture development, and independent implementation work.
 
 It is **not**:
@@ -234,7 +233,7 @@ separate. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
 Suggested citation:
 
 > Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS),
-> GKOS-2026-07-20 v0.76.* CC BY 4.0. Changes, if any, should be identified by
+> GKOS-2026-08-05 v0.77.* CC BY 4.0. Changes, if any, should be identified by
 > the modifier.
 
 The project also acknowledges Andrej Karpathy's LLM Wiki as inspiration for

@@ -2,11 +2,11 @@
   "map_version": "0.1.0",
   "status": "informative-non-normative",
   "purpose": "Maps permanent GKOS requirements to observed GKOS-Engine diagnostics, runner outcomes, and test evidence. An observation never defines, narrows, or replaces a GKOS requirement.",
-  "standard_target": "GKOS-2026-08-05 v0.77 accepted development target (UNPUBLISHED)",
+  "standard_target": "GKOS-2026-08-05 v0.77 developmental publication (non-consensus; signed tag v0.77)",
   "requirement_registry": "../../requirements/REGISTRY.md",
   "implementation": {
     "name": "GKOS-Engine",
-    "release_status": "post-1.2 unreleased development work",
+    "release_status": "GKOS-Engine 1.3.0",
     "historical_baseline_commit": "d73e86816df1b800dd9286459722f047266f1cc2",
     "mounted_evidence_commit": "050740a029b599f01ce2df721880ea147f2b061b"
   },

@@ -3,8 +3,8 @@
 **Status:** Accepted development decision; v0.x non-consensus authority
 **Date:** 2026-08-05
 **Authorizing editor:** Founder and Initial Editor
-**Release disposition:** Prepared for GKOS-2026-08-05 v0.77, which is
-**UNPUBLISHED** at the time of this record
+**Release disposition:** Included in the authorized GKOS-2026-08-05 v0.77
+developmental, non-consensus publication under signed tag `v0.77`
 
 ## Decision
 
@@ -56,6 +56,7 @@ identifier, requirement, or lineage branch may be silently rewritten.
 
 ## Publication boundary
 
-The associated v0.77 material is an unpublished preparation set. Publishing,
-tagging, signing, or calling it the current public release requires a separate
-release authorization under `GOVERNANCE.md`.
+The associated v0.77 material is authorized for developmental publication under
+`GOVERNANCE.md`. This record does not itself create a tag, push, or hosting-
+provider release object, and it remains neither consensus ratification nor
+independent certification.

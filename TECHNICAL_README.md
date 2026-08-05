@@ -18,7 +18,9 @@ cite those requirements while adapters map implementation diagnostics and
 observations. New identities use lowercase UUIDv7; existing lowercase UUIDv4
 identities remain permanent, and any migration preserves every lineage branch.
 These are adopted v0.x development decisions, not an independently verified
-conformance result or a published v0.77 release.
+conformance result or consensus ratification. v0.77 is authorized for
+developmental publication under signed tag `v0.77`; its release mechanics are
+separate from this worktree.
 
 ## 1. System boundary
 

@@ -2,7 +2,8 @@
 
 **Status:** Accepted reconciliation record; not itself a normative amendment
 **Prepared:** 2026-08-05
-**Standard target:** GKOS v0.77 accepted development target — **UNPUBLISHED**
+**Standard release:** GKOS v0.77 authorized developmental publication —
+non-consensus; published under signed tag `v0.77`
 **Controlling corrected standard commit:** `6e6abaf300b9e05a36aff9d9e042d9fa0e963e59`
 **Checkout statement:** this worktree is not represented as that commit; it
 implements the owner-designated corrected content locally.
@@ -80,5 +81,6 @@ post-1.2 development evidence is
 `050740a029b599f01ce2df721880ea147f2b061b` (175/175 reported). A reported
 180/180 run remains non-durable until its exact SHA and raw output are supplied.
 
-Neither the Engine development metadata nor GKOS v0.77 is published by this
-record. The published v0.76 package remains immutable.
+Neither the Engine development metadata nor this reconciliation creates a tag,
+push, or hosting-provider release object. GKOS v0.77 remains developmental and
+non-consensus; the published v0.76 package remains immutable.
