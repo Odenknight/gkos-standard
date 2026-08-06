@@ -161,7 +161,7 @@ into a pass. No current implementation satisfies the v1.0 second-independent-
 implementation gate.
 
 See [Conformance](conformance/README.md), [Fixtures](fixtures/README.md), and
-[Known Divergences](fixtures/DIVERGENCES.md).
+[Known Divergences](fixtures/archive/DIVERGENCES.md).
 
 ## Current maturity and claim boundary
 
@@ -187,7 +187,7 @@ and signed archival publication remain v1.0 work.
 
 | If you are… | Read or do this first |
 | --- | --- |
-| Evaluating the idea | Read this README, then the [illustrated edition](illustrated/GKOS-v0.76-Illustrated-Edition.md) |
+| Evaluating the idea | Read this README, then the [illustrated edition](archive/illustrated/GKOS-v0.76-Illustrated-Edition.md) |
 | Implementing GKOS/GKX | Read [TECHNICAL_README.md](TECHNICAL_README.md), the [master standard](standard/00_GKOS_Master_Standard.md), and [layer contracts](standard/annexes/Layer_Interface_Contracts.md) |
 | Testing an implementation | Start with [conformance/README.md](conformance/README.md) and [fixtures/README.md](fixtures/README.md) |
 | Comparing standards | Read the [provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
