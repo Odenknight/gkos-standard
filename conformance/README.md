@@ -32,6 +32,20 @@ adapter maps such as
 The target is authorized for developmental publication, remains non-consensus,
 and does not alter the v0.76 package.
 
+## Provisional SRTP graph runner
+
+`runner/srtp-graph.mjs` evaluates the separate `SRTP-DRAFT-0.1` graph fixtures
+under `../fixtures/provisional/science/`. It materializes fixture overlays,
+validates the provisional scientific trace schemas, tests version coordinates,
+and executes cross-record checks. Its report always contains
+`profiles_claimed: []`; even an all-PASS run is draft-suite evidence, not a
+GKOS conformance or scientific-validity claim.
+
+```sh
+cd conformance/runner
+npm run srtp:draft
+```
+
 ## Current qualification boundary
 
 - Fixture catalog 0.1.1 declares no complete qualifying profile. A run therefore
