@@ -32,3 +32,7 @@ and the Viewer/Projection Profile. Fixtures are incomplete in v0.76; a
 conformance claim must disclose which fixtures were executed, catalog and
 implementation versions, outcomes, exceptions, known divergences, and whether
 evaluation was self-attested or independent (`../schemas/conformance-manifest.schema.json`).
+
+`provisional/science/` is a separate non-qualifying SRTP draft graph suite. Its
+proposal handles are not permanent requirement IDs and do not alter this active
+catalog.

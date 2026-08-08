@@ -11,3 +11,8 @@ decision and at least one implementation exercising the shape.
 Deliberately absent, per the v0.76 deferral list: the authority-receipt schema
 (v0.8 gate; see Annex C), the actor-identity model, and the upward-receipt
 attestation chain.
+
+`science/` contains the separate `SRTP-DRAFT-0.1` application-profile
+experiment. Its re-entry receipt is a scientific trace binding, not the
+deferred authority receipt or attestation chain. It remains non-normative and
+non-qualifying.

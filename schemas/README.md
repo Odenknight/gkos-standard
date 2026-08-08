@@ -10,7 +10,7 @@ v0.76 normative prose. They require clause traceability and complete fixtures
 before they can support a qualifying profile claim.
 
 | Schema | Layer | Status |
-|---|---|---|
+| --- | --- | --- |
 | `gkx-common.defs.json` | shared | normative-candidate |
 | `gkx-frontmatter-2.0.schema.json` | L2 | normative-candidate (GKX 2.0 breaking profile) |
 | `assessment.schema.json` | L4 | normative-candidate |
@@ -21,6 +21,7 @@ before they can support a qualifying profile claim.
 | `provisional/source-record.draft.schema.json` | L1 | provisional, informative only |
 | `provisional/context-manifest.draft.schema.json` | L6 | provisional, informative only |
 | `provisional/authorized-use-record.draft.schema.json` | L7 | provisional, informative only |
+| `provisional/science/*.draft.schema.json` | cross-layer SRTP application profile | provisional draft, informative and non-qualifying |
 
 Deliberately absent, per the v0.76 deferral list: the authority-receipt schema
 (v0.8 gate; Annex C carries the provisional field list), the actor-identity
