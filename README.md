@@ -24,6 +24,28 @@ The [master standard](standard/00_GKOS_Master_Standard.md) and adopted
 [development decisions](decisions/GKOS_Decision_Register.md) remain
 authoritative when an overview differs from normative text.
 
+## Provisional scientific trace profile
+
+The repository now includes an informative Scientific Research Trace Profile
+(SRTP) draft: provisional schemas, traceability guidance, a compatibility
+matrix, and an executable graph fixture catalog. It gives implementers a shared
+way to test whether research inputs, execution events, artifacts, reviews,
+reruns, receipts, and re-entry proposals remain bound to one another.
+
+The practical benefit is earlier detection of broken or overstated scientific
+lineage across products. The boundary is equally important: SRTP is
+**provisional, informative, and non-normative**. It is not an adopted or
+normative GKOS profile, certification, scientific-validity judgment, execution
+authority, or evidence that any implementation satisfies a current or future
+GKOS conformance claim.
+
+Catalog `SRTP-DRAFT-FIXTURES-0.1.1` contains six positive and 16 adversarial
+graph fixtures and declares no qualifying profiles. Its manifest SHA-256 is
+`ed9cc63b50ecf332b96c576af9139370a1c708b6145224d881cafefdde8aa651`.
+GKOS-Engine maintains an exact, read-only mirror check; Suite stages draft
+records for evaluation, while Marshal and KRS Lite can produce source execution
+evidence that downstream adapters may map into the draft.
+
 ## The problem in plain language
 
 Agentic systems can retrieve thousands of documents, combine them, propose
@@ -154,11 +176,12 @@ Viewer/Projection Profile. Claims must name the exact standard, profile, test
 suite, evidence, limitations, exceptions, and whether the result is
 self-attested or independently verified.
 
-The executable suite is incomplete. Fixture catalog 0.1.0 covers only an early
-GCP-1/GCP-3 slice, and the starter runner does not yet evaluate its declared
-graph-level expectations. No implementation may convert “not yet evaluated”
-into a pass. No current implementation satisfies the v1.0 second-independent-
-implementation gate.
+The normative GKOS executable suite remains incomplete. Separately, the
+informative SRTP draft catalog `SRTP-DRAFT-FIXTURES-0.1.1` evaluates its declared
+graph expectations but intentionally declares no qualifying profiles. Passing
+that draft catalog is not a GCP claim, and no implementation may convert “not
+yet evaluated” into a pass. No current implementation satisfies the v1.0
+second-independent-implementation gate.
 
 See [Conformance](conformance/README.md), [Fixtures](fixtures/README.md), and
 [Known Divergences](fixtures/archive/DIVERGENCES.md).
