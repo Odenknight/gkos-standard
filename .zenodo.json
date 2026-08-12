@@ -1,0 +1,30 @@
+{
+  "title": "Governed Knowledge Operations Standard (GKOS)",
+  "upload_type": "software",
+  "description": "A public pre-standard for keeping evidence, claims, authority, context, validation, and consequential agent actions distinguishable and auditable. GKOS defines governance responsibilities and GKX provides the governed technical exchange model. This repository uses mixed licensing: documentation and original graphics are CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code are Apache 2.0.",
+  "creators": [
+    {
+      "name": "Marshall, Shaun Allan"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "knowledge governance",
+    "provenance",
+    "agentic systems",
+    "AI governance",
+    "auditability",
+    "knowledge operations",
+    "GKOS",
+    "GKX"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Odenknight/gkos-standard",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Release-level CC BY 4.0 metadata describes the normative standard. Individual implementation artifacts remain Apache-2.0 as declared by LICENSE.md."
+}
