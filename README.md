@@ -232,6 +232,10 @@ and signed archival publication remain v1.0 work.
 - [Roadmap](ROADMAP.md)
 - [Licensing](LICENSE.md)
 
+## Archival and citation
+
+Tagged releases may be archived by Zenodo to receive version-specific and concept DOIs. See [ZENODO.md](ZENODO.md) for the release gate and the required GKOS record binding the DOI to its tag, commit, hash, authority, evidence, and lineage.
+
 ## Licensing, attribution, and acknowledgments
 
 Documentation and original graphics are licensed under CC BY 4.0. Schemas,
