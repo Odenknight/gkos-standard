@@ -5,12 +5,12 @@
 > A public pre-standard for keeping evidence, claims, authority, context, and
 > agent actions distinguishable and auditable.
 
-- **Current release:** GKOS-2026-08-05 v0.78 — authorized developmental
-  publication under signed tag `v0.78`
+- **Current release:** GKOS-2026-08-16 v0.79 — authorized developmental
+  publication under annotated tag `v0.79`
 - **Maturity:** public pre-standard; testing and concept refinement
 - **Technical exchange model:** GKX — Governed Knowledge Exchange
 - **Canonical repository:** `Odenknight/gkos-standard`
-- **Last orientation review:** 2026-08-04
+- **Last orientation review:** 2026-08-16
 
 GKOS defines how knowledge should move from source evidence to consequential
 use without silently turning model output, retrieval rank, confidence, or tool
@@ -188,7 +188,7 @@ See [Conformance](conformance/README.md), [Fixtures](fixtures/README.md), and
 
 ## Current maturity and claim boundary
 
-GKOS v0.78 is suitable for public review, research, prototypes, controlled
+GKOS v0.79 is suitable for public review, research, prototypes, controlled
 pilots, fixture development, and independent implementation work.
 
 It is **not**:
@@ -228,6 +228,8 @@ and signed archival publication remain v1.0 work.
 - [Examples](examples/README.md)
 - [Implementation references](docs/implementation/README.md)
 - [GKX 2.0 breaking decision](decisions/R14_GKX_2_0_Breaking_Machine_Namespace_Development_Decision_Record.md)
+- [R15 governed-state-change decision](decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md)
+- [Governed state-change, re-entry, retention, and bounded-delegation annex](standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md)
 - [Governance](GOVERNANCE.md)
 - [Roadmap](ROADMAP.md)
 - [Licensing](LICENSE.md)
@@ -247,7 +249,7 @@ separate. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
 Suggested citation:
 
 > Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS),
-> GKOS-2026-08-05 v0.78.* CC BY 4.0. Changes, if any, should be identified by
+> GKOS-2026-08-16 v0.79.* CC BY 4.0. Changes, if any, should be identified by
 > the modifier.
 
 The project also acknowledges Andrej Karpathy's LLM Wiki as inspiration for

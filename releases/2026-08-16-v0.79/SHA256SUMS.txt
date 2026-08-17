@@ -1,0 +1,4 @@
+# SHA256 checksums generated from LF-normalized UTF-8 release files.
+1964b0c08af3e5c8c7e2e4f70c3c0793b2db0b41ea0c2208e40172b5df00233f  README.md
+abef680297905b14b97809c802b23f5c5949cdacdbce58edab12edc1dceb3d21  RELEASE_MANIFEST.yml
+4d69d68c8d62f0ecfd12f5774e557e8de77ce6dbd56c8563ce742f4ff98d7a9c  RELEASE_NOTES.md

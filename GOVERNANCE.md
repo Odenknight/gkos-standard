@@ -59,4 +59,7 @@ Only decisions made under that future governance model may be described as forma
 
 ## Canonical publication
 
-The canonical v0.77 repository is `Odenknight/gkos-standard`. Migration requires a recorded development or governance decision and preservation of release history. The v0.77 release remains developmental and non-consensus under this document.
+The canonical v0.79 repository is `Odenknight/gkos-standard`. Migration
+requires a recorded development or governance decision and preservation of
+release history. The v0.79 release remains developmental and non-consensus
+under this document.
