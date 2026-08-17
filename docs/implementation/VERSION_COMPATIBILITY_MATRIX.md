@@ -8,7 +8,7 @@ numbers across those coordinates are not implied.
 
 | Coordinate | Current reviewed value | Meaning | Compatibility rule |
 | --- | --- | --- | --- |
-| GKOS publication | `GKOS-2026-08-05 v0.78` | Developmental standard publication | Governs the current repository guidance |
+| GKOS publication | `GKOS-2026-08-16 v0.79` | Developmental standard publication | Governs the current repository guidance |
 | GKX namespace | `2.0` | Serialized machine namespace | Current records use `gkx_version: "2.0"` and `.gkx/` |
 | standard assessment / SRTP projection coordinate | `gkx-2.0-validating-projection` | Standard schema value and SRTP fixture coordinate | Current SRTP traces use this exact coordinate |
 | Engine validating projection profile | `gkx-2.3-validating-projection` | Separately versioned Engine implementation profile | Current Engine public surface; it is not the GKX namespace or an alias for the SRTP coordinate |

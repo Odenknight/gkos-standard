@@ -2,7 +2,7 @@
 
 **Profile:** `SRTP-DRAFT-0.1`
 **Status:** build proposal; provisional, informative, non-normative
-**Last adopted baseline:** GKOS-2026-08-05 v0.78 / GKX 2.0
+**Last adopted baseline:** GKOS-2026-08-16 v0.79 / GKX 2.0
 
 SRTP is a proposed application profile over the existing seven GKOS layer
 responsibilities. It demonstrates how research questions, immutable data and

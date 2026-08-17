@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite the specific GKOS release used."
 title: "Governed Knowledge Operations Standard"
-version: "0.78"
-date-released: "2026-08-05"
+version: "0.79"
+date-released: "2026-08-16"
 type: standard
 authors:
   - family-names: Marshall
@@ -14,7 +14,7 @@ abstract: "A public pre-standard for keeping evidence, claims, authority, contex
 preferred-citation:
   type: standard
   title: "Governed Knowledge Operations Standard (GKOS)"
-  version: "GKOS-2026-08-05 v0.78"
+  version: "GKOS-2026-08-16 v0.79"
   authors:
     - family-names: Marshall
       given-names: Shaun Allan
