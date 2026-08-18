@@ -24,6 +24,30 @@ run agents, manage workflows, or enforce identity.
 [Review conformance](conformance/README.md) ·
 [See the roadmap](ROADMAP.md)
 
+> **GKOS defines the rules and responsibilities. GKX is the machine-readable
+> way systems carry the governed records between them.**
+
+## Where GKOS helps
+
+The same governance problem appears wherever people or AI turn information
+into decisions and actions:
+
+| Domain | Why GKOS is useful |
+| --- | --- |
+| **Individuals** | Keeps original sources, personal notes, interpretations, and AI suggestions separate, so a helpful assistant does not silently rewrite what you know or decide for you. |
+| **Engineers** | Preserves which requirement, design, dependency, configuration, test, and incident evidence led to a technical decision or operational change. |
+| **Small businesses** | Makes policies, responsibilities, approvals, and AI-assisted work traceable without requiring the business to replace its existing tools. |
+| **Enterprises and corporations** | Connects evidence, roles, restrictions, review, context, and consequential actions across teams and systems while keeping authority explicit. |
+| **Scientific organizations** | Keeps datasets, methods, executions, artifacts, interpretations, reviews, and reruns linked without treating a reproducible record as proof that a conclusion is scientifically valid. |
+| **Legal organizations** | Separates source material, an actor's interpretation, matter-specific context, authorized review, and resulting action while preserving privilege and access boundaries supplied by the deployment. |
+| **Government and public institutions** | Helps preserve the record behind policy, administrative decisions, delegated authority, public accountability, and later review without itself granting legal or regulatory standing. |
+| **AI and agentic systems** | Prevents retrieval rank, model confidence, tool access, or technical capability from being mistaken for permission, approval, or authority. |
+
+These are architectural benefits, not certifications or guarantees of legal,
+regulatory, scientific, security, or domain compliance. Each deployment still
+needs its own qualified authorities, controls, validation, and applicable
+domain profile.
+
 ## Why GKOS exists
 
 AI systems can retrieve documents, combine evidence, propose conclusions, call
