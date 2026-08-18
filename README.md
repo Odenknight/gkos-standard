@@ -172,10 +172,7 @@ endorsement, certification, or a GKOS conformance result.
 | Implementation | Demonstrates | Claim boundary |
 | --- | --- | --- |
 | [GKOS Engine](https://github.com/Odenknight/GKOS-Engine) | Deterministic parsing, validation, assessment, graphing, projection, and read-only navigation for GKX records | Reference implementation; not the standard and not an independent implementation |
-
-Kosmos-Oden is intentionally omitted from this list until its public release
-identity and exact GKOS Engine dependency are reconciled across its README,
-package metadata, lockfile, tags, and immutable release evidence.
+| [Kosmos-Oden v0.8.0](https://github.com/Odenknight/Kosmos-Oden) | Read-only visualization and lineage traversal over governed knowledge records, using exact-pinned GKOS Engine 2.1.1 | Product example; not the standard, an endorsement, or a conformance result |
 
 Formal conformance claims must identify the exact GKOS release, GKX version,
 profile, implementation version, test suite, limitations, and immutable evidence.

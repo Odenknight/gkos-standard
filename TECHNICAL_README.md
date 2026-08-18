@@ -210,9 +210,17 @@ must not accept invalid material merely by redefining the standard.
 ### Kosmos-Oden and other viewers
 
 A viewer or navigation surface may project governed records without gaining
-promotion, decision, or activation authority. Kosmos-Oden's intended boundary
-is read-only visualization. A Viewer/Projection claim must still identify
-loss, provenance, version, and the canonical governed source.
+promotion, decision, or activation authority. Kosmos-Oden v0.8.0 is an
+implementation example of this boundary: its public package and lockfile pin
+GKOS Engine 2.1.1 at commit
+`f4dfda16eac746c667cf042f908a918d9acc6713`, and its product update is bound to
+Kosmos-Oden commit `a7113c0ca3be8dd230a9549940e2f387d4cb2a96`.
+
+Those exact bindings make the example reproducible; they do not make product
+tests a GKOS conformance result. Kosmos-Oden's visualization is source-content
+read-only and changes no source content. A Viewer/Projection claim must still
+identify loss, provenance, version, the canonical governed source, and its
+immutable evidence.
 
 ## Interoperability
 
