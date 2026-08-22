@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/context-manifest.schema.json",
+  "title": "GKX Layer-6 Context Manifest",
+  "type": "object",
+  "required": [
+    "canonical_profile", "artifact_type", "schema_version",
+    "manifest_id", "manifest_version", "purpose", "recipient",
+    "selection_set_ref", "policy_ref", "compiler_ref", "compiled_at",
+    "members", "known_omissions"
+  ],
+  "properties": {
+    "canonical_profile": { "const": "GKX-CBOR-1" },
+    "artifact_type": { "const": "context-manifest" },
+    "schema_version": { "const": "1.0.0" },
+    "manifest_id": { "type": "string", "minLength": 1 },
+    "manifest_version": { "type": "string", "minLength": 1 },
+    "purpose": { "type": "string", "minLength": 1 },
+    "recipient": { "type": "string", "minLength": 1 },
+    "selection_set_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "policy_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "compiler_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "compiled_at": { "$ref": "gkx-common.defs.json#/$defs/canonicalTimestamp" },
+    "expires_at": { "$ref": "gkx-common.defs.json#/$defs/canonicalTimestamp" },
+    "members": {
+      "type": "array",
+      "description": "Compiler-declared presentation order; array order is semantically significant.",
+      "items": {
+        "type": "object",
+        "required": ["kind", "object_ref"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "accepted-assertion", "evidence-anchor", "contradiction",
+              "warning", "restriction", "lineage", "context"
+            ]
+          },
+          "object_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "known_omissions": {
+      "type": "array",
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": {
+        "type": "object",
+        "required": ["object_ref", "reason"],
+        "properties": {
+          "object_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "restrictions": {
+      "type": "array",
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

@@ -14,7 +14,7 @@ agents. It keeps evidence, claims, decisions, context, authority, and actions
 distinguishable and auditable—without replacing the tools that store data,
 run agents, manage workflows, or enforce identity.
 
-- **Current release:** GKOS-2026-08-16 v0.79
+- **Current release:** GKOS-2026-08-20 v0.80
 - **Maturity:** public pre-standard; developmental and open for testing
 - **Machine exchange contract:** GKX 2.0
 - **Canonical repository:** `Odenknight/gkos-standard`
@@ -111,6 +111,13 @@ operate at every layer.
 An implementation claims only the exact responsibilities it demonstrates. A
 higher layer does not erase or silently rewrite the records below it.
 
+In everyday terms: Layer 1 keeps the original; Layer 2 gives it a durable
+identity; Layer 3 records what people or systems say it means; Layer 4 applies
+repeatable rules; Layer 5 records who accepted responsibility; Layer 6 freezes
+the exact decision context; and Layer 7 records who authorized the resulting
+action. For a legal and professional explanation, see the
+[non-technical orientation](docs/GKOS_LEGAL_AND_PROFESSIONAL_ORIENTATION.md).
+
 ## A control plane—not another runtime
 
 ```mermaid
@@ -134,21 +141,20 @@ Those systems provide capabilities. GKOS defines how governed knowledge,
 context, authority, and receipts move between them without turning retrieval
 rank, model confidence, or tool access into approval.
 
-## One architecture, different depths of use
+## Required tiers and adoption paths
 
-GKOS can be adopted incrementally. The examples below are **illustrative usage
-depths**, not products, certifications, or current conformance profiles.
+GKOS can be adopted incrementally. R16 defines these named claim tiers:
 
-| Experience | Typical depth | What it adds |
+| Tier | Required depth | What it establishes |
 | --- | --- | --- |
-| **Personal** | Layers 1–3 | Notes with preserved sources, identity, lineage, and freshness |
-| **Engineering** | Layers 1–4, with selected 6–7 controls | Deterministic validation, dependency traceability, incidents, and action evidence |
-| **Business and agents** | Layers 1–6 | Institutional memory, governed retrieval, roles, decisions, and purpose-bound context |
-| **Governed operations** | Layers 1–7 | Separation of duties, controlled context, authorized use, and full action traceability |
-| **Domain-assured use** | Layers 1–7 plus a defined domain profile | Additional requirements for a particular scientific, legal, safety, or regulatory setting |
+| **GKOS Core** | GCP-1 through GCP-5 | Preserved evidence through governed disposition |
+| **GKOS Advanced** | GCP-1 through GCP-7 | Core plus reproducible context and authorized use |
+| **GCP-6 Context-Only Extension** | Core plus GCP-6 | Read-only context compilation; it grants no action authority |
+| **Viewer/Projection Profile** | Independent | A faithful view that does not gain decision or action authority |
 
-These labels explain adoption paths only. Formal GKOS claims must use the
-profiles and evidence rules defined by the standard.
+Lower-layer results may still be reported precisely, but they are not a Core
+claim. The active fixture catalog currently declares no qualifying profile, so
+these definitions are requirements—not certifications of any implementation.
 
 ## Four names are enough to get started
 
@@ -201,7 +207,7 @@ similarity, confidence versus authority, and answer versus authorized action.
 
 ## Current maturity and claim boundary
 
-GKOS v0.79 is suitable for public review, research, prototypes, controlled
+GKOS v0.80 is suitable for public review, research, prototypes, controlled
 pilots, fixture development, and independent implementation work.
 
 It is **not**:
@@ -224,7 +230,8 @@ appeals, succession, and signed archival publication remain v1.0 work.
 | If you are… | Read this next |
 | --- | --- |
 | Evaluating the idea | This README, then the [illustrated edition](archive/illustrated/GKOS-v0.76-Illustrated-Edition.md) |
-| Implementing GKOS or GKX | [Technical orientation](TECHNICAL_README.md), [master standard](standard/00_GKOS_Master_Standard.md), and [layer contracts](standard/annexes/Layer_Interface_Contracts.md) |
+| Legal or professional review | [Legal and professional orientation](docs/GKOS_LEGAL_AND_PROFESSIONAL_ORIENTATION.md), then [known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) |
+| Implementing GKOS or GKX | [Technical orientation](TECHNICAL_README.md), [master standard](standard/00_GKOS_Master_Standard.md), [canonical serialization](standard/annexes/Canonical_Serialization.md), and [layer contracts](standard/annexes/Layer_Interface_Contracts.md) |
 | Testing an implementation | [Conformance](conformance/README.md), [requirements registry](requirements/REGISTRY.md), and [fixtures](fixtures/README.md) |
 | Comparing standards | [Provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
 | Proposing a change | [Contributing](CONTRIBUTING.md) and [governance](GOVERNANCE.md) |
@@ -263,5 +270,5 @@ See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
 Suggested citation:
 
 > Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS),
-> GKOS-2026-08-16 v0.79.* CC BY 4.0. Changes, if any, should be identified by
+> GKOS-2026-08-20 v0.80.* CC BY 4.0. Changes, if any, should be identified by
 > the modifier.

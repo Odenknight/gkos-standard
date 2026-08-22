@@ -1,9 +1,10 @@
 {
   "status": "developmental-informative",
-  "matrix_version": "0.1.0",
+  "matrix_version": "0.2.0",
   "current": {
-    "gkos_publication": "GKOS-2026-08-05 v0.78",
+    "gkos_publication": "GKOS-2026-08-20 v0.80",
     "gkx_namespace": "2.0",
+    "canonical_artifact_profile": "GKX-CBOR-1",
     "projection_profile": "gkx-2.0-validating-projection",
     "engine_validating_projection_profile": "gkx-2.3-validating-projection",
     "engine_validating_projection_api": "buildGkx23Projection",

@@ -2,6 +2,13 @@
 
 This register indexes adopted v0.x development decisions. These records document Founder/Initial Editor dispositions during testing and refinement; they are not consensus ratification, independent certification, accreditation, or regulator approval.
 
+## R16 — Required profiles and GCP-6/GCP-7 enablement
+
+- **Date:** 2026-08-20
+- **Status:** Accepted development decision; v0.x non-consensus authority
+- **Decision:** Establish GKOS Core at GCP-1 through GCP-5 and GKOS Advanced at GCP-1 through GCP-7; bind GCP-6 and GCP-7 except for a named read-only Context-Only Extension; require behavior-based coverage and executable refusal evidence for every mandatory gate; establish stable gate codes; preserve exact-release and assessment-type claim binding; adopt deterministic GKX-CBOR-1 serialization, captured selection and deterministic assembly, Layer-5/6/7 manifest hash binding, distinct actor roles, typed effect scope, and the Refusal Receipt semantic role; publish all changes together as the breaking pre-v1.0 v0.80 release while keeping every profile non-qualifying until the active catalog is complete and passing.
+- **Record:** [R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md](R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md)
+
 ## R15 — Governed state change, re-entry, and bounded delegation
 
 - **Date:** 2026-08-15

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/authorized-use-record.schema.json",
+  "title": "GKX Layer-7 Authorized Use Record",
+  "type": "object",
+  "required": [
+    "canonical_profile", "artifact_type", "schema_version",
+    "record_id", "record_version", "action_class", "purpose",
+    "context_manifest_ref", "policy_ref", "compiler_ref",
+    "proposing_actor", "authorizing_actor", "executing_actor",
+    "delegation_chain", "requested_effect_scope", "authorized_effect_scope",
+    "authority_basis_ref", "acted_at", "outcome", "recovery_route"
+  ],
+  "properties": {
+    "canonical_profile": { "const": "GKX-CBOR-1" },
+    "artifact_type": { "const": "authorized-use-record" },
+    "schema_version": { "const": "1.0.0" },
+    "record_id": { "type": "string", "minLength": 1 },
+    "record_version": { "type": "string", "minLength": 1 },
+    "action_class": { "type": "string", "minLength": 1 },
+    "action_detail": { "type": "string" },
+    "purpose": { "type": "string", "minLength": 1 },
+    "context_manifest_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "policy_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "compiler_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "proposing_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "reviewing_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "authorizing_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "executing_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "delegation_chain": {
+      "type": "array",
+      "description": "Ordered from originating authority through the final grantee.",
+      "items": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" }
+    },
+    "requested_effect_scope": { "$ref": "gkx-common.defs.json#/$defs/effectScope" },
+    "authorized_effect_scope": { "$ref": "gkx-common.defs.json#/$defs/effectScope" },
+    "authority_basis_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "acted_at": { "$ref": "gkx-common.defs.json#/$defs/canonicalTimestamp" },
+    "outcome": {
+      "type": "string",
+      "enum": ["completed", "refused", "failed", "partial"]
+    },
+    "external_receipt_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "recovery_route": {
+      "type": "object",
+      "required": ["kind", "procedure_ref"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["correction", "compensation", "rollback", "escalation"]
+        },
+        "procedure_ref": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
