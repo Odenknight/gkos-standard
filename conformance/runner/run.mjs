@@ -19,6 +19,7 @@
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join, dirname, resolve, basename } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { createHash } from "node:crypto";
 import Ajv2020 from "ajv/dist/2020.js";
 import YAML from "yaml";
 
@@ -30,9 +31,14 @@ const adapterPath = arg("--adapter");
 if (!adapterPath) { console.error("Required: --adapter <path>"); process.exit(2); }
 const outPath = arg("--out", "conformance-claim.json");
 const attestedBy = arg("--attested-by", "unattested");
+const assessmentDate = new Date().toISOString().slice(0, 10);
 
 const adapter = await import(pathToFileURL(resolve(adapterPath)).href);
-const manifest = JSON.parse(readFileSync(join(root, "fixtures", "fixtures.manifest.json"), "utf8"));
+const manifestPath = join(root, "fixtures", "fixtures.manifest.json");
+const manifestBytes = readFileSync(manifestPath);
+const manifest = JSON.parse(manifestBytes.toString("utf8"));
+const adapterBytes = readFileSync(resolve(adapterPath));
+const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
 
 // --- schema registry ---
 const ajv = new Ajv2020.default({ strict: false, allErrors: true });
@@ -122,18 +128,22 @@ const unevaluatedDetails = results
   .filter((result) => result.outcome === "unevaluated")
   .map((result) => `${result.fixture_id}: ${result.detail}`);
 const limitations = [
-  "single-actor separation-of-duties waiver (disposition: self-accepted)",
+  "single-actor execution; no separation-of-duties requirement was evaluated",
   ...(qualifyingProfiles.size === 0 ? [`catalog ${manifest.catalog_version} is a starter slice and declares no complete qualifying profile`] : []),
   ...(unevaluatedDetails.length ? [`unevaluated expectations — ${unevaluatedDetails.join("; ")}`] : []),
 ];
 
 const claim = {
-  claim_id: `claim-${new Date().toISOString().slice(0, 10)}-${adapter.implementation.name}`,
+  claim_id: `claim-${assessmentDate}-${adapter.implementation.name}`,
   implementation: adapter.implementation,
   standard: { gkos_release: manifest.gkos_release, technical_spec: "GKX 2.0", technical_spec_status: "developmental", last_ratified_baseline: "GKX 2.0" },
   profiles_claimed: profilesClaimed,
-  attestation: { mode: "self-attested", attested_by: attestedBy },
+  attestation: { mode: "self-attested", attested_by: attestedBy, assessment_date: assessmentDate },
   fixtures: { catalog_version: manifest.catalog_version, executed: results.length, fully_evaluated: results.length - skipped - unevaluated, passed, failed, skipped, unevaluated, results },
+  evidence: [
+    { locator: "fixtures/fixtures.manifest.json", sha256: sha256(manifestBytes) },
+    { locator: `adapter:${basename(adapterPath)}`, sha256: sha256(adapterBytes) },
+  ],
   limitations,
   exceptions: results.filter(r => r.outcome === "known-divergence").map(r => `${r.fixture_id}: ${r.divergence_ref} (see fixtures/DIVERGENCES.md)`),
   generated_at: new Date().toISOString().replace(/(\.\d{3})\d*Z$/, "$1Z"),

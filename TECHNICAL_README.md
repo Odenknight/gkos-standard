@@ -11,7 +11,7 @@ conformance evidence, and implementations. It is informative: the
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
 normative annexes control when an overview differs from them.
 
-- **Standard:** GKOS-2026-08-16 v0.79
+- **Standard:** GKOS-2026-08-20 v0.80
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
@@ -63,6 +63,11 @@ delegation. It does not create general agent write authority or change the GKX
 2.0 serialized namespace. See
 [R15](decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md).
 
+R16 defines Core and Advanced tiers, binds GCP-6 and GCP-7 for Advanced use,
+adopts deterministic canonical serialization, and standardizes context,
+authorized-use, refusal, diagnostic, and effect-scope obligations. See
+[R16](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md).
+
 ## Layer contracts
 
 The model is cumulative, but processing may be asynchronous, distributed, or
@@ -75,9 +80,9 @@ applicable profile and limitations precisely.
 | **L2 Structure and Identity** | Structure a preserved source or governed object | Structured Knowledge Object | Stable identity and version; location is not identity |
 | **L3 Relationships and Lineage** | Connect claims, sources, actors, and objects | Assertion and lineage records | Typed, sourced, temporal, scoped, attributable relationships |
 | **L4 Validation and Control** | Evaluate deterministic rules and restrictions | Diagnostics and control receipts | Mandatory failures block promotion |
-| **L5 Review and Workflow** | Apply authorized disposition | Decision Record | Append-only decision history and separation of duties where applicable |
-| **L6 Context Presentation** | Select governed material for a recipient and purpose | Context Manifest | Versions, restrictions, warnings, contradictions, omissions, recipient, and expiry |
-| **L7 Authorized Use** | Evaluate actor, action, context, and grant | Authorized Use Record | Authority, dependencies, outcome, receipt, and recovery route |
+| **L5 Review and Workflow** | Apply authorized disposition | Decision Record | Append-only decision history; when context was used, manifest identity, version, and hash |
+| **L6 Context Presentation** | Capture selection, then deterministically assemble context | Selection Set and Context Manifest | Digest-bound inputs, restrictions, warnings, contradictions, omissions, recipient, purpose, and expiry |
+| **L7 Authorized Use** | Evaluate actor, action, exact context, grant, and effect scope | Authorized Use Record or Refusal Receipt | Distinct actor roles, authority, manifest hash, outcome, and recovery route |
 
 Detailed requirements live in the
 [layer interface contracts](standard/annexes/Layer_Interface_Contracts.md) and
@@ -122,6 +127,27 @@ mechanism. A GKOS-aligned retrieval path should be able to establish:
 A Context Manifest is therefore more than a prompt dump or retrieval log. It is
 a purpose-bound record of the context presented for a governed use.
 
+Selection may be non-deterministic, but its complete operative output must be
+captured as a canonical Selection Set. Assembly is deterministic: identical
+selection, resolved content, schema, policy, compiler, and canonical-profile
+inputs must produce identical Context Manifest bytes and hash.
+
+## Canonical serialization
+
+Canonical artifact identity binds to deterministic CBOR under the
+`GKX-CBOR-1` profile, not to JSON, YAML, Markdown, a database row, or a
+human-readable rendering. SHA-256 is calculated over the canonical payload,
+which includes artifact type, schema version, canonical profile, and every
+applicable digest-bound policy, compiler, and selection reference.
+
+The canonical profile requires definite lengths, shortest exact encodings,
+bytewise lexicographic ordering of canonical encoded map keys, duplicate-key
+refusal, NFC text, fixed-microsecond UTC timestamps, and preservation of
+schema-declared numeric types. A GCP-6 or GCP-7 claimant must also provide a
+human-auditable rendering and parser/verifier whose round trip reproduces the
+canonical hash. See the
+[canonical serialization annex](standard/annexes/Canonical_Serialization.md).
+
 ## Core records and receipts
 
 The exact schema program is still developmental. Conceptually, implementations
@@ -147,8 +173,17 @@ the canonical governed record.
 
 ## Profiles and conformance
 
-GKOS currently defines cumulative provisional profiles GCP-1 through GCP-7 and
-a Viewer/Projection Profile. A conforming claim must name:
+GKOS defines cumulative GCP-1 through GCP-7 responsibilities plus an
+independent Viewer/Projection Profile. R16 names these tiers:
+
+| Tier | Required responsibilities |
+| --- | --- |
+| GKOS Core | GCP-1 through GCP-5 |
+| GKOS Advanced | GCP-1 through GCP-7 |
+| GCP-6 Context-Only Extension | Core plus read-only GCP-6; no consequential action authority |
+| Viewer/Projection Profile | Independent projection responsibilities |
+
+A conforming claim must name:
 
 - the exact GKOS release and GKX version;
 - the exact profile or requirement set evaluated;
@@ -165,8 +200,9 @@ pass. Review the
 [conformance runner](conformance/README.md), and
 [fixture catalog](fixtures/README.md).
 
-The normative executable suite remains incomplete. No current implementation
-satisfies the future v1.0 second-independent-implementation gate.
+The active executable suite remains incomplete and declares no qualifying
+profile. No current implementation satisfies the future v1.0
+second-independent-implementation gate.
 
 ## Provisional domain work
 
@@ -256,6 +292,9 @@ See the claim-limited
 - [Master standard](standard/00_GKOS_Master_Standard.md)
 - [Layer interface contracts](standard/annexes/Layer_Interface_Contracts.md)
 - [Conformance profiles](standard/annexes/Conformance_Profiles.md)
+- [Canonical serialization](standard/annexes/Canonical_Serialization.md)
+- [Authority and refusal receipt fields](standard/annexes/Authority_and_Refusal_Receipt_Fields.md)
+- [Diagnostic-code registry](standard/annexes/Diagnostic_Code_Registry.md)
 - [Governed state change and re-entry](standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md)
 - [Requirements registry](requirements/REGISTRY.md)
 - [Schemas](schemas/README.md)
@@ -268,6 +307,6 @@ See the claim-limited
 
 ## Claim boundary
 
-GKOS v0.79 is a public pre-standard. Nothing in this document establishes
+GKOS v0.80 is a public pre-standard. Nothing in this document establishes
 accreditation, certification, legal compliance, regulatory authorization,
 scientific validity, product safety, or the future GKOS v1.0 gates.

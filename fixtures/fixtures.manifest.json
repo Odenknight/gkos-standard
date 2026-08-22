@@ -1,6 +1,6 @@
 {
-  "catalog_version": "0.1.1",
-  "gkos_release": "GKOS-2026-08-05 v0.78",
+  "catalog_version": "0.2.0",
+  "gkos_release": "GKOS-2026-08-20 v0.80",
   "requirement_registry": "requirements/REGISTRY.md",
   "description": "Starter, non-qualifying fixture catalog. Each fixture cites permanent GKOS requirement IDs; schema and projection observations are evaluated through implementation-specific adapter maps, never by treating GKX diagnostics as requirements. Volatile fields (calculatedAt, generated_at, engine paths) are masked by the runner; determinism binds to bytes + engine version + policy hash.",
   "qualifying_profiles": [],
@@ -64,9 +64,9 @@
       "file": "corpus/gcp3-l02-successor.md",
       "schema": { "against": "gkx-frontmatter-2.0.schema.json", "expect": "valid" },
       "projection": { "require_codes": [{ "code": "GKX-EPISTEMIC-004", "severity": "warning" }] },
-      "note": "GKOS v0.76 §6.1: promotion to accepted requires a corroborating Decision Record; the fixture has none, so the gate diagnostic MUST fire."
+      "note": "GKOS Core retains governed disposition at GCP-5: promotion to accepted requires a corroborating Decision Record; this fixture has none, so the gate diagnostic MUST fire."
     }
   ],
-  "planned_classes_not_yet_covered": ["sensitivity", "delegation", "replay", "erasure", "context-reproduction", "authorized-use"],
+  "planned_classes_not_yet_covered": ["sensitivity", "delegation", "replay", "rendering-round-trip", "negative-space", "refusal", "effect-scope", "erasure", "context-reproduction", "authorized-use"],
   "profiles_not_yet_covered": ["GCP-4", "GCP-5", "GCP-6", "GCP-7", "Viewer-Projection-Profile"]
 }

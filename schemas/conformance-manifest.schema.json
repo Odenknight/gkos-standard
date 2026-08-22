@@ -2,9 +2,9 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/conformance-manifest.schema.json",
   "title": "GKOS conformance claim manifest",
-  "description": "Machine-readable conformance claim per conformance/README.md: standard and test versions, evidence, limitations, exceptions, and self-attested vs independently-verified distinction. A claim citing a draft technical specification MUST disclose that status and identify the last ratified baseline (GKOS v0.76 §4.1).",
+  "description": "Exact-bound machine-readable conformance claim under R16: dated standard release, GKX version, implementation, fixture suite, immutable evidence, limitations, exceptions, and assessment type.",
   "type": "object",
-  "required": ["claim_id", "implementation", "standard", "profiles_claimed", "attestation", "fixtures", "limitations", "generated_at"],
+  "required": ["claim_id", "implementation", "standard", "profiles_claimed", "attestation", "fixtures", "evidence", "limitations", "exceptions", "generated_at"],
   "properties": {
     "claim_id": { "type": "string", "minLength": 1 },
     "implementation": {
@@ -20,11 +20,11 @@
     },
     "standard": {
       "type": "object",
-      "required": ["gkos_release"],
+      "required": ["gkos_release", "technical_spec"],
       "properties": {
-        "gkos_release": { "type": "string", "examples": ["GKOS-2026-08-05 v0.78"] },
+        "gkos_release": { "type": "string", "examples": ["GKOS-2026-08-20 v0.80"] },
         "technical_spec": { "type": "string", "examples": ["GKX 2.0"] },
-        "technical_spec_status": { "type": "string", "enum": ["ratified", "developmental"] },
+        "technical_spec_status": { "type": "string", "enum": ["ratified", "developmental", "draft"] },
         "last_ratified_baseline": { "type": "string", "examples": ["GKX 2.0"] }
       },
       "if": { "properties": { "technical_spec_status": { "const": "draft" } } },
@@ -35,18 +35,23 @@
       "description": "Profiles for which the cited catalog declares complete qualifying coverage and every required expectation passed. An empty array means that the run produced evidence but no profile claim.",
       "type": "array",
       "uniqueItems": true,
-      "items": { "type": "string", "enum": ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5", "GCP-6", "GCP-7", "Viewer-Projection-Profile"] }
+      "items": { "type": "string", "enum": ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5", "GCP-6", "GCP-7", "GKOS-Core", "GKOS-Advanced", "GCP-6-Context-Only-Extension", "Viewer-Projection-Profile"] }
     },
     "attestation": {
       "type": "object",
-      "required": ["mode", "attested_by"],
+      "required": ["mode", "attested_by", "assessment_date"],
       "properties": {
         "mode": { "type": "string", "enum": ["self-attested", "independently-verified"] },
         "attested_by": { "type": "string" },
-        "verifier": { "type": "string" }
+        "assessment_date": { "type": "string", "format": "date" },
+        "verifier": { "type": "string" },
+        "assessor_scope": { "type": "string", "minLength": 1 },
+        "methods": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "independence_basis": { "type": "string", "minLength": 1 },
+        "tested_version": { "type": "string", "minLength": 1 }
       },
       "if": { "properties": { "mode": { "const": "independently-verified" } } },
-      "then": { "required": ["verifier"] },
+      "then": { "required": ["verifier", "assessor_scope", "methods", "independence_basis", "tested_version"] },
       "additionalProperties": false
     },
     "fixtures": {
@@ -78,9 +83,23 @@
       "additionalProperties": false
     },
     "limitations": {
-      "description": "Disclosed limitations and waivers. A single-actor deployment MUST list the separation-of-duties waiver here.",
+      "description": "Disclosed limitations. Limitations cannot waive an applicable mandatory gate.",
       "type": "array",
       "items": { "type": "string" }
+    },
+    "evidence": {
+      "description": "Immutable evidence locators and SHA-256 digests supporting the claim.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["locator", "sha256"],
+        "properties": {
+          "locator": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        },
+        "additionalProperties": false
+      }
     },
     "exceptions": { "type": "array", "items": { "type": "string" } },
     "environment": { "type": "object" },

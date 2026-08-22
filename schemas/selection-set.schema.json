@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/selection-set.schema.json",
+  "title": "GKX Layer-6 selection envelope",
+  "type": "object",
+  "required": [
+    "canonical_profile", "artifact_type", "schema_version",
+    "selection_set_id", "selection_set_version", "purpose", "recipient", "selected_by",
+    "eligible_snapshot_ref", "selection_policy_ref", "selected_at",
+    "members", "known_omissions", "closure_inputs"
+  ],
+  "properties": {
+    "canonical_profile": { "const": "GKX-CBOR-1" },
+    "artifact_type": { "const": "selection-envelope" },
+    "schema_version": { "const": "1.0.0" },
+    "selection_set_id": { "type": "string", "minLength": 1 },
+    "selection_set_version": { "type": "string", "minLength": 1 },
+    "purpose": { "type": "string", "minLength": 1 },
+    "recipient": { "type": "string", "minLength": 1 },
+    "authorized_scope": { "$ref": "gkx-common.defs.json#/$defs/effectScope" },
+    "query_or_instruction": { "type": "string" },
+    "selected_by": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "selector_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "eligible_snapshot_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "selection_policy_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "selected_at": { "$ref": "gkx-common.defs.json#/$defs/canonicalTimestamp" },
+    "members": {
+      "type": "array",
+      "description": "Ordered selection result; array order is semantically significant.",
+      "items": {
+        "type": "object",
+        "required": ["object_ref", "score_type", "score", "inclusion_reason"],
+        "properties": {
+          "object_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+          "score_type": {
+            "type": "string",
+            "enum": ["float", "integer", "not-applicable"]
+          },
+          "score": {
+            "description": "The canonical CBOR verifier enforces the schema-declared integer/float representation; JSON Schema alone cannot distinguish every integral-valued float.",
+            "type": ["number", "null"]
+          },
+          "inclusion_reason": { "type": "string", "minLength": 1 }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": { "score_type": { "const": "integer" } },
+              "required": ["score_type"]
+            },
+            "then": { "properties": { "score": { "type": "integer" } } }
+          },
+          {
+            "if": {
+              "properties": { "score_type": { "const": "not-applicable" } },
+              "required": ["score_type"]
+            },
+            "then": { "properties": { "score": { "type": "null" } } }
+          },
+          {
+            "if": {
+              "properties": { "score_type": { "const": "float" } },
+              "required": ["score_type"]
+            },
+            "then": { "properties": { "score": { "type": "number" } } }
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "known_omissions": {
+      "type": "array",
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": {
+        "type": "object",
+        "required": ["object_ref", "reason"],
+        "properties": {
+          "object_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "closure_inputs": {
+      "type": "array",
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": {
+        "type": "object",
+        "required": ["kind", "object_ref"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["contradiction", "warning", "restriction", "lineage"]
+          },
+          "object_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

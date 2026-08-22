@@ -1,5 +1,25 @@
 # Changelog
 
+## GKOS-2026-08-20 v0.80
+
+- **BREAKING:** R16 establishes GKOS Core as GCP-1 through GCP-5 and GKOS
+  Advanced as GCP-1 through GCP-7, with a read-only GCP-6 Context-Only
+  Extension and an independent Viewer/Projection Profile.
+- **BREAKING:** deterministic `GKX-CBOR-1` canonical serialization, SHA-256
+  artifact identity, fixed-microsecond UTC timestamps, NFC text, schema-typed
+  numbers, and refusal diagnostics become normative.
+- GCP-6 now captures non-deterministic selection separately from deterministic
+  Context Manifest assembly; GCP-7 binds the exact manifest hash, authority,
+  distinct actor roles, typed effect scope, outcome, and recovery route.
+- Twenty-nine permanent requirements and initial active schemas are added for
+  profiles, canonicalization, context, authorized use, refusal, and effect
+  scope.
+- Claims against v0.79 and earlier do not carry forward. Historical records and
+  immutable release packages remain valid evidence and are not rewritten.
+- The active fixture catalog remains non-qualifying; this release defines the
+  required contracts but does not certify an implementation or establish
+  accredited, consensus, legal, or regulatory standing.
+
 ## GKOS-2026-08-16 v0.79
 
 - R15 adopts universal state-change receipting, domain-neutral retention and

@@ -110,3 +110,16 @@ policy on version *semantics* (what triggers MINOR vs. PATCH, or the
 projection-observability rule), this document controls. Repository-local
 process documents remain authoritative for tag string format, release
 mechanics, and ceremony.
+
+## GKOS standard claim versions
+
+The train policy above governs implementation repositories. Standard
+conformance claims are separately exact-bound under R16: they name the dated
+GKOS release, GKX version, profile, implementation, fixtures, evidence,
+exceptions, and assessment type.
+
+GKOS-2026-08-20 v0.80 adds and tightens mandatory behavior, so claims against
+v0.79 and earlier do not carry forward. Historical artifacts and claims remain
+unaltered records of what was evaluated at the time; reuse under v0.80 requires
+re-execution against the v0.80 baseline. The prospective patch/minor/major
+carry-forward rules begin at v1.0.0 and are defined by R16-125.

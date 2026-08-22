@@ -10,7 +10,19 @@
     "actor": { "$ref": "gkx-common.defs.json#/$defs/actorIdentity" },
     "decided_at": { "$ref": "gkx-common.defs.json#/$defs/timestamp" },
     "proposal_hash": { "$ref": "gkx-common.defs.json#/$defs/contentHash" },
+    "context_used": { "type": "boolean", "default": false },
+    "context_manifest_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "reviewing_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
     "prev_hash": { "oneOf": [{ "$ref": "gkx-common.defs.json#/$defs/contentHash" }, { "type": "null" }] }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "context_used": { "const": true } },
+        "required": ["context_used"]
+      },
+      "then": { "required": ["context_manifest_ref"] }
+    }
+  ],
   "additionalProperties": true
 }

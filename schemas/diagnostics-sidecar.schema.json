@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/diagnostics-sidecar.schema.json",
   "title": "Diagnostics sidecar (L4)",
-  "description": "Per-note deterministic diagnostics export. Sidecar location: .gkx/diagnostics/<uid>.diagnostics.yaml.",
+  "description": "Per-note deterministic diagnostics export. Implementation codes may map to stable GKOS gate codes and permanent requirement IDs. Sidecar location: .gkx/diagnostics/<uid>.diagnostics.yaml.",
   "type": "object",
   "required": ["target_uid", "source_path", "content_hash", "engine_version", "generated_at", "diagnostics"],
   "properties": {

@@ -1,24 +1,50 @@
 # GKOS master standard
 
 GKOS governs evidence, authority, context, validation, review, and authorized
-use. The current technical contract is GKX 2.0. R14 requires `gkx_version`,
-`.gkx/`, `GKX-*`, and `gkx` for current machine surfaces.
+use. The current technical exchange contract remains GKX 2.0. Canonical
+governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
-This v0.79 standard is an owner-authorized developmental publication, not a
-consensus ratification or independent certification. The prior master text is
-preserved in `archive/standard/` and immutable release packages as historical
-evidence.
+GKOS-2026-08-20 v0.80 is an owner-authorized developmental publication, not a
+consensus ratification, independent certification, accreditation, or
+regulatory approval. Prior master texts and release packages remain immutable
+historical evidence.
 
 ## Normative surface
 
-The master standard and normative annexes form one controlled normative
-surface. R15 adds the following normative annex and companion allocations:
+The master standard, permanent requirement registry, profile applicability
+mapping, and normative annexes form one controlled surface.
+
+R15 governs State-Change Receipt roles, retention/disposition, Layer-1 re-entry,
+explicit supersession, and bounded delegation:
 
 - [Governed state change, re-entry, retention, and bounded delegation](annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md)
+
+R16 governs required profile tiers, deterministic canonical serialization,
+Context Manifest replay, authorized-use binding, refusal diagnostics, and typed
+effect scope:
+
+- [Canonical serialization](annexes/Canonical_Serialization.md)
+- [Authority and refusal receipt fields](annexes/Authority_and_Refusal_Receipt_Fields.md)
+- [Diagnostic-code registry](annexes/Diagnostic_Code_Registry.md)
+- [Conformance profiles](annexes/Conformance_Profiles.md)
+- [Layer interface contracts](annexes/Layer_Interface_Contracts.md)
 - [Permanent requirement registry](../requirements/REGISTRY.md)
 - [Requirement profile applicability](../requirements/PROFILE_APPLICABILITY.md)
 
-The [R15 Development Decision Record](../decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md)
-records the owner-authorized, non-consensus disposition and its preserved
-boundaries. NAV-001 remains informative and non-qualifying; NAV-002 remains
-undrafted; SRTP remains provisional, informative, and non-qualifying.
+The [R15 Decision Record](../decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md)
+and [R16 Decision Record](../decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md)
+record the owner-authorized, non-consensus dispositions.
+
+## Current claim boundary
+
+GKOS Core requires GCP-1 through GCP-5. GKOS Advanced requires GCP-1 through
+GCP-7. The named GCP-6 Context-Only Extension is read-only and grants no
+consequential-action authority. Viewer/Projection remains independently
+claimable.
+
+The active fixture catalog declares no qualifying profile. Publication of
+normative contracts and schemas does not establish implementation conformance.
+
+NAV-001 remains informative and non-qualifying. NAV-002 remains eligible for
+drafting but is not made qualifying by R16. SRTP remains provisional,
+informative, and non-qualifying.

@@ -1,6 +1,6 @@
 # GKOS fixture catalog
 
-Executable starting with catalog 0.1.0; current catalog 0.1.1 contains eight
+Executable starting with catalog 0.1.0; current catalog 0.2.0 contains eight
 fixtures across positive,
 negative, boundary, contradiction, lineage, and promotion-gate classes for
 GCP-1 and GCP-3, with schema expectations bound to `../schemas/` and projection
@@ -8,7 +8,7 @@ expectations observed through implementation diagnostic codes. Each fixture now
 cites permanent GKOS requirement IDs from `../requirements/REGISTRY.md`; the
 separate non-normative Engine map is
 `../conformance/adapters/gkos-engine.requirements.json`. Those
-observations do not make `GKX-*` diagnostics normative. Catalog 0.1.1 remains
+observations do not make `GKX-*` diagnostics normative. Catalog 0.2.0 remains
 non-qualifying because its pair/graph expectations are not fully executable and
 the remaining graph topics have not been allocated. `fixtures.manifest.json` is the
 machine-readable catalog; `expected/` holds engine-generated golden outputs;
@@ -22,13 +22,15 @@ fixtures. The machine-readable manifest has contained eight fixture objects;
 the decision record is preserved as written, while this current-facing count is
 corrected from the catalog itself.
 
-Catalog 0.1.1 explicitly declares `qualifying_profiles: []`. Unexecuted pair or
+Catalog 0.2.0 explicitly declares `qualifying_profiles: []`. Unexecuted pair or
 graph expectations produce `UNEVALUATED`, block profile claims, and make the
 starter runner exit non-zero.
 
-Fixture classes still to be authored: sensitivity, delegation, replay, erasure,
-context-reproduction, and authorized-use, plus coverage for GCP-4 through GCP-7
-and the Viewer/Projection Profile. Fixtures are incomplete in v0.76; a
+Fixture classes still to be authored include sensitivity, delegation, replay,
+rendering round trip, negative space, refusal, effect scope, erasure,
+context reproduction, and authorized use, plus coverage for GCP-4 through
+GCP-7 and the Viewer/Projection Profile. The R16 schemas and contracts do not
+make these missing executable cases pass. Fixtures remain incomplete in v0.80; a
 conformance claim must disclose which fixtures were executed, catalog and
 implementation versions, outcomes, exceptions, known divergences, and whether
 evaluation was self-attested or independent (`../schemas/conformance-manifest.schema.json`).
