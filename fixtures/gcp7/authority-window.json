@@ -1,0 +1,38 @@
+{
+  "canonical_profile": "GKX-CBOR-1",
+  "artifact_type": "authority-receipt",
+  "schema_version": "1.0.0",
+  "receipt_id": "fixture:authority-window",
+  "receipt_version": "1.0.0",
+  "issuer": { "actor_id": "human:grantor", "actor_class": "human" },
+  "grantor": { "actor_id": "human:grantor", "actor_class": "human" },
+  "grantee": { "actor_id": "agent:executor", "actor_class": "agent" },
+  "authority_source_ref": {
+    "artifact_id": "fixture:authority-source",
+    "artifact_version": "1.0.0",
+    "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
+  },
+  "permitted_action_classes": ["fixture-action"],
+  "effect_scope": {
+    "effect_class": "fixture-action",
+    "resources": ["fixture:protected-target"],
+    "environment": "test",
+    "valid_from": "2026-09-01T12:00:00.000000Z",
+    "valid_until": "2026-09-01T13:00:00.000000Z",
+    "reversibility": "reversible",
+    "maximum_affected_count": 1
+  },
+  "purpose_scope": ["authority-boundary-test"],
+  "delegation_permitted": false,
+  "issued_at": "2026-09-01T11:00:00.000000Z",
+  "valid_from": "2026-09-01T12:00:00.000000Z",
+  "valid_until": "2026-09-01T13:00:00.000000Z",
+  "policy_ref": {
+    "component_id": "fixture:authority-policy",
+    "component_version": "1.0.0",
+    "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }
+  },
+  "revocation": { "status": "not-revoked", "checked_at": "2026-09-01T12:00:00.000000Z", "method": "fixture-static-status" },
+  "nonce": "fixture-authority-window-001",
+  "proof_mechanism": "fixture-signature"
+}

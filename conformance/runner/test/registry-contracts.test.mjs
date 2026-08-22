@@ -15,6 +15,7 @@ test("machine-readable applicability and evidence vocabularies satisfy their sch
   }
   for (const [document, schemaName] of [
     ["requirements/PROFILE_APPLICABILITY.json", "profile-applicability.schema.json"],
+    ["requirements/PROFILE_APPLICABILITY.R17.json", "profile-applicability.schema.json"],
     ["requirements/EVIDENCE_VOCABULARY.json", "evidence-vocabulary.schema.json"],
   ]) {
     const validate = ajv.getSchema(basename(schemaName));

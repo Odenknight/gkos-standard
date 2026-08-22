@@ -18,6 +18,8 @@ against a schema.
 | context-manifest.schema.json | L6 | active v0.80 deterministic-manifest schema |
 | authorized-use-record.schema.json | L7 | active v0.80 authorized-use schema |
 | refusal-receipt.schema.json | cross-layer | active v0.80 Refusal Receipt role schema |
+| authority-receipt.schema.json | L7 | accepted unpublished R17 development schema |
+| authorized-use-record.r17.schema.json | L7 | accepted unpublished R17 development candidate; does not replace v0.80 |
 | conformance-manifest.schema.json | claims | active development schema |
 | provisional/science/*.draft.schema.json | cross-layer SRTP | provisional, informative, and non-qualifying |
 | archive/*.draft.schema.json | historical | archived, non-current schema evidence |

@@ -1,0 +1,14 @@
+{
+  "$schema": "../schemas/profile-applicability.schema.json",
+  "mapping_version": "1.1.0-development",
+  "status": "machine-readable mirror",
+  "authority": "requirements/PROFILE_APPLICABILITY.md",
+  "gkos_release": "unpublished R17 development amendment over GKOS-2026-08-20 v0.80",
+  "qualification_boundary": "This overlay adds applicability for the accepted unpublished R17 allocation and never modifies or qualifies v0.80.",
+  "profiles": {
+    "GKOS-Advanced": { "inherits": ["GCP-7"] }
+  },
+  "requirements": {
+    "GKOS-AUTHUSE-007": { "profiles": ["GCP-7"] }
+  }
+}

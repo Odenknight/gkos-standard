@@ -26,14 +26,19 @@ Catalog 0.2.0 explicitly declares `qualifying_profiles: []`. Unexecuted pair or
 graph expectations produce `UNEVALUATED`, block profile claims, and make the
 starter runner exit non-zero.
 
-Fixture classes still to be authored include sensitivity, delegation, replay,
-rendering round trip, negative space, refusal, effect scope, erasure,
-context reproduction, and authorized use, plus coverage for GCP-4 through
-GCP-7 and the Viewer/Projection Profile. The R16 schemas and contracts do not
-make these missing executable cases pass. Fixtures remain incomplete in v0.80; a
+The active qualifying catalog still lacks complete sensitivity, delegation,
+replay, rendering-round-trip, negative-space, refusal, effect-scope, erasure,
+context-reproduction, and authorized-use coverage, plus GCP-4 through GCP-7
+and Viewer/Projection completion. Separate post-v0.80 mechanism evidence does
+not make those active-catalog deficits pass. Fixtures remain incomplete in v0.80; a
 conformance claim must disclose which fixtures were executed, catalog and
 implementation versions, outcomes, exceptions, known divergences, and whether
 evaluation was self-attested or independent (`../schemas/conformance-manifest.schema.json`).
+
+Post-v0.80 mechanism catalogs are preserved separately under `gcp6/` and
+`gcp7/`. The GCP-7 catalog includes the accepted unpublished R17
+authority-window boundary cases. These catalogs increase executable evidence
+but declare no complete requirement or qualifying profile.
 
 `provisional/science/` is a separate non-qualifying SRTP draft graph suite. Its
 proposal handles are not permanent requirement IDs and do not alter this active

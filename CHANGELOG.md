@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased development amendments
+
+- R17 accepts half-open authority validity intervals:
+  `valid_from <= evaluation_time < valid_until`.
+- `GKOS-AUTHUSE-007`, its applicability overlay, authority-receipt schema,
+  Authorized Use Record development schema, and exact-boundary fixtures remain
+  unpublished development work until a later release is separately authorized.
+- v0.80, its tag, release package, schemas, applicability map, and diagnostic
+  registry remain unchanged historical coordinates.
+
 ## GKOS-2026-08-20 v0.80
 
 - **BREAKING:** R16 establishes GKOS Core as GCP-1 through GCP-5 and GKOS
