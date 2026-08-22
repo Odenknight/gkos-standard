@@ -44,6 +44,7 @@ constitute full GKOS Core conformance.
 | GKOS-CANON-008 | GCP-6, GCP-7, and the Context-Only Extension |
 | GKOS-CONTEXT-001..005 | GCP-6+ and the Context-Only Extension; GKOS-CONTEXT-005 applies when a manifest supports Layer-5 review |
 | GKOS-AUTHUSE-001..006 | GCP-7 |
+| GKOS-AUTHUSE-007 | GCP-7 under the accepted unpublished R17 amendment; not part of v0.80 applicability |
 | GKOS-EFFECT-001..003 | GCP-7 and any lower-layer operation whose mandatory control depends on typed effect scope |
 
 ## 3. Interpretation rules

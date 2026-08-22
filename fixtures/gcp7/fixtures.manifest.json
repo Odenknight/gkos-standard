@@ -1,0 +1,26 @@
+{
+  "catalog_version": "GCP7-AUTHORITY-0.1.0",
+  "gkos_release": "unpublished R17 development amendment over GKOS-2026-08-20 v0.80",
+  "qualifying_profiles": [],
+  "complete_requirements": {},
+  "fixtures": [
+    {
+      "fixture_id": "GCP7-P-AUTH-TIME-001",
+      "class": "positive",
+      "profile": "GCP-7",
+      "requirement_ids": ["GKOS-AUTHUSE-003", "GKOS-AUTHUSE-007"],
+      "file": "gcp7/authority-window.json",
+      "test_ref": "conformance/runner/test/authority-window.test.mjs"
+    },
+    {
+      "fixture_id": "GCP7-N-AUTH-TIME-001",
+      "class": "mutation",
+      "profile": "GCP-7",
+      "requirement_ids": ["GKOS-AUTHUSE-003", "GKOS-AUTHUSE-005", "GKOS-AUTHUSE-007", "GKOS-PROFILE-005"],
+      "file": "gcp7/authority-window.json",
+      "mutation": "Set evaluation_time exactly equal to valid_until",
+      "gate_expectation": { "expected_codes": ["GKOS-GATE-L7-001"], "prohibited_codes": ["GKOS-GATE-L7-002", "GKOS-GATE-L7-004"] },
+      "test_ref": "conformance/runner/test/authority-window.test.mjs"
+    }
+  ]
+}

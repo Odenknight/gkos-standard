@@ -1,0 +1,13 @@
+{
+  "registry_version": "1.1.0-development",
+  "status": "accepted unpublished mapping overlay",
+  "authority": "decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md",
+  "base_registry": "requirements/DIAGNOSTIC_CODES.json#1.0.0",
+  "codes": {
+    "GKOS-GATE-L7-001": {
+      "layer": "L7",
+      "requirement_ids": ["GKOS-AUTHUSE-003", "GKOS-AUTHUSE-007"],
+      "condition": "Authority basis absent, expired, not yet valid, revoked, or indeterminate, including the exact half-open validity boundary"
+    }
+  }
+}

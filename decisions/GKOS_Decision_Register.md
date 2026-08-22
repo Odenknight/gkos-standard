@@ -2,6 +2,13 @@
 
 This register indexes adopted v0.x development decisions. These records document Founder/Initial Editor dispositions during testing and refinement; they are not consensus ratification, independent certification, accreditation, or regulator approval.
 
+## R17 — Authority validity interval semantics
+
+- **Date:** 2026-08-21
+- **Status:** Accepted development decision; unpublished amendment
+- **Decision:** Use the half-open authority interval `valid_from <= evaluation_time < valid_until`; bind evaluation to captured canonical time at the consequential-effect admission boundary; fail closed before validity, at or after expiry, or when required time evidence is missing or indeterminate; preserve protected state and emit a Refusal Receipt under the existing L7 authority gate.
+- **Record:** [R17_Authority_Validity_Interval_Development_Decision_Record.md](R17_Authority_Validity_Interval_Development_Decision_Record.md)
+
 ## R16 — Required profiles and GCP-6/GCP-7 enablement
 
 - **Date:** 2026-08-20

@@ -52,3 +52,9 @@ result.
 No codes are retired in registry version 1.0.0. A future retirement entry must
 record the date, decision, replacement code if any, and affected fixture
 mapping. The retired code remains reserved permanently.
+
+## 4. Accepted unpublished R17 mapping overlay
+
+R17 retains `GKOS-GATE-L7-001` and additionally maps its exact half-open
+authority-window boundary to `GKOS-AUTHUSE-007`. This is registry candidate
+`1.1.0-development`; it does not alter the v0.80 registry version 1.0.0.

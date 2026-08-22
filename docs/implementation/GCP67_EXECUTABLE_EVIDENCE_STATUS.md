@@ -20,21 +20,21 @@
 
 ## Open evidence deficits
 
-- Twenty gate codes still require active-catalog mutation twins. Initial
-  executable twins now cover L6-007, L6-008, and L6-009.
+- Nineteen gate codes still require active-catalog mutation twins. Initial
+  executable twins now cover L6-007, L6-008, L6-009, and L7-001.
 - GCP-4 and GCP-5 have no complete requirement sets.
 - GCP-6 negative-space, rendering-tamper, and resolved-content mismatch
   mutations are active mechanism evidence but do not complete GCP-6.
-- GCP-7 authority, effect-scope, role-separation, stale-manifest, receipt, and
-  recovery-route fixtures remain absent.
+- GCP-7 exact authority-time boundary evidence is present under the unpublished
+  R17 amendment. Effect-scope, role-separation, stale-manifest, general receipt,
+  and recovery-route fixture coverage remains incomplete.
 - No profile or named tier qualifies.
 - Independent execution remains absent.
 
 ## Governed decision docket
 
-- Define authority validity intervals, recommended as
-  `valid_from <= evaluation_time < valid_until`, before testing the exact
-  `valid_until` boundary as normative behavior.
+- R17 now adopts `valid_from <= evaluation_time < valid_until`; publish it only
+  in a separately authorized post-v0.80 release.
 - Keep NAV-001 presentation informative; promote only registered invariant
   behavioral requirements through a governed amendment.
 - Keep SRTP provisional until its requirement traceability, fixture,

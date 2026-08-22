@@ -6,7 +6,7 @@
   "required": ["mapping_version", "status", "authority", "gkos_release", "profiles", "requirements"],
   "properties": {
     "$schema": { "type": "string" },
-    "mapping_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "mapping_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-development)?$" },
     "status": { "const": "machine-readable mirror" },
     "authority": { "const": "requirements/PROFILE_APPLICABILITY.md" },
     "gkos_release": { "type": "string", "minLength": 1 },

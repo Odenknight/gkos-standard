@@ -70,6 +70,12 @@ This registry is authoritative for allocated GKOS requirement identifiers. It is
 | `GKOS-EFFECT-002` | Requested effect scope MUST be contained within both actor standing and every applicable delegation scope. | Active — GKOS v0.80 | Authority and Refusal Fields §5 | None |
 | `GKOS-EFFECT-003` | Unknown, indeterminate, or incomparable required effect-scope dimensions MUST fail closed. | Active — GKOS v0.80 | Authority and Refusal Fields §5 | None |
 
+## Accepted unpublished allocations
+
+| ID | Original requirement text | Status | Source | Replacement mapping |
+| --- | --- | --- | --- | --- |
+| `GKOS-AUTHUSE-007` | Authority validity evaluation MUST use a captured canonical action-evaluation time and the half-open interval `valid_from <= evaluation_time < valid_until`; evaluation before `valid_from`, at or after `valid_until`, or with missing, malformed, unavailable, or indeterminate required time evidence MUST fail closed with `GKOS-GATE-L7-001` and a record satisfying the Refusal Receipt role. | Accepted — unpublished development amendment | R17-126; owner approval 2026-08-21 | None |
+
 ## Append-only status and replacement ledger
 
 | Date | Affected IDs | Event | Source | Replacement mapping |
@@ -79,6 +85,7 @@ This registry is authoritative for allocated GKOS requirement identifiers. It is
 | 2026-08-15 | `GKOS-RECEIPT-001..003`, `GKOS-POLICY-001`, `GKOS-RETENTION-001..003`, `GKOS-REENTRY-001..004`, `GKOS-DELEGATION-001..006` | Seventeen permanent IDs allocated on the v0.79 development line. | R15-103..R15-116; owner Q&A disposition | None |
 | 2026-08-16 | All seventeen R15 allocations | Release status advanced from accepted development target to authorized developmental publication in GKOS v0.79. | Owner publication instruction; R15 release route | None |
 | 2026-08-20 | `GKOS-PROFILE-001..007`, `GKOS-CANON-001..008`, `GKOS-CONTEXT-001..005`, `GKOS-AUTHUSE-001..006`, `GKOS-EFFECT-001..003` | Twenty-nine permanent requirements allocated and published for required tiers, deterministic CBOR, context replay, authorized use, refusal, and effect scope in GKOS v0.80. | R16 and owner publication instruction | None |
+| 2026-08-21 | `GKOS-AUTHUSE-007` | Permanent requirement allocated as an unpublished development amendment defining half-open authority validity intervals and captured action-evaluation time. | R17-126; owner approval | None |
 
 ## Profile applicability for R15 allocations
 
