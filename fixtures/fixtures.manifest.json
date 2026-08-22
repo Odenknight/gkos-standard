@@ -4,6 +4,7 @@
   "requirement_registry": "requirements/REGISTRY.md",
   "description": "Starter, non-qualifying fixture catalog. Each fixture cites permanent GKOS requirement IDs; schema and projection observations are evaluated through implementation-specific adapter maps, never by treating GKX diagnostics as requirements. Volatile fields (calculatedAt, generated_at, engine paths) are masked by the runner; determinism binds to bytes + engine version + policy hash.",
   "qualifying_profiles": [],
+  "complete_requirements": {},
   "mask_rules": ["assessment.calculatedAt", "assessment.assessmentId", "*.generated_at", "*.sourcePath"],
   "fixtures": [
     {

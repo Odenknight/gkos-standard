@@ -1,0 +1,14 @@
+{
+  "snapshot_id": "fixture:gcp6-closed-corpus",
+  "snapshot_version": "1.0.0",
+  "required_closure": [
+    {
+      "kind": "contradiction",
+      "object_ref": {
+        "artifact_id": "fixture:contradiction-b",
+        "artifact_version": "1.0.0",
+        "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "110f82ffa8d262d3565926dae5784eb4c04bffbf08f40fc438bcba1bcbc6839e" }
+      }
+    }
+  ]
+}

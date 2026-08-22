@@ -1,0 +1,46 @@
+{
+  "catalog_version": "GCP6-MECHANISMS-0.1.0",
+  "gkos_release": "GKOS-2026-08-20 v0.80",
+  "qualifying_profiles": [],
+  "complete_requirements": {},
+  "fixtures": [
+    {
+      "fixture_id": "GCP6-P-REPLAY-001",
+      "class": "positive",
+      "profile": "GCP-6",
+      "requirement_ids": ["GKOS-CANON-007", "GKOS-CANON-008", "GKOS-CONTEXT-001", "GKOS-CONTEXT-002", "GKOS-CONTEXT-003"],
+      "file": "gcp6/replay-selection-envelope.json",
+      "test_ref": "conformance/runner/test/canonical-replay.test.mjs"
+    },
+    {
+      "fixture_id": "GCP6-N-CLOSURE-001",
+      "class": "mutation",
+      "profile": "GCP-6",
+      "requirement_ids": ["GKOS-CONTEXT-004", "GKOS-PROFILE-005"],
+      "file": "gcp6/eligible-snapshot.json",
+      "mutation": "Remove the sole held contradiction from closure_inputs",
+      "gate_expectation": { "expected_codes": ["GKOS-GATE-L6-009"], "prohibited_codes": ["GKOS-GATE-L6-007", "GKOS-GATE-L6-008"] },
+      "test_ref": "conformance/runner/test/gcp6-mutations.test.mjs"
+    },
+    {
+      "fixture_id": "GCP6-N-RENDER-001",
+      "class": "mutation",
+      "profile": "GCP-6",
+      "requirement_ids": ["GKOS-CANON-008", "GKOS-PROFILE-005"],
+      "file": "gcp6/replay-selection-envelope.json",
+      "mutation": "Alter one displayed field without altering the embedded canonical bytes",
+      "gate_expectation": { "expected_codes": ["GKOS-GATE-L6-008"], "prohibited_codes": ["GKOS-GATE-L6-007", "GKOS-GATE-L6-009"] },
+      "test_ref": "conformance/runner/test/gcp6-mutations.test.mjs"
+    },
+    {
+      "fixture_id": "GCP6-N-CONTENT-001",
+      "class": "mutation",
+      "profile": "GCP-6",
+      "requirement_ids": ["GKOS-CANON-007", "GKOS-PROFILE-005"],
+      "file": "gcp6/replay-selection-envelope.json",
+      "mutation": "Supply content whose SHA-256 does not match its selected object reference",
+      "gate_expectation": { "expected_codes": ["GKOS-GATE-L6-007"], "prohibited_codes": ["GKOS-GATE-L6-008", "GKOS-GATE-L6-009"] },
+      "test_ref": "conformance/runner/test/gcp6-mutations.test.mjs"
+    }
+  ]
+}
