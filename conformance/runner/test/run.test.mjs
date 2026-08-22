@@ -19,7 +19,11 @@ test("unexecuted graph expectations block fixture and profile PASS", () => {
 
   assert.equal(status, 1, "UNEVALUATED expectations must produce a non-qualifying exit status");
   const claim = JSON.parse(readFileSync(out, "utf8"));
+  assert.equal(claim.evidence_status, "mechanism_demonstrated");
+  assert.deepEqual(claim.requirements_verified, []);
   assert.deepEqual(claim.profiles_claimed, []);
+  assert.deepEqual(claim.tier_claims, []);
+  assert.equal(claim.applicability.mapping_version, "1.0.0");
   assert.equal(claim.fixtures.unevaluated, 2);
   assert.equal(claim.fixtures.fully_evaluated, 6);
   assert.equal(claim.fixtures.results.find((r) => r.fixture_id === "GCP1-N03").divergence_ref, undefined);

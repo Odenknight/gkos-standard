@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/evidence-vocabulary.schema.json",
+  "vocabulary_version": "1.0.0",
+  "gkos_release": "GKOS-2026-08-20 v0.80",
+  "coverage_statuses": {
+    "evidence_incomplete": "No bounded mechanism, complete requirement, cumulative profile, or named tier has passing executable evidence.",
+    "mechanism_demonstrated": "A bounded mechanism passed its cited executable checks; no complete requirement or profile claim follows.",
+    "requirement_verified": "Every executable expectation required for the cited permanent requirement passed on the exact evidence baseline.",
+    "cumulative_profile_satisfied": "Every applicable inherited requirement for the cited GCP profile passed on one exact baseline.",
+    "tier_claimable": "Every applicable requirement for the cited named GKOS tier passed and the active catalog declares the tier complete."
+  },
+  "assessment_types": {
+    "self-attested": "The implementing or affiliated party executed or attested the evidence.",
+    "independently-verified": "A disclosed independent assessor executed and verified the exact-bound evidence."
+  },
+  "claim_fields": {
+    "evidence_status": "coverage_statuses",
+    "requirements_verified": "Computed permanent requirements whose catalog-declared complete fixture set passed.",
+    "profiles_claimed": "Computed profiles only; an empty array is required when no cumulative profile is established.",
+    "tier_claims": "Computed named tiers only; an empty array is required when no named tier is established.",
+    "attestation.mode": "assessment_types"
+  }
+}

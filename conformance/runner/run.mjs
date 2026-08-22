@@ -39,6 +39,10 @@ const manifestBytes = readFileSync(manifestPath);
 const manifest = JSON.parse(manifestBytes.toString("utf8"));
 const adapterBytes = readFileSync(resolve(adapterPath));
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
+const applicabilityBytes = readFileSync(join(root, "requirements", "PROFILE_APPLICABILITY.json"));
+const applicability = JSON.parse(applicabilityBytes);
+const evidenceVocabularyBytes = readFileSync(join(root, "requirements", "EVIDENCE_VOCABULARY.json"));
+const evidenceVocabulary = JSON.parse(evidenceVocabularyBytes);
 
 // --- schema registry ---
 const ajv = new Ajv2020.default({ strict: false, allErrors: true });
@@ -110,20 +114,46 @@ for (const fx of manifest.fixtures) {
 
 const qualifyingProfiles = new Set(manifest.qualifying_profiles ?? []);
 const cumulativeProfiles = ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5", "GCP-6", "GCP-7"];
-const fixturesForProfile = (profile) => {
-  const level = cumulativeProfiles.indexOf(profile);
-  if (level < 0) return manifest.fixtures.filter((fixture) => fixture.profile === profile);
-  return manifest.fixtures.filter((fixture) => {
-    const fixtureLevel = cumulativeProfiles.indexOf(fixture.profile);
-    return fixtureLevel >= 0 && fixtureLevel <= level;
+const targetLevel = (profile) => ({
+  "GKOS-Core": 4,
+  "GKOS-Advanced": 6,
+  "GCP-6-Context-Only-Extension": 5,
+}[profile] ?? cumulativeProfiles.indexOf(profile));
+const ruleApplies = (rule, profile) => {
+  const level = targetLevel(profile);
+  if (rule.profiles.includes("all-claims") || rule.profiles.includes("all-runs") || rule.profiles.includes("cross-cutting")) return true;
+  if (rule.profiles.includes(profile)) return true;
+  return rule.profiles.some((token) => {
+    const match = /^GCP-(\d)(\+)?$/.exec(token);
+    if (!match || level < 0) return false;
+    const requirementLevel = Number(match[1]) - 1;
+    return match[2] ? level >= requirementLevel : level >= requirementLevel;
   });
 };
+const requiredForProfile = (profile) => Object.entries(applicability.requirements)
+  .filter(([, rule]) => ruleApplies(rule, profile))
+  .map(([requirement]) => requirement);
+const passingRequirements = new Set(Object.entries(manifest.complete_requirements ?? {})
+  .filter(([requirement, fixtureIds]) => fixtureIds.length > 0 && fixtureIds.every((fixtureId) => {
+    const fixture = manifest.fixtures.find((item) => item.fixture_id === fixtureId);
+    const result = results.find((item) => item.fixture_id === fixtureId);
+    return fixture?.requirement_ids?.includes(requirement) && result?.outcome === "pass";
+  }))
+  .map(([requirement]) => requirement));
 const profilesClaimed = [...qualifyingProfiles].filter((profile) => {
-  const profileFixtures = fixturesForProfile(profile);
-  return profileFixtures.length > 0 && profileFixtures.every((fixture) =>
-    results.find((result) => result.fixture_id === fixture.fixture_id)?.outcome === "pass"
-  );
+  const required = requiredForProfile(profile);
+  return required.length > 0 && required.every((requirement) => passingRequirements.has(requirement));
 });
+const tierClaims = profilesClaimed.filter((profile) => ["GKOS-Core", "GKOS-Advanced", "GCP-6-Context-Only-Extension"].includes(profile));
+const evidenceStatus = tierClaims.length
+  ? "tier_claimable"
+  : profilesClaimed.length
+    ? "cumulative_profile_satisfied"
+    : passingRequirements.size
+      ? "requirement_verified"
+      : passed > 0
+        ? "mechanism_demonstrated"
+        : "evidence_incomplete";
 const unevaluatedDetails = results
   .filter((result) => result.outcome === "unevaluated")
   .map((result) => `${result.fixture_id}: ${result.detail}`);
@@ -137,7 +167,16 @@ const claim = {
   claim_id: `claim-${assessmentDate}-${adapter.implementation.name}`,
   implementation: adapter.implementation,
   standard: { gkos_release: manifest.gkos_release, technical_spec: "GKX 2.0", technical_spec_status: "developmental", last_ratified_baseline: "GKX 2.0" },
+  evidence_status: evidenceStatus,
+  requirements_verified: [...passingRequirements].sort(),
   profiles_claimed: profilesClaimed,
+  tier_claims: tierClaims,
+  applicability: {
+    mapping_version: applicability.mapping_version,
+    mapping_sha256: sha256(applicabilityBytes),
+    evidence_vocabulary_version: evidenceVocabulary.vocabulary_version,
+    evidence_vocabulary_sha256: sha256(evidenceVocabularyBytes),
+  },
   attestation: { mode: "self-attested", attested_by: attestedBy, assessment_date: assessmentDate },
   fixtures: { catalog_version: manifest.catalog_version, executed: results.length, fully_evaluated: results.length - skipped - unevaluated, passed, failed, skipped, unevaluated, results },
   evidence: [

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/evidence-vocabulary.schema.json",
+  "title": "GKOS evidence and assessment vocabulary",
+  "type": "object",
+  "required": ["vocabulary_version", "gkos_release", "coverage_statuses", "assessment_types", "claim_fields"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "vocabulary_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "gkos_release": { "type": "string", "minLength": 1 },
+    "coverage_statuses": { "type": "object", "minProperties": 1, "additionalProperties": { "type": "string", "minLength": 1 } },
+    "assessment_types": { "type": "object", "minProperties": 1, "additionalProperties": { "type": "string", "minLength": 1 } },
+    "claim_fields": { "type": "object", "minProperties": 1, "additionalProperties": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

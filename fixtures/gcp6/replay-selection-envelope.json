@@ -1,0 +1,50 @@
+{
+  "canonical_profile": "GKX-CBOR-1",
+  "artifact_type": "selection-envelope",
+  "schema_version": "1.0.0",
+  "selection_set_id": "fixture:gcp6-replay-selection",
+  "selection_set_version": "1.0.0",
+  "purpose": "Demonstrate deterministic Layer-6 assembly",
+  "recipient": "fixture-reviewer",
+  "query_or_instruction": "Select the claim and every held contradiction",
+  "selected_by": { "actor_id": "tool:gkos-ts", "actor_class": "tool" },
+  "selector_ref": {
+    "component_id": "gkos-ts-closed-fixture-selector",
+    "component_version": "1.0.0",
+    "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
+  },
+  "eligible_snapshot_ref": {
+    "artifact_id": "fixture:gcp6-closed-corpus",
+    "artifact_version": "1.0.0",
+    "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }
+  },
+  "selection_policy_ref": {
+    "component_id": "fixture:gcp6-closure-policy",
+    "component_version": "1.0.0",
+    "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" }
+  },
+  "selected_at": "2026-08-21T20:00:00.000000Z",
+  "members": [
+    {
+      "object_ref": {
+        "artifact_id": "fixture:claim-a",
+        "artifact_version": "1.0.0",
+        "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "e61d8ce8e0ddf82f7abed3f125081211b0fa7824dc027155aeed8b8aeedb82a3" }
+      },
+      "score_type": "not-applicable",
+      "score": null,
+      "inclusion_reason": "Primary selected assertion"
+    }
+  ],
+  "known_omissions": [],
+  "closure_inputs": [
+    {
+      "kind": "contradiction",
+      "object_ref": {
+        "artifact_id": "fixture:contradiction-b",
+        "artifact_version": "1.0.0",
+        "digest": { "algorithm": "sha-256", "canonical_profile": "GKX-CBOR-1", "value": "110f82ffa8d262d3565926dae5784eb4c04bffbf08f40fc438bcba1bcbc6839e" }
+      }
+    }
+  ]
+}

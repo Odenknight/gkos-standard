@@ -35,6 +35,19 @@ adapter maps such as
 v0.80 adds R16 behavior requirements and initial Layer-6/Layer-7 schemas, but
 the missing fixtures remain missing and no qualifying profile is created.
 
+## Executable v0.80 evidence foundation
+
+The runner now includes a reference Layer-6 phase split, canonical CBOR
+verifier, declared diagnostic-JSON rendering/parser, clean-process replay test,
+machine-readable applicability and evidence vocabularies, and registry lint.
+The preserved replay result is in
+[`evidence/gcp6-replay-v0.1/`](evidence/gcp6-replay-v0.1/). It reports
+`mechanism_demonstrated` with no qualifying profiles or tier claim.
+
+Registry integrity is a required runner test. Mutation coverage remains a
+reported deficit until active negative fixtures exist for every registered
+gate; `npm run lint:mutation-coverage` is the eventual strict claim gate.
+
 ## Provisional SRTP graph runner
 
 `runner/srtp-graph.mjs` evaluates the separate `SRTP-DRAFT-0.1` graph fixtures

@@ -4,7 +4,7 @@
   "title": "GKOS conformance claim manifest",
   "description": "Exact-bound machine-readable conformance claim under R16: dated standard release, GKX version, implementation, fixture suite, immutable evidence, limitations, exceptions, and assessment type.",
   "type": "object",
-  "required": ["claim_id", "implementation", "standard", "profiles_claimed", "attestation", "fixtures", "evidence", "limitations", "exceptions", "generated_at"],
+  "required": ["claim_id", "implementation", "standard", "evidence_status", "requirements_verified", "profiles_claimed", "tier_claims", "applicability", "attestation", "fixtures", "evidence", "limitations", "exceptions", "generated_at"],
   "properties": {
     "claim_id": { "type": "string", "minLength": 1 },
     "implementation": {
@@ -36,6 +36,34 @@
       "type": "array",
       "uniqueItems": true,
       "items": { "type": "string", "enum": ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5", "GCP-6", "GCP-7", "GKOS-Core", "GKOS-Advanced", "GCP-6-Context-Only-Extension", "Viewer-Projection-Profile"] }
+    },
+    "evidence_status": {
+      "description": "Computed coverage status from the registered evidence vocabulary; assessment independence remains a separate attestation axis.",
+      "type": "string",
+      "enum": ["evidence_incomplete", "mechanism_demonstrated", "requirement_verified", "cumulative_profile_satisfied", "tier_claimable"]
+    },
+    "requirements_verified": {
+      "description": "Permanent requirements computed from catalog-declared complete fixture sets whose cited fixtures all passed.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^GKOS-[A-Z]+-[0-9]{3}$" }
+    },
+    "tier_claims": {
+      "description": "Named tiers computed from complete passing requirement coverage.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "enum": ["GKOS-Core", "GKOS-Advanced", "GCP-6-Context-Only-Extension"] }
+    },
+    "applicability": {
+      "type": "object",
+      "required": ["mapping_version", "mapping_sha256", "evidence_vocabulary_version", "evidence_vocabulary_sha256"],
+      "properties": {
+        "mapping_version": { "type": "string" },
+        "mapping_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "evidence_vocabulary_version": { "type": "string" },
+        "evidence_vocabulary_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
     },
     "attestation": {
       "type": "object",
