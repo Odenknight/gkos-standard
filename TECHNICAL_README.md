@@ -112,6 +112,182 @@ GKOS specifies the governance invariants; it does not mandate one “governance
 store.” A deployment may use multiple stores if the applicable identities,
 history, restrictions, authority, and receipts remain reproducible.
 
+## Open-source and product ecosystem mapping
+
+**Status:** informative ecosystem analysis, reviewed 2026-08-29. This section
+identifies reusable mechanisms and adapter targets. It is not an endorsement,
+vendor certification, interoperability result, or GKOS conformance assessment.
+
+The GKOS layers are implementation-neutral contracts. Existing projects often
+provide useful machinery inside one or more layers, but product features and
+GKOS artifacts are not interchangeable. Authentication is not an Authorized
+Use Record; a workflow state is not necessarily a Decision Record; a prompt or
+tool schema is not a Context Manifest; and a graph edge is not automatically a
+typed, sourced, temporal GKOS assertion.
+
+```mermaid
+flowchart TB
+    subgraph GOV["Governance envelope"]
+        L7["L7 Authorized Use<br/>Authorized Use Record"]
+        L6["L6 Context Presentation<br/>Context Manifest"]
+    end
+    subgraph REASON["Decision and control"]
+        L5["L5 Review and Workflow<br/>Decision Record"]
+        L4["L4 Validation and Control<br/>Diagnostics and control receipts"]
+    end
+    subgraph KNOW["Knowledge substrate"]
+        L3["L3 Relationships and Lineage<br/>Assertion and lineage records"]
+        L2["L2 Structure and Identity<br/>Structured Knowledge Object"]
+        L1["L1 Original Sources<br/>Source Record"]
+    end
+    L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7
+```
+
+### Layer-by-layer component mapping
+
+| Layer | Candidate open-source or open-standard components | What a GKOS adapter must still preserve |
+| --- | --- | --- |
+| **L1 Original Sources** | [Docling](https://github.com/docling-project/docling), [Apache Tika](https://tika.apache.org/), [Unstructured](https://github.com/Unstructured-IO/unstructured), [OpenLineage](https://openlineage.io/), [W3C PROV-O](https://www.w3.org/TR/prov-o/) | Exact source revision, fingerprint, provenance/custody, acquisition receipt, sensitivity and retention defaults; extraction output must not overwrite source evidence |
+| **L2 Structure and Identity** | [Logseq](https://github.com/logseq/logseq), [LinkML](https://linkml.io/), [JSON Schema](https://json-schema.org/) | Stable governed UID and version independent of filename/path, canonical representation, type and schema identity; preserve unknown or lossy fields explicitly |
+| **L3 Relationships and Lineage** | [Graphiti](https://github.com/getzep/graphiti), [XTDB](https://xtdb.com/), [Neo4j Community Edition](https://github.com/neo4j/neo4j), [Dolt](https://github.com/dolthub/dolt) | Typed direction, actor, provenance, evidence anchors, scope, epistemic state, validity time, version, contradiction and supersession semantics |
+| **L4 Validation and Control** | [Great Expectations](https://greatexpectations.io/), [Soda Core](https://github.com/sodadata/soda-core), [Ragas](https://github.com/explodinggradients/ragas), [OpenTelemetry](https://opentelemetry.io/), [OPA](https://www.openpolicyagent.org/), [Cedar](https://www.cedarpolicy.com/) | Exact policy/check identity and version, evaluated inputs, deterministic outcome, stable diagnostic code, blocking behavior and durable receipt |
+| **L5 Review and Workflow** | [adr-tools](https://github.com/npryce/adr-tools), workflow engines, review systems, and policy-backed approval services | Authorized append-only disposition, actor-role separation, conditions, expiry, supersession and exact binding to governed inputs; policy evaluation alone is not review |
+| **L6 Context Presentation** | [MCP](https://modelcontextprotocol.io/) schemas and metadata, [SPDX](https://spdx.dev/), [CycloneDX](https://cyclonedx.org/), [CUE](https://cuelang.org/) | Captured Selection Set plus deterministic assembly of evidence, contradictions, warnings, restrictions, omissions, recipient, purpose, versions, expiry and reproduction data |
+| **L7 Authorized Use** | [Sigstore/Rekor](https://www.sigstore.dev/), [in-toto](https://in-toto.io/), [SPIFFE/SPIRE](https://spiffe.io/), [OpenFGA](https://openfga.dev/) | Exact actor/action/context/grant/effect-scope binding, authorization-time evaluation, outcome, refusal or recovery route, and durable use evidence |
+
+[Obsidian](https://obsidian.md/) is a widely used Markdown client and relevant
+interoperability surface, but its core application is not open-source. It is
+therefore not classified as an open-source component in the table. License,
+edition, and deployment terms for every candidate must be verified before an
+implementation adopts it.
+
+### Product and vendor coverage snapshot
+
+The matrix below measures documented component overlap, not product quality or
+GKOS compliance.
+
+- **D** — GKOS defines the layer contract; this is not an implementation claim.
+- **S** — substantial reusable component overlap.
+- **P** — partial or adjacent capability requiring a GKOS adapter and evidence.
+- **—** — no material mapping identified in the reviewed public sources.
+
+| Product or ecosystem | L1 | L2 | L3 | L4 | L5 | L6 | L7 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Google Cloud / OKF** | P | P | P | P | — | — | P |
+| **Anthropic** | — | — | — | P | P | — | — |
+| **MCP ecosystem** | — | — | — | — | — | P | P |
+| **OpenAI** | — | — | — | P | P | P | — |
+| **Microsoft** | P | — | S | P | — | — | P |
+| **AWS** | — | — | — | S | — | — | P |
+| **Databricks** | P | — | S | P | — | — | P |
+| **Zep / Graphiti** | — | P | S | — | — | — | — |
+| **LangChain ecosystem** | — | — | — | P | P | P | — |
+| **GKOS standard contract** | D | D | D | D | D | D | D |
+
+Why the conservative classifications matter:
+
+- Google [Open Knowledge Format (OKF) v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+  adds valuable provenance, trust, lifecycle and attested-computation fields,
+  but its concept identity remains path-based, ordinary links are not the full
+  GKOS assertion contract, trust tiers are advisory, and runtime receipts are
+  not stored in the bundle.
+- [MCP 2026-07-28 authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
+  defines OAuth-based access to protected MCP resources. For HTTP deployments
+  supporting authorization, it uses protected-resource metadata and resource
+  indicators. It does not define GKOS epistemic state, Decision Records,
+  Context Manifests, or Authorized Use Records.
+- Cedar, OPA, IAM, Entra, OpenFGA and similar systems evaluate or enforce
+  authorization. Their closest primary fit is L4 control and L7 enforcement
+  support—not L5 human or organizational disposition by default.
+- Evaluation and observability systems such as OpenAI Evals, LangSmith, MLflow,
+  Ragas and OpenTelemetry can supply L4 evidence. A GKOS adapter must still
+  bind the exact test/policy, inputs, version, result, diagnostic semantics and
+  blocking rule.
+- Catalog and lineage systems such as Microsoft Purview, Databricks Unity
+  Catalog, OpenLineage and Graphiti can supply strong L1/L3 inputs or
+  projections. They do not acquire GKOS promotion or decision authority by
+  storing a graph or lineage event.
+
+Representative primary references for the placements include
+[Anthropic evaluation guidance](https://platform.claude.com/docs/en/test-and-evaluate/develop-tests)
+and the [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python),
+[OpenAI Evals](https://platform.openai.com/docs/guides/evals) and the
+[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/),
+[Microsoft Purview lineage](https://learn.microsoft.com/en-us/purview/data-gov-classic-lineage-user-guide),
+[Amazon Verified Permissions](https://docs.aws.amazon.com/verifiedpermissions/),
+[Cedar](https://github.com/cedar-policy/cedar),
+[Databricks Unity Catalog lineage](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage),
+[MLflow evaluation](https://mlflow.org/docs/latest/ml/evaluation/),
+[Graphiti](https://github.com/getzep/graphiti),
+[LangSmith evaluation](https://docs.langchain.com/langsmith/evaluation), and
+[LangGraph](https://github.com/langchain-ai/langgraph). Products change more
+quickly than GKOS releases; an implemented adapter must pin the exact external
+version and re-evaluate its mapping.
+
+The Google specification named **OKF** is separate from the historical
+**OKF+** name used in this repository. R11 renamed the GKOS technical exchange
+model from OKF+ to **GKX**, and R12 limits Google OKF interoperability to a
+versioned subset. Implementations must not silently map one format into the
+other because both use Markdown and YAML frontmatter.
+
+### What changed in 2026
+
+Two external developments sharpen the adapter boundary:
+
+1. **OKF v0.2** made `sources`, `generated`, `verified`, `status`,
+   `stale_after`, and Attested Computation contracts first-class. An executor
+   returns a declared receipt shape and deterministic attester code checks it.
+   The per-run receipt and verdict remain runtime artifacts rather than stored
+   bundle records. In GKOS terms, those artifacts can become L4 evidence and
+   L1 re-entry sources; they do not become an L7 authorization history unless
+   an adapter binds them to exact context, authority, action and outcome.
+2. **MCP 2026-07-28** strengthened HTTP authorization around OAuth 2.1 roles,
+   protected-resource metadata and target-resource binding. The MCP roadmap's
+   [Agent Identity Working Group](https://modelcontextprotocol.io/development/roadmap)
+   is pursuing workload and user-delegated identity. Roadmap work is not a
+   released identity or governance contract, and authentication of a caller
+   does not establish knowledge-promotion or consequential-use authority.
+
+This convergence supports a bounded GKOS position: provenance, attestation,
+identity, policy and context transport are becoming more capable, while GKOS
+specifies how their outputs participate in one inspectable lifecycle from
+preserved evidence through governed action and Layer-1 re-entry. The reviewed
+sources do not supply that complete seven-contract lifecycle as a single
+governed contract family. This is not a claim that no other system addresses
+similar concerns.
+
+### Adapter priorities
+
+| Adapter target | Recommended GKOS role | Mandatory boundary |
+| --- | --- | --- |
+| Google OKF v0.2 | Versioned L1/L2 intake and limited L3 projection | Preserve the raw bundle as source evidence; never treat a path as a GKX UID; translate trust fields as sourced signals, not authority; wrap run receipts as evidence before any governed promotion |
+| MCP authorization | L6/L7 transport and authorization evidence | Bind principal, protected resource, grant/scope, request, Context Manifest hash, outcome and refusal; token possession never creates L5 promotion authority |
+| Graphiti or another knowledge graph | Regenerable L3 projection/index | Pin source snapshot and ontology/index version; preserve loss markers; never allow inferred similarity or graph state to overwrite canonical assertions |
+| OPA or Cedar | L4 deterministic policy evaluator | Record policy digest/version, complete evaluated input, decision, diagnostic code and blocking result; do not relabel policy evaluation as an authorized L5 disposition |
+| OpenLineage or W3C PROV | L1/L3 import/export | Publish a field-level mapping, time semantics and explicit losses; provenance validity does not imply epistemic acceptance |
+| Sigstore or in-toto | Signature/transparency envelope for selected receipts | Signature proves integrity/origin under its trust model, not truth, GKOS authority or conformance by itself |
+
+### Data-science review path
+
+For an analytics, ML or scientific workflow, the layers can be reviewed as a
+single transaction without requiring one monolithic platform:
+
+| Layer | Data-science example | Review question |
+| --- | --- | --- |
+| L1 | Dataset snapshot, source query, instrument output, paper, notebook input | Can the exact observed or acquired input be reproduced and its custody explained? |
+| L2 | Dataset/model/evaluation object with stable ID and schema version | Does identity survive file moves, table renames and regenerated views? |
+| L3 | Feature, dataset, model, run, citation, contradiction and supersession lineage | Are relationships sourced, directional, scoped and valid for the stated time? |
+| L4 | Schema checks, drift tests, leakage tests, metric/eval results, policy checks | Which exact checks ran, and do mandatory failures actually stop promotion? |
+| L5 | Accepted, rejected, limited or deferred model/data decision | Who had authority, who was independent, and what evidence and conditions bound the disposition? |
+| L6 | Reproducible evaluation, analysis or inference context | Can another reviewer reconstruct the exact selected inputs, warnings, omissions, policies and versions? |
+| L7 | Deployment, publication, external release, automated decision or tool effect | Was the action permitted for this actor and purpose against this exact context, and is the outcome/refusal durable? |
+
+Current `main` remains GKOS v0.80. v0.81 preparation does not make any vendor,
+retrieval algorithm, graph store, model, client or adapter normative. The
+active fixture catalog must continue to declare no qualifying profile until
+its exact-bound release and coverage gates are satisfied; fail-closed behavior
+is normative, while ingestion and adapter guidance remains informative.
+
 ## Governed retrieval and context
 
 Similarity search is a candidate-discovery mechanism, not an authorization
