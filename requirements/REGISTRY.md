@@ -1,9 +1,9 @@
 # GKOS requirement registry
 
 **Authority:** owner-accepted permanent allocations, 2026-08-05, 2026-08-15,
-and 2026-08-20
+2026-08-20, 2026-08-21, and 2026-08-29
 
-**Controlling decisions:** `decisions/R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md`; `decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md`; `decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md`
+**Controlling decisions:** `decisions/R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md`; `decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md`; `decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md`; `decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md`; `decisions/R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md`
 
 **Current release baseline:** GKOS-2026-08-20 v0.80; R16 allocations are published under the owner-authorized, non-consensus v0.x development model.
 
@@ -37,7 +37,7 @@ This registry is authoritative for allocated GKOS requirement identifiers. It is
 | `GKOS-DELEGATION-001` | A supersession delegation MUST be explicit, bounded, versioned, expiring, and no broader or longer-lived than its originating authority, and MUST bind to the applicable Specialized Agent Contract or equivalent governed actor contract. | Active — GKOS v0.79 | R15-110 | None |
 | `GKOS-DELEGATION-002` | A delegated supersession operation MUST be positively classified as routine by a deterministic, human-governed, versioned predicate; major or indeterminate outcomes require prior human disposition. | Active — GKOS v0.79 | R15-110 | None |
 | `GKOS-DELEGATION-003` | A non-deterministic checker MAY only increase restrictiveness and MUST NOT downgrade a deterministic major or indeterminate outcome. | Active — GKOS v0.79 | R15-110 | None |
-| `GKOS-DELEGATION-004` | A delegated action MUST reference its grant and predicate in the record satisfying the State-Change Receipt role and MUST enter the required human-review lifecycle. | Active — GKOS v0.79 | R15-110 | None |
+| `GKOS-DELEGATION-004` | A delegated action MUST reference its grant and predicate in the record satisfying the State-Change Receipt role and MUST enter the required human-review lifecycle. | Superseded for the v0.81 development line | R15-110 | `GKOS-REVIEW-001..003`; R18-127..R18-128 |
 | `GKOS-DELEGATION-005` | Bounded supersession delegation MUST NOT confer or imply general governed write authority. | Active — GKOS v0.79 | R15-110 | None |
 | `GKOS-DELEGATION-006` | When required review of actions under a delegation becomes overdue, that delegation MUST NOT authorize additional state changes until the overdue condition is dispositioned or a higher-precedence, bounded exception is explicitly authorized, time-limited, and durably receipted. | Active — GKOS v0.79 | R15-110 | None |
 | `GKOS-PROFILE-001` | A GKOS Core claim MUST satisfy all applicable GCP-1 through GCP-5 requirements on the same exact release and fixture baseline. | Active — GKOS v0.80 | R16-117 | None |
@@ -75,6 +75,11 @@ This registry is authoritative for allocated GKOS requirement identifiers. It is
 | ID | Original requirement text | Status | Source | Replacement mapping |
 | --- | --- | --- | --- | --- |
 | `GKOS-AUTHUSE-007` | Authority validity evaluation MUST use a captured canonical action-evaluation time and the half-open interval `valid_from <= evaluation_time < valid_until`; evaluation before `valid_from`, at or after `valid_until`, or with missing, malformed, unavailable, or indeterminate required time evidence MUST fail closed with `GKOS-GATE-L7-001` and a record satisfying the Refusal Receipt role. | Accepted — unpublished development amendment | R17-126; owner approval 2026-08-21 | None |
+| `GKOS-REVIEW-001` | Every governed proposal entering GCP-5 MUST enter an identified authorized review lifecycle before governed acceptance. | Accepted — v0.81 development line | R18-127 | None |
+| `GKOS-REVIEW-002` | A GCP-5 disposition MUST be recorded in an authorized append-only Decision Record bound to the proposal and the exact evidence reviewed. | Accepted — v0.81 development line | R18-127 | None |
+| `GKOS-REVIEW-003` | Proposing, reviewing or deciding, authorizing, and executing roles MUST remain distinct as applicable; no actor may approve or certify its own work. An agent reviewer MUST use a different model family, separate bounded authority, a sealed evidence packet, and deterministic non-overridable gates, and MUST route every declared mandatory escalation trigger to an authorized human. | Accepted — v0.81 development line | R18-127..R18-128 | Replaces the human-only lifecycle wording in `GKOS-DELEGATION-004` without weakening mandatory human-escalation cases |
+| `GKOS-REVIEW-004` | Acceptance, rejection, deferral, withdrawal, expiry, supersession, and escalation dispositions MUST remain append-only and traceable without deletion or silent rewriting of prior dispositions. | Accepted — v0.81 development line | R18-127 | None |
+| `GKOS-DISCLOSURE-001` | Authorization MUST precede protected disclosure to another principal, audience, provider, process, log, event, metric, count, diagnostic, error, or output surface. Denied information MUST be noninterfering outside the declared authorized boundary except for explicitly authorized bounded disclosure. | Accepted — v0.81 development line | R18-129 | None |
 
 ## Append-only status and replacement ledger
 
@@ -86,6 +91,8 @@ This registry is authoritative for allocated GKOS requirement identifiers. It is
 | 2026-08-16 | All seventeen R15 allocations | Release status advanced from accepted development target to authorized developmental publication in GKOS v0.79. | Owner publication instruction; R15 release route | None |
 | 2026-08-20 | `GKOS-PROFILE-001..007`, `GKOS-CANON-001..008`, `GKOS-CONTEXT-001..005`, `GKOS-AUTHUSE-001..006`, `GKOS-EFFECT-001..003` | Twenty-nine permanent requirements allocated and published for required tiers, deterministic CBOR, context replay, authorized use, refusal, and effect scope in GKOS v0.80. | R16 and owner publication instruction | None |
 | 2026-08-21 | `GKOS-AUTHUSE-007` | Permanent requirement allocated as an unpublished development amendment defining half-open authority validity intervals and captured action-evaluation time. | R17-126; owner approval | None |
+| 2026-08-29 | `GKOS-REVIEW-001..004`, `GKOS-DISCLOSURE-001` | Permanent requirements allocated for GCP-5 lifecycle closure, bounded independent-agent review, and protected disclosure. | R18-127..R18-129; owner authorization | None |
+| 2026-08-29 | `GKOS-DELEGATION-004` | Human-only lifecycle wording superseded for the v0.81 development line by an authorized independent-review lifecycle retaining mandatory human escalation. | R18-128; owner authorization | `GKOS-REVIEW-001..003` |
 
 ## Profile applicability for R15 allocations
 

@@ -1,0 +1,44 @@
+{
+  "catalog_version": "0.1.0-development",
+  "gkos_release": "GKOS-2026-08-29 v0.81 release candidate",
+  "description": "Standard-owned portable baseline/mutation twins for every registered normative gate. The executable evaluator, not an implementation diagnostic, determines the expected stable gate code.",
+  "qualifying_profiles": [],
+  "complete_requirements": {
+    "GKOS-REVIEW-001": ["TA-L5-003"],
+    "GKOS-REVIEW-002": ["TA-L5-004"],
+    "GKOS-REVIEW-003": ["TA-L5-005"],
+    "GKOS-REVIEW-004": ["TA-L5-006"],
+    "GKOS-DISCLOSURE-001": ["TA-L7-007"]
+  },
+  "fixtures": [
+    {"fixture_id":"TA-L1-001","class":"mutation","profile":"GCP-1","requirement_ids":["GKOS-REENTRY-001"],"file":"track-a/cases.json","case_id":"TA-L1-001","gate_expectation":{"expected_codes":["GKOS-GATE-L1-001"]}},
+    {"fixture_id":"TA-L3-001","class":"mutation","profile":"GCP-3","requirement_ids":["GKOS-REENTRY-004"],"file":"track-a/cases.json","case_id":"TA-L3-001","gate_expectation":{"expected_codes":["GKOS-GATE-L3-001"]}},
+    {"fixture_id":"TA-L4-001","class":"mutation","profile":"GCP-4","requirement_ids":["GKOS-RETENTION-003"],"file":"track-a/cases.json","case_id":"TA-L4-001","gate_expectation":{"expected_codes":["GKOS-GATE-L4-001"]}},
+    {"fixture_id":"TA-L4-002","class":"mutation","profile":"GCP-4","requirement_ids":["GKOS-RETENTION-003"],"file":"track-a/cases.json","case_id":"TA-L4-002","gate_expectation":{"expected_codes":["GKOS-GATE-L4-002"]}},
+    {"fixture_id":"TA-L4-003","class":"mutation","profile":"GCP-4","requirement_ids":["GKOS-DELEGATION-002"],"file":"track-a/cases.json","case_id":"TA-L4-003","gate_expectation":{"expected_codes":["GKOS-GATE-L4-003"]}},
+    {"fixture_id":"TA-L4-004","class":"mutation","profile":"GCP-4","requirement_ids":["GKOS-DELEGATION-003"],"file":"track-a/cases.json","case_id":"TA-L4-004","gate_expectation":{"expected_codes":["GKOS-GATE-L4-004"]}},
+    {"fixture_id":"TA-L5-001","class":"mutation","profile":"GCP-5","requirement_ids":["GKOS-DELEGATION-006"],"file":"track-a/cases.json","case_id":"TA-L5-001","gate_expectation":{"expected_codes":["GKOS-GATE-L5-001"]}},
+    {"fixture_id":"TA-L5-002","class":"mutation","profile":"GCP-5","requirement_ids":["GKOS-CONTEXT-005"],"file":"track-a/cases.json","case_id":"TA-L5-002","gate_expectation":{"expected_codes":["GKOS-GATE-L5-002"]}},
+    {"fixture_id":"TA-L5-003","class":"mutation","profile":"GCP-5","requirement_ids":["GKOS-REVIEW-001"],"file":"track-a/cases.json","case_id":"TA-L5-003","gate_expectation":{"expected_codes":["GKOS-GATE-L5-003"]}},
+    {"fixture_id":"TA-L5-004","class":"mutation","profile":"GCP-5","requirement_ids":["GKOS-REVIEW-002"],"file":"track-a/cases.json","case_id":"TA-L5-004","gate_expectation":{"expected_codes":["GKOS-GATE-L5-004"]}},
+    {"fixture_id":"TA-L5-005","class":"mutation","profile":"GCP-5","requirement_ids":["GKOS-REVIEW-003","GKOS-AUTHUSE-004"],"file":"track-a/cases.json","case_id":"TA-L5-005","gate_expectation":{"expected_codes":["GKOS-GATE-L5-005"]}},
+    {"fixture_id":"TA-L5-006","class":"mutation","profile":"GCP-5","requirement_ids":["GKOS-REVIEW-004"],"file":"track-a/cases.json","case_id":"TA-L5-006","gate_expectation":{"expected_codes":["GKOS-GATE-L5-006"]}},
+    {"fixture_id":"TA-L6-001","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-001"],"file":"track-a/cases.json","case_id":"TA-L6-001","gate_expectation":{"expected_codes":["GKOS-GATE-L6-001"]}},
+    {"fixture_id":"TA-L6-002","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-002"],"file":"track-a/cases.json","case_id":"TA-L6-002","gate_expectation":{"expected_codes":["GKOS-GATE-L6-002"]}},
+    {"fixture_id":"TA-L6-003","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-003"],"file":"track-a/cases.json","case_id":"TA-L6-003","gate_expectation":{"expected_codes":["GKOS-GATE-L6-003"]}},
+    {"fixture_id":"TA-L6-004","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-004"],"file":"track-a/cases.json","case_id":"TA-L6-004","gate_expectation":{"expected_codes":["GKOS-GATE-L6-004"]}},
+    {"fixture_id":"TA-L6-005","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-005"],"file":"track-a/cases.json","case_id":"TA-L6-005","gate_expectation":{"expected_codes":["GKOS-GATE-L6-005"]}},
+    {"fixture_id":"TA-L6-006","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-006"],"file":"track-a/cases.json","case_id":"TA-L6-006","gate_expectation":{"expected_codes":["GKOS-GATE-L6-006"]}},
+    {"fixture_id":"TA-L6-007","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-007"],"file":"track-a/cases.json","case_id":"TA-L6-007","gate_expectation":{"expected_codes":["GKOS-GATE-L6-007"]}},
+    {"fixture_id":"TA-L6-008","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CANON-008"],"file":"track-a/cases.json","case_id":"TA-L6-008","gate_expectation":{"expected_codes":["GKOS-GATE-L6-008"]}},
+    {"fixture_id":"TA-L6-009","class":"mutation","profile":"GCP-6","requirement_ids":["GKOS-CONTEXT-004"],"file":"track-a/cases.json","case_id":"TA-L6-009","gate_expectation":{"expected_codes":["GKOS-GATE-L6-009"]}},
+    {"fixture_id":"TA-L7-001","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-AUTHUSE-003","GKOS-AUTHUSE-007"],"file":"track-a/cases.json","case_id":"TA-L7-001","gate_expectation":{"expected_codes":["GKOS-GATE-L7-001"]}},
+    {"fixture_id":"TA-L7-002","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-EFFECT-002"],"file":"track-a/cases.json","case_id":"TA-L7-002","gate_expectation":{"expected_codes":["GKOS-GATE-L7-002"]}},
+    {"fixture_id":"TA-L7-003","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-EFFECT-003"],"file":"track-a/cases.json","case_id":"TA-L7-003","gate_expectation":{"expected_codes":["GKOS-GATE-L7-003"]}},
+    {"fixture_id":"TA-L7-004","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-AUTHUSE-002"],"file":"track-a/cases.json","case_id":"TA-L7-004","gate_expectation":{"expected_codes":["GKOS-GATE-L7-004"]}},
+    {"fixture_id":"TA-L7-005","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-RECEIPT-003"],"file":"track-a/cases.json","case_id":"TA-L7-005","gate_expectation":{"expected_codes":["GKOS-GATE-L7-005"]}},
+    {"fixture_id":"TA-L7-006","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-AUTHUSE-006"],"file":"track-a/cases.json","case_id":"TA-L7-006","gate_expectation":{"expected_codes":["GKOS-GATE-L7-006"]}},
+    {"fixture_id":"TA-L7-007","class":"mutation","profile":"GCP-7","requirement_ids":["GKOS-DISCLOSURE-001"],"file":"track-a/cases.json","case_id":"TA-L7-007","gate_expectation":{"expected_codes":["GKOS-GATE-L7-007"]}}
+  ]
+}
+

@@ -23,7 +23,7 @@ test("unexecuted graph expectations block fixture and profile PASS", () => {
   assert.deepEqual(claim.requirements_verified, []);
   assert.deepEqual(claim.profiles_claimed, []);
   assert.deepEqual(claim.tier_claims, []);
-  assert.equal(claim.applicability.mapping_version, "1.0.0");
+  assert.equal(claim.applicability.mapping_version, "1.1.0-development");
   assert.equal(claim.fixtures.unevaluated, 2);
   assert.equal(claim.fixtures.fully_evaluated, 6);
   assert.equal(claim.fixtures.results.find((r) => r.fixture_id === "GCP1-N03").divergence_ref, undefined);

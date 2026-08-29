@@ -1,9 +1,9 @@
 {
   "$schema": "../schemas/profile-applicability.schema.json",
-  "mapping_version": "1.0.0",
+  "mapping_version": "1.1.0-development",
   "status": "machine-readable mirror",
   "authority": "requirements/PROFILE_APPLICABILITY.md",
-  "gkos_release": "GKOS-2026-08-20 v0.80",
+  "gkos_release": "GKOS-2026-08-29 v0.81 release candidate",
   "qualification_boundary": "This mapping never declares fixture coverage complete or grants a profile claim.",
   "profiles": {
     "GKOS-Core": { "inherits": ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5"] },
@@ -65,6 +65,12 @@
     "GKOS-AUTHUSE-004": { "profiles": ["GCP-7"] },
     "GKOS-AUTHUSE-005": { "profiles": ["GCP-7"] },
     "GKOS-AUTHUSE-006": { "profiles": ["GCP-7"] },
+    "GKOS-AUTHUSE-007": { "profiles": ["GCP-7"] },
+    "GKOS-REVIEW-001": { "profiles": ["GCP-5"] },
+    "GKOS-REVIEW-002": { "profiles": ["GCP-5"] },
+    "GKOS-REVIEW-003": { "profiles": ["GCP-5"] },
+    "GKOS-REVIEW-004": { "profiles": ["GCP-5"] },
+    "GKOS-DISCLOSURE-001": { "profiles": ["GCP-4+", "GCP-7"], "condition": "protected information is processed or disclosed" },
     "GKOS-EFFECT-001": { "profiles": ["GCP-7"], "condition": "or a lower-layer operation has a mandatory typed effect-scope control" },
     "GKOS-EFFECT-002": { "profiles": ["GCP-7"], "condition": "or a lower-layer operation has a mandatory typed effect-scope control" },
     "GKOS-EFFECT-003": { "profiles": ["GCP-7"], "condition": "or a lower-layer operation has a mandatory typed effect-scope control" }

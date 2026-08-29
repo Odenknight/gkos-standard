@@ -2,6 +2,13 @@
 
 This register indexes adopted v0.x development decisions. These records document Founder/Initial Editor dispositions during testing and refinement; they are not consensus ratification, independent certification, accreditation, or regulator approval.
 
+## R18 — Track A GCP-4/GCP-5 closure and authorized independent review
+
+- **Date:** 2026-08-29
+- **Status:** Accepted development decision; v0.81 preparation authority
+- **Decision:** Reconstruct and replace the missing Track A authority; allocate atomic GCP-5 review requirements; require protected-disclosure control and portable mutation evidence; permit a separately authorized, different-model-family Review Agent to fulfill bounded Layer-5 review under deterministic gates and mandatory human escalation triggers; bind qualification to exact implementation and environment closure; and authorize automatic v0.81 Standard publication only after every exact-bound release gate passes.
+- **Record:** [R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md](R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md)
+
 ## R17 — Authority validity interval semantics
 
 - **Date:** 2026-08-21
