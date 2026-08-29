@@ -15,6 +15,8 @@ distinguishable and auditable—without replacing the tools that store data,
 run agents, manage workflows, or enforce identity.
 
 - **Current release:** GKOS-2026-08-20 v0.80
+- **Development line:** v0.81 preparation; no v0.81 release or qualifying
+  profile is claimed by this README
 - **Maturity:** public pre-standard; developmental and open for testing
 - **Machine exchange contract:** GKX 2.0
 - **Canonical repository:** `Odenknight/gkos-standard`
@@ -141,6 +143,31 @@ Those systems provide capabilities. GKOS defines how governed knowledge,
 context, authority, and receipts move between them without turning retrieval
 rank, model confidence, or tool access into approval.
 
+## Use the tools you already have
+
+GKOS is not tied to one vendor or implementation. It defines the governed
+contracts between tools that preserve sources, structure knowledge, record
+lineage, run checks, manage review, assemble context, and authorize action.
+
+| GKOS responsibility | Tools and standards that can contribute |
+| --- | --- |
+| **L1 Original Sources** | Docling, Apache Tika, Unstructured, OpenLineage, W3C PROV-O |
+| **L2 Structure and Identity** | Logseq, LinkML, JSON Schema, and Markdown-based knowledge tools |
+| **L3 Relationships and Lineage** | Graphiti, XTDB, Neo4j Community Edition, Dolt |
+| **L4 Validation and Control** | Great Expectations, Soda Core, Ragas, OpenTelemetry, Open Policy Agent, Cedar |
+| **L5 Review and Workflow** | ADR tooling and workflow/review systems |
+| **L6 Context Presentation** | MCP tool/resource schemas and server metadata, SPDX, CycloneDX, CUE |
+| **L7 Authorized Use** | Sigstore/Rekor, in-toto, SPIFFE/SPIRE, OpenFGA |
+
+These are interoperability examples, not endorsements or conformance results.
+Each provides part of a layer's shape; none becomes a GKOS layer merely by
+being present. A conforming implementation must still satisfy the applicable
+GKOS contracts, preserve required evidence, and publish an exact-bound claim.
+
+For the layer-by-layer mapping, 2026 OKF and MCP analysis, product coverage
+matrix, and adapter guidance, read the
+[technical orientation](TECHNICAL_README.md#open-source-and-product-ecosystem-mapping).
+
 ## Required tiers and adoption paths
 
 GKOS can be adopted incrementally. R16 defines these named claim tiers:
@@ -233,7 +260,7 @@ appeals, succession, and signed archival publication remain v1.0 work.
 | Legal or professional review | [Legal and professional orientation](docs/GKOS_LEGAL_AND_PROFESSIONAL_ORIENTATION.md), then [known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) |
 | Implementing GKOS or GKX | [Technical orientation](TECHNICAL_README.md), [master standard](standard/00_GKOS_Master_Standard.md), [canonical serialization](standard/annexes/Canonical_Serialization.md), and [layer contracts](standard/annexes/Layer_Interface_Contracts.md) |
 | Testing an implementation | [Conformance](conformance/README.md), [requirements registry](requirements/REGISTRY.md), and [fixtures](fixtures/README.md) |
-| Comparing standards | [Provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
+| Comparing standards and tools | [Technical ecosystem mapping](TECHNICAL_README.md#open-source-and-product-ecosystem-mapping) and [provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
 | Proposing a change | [Contributing](CONTRIBUTING.md) and [governance](GOVERNANCE.md) |
 | Reviewing current limitations | [Known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) and [roadmap](ROADMAP.md) |
 
