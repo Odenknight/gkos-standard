@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { evaluateTrackATwins } from "./track-a-evidence.mjs";
 
 const root = resolve(import.meta.dirname, "..", "..");
 const args = new Set(process.argv.slice(2));
@@ -26,6 +27,8 @@ const registeredCodesInMarkdown = new Set(
 );
 const registeredCodesInJson = new Set(Object.keys(diagnostics.codes));
 const errors = [];
+const executedTwins = evaluateTrackATwins(catalogs[3], readJson("fixtures/track-a/cases.json"));
+errors.push(...executedTwins.errors);
 const warnings = [];
 const mutationCoverage = new Map([...registeredCodesInJson].map((code) => [code, []]));
 
@@ -74,6 +77,8 @@ if (uncoveredCodes.length) warnings.push(`${uncoveredCodes.length} registered ga
 if (args.has("--require-mutation-coverage") && uncoveredCodes.length) {
   errors.push(`mutation coverage incomplete: ${uncoveredCodes.join(", ")}`);
 }
+const executableUncovered = [...registeredCodesInJson].filter(code => !executedTwins.coverage[code]?.length);
+if (args.has("--require-mutation-coverage") && executableUncovered.length) errors.push(`executed predicate mutation coverage incomplete: ${executableUncovered.join(", ")}`);
 
 const report = {
   result: errors.length ? "FAIL" : "PASS",
@@ -84,6 +89,9 @@ const report = {
   gate_code_count: registeredCodesInJson.size,
   covered_gate_codes: Object.fromEntries([...mutationCoverage].filter(([, fixtures]) => fixtures.length)),
   uncovered_gate_codes: uncoveredCodes,
+  executed_predicate_gate_codes: executedTwins.coverage,
+  executable_uncovered_gate_codes: executableUncovered,
+  coverage_scope: "portable-predicate-twins-only; not cumulative profile qualification",
   errors,
   warnings,
 };
