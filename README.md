@@ -19,6 +19,21 @@ run agents, manage workflows, or enforce identity.
 - **Machine exchange contract:** GKX 2.0
 - **Canonical repository:** `Odenknight/gkos-standard`
 
+## Current development candidate
+
+The R19 adoption coordinate is branch `codex/adopt-q-intent-r19-20260901`,
+commit `04a164792c0957f5ce8acc9ba6853597ec0660dd`. Its five hosted repository
+workflows passed at that exact SHA on 2026-09-01. Any successor documentation
+commit requires its own hosted checks. R19 supplies and adopts the previously
+undefined eighth documentation-intent position as an unpublished amendment.
+
+This branch is not merged, tagged, released, or published. It is not GKOS
+v0.81 and does not establish a qualifying GCP profile. The starter conformance
+runner continues to report six fixtures as `PASS` and two graph fixtures as
+`UNEVALUATED`, returns a non-zero status, and emits no profile claim. See the
+[roadmap](ROADMAP.md) and [conformance boundary](conformance/README.md) for the
+remaining release work.
+
 [Read the technical orientation](TECHNICAL_README.md) ·
 [Read the master standard](standard/00_GKOS_Master_Standard.md) ·
 [Review conformance](conformance/README.md) ·

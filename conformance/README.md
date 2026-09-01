@@ -64,6 +64,9 @@ npm run srtp:draft
 
 ## Current qualification boundary
 
+- Against the current R19 review candidate, the starter run remains six
+  fixtures `PASS` and two graph fixtures `UNEVALUATED`. This is an intentionally
+  non-zero, non-qualifying result, not an eight-fixture pass.
 - Fixture catalog 0.2.0 declares no complete qualifying profile. A run therefore
   emits an empty `profiles_claimed` array even when every executable slice passes.
 - Declared graph expectations must become executable before a GCP-3 result can support external qualification.
