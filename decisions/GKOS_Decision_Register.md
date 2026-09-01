@@ -2,6 +2,13 @@
 
 This register indexes adopted v0.x development decisions. These records document Founder/Initial Editor dispositions during testing and refinement; they are not consensus ratification, independent certification, accreditation, or regulator approval.
 
+## R19 — Documentation-intent eighth invariant
+
+- **Date:** 2026-09-01
+- **Status:** Accepted development decision; unpublished amendment
+- **Decision:** Supply and adopt the previously undefined eighth documentation-intent position as “Every committed governed state change is durably receipted,” with STD-079 r4 invariants 3–4 and the applicable receipt requirements as provenance; preserve the separate standing of the STD-079 and layer-blocking invariant sets; and adopt only the eight-position DOCSTD §4 intent-review table without claiming historical recovery, publication, conformance, or release qualification.
+- **Record:** [R19_Documentation_Intent_Eighth_Invariant_Development_Decision_Record.md](R19_Documentation_Intent_Eighth_Invariant_Development_Decision_Record.md)
+
 ## R18 — Track A GCP-4/GCP-5 closure and authorized independent review
 
 - **Date:** 2026-08-29

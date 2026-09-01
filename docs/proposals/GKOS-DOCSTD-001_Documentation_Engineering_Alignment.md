@@ -1,6 +1,8 @@
 # GKOS-DOCSTD-001 — Documentation and engineering alignment proposal
 
-**Status:** Proposed; non-normative until adopted through `GOVERNANCE.md`  
+**Status:** Section 4 adopted by R19 as an unpublished development procedure;
+all other sections remain proposed and non-normative
+
 **Purpose:** Keep specification and implementation synchronized without making
 the reference implementation the specification authority.
 
@@ -55,6 +57,12 @@ independence. Shared authorship must still be disclosed.
 An implementation behavior is eligible for amendment review only if it
 preserves all applicable accepted invariants:
 
+R19 adopts the following eight-position documentation-intent gate. The eighth
+position is newly supplied and adopted by R19; it was not recovered from an
+earlier R4 enumeration. R4 stated the cardinality but did not enumerate the
+positions, while the pre-R19 version of this section contained seven proposed
+positions.
+
 | Invariant | Controlling source | Failure condition |
 | --- | --- | --- |
 | Authority derives from receipts/grants, not authored fields or model signals | R2; master standard §4 | Frontmatter, confidence, similarity, rank, or model agreement creates authority |
@@ -64,6 +72,7 @@ preserves all applicable accepted invariants:
 | Missing/invalid sensitivity fails closed | R7; master standard §9 | Missing or invalid input widens exposure |
 | Implementation experience proposes but does not amend | R12-092 | Shipped behavior is copied into the standard without review and decision |
 | Identity is independent of path/location | R4/GCP-2; master standard §6 | Rename or movement changes governed identity |
+| Every committed governed state change is durably receipted | R15-104..R15-105; `GKOS-RECEIPT-001`; `GKOS-RECEIPT-003`; directive provenance: STD-079 r4 invariants 3–4 | A governed mutation commits without a durably bound receipt, or receipt-binding failure neither fails closed nor produces verifiable rollback or compensation |
 
 Passing intent review makes a behavior eligible for a decision; it does not
 adopt the behavior.

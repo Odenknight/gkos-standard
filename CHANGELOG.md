@@ -2,6 +2,15 @@
 
 ## Unreleased development amendments
 
+- R19 prospectively supplies and adopts “Every committed governed state change
+  is durably receipted” as the previously undefined eighth
+  documentation-intent position; it does not claim that this wording was
+  historically enumerated by R4.
+- R19 adopts only the eight-position intent-review table in DOCSTD §4. The
+  remainder of DOCSTD stays proposed and non-normative.
+- R19 remains unpublished. It does not change any release or qualification
+  status; under R18-131, including it in a v0.81 candidate requires a complete
+  final rerun and separate publication authority.
 - R17 accepts half-open authority validity intervals:
   `valid_from <= evaluation_time < valid_until`.
 - `GKOS-AUTHUSE-007`, its applicability overlay, authority-receipt schema,
