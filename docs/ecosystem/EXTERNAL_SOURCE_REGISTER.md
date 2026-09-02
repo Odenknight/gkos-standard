@@ -51,7 +51,7 @@ a specific binding or pilot.
 | Source ID | External work | Reviewed coordinate | Status | Primary reference | Accessed | Mapping boundary |
 | --- | --- | --- | --- | --- | --- | --- |
 | ESR-W3C-PROV-O | W3C PROV-O | W3C Recommendation 2013-04-30 | informative-framework | <https://www.w3.org/TR/prov-o/> | 2026-09-02 | Provenance vocabulary and interchange; a PROV assertion is not automatically a GKOS disposition or authority grant |
-| ESR-OPENLINEAGE | OpenLineage | current specification site as of 2026-09-02 | informative-framework | <https://openlineage.io/docs/spec/> | 2026-09-02 | Job/run/dataset lineage input; does not establish epistemic acceptance or semantic supersession |
+| ESR-OPENLINEAGE | OpenLineage | current specification documentation as of 2026-09-02 | informative-framework | <https://openlineage.io/docs/> | 2026-09-02 | Job/run/dataset lineage input; does not establish epistemic acceptance or semantic supersession |
 | ESR-SPIFFE | SPIFFE | current specification set as of 2026-09-02 | informative-framework | <https://github.com/spiffe/spiffe> | 2026-09-02 | Workload identity input; authenticated identity is not a complete GKOS grant |
 | ESR-SIGSTORE | Sigstore | current documentation as of 2026-09-02 | informative-framework | <https://docs.sigstore.dev/> | 2026-09-02 | Integrity and provenance mechanism; signature does not prove truth, review, authority, or GKOS conformance |
 | ESR-OCI-DIST | OCI Distribution Specification | exact edition to be selected during evidence-package drafting | recheck-required | <https://github.com/opencontainers/distribution-spec> | 2026-09-02 | Candidate carrier for evidence packages; no carrier is yet mandated by GKOS |
