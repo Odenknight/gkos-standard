@@ -7,11 +7,9 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   normalize:
-    if: ${{ contains(github.event.head_commit.message, 'chore: normalize R21 text files') == false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -35,21 +33,17 @@ jobs:
           for path in changed:
               print(path)
           PY
-      - name: Remove one-time workflow and verify patch
+      - name: Verify and commit bounded mechanical repair
         shell: bash
         run: |
-          rm .github/workflows/normalize-r21-eof.yml
           git diff --check
-      - name: Commit and push bounded mechanical repair
-        shell: bash
-        run: |
           git config user.name 'Shaun "Oden" Marshall'
           git config user.email '40664141+Odenknight@users.noreply.github.com'
-          git add --all
+          git add -- '*.md'
           if git diff --cached --quiet; then
             echo 'No normalization changes were required.'
             exit 0
           fi
-          git commit -m 'chore: normalize R21 text files' \
+          git commit -m 'chore: normalize R21 Markdown EOF' \
             -m 'Signed-off-by: Shaun "Oden" Marshall <40664141+Odenknight@users.noreply.github.com>'
           git push origin HEAD:work/r20-r21-ecosystem-20260902
