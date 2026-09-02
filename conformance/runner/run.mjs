@@ -13,15 +13,24 @@
  *   export const implementation = { name, version, repository? }
  *   export function project(content, path) -> {
  *     diagnostics: [{ code, severity, field? }],
+ *     identity: { uid },
  *     effective: { sensitivity, epistemicState }
  *   }
+ *   export function projectGraph({ primary, pair }) -> {
+ *     contract: "gkos.graph-observation/1", primary_uid, pair_uid,
+ *     edges: [{ source_uid, type, target_ref, target_uid, resolution }]
+ *   }
+ * projectGraph is required only when a fixture declares graph_expect. The
+ * Standard-owned evaluator decides PASS/FAIL; an absent observation is
+ * UNEVALUATED and cannot become a profile claim.
  */
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
-import { join, dirname, resolve, basename } from "node:path";
+import { join, dirname, resolve, basename, extname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createHash } from "node:crypto";
 import Ajv2020 from "ajv/dist/2020.js";
 import YAML from "yaml";
+import { evaluateGraphExpectation } from "./graph-evaluator.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "..", "..");            // gkos-standard repo root
@@ -38,6 +47,8 @@ const manifestPath = join(root, "fixtures", "fixtures.manifest.json");
 const manifestBytes = readFileSync(manifestPath);
 const manifest = JSON.parse(manifestBytes.toString("utf8"));
 const adapterBytes = readFileSync(resolve(adapterPath));
+const graphEvaluatorPath = join(here, "graph-evaluator.mjs");
+const graphEvaluatorBytes = readFileSync(graphEvaluatorPath);
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const applicabilityBytes = readFileSync(join(root, "requirements", "PROFILE_APPLICABILITY.json"));
 const applicability = JSON.parse(applicabilityBytes);
@@ -64,17 +75,26 @@ for (const fx of manifest.fixtures) {
   const detail = [];
   let ok = true;
   const raw = readFileSync(join(root, "fixtures", fx.file), "utf8");
+  const pairRaw = fx.pair ? readFileSync(join(root, "fixtures", fx.pair), "utf8") : null;
+  const primaryData = frontmatter(raw);
+  const pairData = pairRaw === null ? null : frontmatter(pairRaw);
 
   // 1. schema expectation
   if (fx.schema) {
     const v = ajv.getSchema(fx.schema.against);
-    const valid = v(frontmatter(raw));
+    const valid = v(primaryData);
     if (fx.schema.expect === "valid" && !valid) { ok = false; detail.push("schema: expected valid, got invalid: " + JSON.stringify(v.errors?.slice(0, 2))); }
     if (fx.schema.expect === "invalid" && valid) { ok = false; detail.push("schema: expected invalid, got valid"); }
+    if (pairRaw !== null) {
+      const pairValid = v(pairData);
+      if (fx.schema.expect === "valid" && !pairValid) { ok = false; detail.push("pair schema: expected valid, got invalid: " + JSON.stringify(v.errors?.slice(0, 2))); }
+      if (fx.schema.expect === "invalid" && pairValid) { ok = false; detail.push("pair schema: expected invalid, got valid"); }
+    }
   }
 
   // 2. projection expectation
   const proj = adapter.project(raw, fx.file);
+  const pairProj = pairRaw === null ? null : adapter.project(pairRaw, fx.pair);
   const codes = proj.diagnostics.map(d => d.code);
   for (const req of (fx.projection?.require_codes ?? [])) {
     const hits = codes.filter(c => codeMatch(req.code, c)).length;
@@ -92,11 +112,41 @@ for (const fx of manifest.fixtures) {
     if (idx < SENS_ORDER.indexOf("restricted")) { ok = false; detail.push(`projection: effective sensitivity '${proj.effective?.sensitivity}' is more open than 'restricted'`); }
   }
 
-  // 3. Explicitly block any expectation this starter runner cannot execute.
-  // A partial schema/projection check is not a pass for the whole fixture.
+  // 3. Execute graph expectations through an adapter observation and the
+  // Standard-owned evaluator. A partial projection is never a fixture PASS.
   const unexecuted = [];
-  if (fx.pair) unexecuted.push("pair");
-  if (fx.projection?.graph_expect) unexecuted.push("projection.graph_expect");
+  if (fx.projection?.graph_expect) {
+    let graphResult;
+    if (typeof adapter.projectGraph !== "function") {
+      graphResult = evaluateGraphExpectation(fx.projection.graph_expect, undefined);
+    } else {
+      try {
+        const observation = adapter.projectGraph({
+          primary: { content: raw, path: fx.file, projection: proj },
+          pair: pairRaw === null ? null : { content: pairRaw, path: fx.pair, projection: pairProj },
+        });
+        graphResult = evaluateGraphExpectation(fx.projection.graph_expect, observation, {
+          primary: {
+            uid: primaryData.uid,
+            projected_uid: proj.identity?.uid,
+            basename: basename(fx.file, extname(fx.file)),
+          },
+          pair: {
+            uid: pairData?.uid,
+            projected_uid: pairProj?.identity?.uid,
+            basename: basename(fx.pair, extname(fx.pair)),
+          },
+        });
+      } catch (error) {
+        graphResult = { executed: true, pass: false, detail: `adapter graph observation failed: ${error.message}` };
+      }
+    }
+    if (!graphResult.executed) unexecuted.push("projection.graph_expect");
+    else if (!graphResult.pass) { ok = false; detail.push(`graph: ${graphResult.detail}`); }
+    else detail.push(`graph: ${graphResult.detail}`);
+  } else if (fx.pair) {
+    unexecuted.push("pair");
+  }
   if (unexecuted.length) {
     detail.push(`unevaluated expectations: ${unexecuted.join(", ")}`);
   }
@@ -182,7 +232,11 @@ const claim = {
   evidence: [
     { locator: "fixtures/fixtures.manifest.json", sha256: sha256(manifestBytes) },
     { locator: `adapter:${basename(adapterPath)}`, sha256: sha256(adapterBytes) },
+    { locator: "conformance/runner/graph-evaluator.mjs", sha256: sha256(graphEvaluatorBytes) },
+    ...[...new Set(manifest.fixtures.flatMap((fixture) => [fixture.file, fixture.pair].filter(Boolean)))].sort()
+      .map((path) => ({ locator: `fixtures/${path}`, sha256: sha256(readFileSync(join(root, "fixtures", path))) })),
   ],
+  environment: { node: process.version, platform: process.platform, arch: process.arch },
   limitations,
   exceptions: results.filter(r => r.outcome === "known-divergence").map(r => `${r.fixture_id}: ${r.divergence_ref} (see fixtures/DIVERGENCES.md)`),
   generated_at: new Date().toISOString().replace(/(\.\d{3})\d*Z$/, "$1Z"),
