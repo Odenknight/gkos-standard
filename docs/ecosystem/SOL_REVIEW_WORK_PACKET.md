@@ -8,8 +8,9 @@
   documentation gate, and R21 drafting/review authority
 - **Repository:** `Odenknight/gkos-standard`
 - **Branch:** `work/r20-r21-ecosystem-20260902`
-- **Exact review-input head before this packet:**
-  `a80cd4b988b3a966d9619c0e478cdf33403aec99`
+- **Review target:** the exact pull-request head and tree recorded when review
+  execution begins. The drafting branch remains mutable until that freeze; no
+  earlier drafting SHA satisfies the fixed-input requirement.
 - **Standard baseline:** `main` at
   `1f5768fe6b8f847c17030127a3a00e78edf5cd80`
 - **Reviewer state:** no Sol reviewer execution, model identity, findings, or
@@ -75,6 +76,7 @@ The reviewer must inspect the exact versions of:
 
 ### Protocol and agent-governance drafts
 
+- `docs/ecosystem/bindings/BINDING_TEMPLATE.md`;
 - `docs/ecosystem/bindings/GKOS-MCP-BINDING-0.1-draft.md`;
 - `docs/ecosystem/bindings/GKOS-A2A-BINDING-0.1-draft.md`;
 - `docs/ecosystem/bindings/GKOS-ACS-CROSSWALK-0.1-draft.md`; and
@@ -83,8 +85,14 @@ The reviewer must inspect the exact versions of:
 ### Deployment and evidence-package drafts
 
 - `docs/ecosystem/MULTI_JURISDICTION_DEPLOYMENT_GUIDANCE_DRAFT.md`;
-- `docs/ecosystem/GKOS_CONFORMANCE_EVIDENCE_PACKAGE_0.1_DRAFT.md`; and
-- `schemas/provisional/evidence/gkos-conformance-evidence-package-0.1.draft.schema.json`.
+- `docs/ecosystem/GKOS_CONFORMANCE_EVIDENCE_PACKAGE_0.1_DRAFT.md`;
+- `docs/ecosystem/PILOT_PROGRAM_DRAFT.md`;
+- `docs/ecosystem/PUBLIC_SECOND_IMPLEMENTATION_CALL.md`;
+- `docs/ecosystem/EXTERNAL_STANDARDS_ENGAGEMENT_DRAFT.md`;
+- `docs/ecosystem/COMMERCIAL_ENTERPRISE_PARTICIPATION_GUIDANCE.md`;
+- `schemas/provisional/evidence/gkos-conformance-evidence-package-0.1.draft.schema.json`;
+- `fixtures/provisional/evidence/`; and
+- `conformance/runner/test/evidence-package-schema.test.mjs`.
 
 ### Controlling Standard surfaces
 
