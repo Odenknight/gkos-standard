@@ -1,0 +1,46 @@
+{
+  "package_format": "gkos-conformance-evidence-package",
+  "package_version": "0.1-draft",
+  "package_id": "b6ad9780-2995-42d3-9fda-d1ccdc7ed0cb",
+  "created_at": "2026-09-02T21:00:00.000000Z",
+  "created_by": {
+    "actor_id": "urn:gkos:actor:fixture-builder-001",
+    "actor_class": "service"
+  },
+  "carrier": {
+    "kind": "directory",
+    "manifest_digest_locator": "package-manifest.sha256"
+  },
+  "standard": {
+    "gkos_release": "GKOS-2026-08-20 v0.80",
+    "standard_commit": "1f5768fe6b8f847c17030127a3a00e78edf5cd80",
+    "gkx_version": "2.0"
+  },
+  "claim_manifest": {
+    "path": "../claim/conformance-manifest.json",
+    "sha256": "sha256:7777777777777777777777777777777777777777777777777777777777777777"
+  },
+  "inventory_rules": {
+    "path_separator": "/",
+    "path_encoding": "UTF-8",
+    "ordering": "utf8-bytewise-path",
+    "absolute_paths_allowed": false,
+    "parent_traversal_allowed": false,
+    "symlinks_allowed": false,
+    "unlisted_files_allowed": false,
+    "case_sensitive": true
+  },
+  "entries": [
+    {
+      "path": "../claim/conformance-manifest.json",
+      "role": "claim-manifest",
+      "media_type": "application/json",
+      "bytes": 128,
+      "sha256": "sha256:7777777777777777777777777777777777777777777777777777777777777777",
+      "inclusion": "required"
+    }
+  ],
+  "omissions": [],
+  "limitations": [],
+  "exceptions": []
+}
