@@ -27,8 +27,17 @@
       "const": "0.1-draft"
     },
     "package_id": {
-      "type": "string",
-      "pattern": "^sha256:[0-9a-f]{64}$"
+      "description": "Stable package-instance identifier. It is not the manifest digest and must not be derived by hashing a manifest that contains this field.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.-]*:[a-z0-9][a-z0-9_.:/-]{2,}$"
+        }
+      ]
     },
     "created_at": {
       "type": "string",
@@ -67,10 +76,15 @@
           "type": "string"
         },
         "digest": {
+          "description": "Optional digest of the complete carrier bytes or externally defined carrier object, not the package manifest's self-digest.",
           "$ref": "#/$defs/sha256"
         },
         "locator": {
           "type": "string"
+        },
+        "manifest_digest_locator": {
+          "description": "Location of an external digest statement for the canonical package-manifest bytes. The digest value is not embedded in the manifest itself.",
+          "$ref": "#/$defs/safeRelativePath"
         }
       },
       "additionalProperties": false
@@ -121,7 +135,8 @@
         "absolute_paths_allowed",
         "parent_traversal_allowed",
         "symlinks_allowed",
-        "unlisted_files_allowed"
+        "unlisted_files_allowed",
+        "case_sensitive"
       ],
       "properties": {
         "path_separator": {
@@ -257,7 +272,7 @@
     "safeRelativePath": {
       "type": "string",
       "minLength": 1,
-      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*//)(?!.*[\\u0000-\\u001f\\u007f]).+$"
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*//)(?!.*[\\u0000-\\u001f\\u007f]).+$"
     },
     "versionedComponent": {
       "type": "object",
