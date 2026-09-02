@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.0.0",
+  "registry_version": "1.1.0-development",
   "status": "machine-readable mirror",
   "authority": "standard/annexes/Diagnostic_Code_Registry.md",
   "codes": {
@@ -11,6 +11,10 @@
     "GKOS-GATE-L4-004": { "layer": "L4", "requirement_ids": ["GKOS-DELEGATION-003"], "condition": "Non-deterministic checker attempts to reduce restrictiveness" },
     "GKOS-GATE-L5-001": { "layer": "L5", "requirement_ids": ["GKOS-DELEGATION-006"], "condition": "Required review is overdue and delegation is frozen" },
     "GKOS-GATE-L5-002": { "layer": "L5", "requirement_ids": ["GKOS-CONTEXT-005"], "condition": "Decision Record does not bind the Context Manifest used for review" },
+    "GKOS-GATE-L5-003": { "layer": "L5", "requirement_ids": ["GKOS-REVIEW-001"], "condition": "Governed proposal bypasses its required review lifecycle" },
+    "GKOS-GATE-L5-004": { "layer": "L5", "requirement_ids": ["GKOS-REVIEW-002"], "condition": "Decision Record is absent, mutable, unauthorized, or not bound to the reviewed evidence" },
+    "GKOS-GATE-L5-005": { "layer": "L5", "requirement_ids": ["GKOS-REVIEW-003", "GKOS-AUTHUSE-004"], "condition": "Review independence, role separation, agent constraints, or mandatory human escalation is violated" },
+    "GKOS-GATE-L5-006": { "layer": "L5", "requirement_ids": ["GKOS-REVIEW-004"], "condition": "Review disposition history is deleted, rewritten, or made untraceable" },
     "GKOS-GATE-L6-001": { "layer": "L6", "requirement_ids": ["GKOS-CANON-001"], "condition": "Non-deterministic or malformed CBOR encoding" },
     "GKOS-GATE-L6-002": { "layer": "L6", "requirement_ids": ["GKOS-CANON-002"], "condition": "Duplicate or incorrectly ordered map key" },
     "GKOS-GATE-L6-003": { "layer": "L6", "requirement_ids": ["GKOS-CANON-003"], "condition": "Prohibited numeric value or schema-type encoding" },
@@ -20,11 +24,12 @@
     "GKOS-GATE-L6-007": { "layer": "L6", "requirement_ids": ["GKOS-CANON-007"], "condition": "Digest-bound reference or artifact hash mismatch" },
     "GKOS-GATE-L6-008": { "layer": "L6", "requirement_ids": ["GKOS-CANON-008"], "condition": "Human rendering fails completeness or round trip" },
     "GKOS-GATE-L6-009": { "layer": "L6", "requirement_ids": ["GKOS-CONTEXT-004"], "condition": "Required contradiction, warning, restriction, or lineage closure omitted" },
-    "GKOS-GATE-L7-001": { "layer": "L7", "requirement_ids": ["GKOS-AUTHUSE-003"], "condition": "Authority basis absent, expired, not yet valid, revoked, or indeterminate" },
+    "GKOS-GATE-L7-001": { "layer": "L7", "requirement_ids": ["GKOS-AUTHUSE-003", "GKOS-AUTHUSE-007"], "condition": "Authority basis absent, expired, not yet valid, revoked, or indeterminate" },
     "GKOS-GATE-L7-002": { "layer": "L7", "requirement_ids": ["GKOS-EFFECT-002"], "condition": "Actor or delegation scope does not contain the requested effect" },
     "GKOS-GATE-L7-003": { "layer": "L7", "requirement_ids": ["GKOS-EFFECT-003"], "condition": "Required effect-scope dimension is unknown, indeterminate, or incomparable" },
     "GKOS-GATE-L7-004": { "layer": "L7", "requirement_ids": ["GKOS-AUTHUSE-002"], "condition": "Context Manifest is stale or does not match authorization" },
     "GKOS-GATE-L7-005": { "layer": "L7", "requirement_ids": ["GKOS-RECEIPT-003"], "condition": "Required receipt binding failed" },
-    "GKOS-GATE-L7-006": { "layer": "L7", "requirement_ids": ["GKOS-AUTHUSE-006"], "condition": "Required recovery route absent" }
+    "GKOS-GATE-L7-006": { "layer": "L7", "requirement_ids": ["GKOS-AUTHUSE-006"], "condition": "Required recovery route absent" },
+    "GKOS-GATE-L7-007": { "layer": "L7", "requirement_ids": ["GKOS-DISCLOSURE-001"], "condition": "Protected information is disclosed without sufficient authorization or influences an unauthorized surface" }
   }
 }

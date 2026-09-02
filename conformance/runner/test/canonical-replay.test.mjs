@@ -15,6 +15,7 @@ test("clean-process replay produces identical canonical bytes and hash", () => {
   const firstBytes = readFileSync(join(first, "context-manifest.cbor"));
   const secondBytes = readFileSync(join(second, "context-manifest.cbor"));
   assert.deepEqual(firstBytes, secondBytes);
+  assert.deepEqual(firstBytes, readFileSync(new URL("../../evidence/gcp6-replay-v0.1/context-manifest.cbor", import.meta.url)), "preserved baseline canonical bytes must not change");
   assert.deepEqual(JSON.parse(readFileSync(join(first, "result.json"))), JSON.parse(readFileSync(join(second, "result.json"))));
   assert.deepEqual(parseDiagnosticJson(readFileSync(join(first, "context-manifest.rendering.json"), "utf8")), firstBytes);
   const result = JSON.parse(readFileSync(join(first, "result.json"), "utf8"));

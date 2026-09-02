@@ -1,19 +1,4 @@
-const canonicalTimestamp = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.(\d{6})Z$/;
-
-const isCanonicalTimestamp = (value) => {
-  const match = canonicalTimestamp.exec(value ?? "");
-  if (!match) return false;
-  const [, year, month, day, hour, minute, second] = match.map((item, index) => index === 0 ? item : Number(item));
-  const date = new Date(0);
-  date.setUTCFullYear(year, month - 1, day);
-  date.setUTCHours(hour, minute, second, 0);
-  return date.getUTCFullYear() === year
-    && date.getUTCMonth() === month - 1
-    && date.getUTCDate() === day
-    && date.getUTCHours() === hour
-    && date.getUTCMinutes() === minute
-    && date.getUTCSeconds() === second;
-};
+import { isCanonicalTimestamp } from "./canonical-time.mjs";
 
 const refusal = (reason) => ({
   allowed: false,
@@ -22,7 +7,9 @@ const refusal = (reason) => ({
   requirement_ids: ["GKOS-AUTHUSE-003", "GKOS-AUTHUSE-007"],
 });
 
-export const evaluateAuthorityWindow = ({ valid_from, valid_until, evaluation_time }) => {
+export const evaluateAuthorityWindow = (record) => {
+  if (!record || typeof record !== "object" || Array.isArray(record)) return refusal("invalid-or-indeterminate-time-evidence");
+  const { valid_from, valid_until, evaluation_time } = record;
   if (![valid_from, valid_until, evaluation_time].every(isCanonicalTimestamp)) return refusal("invalid-or-indeterminate-time-evidence");
   if (valid_from >= valid_until) return refusal("invalid-or-indeterminate-authority-window");
   if (evaluation_time < valid_from) return refusal("authority-not-yet-valid");

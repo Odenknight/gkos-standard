@@ -1,8 +1,8 @@
 # GKOS requirement profile applicability
 
-**Status:** Normative companion mapping for GKOS-2026-08-20 v0.80
+**Status:** Normative companion mapping for the GKOS v0.81 development line
 
-**Authority:** R15 and R16
+**Authority:** R15 through R18
 
 **Qualification boundary:** This mapping does not declare a GCP profile
 complete. The active fixture catalog remains the qualification authority and
@@ -35,7 +35,7 @@ constitute full GKOS Core conformance.
 | GKOS-REENTRY-003 | GCP-1 plus applicable retention/disposition requirements |
 | GKOS-REENTRY-004 | GCP-3; GCP-4 when bounded delegation is used |
 | GKOS-DELEGATION-001..003 | GCP-4 when delegation is supported |
-| GKOS-DELEGATION-004 | GCP-5 when delegated action enters review |
+| GKOS-DELEGATION-004 | Historical human-only review wording superseded on the v0.81 development line by GKOS-REVIEW-001..003 |
 | GKOS-DELEGATION-005 | GCP-4+ whenever bounded delegation is used |
 | GKOS-DELEGATION-006 | GCP-5 whenever deferred review governs continued delegation |
 | GKOS-PROFILE-001..006 | Every Core, Advanced, or Context-Only claim as applicable |
@@ -43,8 +43,9 @@ constitute full GKOS Core conformance.
 | GKOS-CANON-001..007 | GCP-6 and GCP-7 canonical artifacts; any lower-profile artifact claiming canonical GKX-CBOR-1 identity |
 | GKOS-CANON-008 | GCP-6, GCP-7, and the Context-Only Extension |
 | GKOS-CONTEXT-001..005 | GCP-6+ and the Context-Only Extension; GKOS-CONTEXT-005 applies when a manifest supports Layer-5 review |
-| GKOS-AUTHUSE-001..006 | GCP-7 |
-| GKOS-AUTHUSE-007 | GCP-7 under the accepted unpublished R17 amendment; not part of v0.80 applicability |
+| GKOS-AUTHUSE-001..007 | GCP-7 |
+| GKOS-REVIEW-001..004 | GCP-5; the basic governed review lifecycle is mandatory for GKOS Core |
+| GKOS-DISCLOSURE-001 | GCP-4+ and GCP-7 when protected information is processed or disclosed |
 | GKOS-EFFECT-001..003 | GCP-7 and any lower-layer operation whose mandatory control depends on typed effect scope |
 
 ## 3. Interpretation rules

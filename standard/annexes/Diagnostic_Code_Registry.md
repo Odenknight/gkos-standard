@@ -1,9 +1,9 @@
 # Annex — Diagnostic-code registry
 
-**Status:** Normative development annex adopted by R16 for
-GKOS-2026-08-20 v0.80
+**Status:** Normative development annex adopted by R16 and extended by R18 for
+the GKOS v0.81 development line
 
-**Registry version:** 1.0.0
+**Registry version:** 1.1.0-development
 
 ## 1. Rules
 
@@ -31,6 +31,10 @@ result.
 | GKOS-GATE-L4-004 | L4 | Non-deterministic checker attempts to reduce restrictiveness | GKOS-DELEGATION-003 |
 | GKOS-GATE-L5-001 | L5 | Required review is overdue and delegation is frozen | GKOS-DELEGATION-006 |
 | GKOS-GATE-L5-002 | L5 | Decision Record does not bind the Context Manifest used for review | GKOS-CONTEXT-005 |
+| GKOS-GATE-L5-003 | L5 | Governed proposal bypasses its required review lifecycle | GKOS-REVIEW-001 |
+| GKOS-GATE-L5-004 | L5 | Decision Record is absent, mutable, unauthorized, or not bound to the reviewed evidence | GKOS-REVIEW-002 |
+| GKOS-GATE-L5-005 | L5 | Review independence, role separation, agent constraints, or mandatory human escalation is violated | GKOS-REVIEW-003; GKOS-AUTHUSE-004 |
+| GKOS-GATE-L5-006 | L5 | Review disposition history is deleted, rewritten, or made untraceable | GKOS-REVIEW-004 |
 | GKOS-GATE-L6-001 | L6 | Non-deterministic or malformed CBOR encoding | GKOS-CANON-001 |
 | GKOS-GATE-L6-002 | L6 | Duplicate or incorrectly ordered map key | GKOS-CANON-002 |
 | GKOS-GATE-L6-003 | L6 | Prohibited numeric value or schema-type encoding | GKOS-CANON-003 |
@@ -40,12 +44,13 @@ result.
 | GKOS-GATE-L6-007 | L6 | Digest-bound reference or artifact hash mismatch | GKOS-CANON-007 |
 | GKOS-GATE-L6-008 | L6 | Human rendering fails completeness or round trip | GKOS-CANON-008 |
 | GKOS-GATE-L6-009 | L6 | Required contradiction, warning, restriction, or lineage closure omitted | GKOS-CONTEXT-004 |
-| GKOS-GATE-L7-001 | L7 | Authority basis absent, expired, not yet valid, revoked, or indeterminate | GKOS-AUTHUSE-003 |
+| GKOS-GATE-L7-001 | L7 | Authority basis absent, expired, not yet valid, revoked, or indeterminate | GKOS-AUTHUSE-003; GKOS-AUTHUSE-007 |
 | GKOS-GATE-L7-002 | L7 | Actor or delegation scope does not contain the requested effect | GKOS-EFFECT-002 |
 | GKOS-GATE-L7-003 | L7 | Required effect-scope dimension is unknown, indeterminate, or incomparable | GKOS-EFFECT-003 |
 | GKOS-GATE-L7-004 | L7 | Context Manifest is stale or does not match authorization | GKOS-AUTHUSE-002 |
 | GKOS-GATE-L7-005 | L7 | Required receipt binding failed | GKOS-RECEIPT-003 |
 | GKOS-GATE-L7-006 | L7 | Required recovery route absent | GKOS-AUTHUSE-006 |
+| GKOS-GATE-L7-007 | L7 | Protected information is disclosed without sufficient authorization or influences an unauthorized surface | GKOS-DISCLOSURE-001 |
 
 ## 3. Retirement ledger
 
@@ -53,8 +58,9 @@ No codes are retired in registry version 1.0.0. A future retirement entry must
 record the date, decision, replacement code if any, and affected fixture
 mapping. The retired code remains reserved permanently.
 
-## 4. Accepted unpublished R17 mapping overlay
+## 4. R17 consolidation
 
 R17 retains `GKOS-GATE-L7-001` and additionally maps its exact half-open
-authority-window boundary to `GKOS-AUTHUSE-007`. This is registry candidate
-`1.1.0-development`; it does not alter the v0.80 registry version 1.0.0.
+authority-window boundary to `GKOS-AUTHUSE-007`. The mapping is consolidated
+in registry candidate `1.1.0-development` for v0.81. The historical overlay is
+retained as provenance and is no longer an active merge input.

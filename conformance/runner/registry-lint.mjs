@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { evaluateTrackATwins } from "./track-a-evidence.mjs";
 
 const root = resolve(import.meta.dirname, "..", "..");
 const args = new Set(process.argv.slice(2));
@@ -8,17 +9,13 @@ const readJson = (path) => JSON.parse(readFileSync(resolve(root, path), "utf8"))
 const registryText = readFileSync(resolve(root, "requirements/REGISTRY.md"), "utf8");
 const diagnosticText = readFileSync(resolve(root, "standard/annexes/Diagnostic_Code_Registry.md"), "utf8");
 const applicability = readJson("requirements/PROFILE_APPLICABILITY.json");
-const applicabilityR17 = readJson("requirements/PROFILE_APPLICABILITY.R17.json");
 const diagnosticsBase = readJson("requirements/DIAGNOSTIC_CODES.json");
-const diagnosticsR17 = readJson("requirements/DIAGNOSTIC_CODES.R17.json");
-const diagnostics = {
-  registry_version: diagnosticsR17.registry_version,
-  codes: { ...diagnosticsBase.codes, ...diagnosticsR17.codes },
-};
+const diagnostics = diagnosticsBase;
 const catalogs = [
   readJson("fixtures/fixtures.manifest.json"),
   readJson("fixtures/gcp6/fixtures.manifest.json"),
   readJson("fixtures/gcp7/fixtures.manifest.json"),
+  readJson("fixtures/track-a/fixtures.manifest.json"),
 ];
 const fixtures = catalogs.flatMap((catalog) => catalog.fixtures);
 
@@ -30,10 +27,12 @@ const registeredCodesInMarkdown = new Set(
 );
 const registeredCodesInJson = new Set(Object.keys(diagnostics.codes));
 const errors = [];
+const executedTwins = evaluateTrackATwins(catalogs[3], readJson("fixtures/track-a/cases.json"));
+errors.push(...executedTwins.errors);
 const warnings = [];
 const mutationCoverage = new Map([...registeredCodesInJson].map((code) => [code, []]));
 
-const applicableRequirements = { ...applicability.requirements, ...applicabilityR17.requirements };
+const applicableRequirements = applicability.requirements;
 for (const requirement of registeredRequirements) {
   if (!applicableRequirements[requirement]) errors.push(`applicability missing ${requirement}`);
 }
@@ -78,16 +77,21 @@ if (uncoveredCodes.length) warnings.push(`${uncoveredCodes.length} registered ga
 if (args.has("--require-mutation-coverage") && uncoveredCodes.length) {
   errors.push(`mutation coverage incomplete: ${uncoveredCodes.join(", ")}`);
 }
+const executableUncovered = [...registeredCodesInJson].filter(code => !executedTwins.coverage[code]?.length);
+if (args.has("--require-mutation-coverage") && executableUncovered.length) errors.push(`executed predicate mutation coverage incomplete: ${executableUncovered.join(", ")}`);
 
 const report = {
   result: errors.length ? "FAIL" : "PASS",
   registry_version: diagnostics.registry_version,
   applicability_mapping_version: applicability.mapping_version,
-  applicability_overlay_version: applicabilityR17.mapping_version,
+  applicability_overlay_version: "consolidated-into-base",
   requirement_count: registeredRequirements.size,
   gate_code_count: registeredCodesInJson.size,
   covered_gate_codes: Object.fromEntries([...mutationCoverage].filter(([, fixtures]) => fixtures.length)),
   uncovered_gate_codes: uncoveredCodes,
+  executed_predicate_gate_codes: executedTwins.coverage,
+  executable_uncovered_gate_codes: executableUncovered,
+  coverage_scope: "portable-predicate-twins-only; not cumulative profile qualification",
   errors,
   warnings,
 };
