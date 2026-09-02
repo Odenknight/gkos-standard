@@ -4,7 +4,8 @@
 - **Status:** informative R21 draft; non-qualifying and non-normative
 - **Date:** 2026-09-02
 - **Semantic root:** active GKOS conformance-manifest schema
-- **Candidate package schema:** `schemas/gkos-conformance-evidence-package-0.1.schema.json`
+- **Candidate package schema:**
+  `schemas/provisional/evidence/gkos-conformance-evidence-package-0.1.draft.schema.json`
 
 ## 1. Purpose
 
@@ -62,23 +63,33 @@ The package should be:
 
 ## 4. Package identity model
 
-The package has three distinct identities:
+The package keeps four identities distinct:
 
 1. **Claim identity:** the `claim_id` in the conformance manifest.
-2. **Package-manifest identity:** the digest of the canonical package manifest.
-3. **Carrier identity:** the digest or registry reference of the directory
-   snapshot, archive bytes, or OCI artifact.
+2. **Package-instance identity:** a stable UUID or namespaced `package_id`
+   assigned to the evidence-package instance.
+3. **Package-manifest identity:** the SHA-256 digest of the canonical
+   `package-manifest.cbor` bytes, recorded outside the manifest in carrier
+   metadata, a digest statement, an attestation, or a verifier receipt.
+4. **Carrier identity:** the digest or registry reference of the complete
+   directory snapshot, archive bytes, or OCI artifact.
 
-These identities must not be conflated. Repacking the same semantic package in
-a different carrier may change the carrier digest without changing the claim or
-package-manifest identity.
+The package manifest must not contain the digest of its own complete canonical
+bytes. That would be a circular, non-computable self-reference. A repackaging
+operation may retain the claim, package-instance, and package-manifest identities
+while changing the carrier identity, provided the semantic package manifest and
+all inventoried entries remain unchanged.
 
 ### Recommended canonical package manifest
 
 The package-manifest semantic object should be validated against the candidate
-schema and canonically encoded under GKX-CBOR-1. The canonical CBOR digest is
-the package-manifest identity. A JSON rendering may be shipped for inspection,
-but the JSON rendering is not a second canonical authority.
+schema and canonically encoded under GKX-CBOR-1. A JSON rendering may be shipped
+for inspection, but the JSON rendering is not a second canonical authority.
+
+The SHA-256 digest of `package-manifest.cbor` is written to a carrier-level
+statement such as `package-manifest.sha256`, an OCI descriptor, or a verifier
+receipt. The canonical manifest does not inventory itself, its JSON rendering,
+or its external digest statement.
 
 This is an architecture recommendation under R21, not a new v0.80 requirement.
 
@@ -88,6 +99,7 @@ This is an architecture recommendation under R21, not a new v0.80 requirement.
 gkos-evidence-package/
 ├── package-manifest.json
 ├── package-manifest.cbor
+├── package-manifest.sha256
 ├── claim/
 │   ├── conformance-manifest.json
 │   └── conformance-report.md
@@ -122,16 +134,22 @@ gkos-evidence-package/
 Directories may be absent when inapplicable, but every omission affecting the
 claim must be declared in the package manifest and conformance report.
 
+The three `package-manifest.*` files are carrier-level control files. They are
+not listed in the manifest's own `entries` array. A strict carrier verifier must
+recognize exactly those control files plus the files inventoried by the
+manifest; any other file is undeclared.
+
 ## 6. Package-manifest fields
 
 The candidate package manifest includes:
 
 - `package_format`;
 - `package_version`;
-- `package_id` or canonical-manifest digest;
+- stable package-instance `package_id`;
 - `created_at`;
 - `created_by`;
-- `carrier`;
+- carrier kind and optional external carrier identity;
+- external manifest-digest-statement locator;
 - exact GKOS release and source commit;
 - exact GKX version and canonical profile;
 - claim-manifest path and digest;
@@ -143,6 +161,10 @@ The candidate package manifest includes:
 - optional signature/attestation inventory;
 - limitations and exceptions; and
 - verification instructions or tool reference.
+
+The `package_id` is not a content digest. The manifest's content digest is
+computed over the complete canonical CBOR bytes and recorded outside those
+bytes.
 
 Each inventory entry should contain:
 
@@ -161,16 +183,17 @@ Recommended path rules:
 
 - UTF-8 paths;
 - `/` separator in the package manifest;
+- no backslash separators;
 - no absolute paths;
 - no `..` traversal;
 - no empty segment;
 - no NUL or control characters;
 - no duplicate path after exact byte comparison;
-- case sensitivity treated explicitly rather than normalized silently;
+- case sensitivity declared explicitly rather than normalized silently;
 - symlinks forbidden in the initial profile;
 - inventory sorted by UTF-8 path bytes; and
-- every included regular file except the carrier-specific metadata itself
-  represented by exactly one inventory entry.
+- every included regular file, except the three carrier-level package-manifest
+  control files, represented by exactly one inventory entry.
 
 A verifier must reject unlisted extra files in strict mode. A human viewer may
 allow them only by labeling the package modified or non-exact.
@@ -309,9 +332,17 @@ substantive authority, safety, or GKOS conformance by itself.
 
 ### 14.1 Directory carrier
 
-A directory carrier is the simplest review format. The package-manifest digest
-binds the inventory. Filesystem metadata outside the inventory is not part of
-the semantic package unless explicitly captured.
+A directory carrier is the simplest review format. Its control sequence is:
+
+1. validate the JSON rendering if present;
+2. verify `package-manifest.sha256` against `package-manifest.cbor`;
+3. decode and validate the canonical package manifest;
+4. verify each inventoried entry; and
+5. reject unexpected files in strict mode.
+
+Filesystem metadata outside the inventory is not part of the semantic package
+unless explicitly captured. The directory carrier itself has no single byte
+stream unless a separately defined snapshot algorithm supplies one.
 
 ### 14.2 Deterministic archive carrier
 
@@ -340,8 +371,8 @@ must identify:
 - annotations relied upon;
 - repository and registry identity;
 - retention and access policy; and
-- relationship between the OCI manifest digest and GKOS package-manifest
-  identity.
+- relationship between the OCI manifest digest, GKOS package-manifest digest,
+  and package-instance identity.
 
 OCI distribution is a candidate carrier, not a GKOS dependency.
 
@@ -352,17 +383,20 @@ A strict verifier should:
 1. obtain the package through an authorized path;
 2. identify the carrier and package format;
 3. reject unsafe paths or unsupported carrier constructs;
-4. parse and validate the package manifest;
-5. verify the canonical package-manifest bytes and digest where supplied;
-6. verify every embedded inventory entry's path, size, and digest;
-7. reject undeclared extra files in strict mode;
-8. validate the claim manifest;
-9. verify cross-document coordinates and evidence locators;
-10. verify optional signatures/attestations according to their declared trust
+4. locate the canonical package manifest and its external digest statement;
+5. verify the canonical `package-manifest.cbor` bytes against that external
+   digest;
+6. parse and validate the decoded package manifest;
+7. verify every embedded inventory entry's path, size, and digest;
+8. reject undeclared extra files in strict mode;
+9. validate the claim manifest;
+10. verify cross-document coordinates and evidence locators;
+11. verify optional signatures/attestations according to their declared trust
     models;
-11. report unavailable protected/external evidence;
-12. preserve all failures, warnings, limitations, and unevaluated results; and
-13. emit a verifier receipt identifying its implementation and environment.
+12. report unavailable protected/external evidence;
+13. preserve all failures, warnings, limitations, and unevaluated results; and
+14. emit a verifier receipt identifying its implementation, environment,
+    package ID, package-manifest digest, and carrier identity where available.
 
 Verification of package integrity is not conformance assessment.
 
@@ -371,11 +405,15 @@ Verification of package integrity is not conformance assessment.
 The package profile should include at least:
 
 - altered evidence bytes;
-- altered package manifest;
+- altered canonical package manifest;
+- altered or missing external manifest digest statement;
+- self-referential digest field inserted into the manifest;
+- package ID reused for semantically different package content;
 - missing inventory entry;
 - unlisted extra file;
 - duplicate path;
 - path traversal;
+- backslash path;
 - case-collision behavior;
 - missing or invalid claim manifest;
 - claim/package coordinate mismatch;
@@ -416,8 +454,8 @@ at least two environments.
 ### Pilot P5 — OCI-style distribution
 
 Transport the same semantic package through an OCI-compatible registry and
-verify that carrier identity remains distinct from claim and package-manifest
-identity.
+verify that carrier identity remains distinct from claim, package-instance, and
+package-manifest identities.
 
 ## 18. Adoption gate
 
