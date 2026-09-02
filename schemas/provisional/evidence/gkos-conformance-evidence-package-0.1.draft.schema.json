@@ -1,0 +1,438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/provisional/evidence/gkos-conformance-evidence-package-0.1.draft.schema.json",
+  "title": "GKOS Conformance Evidence Package 0.1 draft manifest",
+  "description": "Informative R21 package inventory for transporting an exact-bound GKOS conformance manifest and its supporting evidence. Validation against this schema is not a GKOS conformance result.",
+  "type": "object",
+  "required": [
+    "package_format",
+    "package_version",
+    "package_id",
+    "created_at",
+    "created_by",
+    "carrier",
+    "standard",
+    "claim_manifest",
+    "inventory_rules",
+    "entries",
+    "omissions",
+    "limitations",
+    "exceptions"
+  ],
+  "properties": {
+    "package_format": {
+      "const": "gkos-conformance-evidence-package"
+    },
+    "package_version": {
+      "const": "0.1-draft"
+    },
+    "package_id": {
+      "description": "Stable package-instance identifier. It is not the manifest digest and must not be derived by hashing a manifest that contains this field.",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        {
+          "type": "string",
+          "pattern": "^(?!sha256:)[a-z][a-z0-9_.-]*:[a-z0-9][a-z0-9_.:/-]{2,}$"
+        }
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-([0-2][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{6}Z$"
+    },
+    "created_by": {
+      "type": "object",
+      "required": ["actor_id", "actor_class"],
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor_class": {
+          "type": "string",
+          "enum": ["human", "service", "agent", "organization"]
+        },
+        "implementation": {
+          "$ref": "#/$defs/versionedComponent"
+        }
+      },
+      "additionalProperties": false
+    },
+    "carrier": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["directory", "archive", "oci", "external"]
+        },
+        "profile": {
+          "type": "string"
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "digest": {
+          "description": "Optional digest of the complete carrier bytes or externally defined carrier object, not the package manifest's self-digest.",
+          "$ref": "#/$defs/sha256"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "manifest_digest_locator": {
+          "description": "Location of an external digest statement for the canonical package-manifest bytes. The digest value is not embedded in the manifest itself.",
+          "$ref": "#/$defs/safeRelativePath"
+        }
+      },
+      "additionalProperties": false
+    },
+    "standard": {
+      "type": "object",
+      "required": ["gkos_release", "standard_commit", "gkx_version"],
+      "properties": {
+        "gkos_release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "standard_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "gkx_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonical_profile": {
+          "type": "string"
+        },
+        "requirement_registry_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "applicability_map_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "diagnostic_registry_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_manifest": {
+      "$ref": "#/$defs/boundEntry"
+    },
+    "human_report": {
+      "$ref": "#/$defs/boundEntry"
+    },
+    "inventory_rules": {
+      "type": "object",
+      "required": [
+        "path_separator",
+        "path_encoding",
+        "ordering",
+        "absolute_paths_allowed",
+        "parent_traversal_allowed",
+        "symlinks_allowed",
+        "unlisted_files_allowed",
+        "case_sensitive"
+      ],
+      "properties": {
+        "path_separator": {
+          "const": "/"
+        },
+        "path_encoding": {
+          "const": "UTF-8"
+        },
+        "ordering": {
+          "const": "utf8-bytewise-path"
+        },
+        "absolute_paths_allowed": {
+          "const": false
+        },
+        "parent_traversal_allowed": {
+          "const": false
+        },
+        "symlinks_allowed": {
+          "const": false
+        },
+        "unlisted_files_allowed": {
+          "const": false
+        },
+        "case_sensitive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/inventoryEntry"
+      }
+    },
+    "omissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item", "reason", "claim_impact"],
+        "properties": {
+          "item": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_impact": {
+            "type": "string",
+            "enum": ["none", "limitation", "exception", "non-qualifying", "unknown"]
+          },
+          "authority_reference": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "external_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/externalEvidence"
+      }
+    },
+    "attestations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["mechanism", "statement", "subject_digest", "locator"],
+        "properties": {
+          "mechanism": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject_digest": {
+            "$ref": "#/$defs/sha256"
+          },
+          "signer_or_attester": {
+            "type": "string"
+          },
+          "trust_model": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification_result": {
+            "type": "string",
+            "enum": ["verified", "failed", "not-verified", "indeterminate"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "tool": {
+          "$ref": "#/$defs/versionedComponent"
+        },
+        "instructions_locator": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "safeRelativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*//)(?!.*[\\u0000-\\u001f\\u007f]).+$"
+    },
+    "versionedComponent": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "artifact_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "repository": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "boundEntry": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/safeRelativePath"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "media_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "inventoryEntry": {
+      "type": "object",
+      "required": ["path", "role", "media_type", "bytes", "sha256", "inclusion"],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/safeRelativePath"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "claim-manifest",
+            "human-report",
+            "standard-source",
+            "requirement-registry",
+            "applicability-map",
+            "diagnostic-registry",
+            "schema",
+            "fixture-manifest",
+            "fixture-input",
+            "policy",
+            "adapter",
+            "implementation-artifact",
+            "dependency-lock",
+            "environment",
+            "toolchain",
+            "command",
+            "raw-output",
+            "machine-result",
+            "human-finding",
+            "receipt",
+            "security-result",
+            "external-reference",
+            "signature-or-attestation",
+            "limitation",
+            "other"
+          ]
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "inclusion": {
+          "type": "string",
+          "enum": ["required", "optional", "informative", "protected-reference"]
+        },
+        "producer": {
+          "$ref": "#/$defs/versionedComponent"
+        },
+        "source_reference": {
+          "type": "string"
+        },
+        "sensitivity": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "externalEvidence": {
+      "type": "object",
+      "required": ["evidence_id", "locator", "reason_not_embedded", "access_status"],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "reason_not_embedded": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner": {
+          "type": "string"
+        },
+        "authority_reference": {
+          "type": "string"
+        },
+        "sensitivity": {
+          "type": "string"
+        },
+        "retention_class": {
+          "type": "string"
+        },
+        "verified_at": {
+          "type": "string"
+        },
+        "access_status": {
+          "type": "string",
+          "enum": ["accessed", "not-accessed", "unavailable", "access-denied", "indeterminate"]
+        },
+        "limitation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
