@@ -12,17 +12,43 @@ const validEdge = (edge) =>
   ["uid", "basename", "unresolved"].includes(edge.resolution) &&
   (edge.resolution === "unresolved" ? edge.target_uid === null : nonempty(edge.target_uid));
 
+const validIdentity = (identity) =>
+  isRecord(identity) &&
+  nonempty(identity.uid) &&
+  nonempty(identity.projected_uid) &&
+  nonempty(identity.basename);
+
+const expectedTarget = (sourceUid, binding) => {
+  if (sourceUid === binding.primary.uid) return binding.pair;
+  if (sourceUid === binding.pair.uid) return binding.primary;
+  return null;
+};
+
 /**
  * Evaluate an adapter-neutral graph observation against a Standard-owned
  * graph_expect object. Missing observations remain UNEVALUATED at the caller;
  * malformed or contradictory observations are executed failures.
  */
-export function evaluateGraphExpectation(expectation, observation) {
+export function evaluateGraphExpectation(expectation, observation, binding) {
   if (observation === undefined) {
     return { executed: false, pass: false, detail: "adapter did not emit a graph observation" };
   }
   if (!isRecord(expectation) || !isRecord(observation)) {
     return { executed: true, pass: false, detail: "graph expectation and observation must be objects" };
+  }
+
+  if (
+    !isRecord(binding) ||
+    !validIdentity(binding.primary) ||
+    !validIdentity(binding.pair) ||
+    binding.primary.uid !== binding.primary.projected_uid ||
+    binding.pair.uid !== binding.pair.projected_uid
+  ) {
+    return {
+      executed: true,
+      pass: false,
+      detail: "invalid trusted fixture identity binding",
+    };
   }
 
   const supported = new Set(["typed_edge", "resolves", "supersession_chain", "uid_first_resolution"]);
@@ -41,6 +67,32 @@ export function evaluateGraphExpectation(expectation, observation) {
   }
 
   const failures = [];
+  if (observation.primary_uid !== binding.primary.uid) {
+    failures.push("observed primary_uid does not match the Standard-parsed primary fixture UID");
+  }
+  if (observation.pair_uid !== binding.pair.uid) {
+    failures.push("observed pair_uid does not match the Standard-parsed paired fixture UID");
+  }
+  for (const edge of observation.edges) {
+    const target = expectedTarget(edge.source_uid, binding);
+    if (!target) {
+      failures.push(`edge source_uid ${edge.source_uid} is not a bound fixture identity`);
+      continue;
+    }
+    if (edge.resolution === "uid") {
+      if (edge.target_ref !== edge.target_uid) {
+        failures.push("UID resolution requires target_ref to equal target_uid exactly");
+      }
+      if (![binding.primary.uid, binding.pair.uid].includes(edge.target_uid)) {
+        failures.push("UID resolution target_uid is not a bound fixture identity");
+      }
+    }
+    if (edge.resolution === "basename" && (
+      edge.target_ref !== target.basename || edge.target_uid !== target.uid
+    )) {
+      failures.push("basename resolution does not match the actual paired fixture basename and UID");
+    }
+  }
   if (expectation.resolves !== undefined && typeof expectation.resolves !== "boolean") {
     failures.push("resolves must be boolean");
   }
@@ -71,6 +123,9 @@ export function evaluateGraphExpectation(expectation, observation) {
       failures.push("supersession_chain must contain exactly two non-empty UIDs");
     } else {
       const [predecessor, successor] = chain;
+      if (predecessor !== binding.primary.uid || successor !== binding.pair.uid) {
+        failures.push("supersession_chain does not match the Standard-parsed fixture identities");
+      }
       if (observation.primary_uid !== predecessor || observation.pair_uid !== successor) {
         failures.push("observed primary/pair identities do not match the supersession chain");
       }

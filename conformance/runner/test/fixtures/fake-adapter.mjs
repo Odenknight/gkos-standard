@@ -1,9 +1,13 @@
+import { basename, extname } from "node:path";
+import YAML from "yaml";
+
 export const implementation = {
   name: "runner-honesty-test-adapter",
   version: "0.0.0-test",
 };
 
-export function project(_content, path) {
+export function project(content, path) {
+  const data = frontmatter(content);
   const diagnostics = [];
   if (path.includes("gcp1-n01")) {
     diagnostics.push(
@@ -16,7 +20,11 @@ export function project(_content, path) {
   if (path.includes("gcp1-n03")) diagnostics.push({ code: "GKX-TEMPORAL-001", severity: "error" });
   if (path.includes("gcp1-b01")) diagnostics.push({ code: "GKX-SENSITIVITY-001", severity: "warning" });
   if (path.includes("gcp3-l02")) diagnostics.push({ code: "GKX-EPISTEMIC-004", severity: "warning" });
-  return { diagnostics, effective: { sensitivity: "secret", epistemicState: "unknown" } };
+  return {
+    diagnostics,
+    identity: { uid: data.uid ?? null },
+    effective: { sensitivity: "secret", epistemicState: "unknown" },
+  };
 }
 
 const frontmatter = (raw) => {
@@ -61,5 +69,3 @@ export function projectGraph({ primary, pair }) {
     edges,
   };
 }
-import { basename, extname } from "node:path";
-import YAML from "yaml";

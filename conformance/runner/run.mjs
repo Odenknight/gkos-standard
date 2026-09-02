@@ -13,6 +13,7 @@
  *   export const implementation = { name, version, repository? }
  *   export function project(content, path) -> {
  *     diagnostics: [{ code, severity, field? }],
+ *     identity: { uid },
  *     effective: { sensitivity, epistemicState }
  *   }
  *   export function projectGraph({ primary, pair }) -> {
@@ -24,7 +25,7 @@
  * UNEVALUATED and cannot become a profile claim.
  */
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
-import { join, dirname, resolve, basename } from "node:path";
+import { join, dirname, resolve, basename, extname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { createHash } from "node:crypto";
 import Ajv2020 from "ajv/dist/2020.js";
@@ -75,15 +76,17 @@ for (const fx of manifest.fixtures) {
   let ok = true;
   const raw = readFileSync(join(root, "fixtures", fx.file), "utf8");
   const pairRaw = fx.pair ? readFileSync(join(root, "fixtures", fx.pair), "utf8") : null;
+  const primaryData = frontmatter(raw);
+  const pairData = pairRaw === null ? null : frontmatter(pairRaw);
 
   // 1. schema expectation
   if (fx.schema) {
     const v = ajv.getSchema(fx.schema.against);
-    const valid = v(frontmatter(raw));
+    const valid = v(primaryData);
     if (fx.schema.expect === "valid" && !valid) { ok = false; detail.push("schema: expected valid, got invalid: " + JSON.stringify(v.errors?.slice(0, 2))); }
     if (fx.schema.expect === "invalid" && valid) { ok = false; detail.push("schema: expected invalid, got valid"); }
     if (pairRaw !== null) {
-      const pairValid = v(frontmatter(pairRaw));
+      const pairValid = v(pairData);
       if (fx.schema.expect === "valid" && !pairValid) { ok = false; detail.push("pair schema: expected valid, got invalid: " + JSON.stringify(v.errors?.slice(0, 2))); }
       if (fx.schema.expect === "invalid" && pairValid) { ok = false; detail.push("pair schema: expected invalid, got valid"); }
     }
@@ -122,7 +125,18 @@ for (const fx of manifest.fixtures) {
           primary: { content: raw, path: fx.file, projection: proj },
           pair: pairRaw === null ? null : { content: pairRaw, path: fx.pair, projection: pairProj },
         });
-        graphResult = evaluateGraphExpectation(fx.projection.graph_expect, observation);
+        graphResult = evaluateGraphExpectation(fx.projection.graph_expect, observation, {
+          primary: {
+            uid: primaryData.uid,
+            projected_uid: proj.identity?.uid,
+            basename: basename(fx.file, extname(fx.file)),
+          },
+          pair: {
+            uid: pairData?.uid,
+            projected_uid: pairProj?.identity?.uid,
+            basename: basename(fx.pair, extname(fx.pair)),
+          },
+        });
       } catch (error) {
         graphResult = { executed: true, pass: false, detail: `adapter graph observation failed: ${error.message}` };
       }

@@ -15,6 +15,7 @@ export function project(content, path) {
   const p = core.buildGkx23Projection(content, path, "fixture:" + path, null);
   return {
     diagnostics: (p?.diagnostics ?? []).map(d => ({ code: d.code, severity: d.severity, field: d.field ?? null })),
+    identity: { uid: p?.authored?.uid ?? null },
     effective: { sensitivity: p?.effective?.sensitivity ?? null, epistemicState: p?.effective?.epistemicState ?? null },
   };
 }

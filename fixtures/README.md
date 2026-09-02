@@ -8,9 +8,13 @@ expectations observed through implementation diagnostic codes. Each fixture now
 cites permanent GKOS requirement IDs from `../requirements/REGISTRY.md`; the
 separate non-normative Engine map is
 `../conformance/adapters/gkos-engine.requirements.json`. Those
-observations do not make `GKX-*` diagnostics normative. Catalog 0.2.0 remains
-non-qualifying because its pair/graph expectations are not fully executable and
-the remaining graph topics have not been allocated. `fixtures.manifest.json` is the
+observations do not make `GKX-*` diagnostics normative. Catalog 0.2.0's two
+pair/graph expectations are executable through the Standard-owned evaluator.
+The evaluator binds adapter observations to the parsed fixture UIDs, projected
+UIDs, and actual paired basenames; adapter assertions cannot define successful
+UID or basename resolution. Catalog 0.2.0 remains non-qualifying because it
+declares no complete requirement or qualifying profile and the remaining graph
+topics have not been allocated. `fixtures.manifest.json` is the
 machine-readable catalog; `expected/` holds engine-generated golden outputs;
 `DIVERGENCES.md` records where the reference implementation and the standard's
 expectation disagreed at the recorded Engine v1.0.5 baseline (three historical
@@ -22,9 +26,12 @@ fixtures. The machine-readable manifest has contained eight fixture objects;
 the decision record is preserved as written, while this current-facing count is
 corrected from the catalog itself.
 
-Catalog 0.2.0 explicitly declares `qualifying_profiles: []`. Unexecuted pair or
-graph expectations produce `UNEVALUATED`, block profile claims, and make the
-starter runner exit non-zero.
+Catalog 0.2.0 explicitly declares `qualifying_profiles: []` and
+`complete_requirements: {}`. An adapter that omits a declared graph observation
+produces `UNEVALUATED`; a malformed, identity-unbound, or falsely resolved
+observation produces `FAIL`. Both outcomes block profile claims and make the
+starter runner exit non-zero. Passing the executable starter mechanisms still
+creates no requirement, profile, or tier claim.
 
 The active qualifying catalog still lacks complete sensitivity, delegation,
 replay, rendering-round-trip, negative-space, refusal, effect-scope, erasure,

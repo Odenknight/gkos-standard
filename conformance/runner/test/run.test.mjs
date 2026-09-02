@@ -8,12 +8,16 @@ import { tmpdir } from "node:os";
 const runner = resolve("run.mjs");
 const adapter = resolve("test/fixtures/fake-adapter.mjs");
 const noGraphAdapter = resolve("test/fixtures/no-graph-adapter.mjs");
+const adversarialGraphAdapter = resolve("test/fixtures/adversarial-graph-adapter.mjs");
 
-const execute = (selectedAdapter) => {
+const execute = (selectedAdapter, env = {}) => {
   const out = join(mkdtempSync(join(tmpdir(), "gkos-runner-")), "claim.json");
   let status = 0;
   try {
-    execFileSync(process.execPath, [runner, "--adapter", selectedAdapter, "--out", out], { stdio: "pipe" });
+    execFileSync(process.execPath, [runner, "--adapter", selectedAdapter, "--out", out], {
+      stdio: "pipe",
+      env: { ...process.env, ...env },
+    });
   } catch (error) {
     status = error.status;
   }
@@ -38,6 +42,24 @@ test("Standard-owned graph evaluation executes GCP3-C01 and GCP3-L01 without cre
   assert.equal(claim.environment.platform, process.platform);
   assert.ok(claim.evidence.some((item) => item.locator === "conformance/runner/graph-evaluator.mjs"));
 });
+
+for (const attack of [
+  ["fabricated-identities", "GCP3-C01", /primary_uid does not match/u],
+  ["bogus-uid-ref", "GCP3-L01", /target_ref to equal target_uid exactly/u],
+  ["bogus-basename-ref", "GCP3-C01", /actual paired fixture basename and UID/u],
+]) {
+  const [mode, fixtureId, detail] = attack;
+  test(`adversarial graph observation '${mode}' cannot manufacture a PASS`, () => {
+    const { status, claim } = execute(adversarialGraphAdapter, { GKOS_ADVERSARIAL_GRAPH_MODE: mode });
+    assert.equal(status, 1);
+    const result = claim.fixtures.results.find((item) => item.fixture_id === fixtureId);
+    assert.equal(result.outcome, "fail");
+    assert.match(result.detail, detail);
+    assert.deepEqual(claim.requirements_verified, []);
+    assert.deepEqual(claim.profiles_claimed, []);
+    assert.deepEqual(claim.tier_claims, []);
+  });
+}
 
 test("an adapter without graph observations remains non-qualifying and UNEVALUATED", () => {
   const { status, claim } = execute(noGraphAdapter);

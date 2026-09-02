@@ -26,8 +26,12 @@ Graph-level expectations (`graph_expect`) declared in the catalog are evaluated
 by a deterministic Standard-owned evaluator over an adapter-neutral graph
 observation. An adapter that omits that observation still reports the affected
 fixtures as `UNEVALUATED`, emits no profile claim, and exits non-zero; malformed
-or contradictory observations fail. Executing the starter slice demonstrates
-the mechanism only: catalog 0.2.0 still declares no complete qualifying profile.
+or contradictory observations fail. The runner binds every observation identity
+to Standard-parsed fixture frontmatter and the adapter's projected identity.
+UID resolution requires an exact `target_ref`/`target_uid` match; basename
+resolution requires the actual paired fixture basename and UID. Executing the
+starter slice demonstrates the mechanism only: catalog 0.2.0 still declares no
+complete qualifying profile.
 
 The repository-owned conformance workflow runs the locked runner suite as a
 blocking matrix on Linux and Windows with Node 22 and Node 24. Node 23 is a
@@ -51,9 +55,10 @@ The preserved replay result is in
 [`evidence/gcp6-replay-v0.1/`](evidence/gcp6-replay-v0.1/). It reports
 `mechanism_demonstrated` with no qualifying profiles or tier claim.
 
-Registry integrity is a required runner test. Mutation coverage remains a
-reported deficit until active negative fixtures exist for every registered
-gate; `npm run lint:mutation-coverage` is the eventual strict claim gate.
+Registry integrity is a required runner test. The current predicate-twin corpus
+covers all 28 registered stable gate codes, and
+`npm run lint:mutation-coverage` enforces that coverage. This is mechanism-level
+mutation evidence, not cumulative profile qualification.
 
 ## Provisional SRTP graph runner
 
@@ -90,7 +95,7 @@ commands, and raw outputs before execution. See
 [2026-08-04 critique remediation](../docs/reviews/2026-08-04_CRITIQUE_ASSESSMENT_AND_REMEDIATION.md).
 
 ```sh
-cd conformance/runner && npm install
+cd conformance/runner && npm ci
 GKOS_ENGINE_DIST=/path/to/GKOS-Engine/dist/kosmos-core.mjs \
   node run.mjs --adapter ./adapters/gkos-engine.mjs --attested-by "Your Name"
 ```
