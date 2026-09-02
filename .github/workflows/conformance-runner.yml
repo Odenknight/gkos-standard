@@ -5,6 +5,23 @@ on: [push, pull_request]
 permissions: {contents: read}
 
 jobs:
+  dependency-audit:
+    name: blocking dependency audit / Node 24
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: conformance/runner/package-lock.json
+      - name: Install exact runner dependencies
+        working-directory: conformance/runner
+        run: npm ci
+      - name: Reject high or critical dependency findings
+        working-directory: conformance/runner
+        run: npm audit --audit-level=high
+
   test:
     name: blocking ${{ matrix.os }} / Node ${{ matrix.node-version }}
     strategy:
