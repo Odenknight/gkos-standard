@@ -1,6 +1,40 @@
 # GKOS development decision register
 
-This register indexes adopted v0.x development decisions. These records document Founder/Initial Editor dispositions during testing and refinement; they are not consensus ratification, independent certification, accreditation, or regulator approval.
+This register indexes adopted v0.x development decisions. These records
+document Founder/Initial Editor dispositions during testing and refinement;
+they are not consensus ratification, independent certification, accreditation,
+or regulator approval.
+
+## R21 — Ecosystem interoperability program
+
+- **Date:** 2026-09-02
+- **Status:** Accepted development decision; informative ecosystem-program
+  authority
+- **Decision:** Establish a public, protocol-neutral interoperability program
+  covering current MCP, A2A, and OWASP Agent Control Standard versions; agent-
+  governance mappings; multi-jurisdiction deployment guidance; a portable
+  conformance evidence package; public pilots; external standards engagement;
+  commercial and enterprise participation boundaries; and recruitment of a
+  publicly reviewable second implementation. No private repository or
+  unpublished implementation may be named or implied as public second-
+  implementation evidence.
+- **Record:**
+  [R21_Ecosystem_Interoperability_Program_Development_Decision_Record.md](R21_Ecosystem_Interoperability_Program_Development_Decision_Record.md)
+
+## R20 — v0.81 release-gate reconciliation and publication control
+
+- **Date:** 2026-09-02
+- **Status:** Accepted development decision; v0.81 preparation and publication-
+  control authority
+- **Decision:** Reconcile the v0.81 release route after R19 changed the candidate;
+  classify v0.81 as a developmental, non-consensus, non-qualifying publication;
+  require one exact frozen release candidate, complete final evidence rerun,
+  corrected public documentation, dependency and repository-control closure,
+  version-aware release validation, and explicit final owner publication
+  approval. CI success alone cannot merge, tag, publish, qualify, or certify the
+  release.
+- **Record:**
+  [R20_V081_Release_Gate_Reconciliation_and_Publication_Control_Development_Decision_Record.md](R20_V081_Release_Gate_Reconciliation_and_Publication_Control_Development_Decision_Record.md)
 
 ## R19 — Documentation-intent eighth invariant
 
