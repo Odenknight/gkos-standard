@@ -22,10 +22,17 @@ against any implementation exposing the small adapter contract documented in
 gkos-engine adapter is included. The executable suite remains incomplete:
 catalog 0.2.0 covers GCP-1/GCP-3 classes only, and known standard/implementation
 divergences are recorded in `../fixtures/DIVERGENCES.md` rather than hidden.
-Graph-level expectations (`graph_expect`) declared in the catalog are not yet
-evaluated by the starter runner. The runner now reports those fixtures as
-`UNEVALUATED`, emits no profile claim, and exits non-zero; it cannot silently
-turn partial execution into GCP-3 evidence.
+Graph-level expectations (`graph_expect`) declared in the catalog are evaluated
+by a deterministic Standard-owned evaluator over an adapter-neutral graph
+observation. An adapter that omits that observation still reports the affected
+fixtures as `UNEVALUATED`, emits no profile claim, and exits non-zero; malformed
+or contradictory observations fail. Executing the starter slice demonstrates
+the mechanism only: catalog 0.2.0 still declares no complete qualifying profile.
+
+The repository-owned conformance workflow runs the locked runner suite as a
+blocking matrix on Linux and Windows with Node 22 and Node 24. Node 23 is a
+separate informative compatibility lane and cannot substitute for any blocking
+matrix cell.
 
 The permanent requirement allocations are published in
 [`../requirements/REGISTRY.md`](../requirements/REGISTRY.md). Fixtures cite
@@ -66,7 +73,8 @@ npm run srtp:draft
 
 - Fixture catalog 0.2.0 declares no complete qualifying profile. A run therefore
   emits an empty `profiles_claimed` array even when every executable slice passes.
-- Declared graph expectations must become executable before a GCP-3 result can support external qualification.
+- The declared GCP3-C01 and GCP3-L01 graph expectations are executable, but the
+  starter catalog remains incomplete and cannot support external GCP-3 qualification.
 - PASS, FAIL, PARTIAL, and UNEVALUATED are distinct report states; PARTIAL and
   UNEVALUATED are not profile passes. The starter runner currently emits
   per-fixture PASS, FAIL, KNOWN-DIVERGENCE, SKIP, or UNEVALUATED.
