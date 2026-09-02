@@ -1,0 +1,88 @@
+name: Update Sol review packet target
+
+on:
+  push:
+    branches:
+      - work/r20-r21-ecosystem-20260902
+
+permissions:
+  contents: write
+
+jobs:
+  update-packet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Replace obsolete target and add review inputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('docs/ecosystem/SOL_REVIEW_WORK_PACKET.md')
+          text = path.read_text(encoding='utf-8')
+          old_target = '''- **Exact review-input head before this packet:**
+            `a80cd4b988b3a966d9619c0e478cdf33403aec99`
+          '''.replace('          ', '')
+          new_target = '''- **Review target:** the exact pull-request head and tree recorded when review
+            execution begins. The drafting branch remains mutable until that freeze; no
+            earlier drafting SHA satisfies the fixed-input requirement.
+          '''.replace('          ', '')
+          if old_target in text:
+              text = text.replace(old_target, new_target, 1)
+          elif new_target not in text:
+              raise SystemExit('expected Sol target block not found')
+
+          old_bindings = '''- `docs/ecosystem/bindings/GKOS-MCP-BINDING-0.1-draft.md`;
+          - `docs/ecosystem/bindings/GKOS-A2A-BINDING-0.1-draft.md`;
+          - `docs/ecosystem/bindings/GKOS-ACS-CROSSWALK-0.1-draft.md`; and
+          - `docs/ecosystem/AGENT_GOVERNANCE_INTEROPERABILITY_DRAFT.md`.
+          '''.replace('          ', '')
+          new_bindings = '''- `docs/ecosystem/bindings/BINDING_TEMPLATE.md`;
+          - `docs/ecosystem/bindings/GKOS-MCP-BINDING-0.1-draft.md`;
+          - `docs/ecosystem/bindings/GKOS-A2A-BINDING-0.1-draft.md`;
+          - `docs/ecosystem/bindings/GKOS-ACS-CROSSWALK-0.1-draft.md`; and
+          - `docs/ecosystem/AGENT_GOVERNANCE_INTEROPERABILITY_DRAFT.md`.
+          '''.replace('          ', '')
+          if old_bindings in text:
+              text = text.replace(old_bindings, new_bindings, 1)
+          elif new_bindings not in text:
+              raise SystemExit('expected protocol input block not found')
+
+          old_deploy = '''- `docs/ecosystem/MULTI_JURISDICTION_DEPLOYMENT_GUIDANCE_DRAFT.md`;
+          - `docs/ecosystem/GKOS_CONFORMANCE_EVIDENCE_PACKAGE_0.1_DRAFT.md`; and
+          - `schemas/provisional/evidence/gkos-conformance-evidence-package-0.1.draft.schema.json`.
+          '''.replace('          ', '')
+          new_deploy = '''- `docs/ecosystem/MULTI_JURISDICTION_DEPLOYMENT_GUIDANCE_DRAFT.md`;
+          - `docs/ecosystem/GKOS_CONFORMANCE_EVIDENCE_PACKAGE_0.1_DRAFT.md`;
+          - `docs/ecosystem/PILOT_PROGRAM_DRAFT.md`;
+          - `docs/ecosystem/PUBLIC_SECOND_IMPLEMENTATION_CALL.md`;
+          - `docs/ecosystem/EXTERNAL_STANDARDS_ENGAGEMENT_DRAFT.md`;
+          - `docs/ecosystem/COMMERCIAL_ENTERPRISE_PARTICIPATION_GUIDANCE.md`;
+          - `schemas/provisional/evidence/gkos-conformance-evidence-package-0.1.draft.schema.json`;
+          - `fixtures/provisional/evidence/`; and
+          - `conformance/runner/test/evidence-package-schema.test.mjs`.
+          '''.replace('          ', '')
+          if old_deploy in text:
+              text = text.replace(old_deploy, new_deploy, 1)
+          elif new_deploy not in text:
+              raise SystemExit('expected deployment input block not found')
+
+          path.write_text(text, encoding='utf-8')
+          PY
+          git diff --check
+      - name: Commit packet update
+        shell: bash
+        run: |
+          git config user.name 'Shaun "Oden" Marshall'
+          git config user.email '40664141+Odenknight@users.noreply.github.com'
+          git add docs/ecosystem/SOL_REVIEW_WORK_PACKET.md
+          if git diff --cached --quiet; then
+            echo 'No packet change was required.'
+            exit 0
+          fi
+          git commit -m 'docs: update Sol review packet target and inputs' \
+            -m 'Signed-off-by: Shaun "Oden" Marshall <40664141+Odenknight@users.noreply.github.com>'
+          git push origin HEAD:work/r20-r21-ecosystem-20260902
