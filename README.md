@@ -280,7 +280,6 @@ claim.
 | --- | --- | --- |
 | [GKOS Engine](https://github.com/Odenknight/GKOS-Engine) | Deterministic GKX parsing, validation, assessment, projection, read-only navigation, and adapter surfaces | Reference implementation; versioned separately from the standard; no qualifying GKOS profile is established merely by the package or tag |
 | [Kosmos-Oden](https://github.com/Odenknight/Kosmos-Oden) | Human-facing visualization and read-only lineage/navigation over governed records | Product example with an exact-pinned Engine dependency; not the standard, an endorsement, an independent implementation, or a conformance result |
-| [GKOS Observatory](https://github.com/Odenknight/GKOS-Observatory) | Public-facing demonstration and replay environment under development | Educational and pilot surface; no production, certification, or conformance implication |
 
 The implementation version matrix must keep the standard release, GKX
 namespace, canonical profile, Engine tag, current development head, product
