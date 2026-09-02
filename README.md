@@ -2,273 +2,352 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> A public pre-standard for governing how evidence becomes knowledge, how
-> authority is applied, and how consequential actions remain accountable.
+> A developmental public pre-standard for making the path from evidence to
+> consequential action inspectable, testable, and governable.
 
-**Evidence is not truth. Confidence is not authority.**
+**Evidence is not truth. Confidence is not authority. Capability is not authority.**
 
 ![Evidence moves through preservation, structure, lineage, validation, review, context, and authorized use](illustrated/figures/fig4-knowledge-flow.png)
 
-GKOS is a control-plane architecture for knowledge used by people and AI
-agents. It keeps evidence, claims, decisions, context, authority, and actions
-distinguishable and auditable—without replacing the tools that store data,
-run agents, manage workflows, or enforce identity.
+When a person or AI system recommends, approves, or takes an action, GKOS is
+designed to make six questions answerable:
+
+1. What evidence actually entered the system?
+2. What did a person, model, tool, or agent claim that evidence meant?
+3. Which deterministic controls ran, and what failed or was refused?
+4. Who or what had authority to decide—and within what limits?
+5. What exact context was presented for that decision or action?
+6. What happened next, and how can the result be corrected, challenged, or replayed?
+
+GKOS does not replace your data stores, agent runtimes, workflow systems,
+identity providers, policy engines, or professional judgment. It defines the
+**governed contracts between them** so that retrieval, confidence, technical
+access, and automation are not mistaken for approval or authority.
 
 - **Current release:** GKOS-2026-08-20 v0.80
 - **Development line:** v0.81 preparation; no v0.81 release or qualifying
   profile is claimed by this README
-- **Maturity:** public pre-standard; developmental and open for testing
+- **Maturity:** developmental public pre-standard; open for implementation,
+  testing, criticism, and independent review
 - **Machine exchange contract:** GKX 2.0
+- **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable
+  artifact contract
 - **Canonical repository:** `Odenknight/gkos-standard`
 
-[Read the technical orientation](TECHNICAL_README.md) ·
-[Read the master standard](standard/00_GKOS_Master_Standard.md) ·
-[Review conformance](conformance/README.md) ·
-[See the roadmap](ROADMAP.md)
+[Technical orientation](TECHNICAL_README.md) ·
+[Master standard](standard/00_GKOS_Master_Standard.md) ·
+[Requirements registry](requirements/REGISTRY.md) ·
+[Conformance](conformance/README.md) ·
+[Reference infrastructure](docs/implementation/GKOS_REFERENCE_INFRASTRUCTURE.md) ·
+[Roadmap](ROADMAP.md)
 
-> **GKOS defines the rules and responsibilities. GKX is the machine-readable
-> way systems carry the governed records between them.**
-
-## Where GKOS helps
-
-The same governance problem appears wherever people or AI turn information
-into decisions and actions:
-
-| Domain | Why GKOS is useful |
-| --- | --- |
-| **Individuals** | Keeps original sources, personal notes, interpretations, and AI suggestions separate, so a helpful assistant does not silently rewrite what you know or decide for you. |
-| **Engineers** | Preserves which requirement, design, dependency, configuration, test, and incident evidence led to a technical decision or operational change. |
-| **Small businesses** | Makes policies, responsibilities, approvals, and AI-assisted work traceable without requiring the business to replace its existing tools. |
-| **Enterprises and corporations** | Connects evidence, roles, restrictions, review, context, and consequential actions across teams and systems while keeping authority explicit. |
-| **Scientific organizations** | Keeps datasets, methods, executions, artifacts, interpretations, reviews, and reruns linked without treating a reproducible record as proof that a conclusion is scientifically valid. |
-| **Legal organizations** | Separates source material, an actor's interpretation, matter-specific context, authorized review, and resulting action while preserving privilege and access boundaries supplied by the deployment. |
-| **Government and public institutions** | Helps preserve the record behind policy, administrative decisions, delegated authority, public accountability, and later review without itself granting legal or regulatory standing. |
-| **AI and agentic systems** | Prevents retrieval rank, model confidence, tool access, or technical capability from being mistaken for permission, approval, or authority. |
-
-These are architectural benefits, not certifications or guarantees of legal,
-regulatory, scientific, security, or domain compliance. Each deployment still
-needs its own qualified authorities, controls, validation, and applicable
-domain profile.
+> **GKOS defines the responsibilities and claim boundaries. GKX carries the
+> machine-readable governed records. Implementations provide the runtime.**
 
 ## Why GKOS exists
 
-AI systems can retrieve documents, combine evidence, propose conclusions, call
-tools, and act faster than a person can inspect every intermediate step. Most
-systems can answer *what is similar to this query?* Far fewer can reliably
-answer:
+Modern AI systems can retrieve records, combine evidence, create assertions,
+call tools, delegate work, and change external systems faster than a person can
+inspect every intermediate step. Conventional logs often show that a call
+occurred, but not whether the source was current, which contradictions were
+known, which policy version controlled the action, or whether the actor had the
+right authority for that exact purpose.
 
-- What was the original evidence?
-- What did a person or agent claim that evidence meant?
-- Is this the current version, and what does it supersede?
-- Which deterministic controls actually ran?
-- Who accepted responsibility for the decision?
-- What exact context was shown, to whom, and for what purpose?
-- What action occurred, under which authority, and with what result?
+GKOS separates records that are often collapsed together:
 
-GKOS defines the responsibilities and records needed to preserve those
-answers. It does not declare absolute truth. It makes the path from evidence to
-action explicit enough to inspect, reproduce, challenge, correct, and govern.
+- preserved evidence;
+- human, model, tool, and agent assertions;
+- deterministic validation results;
+- authorized decisions;
+- purpose-bound context;
+- grants and delegations;
+- consequential actions, refusals, outcomes, and corrective routes.
 
-## The model in one minute
+It does not declare absolute truth. It makes the path from evidence to action
+explicit enough to inspect, reproduce, challenge, correct, and test.
 
-1. **Preserve evidence.** Keep what was received or observed separate from
-   later interpretation.
-2. **Structure knowledge.** Give governed objects stable identity, versions,
-   relationships, and lineage.
-3. **Apply controls.** Record deterministic validation, restrictions, and
-   failures. Mandatory failures block promotion.
-4. **Record decisions.** Acceptance, rejection, limitation, deferral, or
-   withdrawal comes from an authorized actor—not model confidence.
-5. **Compile context.** Present purpose-bound context with relevant evidence,
-   contradictions, restrictions, omissions, versions, and expiry.
-6. **Authorize use.** Link a consequential action to its context, authority,
-   dependencies, outcome, and recovery route.
-7. **Preserve the result.** If an outcome later becomes evidence, it re-enters
-   as a new source instead of rewriting the history that produced it.
+## Why standards communities may care
 
-The practical promise is simple:
+NIST's 2026 [AI Agent Standards Initiative](https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative)
+prioritizes industry-led standards, community-led interoperable protocols,
+agent authentication and identity infrastructure, and security evaluations.
+The NCCoE concept work on
+[software and AI agent identity and authorization](https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization)
+asks implementation-level questions about agent identification,
+authentication, least privilege, delegation, human-agent binding, tamper-evident
+logging, data-flow provenance, and prompt-injection containment.
 
-> Preserve what happened. Record what was claimed. Show how it was checked.
-> Identify who accepted responsibility. Compile the context actually used.
-> Retain a receipt for the action that followed.
+GKOS is intended as a **candidate operationalization layer** for those kinds of
+questions—not as a replacement for NIST guidance and not as a claim of NIST
+alignment, approval, or endorsement.
 
-## Seven cumulative responsibilities
+| Implementation question | What GKOS contributes | What still comes from other systems |
+| --- | --- | --- |
+| How is an agent or service identified? | Stable governed actor and artifact references, versions, ownership, role boundaries, and recorded dependencies | Authentication, workload identity, credential lifecycle, and key custody through systems such as OIDC, SPIFFE/SPIRE, SCIM, and enterprise IAM |
+| How is authority bounded and delegated? | Purpose-bound grants, monotonic delegation limits, deterministic control results, effect scope, and action-time verification | OAuth, NGAC, policy engines, PAM, organizational authority, and applicable law or policy |
+| How are actions made inspectable? | Durable State-Change, Decision, Refusal, Context, and Authorized Use records with canonical hashes where required | Append-only storage, signatures, transparency services, monitoring, and independent assessment |
+| How is data-flow provenance retained? | Source Records, typed lineage, exact evidence anchors, and a captured Selection Envelope before deterministic context assembly | Native records systems, OpenLineage or W3C PROV mappings, telemetry, retention, and lawful access controls |
+| How is human or organizational responsibility preserved? | Role separation, authorized append-only disposition, exact reviewed-context binding, and explicit escalation boundaries | Workforce roles, qualifications, contracts, delegations, review procedures, and accountability mechanisms |
+| How are prompt injection and confused-deputy risks contained? | Purpose, sensitivity, authority, effect-scope, and mandatory fail-closed gates around context and action | Runtime isolation, sandboxing, content defenses, credential separation, secure tool design, and adversarial testing |
+| How can implementations be compared? | Stable requirement IDs, GKX artifacts, registered diagnostics, fixture-based tests, exact-bound claim manifests, and explicit limitations | Independent implementations, competent assessors, reproducible environments, and broader TEVV programs |
+
+The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+remains a voluntary risk-management framework and is being revised in 2026.
+GKOS should be treated as complementary implementation evidence: it may help an
+organization demonstrate how selected governance decisions operated, but it
+does not establish AI RMF conformity or legal compliance.
+
+**GKOS is not a NIST publication and is not endorsed by NIST or NCCoE.** Product
+and standards references are included for technical comparison only.
+
+## The seven cumulative responsibilities
 
 ![The GKOS seven-layer model](illustrated/figures/fig1-seven-layers.png)
 
-The seven layers are cumulative responsibilities—not seven products, not a
-required synchronous pipeline, and not a claim that every implementation must
-operate at every layer.
+The layers are cumulative responsibilities—not seven products, not a required
+synchronous pipeline, and not a claim that every deployment must implement all
+seven.
 
-| Layer | Responsibility | Core record or result |
+| Layer | Responsibility | Required result |
 | --- | --- | --- |
-| **1. Original Sources** | Preserve what was received or observed | Source Record |
-| **2. Structure and Identity** | Give objects stable identity and version history | Structured Knowledge Object |
-| **3. Relationships and Lineage** | Record support, contradiction, dependency, and supersession | Assertion and lineage records |
-| **4. Validation and Control** | Apply deterministic rules and restrictions | Diagnostics and control receipts |
-| **5. Review and Workflow** | Record an authorized disposition | Decision Record |
-| **6. Context Presentation** | Compile reproducible, purpose-bound context | Context Manifest |
-| **7. Authorized Use** | Bind action to context and authority | Authorized Use Record |
+| **1. Original Sources** | Preserve what was received or observed, including revision, provenance, custody, sensitivity, retention, and acquisition evidence | Source Record |
+| **2. Structure and Identity** | Assign stable identity, type, schema, version, and canonical representation without treating filename or path as identity | Structured Knowledge Object |
+| **3. Relationships and Lineage** | Record typed, sourced, temporal, scoped, and attributable assertions, contradictions, dependencies, corrections, and supersession | Assertion and lineage records |
+| **4. Validation and Control** | Apply deterministic requirements and restrictions; mandatory failures block, refuse, roll back, or freeze as specified | Diagnostics and Control Receipts |
+| **5. Review and Workflow** | Bind an authorized, append-only disposition to the exact proposal and evidence reviewed | Decision Record |
+| **6. Context Presentation** | Capture non-deterministic selection, then assemble reproducible, purpose-bound, restriction-aware context | Selection Envelope and Context Manifest |
+| **7. Authorized Use** | Bind an exact action to context, valid authority, distinct actor roles, delegation, effect scope, outcome, and recovery | Authorized Use Record or Refusal Receipt |
 
-An implementation claims only the exact responsibilities it demonstrates. A
-higher layer does not erase or silently rewrite the records below it.
+Every committed governed state change must be durably receipted through the
+applicable record role. Higher layers do not silently rewrite lower layers.
+When an upper-layer result later becomes evidence, it re-enters as a new Layer-1
+source without inherited standing.
 
-In everyday terms: Layer 1 keeps the original; Layer 2 gives it a durable
-identity; Layer 3 records what people or systems say it means; Layer 4 applies
-repeatable rules; Layer 5 records who accepted responsibility; Layer 6 freezes
-the exact decision context; and Layer 7 records who authorized the resulting
-action. For a legal and professional explanation, see the
-[non-technical orientation](docs/GKOS_LEGAL_AND_PROFESSIONAL_ORIENTATION.md).
+## A plain-language example
 
-## A control plane—not another runtime
+Consider an AI assistant that proposes a customer refund:
+
+1. The request, account record, and applicable policy versions are preserved as
+   sources.
+2. The agent's interpretation is recorded separately from those sources.
+3. Deterministic rules check identity, amount, purpose, sensitivity, and the
+   agent's delegated limit.
+4. A valid standing policy may authorize a routine, reversible refund; an
+   exception may require an independent review and Decision Record.
+5. The exact evidence, warnings, restrictions, omissions, and policy versions
+   used for the decision are bound in a Context Manifest.
+6. The action is rechecked at execution time and recorded with its actor,
+   authority, effect scope, outcome, and correction route.
+7. The outcome returns as new evidence. It does not rewrite the original
+   request or the history of how the decision was made.
+
+GKOS does not decide whether the refund policy is fair or lawful. It makes the
+operation and responsibility chain testable.
+
+## A control plane—not another runtime or database
 
 ```mermaid
 flowchart TB
-    H["Human knowledge<br/>Sources, records, notes"] --> G["GKOS control plane<br/>Validation · lineage · context<br/>authority · receipts"]
-    G --> A["Agent runtimes"]
-    G --> W["Workflow engines"]
-    G --> I["Identity and policy"]
+    D["Data and agent plane<br/>Sources · models · retrieval · tools"]
+    G["GKOS governance contracts<br/>Lineage · controls · review · context · authority · receipts"]
+    T["Trust and enforcement plane<br/>Identity · policy · signing · audit · isolation"]
+    D <--> G
+    G <--> T
 ```
 
-GKOS complements an existing stack. It does not replace:
+A deployment may implement GKOS in one service, several services, sidecars,
+event handlers, workflow records, or adapters over existing platforms. GKOS
+does not mandate one database, one agent framework, one cloud, or one vendor.
 
-- agent runtimes or model routers;
-- workflow and orchestration engines;
-- identity, access-management, or policy systems;
-- databases, vector stores, or knowledge graphs;
-- provenance, signing, or supply-chain standards; or
-- the professional judgment of an authorized person.
+The governing distinction is:
 
-Those systems provide capabilities. GKOS defines how governed knowledge,
-context, authority, and receipts move between them without turning retrieval
-rank, model confidence, or tool access into approval.
+- **Capabilities** retrieve, reason, route, sign, store, or execute.
+- **GKOS contracts** state what evidence, authority, context, and receipts must
+  survive when those capabilities are used.
 
 ## Use the tools you already have
 
-GKOS is not tied to one vendor or implementation. It defines the governed
-contracts between tools that preserve sources, structure knowledge, record
-lineage, run checks, manage review, assemble context, and authorize action.
+Existing products and open standards can contribute mechanisms to one or more
+layers. They do not become GKOS-conformant merely by being installed.
 
-| GKOS responsibility | Tools and standards that can contribute |
-| --- | --- |
-| **L1 Original Sources** | Docling, Apache Tika, Unstructured, OpenLineage, W3C PROV-O |
-| **L2 Structure and Identity** | Logseq, LinkML, JSON Schema, and Markdown-based knowledge tools |
-| **L3 Relationships and Lineage** | Graphiti, XTDB, Neo4j Community Edition, Dolt |
-| **L4 Validation and Control** | Great Expectations, Soda Core, Ragas, OpenTelemetry, Open Policy Agent, Cedar |
-| **L5 Review and Workflow** | ADR tooling and workflow/review systems |
-| **L6 Context Presentation** | MCP tool/resource schemas and server metadata, SPDX, CycloneDX, CUE |
-| **L7 Authorized Use** | Sigstore/Rekor, in-toto, SPIFFE/SPIRE, OpenFGA |
-
-These are interoperability examples, not endorsements or conformance results.
-Each provides part of a layer's shape; none becomes a GKOS layer merely by
-being present. A conforming implementation must still satisfy the applicable
-GKOS contracts, preserve required evidence, and publish an exact-bound claim.
-
-For the layer-by-layer mapping, 2026 OKF and MCP analysis, product coverage
-matrix, and adapter guidance, read the
-[technical orientation](TECHNICAL_README.md#open-source-and-product-ecosystem-mapping).
-
-## Required tiers and adoption paths
-
-GKOS can be adopted incrementally. R16 defines these named claim tiers:
-
-| Tier | Required depth | What it establishes |
+| GKOS responsibility | Representative mechanisms | What a GKOS adapter must still establish |
 | --- | --- | --- |
-| **GKOS Core** | GCP-1 through GCP-5 | Preserved evidence through governed disposition |
-| **GKOS Advanced** | GCP-1 through GCP-7 | Core plus reproducible context and authorized use |
-| **GCP-6 Context-Only Extension** | Core plus GCP-6 | Read-only context compilation; it grants no action authority |
-| **Viewer/Projection Profile** | Independent | A faithful view that does not gain decision or action authority |
+| **L1 preservation** | Records repositories, WORM/object-lock storage, content-addressed stores; Docling, Apache Tika, or Unstructured for extraction | Exact received revision, fingerprint, provenance/custody, retention and sensitivity evidence; extraction must not overwrite the source |
+| **L2 structure and identity** | JSON Schema, LinkML, schema registries, MDM, persistent identifier systems | Stable governed identity and version, type and schema identity, canonical representation, and explicit handling of unknown or lossy fields |
+| **L3 relationships and lineage** | W3C PROV-O, OpenLineage, DataHub, Apache Atlas, Microsoft Purview lineage, Neo4j, Stardog, Graphiti | Typed direction, actor, evidence anchor, scope, epistemic state, validity time, contradiction, correction, and supersession semantics |
+| **L4 validation and control** | GKOS Engine, OPA, Cedar, Great Expectations, Soda, pySHACL, policy and authorization services | Exact policy or check identity, deterministic outcome, stable diagnostic, mandatory blocking behavior, and durable receipt |
+| **L5 review and workflow** | ServiceNow, Jira, GitHub/GitLab/Azure DevOps review, Temporal, Camunda/Flowable, ADR tools | Authorized append-only disposition, role separation, conditions, expiry, supersession, appeal/escalation, and binding to exact governed inputs |
+| **L6 context presentation** | MCP transports and schemas, search/vector/graph systems, CUE, Pydantic, retrieval frameworks | Captured Selection Envelope plus deterministic assembly of evidence, contradictions, warnings, restrictions, omissions, recipient, purpose, versions, and expiry |
+| **L7 authorized use** | OAuth/OIDC, SPIFFE/SPIRE, NGAC, OpenFGA, PAM, Sigstore/Rekor, in-toto | Exact actor/action/context/grant/effect-scope binding, action-time authorization, outcome, refusal or recovery route, and durable use evidence |
 
-Lower-layer results may still be reported precisely, but they are not a Core
-claim. The active fixture catalog currently declares no qualifying profile, so
-these definitions are requirements—not certifications of any implementation.
+Important boundaries:
 
-## Four names are enough to get started
+- Extraction software is not an immutable preservation system.
+- A graph edge is not automatically a governed assertion.
+- Authentication is not authorization, and authorization is not a Decision
+  Record.
+- A signature proves integrity or origin under its trust model; it does not
+  prove truth, authority, or GKOS conformance.
+- MCP can carry tools, resources, prompts, and authorization metadata; it does
+  not by itself create a GKOS Context Manifest or Authorized Use Record.
+- Non-deterministic model graders may provide evidence or monitoring signals,
+  but they cannot silently replace a deterministic mandatory gate.
 
-| Name | Meaning |
+For a fuller mapping across commercial, enterprise, and open-source
+infrastructure, including deployment patterns and NIST-oriented trust-plane
+bindings, see the
+[reference infrastructure architecture](docs/implementation/GKOS_REFERENCE_INFRASTRUCTURE.md).
+
+All product references are illustrative. They are not endorsements,
+procurement recommendations, interoperability results, or conformance claims.
+Products and licenses change; an implementation must pin and reassess the exact
+version and deployment mode it uses.
+
+## Adoption profiles
+
+GKOS can be adopted incrementally, but named claims have exact boundaries.
+
+| Claim | Required depth | Meaning |
+| --- | --- | --- |
+| **GKOS Core** | All applicable GCP-1 through GCP-5 requirements on one exact release and fixture baseline | Preserved evidence through governed disposition |
+| **GKOS Advanced** | All applicable GCP-1 through GCP-7 requirements on one exact release and fixture baseline | Core plus reproducible context and authorized use |
+| **GCP-6 Context-Only Extension** | GKOS Core plus GCP-6; read-only for the claimed use | Purpose-bound context without authority to perform consequential action |
+| **Viewer/Projection Profile** | Independently claimable read-only requirements | Faithful presentation without write, promotion, decision, or authorization authority |
+
+A deployment may truthfully report lower-layer capability without calling it
+GKOS Core. The active fixture catalog on the current development line declares
+no qualifying profile, so these definitions are requirements and test targets—not
+certifications of an implementation.
+
+## Testability and exact-bound claims
+
+A serious GKOS claim identifies at least:
+
+- the exact dated GKOS release and GKX version;
+- the profile and applicable requirement set;
+- implementation version and immutable commit or artifact digest;
+- schemas, policies, compiler, and canonicalization profile;
+- fixture catalog and test-runner versions;
+- environment and dependency evidence;
+- executed, passed, failed, skipped, unsupported, and unevaluated results;
+- exceptions and limitations;
+- whether the assessment was self-attested or independently verified.
+
+For GCP-6 and GCP-7, canonical governed artifacts use GKX-CBOR-1 where required.
+Non-deterministic selection is captured in a hashed Selection Envelope;
+deterministic assembly operates only on captured, digest-bound inputs. A
+friendly JSON, YAML, Markdown, or dashboard rendering is a view—not a second
+canonical authority.
+
+## What GKOS can and cannot establish
+
+GKOS can define and test whether an implementation preserves the required
+records and boundaries. It cannot, by itself, establish that:
+
+- a source is factually correct;
+- a model output is accurate or unbiased;
+- a policy is lawful, fair, ethical, or appropriate;
+- an identity provider, ledger, signature system, or runtime is uncompromised;
+- a human reviewer reached the right substantive conclusion;
+- a deployment complies with NIST guidance, the EU AI Act, ISO/IEC 42001,
+  sector regulation, or applicable law; or
+- an implementation is certified, accredited, secure, or safe.
+
+Those determinations require their own evidence, qualified authorities,
+assessment scope, and—where applicable—recognized conformity or regulatory
+processes.
+
+## Where GKOS helps
+
+| Audience | Practical value |
 | --- | --- |
-| **GKOS** | The governance standard: responsibilities, authority, lifecycle, controls, and conformance |
-| **GKX** | The machine exchange contract governed by GKOS |
-| **GKOS Engine** | A reference implementation of deterministic GKOS/GKX machinery; it is not the standard |
-| **Conformance profile** | The exact subset of responsibilities an implementation claims and demonstrates |
-
-Other names belong to implementations, distributions, experimental profiles,
-or ordinary technical artifacts. They are introduced only where needed.
-Product names do not create additional GKOS layers or competing standards.
+| **Individuals** | Keeps original sources, personal interpretations, AI suggestions, and final decisions distinguishable. |
+| **Developers and operators** | Connects requirements, configurations, code, tests, incidents, approvals, deployments, and rollback evidence. |
+| **Small businesses** | Makes responsibilities, policy exceptions, approvals, and AI-assisted work traceable without replacing the existing stack. |
+| **Enterprises** | Provides a common contract across records, data, workflow, identity, policy, retrieval, and agent systems. |
+| **Scientific organizations** | Links datasets, methods, executions, artifacts, interpretations, review, and reuse without treating reproducibility as proof of scientific validity. |
+| **Legal and regulated organizations** | Separates source material, interpretation, matter- or purpose-specific context, authorized review, and resulting action while retaining deployment-supplied access and privilege controls. |
+| **Government and public institutions** | Helps preserve the evidence, delegated authority, decision context, action, and appeal or correction trail behind public administration. |
+| **AI and agentic systems** | Prevents model confidence, tool access, retrieval rank, or technical capability from being treated as permission to approve or act. |
 
 ## Implementations in the GKOS ecosystem
 
-GKOS is implementation-neutral. These public projects illustrate different
-ways its responsibilities can be implemented. Their inclusion does not establish
-endorsement, certification, or a GKOS conformance result.
+GKOS is implementation-neutral. Public projects may demonstrate selected
+responsibilities without becoming the standard or acquiring a conformance
+claim.
 
-| Implementation | Demonstrates | Claim boundary |
+| Project | Role | Current claim boundary |
 | --- | --- | --- |
-| [GKOS Engine](https://github.com/Odenknight/GKOS-Engine) | Deterministic parsing, validation, assessment, graphing, projection, and read-only navigation for GKX records | Reference implementation; not the standard and not an independent implementation |
-| [Kosmos-Oden v0.8.0](https://github.com/Odenknight/Kosmos-Oden) | Read-only visualization and lineage traversal over governed knowledge records, using exact-pinned GKOS Engine 2.1.1 | Product example; not the standard, an endorsement, or a conformance result |
+| [GKOS Engine](https://github.com/Odenknight/GKOS-Engine) | Deterministic GKX parsing, validation, assessment, projection, read-only navigation, and adapter surfaces | Reference implementation; versioned separately from the standard; no qualifying GKOS profile is established merely by the package or tag |
+| [Kosmos-Oden](https://github.com/Odenknight/Kosmos-Oden) | Human-facing visualization and read-only lineage/navigation over governed records | Product example with an exact-pinned Engine dependency; not the standard, an endorsement, an independent implementation, or a conformance result |
+| [GKOS Observatory](https://github.com/Odenknight/GKOS-Observatory) | Public-facing demonstration and replay environment under development | Educational and pilot surface; no production, certification, or conformance implication |
 
-Formal conformance claims must identify the exact GKOS release, GKX version,
-profile, implementation version, test suite, limitations, and immutable evidence.
+The implementation version matrix must keep the standard release, GKX
+namespace, canonical profile, Engine tag, current development head, product
+pin, and fixture baseline separate. Matching version numbers do not imply
+compatibility.
 
-## GKOS and ordinary RAG
+## Current maturity and governance boundary
 
-Retrieval-augmented generation finds potentially relevant material. GKOS adds
-governed selection and purpose-bound context around that retrieval.
-
-GKOS does not make a model correct. It makes critical distinctions reviewable:
-source versus assertion, current versus superseded, permission versus
-similarity, confidence versus authority, and answer versus authorized action.
-
-## Five rules to remember
-
-1. **Evidence is not automatically truth.** Preserve what was received and
-   separately record what an actor claims it means.
-2. **Capability is not authority.** An agent may be able to analyze or act
-   without being authorized to approve or execute.
-3. **Confidence is not authority.** Model confidence, similarity, retrieval
-   rank, graph centrality, and claimed expertise never authorize promotion.
-4. **Restrictions only tighten without authority.** Lower-precedence inputs
-   cannot widen a higher-precedence boundary.
-5. **Consequential use leaves a receipt.** The action remains linked to the
-   exact context and authority under which it occurred.
-
-## Current maturity and claim boundary
-
-GKOS v0.80 is suitable for public review, research, prototypes, controlled
-pilots, fixture development, and independent implementation work.
+GKOS v0.80 is suitable for public review, research, controlled prototypes,
+fixture development, interoperability experiments, and independent
+implementation work.
 
 It is **not**:
 
 - an accredited national or international standard;
+- an independent consensus publication;
 - a certification or accreditation program;
 - proof that a product is truthful, safe, secure, or legally compliant;
 - a legal opinion or regulatory authorization;
 - a replacement for professional judgment; or
-- evidence that the future GKOS v1.0 gates have been met.
+- evidence that the v1.0 gates have been met.
 
 The v0.x series is governed by Shaun “Oden” Marshall as Founder and Initial
-Editor. Adopted changes are disclosed development decisions, not independent
-approval or consensus ratification. Multi-stakeholder authority, complete
-conformance infrastructure, independently demonstrated implementation,
-appeals, succession, and signed archival publication remain v1.0 work.
+Editor. Adopted changes are disclosed owner-authorized development decisions,
+not independent consensus ratification. Multi-stakeholder governance, complete
+conformance infrastructure, an independently demonstrated second
+implementation, appeals and succession, signed archival publication, and
+published pilot evidence remain v1.0 work.
 
 ## Start here
 
-| If you are… | Read this next |
+| You are… | Read this next |
 | --- | --- |
-| Evaluating the idea | This README, then the [illustrated edition](archive/illustrated/GKOS-v0.76-Illustrated-Edition.md) |
-| Legal or professional review | [Legal and professional orientation](docs/GKOS_LEGAL_AND_PROFESSIONAL_ORIENTATION.md), then [known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) |
-| Implementing GKOS or GKX | [Technical orientation](TECHNICAL_README.md), [master standard](standard/00_GKOS_Master_Standard.md), [canonical serialization](standard/annexes/Canonical_Serialization.md), and [layer contracts](standard/annexes/Layer_Interface_Contracts.md) |
+| New to GKOS | This README, then the [illustrated edition](archive/illustrated/GKOS-v0.76-Illustrated-Edition.md) |
+| Reviewing the concept professionally | [Legal and professional orientation](docs/GKOS_LEGAL_AND_PROFESSIONAL_ORIENTATION.md) and [known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) |
+| Designing infrastructure | [Reference infrastructure](docs/implementation/GKOS_REFERENCE_INFRASTRUCTURE.md) and [technical orientation](TECHNICAL_README.md) |
+| Implementing GKOS or GKX | [Master standard](standard/00_GKOS_Master_Standard.md), [layer contracts](standard/annexes/Layer_Interface_Contracts.md), [canonical serialization](standard/annexes/Canonical_Serialization.md), and [schemas](schemas/README.md) |
 | Testing an implementation | [Conformance](conformance/README.md), [requirements registry](requirements/REGISTRY.md), and [fixtures](fixtures/README.md) |
 | Comparing standards and tools | [Technical ecosystem mapping](TECHNICAL_README.md#open-source-and-product-ecosystem-mapping) and [provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
 | Proposing a change | [Contributing](CONTRIBUTING.md) and [governance](GOVERNANCE.md) |
 | Reviewing current limitations | [Known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) and [roadmap](ROADMAP.md) |
+
+## Open contribution priorities
+
+The highest-value contributions are evidence-bearing, not promotional:
+
+- independent implementation reports that identify ambiguity and divergence;
+- negative and boundary fixtures for mandatory gates;
+- versioned mappings to identity, authorization, provenance, records, and
+  workflow standards;
+- public pilot reports with failures, burden, human-factor findings, and
+  corrective actions;
+- security, privacy, records-management, legal, scientific, and accessibility
+  review;
+- clearer public-facing examples that preserve the standard's claim boundaries;
+- governance participation that reduces single-editor and single-implementation
+  dependence.
+
+Criticism, replacement text, fixtures, and reproducible evidence are welcome.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Repository map
 
 - [Master standard](standard/00_GKOS_Master_Standard.md)
 - [Normative and informative annexes](standard/annexes/)
 - [Development decisions](decisions/GKOS_Decision_Register.md)
+- [Requirements registry](requirements/REGISTRY.md)
 - [Schemas](schemas/README.md)
 - [Conformance](conformance/README.md)
 - [Fixtures](fixtures/README.md)
@@ -286,12 +365,12 @@ execution authority. See the [SRTP proposal](docs/proposals/SRTP_DRAFT_PROFILE.m
 ## Publication, citation, and licensing
 
 Tagged releases may be archived by Zenodo for version-specific and concept
-DOIs. See [ZENODO.md](ZENODO.md) for the release gate and binding requirements.
+DOIs. See [ZENODO.md](ZENODO.md) for release-gate and binding requirements.
 
 Documentation and original graphics are licensed under CC BY 4.0. Schemas,
-fixtures, workflows, scripts, and reference code are licensed under Apache-2.0.
-Trademark, certification, endorsement, and accreditation rights are separate.
-See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
+fixtures, workflows, scripts, and reference code are licensed under
+Apache-2.0. Trademark, certification, endorsement, and accreditation rights
+are separate. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and
 [TRADEMARKS.md](TRADEMARKS.md).
 
 Suggested citation:
