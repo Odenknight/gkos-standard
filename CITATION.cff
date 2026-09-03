@@ -3,7 +3,6 @@ message: "Please cite the specific verified GKOS release used. This prepared edi
 title: "Governed Knowledge Operations Standard"
 version: "0.81"
 date-released: "2026-09-03"
-type: standard
 authors:
   - family-names: Marshall
     given-names: Shaun Allan
