@@ -1,0 +1,19 @@
+{
+  "catalog_version": "RRET-01-CORPUS-0.1.0",
+  "status": "provisional-non-normative",
+  "profile": "RRET-01",
+  "qualifying_profiles": [],
+  "description": "Adversarial retrieval/governance separation fixtures. These handles are experimental and are not permanent GKOS requirement IDs.",
+  "fixtures": [
+    {"fixture_id":"RRET-01-N01","class":"superseded-top-rank","proposal_handles":["RRET-ISOLATION","RRET-CURRENT-STATE"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N02","class":"withdrawn-top-rank","proposal_handles":["RRET-ISOLATION","RRET-CURRENT-STATE"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N03","class":"unresolved-conflict","proposal_handles":["RRET-ABSTAIN","RRET-CONFLICT"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N04","class":"purpose-mismatch","proposal_handles":["RRET-PURPOSE","RRET-ISOLATION"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N05","class":"source-scoped-superseded","proposal_handles":["RRET-SOURCE-SCOPED","RRET-L7-ENFORCEMENT","RRET-RR-DISCOVERY-ONLY"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N06","class":"eligible-recall-miss","proposal_handles":["RRET-ELIGIBLE-RECALL","RRET-EXPAND"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N07","class":"intent-inference-forbidden","proposal_handles":["RRET-QUERY-INTENT","RRET-CURRENT-STATE"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N08","class":"zero-eligible","proposal_handles":["RRET-ABSTAIN","RRET-EXPAND"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N09","class":"authority-restriction","proposal_handles":["RRET-AUTHORITY","RRET-HUMAN-TO-DO"],"file":"rret-01-corpus.json"},
+    {"fixture_id":"RRET-01-N10","class":"semantic-tie-governance-separation","proposal_handles":["RRET-ISOLATION","RRET-TYPE-BOUNDARY"],"file":"rret-01-corpus.json"}
+  ]
+}

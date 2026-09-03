@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/provisional/retrieval/rret-01-corpus.schema.json",
+  "title": "RRET-01 provisional adversarial retrieval corpus",
+  "type": "object",
+  "required": ["corpus_id", "version", "status", "qualifying_profiles", "invariants", "metrics", "rr_generators", "cases"],
+  "properties": {
+    "corpus_id": {"const": "RRET-01"},
+    "version": {"type": "string"},
+    "status": {"const": "provisional-non-normative"},
+    "qualifying_profiles": {"type": "array", "maxItems": 0},
+    "description": {"type": "string"},
+    "invariants": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "metrics": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "rr_generators": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["generator_kind", "model_id", "model_version", "prompt_id", "prompt_sha256", "software_version", "regenerable"],
+        "properties": {
+          "generator_kind": {"type": "string"},
+          "model_id": {"type": "string"},
+          "model_version": {"type": "string"},
+          "prompt_id": {"type": "string"},
+          "prompt_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "software_version": {"type": "string"},
+          "regenerable": {"const": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/case"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": ["fixture_id", "title", "failure_class", "query", "evidence_objects", "raw_retrieval", "expected"],
+      "properties": {
+        "fixture_id": {"type": "string", "pattern": "^RRET-01-N(0[1-9]|10)$"},
+        "title": {"type": "string"},
+        "failure_class": {"type": "string"},
+        "query": {"$ref": "#/$defs/query"},
+        "evidence_objects": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/evidence"}},
+        "raw_retrieval": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rank"}},
+        "expected": {"$ref": "#/$defs/expected"}
+      },
+      "additionalProperties": false
+    },
+    "query": {
+      "type": "object",
+      "required": ["text", "declared_intent", "effective_intent", "purpose", "initial_candidate_window"],
+      "properties": {
+        "text": {"type": "string"},
+        "declared_intent": {"type": ["string", "null"]},
+        "effective_intent": {"enum": ["CURRENT_STATE", "HISTORICAL", "SOURCE_SCOPED", "INVESTIGATIVE", "COMPARATIVE", "AUDIT"]},
+        "purpose": {"type": "string"},
+        "source_scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "initial_candidate_window": {"type": "integer", "minimum": 1},
+        "caller": {
+          "type": "object",
+          "required": ["actor_class", "authority_mode"],
+          "properties": {
+            "actor_class": {"type": "string"},
+            "authority_mode": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["id", "content", "source_content_sha256", "governance", "rr"],
+      "properties": {
+        "id": {"type": "string"},
+        "content": {"type": "string"},
+        "source_content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "governance": {
+          "type": "object",
+          "required": ["disposition", "current_state_eligible", "superseded_by", "purpose_tags", "authorization"],
+          "properties": {
+            "disposition": {"type": "string"},
+            "current_state_eligible": {"type": "boolean"},
+            "superseded_by": {"type": ["string", "null"]},
+            "purpose_tags": {"type": "array", "items": {"type": "string"}},
+            "authorization": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "rr": {
+          "type": "object",
+          "required": ["rr_id", "text", "generator_ref", "rr_content_sha256"],
+          "properties": {
+            "rr_id": {"type": "string"},
+            "text": {"type": "string"},
+            "generator_ref": {"type": "string"},
+            "rr_content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "rank": {
+      "type": "object",
+      "required": ["rank", "evidence_id", "rr_id", "score"],
+      "properties": {
+        "rank": {"type": "integer", "minimum": 1},
+        "evidence_id": {"type": "string"},
+        "rr_id": {"type": "string"},
+        "score": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "expected": {
+      "type": "object",
+      "required": ["raw_top_evidence_id", "eligible_evidence_ids", "action", "answer_evidence_ids", "answer_content_source", "final_effect", "required_receipts"],
+      "properties": {
+        "raw_top_evidence_id": {"type": "string"},
+        "eligible_evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "action": {"type": "string"},
+        "answer_evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "answer_content_source": {"enum": ["EVIDENCE_OBJECT", "NONE"]},
+        "final_effect": {"type": "string"},
+        "required_receipts": {"type": "array", "items": {"type": "string"}},
+        "required_structured_annotations": {"type": "object"},
+        "eligible_candidate_recall": {
+          "type": "object",
+          "properties": {"at_5": {"type": "boolean"}, "at_10": {"type": "boolean"}},
+          "additionalProperties": false
+        },
+        "human_to_do": {"type": "string"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  }
+}
