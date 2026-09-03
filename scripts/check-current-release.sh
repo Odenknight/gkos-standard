@@ -33,7 +33,7 @@ for path in "${required_files[@]}"; do
   }
 done
 
-grep -Fq "Current release:** ${release_id}" README.md
+grep -Eq "\*\*(Published|Current) release:\*\* ${release_id}" README.md
 grep -Fq "GKOS-${release_date} v${version} is an owner-authorized developmental publication" standard/00_GKOS_Master_Standard.md
 grep -Fq "version: \"${version}\"" CITATION.cff
 grep -Fq "date-released: \"${release_date}\"" CITATION.cff
@@ -45,17 +45,19 @@ grep -Fq "current-release: true" "$release_dir/RELEASE_MANIFEST.yml"
 grep -Fq "standard/annexes/Canonical_Serialization.md" "$release_dir/RELEASE_MANIFEST.yml"
 grep -Fq "Canonical_Serialization.md" standard/00_GKOS_Master_Standard.md
 
-r16_allocations="$(sed -n '/^## Active allocations$/,/^## Append-only status/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-(PROFILE|CANON|CONTEXT|AUTHUSE|EFFECT)-[0-9]{3}` ')"
-test "$r16_allocations" -eq 29 || {
-  echo "expected 29 R16 allocations, found $r16_allocations" >&2
+published_allocations="$(sed -n '/^## Active allocations$/,/^## Accepted unpublished allocations$/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-[A-Z]+-[0-9]{3}` ')"
+test "$published_allocations" -eq 56 || {
+  echo "expected 56 published v0.80 permanent allocations, found $published_allocations" >&2
   exit 1
 }
 
-all_allocations="$(sed -n '/^## Active allocations$/,/^## Append-only status/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-[A-Z]+-[0-9]{3}` ')"
-test "$all_allocations" -eq 56 || {
-  echo "expected 56 permanent allocations, found $all_allocations" >&2
+r16_allocations="$(sed -n '/^## Active allocations$/,/^## Accepted unpublished allocations$/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-(PROFILE|CANON|CONTEXT|AUTHUSE|EFFECT)-[0-9]{3}` ')"
+test "$r16_allocations" -eq 29 || {
+  echo "expected 29 R16 published allocations, found $r16_allocations" >&2
   exit 1
 }
+
+grep -Fq "permanent-requirement-count: 56" "$release_dir/RELEASE_MANIFEST.yml"
 
 if grep -Eqi 'NAV-001 (is|becomes) (normative|qualifying)|SRTP (is|becomes) (a )?(normative|qualifying)' "$release_dir/RELEASE_NOTES.md"; then
   echo "release notes may overstate NAV-001 or SRTP standing" >&2
@@ -67,4 +69,8 @@ fi
   sha256sum -c SHA256SUMS.txt
 )
 
-echo "current release metadata is internally consistent for ${release_id}"
+unpublished_allocations="$(sed -n '/^## Accepted unpublished allocations$/,/^## Append-only status/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-[A-Z]+-[0-9]{3}` ' || true)"
+
+echo "published current release metadata is internally consistent for ${release_id}"
+echo "published permanent requirement count: ${published_allocations}"
+echo "accepted unpublished allocations after v0.80: ${unpublished_allocations}"

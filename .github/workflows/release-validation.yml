@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Required files
         run: |
           test -f README.md
@@ -16,3 +18,10 @@ jobs:
       - name: Reject pre-v0.75 and draft artifacts
         run: |
           if find . -type f | grep -E '/(draft|pre-0\.75|v0\.[0-6])' ; then exit 1; fi
+      - name: Preserve published current release
+        run: bash scripts/check-current-release.sh
+      - name: Validate v0.81 release candidate when present
+        run: |
+          if [ -d release-candidates/v0.81-rc1 ]; then
+            bash scripts/check-v081-release-candidate.sh
+          fi

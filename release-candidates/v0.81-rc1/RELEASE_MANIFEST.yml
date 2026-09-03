@@ -1,0 +1,55 @@
+standard: GKOS
+identifier: GKOS-v0.81-rc1
+version: "0.81"
+candidate: rc1
+status: release-candidate-unpublished
+governance-mode: developmental-v0.x
+consensus-ratified: false
+independently-certified: false
+profile-qualification: none
+qualifying-profiles: []
+publication-date: pending-owner-approval
+tag: NOT_CREATED
+current-release: false
+published-release-remains: GKOS-2026-08-20-v0.80
+canonical-repository: https://github.com/Odenknight/gkos-standard
+candidate-base-sha: c9a37d7016efb67e79e454d05f8ba6a7561dd270
+candidate-head-binding: runtime-git-sha
+candidate-head-rule: "The exact frozen candidate is the Git commit executing this package; CI and the external results record bind that SHA."
+machine-exchange-contract: GKX-2.0
+canonical-artifact-profile: GKX-CBOR-1
+registry-version: 1.1.0-development
+permanent-requirement-count: 62
+published-v080-requirement-count: 56
+v081-unpublished-allocation-count: 6
+diagnostic-gate-code-count: 28
+portable-predicate-gate-coverage: 28
+decisions:
+  - decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md
+  - decisions/R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md
+  - decisions/R19_Documentation_Intent_Eighth_Invariant_Development_Decision_Record.md
+  - decisions/R20_V081_Release_Gate_Reconciliation_and_Publication_Control_Development_Decision_Record.md
+informative-ecosystem-decision:
+  - decisions/R21_Ecosystem_Interoperability_Program_Development_Decision_Record.md
+normative-annexes:
+  - standard/annexes/Canonical_Serialization.md
+  - standard/annexes/Authority_and_Refusal_Receipt_Fields.md
+  - standard/annexes/Diagnostic_Code_Registry.md
+  - standard/annexes/Conformance_Profiles.md
+  - standard/annexes/Layer_Interface_Contracts.md
+requirement-registry: requirements/REGISTRY.md
+profile-applicability: requirements/PROFILE_APPLICABILITY.md
+active-fixture-catalog: fixtures/track-a/fixtures.manifest.json
+qualification-standing: "No qualifying profile; mechanism evidence does not establish a tier claim."
+public-second-implementation: awaiting
+protocol-activation: NOT_AUTHORIZED
+certification-program: NOT_ESTABLISHED
+release-authorization: NOT_GRANTED
+historical-artifact-validity-preserved: true
+preserves-immutable-releases:
+  - releases/2026-08-20-v0.80
+  - releases/2026-08-16-v0.79
+  - releases/2026-08-05-v0.78
+  - releases/2026-08-05-v0.77
+  - releases/2026-07-20-v0.76
+  - releases/2026-07-17-v0.75
