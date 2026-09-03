@@ -1,0 +1,55 @@
+name: v0.81 post-tag verification
+
+on:
+  push:
+    tags:
+      - v0.81
+
+permissions:
+  contents: read
+
+jobs:
+  verify-v081-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Verify annotated GitHub-verified tag and resolve commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ref_json="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/v0.81")"
+          object_type="$(jq -r '.object.type' <<<"$ref_json")"
+          tag_oid="$(jq -r '.object.sha' <<<"$ref_json")"
+          test "$object_type" = "tag" || {
+            echo "v0.81 must be an annotated tag object, found $object_type" >&2
+            exit 1
+          }
+          tag_json="$(gh api "repos/${GITHUB_REPOSITORY}/git/tags/${tag_oid}")"
+          test "$(jq -r '.verification.verified' <<<"$tag_json")" = "true" || {
+            echo "GitHub does not report the v0.81 annotated tag signature as verified" >&2
+            exit 1
+          }
+          test "$(jq -r '.object.type' <<<"$tag_json")" = "commit" || {
+            echo "v0.81 tag does not target a commit" >&2
+            exit 1
+          }
+          target_sha="$(jq -r '.object.sha' <<<"$tag_json")"
+          git_target="$(git rev-list -n1 v0.81)"
+          test "$target_sha" = "$git_target" || {
+            echo "GitHub tag-object target and git resolution differ" >&2
+            exit 1
+          }
+          echo "EXPECTED_TAG_TARGET=$target_sha" >> "$GITHUB_ENV"
+          echo "verified annotated v0.81 tag target: $target_sha"
+      - name: Validate published v0.81 package
+        run: bash scripts/check-v081-published-release.sh
+      - name: Verify final release checksums
+        run: |
+          set -euo pipefail
+          release_dir="$(find releases -maxdepth 1 -type d -name '*-v0.81' -print)"
+          test "$(printf '%s\n' "$release_dir" | grep -c .)" -eq 1
+          (cd "$release_dir" && sha256sum -c SHA256SUMS.txt)

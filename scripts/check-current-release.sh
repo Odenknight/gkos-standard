@@ -2,9 +2,19 @@
 
 set -euo pipefail
 
-version="0.80"
+version="$(awk -F'"' '/^version: "/ { print $2; exit }' CITATION.cff)"
+release_date="$(awk -F'"' '/^date-released: "/ { print $2; exit }' CITATION.cff)"
+
+[[ "$version" =~ ^0\.[0-9]+$ ]] || {
+  echo "cannot resolve published version from CITATION.cff" >&2
+  exit 1
+}
+[[ "$release_date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || {
+  echo "cannot resolve published date from CITATION.cff" >&2
+  exit 1
+}
+
 tag="v${version}"
-release_date="2026-08-20"
 release_id="GKOS-${release_date} v${version}"
 release_dir="releases/${release_date}-v${version}"
 
@@ -15,7 +25,6 @@ required_files=(
   standard/00_GKOS_Master_Standard.md
   requirements/REGISTRY.md
   requirements/PROFILE_APPLICABILITY.md
-  decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md
   standard/annexes/Canonical_Serialization.md
   standard/annexes/Authority_and_Refusal_Receipt_Fields.md
   standard/annexes/Diagnostic_Code_Registry.md
@@ -46,18 +55,15 @@ grep -Fq "standard/annexes/Canonical_Serialization.md" "$release_dir/RELEASE_MAN
 grep -Fq "Canonical_Serialization.md" standard/00_GKOS_Master_Standard.md
 
 published_allocations="$(sed -n '/^## Active allocations$/,/^## Accepted unpublished allocations$/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-[A-Z]+-[0-9]{3}` ')"
-test "$published_allocations" -eq 56 || {
-  echo "expected 56 published v0.80 permanent allocations, found $published_allocations" >&2
+manifest_allocations="$(sed -n 's/^[[:space:]]*permanent-requirement-count:[[:space:]]*\([0-9][0-9]*\).*/\1/p' "$release_dir/RELEASE_MANIFEST.yml" | head -n1)"
+[[ "$manifest_allocations" =~ ^[0-9]+$ ]] || {
+  echo "release manifest lacks permanent-requirement-count" >&2
   exit 1
 }
-
-r16_allocations="$(sed -n '/^## Active allocations$/,/^## Accepted unpublished allocations$/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-(PROFILE|CANON|CONTEXT|AUTHUSE|EFFECT)-[0-9]{3}` ')"
-test "$r16_allocations" -eq 29 || {
-  echo "expected 29 R16 published allocations, found $r16_allocations" >&2
+test "$published_allocations" -eq "$manifest_allocations" || {
+  echo "published registry count $published_allocations does not match manifest $manifest_allocations" >&2
   exit 1
 }
-
-grep -Fq "permanent-requirement-count: 56" "$release_dir/RELEASE_MANIFEST.yml"
 
 if grep -Eqi 'NAV-001 (is|becomes) (normative|qualifying)|SRTP (is|becomes) (a )?(normative|qualifying)' "$release_dir/RELEASE_NOTES.md"; then
   echo "release notes may overstate NAV-001 or SRTP standing" >&2
@@ -73,4 +79,4 @@ unpublished_allocations="$(sed -n '/^## Accepted unpublished allocations$/,/^## 
 
 echo "published current release metadata is internally consistent for ${release_id}"
 echo "published permanent requirement count: ${published_allocations}"
-echo "accepted unpublished allocations after v0.80: ${unpublished_allocations}"
+echo "accepted unpublished allocations after ${tag}: ${unpublished_allocations}"
