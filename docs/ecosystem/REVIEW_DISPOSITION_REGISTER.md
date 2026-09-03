@@ -22,7 +22,7 @@ This register preserves material review claims and their dispositions. It preven
 | --- | --- | --- | --- |
 | GKOS-INFRA-001 r2 | WITHDRAWN | `gkos-standard` main at `1f5768fe6b8f847c17030127a3a00e78edf5cd80` | Historical input only; r3 corrected the GKX baseline and signing language |
 | GKOS-INFRA-001 r3 | REVIEW INPUT | same baseline | Useful strategic input; superseded as publication candidate by r4 |
-| GKOS-INFRA-001 r4 / PR #30 | BOUNDED REVIEW COMPLETED | base `f9e5802cd1cde550cd7a308bf714609cbc8ef3b9`; reviewed head `dde98d34f4c64fead9a7e708e720c706793c0516` | Fable 5.1 verdict `PASS`; six non-blocking findings accepted and corrected on successor head; deterministic rerun required before merge |
+| GKOS-INFRA-001 r4 / PR #30 | BOUNDED REVIEW COMPLETED | base `f9e5802cd1cde550cd7a308bf714609cbc8ef3b9`; reviewed head `dde98d34f4c64fead9a7e708e720c706793c0516` | Fable 5.1 verdict `PASS`; six non-blocking findings accepted and corrected on successor head; exact corrected-head verification is preserved in the PR conversation after final CI |
 | GKOS Infrastructure Blueprint rev1 | WITHDRAWN | `gkos-standard` main at `1f5768fe6b8f847c17030127a3a00e78edf5cd80` | Historical input only |
 | GKOS Infrastructure Blueprint rev2 | REVIEW INPUT | same baseline | Useful practitioner input; corrections incorporated into the current implementation guidance set |
 | Kimi infrastructure assessment and critique | REVIEW INPUT WITH MATERIAL ERRORS | same baseline, but review analyzed withdrawn revisions in part | Preserve as evidence; accept only supported findings and reject propagated GKX errors |
@@ -127,10 +127,10 @@ The review returned `PASS` with no BLOCKING or MAJOR findings and six non-blocki
 | PR30-REV-F-002 | MINOR | ACCEPTED | Limit Viewer/Projection wording to a read-only display surface |
 | PR30-REV-F-003 | MINOR | ACCEPTED | Remove the unused zero-drafts link-check exclusion |
 | PR30-REV-F-004 | OBSERVATION | ACCEPTED | Restore concise licensing and citation guidance |
-| PR30-REV-F-005 | OBSERVATION | ACCEPTED | Refer narrowly to informal `GKOS-DRIFT-001`-style history without implying an identifier family |
+| PR30-REV-F-005 | OBSERVATION | ACCEPTED | Refer narrowly to informal `GKOS-DRIFT-001` history without implying an identifier family |
 | PR30-REV-F-006 | OBSERVATION | ACCEPTED | Record r4, exact review coordinates, findings, and dispositions in this register |
 
-These corrections create a successor PR head. The bounded review remains evidence about the reviewed head; merge requires verification that the accepted corrections were applied and that all required deterministic checks pass on the corrected exact head.
+These corrections create a successor PR head. The bounded review remains evidence about the reviewed head; merge requires verification that the accepted corrections were applied and that all required deterministic checks pass on the corrected exact head. To avoid an infinite evidence-write loop, the final corrected-head SHA and CI verification are preserved in the PR conversation rather than added to this branch file after the last deterministic rerun.
 
 ## Standing review boundary
 
