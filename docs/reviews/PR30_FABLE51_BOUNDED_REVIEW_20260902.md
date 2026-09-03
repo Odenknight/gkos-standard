@@ -74,9 +74,11 @@ The reviewer also reported that its ten adversarial checks did not identify a se
 
 **Correction:** add the r4 reviewed head, this review record, verdict, findings, and owner dispositions to the register.
 
-## Correction rule
+## Correction and verification rule
 
-These corrections create a successor PR head. All deterministic repository checks must rerun on the corrected exact head. Because the accepted findings are bounded editorial/claim-discipline corrections and introduce no new normative semantics, post-correction verification consists of checking that each accepted finding is implemented exactly and that the full repository checks remain green.
+The accepted corrections create a successor PR head. All deterministic repository checks must rerun on that corrected exact head. Because the accepted findings are bounded editorial and claim-discipline corrections that introduce no new normative Standard semantics, post-correction verification consists of checking that each accepted finding is implemented exactly and that the full repository checks remain green.
+
+The exact corrected-head verification is recorded in the PR conversation rather than this file so that writing the verification record does not itself create another unverified successor commit.
 
 ## Final boundary
 
