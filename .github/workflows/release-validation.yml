@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Required files
         run: |
           test -f README.md
@@ -16,3 +18,16 @@ jobs:
       - name: Reject pre-v0.75 and draft artifacts
         run: |
           if find . -type f | grep -E '/(draft|pre-0\.75|v0\.[0-6])' ; then exit 1; fi
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Validate declared release content
+        run: bash scripts/check-current-release.sh
+      - name: Preserve RC integrity and validate active candidate
+        run: |
+          if [ -d release-candidates/v0.81-rc1 ]; then
+            (cd release-candidates/v0.81-rc1 && sha256sum -c SHA256SUMS.txt)
+            if grep -q '^version: "0.80"' CITATION.cff; then
+              bash scripts/check-v081-release-candidate.sh
+            fi
+          fi

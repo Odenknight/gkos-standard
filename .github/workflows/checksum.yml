@@ -6,10 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify release checksums when present
+      - name: Verify published release checksums
         run: |
           set -e
           for f in releases/*/SHA256SUMS.txt; do
+            [ -f "$f" ] || continue
+            (cd "$(dirname "$f")" && sha256sum -c SHA256SUMS.txt)
+          done
+      - name: Verify release-candidate checksums
+        run: |
+          set -e
+          for f in release-candidates/*/SHA256SUMS.txt; do
             [ -f "$f" ] || continue
             (cd "$(dirname "$f")" && sha256sum -c SHA256SUMS.txt)
           done
