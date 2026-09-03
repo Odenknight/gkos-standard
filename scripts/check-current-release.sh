@@ -5,6 +5,12 @@ set -euo pipefail
 version="$(awk -F'"' '/^version: "/ { print $2; exit }' CITATION.cff)"
 release_date="$(awk -F'"' '/^date-released: "/ { print $2; exit }' CITATION.cff)"
 
+# A frozen publication-ready edition has a stable content identity. Its live
+# status is established externally by owner approval, a signed tag and Release.
+if [[ "$version" == "0.81" ]]; then
+  exec bash scripts/check-v081-published-release.sh --pre-tag
+fi
+
 [[ "$version" =~ ^0\.[0-9]+$ ]] || {
   echo "cannot resolve published version from CITATION.cff" >&2
   exit 1

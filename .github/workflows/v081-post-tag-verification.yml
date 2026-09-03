@@ -29,6 +29,8 @@ jobs:
             exit 1
           }
           tag_json="$(gh api "repos/${GITHUB_REPOSITORY}/git/tags/${tag_oid}")"
+          printf '%s\n' "$tag_json" > "$RUNNER_TEMP/v081-tag.json"
+          echo "VERIFIED_TAG_JSON=$RUNNER_TEMP/v081-tag.json" >> "$GITHUB_ENV"
           test "$(jq -r '.verification.verified' <<<"$tag_json")" = "true" || {
             echo "GitHub does not report the v0.81 annotated tag signature as verified" >&2
             exit 1
@@ -44,9 +46,14 @@ jobs:
             exit 1
           }
           echo "EXPECTED_TAG_TARGET=$target_sha" >> "$GITHUB_ENV"
+          test "$(git rev-parse HEAD)" = "$target_sha"
+          git merge-base --is-ancestor "$target_sha" origin/main
           echo "verified annotated v0.81 tag target: $target_sha"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
       - name: Validate published v0.81 package
-        run: bash scripts/check-v081-published-release.sh
+        run: bash scripts/check-v081-published-release.sh --post-tag
       - name: Verify final release checksums
         run: |
           set -euo pipefail
