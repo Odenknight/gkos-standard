@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-labelledby="refund-title refund-desc">
+  <title id="refund-title">A refund decision you can audit</title>
+  <desc id="refund-desc">Illustrative GKOS refund example. Preserve the request, account record and policy versions; record the agent's proposal separately; capture exact context. Before action, applicable controls must pass, required review must be complete and authority must be valid at action time. Met requirements permit an attempted authorized refund with an Authorized Use Record. A failed mandatory check blocks the action and produces a Refusal Receipt. Outcomes stay linked to evidence, context and authority. Results reused as evidence begin a new Layer-1 source lifecycle.</desc>
+  <defs>
+    <marker id="refund-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#5E718D"/></marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #102044; }
+      .title { font-size: 40px; font-weight: 700; }
+      .subtitle { font-size: 23px; fill: #536780; }
+      .card-title { font-size: 27px; font-weight: 700; }
+      .body { font-size: 23px; }
+      .small { font-size: 21px; }
+      .step { font-size: 18px; font-weight: 700; letter-spacing: 1.5px; fill: #235FA5; }
+      .connector { fill: none; stroke: #5E718D; stroke-width: 3; marker-end: url(#refund-arrow); }
+      .gate-heading { font-size: 27px; font-weight: 700; fill: white; }
+      .gate-label { font-size: 23px; font-weight: 700; fill: white; }
+      .gate-detail { font-size: 21px; fill: #DDEBFC; }
+    </style>
+  </defs>
+  <rect width="1280" height="900" fill="white"/>
+  <text x="48" y="62" class="title">A refund decision you can audit</text>
+  <text x="48" y="100" class="subtitle">Follow the proposal, the authority check, and the recorded outcome.</text>
+
+  <g>
+    <rect x="48" y="144" width="360" height="168" rx="18" fill="#F1ECF7" stroke="#C8B4DC" stroke-width="2"/>
+    <text x="72" y="178" class="step">EVIDENCE</text>
+    <text x="72" y="216" class="card-title">Preserve the evidence</text>
+    <text x="72" y="254" class="body">Request · account · policy</text>
+    <text x="72" y="286" class="small">Keep exact source versions.</text>
+  </g>
+  <path d="M410 228 H455" class="connector"/>
+  <g>
+    <rect x="460" y="144" width="360" height="168" rx="18" fill="#E7F0FA" stroke="#A8C4E6" stroke-width="2"/>
+    <text x="484" y="178" class="step">PROPOSAL</text>
+    <text x="484" y="216" class="card-title">Record the proposal</text>
+    <text x="484" y="254" class="body">Agent recommends a refund.</text>
+    <text x="484" y="286" class="small">Keep its claim separate.</text>
+  </g>
+  <path d="M822 228 H867" class="connector"/>
+  <g>
+    <rect x="872" y="144" width="360" height="168" rx="18" fill="#EAF5EF" stroke="#A6CBB5" stroke-width="2"/>
+    <text x="896" y="178" class="step">CONTEXT</text>
+    <text x="896" y="216" class="card-title">Capture the context</text>
+    <text x="896" y="254" class="body">Bind sources, warnings,</text>
+    <text x="896" y="286" class="body">restrictions and versions.</text>
+  </g>
+  <path d="M1052 314 V338 H640 V362" class="connector"/>
+
+  <rect x="48" y="366" width="1184" height="164" rx="20" fill="#235FA5"/>
+  <text x="80" y="407" class="gate-heading">Before the refund can be attempted</text>
+  <line x1="439" y1="432" x2="439" y2="505" stroke="#709BCB" stroke-width="1.5"/>
+  <line x1="839" y1="432" x2="839" y2="505" stroke="#709BCB" stroke-width="1.5"/>
+  <text x="80" y="460" class="gate-label">Applicable controls pass</text>
+  <text x="80" y="495" class="gate-detail">Mandatory gates evaluated</text>
+  <text x="470" y="460" class="gate-label">Required review is complete</text>
+  <text x="470" y="495" class="gate-detail">Decision bound to exact proposal</text>
+  <text x="870" y="460" class="gate-label">Authority is valid now</text>
+  <text x="870" y="495" class="gate-detail">Actor · purpose · scope · time</text>
+
+  <path d="M640 532 V551 H336 V603" class="connector"/>
+  <path d="M640 551 H944 V603" class="connector"/>
+  <rect x="170" y="561" width="332" height="31" fill="white"/>
+  <rect x="754" y="561" width="380" height="31" fill="white"/>
+  <text x="336" y="586" text-anchor="middle" class="small" style="fill:#287244;font-weight:700">All requirements met</text>
+  <text x="944" y="586" text-anchor="middle" class="small" style="fill:#9A493B;font-weight:700">A mandatory requirement fails</text>
+
+  <rect x="48" y="608" width="576" height="136" rx="18" fill="#EAF5EF" stroke="#36803B" stroke-width="2"/>
+  <text x="76" y="648" class="card-title">Attempt authorized refund</text>
+  <text x="76" y="684" class="body">Authorized Use Record:</text>
+  <text x="76" y="718" class="body">effect · outcome · recovery route</text>
+  <rect x="656" y="608" width="576" height="136" rx="18" fill="#FBEEEA" stroke="#B86754" stroke-width="2"/>
+  <text x="684" y="648" class="card-title">Refuse the action</text>
+  <text x="684" y="684" class="body">Refusal Receipt:</text>
+  <text x="684" y="718" class="body">failed gate · reason · escalation route</text>
+
+  <rect x="48" y="786" width="1184" height="80" rx="14" fill="#F4F7FB"/>
+  <text x="72" y="820" class="body" style="font-weight:700">Each outcome stays linked to its evidence, context and authority.</text>
+  <text x="72" y="852" class="small" style="fill:#536780">If reused as evidence, the result begins a new Layer-1 source lifecycle.</text>
+</svg>

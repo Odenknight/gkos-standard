@@ -1,5 +1,7 @@
 # Governed Knowledge Operations Standard (GKOS)
 
+Drafted by Shaun "Oden" Marshall. Refined and published by AI Assistant.
+
 <!-- markdownlint-disable MD013 -->
 
 > A developmental public pre-standard for making the path from evidence to consequential action inspectable, testable, and governable.
@@ -86,6 +88,10 @@ Higher layers do not silently rewrite lower layers. When an upper-layer outcome 
 
 Consider an AI assistant proposing a customer refund:
 
+![A refund proposal moves from preserved evidence and captured context to checks, required review and valid authority. Met requirements permit an attempt with an Authorized Use Record; a failed mandatory check produces a refusal and its receipt.](graphics/diagrams/gkos-accountable-refund.svg)
+
+[Download PNG](graphics/diagrams/gkos-accountable-refund.png)
+
 1. The request, account record, and applicable policy versions are preserved as sources.
 2. The agent's interpretation is recorded separately from those sources.
 3. Deterministic controls check purpose, sensitivity, delegation, limits, and required evidence.
@@ -149,6 +155,10 @@ The R21 external-source and review-disposition registers preserve exact reviewed
 ## Adoption paths
 
 GKOS can be adopted incrementally, but named claims have exact boundaries.
+
+![Choose a GKOS starting point by use: Viewer/Projection for read-only display; Core for governed records and decisions; Core plus the GCP-6 Context-Only Extension for context compilation; Advanced for consequential agents and automation.](graphics/diagrams/gkos-adoption-paths.svg)
+
+[Download PNG](graphics/diagrams/gkos-adoption-paths.png)
 
 | Participant or use | Appropriate first target |
 | --- | --- |
