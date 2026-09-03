@@ -22,8 +22,10 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 ## Current standing
 
 - **Release coordinate:** GKOS-2026-09-03 v0.81
-- **Publication status:** this edition becomes live through the owner-approved, verified signed `v0.81` tag and GitHub Release; until then GKOS-2026-08-20 v0.80 remains published
-- **Release record:** [GitHub Releases](https://github.com/Odenknight/gkos-standard/releases)
+- **Publication status:** live since September 3, 2026, following R20 owner approval, the verified signed `v0.81` tag, passing post-tag checks, and GitHub publication
+- **Release record:** [v0.81 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.81) · [publication and archive receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
+- **Version DOI:** [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
+- **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [exact commit and approval binding](docs/implementation/V081_PUBLICATION_BINDING.md)
 - **Maturity:** developmental public pre-standard
 - **Governance:** owner-authorized v0.x development; not consensus ratification
@@ -33,7 +35,7 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 - **Public second implementation:** awaiting a public second implementation
 - **Current ecosystem program:** R21 informative interoperability work for MCP, A2A, ACS, agent governance, evidence packaging, public pilots, and deployment guidance
 
-GKOS v0.81 is a developmental pre-standard designed to support AI governance, accountability, and auditability by binding evidence, claims, deterministic controls, review, authority, context, and outcomes. Publication requires the exact R20 release gates and a separate owner decision. The prepared date is September 3, 2026 and must match actual publication. Green CI alone does not publish, qualify, certify, or authorize the Standard.
+GKOS v0.81 is a developmental pre-standard designed to support AI governance, accountability, and auditability by binding evidence, claims, deterministic controls, review, authority, context, and outcomes. The exact R20 release gates and separate owner decision were completed, and the edition was published on September 3, 2026. Zenodo preserves the verified source archive. Publication and archival identity establish no profile qualification, certification, or independently demonstrated effectiveness.
 
 [Technical orientation](TECHNICAL_README.md) ·
 [Master standard](standard/00_GKOS_Master_Standard.md) ·
@@ -210,7 +212,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), and the 
 
 Documentation and original graphics are licensed under CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code are licensed under Apache-2.0. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and [ZENODO.md](ZENODO.md) for licensing, attribution, archival publication, and version-specific citation guidance.
 
-Suggested citation for the current published release: Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-08-20 v0.80.*
+Suggested citation for the current published release: Shaun Allan Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-03 v0.81.* Zenodo. [https://doi.org/10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294).
 
 ## Maturity and governance boundary
 

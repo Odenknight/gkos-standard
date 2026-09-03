@@ -2,9 +2,12 @@
 
 ## GKOS-2026-09-03 v0.81
 
-**Standing:** prepared developmental pre-standard; publication takes effect
-through the R20 owner-approved signed tag and GitHub Release. The proposed
-date must be the actual publication date. No profile qualification is created.
+**Standing:** live developmental pre-standard, published September 3, 2026
+through the R20 owner-approved signed tag and GitHub Release after passing
+post-tag checks. Zenodo version DOI:
+[10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294).
+No profile qualification is created. See the
+[publication receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md).
 
 - Consolidates R17 captured-time, half-open authority validity intervals.
 - Consolidates R18 GCP-4/GCP-5 lifecycle, bounded independent-agent review, and

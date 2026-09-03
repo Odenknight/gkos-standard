@@ -1,8 +1,13 @@
 cff-version: 1.2.0
-message: "Please cite the specific verified GKOS release used. This prepared edition becomes published only through its approved signed tag and GitHub Release."
+message: "Please cite the specific verified GKOS release used. Version 0.81 was owner-authorized and published on September 3, 2026; its source archive is preserved by Zenodo."
 title: "Governed Knowledge Operations Standard"
 version: "0.81"
 date-released: "2026-09-03"
+doi: "10.5281/zenodo.22269294"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22269293"
+    description: "Concept DOI for all GKOS versions; use the version DOI for edition-specific claims."
 authors:
   - family-names: Marshall
     given-names: Shaun Allan
@@ -14,6 +19,7 @@ preferred-citation:
   type: standard
   title: "Governed Knowledge Operations Standard (GKOS)"
   version: "GKOS-2026-09-03 v0.81"
+  doi: "10.5281/zenodo.22269294"
   authors:
     - family-names: Marshall
       given-names: Shaun Allan

@@ -1,8 +1,11 @@
 # v0.81 publication binding
 
 R20 requires an exact tested target, verified artifacts, and a separate owner
-publication decision. Preparation was authorized on 2026-09-03. Publication
-approval remains a later decision bound to the final commit and evidence.
+publication decision. Preparation and the separate final publication decision
+were authorized on 2026-09-03. The owner approved exact commit
+`8f2a158c6d4b8cabd907d98765766d281aec1247` after reviewing the sealed evidence.
+The signed tag, post-tag checks, GitHub Release and Zenodo archive are verified
+in the [publication receipt](../releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md).
 
 A commit cannot practically contain its own literal Git SHA. The final
 manifest therefore declares `tag-target-binding: signed-owner-attestation`.
@@ -14,12 +17,12 @@ post-tag verification, GitHub Release, archive hashes, and DOI when available.
 
 ## Publication-ready content and live status
 
-The prepared dated edition, citation, and registry identify the content to be
-released. They do not independently assert that publication has occurred.
+The dated edition, citation, and registry identify the released content.
 The manifest's `publication-status-source` identifies the verified signed tag
-and GitHub Release as the live-status source. Until both exist following owner
-approval, v0.80 remains the published release. A proposed date must be corrected
-and the changed candidate rerun if it is no longer the actual publication date.
+and GitHub Release as the live-status source. Both now exist following owner
+approval, with actual publication at 2026-09-03T05:31:52Z, September 3 in
+America/New_York. The dated package preserves its original conditional wording
+and hashes; this subsequent receipt records fulfillment of those conditions.
 
 Historical RC package checksums remain mandatory after publication preparation.
 Its old unpublished-state checks run only while the active edition is v0.80.
