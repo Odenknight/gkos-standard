@@ -1,0 +1,31 @@
+{
+  "theme": "base",
+  "securityLevel": "strict",
+  "htmlLabels": false,
+  "fontFamily": "Arial, Helvetica, sans-serif",
+  "themeCSS": ".flowchartTitleText { font-weight: 700; } .cluster-label { translate: -100px 0; } .cluster-label text { font-size: 14px; font-weight: 700; }",
+  "themeVariables": {
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontSize": "20px",
+    "primaryColor": "#E7F0FA",
+    "primaryTextColor": "#102044",
+    "primaryBorderColor": "#235FA5",
+    "lineColor": "#5E718D",
+    "secondaryColor": "#EDF4FB",
+    "tertiaryColor": "#F4F7FB",
+    "clusterBkg": "#F4F7FB",
+    "clusterBorder": "#C7D5E7",
+    "titleColor": "#102044"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "curve": "linear",
+    "nodeSpacing": 48,
+    "rankSpacing": 40,
+    "wrappingWidth": 360,
+    "subGraphTitleMargin": { "top": 12, "bottom": 24 },
+    "padding": 24,
+    "diagramPadding": 28,
+    "useMaxWidth": true
+  }
+}

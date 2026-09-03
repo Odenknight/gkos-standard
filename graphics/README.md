@@ -9,5 +9,7 @@ implementation, or conformance. The master standard and accepted development
 decisions control whenever a graphic and authoritative text differ.
 
 - Legacy orientation graphics remain at this directory level.
+- Current rendered control-plane and layer-responsibility diagrams, with SVG,
+  PNG and editable sources, are documented in [`diagrams/`](diagrams/README.md).
 - Repository-sharing artwork is documented in [`social/`](social/README.md).
 - Historical artwork is documented under [`../archive/graphics/`](../archive/graphics/README.md).

@@ -6,6 +6,8 @@
 
 **Evidence is not truth. Confidence is not authority. Capability is not authority.**
 
+![Evidence moves through preservation, structure, lineage, validation, review, context, and authorized use](illustrated/figures/fig4-knowledge-flow.png)
+
 GKOS is designed for environments where people, software, models, and AI agents turn information into decisions or actions. It defines governed contracts between existing systems so that retrieval, technical access, model confidence, workflow state, or automation are not silently mistaken for review, approval, or authority.
 
 When a person or AI system recommends, approves, or takes an action, GKOS is designed to make six questions answerable:
@@ -64,6 +66,8 @@ It does not declare absolute truth. It makes the path from evidence to action ex
 
 ## The seven cumulative responsibilities
 
+![The GKOS seven-layer model and its governing records](illustrated/figures/fig1-seven-layers.png)
+
 | Layer | Responsibility | Required result |
 | --- | --- | --- |
 | **1. Original Sources** | Preserve what was received or observed with revision, provenance, custody, sensitivity, retention, and acquisition evidence | Source Record |
@@ -93,6 +97,10 @@ Consider an AI assistant proposing a customer refund:
 GKOS does not decide whether the refund policy is fair or lawful. It makes the operation and responsibility chain inspectable and testable.
 
 ## A governance architecture, not another runtime
+
+![Human knowledge connects to the GKOS control plane, which connects governance responsibilities to agent runtimes, workflow engines, and identity and policy systems](graphics/diagrams/gkos-control-plane.svg)
+
+[Download PNG](graphics/diagrams/gkos-control-plane.png) · [Editable diagram source](graphics/diagrams/gkos-control-plane.mmd)
 
 GKOS can be realized as an embedded library, sidecar, service, gateway, event-driven control plane, workflow contract, or federation of existing systems. The Standard does not mandate one database, one cloud, one agent framework, one identity system, or one protocol.
 
