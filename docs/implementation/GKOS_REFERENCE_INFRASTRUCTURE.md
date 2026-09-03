@@ -3,9 +3,9 @@
 <!-- markdownlint-disable MD013 -->
 
 - **Document ID:** GKOS-INFRA-001
-- **Revision:** r4 review candidate
+- **Revision:** r4 bounded-review-completed public draft
 - **Date:** 2026-09-02
-- **Status:** informative implementation guidance; repository checks required; bounded different-model-family review pending; no independent validation, conformance, endorsement, certification, procurement recommendation, or production authority claimed
+- **Status:** informative implementation guidance; bounded different-model-family documentation review completed; no independent conformance validation, endorsement, certification, procurement recommendation, or production authority claimed
 - **Published Standard baseline:** GKOS-2026-08-20 v0.80
 - **Development controls:** R20 and R21 on `main`
 - **Machine exchange contract:** GKX 2.0
@@ -13,7 +13,7 @@
 - **Reference implementation release coordinate:** GKOS Engine tag `v2.1.2` at `7bf14b481e78c5ae9d1e14661602be4f24559d0e`; later Engine development heads are distinct coordinates
 - **Public second implementation:** awaiting a public second implementation
 
-This guide is a review candidate for explaining how existing systems can participate in a GKOS deployment without turning a vendor, protocol, framework, or reference implementation into the Standard.
+This guide explains how existing systems can participate in a GKOS deployment without turning a vendor, protocol, framework, or reference implementation into the Standard. Its bounded documentation review is preserved in `docs/reviews/PR30_FABLE51_BOUNDED_REVIEW_20260902.md`.
 
 ## 1. Reading rule
 
@@ -100,7 +100,7 @@ GKOS does not mandate one identifier syntax.
 
 A graph edge is not automatically a governed assertion, accepted interpretation, correction, or supersession decision.
 
-Graph/projection behavior has historically been an interoperability area where implementation behavior can move ahead of clause-stable Standard semantics. Unresolved graph topics belong in the R21 ambiguity register; they must not be converted into invented permanent `GKOS-DRIFT-*` requirements.
+Graph/projection behavior has historically been an interoperability area where implementation behavior can move ahead of clause-stable Standard semantics. Unresolved graph topics belong in the R21 ambiguity register; they must not be converted into informal labels such as `GKOS-DRIFT-001` as though such a label were an allocated permanent requirement or diagnostic.
 
 ### L4 — Validation and Control
 
@@ -249,7 +249,7 @@ External-source versions and mappings are maintained in the R21 external-source 
 
 ## 14. Claim boundary
 
-This review candidate does not:
+This document does not:
 
 - create a new GKOS requirement or profile;
 - qualify Core, Advanced, Context-Only, or Viewer/Projection;
