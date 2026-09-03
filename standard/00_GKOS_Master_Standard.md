@@ -4,10 +4,19 @@ GKOS governs evidence, authority, context, validation, review, and authorized
 use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
-GKOS-2026-08-20 v0.80 is an owner-authorized developmental publication, not a
-consensus ratification, independent certification, accreditation, or
-regulatory approval. Prior master texts and release packages remain immutable
-historical evidence.
+This edition is GKOS-2026-09-03 v0.81, a developmental pre-standard for AI
+governance, accountability, and auditability. Its publication takes effect
+only through separate R20 owner approval, a verified signed annotated tag,
+and the GitHub Release. Until that event, v0.80 remains the published edition.
+The proposed date must match actual publication. It is non-consensus and
+non-qualifying, with no certification or accreditation claim. Prior master
+texts and release packages remain immutable historical evidence.
+
+R17 adds captured-time authority validity intervals; R18 consolidates GCP-4/5
+review and protected-disclosure contracts; R19 prospectively adopts the eighth
+documentation-intent invariant. R20 controls publication. See the
+[v0.81 release package](../releases/2026-09-03-v0.81/README.md) and
+[publication binding](../docs/implementation/V081_PUBLICATION_BINDING.md).
 
 ## Normative surface
 

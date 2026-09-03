@@ -1,6 +1,25 @@
 # Changelog
 
-## Unreleased development amendments
+## GKOS-2026-09-03 v0.81
+
+**Standing:** prepared developmental pre-standard; publication takes effect
+through the R20 owner-approved signed tag and GitHub Release. The proposed
+date must be the actual publication date. No profile qualification is created.
+
+- Consolidates R17 captured-time, half-open authority validity intervals.
+- Consolidates R18 GCP-4/GCP-5 lifecycle, bounded independent-agent review, and
+  protected-disclosure controls; six permanent allocations join the edition.
+- Includes R19 prospective adoption of the eighth documentation-intent
+  invariant, with the remainder of DOCSTD still proposed and non-normative.
+- R19 publication requires a complete final rerun and separate publication
+  authority under R20, which supersedes conflicting automatic-publication text.
+- Preserves 62 permanent allocations, 28 mandatory diagnostic gates, graph
+  integrity controls, and portable mutation coverage without a profile claim.
+- Binds final release approval, exact commit, evidence, and hashes through a
+  signed tag attestation; preserves the RC and earlier immutable releases.
+- R21 ecosystem work remains informative and non-activating.
+
+### Historical pre-publication development record
 
 - R19 prospectively supplies and adopts “Every committed governed state change
   is durably receipted” as the previously undefined eighth
@@ -8,7 +27,7 @@
   historically enumerated by R4.
 - R19 adopts only the eight-position intent-review table in DOCSTD §4. The
   remainder of DOCSTD stays proposed and non-normative.
-- R19 remains unpublished. It does not change any release or qualification
+- At adoption, R19 remained unpublished. It does not change any release or qualification
   status; under R18-131, including it in a v0.81 candidate requires a complete
   final rerun and separate publication authority.
 - R17 accepts half-open authority validity intervals:

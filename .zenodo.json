@@ -1,7 +1,7 @@
 {
-  "title": "Governed Knowledge Operations Standard (GKOS)",
-  "upload_type": "software",
-  "description": "A public pre-standard for keeping evidence, claims, authority, context, validation, and consequential agent actions distinguishable and auditable. GKOS defines governance responsibilities and GKX provides the governed technical exchange model. This repository uses mixed licensing: documentation and original graphics are CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code are Apache 2.0.",
+  "title": "GKOS v0.81 — A Developmental Pre-standard for AI Governance, Accountability and Auditability",
+  "upload_type": "publication",
+  "description": "The Governed Knowledge Operations Standard (GKOS) is a developmental public pre-standard designed to support AI governance, accountability, and auditability. It defines seven cumulative responsibilities for preserving sources, governing identity and lineage, applying deterministic controls, recording authorized review, assembling purpose-bound context, and recording authorized actions or refusals. Version 0.81 consolidates captured-time authority validity, review lifecycle and protected-disclosure requirements, the eighth documentation-intent invariant, and explicit publication controls. The edition contains 62 permanent requirement allocations and 28 mandatory diagnostic gate codes. This owner-authorized v0.x publication is non-consensus and non-qualifying; it does not establish implementation certification, regulatory approval, or independently demonstrated effectiveness. Public second implementation remains awaiting. Documentation and original graphics are CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code remain Apache-2.0.",
   "creators": [
     {
       "name": "Marshall, Shaun Allan"
@@ -17,7 +17,12 @@
     "auditability",
     "knowledge operations",
     "GKOS",
-    "GKX"
+    "GKX",
+    "accountability",
+    "pre-standard",
+    "AI assurance",
+    "authorized use",
+    "evidence traceability"
   ],
   "related_identifiers": [
     {
@@ -26,5 +31,8 @@
       "scheme": "url"
     }
   ],
-  "notes": "Release-level CC BY 4.0 metadata describes the normative standard. Individual implementation artifacts remain Apache-2.0 as declared by LICENSE.md."
+  "notes": "Release-level CC BY 4.0 metadata describes the normative standard. Individual implementation artifacts remain Apache-2.0 as declared by LICENSE.md.",
+  "version": "0.81",
+  "publication_date": "2026-09-03",
+  "publication_type": "technicalnote"
 }

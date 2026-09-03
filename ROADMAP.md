@@ -1,7 +1,9 @@
 # GKOS roadmap
 
-- **Current published release:** GKOS-2026-08-20 v0.80
-- **Development line:** v0.81 preparation
+- **Release coordinate:** GKOS-2026-09-03 v0.81
+- **Publication standing:** pending the owner-approved verified signed tag and
+  GitHub Release; v0.80 remains published until that event
+- **Publication binding:** [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
 - **Current profile standing:** no qualifying profile
 - **Machine exchange contract:** GKX 2.0
 - **Current governance:** owner-authorized v0.x development; not consensus

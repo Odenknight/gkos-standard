@@ -21,8 +21,10 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 
 ## Current standing
 
-- **Published release:** GKOS-2026-08-20 v0.80
-- **Development line:** v0.81 preparation
+- **Release coordinate:** GKOS-2026-09-03 v0.81
+- **Publication status:** this edition becomes live through the owner-approved, verified signed `v0.81` tag and GitHub Release; until then GKOS-2026-08-20 v0.80 remains published
+- **Release record:** [GitHub Releases](https://github.com/Odenknight/gkos-standard/releases)
+- **Publication controls:** [exact commit and approval binding](docs/implementation/V081_PUBLICATION_BINDING.md)
 - **Maturity:** developmental public pre-standard
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
@@ -31,7 +33,7 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 - **Public second implementation:** awaiting a public second implementation
 - **Current ecosystem program:** R21 informative interoperability work for MCP, A2A, ACS, agent governance, evidence packaging, public pilots, and deployment guidance
 
-A future v0.81 publication is intentionally separated from profile qualification. It may be published as a non-qualifying developmental release only after the exact R20 release gates are satisfied. Green CI alone does not publish, qualify, certify, or authorize the Standard.
+GKOS v0.81 is a developmental pre-standard designed to support AI governance, accountability, and auditability by binding evidence, claims, deterministic controls, review, authority, context, and outcomes. Publication requires the exact R20 release gates and a separate owner decision. The prepared date is September 3, 2026 and must match actual publication. Green CI alone does not publish, qualify, certify, or authorize the Standard.
 
 [Technical orientation](TECHNICAL_README.md) ·
 [Master standard](standard/00_GKOS_Master_Standard.md) ·

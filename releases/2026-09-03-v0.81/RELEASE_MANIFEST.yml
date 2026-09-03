@@ -1,0 +1,47 @@
+standard: GKOS
+identifier: GKOS-2026-09-03-v0.81
+version: "0.81"
+date: "2026-09-03"
+date-standing: proposed-until-verified-publication
+status: developmental-pre-standard
+governance-mode: developmental-v0.x
+consensus-ratified: false
+independently-certified: false
+profile-qualification: none
+qualifying-profiles: []
+qualifying-profile-created: false
+tag: v0.81
+tag-target-binding: signed-owner-attestation
+publication-status-source: verified-signed-tag-and-github-release
+release-authorization: external-post-evidence-owner-approval-required
+canonical-repository: https://github.com/Odenknight/gkos-standard
+machine-exchange-contract: GKX-2.0
+canonical-artifact-profile: GKX-CBOR-1
+registry-version: 1.1.0-development
+permanent-requirement-count: 62
+v081-consolidated-allocation-count: 6
+diagnostic-gate-code-count: 28
+portable-predicate-gate-coverage: 28
+requirement-registry: requirements/REGISTRY.md
+profile-applicability: requirements/PROFILE_APPLICABILITY.md
+active-fixture-catalog: fixtures/track-a/fixtures.manifest.json
+public-second-implementation: awaiting
+protocol-activation: NOT_AUTHORIZED
+certification-program: NOT_ESTABLISHED
+zenodo-status: verify-ingestion-and-doi-after-github-release
+source-digest-inventory: SOURCE_SHA256SUMS.txt
+package-digest-inventory: SHA256SUMS.txt
+historical-artifact-validity-preserved: true
+decisions:
+  - decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md
+  - decisions/R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md
+  - decisions/R19_Documentation_Intent_Eighth_Invariant_Development_Decision_Record.md
+  - decisions/R20_V081_Release_Gate_Reconciliation_and_Publication_Control_Development_Decision_Record.md
+informative-ecosystem-decision:
+  - decisions/R21_Ecosystem_Interoperability_Program_Development_Decision_Record.md
+normative-annexes:
+  - standard/annexes/Canonical_Serialization.md
+  - standard/annexes/Authority_and_Refusal_Receipt_Fields.md
+  - standard/annexes/Diagnostic_Code_Registry.md
+  - standard/annexes/Conformance_Profiles.md
+  - standard/annexes/Layer_Interface_Contracts.md

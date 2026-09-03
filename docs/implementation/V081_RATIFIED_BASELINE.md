@@ -1,4 +1,10 @@
-# GKOS v0.81 ratified baseline
+# GKOS v0.81 historical R18 baseline
+
+**Current authority:** R20 supersedes the conflicting automatic-publication
+route below. These R18 coordinates are historical inputs, not the final v0.81
+release identity or a consensus-ratification claim. R19 now denotes the adopted
+eighth documentation-intent invariant; the earlier DDCV numbering expectation
+is historical and does not allocate a decision number.
 
 **Authority:** R18 and the owner dispositions recorded 2026-08-29
 
@@ -32,9 +38,10 @@ v0.81 is eligible only when all of the following are satisfied:
 - no mandatory result is failed, skipped, unsupported without an alternate
   capable PASS, blocked, held, unevaluated, waived, or unexplained.
 
-The final exact-bound green pipeline is authorized to merge, tag, and publish
-GKOS Standard v0.81 automatically. This authority is not reusable for another
-release or repository.
+R18 originally contemplated automatic one-release publication. R20 supersedes
+that route for a candidate containing R19 or later changes: final publication
+requires an explicit owner decision after the exact candidate, full evidence,
+limitations, artifacts, and proposed tag target have been presented.
 
 ## Scope boundaries
 

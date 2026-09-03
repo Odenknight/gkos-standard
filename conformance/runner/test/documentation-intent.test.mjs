@@ -53,11 +53,11 @@ test("R19 records prospective adoption and preserves release and set boundaries"
   assert.match(decision, /R18-131[\s\S]*complete final rerun[\s\S]*separate publication authority/u);
   assert.match(
     changelog,
-    /## Unreleased development amendments[\s\S]*R19 prospectively supplies and adopts/u,
+    /### Historical pre-publication development record[\s\S]*R19 prospectively supplies and adopts/u,
   );
   assert.match(changelog, /R19 adopts only the eight-position intent-review table in DOCSTD §4/u);
   assert.match(
     changelog,
-    /R19 remains unpublished[\s\S]*complete[\s\n]+final rerun and separate publication authority/u,
+    /R19 publication requires a complete final rerun and separate publication[\s\n]+authority under R20/u,
   );
 });
