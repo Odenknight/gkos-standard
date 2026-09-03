@@ -140,9 +140,9 @@ GKOS can be adopted incrementally, but named claims have exact boundaries.
 
 | Participant or use | Appropriate first target |
 | --- | --- |
-| Viewer, editor, dashboard, audit, or oversight product | Viewer/Projection Profile |
+| Read-only display surface of a viewer, dashboard, audit, or oversight product | Viewer/Projection Profile |
 | Organization governing records and decisions | GKOS Core |
-| Retrieval or decision support that does not perform consequential action | GCP-6 Context-Only Extension |
+| Retrieval or decision support that does not perform consequential action | GKOS Core plus the GCP-6 Context-Only Extension |
 | Consequential agents and automation | GKOS Advanced |
 | Protocol, infrastructure, or middleware provider | Bounded implementation binding plus the applicable GKOS profile |
 
@@ -203,6 +203,12 @@ High-value contributions include:
 - multi-stakeholder governance participation for the v1.0 path.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), and the [roadmap](ROADMAP.md).
+
+## Publication, citation, and licensing
+
+Documentation and original graphics are licensed under CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code are licensed under Apache-2.0. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and [ZENODO.md](ZENODO.md) for licensing, attribution, archival publication, and version-specific citation guidance.
+
+Suggested citation for the current published release: Shaun “Oden” Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-08-20 v0.80.*
 
 ## Maturity and governance boundary
 
