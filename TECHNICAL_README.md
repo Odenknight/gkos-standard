@@ -11,7 +11,7 @@ conformance evidence, and implementations. It is informative: the
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
 normative annexes control when an overview differs from them.
 
-- **Standard:** GKOS-2026-08-20 v0.80
+- **Standard:** GKOS-2026-09-03 v0.81
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
@@ -90,13 +90,9 @@ Detailed requirements live in the
 
 ## Control-plane placement
 
-```mermaid
-flowchart TB
-    H["Human knowledge<br/>Sources, records, notes"] --> G["GKOS control plane<br/>Validation · lineage · context<br/>authority · receipts"]
-    G --> A["Agent runtimes"]
-    G --> W["Workflow engines"]
-    G --> I["Identity and policy"]
-```
+![Human knowledge connects to the GKOS control plane, which connects governance responsibilities to agent runtimes, workflow engines, and identity and policy systems](graphics/diagrams/gkos-control-plane.svg)
+
+[Download PNG](graphics/diagrams/gkos-control-plane.png) · [Editable diagram source](graphics/diagrams/gkos-control-plane.mmd)
 
 An implementation can bind GKOS responsibilities to existing infrastructure:
 
@@ -125,23 +121,12 @@ Use Record; a workflow state is not necessarily a Decision Record; a prompt or
 tool schema is not a Context Manifest; and a graph edge is not automatically a
 typed, sourced, temporal GKOS assertion.
 
-```mermaid
-flowchart TB
-    subgraph GOV["Governance envelope"]
-        L7["L7 Authorized Use<br/>Authorized Use Record"]
-        L6["L6 Context Presentation<br/>Context Manifest"]
-    end
-    subgraph REASON["Decision and control"]
-        L5["L5 Review and Workflow<br/>Decision Record"]
-        L4["L4 Validation and Control<br/>Diagnostics and control receipts"]
-    end
-    subgraph KNOW["Knowledge substrate"]
-        L3["L3 Relationships and Lineage<br/>Assertion and lineage records"]
-        L2["L2 Structure and Identity<br/>Structured Knowledge Object"]
-        L1["L1 Original Sources<br/>Source Record"]
-    end
-    L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7
-```
+![The seven GKOS responsibilities and their governing records, grouped into knowledge substrate, decision and control, and governance envelope](graphics/diagrams/gkos-layer-responsibilities.svg)
+
+[Download PNG](graphics/diagrams/gkos-layer-responsibilities.png) · [Editable diagram source](graphics/diagrams/gkos-layer-responsibilities.mmd)
+
+The arrows show cumulative responsibility; processing may be asynchronous,
+distributed, or re-entrant, as described in the layer contracts above.
 
 ### Layer-by-layer component mapping
 

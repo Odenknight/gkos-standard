@@ -1,0 +1,36 @@
+---
+title: Seven cumulative responsibilities
+---
+flowchart TB
+    accTitle: GKOS layer responsibilities and governing records
+    accDescr: Original Sources produce a Source Record, Structure and Identity a Structured Knowledge Object, and Relationships and Lineage assertion and lineage records. Validation and Control produces diagnostics and control receipts, Review and Workflow a Decision Record, Context Presentation a Context Manifest, and Authorized Use an Authorized Use Record. These cumulative responsibilities are grouped into knowledge substrate, decision and control, and governance envelope; they are not a mandatory synchronous pipeline.
+    subgraph GOV["Governance envelope"]
+        L7["L7 Authorized Use<br/>Authorized Use Record"]
+        L6["L6 Context Presentation<br/>Context Manifest"]
+    end
+    subgraph REASON["Decision and control"]
+        L5["L5 Review and Workflow<br/>Decision Record"]
+        L4["L4 Validation and Control<br/>Diagnostics and control receipts"]
+    end
+    subgraph KNOW["Knowledge substrate"]
+        L3["L3 Relationships and Lineage<br/>Assertion and lineage records"]
+        L2["L2 Structure and Identity<br/>Structured Knowledge Object"]
+        L1["L1 Original Sources<br/>Source Record"]
+    end
+    L1 --> L2 --> L3 --> L4 --> L5 --> L6 --> L7
+
+    classDef source fill:#794DA5,stroke:#794DA5,color:#ffffff,stroke-width:2px,rx:12,ry:12;
+    classDef structure fill:#5968B4,stroke:#5968B4,color:#ffffff,stroke-width:2px,rx:12,ry:12;
+    classDef lineage fill:#237B9A,stroke:#237B9A,color:#ffffff,stroke-width:2px,rx:12,ry:12;
+    classDef validation fill:#177E7B,stroke:#177E7B,color:#ffffff,stroke-width:2px,rx:12,ry:12;
+    classDef review fill:#F2D766,stroke:#B4950D,color:#102044,stroke-width:2px,rx:12,ry:12;
+    classDef context fill:#36803B,stroke:#36803B,color:#ffffff,stroke-width:2px,rx:12,ry:12;
+    classDef use fill:#235FA5,stroke:#235FA5,color:#ffffff,stroke-width:2px,rx:12,ry:12;
+    class L1 source;
+    class L2 structure;
+    class L3 lineage;
+    class L4 validation;
+    class L5 review;
+    class L6 context;
+    class L7 use;
+    linkStyle default stroke:#5E718D,stroke-width:2px;
