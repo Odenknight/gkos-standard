@@ -70,9 +70,10 @@ grep -Fq "GKOS-${release_date} v0.81" standard/00_GKOS_Master_Standard.md
 grep -Fq "## GKOS-${release_date} v0.81" CHANGELOG.md
 grep -Fq 'version: "0.81"' "$manifest"
 grep -Fq "date: \"$release_date\"" "$manifest"
-(cd "$release_dir" && sha256sum -c SHA256SUMS.txt && sha256sum -c SOURCE_SHA256SUMS.txt)
+(cd "$release_dir" && sha256sum -c SHA256SUMS.txt)
+node scripts/v081-source-checksums.mjs --check "$release_dir"
 echo "v0.81 package validation PASS ($mode; publication requires verified tag and GitHub Release)"
 echo "release date: $release_date"
-echo "published requirement count: $published_allocations"
+echo "edition requirement count: $published_allocations"
 echo "profile qualification: none"
 echo "tag target: $tag_target"

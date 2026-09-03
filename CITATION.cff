@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-message: "Please cite the specific GKOS release used."
+message: "Please cite the specific verified GKOS release used. This prepared edition becomes published only through its approved signed tag and GitHub Release."
 title: "Governed Knowledge Operations Standard"
-version: "0.80"
-date-released: "2026-08-20"
+version: "0.81"
+date-released: "2026-09-03"
 type: standard
 authors:
   - family-names: Marshall
@@ -10,11 +10,11 @@ authors:
     alias: Odenknight
 repository-code: "https://github.com/Odenknight/gkos-standard"
 license: CC-BY-4.0
-abstract: "A public pre-standard for keeping evidence, claims, authority, context, validation, and consequential agent actions distinguishable and auditable."
+abstract: "A developmental pre-standard for AI governance, accountability, and auditability that keeps evidence, claims, authority, context, validation, and consequential agent actions distinguishable and traceable."
 preferred-citation:
   type: standard
   title: "Governed Knowledge Operations Standard (GKOS)"
-  version: "GKOS-2026-08-20 v0.80"
+  version: "GKOS-2026-09-03 v0.81"
   authors:
     - family-names: Marshall
       given-names: Shaun Allan
