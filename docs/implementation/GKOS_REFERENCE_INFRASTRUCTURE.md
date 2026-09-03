@@ -3,9 +3,9 @@
 <!-- markdownlint-disable MD013 -->
 
 - **Document ID:** GKOS-INFRA-001
-- **Revision:** r4 reviewed public draft
+- **Revision:** r4 review candidate
 - **Date:** 2026-09-02
-- **Status:** informative implementation guidance; repository checks required; no independent validation, conformance, endorsement, certification, procurement recommendation, or production authority claimed
+- **Status:** informative implementation guidance; repository checks required; bounded different-model-family review pending; no independent validation, conformance, endorsement, certification, procurement recommendation, or production authority claimed
 - **Published Standard baseline:** GKOS-2026-08-20 v0.80
 - **Development controls:** R20 and R21 on `main`
 - **Machine exchange contract:** GKX 2.0
@@ -13,11 +13,11 @@
 - **Reference implementation release coordinate:** GKOS Engine tag `v2.1.2` at `7bf14b481e78c5ae9d1e14661602be4f24559d0e`; later Engine development heads are distinct coordinates
 - **Public second implementation:** awaiting a public second implementation
 
-This guide explains how existing systems can participate in a GKOS deployment without turning a vendor, protocol, framework, or reference implementation into the Standard.
+This guide is a review candidate for explaining how existing systems can participate in a GKOS deployment without turning a vendor, protocol, framework, or reference implementation into the Standard.
 
 ## 1. Reading rule
 
-Every recommendation in this guide belongs to one of four classes.
+Every statement in this guide belongs to one of four classes.
 
 ### Standard requires
 
@@ -70,7 +70,7 @@ These planes are logical responsibilities rather than required network tiers. On
 
 ### L1 — Original Sources
 
-**Standard requires:** preserve the received or observed revision with the required provenance, custody, sensitivity, retention, fingerprint, and acquisition evidence.
+**Standard requires:** preserve the received or observed revision with required provenance, custody, sensitivity, retention, fingerprint, and acquisition evidence.
 
 **Architecture recommends:** separate original preservation from extraction or transformation. Preserve original bytes or an equivalent authoritative representation before derived processing.
 
@@ -100,7 +100,7 @@ GKOS does not mandate one identifier syntax.
 
 A graph edge is not automatically a governed assertion, accepted interpretation, correction, or supersession decision.
 
-**Known interoperability caution:** graph/projection behavior has historically been an area where implementation behavior can move ahead of clause-stable Standard semantics. Treat unresolved graph topics as explicit interoperability ambiguities, not as invented permanent `GKOS-DRIFT-*` requirements.
+Graph/projection behavior has historically been an interoperability area where implementation behavior can move ahead of clause-stable Standard semantics. Unresolved graph topics belong in the R21 ambiguity register; they must not be converted into invented permanent `GKOS-DRIFT-*` requirements.
 
 ### L4 — Validation and Control
 
@@ -148,8 +148,6 @@ Authentication proves an identity claim under its trust model. It does not estab
 
 GKOS already contains agent-governance foundations through actor identity, role separation, Specialized Agent Framework material, delegation controls, context binding, refusal, action-time authority checks, and R18's bounded independent-review model.
 
-The recommended mapping for agentic systems is:
-
 | Agent concern | GKOS contribution |
 | --- | --- |
 | Agent identity and ownership | governed actor references, version/dependency records, responsible owner/operator |
@@ -169,27 +167,17 @@ R21 keeps protocol work outside the normative v0.81 dependency set.
 
 ### MCP
 
-Current reviewed input: **MCP `2026-07-28`**.
+Current R21 reviewed input: **MCP `2026-07-28`**.
 
 The current bounded GKOS Engine MCP implementation remains a separate implementation fact on protocol `2025-11-25`; migration must be explicit rather than silently relabeled.
 
-An MCP adapter should declare:
-
-- exact protocol version;
-- supported methods, tools, resources, prompts, tasks, and extensions;
-- transport and session assumptions;
-- identity and authorization inputs;
-- purpose and sensitivity boundaries;
-- read, proposal, write, effect, and administrative surfaces;
-- downgrade behavior;
-- refusal and error mapping;
-- fixture evidence.
+An MCP adapter should declare its exact protocol version, supported surfaces, transport assumptions, identity and authorization inputs, purpose and sensitivity boundaries, read/proposal/write/effect/admin classification, downgrade behavior, refusal mapping, and fixture evidence.
 
 MCP transport does not itself create a Context Manifest or Authorized Use Record.
 
 ### A2A
 
-Current reviewed input: **A2A `v1.0.1`**.
+Current R21 reviewed input: **A2A `v1.0.1`**.
 
 An A2A binding should map agent identity, Agent Card information, tasks, messages, artifacts, status, cancellation, delegation, context, partial effects, refusal, and re-entry evidence.
 
@@ -197,7 +185,7 @@ Task assignment is not automatically authority to perform every consequential ef
 
 ### OWASP Agent Control Standard
 
-Current reviewed input: **ACS `v0.1.1` public preview**.
+Current R21 reviewed input: **ACS `v0.1.1` public preview**.
 
 ACS-style runtime hooks may contribute observation and control evidence. GKOS still needs exact authority, context, disposition, refusal, action, and outcome records where required.
 
@@ -207,16 +195,7 @@ An ACS hook firing successfully is not itself a GKOS conformance result.
 
 GKOS does not decide which law controls a deployment.
 
-**Architecture recommends** recording, where applicable:
-
-- asserted jurisdiction or governing-policy references;
-- subject/source, storage, processing, and execution locations;
-- transfer route;
-- retention and legal-hold policy references;
-- erasure/deletion request state;
-- conflicts between mandatory policies;
-- authorized disposition and rationale;
-- effective dates and policy versions.
+**Architecture recommends** recording, where applicable, asserted jurisdiction or governing-policy references, source/subject/storage/processing/execution locations, transfer route, retention and hold policy references, erasure request state, conflicts between mandatory policies, authorized disposition, rationale, effective dates, and policy versions.
 
 An unresolved mandatory hold/erasure or jurisdictional conflict should fail closed and route to qualified authorized disposition. GKOS should not invent a universal rule such as "the most restrictive jurisdiction always wins."
 
@@ -224,19 +203,7 @@ An unresolved mandatory hold/erasure or jurisdictional conflict should fail clos
 
 The active conformance manifest already defines the semantic root of an exact-bound claim. R21's informative GKOS Conformance Evidence Package work addresses portable packaging of that manifest and its supporting evidence.
 
-A useful package may include:
-
-- conformance manifest;
-- human report;
-- requirements, applicability, diagnostic, schema, fixture, and policy coordinates;
-- environment and dependency evidence;
-- raw machine outputs;
-- human or agent findings with standing disclosed;
-- receipts and snapshots;
-- security results;
-- external/protected evidence references;
-- limitations and exceptions;
-- optional signatures or attestations.
+A useful package may include the conformance manifest, human report, requirement/applicability/diagnostic/schema/fixture/policy coordinates, environment and dependency evidence, raw outputs, review findings with standing disclosed, receipts, security results, protected external references, limitations, exceptions, and optional attestations.
 
 Package integrity is not the same as conformance assessment. A valid signature is not proof of substantive correctness or authority.
 
@@ -246,16 +213,7 @@ The evidence-package draft remains informative until multiple public tools or as
 
 Current standing: **awaiting a public second implementation**.
 
-A future candidate should be evaluated against public evidence for:
-
-- source availability;
-- interpretation independence;
-- implementation and dependency provenance;
-- ownership and operational independence;
-- fixture execution;
-- raw outputs;
-- exact Standard and GKX coordinates;
-- limitations and unsupported behavior.
+A future candidate should be evaluated against public evidence for source availability, interpretation independence, implementation and dependency provenance, ownership and operational independence, fixture execution, raw outputs, exact Standard/GKX coordinates, and limitations.
 
 No private repository or unpublished implementation is named or implied by this guide.
 
@@ -269,40 +227,15 @@ The terms `independently verified`, `accredited`, and `GKOS certified` require s
 
 ## 11. Deployment patterns
 
-### Pattern A — Sidecar or gateway
-
-A governance component observes or intercepts operations around an existing application or agent runtime and emits required records without replacing the underlying system.
-
-### Pattern B — Embedded runtime
-
-The application directly implements GKOS contracts in its own state model, validation, review, context, and effect paths.
-
-### Pattern C — Federated enterprise hub
-
-Existing records, identity, policy, search, workflow, and execution systems contribute bounded evidence to a shared governance plane.
-
-### Pattern D — Viewer-first adoption
-
-An organization begins with faithful read-only projection and audit visibility before introducing governed writes or consequential agent actions.
-
-### Pattern E — Context-only decision support
-
-The system implements Core plus GCP-6 for purpose-bound context while deliberately withholding consequential effect authority.
+- **Sidecar/gateway:** governance surrounds an existing application or agent runtime.
+- **Embedded runtime:** the application directly implements GKOS contracts.
+- **Federated enterprise hub:** records, identity, policy, search, workflow, and execution systems contribute bounded evidence to a shared governance plane.
+- **Viewer-first:** faithful read-only projection precedes governed writes or consequential agent actions.
+- **Context-only:** Core plus GCP-6 provides purpose-bound context while deliberately withholding consequential effect authority.
 
 ## 12. What an implementation claim must publish
 
-At minimum, identify:
-
-- exact GKOS release and GKX version;
-- claimed profile or bounded capability statement;
-- implementation version and immutable commit or artifact digest;
-- external protocol versions;
-- schemas, policies, canonicalization profile, and adapters;
-- fixture catalogs and runner versions;
-- environment and dependency closure;
-- executed, passed, failed, skipped, unsupported, and unevaluated results;
-- exceptions and limitations;
-- assessment scope and whether the result is self-attested or independently verified.
+At minimum, identify the exact GKOS release and GKX version, claimed profile or bounded capability statement, implementation commit/artifact digest, external protocol versions, schemas, policies, canonicalization profile, adapters, fixture catalogs, runner versions, environment, dependency closure, executed outcomes, limitations, exceptions, and assessment scope.
 
 A product version number, green CI job, signed artifact, or passing subset of fixtures is not by itself a complete GKOS claim.
 
@@ -316,7 +249,7 @@ External-source versions and mappings are maintained in the R21 external-source 
 
 ## 14. Claim boundary
 
-This document is informative. It does not:
+This review candidate does not:
 
 - create a new GKOS requirement or profile;
 - qualify Core, Advanced, Context-Only, or Viewer/Projection;
