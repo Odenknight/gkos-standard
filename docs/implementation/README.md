@@ -4,11 +4,18 @@ These documents are informative. They do not define a new conformance profile,
 certify an implementation, or replace the exact release and evidence
 coordinates required by a GKOS claim.
 
+- [`GKOS_REFERENCE_INFRASTRUCTURE.md`](GKOS_REFERENCE_INFRASTRUCTURE.md)
+  is the current PR #30 public reference-architecture candidate. Its bounded
+  different-model-family documentation review is complete and preserved under
+  `docs/reviews/`; accepted findings have been corrected, but the document does
+  not become controlling on `main` until PR #30 is merged. It separates Standard
+  requirements, architecture recommendations, implementation examples, and
+  matters not in the Standard; maps the seven GKOS responsibilities to current
+  infrastructure classes; and records the R21 protocol, agent-governance,
+  public-second-implementation, and evidence-package boundaries.
 - [`GKOS_INFRASTRUCTURE_PRACTITIONER_BLUEPRINT.md`](GKOS_INFRASTRUCTURE_PRACTITIONER_BLUEPRINT.md)
   provides a role-based implementation blueprint across managed/commercial,
-  enterprise/self-managed, and open-source/open-standard mechanisms. It
-  distinguishes Standard requirements, architecture recommendations,
-  implementation examples, and matters not in the Standard.
+  enterprise/self-managed, and open-source/open-standard mechanisms.
 - [`GKOS-Engine-Implementation-Guide.md`](GKOS-Engine-Implementation-Guide.md)
   identifies the current reviewed signed reference-implementation baseline as
   `gkos-engine` 2.1.2 at
@@ -24,10 +31,6 @@ coordinates required by a GKOS claim.
   implementation.
 - Historical implementation-role material is preserved for provenance and is
   not current GKX 2.0 guidance.
-
-The public reference-infrastructure architecture is being reviewed separately
-in PR #30. It must not be described as merged or controlling until that pull
-request is corrected, reviewed, dispositioned, and merged.
 
 An implementation claim must identify the exact Standard release, Engine or
 other implementation commit, schemas, policies, fixtures, environment,
