@@ -5,12 +5,13 @@ use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
 This edition is GKOS-2026-09-03 v0.81, a developmental pre-standard for AI
-governance, accountability, and auditability. Its publication takes effect
-only through separate R20 owner approval, a verified signed annotated tag,
-and the GitHub Release. Until that event, v0.80 remains the published edition.
-The proposed date must match actual publication. It is non-consensus and
-non-qualifying, with no certification or accreditation claim. Prior master
-texts and release packages remain immutable historical evidence.
+governance, accountability, and auditability. It was published on September 3,
+2026 after separate R20 owner approval, a verified signed annotated tag,
+passing post-tag checks, and the GitHub Release. The archived version DOI is
+[10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294).
+It is non-consensus and non-qualifying, with no certification or accreditation
+claim. Prior master texts and release packages remain immutable historical
+evidence. See the [publication receipt](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md).
 
 R17 adds captured-time authority validity intervals; R18 consolidates GCP-4/5
 review and protected-disclosure contracts; R19 prospectively adopts the eighth

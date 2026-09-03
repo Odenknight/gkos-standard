@@ -1,0 +1,327 @@
+{
+  "schema": "gkos-publication-record/v1",
+  "coordinate": "GKOS-2026-09-03 v0.81",
+  "status": "LIVE_DEVELOPMENTAL_PRE_STANDARD",
+  "recorded_at": "2026-09-03T05:37:21.493Z",
+  "repository": "Odenknight/gkos-standard",
+  "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+  "tree": "42dc83e8cff75e02c32aaacf8f90011d18b8ea3c",
+  "tag": "v0.81",
+  "tag_object": "b035c91a82f8de2dc21b2b1479b162a23d0cef18",
+  "tag_signature": {
+    "verified": true,
+    "tagger": {
+      "name": "Shaun Allan Marshall",
+      "email": "40664141+Odenknight@users.noreply.github.com",
+      "date": "2026-09-03T05:27:58Z"
+    },
+    "key_fingerprint": "SHA256:dwwxvq69ZWPDlS6bzlvZ0uXo76ZKTRqvMSmDGhABhfM"
+  },
+  "authorization": {
+    "decision": "R20",
+    "owner": "Odenknight",
+    "disposition": "APPROVE v0.81 PUBLICATION",
+    "recorded_at": "2026-09-03T05:25:55Z",
+    "recorded_at_basis": "Time the final owner message was recorded by the publication agent; not an asserted original message timestamp.",
+    "signed_attestation_url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/OWNER_PUBLICATION_ATTESTATION.json"
+  },
+  "github_release": {
+    "id": 381760141,
+    "url": "https://github.com/Odenknight/gkos-standard/releases/tag/v0.81",
+    "published_at": "2026-09-03T05:31:52Z",
+    "publication_date": "2026-09-03",
+    "timezone": "America/New_York",
+    "latest_at_verification": true,
+    "assets": [
+      {
+        "name": "GKOS-2026-09-03-v0.81-evidence.zip",
+        "size": 76152,
+        "sha256": "1bc7b56e4b7af81c04e5440cdf75af1ca6995f0cb215d08307bff2d6f9f48e40",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/GKOS-2026-09-03-v0.81-evidence.zip"
+      },
+      {
+        "name": "GKOS-2026-09-03-v0.81-source.zip",
+        "size": 3409671,
+        "sha256": "587ea6be86a898d0fc0ae12aab68879147581188276be7248b1f371ebd2e1d42",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/GKOS-2026-09-03-v0.81-source.zip"
+      },
+      {
+        "name": "OWNER_FINAL_APPROVAL.md",
+        "size": 745,
+        "sha256": "7b1ba143fe62ec38ace8e45543036455ae4ae0dd14c48c73f7e6b61e9940ace1",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/OWNER_FINAL_APPROVAL.md"
+      },
+      {
+        "name": "OWNER_PUBLICATION_ATTESTATION.json",
+        "size": 3852,
+        "sha256": "3a204d037da0ecb903a41c828febb2bef76527baa1d32bb09dff67aba4a14fa9",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/OWNER_PUBLICATION_ATTESTATION.json"
+      },
+      {
+        "name": "POST_TAG_VERIFICATION.json",
+        "size": 12661,
+        "sha256": "08e1cfb0260afcb8b21a7c72d441d8f66e81bbb2e694320c013be01fa5db85de",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/POST_TAG_VERIFICATION.json"
+      },
+      {
+        "name": "PUBLICATION_SHA256SUMS.txt",
+        "size": 571,
+        "sha256": "4ad6b7a1b08c4cc726ebc26cb6e20ea9015122feb2ab22d8be06aa1d58aaeb1c",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/PUBLICATION_SHA256SUMS.txt"
+      },
+      {
+        "name": "v0.81-signed-tag.txt",
+        "size": 4587,
+        "sha256": "52222e95ff2b9e321b6e752c49d56d6dc70a5f51c880cf8c2b16ee2e8d7ee825",
+        "url": "https://github.com/Odenknight/gkos-standard/releases/download/v0.81/v0.81-signed-tag.txt"
+      }
+    ]
+  },
+  "zenodo": {
+    "record_id": 22269294,
+    "url": "https://zenodo.org/records/22269294",
+    "version_doi": "10.5281/zenodo.22269294",
+    "concept_doi": "10.5281/zenodo.22269293",
+    "title": "GKOS v0.81 — A Developmental Pre-standard for AI Governance, Accountability and Auditability",
+    "creator": "Marshall, Shaun Allan",
+    "resource_type": "publication/technicalnote",
+    "license": "CC-BY-4.0",
+    "code_license": "Apache-2.0",
+    "archive_url": "https://zenodo.org/api/records/22269294/files/Odenknight/gkos-standard-v0.81.zip/content",
+    "archive_name": "Odenknight/gkos-standard-v0.81.zip",
+    "schema": "gkos-zenodo-archive-verification/v1",
+    "verified_at": "2026-09-03T05:34:48.7168022Z",
+    "archive_sha256": "09c58d2f67800ee11f394890a93298921e6fb6965bd54f6435bb5d15dd13fb60",
+    "archive_md5": "1c0b87f0d351ee3688304d4b7c700c11",
+    "archive_size": 3435043,
+    "commit_comment": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+    "files_verified": 318,
+    "comparison": "Every file matches the owner-approved git archive after removing the GitHub archive root directory",
+    "source_archive_sha256": "587ea6be86a898d0fc0ae12aab68879147581188276be7248b1f371ebd2e1d42"
+  },
+  "release_manifest_sha256": "7dbdea96eabb74bc282d21bf30933d6c082109dd15f0d0164950ee7784b3bf32",
+  "release_checksums_sha256": "56f454c17d392632a07b6873443c894597485c5227b5881a1b33ebf888f23b19",
+  "source_inventory_sha256": "44ed8a71872ce5a1d4b2b3d5bf70971494b7281ce1d3592a970bcc46d98844f8",
+  "evidence_packet_sha256": "1bc7b56e4b7af81c04e5440cdf75af1ca6995f0cb215d08307bff2d6f9f48e40",
+  "checks": [
+    {
+      "name": "validate",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117053/job/100531472885",
+      "run_id": 33718117053,
+      "job_id": 100531472885,
+      "run_attempt": 1
+    },
+    {
+      "name": "checksums",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117280/job/100531473114",
+      "run_id": 33718117280,
+      "job_id": 100531473114,
+      "run_attempt": 1
+    },
+    {
+      "name": "lint",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117087/job/100531472595",
+      "run_id": 33718117087,
+      "job_id": 100531472595,
+      "run_attempt": 1
+    },
+    {
+      "name": "links",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117039/job/100531472357",
+      "run_id": 33718117039,
+      "job_id": 100531472357,
+      "run_attempt": 1
+    },
+    {
+      "name": "blocking ubuntu-latest / Node 24",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117248/job/100531473394",
+      "run_id": 33718117248,
+      "job_id": 100531473394,
+      "run_attempt": 1
+    },
+    {
+      "name": "blocking dependency audit / Node 24",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117248/job/100531473403",
+      "run_id": 33718117248,
+      "job_id": 100531473403,
+      "run_attempt": 1
+    },
+    {
+      "name": "blocking windows-latest / Node 22",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117248/job/100531473405",
+      "run_id": 33718117248,
+      "job_id": 100531473405,
+      "run_attempt": 1
+    },
+    {
+      "name": "blocking windows-latest / Node 24",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117248/job/100531473432",
+      "run_id": 33718117248,
+      "job_id": 100531473432,
+      "run_attempt": 1
+    },
+    {
+      "name": "blocking ubuntu-latest / Node 22",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33718117248/job/100531473471",
+      "run_id": 33718117248,
+      "job_id": 100531473471,
+      "run_attempt": 1
+    }
+  ],
+  "post_tag_checks": [
+    {
+      "id": 33719039889,
+      "name": "Markdown lint",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "attempt": 1,
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33719039889"
+    },
+    {
+      "id": 33719039962,
+      "name": "Release checksums",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "attempt": 1,
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33719039962"
+    },
+    {
+      "id": 33719039938,
+      "name": "Release validation",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "attempt": 1,
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33719039938"
+    },
+    {
+      "id": 33719040040,
+      "name": "v0.81 post-tag verification",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "attempt": 1,
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33719040040"
+    },
+    {
+      "id": 33719039998,
+      "name": "Link check",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "attempt": 1,
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33719039998"
+    },
+    {
+      "id": 33719039931,
+      "name": "Conformance runner",
+      "commit": "8f2a158c6d4b8cabd907d98765766d281aec1247",
+      "conclusion": "success",
+      "attempt": 1,
+      "url": "https://github.com/Odenknight/gkos-standard/actions/runs/33719039931"
+    }
+  ],
+  "tag_controls": [
+    {
+      "id": 22155727,
+      "name": "GKOS governed release tags",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "exclude": [],
+          "include": [
+            "refs/tags/v*"
+          ]
+        }
+      },
+      "rules": [
+        {
+          "type": "deletion"
+        },
+        {
+          "type": "creation"
+        },
+        {
+          "type": "update"
+        }
+      ]
+    },
+    {
+      "id": 22167734,
+      "name": "GKOS v0.81 immutable tag",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "exclude": [],
+          "include": [
+            "refs/tags/v0.81"
+          ]
+        }
+      },
+      "rules": [
+        {
+          "type": "update"
+        },
+        {
+          "type": "deletion"
+        }
+      ]
+    },
+    {
+      "id": 22167735,
+      "name": "GKOS v0.81 owner tag creation",
+      "enforcement": "active",
+      "bypass_actors": [],
+      "conditions": {
+        "ref_name": {
+          "exclude": [],
+          "include": [
+            "refs/tags/v0.81"
+          ]
+        }
+      },
+      "rules": [
+        {
+          "type": "creation"
+        }
+      ]
+    }
+  ],
+  "predecessor": {
+    "coordinate": "GKOS-2026-08-20 v0.80",
+    "tag": "v0.80",
+    "commit": "d04011ec296c4e2ee24224a2e4a8f2e0e29f3dbe",
+    "url": "https://github.com/Odenknight/gkos-standard/releases/tag/v0.80"
+  },
+  "control_receipt": "https://github.com/Odenknight/gkos-standard/issues/35",
+  "execution_notes": [
+    "GitHub draft lookup through releases/tags/v0.81 returned 404. Publication succeeded; all seven uploaded asset hashes were compared successfully immediately after publication. The staged remote-digest check did not complete before publication.",
+    "The gh release edit operation succeeded; a subsequent local shell bookkeeping command failed without changing the release. The resulting published release was independently retrieved and verified.",
+    "Zenodo accepted the published event with HTTP 202; its duplicate released event returned HTTP 409, The release has already been received. The published record and archive were subsequently verified.",
+    "The GitHub and Zenodo ZIP bytes differ because GitHub adds an archive root directory and archive metadata; every archived file matches the approved source and the ZIP commit comment matches the approved commit.",
+    "The source and prepublication evidence archives remain frozen. This external record adds observed publication and archival facts after release."
+  ],
+  "limitations": [
+    "Developmental, non-consensus, non-qualifying pre-standard; no cumulative profile qualification or implementation certification.",
+    "Public second implementation awaiting; implementation divergences remain disclosed.",
+    "Protocol activation NOT_AUTHORIZED; certification program NOT_ESTABLISHED.",
+    "DOI identifies and preserves the edition; it does not establish consensus, conformance, regulatory approval, or independently demonstrated effectiveness."
+  ]
+}
