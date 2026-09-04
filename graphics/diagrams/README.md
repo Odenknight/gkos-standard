@@ -14,7 +14,7 @@ and multicolor palette of the existing illustrated figures.
 | A refund decision you can audit | [SVG](gkos-accountable-refund.svg) | [PNG](gkos-accountable-refund.png) | [Editable SVG](gkos-accountable-refund.svg) |
 | Choose an adoption starting point | [SVG](gkos-adoption-paths.svg) | [PNG](gkos-adoption-paths.png) | [Editable SVG](gkos-adoption-paths.svg) |
 
-### Canonical architecture orientation — r3 v0.82 development candidate
+## Canonical architecture orientation — r3 v0.82 development candidate
 
 - **Files:** `gkos-canonical-architecture.svg` (reference rendering), `.png` (2× export), `.mmd` (Mermaid source), and `.labels.txt` (checked parity register).
 - **Standing:** informative v0.82 development candidate under Proposed R22; no normative, conformance, binding, implementation, or runtime authority.
