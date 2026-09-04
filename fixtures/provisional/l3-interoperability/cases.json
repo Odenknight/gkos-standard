@@ -1,0 +1,25 @@
+{
+  "fixture_set": "V82-L3-INTEROP-0.1-proposed",
+  "standing": "provisional-non-normative-non-qualifying",
+  "proposed_decision": "R23",
+  "cases": [
+    {"id":"L3I-01","family":"canonical-directed-relation","expect":"preserve_direction","notes":"Canonical asserted direction must survive round-trip."},
+    {"id":"L3I-02","family":"declared-inverse-round-trip","expect":"derive_inverse_without_new_assertion","notes":"Inverse projection does not gain independent evidentiary standing."},
+    {"id":"L3I-03","family":"unknown-relation-extension","expect":"preserve_unknown_extension","notes":"Unknown relation remains distinguishable from Standard-defined core semantics."},
+    {"id":"L3I-04","family":"duplicate-evidence-distinct-actors","expect":"preserve_distinct_assertions","notes":"Same SPO tuple with distinct actor/evidence must not collapse."},
+    {"id":"L3I-05","family":"exact-record-replay","expect":"idempotent_by_record_identity","notes":"Exact replay may collapse only by governed record identity."},
+    {"id":"L3I-06","family":"valid-symmetric-relation","expect":"allow_valid_symmetric_semantics","notes":"Symmetric traversal may normalize without inventing evidence."},
+    {"id":"L3I-07","family":"valid-domain-cycle","expect":"allow_cycle","notes":"Cycles are permitted when relation semantics do not forbid them."},
+    {"id":"L3I-08","family":"supersession-cycle","expect":"diagnose_prohibited_cycle","notes":"Prohibited cycle is diagnosed without deleting history."},
+    {"id":"L3I-09","family":"branch-preserving-lineage","expect":"preserve_parallel_successors","notes":"No private tiebreak selects an authoritative head."},
+    {"id":"L3I-10","family":"unresolved-target","expect":"retain_unresolved","notes":"Projection must not silently drop unresolved relation."},
+    {"id":"L3I-11","family":"uid-path-collision","expect":"prefer_unambiguous_identity_or_fail","notes":"Ambiguous locator cannot override governed identity."},
+    {"id":"L3I-12","family":"rename-move-stable-uid","expect":"preserve_target_identity","notes":"Path movement does not create new governed target identity."},
+    {"id":"L3I-13","family":"external-uri-unavailable","expect":"retain_unresolved_external_reference","notes":"Unavailability is explicit; no fabricated resolution."},
+    {"id":"L3I-14","family":"contradictory-assertions","expect":"preserve_both_and_contradiction","notes":"Contradiction does not collapse one assertion into the other."},
+    {"id":"L3I-15","family":"correction-preserves-history","expect":"preserve_original_and_correction","notes":"Correction must not delete original evidence/assertion history."},
+    {"id":"L3I-16","family":"supersession-historical-query","expect":"preserve_historical_visibility","notes":"Superseded record remains queryable as historical evidence."},
+    {"id":"L3I-17","family":"temporal-validity-overlap","expect":"preserve_temporal_distinction","notes":"Overlapping validity does not create automatic authority precedence."},
+    {"id":"L3I-18","family":"projection-rebuild-equivalence","expect":"portable_meaning_equivalent","notes":"Projection rebuild may differ internally but must preserve portable meaning."}
+  ]
+}
