@@ -4,15 +4,15 @@
 
 **Revision preparation date:** 2026-09-04
 
-**Status:** Proposed development decision; informative documentation authority
+**Status:** Proposed development decision; no current documentation authority
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 
-**Standard boundary:** Informative only. R22 may establish one current top-level
-orientation within the documentation hierarchy. It does not amend the master
-standard, requirement registry, schemas, diagnostic registry, applicability
-mapping, conformance profiles, protocol standing, implementation standing, or
-runtime authority.
+**Standard boundary:** Informative only. If accepted, R22 may establish one
+current top-level orientation within the documentation hierarchy. It does not
+amend the master standard, requirement registry, schemas, diagnostic registry,
+applicability mapping, conformance profiles, protocol standing, implementation
+standing, or runtime authority.
 
 **Input baseline:**
 
@@ -161,9 +161,11 @@ fixture execution, and claim/assessment process.
    conflict is documented. They are cross-referenced from the canonical
    orientation. A detail view is not competing guidance merely because it has a
    narrower scope.
-3. **Historical revisions.** Available r1 and r2 source/renderings are preserved
-   under `archive/graphics/gkos-canonical-architecture/` with date, digest, and
-   provenance. They are not deleted or presented as current guidance.
+3. **Historical revisions.** The repository preserves the available r1 editable
+   source under `archive/graphics/gkos-canonical-architecture/`. Digests and
+   provenance for the externally supplied r1/r2 renderings are recorded in the
+   archive index when the binaries are not checked into this branch. Missing
+   editable source is recorded rather than reconstructed.
 4. **ROADMAP correction.** The roadmap states that v0.81 is published and
    immutable at its signed tag and release package. Phase-0 publication work is
    complete; current `main` is development.
