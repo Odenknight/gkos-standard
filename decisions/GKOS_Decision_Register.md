@@ -7,13 +7,18 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-### R22 — Canonical informative architecture orientation
+None.
+
+## Accepted decisions
+
+## R22 — Canonical informative architecture orientation
 
 - **Date:** 2026-09-03
 - **Revision preparation:** 2026-09-04
-- **Status:** Proposed development decision; no documentation authority until
-  exact-head owner acceptance
-- **Decision proposed:** Establish one content-verified r3 top-level informative
+- **Acceptance date:** 2026-09-04
+- **Reviewed head:** `ee39f75212d78293a92f7724f769bc610cd66aa9`
+- **Status:** Accepted development decision; informative documentation authority
+- **Decision:** Establish one content-verified r3 top-level informative
   architecture orientation for v0.82 development; preserve existing
   control-plane and layer-responsibility graphics as narrower detail views;
   correct stale post-publication roadmap/documentation state; keep retrieval
@@ -22,8 +27,6 @@ ratification, independent certification, accreditation, or regulator approval.
   profile, interoperability result, product standing, or runtime authority.
 - **Record:**
   [R22_Canonical_Informative_Architecture_Development_Decision_Record.md](R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
-
-## Accepted decisions
 
 ## R21 — Ecosystem interoperability program
 
