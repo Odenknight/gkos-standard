@@ -7,7 +7,20 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-None.
+### R23 — Layer-3 interoperability semantics
+
+- **Date:** 2026-09-04
+- **Status:** Proposed development decision; no normative authority
+- **Owner preparation dispositions:** `1B, 2A, 3B, 4B, 5B, 6B`
+- **Decision proposed:** Define portable Layer-3 semantics for open relationship
+  vocabulary with a Standard-defined semantic core; canonical direction with
+  derived inverses; evidence-preserving assertion identity; fail-closed
+  ambiguous resolution; relation-specific cycle constraints; and
+  branch-preserving lineage without implementation-private authoritative
+  tiebreaks. Acceptance remains gated by portable fixtures, migration analysis,
+  different-model-family review, exact-head checks, and owner disposition.
+- **Record:**
+  [R23_Layer3_Interoperability_Semantics_Proposal.md](R23_Layer3_Interoperability_Semantics_Proposal.md)
 
 ## Accepted decisions
 
