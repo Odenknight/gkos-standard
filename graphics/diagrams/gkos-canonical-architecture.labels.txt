@@ -1,0 +1,54 @@
+# R22 r3 label register.
+# Every non-comment, non-blank line must appear in normalized Mermaid source and SVG text.
+GKOS Canonical Architecture
+informative · r3 · v0.82 development candidate
+GKOS Governance Standard
+normative source · v0.81 published 2026-09-03
+no qualifying profile
+GKX 2.0 Data Contracts — interoperability seam
+current machine namespace: gkx_version · .gkx/ · GKX-* · gkx
+Implementations are plural
+GKOS-Engine
+reference implementation example
+Additional implementation candidate (same-author)
+public source, lineage, fixtures and review evidence pending
+no current public result
+Public independent-implementation slot
+independently controlled interpretation and operation
+Provisional v0.82 retrieval-to-context pattern
+applies when retrieval is used
+non-normative · non-qualifying
+Relevance retrieval
+Exact candidate set
+Governance eligibility evaluation
+separate from retrieval · no raw-rank rewrite
+Eligible-candidate sufficiency
+none eligible → expand, abstain or escalate
+L6 context assembly
+captured Selection Set · deterministic Context Manifest
+Governed Action Boundary
+L4 deterministic controls · applicable L5 disposition · L6 Context Manifest verification
+L7 authority and effect-scope admission
+Governance records and receipts — cross-layer
+no required universal ledger
+Authorized humans and bounded reviewers
+mandatory R18 escalation routes to an authorized human
+External bindings — exact-versioned · informative · non-activating under R21 · callable ≠ authorized
+MCP binding
+A2A binding
+ACS crosswalk / adapter
+Governed actor classes — capability does not create authority
+Read-only actors
+Proposal-producing actors
+Governed writers / effect executors
+Specialized Agent Contract or equivalent governed actor contract
+Founder implementation examples — informative overlay, NOT part of the Standard
+Hypatia
+GKOS-Observatory
+Kosmos-Oden
+committed governed state change → State-Change Receipt
+Legend
+solid arrows = represented control / data path
+dashed arrows = governed records, receipts, or implementation attachment
+dashed grey boxes = informative external bindings · dashed blue box = open public implementation slot
+shaded region = founder implementation examples
