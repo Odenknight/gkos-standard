@@ -22,7 +22,7 @@ flowchart TB
 
     GAB["Governed Action Boundary<br/>L4 deterministic controls · applicable L5 disposition · L6 Context Manifest verification<br/>L7 authority and effect-scope admission · mandatory failures fail closed<br/>applicable outcome bound to Decision, State-Change, Authorized Use or Refusal evidence"]
 
-    RECORDS["Governance records and receipts — cross-layer<br/>durable, integrity-verifiable record roles<br/>implementation-selected storage · no required universal ledger"]
+    RECORDS["Governance records and receipts — cross-layer<br/>durable, integrity-verifiable record roles · GKX-exchangeable<br/>implementation-selected storage · no required universal ledger"]
 
     AUTH["Authorized humans and bounded reviewers<br/>authority derives from valid grants and controlling policy, not actor class<br/>bounded L5 review may use a human or an authorized independent Review Agent under R18<br/>mandatory R18 escalation routes to an authorized human · observers see only authorized views"]
 
@@ -42,14 +42,14 @@ flowchart TB
 
     ACTORCONTRACT["Specialized Agent Contract or equivalent governed actor contract<br/>identity · owner · purpose · capabilities · prohibitions · scope · delegation · expiry · evaluation"]
 
+    LEGEND["Legend<br/>solid arrows = represented control / data path<br/>dashed arrows = governed records, receipts, or informative binding<br/>dashed grey boxes = informative external bindings · dashed blue box = open public implementation slot<br/>shaded region = founder implementation examples"]
+
     subgraph DEPLOY["Founder implementation examples — informative overlay, NOT part of the Standard"]
         direction LR
         HYP["Hypatia<br/>model-routing implementation example"]
         OBS["GKOS-Observatory<br/>public demonstration / sandbox example"]
         KO["Kosmos-Oden<br/>human-facing observability example · display grants no authority"]
     end
-
-    LEGEND["Legend<br/>solid arrows = represented control / data path<br/>dashed arrows = governed records, receipts, or implementation attachment<br/>dashed grey boxes = informative external bindings · dashed blue box = open public implementation slot<br/>shaded region = founder implementation examples"]
 
     STD --> GKX
     GKX --> ENG & SAME & INDEP
@@ -62,7 +62,6 @@ flowchart TB
     GAB -.->|receipts, refusals and escalations| AUTH
     GAB -.->|applicable governed records| RECORDS
     EFFECT -.->|committed governed state change → State-Change Receipt| RECORDS
-    RECORDS -.->|governance records exchange through GKX| GKX
 
     READ -->|authorized read or projection request| GAB
     PROPOSE -->|proposal or review request| GAB
@@ -73,10 +72,9 @@ flowchart TB
     GAB -.-> A2A
     GAB -.-> ACS
 
-    HYP -.-> ACTORS
-    OBS -.-> ENG
-    KO -.-> AUTH
-    DEPLOY -.-> LEGEND
+    RECORDS ~~~ LEGEND
+    AUTH ~~~ LEGEND
+    LEGEND ~~~ HYP
 
     classDef norm fill:#1f3a5f,color:#fff,stroke:#1f3a5f
     classDef seam fill:#245c5c,color:#fff,stroke:#245c5c
