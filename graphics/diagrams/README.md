@@ -43,16 +43,31 @@ No renderer is required to display the checked-in graphics.
 
 Rendered with `@mermaid-js/mermaid-cli` version `11.17.0`.
 
-From the repository root, with the pinned Mermaid CLI installed in a separate
-tooling environment, render each `.mmd` using:
+The exact r3 review rendering on GitHub Actions used the commands below with the
+same repository Mermaid configuration. The temporary Puppeteer configuration
+contained only browser-launch arguments
+`["--no-sandbox", "--disable-setuid-sandbox"]`; it changed no diagram source,
+Mermaid configuration, or output content semantics.
 
 ```sh
 mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
   -o graphics/diagrams/gkos-canonical-architecture.svg \
-  -c graphics/diagrams/mermaid-config.json -b white -w 1800
+  -c graphics/diagrams/mermaid-config.json \
+  -p /tmp/r22-puppeteer.json -b white -w 1800
 mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
   -o graphics/diagrams/gkos-canonical-architecture.png \
-  -c graphics/diagrams/mermaid-config.json -b white -w 1800 -s 2
+  -c graphics/diagrams/mermaid-config.json \
+  -p /tmp/r22-puppeteer.json -b white -w 1800 -s 2
+```
+
+For ordinary local rebuilds, an existing Chrome installation may be selected
+through Mermaid CLI's `--puppeteerConfigFile` option as needed. The renderer is
+documentation tooling outside the conformance runner's dependency graph.
+
+The existing detail diagrams use the same pinned Mermaid version. Their
+portable commands remain:
+
+```sh
 mmdc -i graphics/diagrams/gkos-control-plane.mmd \
   -o graphics/diagrams/gkos-control-plane.svg \
   -c graphics/diagrams/mermaid-config.json -b white -w 1400
@@ -61,10 +76,8 @@ mmdc -i graphics/diagrams/gkos-control-plane.mmd \
   -c graphics/diagrams/mermaid-config.json -b white -w 1400 -s 2
 ```
 
-Repeat the detail-view commands with `gkos-layer-responsibilities` as the input/output stem. An existing
-Chrome installation may be selected through the CLI's `--puppeteerConfigFile`
-option. The renderer is documentation tooling, outside the conformance runner's
-dependency graph.
+Repeat the detail-view commands with `gkos-layer-responsibilities` as the
+input/output stem.
 
 ### SVG explainers
 
