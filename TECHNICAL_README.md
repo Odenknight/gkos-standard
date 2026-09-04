@@ -68,6 +68,20 @@ adopts deterministic canonical serialization, and standardizes context,
 authorized-use, refusal, diagnostic, and effect-scope obligations. See
 [R16](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md).
 
+## Proposed v0.82 canonical architecture orientation
+
+![GKOS canonical architecture orientation: Standard to GKX seam, plural implementations, conditional retrieval/governance path, governed action boundary, external bindings, governed actors, cross-layer receipts, and separated founder implementation examples](graphics/diagrams/gkos-canonical-architecture.svg)
+
+**GKOS canonical architecture (informative, r3, v0.82 development candidate).** The Standard defines GKX data contracts; implementations consume them and exchange governed records rather than internals. When retrieval is used, retrieval produces an exact candidate set, governance evaluates eligibility separately, and L6 captures selection and deterministically assembles context. Proposed or consequential operations cross the governed boundary, which preserves L4 controls, applicable L5 disposition, L6 context, and L7 authority/effect admission. External MCP/A2A/ACS bindings are informative and versioned: callable is not authorized. Receipts are cross-layer; the shaded founder overlay is an implementation example, not part of the Standard.
+
+[Download PNG](graphics/diagrams/gkos-canonical-architecture.png) · [Editable Mermaid source](graphics/diagrams/gkos-canonical-architecture.mmd) · [Checked label register](graphics/diagrams/gkos-canonical-architecture.labels.txt) · [Proposed R22 record](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
+
+R22 is Proposed at this preparation head. The figure itself deliberately carries
+no Proposed/Accepted adoption status so owner disposition can later be recorded
+without changing the reviewed figure digests. Until R22 is accepted, the master
+standard, permanent requirements, accepted decisions, and existing technical
+orientation remain controlling.
+
 ## Layer contracts
 
 The model is cumulative, but processing may be asynchronous, distributed, or
@@ -89,6 +103,10 @@ Detailed requirements live in the
 [artifact mapping](standard/annexes/Layer_Artifact_Mapping.md).
 
 ## Control-plane placement
+
+This control-plane graphic remains a narrower detail view. It does not
+compete with the proposed r3 orientation merely because it focuses on
+placement within an existing stack.
 
 ![Human knowledge connects to the GKOS control plane, which connects governance responsibilities to agent runtimes, workflow engines, and identity and policy systems](graphics/diagrams/gkos-control-plane.svg)
 
@@ -267,11 +285,12 @@ single transaction without requiring one monolithic platform:
 | L6 | Reproducible evaluation, analysis or inference context | Can another reviewer reconstruct the exact selected inputs, warnings, omissions, policies and versions? |
 | L7 | Deployment, publication, external release, automated decision or tool effect | Was the action permitted for this actor and purpose against this exact context, and is the outcome/refusal durable? |
 
-Current `main` remains GKOS v0.80. v0.81 preparation does not make any vendor,
-retrieval algorithm, graph store, model, client or adapter normative. The
-active fixture catalog must continue to declare no qualifying profile until
-its exact-bound release and coverage gates are satisfied; fail-closed behavior
-is normative, while ingestion and adapter guidance remains informative.
+GKOS-2026-09-03 v0.81 is published at its signed tag and immutable release
+package. Current `main` is post-v0.81 development; later informative or
+provisional work does not rewrite the published coordinate. R21 does not make
+any vendor, retrieval algorithm, graph store, model, client, or adapter
+normative, and RRET-01 remains provisional, non-normative, and non-qualifying.
+No profile is currently qualified.
 
 ## Governed retrieval and context
 
@@ -468,6 +487,8 @@ See the claim-limited
 
 ## Claim boundary
 
-GKOS v0.80 is a public pre-standard. Nothing in this document establishes
-accreditation, certification, legal compliance, regulatory authorization,
-scientific validity, product safety, or the future GKOS v1.0 gates.
+GKOS-2026-09-03 v0.81 is a developmental public pre-standard. It is published,
+owner-authorized, non-consensus, and non-qualifying. Nothing in this document
+establishes accreditation, certification, legal compliance, regulatory
+authorization, scientific validity, product safety, implementation conformance,
+or the future GKOS v1.0 gates.
