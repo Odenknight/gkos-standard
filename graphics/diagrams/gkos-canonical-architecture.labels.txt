@@ -49,6 +49,6 @@ Kosmos-Oden
 committed governed state change → State-Change Receipt
 Legend
 solid arrows = represented control / data path
-dashed arrows = governed records, receipts, or implementation attachment
+dashed arrows = governed records, receipts, or informative binding
 dashed grey boxes = informative external bindings · dashed blue box = open public implementation slot
 shaded region = founder implementation examples
