@@ -1,8 +1,8 @@
 # Ecosystem ambiguity register
 
 - **Register ID:** GKOS-EAR-001
-- **Revision:** 0.1
-- **Date:** 2026-09-02
+- **Revision:** 0.2
+- **Date:** 2026-09-04
 - **Standing:** informative R21 issue register
 
 Identifiers in this register use the `EAR-*` prefix so they cannot be confused
@@ -16,9 +16,9 @@ controlling Standard text.
 
 | ID | Subject | Current question | Current disposition | Closure evidence |
 | --- | --- | --- | --- | --- |
-| EAR-GRAPH-001 | Graph edge direction and inverse vocabulary | Which relationship directions and inverses are required for portable L3 interchange? | OPEN; implementation behavior is not yet a substitute Standard clause | Adopted vocabulary, schemas, fixtures, migration rules, and at least two implementation results |
-| EAR-GRAPH-002 | Duplicate and cycle treatment | How are duplicate assertions, cycles, unresolved targets, and conflicting temporal relationships represented without silent collapse? | OPEN | Versioned L3 contract and adversarial fixtures |
-| EAR-GRAPH-003 | Resolver precedence | What exact order applies to stable UID, explicit URI, local alias, basename, and other references? | OPEN; current runner fixtures test only bounded cases | Normative-compatible decision plus portable fixtures |
+| EAR-GRAPH-001 | Graph edge direction and inverse vocabulary | Which relationship directions and inverses are required for portable L3 interchange? | DRAFTING under V82-01 owner disposition `Q1=B`, `Q2=A`; Proposed R23 prepared, not adopted | Accepted vocabulary/contract, portable direction/inverse fixtures, migration rules, and at least two implementation results |
+| EAR-GRAPH-002 | Duplicate and cycle treatment | How are duplicate assertions, cycles, unresolved targets, and conflicting temporal relationships represented without silent collapse? | DRAFTING under V82-01 owner disposition `Q3=B`, `Q5=B`, `Q6=B`; Proposed R23 prepared, not adopted | Accepted L3 contract, adversarial duplicate/cycle/branch fixtures, migration rules, and at least two implementation results |
+| EAR-GRAPH-003 | Resolver precedence | What exact order applies to stable UID, explicit URI, local alias, basename, and other references? | DRAFTING under V82-01 owner disposition `Q4=B`; Proposed R23 prepared, not adopted | Accepted resolver contract, collision/rename/unresolved-target fixtures, migration rules, and at least two implementation results |
 | EAR-MCP-001 | MCP version migration | How will a `2025-11-25` implementation migrate to `2026-07-28` without losing identity, capability, or request evidence? | DRAFTING under R21 | Migration matrix, dual-version fixtures, downgrade/refusal behavior, and implementation report |
 | EAR-MCP-002 | MCP tasks and GKOS task evidence | Which task lifecycle events are sources, assertions, decisions, state changes, or outcomes? | OPEN | Binding text and fixtures for create, progress, cancellation, failure, retry, and completion |
 | EAR-MCP-003 | Consequential tool admission | Which MCP tool metadata and GKOS records are required before a tool may perform an effect? | DRAFTING; effect surfaces remain default-off | Exact L4–L7 binding and synthetic reversible pilot evidence |
