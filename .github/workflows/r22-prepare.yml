@@ -34,6 +34,14 @@ jobs:
       - name: Install pinned Mermaid renderer
         run: npm install --prefix /tmp/r22-mermaid --no-save --no-package-lock @mermaid-js/mermaid-cli@11.17.0
 
+      - name: Configure isolated renderer browser
+        run: |
+          cat > /tmp/r22-puppeteer.json <<'JSON'
+          {
+            "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+          }
+          JSON
+
       - name: Render canonical SVG and PNG
         id: render
         shell: bash
@@ -42,13 +50,13 @@ jobs:
           : > r22-render.log
           /tmp/r22-mermaid/node_modules/.bin/mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
             -o graphics/diagrams/gkos-canonical-architecture.svg \
-            -c graphics/diagrams/mermaid-config.json -b white -w 1800 >> r22-render.log 2>&1
+            -c graphics/diagrams/mermaid-config.json -p /tmp/r22-puppeteer.json -b white -w 1800 >> r22-render.log 2>&1
           rc_svg=$?
           rc_png=99
           if [ "$rc_svg" -eq 0 ]; then
             /tmp/r22-mermaid/node_modules/.bin/mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
               -o graphics/diagrams/gkos-canonical-architecture.png \
-              -c graphics/diagrams/mermaid-config.json -b white -w 1800 -s 2 >> r22-render.log 2>&1
+              -c graphics/diagrams/mermaid-config.json -p /tmp/r22-puppeteer.json -b white -w 1800 -s 2 >> r22-render.log 2>&1
             rc_png=$?
           fi
           cat r22-render.log
