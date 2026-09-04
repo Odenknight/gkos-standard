@@ -1,0 +1,144 @@
+name: R22 r3 preparation
+
+on:
+  push:
+    branches:
+      - docs/r22-canonical-architecture-r3-20260904
+    paths:
+      - .github/workflows/r22-prepare.yml
+      - scripts/prepare-r22-docs.py
+      - decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md
+      - graphics/diagrams/gkos-canonical-architecture.mmd
+      - graphics/diagrams/gkos-canonical-architecture.labels.txt
+      - archive/graphics/gkos-canonical-architecture/**
+
+permissions:
+  contents: write
+
+jobs:
+  prepare-render-verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Patch reviewed documentation
+        run: python scripts/prepare-r22-docs.py
+
+      - name: Install pinned Mermaid renderer
+        run: npm install --prefix /tmp/r22-mermaid --no-save --no-package-lock @mermaid-js/mermaid-cli@11.17.0
+
+      - name: Render canonical SVG and PNG
+        run: |
+          /tmp/r22-mermaid/node_modules/.bin/mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
+            -o graphics/diagrams/gkos-canonical-architecture.svg \
+            -c graphics/diagrams/mermaid-config.json -b white -w 1800
+          /tmp/r22-mermaid/node_modules/.bin/mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
+            -o graphics/diagrams/gkos-canonical-architecture.png \
+            -c graphics/diagrams/mermaid-config.json -b white -w 1800 -s 2
+
+      - name: Verify r3 content, parity, safety, and digests
+        run: |
+          python - <<'PY'
+          import hashlib
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          root = Path('.')
+          mmd_path = root / 'graphics/diagrams/gkos-canonical-architecture.mmd'
+          svg_path = root / 'graphics/diagrams/gkos-canonical-architecture.svg'
+          png_path = root / 'graphics/diagrams/gkos-canonical-architecture.png'
+          labels_path = root / 'graphics/diagrams/gkos-canonical-architecture.labels.txt'
+          r22_path = root / 'decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md'
+
+          mmd = mmd_path.read_text(encoding='utf-8')
+          svg = svg_path.read_text(encoding='utf-8')
+          r22 = r22_path.read_text(encoding='utf-8')
+          svg_root = ET.parse(svg_path).getroot()
+          svg_text = ' '.join(''.join(svg_root.itertext()).split())
+          mmd_text = ' '.join(mmd.split())
+
+          labels = [line.strip() for line in labels_path.read_text(encoding='utf-8').splitlines()
+                    if line.strip() and not line.lstrip().startswith('#')]
+          missing_mmd = [label for label in labels if ' '.join(label.split()) not in mmd_text]
+          missing_svg = [label for label in labels if ' '.join(label.split()) not in svg_text]
+          if missing_mmd:
+              raise SystemExit(f'labels missing from Mermaid: {missing_mmd}')
+          if missing_svg:
+              raise SystemExit(f'labels missing from SVG: {missing_svg}')
+
+          local_names = [el.tag.rsplit('}', 1)[-1] for el in svg_root.iter()]
+          for forbidden_tag in ('script', 'foreignObject'):
+              if forbidden_tag in local_names:
+                  raise SystemExit(f'forbidden SVG tag: {forbidden_tag}')
+          if not any(name == 'title' for name in local_names) or not any(name == 'desc' for name in local_names):
+              raise SystemExit('SVG must contain title and desc')
+
+          lowered = svg.lower()
+          for needle in ('c2pa:', '<metadata', 'url(http', '@import'):
+              if needle in lowered:
+                  raise SystemExit(f'forbidden/stale SVG content: {needle}')
+          for el in svg_root.iter():
+              for key, value in el.attrib.items():
+                  lk = key.lower()
+                  lv = value.lower().strip()
+                  if (lk.endswith('href') or lk == 'src') and (lv.startswith('http:') or lv.startswith('https:') or lv.startswith('//')):
+                      raise SystemExit(f'external SVG resource: {key}={value}')
+
+          current_pair = mmd + '\n' + svg
+          for term in ('okf_version', '.okf/', 'HUMAN_ONLY', 'HUMAN_AND_AGENT',
+                       'HUMAN_OR_AGENT', 'AGENT_ONLY', 'Agent Identity Card',
+                       'PASS / MODIFY / REFUSE', 'Receipt Ledger (L6)'):
+              if term in current_pair:
+                  raise SystemExit(f'prohibited current figure term: {term}')
+          for term in ('HUMAN_ONLY', 'HUMAN_AND_AGENT', 'HUMAN_OR_AGENT', 'AGENT_ONLY',
+                       'Agent Identity Card', 'PASS / MODIFY / REFUSE'):
+              if term in r22:
+                  raise SystemExit(f'unallocated term in R22 record: {term}')
+          for term in ('Proposed for R22', 'Adopted by R22', 'Proposed development decision'):
+              if term in current_pair:
+                  raise SystemExit(f'adoption status leaked into figure: {term}')
+
+          for path in (mmd_path, svg_path, png_path):
+              digest = hashlib.sha256(path.read_bytes()).hexdigest()
+              print(f'{digest}  {path}')
+          PY
+
+          git diff --check
+
+      - name: Record renderer identity
+        run: |
+          /tmp/r22-mermaid/node_modules/.bin/mmdc --version
+          node --version
+          npm --version
+
+      - name: Commit prepared candidate to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ROADMAP.md TECHNICAL_README.md decisions/GKOS_Decision_Register.md \
+            graphics/diagrams/README.md graphics/diagrams/gkos-canonical-architecture.svg \
+            graphics/diagrams/gkos-canonical-architecture.png
+          git commit -m "docs: render and prepare R22 r3 candidate"
+          git push origin HEAD:docs/r22-canonical-architecture-r3-20260904
+
+      - name: Upload rendered review artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: r22-r3-rendered-candidate
+          path: |
+            graphics/diagrams/gkos-canonical-architecture.mmd
+            graphics/diagrams/gkos-canonical-architecture.svg
+            graphics/diagrams/gkos-canonical-architecture.png
+            graphics/diagrams/gkos-canonical-architecture.labels.txt
+            decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md
+            ROADMAP.md
+            TECHNICAL_README.md
+            graphics/diagrams/README.md
+            decisions/GKOS_Decision_Register.md
