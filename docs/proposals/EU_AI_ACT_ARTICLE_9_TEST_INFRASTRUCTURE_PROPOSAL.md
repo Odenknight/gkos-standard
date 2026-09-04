@@ -20,7 +20,7 @@ The implementation order should be:
    Standard-owned evaluator;
 3. prove the plumbing with a tiny infrastructure probe and fake adapters;
 4. add the first narrow Article 9 case for Article 9(8); and
-5. expand the case model only when an additional Article 9 requirement needs
+5. expand the case model only  when an additional Article 9 requirement needs
    it.
 
 This avoids designing a large fictional dossier around infrastructure that has
