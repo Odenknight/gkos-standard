@@ -4,15 +4,19 @@
 
 **Revision preparation date:** 2026-09-04
 
-**Status:** Proposed development decision; no current documentation authority
+**Status:** Accepted development decision; informative documentation authority
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 
-**Standard boundary:** Informative only. If accepted, R22 may establish one
-current top-level orientation within the documentation hierarchy. It does not
-amend the master standard, requirement registry, schemas, diagnostic registry,
-applicability mapping, conformance profiles, protocol standing, implementation
-standing, or runtime authority.
+**Acceptance review head:** `ee39f75212d78293a92f7724f769bc610cd66aa9`
+
+**Acceptance date:** 2026-09-04
+
+**Standard boundary:** Informative only. R22 establishes one current top-level
+orientation within the documentation hierarchy. It does not amend the master
+standard, requirement registry, schemas, diagnostic registry, applicability
+mapping, conformance profiles, protocol standing, implementation standing, or
+runtime authority.
 
 **Input baseline:**
 
@@ -26,10 +30,11 @@ standing, or runtime authority.
 
 ## 1. Decision
 
-Subject to the exact-head correction and review gate in §7, R22 proposes to
-adopt `graphics/diagrams/gkos-canonical-architecture.svg`, with its PNG export
-and content-equivalent Mermaid source, as the canonical **informative
-architecture orientation** for v0.82 development.
+Following final exact-head review of
+`ee39f75212d78293a92f7724f769bc610cd66aa9`, R22 adopts
+`graphics/diagrams/gkos-canonical-architecture.svg`, with its PNG export and
+content-equivalent Mermaid source, as the canonical **informative architecture
+orientation** for v0.82 development.
 
 “Canonical” in this record means the current top-level orientation in the
 repository documentation hierarchy. It does not make the figure normative or
@@ -153,8 +158,8 @@ fixture execution, and claim/assessment process.
 
 ## 5. Documentation dispositions
 
-1. **Canonical orientation.** After acceptance, the r3 SVG becomes the top-level
-   informative architecture orientation; its PNG and Mermaid source must remain
+1. **Canonical orientation.** The r3 SVG is the top-level informative
+   architecture orientation; its PNG and Mermaid source must remain
    content-equivalent.
 2. **Existing detail views.** `gkos-control-plane.*` and
    `gkos-layer-responsibilities.*` remain current detail views unless a specific
@@ -169,15 +174,15 @@ fixture execution, and claim/assessment process.
 4. **ROADMAP correction.** The roadmap states that v0.81 is published and
    immutable at its signed tag and release package. Phase-0 publication work is
    complete; current `main` is development.
-5. **Decision Register.** The exact preparation head indexes R22 as
-   **Proposed**. Owner acceptance is recorded prospectively in a later
-   status-only decision-record/register update; acceptance does not require any
-   change to the figure, its captions, or its digests.
-6. **Technical orientation.** While R22 is Proposed,
-   `TECHNICAL_README.md` identifies the r3 figure as the proposed top-level
-   v0.82 architecture orientation and retains the existing figures as linked
-   detail views. After exact-head owner acceptance, only documentation standing
-   metadata changes from Proposed to Accepted.
+5. **Decision Register.** The preparation head indexed R22 as **Proposed**.
+   Owner acceptance is recorded prospectively by this status-only acceptance
+   update and the corresponding Decision Register update; the reviewed figure,
+   its captions, and its digests are unchanged.
+6. **Technical orientation.** At the reviewed preparation head,
+   `TECHNICAL_README.md` identified the r3 figure as the proposed top-level
+   v0.82 architecture orientation and retained the existing figures as linked
+   detail views. R22 acceptance changes documentation standing only; it does not
+   alter the reviewed figure or its digests.
 7. **Release immutability.** Nothing in the R22 PR rewrites the signed v0.81
    release package, tag, publication record, or Zenodo archive.
 8. **Founder overlay.** Named founder products may appear only in a region
@@ -187,7 +192,7 @@ fixture execution, and claim/assessment process.
 
 ## 6. Content and rendering controls
 
-- The SVG is the reference rendering after acceptance.
+- The SVG is the reference rendering.
 - The Mermaid source must contain the same substantive labels, relationships,
   standings, limitations, and legend as the SVG.
 - The PNG must be rendered from the same controlled Mermaid source without
@@ -205,9 +210,10 @@ fixture execution, and claim/assessment process.
 - Any substantive change advances the revision and requires review of the
   affected claims.
 
-## 7. Acceptance gate
+## 7. Acceptance gate and disposition
 
-R22 remains Proposed until an exact PR head demonstrates all of the following:
+The exact reviewed head
+`ee39f75212d78293a92f7724f769bc610cd66aa9` demonstrated the acceptance gate:
 
 1. the r3 `.mmd`, `.svg`, `.png`, and checked label register are present and
    content-equivalent;
@@ -216,23 +222,23 @@ R22 remains Proposed until an exact PR head demonstrates all of the following:
    repository documentation and the Decision Register;
 4. `ROADMAP.md`, `TECHNICAL_README.md`,
    `graphics/diagrams/README.md`, and the Proposed Decision Register entry are
-   coherent;
+   coherent for the preparation head;
 5. the existing detail diagrams are classified and cross-referenced rather than
    retired without a specific conflict;
 6. Markdown, link, SVG safety/accessibility, namespace, claim-discipline,
-   current-release, and preserved-release checksum checks pass at the exact
+   current-release, and preserved-release checksum checks passed at the exact
    head;
 7. the renderer is the repository-recorded `@mermaid-js/mermaid-cli` `11.17.0`
    and the exact render commands are recorded;
-8. the PNG is visually reviewed for clipping, overlap, unreadable labels, and
+8. the PNG was visually reviewed for clipping, overlap, unreadable labels, and
    ambiguous relationships; and
-9. the exact-head evidence confirms the v0.81 tag, GitHub Release, release
+9. the exact-head evidence confirmed the v0.81 tag, GitHub Release, release
    package, and Zenodo publication were not modified.
 
-Owner acceptance is a separate prospective disposition. A later status-only
-commit may record that acceptance in this record and the Decision Register only;
-it must not alter the reviewed diagram or captions. A substantive post-review
-change creates a new review identity.
+The owner accepted R22 r3 on 2026-09-04 at that exact reviewed head. This
+status-only acceptance update records the disposition and does not alter the
+reviewed diagram, captions, or digests. Any substantive post-review change
+creates a new review identity.
 
 ## 8. Authority boundary
 
@@ -254,7 +260,7 @@ R22 does not:
 
 ## 9. Supersession
 
-R22 supersedes no accepted decision. After acceptance it supersedes only prior
-architecture orientation revisions as **current informative orientation**;
-their historical evidence remains preserved. A later accepted decision may
-replace R22 prospectively.
+R22 supersedes no accepted decision. It supersedes only prior architecture
+orientation revisions as **current informative orientation**; their historical
+evidence remains preserved. A later accepted decision may replace R22
+prospectively.
