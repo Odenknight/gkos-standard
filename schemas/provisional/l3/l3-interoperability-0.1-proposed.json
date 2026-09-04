@@ -2,25 +2,47 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://gkos.dev/schemas/provisional/l3/l3-interoperability-0.1-proposed.json",
   "title": "GKOS Layer-3 Interoperability Candidate 0.1",
-  "description": "Provisional, non-normative candidate contract supporting Proposed R23. It does not amend GKOS v0.81 or establish conformance.",
+  "description": "Provisional, non-normative candidate record contract supporting Proposed R23. Relation semantics are defined by the separate candidate relation-type registry; records reference relation types and do not redefine their properties.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["record_id", "subject_ref", "relation", "object_ref", "provenance"],
+  "required": ["record_id", "assertion_kind", "subject_ref", "relation", "object_ref", "provenance"],
   "properties": {
     "record_id": {"type": "string", "minLength": 1},
+    "assertion_kind": {"type": "string", "enum": ["asserted", "derived_projection"]},
+    "derived_from_record_id": {"type": "string", "minLength": 1},
     "subject_ref": {"$ref": "#/$defs/reference"},
-    "relation": {"$ref": "#/$defs/relation"},
+    "relation": {"$ref": "#/$defs/relationRef"},
     "object_ref": {"$ref": "#/$defs/reference"},
-    "actor_ref": {"type": ["string", "null"]},
+    "actor_ref": {
+      "anyOf": [
+        {"$ref": "https://github.com/Odenknight/gkos-standard/schemas/gkx-common.defs.json#/$defs/actorReference"},
+        {"type": "null"}
+      ]
+    },
     "evidence_refs": {
       "type": "array",
-      "items": {"type": "string", "minLength": 1},
+      "items": {"$ref": "#/$defs/governedReference"},
       "uniqueItems": true
     },
     "scope": {"type": ["string", "null"]},
-    "valid_from": {"type": ["string", "null"], "format": "date-time"},
-    "valid_until": {"type": ["string", "null"], "format": "date-time"},
-    "epistemic_state": {"type": ["string", "null"]},
+    "valid_from": {
+      "anyOf": [
+        {"$ref": "https://github.com/Odenknight/gkos-standard/schemas/gkx-common.defs.json#/$defs/canonicalTimestamp"},
+        {"type": "null"}
+      ]
+    },
+    "valid_until": {
+      "anyOf": [
+        {"$ref": "https://github.com/Odenknight/gkos-standard/schemas/gkx-common.defs.json#/$defs/canonicalTimestamp"},
+        {"type": "null"}
+      ]
+    },
+    "epistemic_state": {
+      "anyOf": [
+        {"$ref": "https://github.com/Odenknight/gkos-standard/schemas/gkx-common.defs.json#/$defs/epistemicState"},
+        {"type": "null"}
+      ]
+    },
     "provenance": {
       "type": "object",
       "additionalProperties": true,
@@ -34,49 +56,73 @@
         }
       }
     },
-    "resolution_state": {
-      "type": "string",
-      "enum": ["resolved", "unresolved", "ambiguous"]
-    },
-    "extension": {
-      "type": "object",
-      "additionalProperties": true
-    }
+    "extension": {"type": "object", "additionalProperties": true}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"assertion_kind": {"const": "derived_projection"}}, "required": ["assertion_kind"]},
+      "then": {
+        "required": ["derived_from_record_id"],
+        "properties": {
+          "actor_ref": {"type": "null"},
+          "evidence_refs": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"assertion_kind": {"const": "asserted"}}, "required": ["assertion_kind"]},
+      "then": {"not": {"required": ["derived_from_record_id"]}}
+    }
+  ],
   "$defs": {
     "reference": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kind", "value"],
+      "required": ["kind", "value", "resolution_state"],
       "properties": {
-        "kind": {
-          "type": "string",
-          "enum": ["gkos_uid", "uri", "alias", "path", "basename"]
+        "kind": {"type": "string", "enum": ["gkos_uid", "uri", "alias", "path", "basename"]},
+        "value": {"type": "string", "minLength": 1},
+        "resolution_state": {"type": "string", "enum": ["resolved", "unresolved", "ambiguous"]},
+        "identity_contract": {"type": "string", "minLength": 1},
+        "candidate_target_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"const": "uri"}}, "required": ["kind"]},
+          "then": {},
+          "else": {"not": {"required": ["identity_contract"]}}
         },
-        "value": {"type": "string", "minLength": 1}
-      }
+        {
+          "if": {"properties": {"resolution_state": {"const": "ambiguous"}}, "required": ["resolution_state"]},
+          "then": {"required": ["candidate_target_ids"], "properties": {"candidate_target_ids": {"minItems": 2}}}
+        }
+      ]
     },
-    "relation": {
+    "governedReference": {
+      "allOf": [
+        {"$ref": "#/$defs/reference"},
+        {"properties": {"kind": {"enum": ["gkos_uid", "uri"]}}}
+      ]
+    },
+    "relationRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "namespace", "properties"],
+      "required": ["namespace", "name"],
       "properties": {
-        "name": {"type": "string", "minLength": 1},
         "namespace": {"type": "string", "minLength": 1},
-        "properties": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "directed": {"type": "boolean"},
-            "inverse_of": {"type": ["string", "null"]},
-            "symmetric": {"type": "boolean"},
-            "antisymmetric": {"type": "boolean"},
-            "acyclic": {"type": "boolean"},
-            "branching_permitted": {"type": "boolean"},
-            "target_resolution_required": {"type": "boolean"}
-          }
+        "name": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"namespace": {"const": "gkos"}}, "required": ["namespace"]},
+          "then": {"properties": {"name": {"enum": ["contradicts", "corrects", "supersedes"]}}},
+          "else": {"properties": {"namespace": {"not": {"const": "gkos"}}}}
         }
-      }
+      ]
     }
   }
 }
