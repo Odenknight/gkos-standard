@@ -1,0 +1,26 @@
+name: XW-002 consistency
+
+on:
+  push:
+    paths:
+      - "docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md"
+      - "docs/ecosystem/EXTERNAL_CROSSWALK.json"
+      - "scripts/xw002/**"
+      - ".github/workflows/xw002-consistency.yml"
+  pull_request:
+    paths:
+      - "docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md"
+      - "docs/ecosystem/EXTERNAL_CROSSWALK.json"
+      - "scripts/xw002/**"
+      - ".github/workflows/xw002-consistency.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  generated-representations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify prose and JSON are generated from the reviewed row source
+        run: python scripts/xw002/gen.py --check

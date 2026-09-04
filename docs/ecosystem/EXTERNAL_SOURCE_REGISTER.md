@@ -2,7 +2,7 @@
 
 - **Register ID:** GKOS-ESR-001
 - **Revision:** 0.1
-- **Reviewed through:** 2026-09-02
+- **Reviewed through:** 2026-09-04
 - **Standing:** informative R21 control record
 
 This register records the external versions and primary sources used by current
@@ -39,7 +39,8 @@ be reviewed, versioned, and dispositioned.
 | --- | --- | --- | --- | --- | --- | --- |
 | ESR-NIST-AGENT-2026 | NIST AI Agent Standards Initiative | current page as of 2026-09-02 | informative-framework | <https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative> | 2026-09-02 | Standards, identity, protocol, and security-evaluation priorities; no NIST adoption or endorsement of GKOS |
 | ESR-NCCOE-AGENT-ID-2026 | NCCoE Software and AI Agent Identity and Authorization | current concept-project page as of 2026-09-02 | informative-framework | <https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization> | 2026-09-02 | Identity, authorization, delegation, logging, provenance, and prompt-injection implementation questions; not a GKOS mapping or approval |
-| ESR-NIST-AIRMF | NIST AI Risk Management Framework | current page as of 2026-09-02 | informative-framework | <https://www.nist.gov/itl/ai-risk-management-framework> | 2026-09-02 | Voluntary risk-management context; GKOS evidence does not establish AI RMF conformity |
+| ESR-NIST-AIRMF | NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 2023, DOI 10.6028/NIST.AI.100-1 | reviewed scope: Core Tables 1–4 (GOVERN/MAP/MEASURE/MANAGE subcategories) | informative-framework | <https://doi.org/10.6028/NIST.AI.100-1> | 2026-09-03 | Voluntary, non-sector-specific outcome framework with no conformance model. Revised AI RMF in progress per NIST AIRC as of check date — re-review GKOS-XW-002 on publication. GKOS evidence does not establish AI RMF adoption or conformity. |
+| ESR-ISO-42001 | ISO/IEC 42001:2023, Information technology — Artificial intelligence — Management system | published 2023-12; Annex A verification held pending licensed-text confirmation | informative-framework | <https://www.iso.org/standard/42001> | 2026-09-04 | Public bibliographic identity verified; Annex A identifiers and titles not reviewed. No ISO mapping row may be emitted until final licensed text is legitimately accessed and checked. |
 | ESR-NIST-AI300-1-IPD | NIST AI 300-1 initial public draft | July 2026 initial public draft | informative-framework | <https://doi.org/10.6028/NIST.AI.300-1.ipd> | 2026-09-02 | Public-facing dataset and model documentation quality lens; scope is not equivalent to whole-system GKOS governance |
 | ESR-IMDA-AGENTIC-2026 | Singapore IMDA Model AI Governance Framework for Agentic AI | 2026 framework announcement and materials | informative-framework | <https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2026/new-model-ai-governance-framework-for-agentic-ai> | 2026-09-02 | Human accountability and agentic-governance comparison; does not create GKOS authority or legal standing |
 
