@@ -1,0 +1,104 @@
+---
+title: GKOS Canonical Architecture — informative · r3 · v0.82 development candidate
+---
+flowchart TB
+    accTitle: GKOS canonical informative architecture orientation
+    accDescr: GKOS defines governance responsibilities, GKX is the interoperability seam, implementations are plural, retrieval and governance remain separate when retrieval is used, governed actions preserve L4 through L7 boundaries, receipts are cross-layer, external bindings are informative, and founder deployment examples are not part of the Standard.
+
+    STD["GKOS Governance Standard<br/>normative source · v0.81 published 2026-09-03 · owner-authorized · non-consensus · no qualifying profile"]
+    GKX["GKX 2.0 Data Contracts — interoperability seam<br/>exchange governed records, schemas, fixtures and receipts — not implementation internals<br/>current machine namespace: gkx_version · .gkx/ · GKX-* · gkx"]
+
+    subgraph IMPL["Implementations are plural — examples and evidence targets, not profile qualification"]
+        direction LR
+        ENG["GKOS-Engine<br/>reference implementation example · inspected package 2.1.2 · TypeScript<br/>no runtime dependencies entry · Graphiti export adapter<br/>implementation mechanism only · development head distinct from conformance"]
+        SAME["Additional implementation candidate (same-author)<br/>public source, lineage, fixtures and review evidence pending<br/>evidence target: interoperability · no current public result"]
+        INDEP["Public independent-implementation slot<br/>publicly reviewable · independently controlled interpretation and operation<br/>evidence target: independence of implementation and interpretation"]
+    end
+
+    subgraph RRET["Provisional v0.82 retrieval-to-context pattern — applies when retrieval is used · non-normative · non-qualifying"]
+        direction LR
+        RET["Relevance retrieval<br/>may rank an ineligible object first"] --> CAND["Exact candidate set<br/>preserve returned identifiers and raw rank"] --> ELIG["Governance eligibility evaluation<br/>separate from retrieval · no raw-rank rewrite"] --> SUFF["Eligible-candidate sufficiency<br/>none eligible → expand, abstain or escalate"] --> CTX["L6 context assembly<br/>captured Selection Set · deterministic Context Manifest"]
+    end
+
+    GAB["Governed Action Boundary<br/>L4 deterministic controls · applicable L5 disposition · L6 Context Manifest verification<br/>L7 authority and effect-scope admission · mandatory failures fail closed<br/>applicable outcome bound to Decision, State-Change, Authorized Use or Refusal evidence"]
+
+    RECORDS["Governance records and receipts — cross-layer<br/>durable, integrity-verifiable record roles · GKX-exchangeable<br/>implementation-selected storage · no required universal ledger"]
+
+    AUTH["Authorized humans and bounded reviewers<br/>authority derives from valid grants and controlling policy, not actor class<br/>bounded L5 review may use a human or an authorized independent Review Agent under R18<br/>mandatory R18 escalation routes to an authorized human · observers see only authorized views"]
+
+    subgraph BIND["External bindings — exact-versioned · informative · non-activating under R21 · callable ≠ authorized"]
+        direction LR
+        MCP["MCP binding<br/>tool, resource, task, context and effect-surface mapping"]
+        A2A["A2A binding<br/>agent, task, message, artifact and bounded-delegation mapping"]
+        ACS["ACS crosswalk / adapter<br/>observation and enforcement integration · not a dependency"]
+    end
+
+    subgraph ACTORS["Governed actor classes — capability does not create authority"]
+        direction LR
+        READ["Read-only actors<br/>authorized read and projection scope"]
+        PROPOSE["Proposal-producing actors<br/>proposals enter applicable controls and review"]
+        EFFECT["Governed writers / effect executors<br/>separately authorized · bounded state-change or effect scope"]
+    end
+
+    ACTORCONTRACT["Specialized Agent Contract or equivalent governed actor contract<br/>identity · owner · purpose · capabilities · prohibitions · scope · delegation · expiry · evaluation"]
+
+    LEGEND["Legend<br/>solid arrows = represented control / data path<br/>dashed arrows = governed records, receipts, or informative binding<br/>dashed grey boxes = informative external bindings · dashed blue box = open public implementation slot<br/>shaded region = founder implementation examples"]
+
+    subgraph DEPLOY["Founder implementation examples — informative overlay, NOT part of the Standard"]
+        direction LR
+        HYP["Hypatia<br/>model-routing implementation example"]
+        OBS["GKOS-Observatory<br/>public demonstration / sandbox example"]
+        KO["Kosmos-Oden<br/>human-facing observability example · display grants no authority"]
+    end
+
+    STD --> GKX
+    GKX --> ENG & SAME & INDEP
+    ENG -.-> RET
+    SAME -.-> RET
+    INDEP -.-> RET
+    CTX -->|candidate context or proposed operation| GAB
+
+    AUTH -->|valid authority and applicable disposition| GAB
+    GAB -.->|receipts, refusals and escalations| AUTH
+    GAB -.->|applicable governed records| RECORDS
+    EFFECT -.->|committed governed state change → State-Change Receipt| RECORDS
+
+    READ -->|authorized read or projection request| GAB
+    PROPOSE -->|proposal or review request| GAB
+    EFFECT -->|state-change or effect request| GAB
+    ACTORCONTRACT --> READ & PROPOSE & EFFECT
+
+    GAB -.-> MCP
+    GAB -.-> A2A
+    GAB -.-> ACS
+
+    RECORDS ~~~ LEGEND
+    AUTH ~~~ LEGEND
+    LEGEND ~~~ HYP
+
+    classDef norm fill:#1f3a5f,color:#fff,stroke:#1f3a5f
+    classDef seam fill:#245c5c,color:#fff,stroke:#245c5c
+    classDef impl fill:#3b6fb6,color:#fff,stroke:#3b6fb6
+    classDef open fill:#fbfaf7,color:#3b6fb6,stroke:#3b6fb6,stroke-dasharray:6 4
+    classDef provisional fill:#dbe7f6,color:#1f2937,stroke:#3b6fb6
+    classDef gate fill:#b5541c,color:#fff,stroke:#b5541c
+    classDef records fill:#5b3f2e,color:#fff,stroke:#5b3f2e
+    classDef human fill:#5b3b7a,color:#fff,stroke:#5b3b7a
+    classDef bind fill:#f3f4f6,color:#374151,stroke:#6b7280,stroke-dasharray:6 4
+    classDef actor fill:#4f7942,color:#fff,stroke:#4f7942
+    classDef dep fill:#fbfaf7,color:#5c554b,stroke:#9c948a
+    classDef legend fill:#fbfaf7,color:#4b5563,stroke:#9c948a
+
+    class STD norm
+    class GKX seam
+    class ENG,SAME impl
+    class INDEP open
+    class RET,CAND,ELIG,SUFF,CTX provisional
+    class GAB gate
+    class RECORDS records
+    class AUTH human
+    class MCP,A2A,ACS bind
+    class READ,PROPOSE,EFFECT,ACTORCONTRACT actor
+    class HYP,OBS,KO dep
+    class LEGEND legend
+    style DEPLOY fill:#efece4,stroke:#9c948a,stroke-dasharray:8 5

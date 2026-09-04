@@ -1,17 +1,33 @@
 # Rendered GKOS diagrams
 
-These informative graphics explain GKOS architecture, an accountable decision
-and adoption choices. The architecture diagrams preserve the labels, connections
-and layer groupings previously embedded as Mermaid code in the README files.
-Styling follows the blue and multicolor palette of the existing illustrated
-figures.
+These informative graphics explain GKOS architecture, an accountable decision,
+and adoption choices. The r3 canonical-architecture file set is a v0.82
+development candidate under Proposed R22; the existing control-plane and layer
+responsibility diagrams remain narrower detail views. Styling follows the blue
+and multicolor palette of the existing illustrated figures.
 
 | Diagram | Vector graphic | Downloadable image | Editable source |
 | --- | --- | --- | --- |
+| Canonical architecture orientation — r3 v0.82 candidate | [SVG](gkos-canonical-architecture.svg) | [PNG](gkos-canonical-architecture.png) | [Mermaid](gkos-canonical-architecture.mmd) · [labels](gkos-canonical-architecture.labels.txt) |
 | GKOS within an existing stack | [SVG](gkos-control-plane.svg) | [PNG](gkos-control-plane.png) | [Mermaid](gkos-control-plane.mmd) |
 | Seven cumulative responsibilities | [SVG](gkos-layer-responsibilities.svg) | [PNG](gkos-layer-responsibilities.png) | [Mermaid](gkos-layer-responsibilities.mmd) |
 | A refund decision you can audit | [SVG](gkos-accountable-refund.svg) | [PNG](gkos-accountable-refund.png) | [Editable SVG](gkos-accountable-refund.svg) |
 | Choose an adoption starting point | [SVG](gkos-adoption-paths.svg) | [PNG](gkos-adoption-paths.png) | [Editable SVG](gkos-adoption-paths.svg) |
+
+## Canonical architecture orientation — r3 v0.82 development candidate
+
+- **Files:** `gkos-canonical-architecture.svg` (reference rendering), `.png` (2× export), `.mmd` (Mermaid source), and `.labels.txt` (checked parity register).
+- **Standing:** informative v0.82 development candidate under Proposed R22; no normative, conformance, binding, implementation, or runtime authority.
+- **Baseline:** `gkos-standard` `main` `33ac87893ad8581950772d685b6b48673019fe7b`; published v0.81 tag target `8f2a158c6d4b8cabd907d98765766d281aec1247`; inspected `GKOS-Engine` development head `8207958047b3361ae21ac07c5a2abbd26a42a684`.
+- **Reads top to bottom:** Standard → GKX interoperability seam → plural implementation examples/evidence targets → conditional retrieval-to-context candidate → governed action boundary → versioned external bindings and governed actor classes.
+- **Layer boundary:** L4 controls, applicable L5 disposition, L6 context, and L7 authority/effect admission remain distinct.
+- **Receipt boundary:** receipt roles are cross-layer. The diagram does not mandate one receipt ledger or one storage engine.
+- **Authority boundary:** a human or agent actor gains no authority from class, callability, authentication, retrieval rank, or product placement. R18's bounded independent Review Agent is narrower than general autonomous authority and retains mandatory human escalation conditions.
+- **Implementation evidence:** the same-author implementation slot is a candidate with public evidence pending; the public independent slot is an evidence target. Neither is a current interoperability or profile claim.
+- **Founder overlay:** named products are implementation examples only and are not mandatory architecture, endorsed dependencies, or conformance evidence.
+- **Detail views retained:** `gkos-control-plane.*` and `gkos-layer-responsibilities.*` remain narrower detail diagrams unless a specific conflict is recorded.
+- **Legend:** solid arrows = represented control/data path; dashed arrows = governed records, receipts, or informative binding; dashed grey boxes = informative external bindings; dashed blue box = open public implementation slot; shaded region = founder implementation examples.
+- **Change control:** substantive changes advance the revision. Historical revisions are preserved under `archive/graphics/gkos-canonical-architecture/`. The `.mmd`, `.svg`, `.png`, and label register must remain content-equivalent. Authoritative text and permanent requirements control if the figure differs.
 
 The public README also restores the existing
 [knowledge-flow](../../illustrated/figures/fig4-knowledge-flow.png) and
@@ -27,8 +43,29 @@ No renderer is required to display the checked-in graphics.
 
 Rendered with `@mermaid-js/mermaid-cli` version `11.17.0`.
 
-From the repository root, with the pinned Mermaid CLI installed in a separate
-tooling environment, render each `.mmd` using:
+The exact r3 review rendering on GitHub Actions used the commands below with the
+same repository Mermaid configuration. The temporary Puppeteer configuration
+contained only browser-launch arguments
+`["--no-sandbox", "--disable-setuid-sandbox"]`; it changed no diagram source,
+Mermaid configuration, or output content semantics.
+
+```sh
+mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
+  -o graphics/diagrams/gkos-canonical-architecture.svg \
+  -c graphics/diagrams/mermaid-config.json \
+  -p /tmp/r22-puppeteer.json -b white -w 1800
+mmdc -i graphics/diagrams/gkos-canonical-architecture.mmd \
+  -o graphics/diagrams/gkos-canonical-architecture.png \
+  -c graphics/diagrams/mermaid-config.json \
+  -p /tmp/r22-puppeteer.json -b white -w 1800 -s 2
+```
+
+For ordinary local rebuilds, an existing Chrome installation may be selected
+through Mermaid CLI's `--puppeteerConfigFile` option as needed. The renderer is
+documentation tooling outside the conformance runner's dependency graph.
+
+The existing detail diagrams use the same pinned Mermaid version. Their
+portable commands remain:
 
 ```sh
 mmdc -i graphics/diagrams/gkos-control-plane.mmd \
@@ -39,10 +76,8 @@ mmdc -i graphics/diagrams/gkos-control-plane.mmd \
   -c graphics/diagrams/mermaid-config.json -b white -w 1400 -s 2
 ```
 
-Repeat with `gkos-layer-responsibilities` as the input/output stem. An existing
-Chrome installation may be selected through the CLI's `--puppeteerConfigFile`
-option. The renderer is documentation tooling, outside the conformance runner's
-dependency graph.
+Repeat the detail-view commands with `gkos-layer-responsibilities` as the
+input/output stem.
 
 ### SVG explainers
 
@@ -74,9 +109,10 @@ The adoption graphic summarizes the [conformance profiles](../../standard/annexe
 including the independent Viewer/Projection Profile and the limits of the
 Context-Only Extension. These explainers do not replace the exact requirements.
 
-These are post-publication documentation graphics for the live v0.81 edition.
-They do not alter its signed tag, frozen release package or Zenodo archive.
-The graphics are informative and establish no profile qualification or
-implementation certification. The master standard and accepted development
-decisions control. Graphics are licensed under CC BY 4.0; see
-[LICENSE.md](../../LICENSE.md).
+These are post-publication documentation graphics. The live v0.81 edition,
+its signed tag, frozen release package, and Zenodo archive are not altered. The
+r3 canonical architecture is a v0.82 development candidate under Proposed R22;
+its presence creates no profile qualification, binding activation,
+interoperability result, or implementation certification. The master standard,
+permanent requirements, and accepted development decisions control. Graphics
+are licensed under CC BY 4.0; see [LICENSE.md](../../LICENSE.md).

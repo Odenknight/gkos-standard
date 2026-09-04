@@ -1,9 +1,32 @@
 # GKOS development decision register
 
-This register indexes adopted v0.x development decisions. These records
-document Founder/Initial Editor dispositions during testing and refinement;
-they are not consensus ratification, independent certification, accreditation,
-or regulator approval.
+This register indexes accepted v0.x development decisions and separately
+identifies current proposals. These records document Founder/Initial Editor
+dispositions and proposals during testing and refinement; they are not consensus
+ratification, independent certification, accreditation, or regulator approval.
+
+## Proposed decisions
+
+None.
+
+## Accepted decisions
+
+## R22 — Canonical informative architecture orientation
+
+- **Date:** 2026-09-03
+- **Revision preparation:** 2026-09-04
+- **Acceptance date:** 2026-09-04
+- **Reviewed head:** `ee39f75212d78293a92f7724f769bc610cd66aa9`
+- **Status:** Accepted development decision; informative documentation authority
+- **Decision:** Establish one content-verified r3 top-level informative
+  architecture orientation for v0.82 development; preserve existing
+  control-plane and layer-responsibility graphics as narrower detail views;
+  correct stale post-publication roadmap/documentation state; keep retrieval
+  guidance provisional; keep MCP/A2A/ACS informative and non-activating; and
+  preserve plural implementation and authority boundaries without creating a
+  profile, interoperability result, product standing, or runtime authority.
+- **Record:**
+  [R22_Canonical_Informative_Architecture_Development_Decision_Record.md](R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
 
 ## R21 — Ecosystem interoperability program
 
