@@ -8,6 +8,10 @@
 
 **Accepted exact review head:** `57ccca0025fc587bcaac0910af3c4b2205f7746e`
 
+**Accepted-status head:** `60fa426fb29da5ebe19e4bfb407c1c1409b48411`
+
+**Accepted-status checks:** Conformance runner 309 PASS; Markdown lint 429 PASS; Link check 429 PASS; Release checksums 429 PASS; Release validation 429 PASS.
+
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 
 **Input baseline:** accepted R22 `main` at
