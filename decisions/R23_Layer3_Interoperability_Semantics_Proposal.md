@@ -2,7 +2,11 @@
 
 **Date:** 2026-09-04
 
-**Status:** Proposed development decision; no normative authority
+**Acceptance date:** 2026-09-04
+
+**Status:** Accepted development decision; prospective v0.82 development authority
+
+**Accepted exact review head:** `57ccca0025fc587bcaac0910af3c4b2205f7746e`
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 
@@ -10,23 +14,23 @@
 `7d5147fd17f0d1eb42a92b1b4b63b24b812f9b2b`; owner V82-01 dispositions
 `1B, 2A, 3B, 4B, 5B, 6B` recorded 2026-09-04.
 
-**Review correction authority:** owner accepted `R23-REV-001..015` with narrowing and design rulings `D1A`, `D2A`, `D3A` on 2026-09-04. The completed different-model-family review remains advisory evidence and does not itself adopt R23.
+**Review correction authority:** owner accepted `R23-REV-001..015` with narrowing and design rulings `D1A`, `D2A`, `D3A` on 2026-09-04. The completed different-model-family review remains advisory evidence and does not itself constitute independent verification.
 
 **Published baseline:** GKOS-2026-09-03 v0.81 at signed tag target
 `8f2a158c6d4b8cabd907d98765766d281aec1247`.
 
 ## 1. Purpose
 
-R23 proposes portable Layer-3 semantics for relationship direction, inverse
+R23 establishes prospective portable Layer-3 development semantics for relationship direction, inverse
 projection, assertion identity, duplicate preservation, cycle constraints,
-branching, unresolved references, and deterministic resolution. It is intended
-to close the specification ambiguities tracked as `EAR-GRAPH-001..003` only
-after portable fixtures, review, migration analysis, and implementation evidence
-support the text.
+branching, unresolved references, and deterministic resolution. Final closure of
+the specification ambiguities tracked as `EAR-GRAPH-001..003` remains gated by
+the separately required implementation result sets and exact evidence
+coordinates.
 
 R23 does not use GKOS-Engine or any other implementation as the normative oracle.
 
-## 2. Proposed dispositions
+## 2. Accepted dispositions
 
 ### R23-001 — Open relationship vocabulary with a portable semantic core
 
@@ -127,7 +131,7 @@ remain explicit branches.
 
 ## 3. Cross-cutting preservation rules
 
-The proposed semantics are interpreted together with existing GKOS requirements
+The accepted development semantics are interpreted together with existing GKOS requirements
 for stable identity, provenance, temporal validity, epistemic state, preserved
 history, and the distinct meanings of contradiction, correction, supersession,
 rejection, withdrawal, deletion, and governed erasure.
@@ -153,8 +157,8 @@ The property vocabulary in this candidate is limited to:
 
 Those properties belong to the relation type, not the individual assertion.
 The initial provisional `gkos` core includes `contradicts`, `corrects`, and
-`supersedes`. The registry is provisional, non-normative, and non-qualifying
-while R23 remains Proposed.
+`supersedes`. The registry remains provisional, non-normative, and non-qualifying
+pending future Standard text and applicable implementation evidence.
 
 ## 5. Comparator principle
 
@@ -184,10 +188,10 @@ under test. A meaning disagreement is cause-neutral until adjudicated; the
 comparator MUST NOT label an implementation disagreement as a specification
 ambiguity by assumption.
 
-## 6. Evidence gate before acceptance
+## 6. Acceptance evidence
 
-R23 must remain Proposed until all of the following exist at one exact review
-head:
+R23 was accepted prospectively after the following existed at the exact accepted
+review head:
 
 1. versioned candidate semantics, record schema, and relation-type registry;
 2. the V82-01 portable fixture tranche, including positive, negative, boundary,
@@ -210,22 +214,23 @@ but MUST NOT be mislabeled independent interpretation evidence.
 ## 7. Compatibility and migration boundary
 
 R23 is prospective. It does not rewrite v0.81 or historical graph material.
-Existing implementation records that cannot express the proposed semantics MUST
-be migrated through explicit, lineage-preserving transformation or declared as
-unsupported for the relevant future profile. No migration may invent actor,
-evidence, temporal, relation-property, inverse, resolution, identity, or
-authority facts absent from retained source evidence.
+Existing implementation records that cannot express the accepted development
+semantics MUST be migrated through explicit, lineage-preserving transformation
+or declared as unsupported for the relevant future profile. No migration may
+invent actor, evidence, temporal, relation-property, inverse, resolution,
+identity, or authority facts absent from retained source evidence.
 
 ## 8. Authority boundary
 
-This proposal does not amend GKOS, publish v0.82, qualify any profile, declare
-GKOS-Engine or another implementation interoperable, activate a protocol
+Acceptance of R23 does not amend the published GKOS v0.81 Standard, publish
+v0.82, qualify any profile, close `EAR-GRAPH-001..003`, declare GKOS-Engine or
+another implementation interoperable or independent, activate a protocol
 binding, release a product, authorize a governed writer/effect surface, or
 establish certification standing.
 
 ## 9. Supersession
 
-R23 supersedes no accepted decision while Proposed. If accepted prospectively,
-it will close or narrow only the Layer-3 ambiguities and candidate semantics
-explicitly named in its final acceptance record; historical evidence remains
-preserved.
+R23 supersedes no accepted decision. Its prospective acceptance establishes only
+the Layer-3 development semantics explicitly recorded here. Historical evidence
+remains preserved, and final ambiguity closure remains separately gated by the
+required implementation result sets and exact evidence coordinates.
