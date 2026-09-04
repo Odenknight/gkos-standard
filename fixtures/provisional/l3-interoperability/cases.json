@@ -1,25 +1,283 @@
 {
-  "fixture_set": "V82-L3-INTEROP-0.1-proposed",
+  "fixture_set": "V82-L3-INTEROP-0.2-proposed",
   "standing": "provisional-non-normative-non-qualifying",
   "proposed_decision": "R23",
+  "schema_ref": "schemas/provisional/l3/l3-interoperability-0.1-proposed.json",
+  "relation_registry_ref": "schemas/provisional/l3/l3-relation-registry-0.1-proposed.json",
   "cases": [
-    {"id":"L3I-01","family":"canonical-directed-relation","expect":"preserve_direction","notes":"Canonical asserted direction must survive round-trip."},
-    {"id":"L3I-02","family":"declared-inverse-round-trip","expect":"derive_inverse_without_new_assertion","notes":"Inverse projection does not gain independent evidentiary standing."},
-    {"id":"L3I-03","family":"unknown-relation-extension","expect":"preserve_unknown_extension","notes":"Unknown relation remains distinguishable from Standard-defined core semantics."},
-    {"id":"L3I-04","family":"duplicate-evidence-distinct-actors","expect":"preserve_distinct_assertions","notes":"Same SPO tuple with distinct actor/evidence must not collapse."},
-    {"id":"L3I-05","family":"exact-record-replay","expect":"idempotent_by_record_identity","notes":"Exact replay may collapse only by governed record identity."},
-    {"id":"L3I-06","family":"valid-symmetric-relation","expect":"allow_valid_symmetric_semantics","notes":"Symmetric traversal may normalize without inventing evidence."},
-    {"id":"L3I-07","family":"valid-domain-cycle","expect":"allow_cycle","notes":"Cycles are permitted when relation semantics do not forbid them."},
-    {"id":"L3I-08","family":"supersession-cycle","expect":"diagnose_prohibited_cycle","notes":"Prohibited cycle is diagnosed without deleting history."},
-    {"id":"L3I-09","family":"branch-preserving-lineage","expect":"preserve_parallel_successors","notes":"No private tiebreak selects an authoritative head."},
-    {"id":"L3I-10","family":"unresolved-target","expect":"retain_unresolved","notes":"Projection must not silently drop unresolved relation."},
-    {"id":"L3I-11","family":"uid-path-collision","expect":"prefer_unambiguous_identity_or_fail","notes":"Ambiguous locator cannot override governed identity."},
-    {"id":"L3I-12","family":"rename-move-stable-uid","expect":"preserve_target_identity","notes":"Path movement does not create new governed target identity."},
-    {"id":"L3I-13","family":"external-uri-unavailable","expect":"retain_unresolved_external_reference","notes":"Unavailability is explicit; no fabricated resolution."},
-    {"id":"L3I-14","family":"contradictory-assertions","expect":"preserve_both_and_contradiction","notes":"Contradiction does not collapse one assertion into the other."},
-    {"id":"L3I-15","family":"correction-preserves-history","expect":"preserve_original_and_correction","notes":"Correction must not delete original evidence/assertion history."},
-    {"id":"L3I-16","family":"supersession-historical-query","expect":"preserve_historical_visibility","notes":"Superseded record remains queryable as historical evidence."},
-    {"id":"L3I-17","family":"temporal-validity-overlap","expect":"preserve_temporal_distinction","notes":"Overlapping validity does not create automatic authority precedence."},
-    {"id":"L3I-18","family":"projection-rebuild-equivalence","expect":"portable_meaning_equivalent","notes":"Projection rebuild may differ internally but must preserve portable meaning."}
+    {
+      "id": "L3I-01",
+      "family": "canonical-directed-relation",
+      "input_validity": "valid",
+      "input": [{"record_id":"r1","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":{"actor_id":"human:reviewer","actor_class":"human"},"evidence_refs":[{"kind":"gkos_uid","value":"src:1","resolution_state":"resolved"}],"epistemic_state":"reported","provenance":{"source_record_refs":["src:1"]}}],
+      "expected_class": "preserve_direction",
+      "expected_portable_meaning": {"assertions":[{"record_id":"r1","subject":"uid:a","relation":"gkos:corrects","object":"uid:b","kind":"asserted"}]},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-001","GKOS-IDENTITY-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-02",
+      "family": "declared-inverse-round-trip",
+      "input_validity": "valid",
+      "input": [{"record_id":"r2","assertion_kind":"derived_projection","derived_from_record_id":"r1","subject_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"relation":{"namespace":"example","name":"corrected_by"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["r1"]}}],
+      "expected_class": "derive_inverse_without_new_assertion",
+      "expected_portable_meaning": {"projection_of":"r1","independent_evidence":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-PROFILE-007","GKOS-RECEIPT-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-03",
+      "family": "unknown-relation-extension",
+      "input_validity": "valid",
+      "input": [{"record_id":"r3","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"supports_domain_claim"},"object_ref":{"kind":"gkos_uid","value":"uid:c","resolution_state":"resolved"},"actor_ref":{"actor_id":"agent:ext","actor_class":"agent"},"evidence_refs":[],"provenance":{"source_record_refs":["src:3"]}}],
+      "expected_class": "preserve_unknown_extension",
+      "expected_portable_meaning": {"relation":"example.org/rels:supports_domain_claim","core":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-04",
+      "family": "duplicate-evidence-distinct-actors",
+      "input_validity": "valid",
+      "input": [
+        {"record_id":"r4a","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"contradicts"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":{"actor_id":"human:a","actor_class":"human"},"evidence_refs":[{"kind":"gkos_uid","value":"src:a","resolution_state":"resolved"}],"provenance":{"source_record_refs":["src:a"]}},
+        {"record_id":"r4b","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"contradicts"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":{"actor_id":"human:b","actor_class":"human"},"evidence_refs":[{"kind":"gkos_uid","value":"src:b","resolution_state":"resolved"}],"provenance":{"source_record_refs":["src:b"]}}
+      ],
+      "expected_class": "preserve_distinct_assertions",
+      "expected_portable_meaning": {"distinct_record_ids":["r4a","r4b"]},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-001","GKOS-LINEAGE-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-05",
+      "family": "exact-record-replay",
+      "input_validity": "valid",
+      "input": [{"record_id":"r5","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":{"actor_id":"human:a","actor_class":"human"},"evidence_refs":[],"provenance":{"source_record_refs":["src:5"]}}],
+      "replay": "exact-canonical-repeat",
+      "expected_class": "idempotent_by_record_identity_and_content",
+      "expected_portable_meaning": {"record_id":"r5","count":1},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-001","GKOS-CANON-002"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-06",
+      "family": "valid-symmetric-extension-relation",
+      "input_validity": "valid",
+      "input": [{"record_id":"r6","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"peer_of"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":{"actor_id":"human:a","actor_class":"human"},"evidence_refs":[],"provenance":{"source_record_refs":["src:6"]}}],
+      "relation_contract": {"namespace":"example.org/rels","name":"peer_of","directed":false,"inverse_of":null,"symmetric":true,"antisymmetric":false,"acyclic":false,"branching_permitted":true,"target_resolution_required":true},
+      "expected_class": "allow_valid_symmetric_semantics",
+      "expected_portable_meaning": {"unordered_pair":["uid:a","uid:b"]},
+      "mismatch_class": "ALLOWED_VARIATION",
+      "requirement_refs": ["GKOS-LINEAGE-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-07",
+      "family": "valid-domain-cycle",
+      "input_validity": "valid",
+      "input": [
+        {"record_id":"r7a","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"references"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:7"]}},
+        {"record_id":"r7b","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"references"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:7"]}}
+      ],
+      "relation_contract": {"namespace":"example.org/rels","name":"references","directed":true,"inverse_of":null,"symmetric":false,"antisymmetric":false,"acyclic":false,"branching_permitted":true,"target_resolution_required":false},
+      "expected_class": "allow_cycle",
+      "expected_portable_meaning": {"cycle_permitted":true},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-08",
+      "family": "supersession-cycle",
+      "input_validity": "valid",
+      "input": [
+        {"record_id":"r8a","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"supersedes"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:8"]}},
+        {"record_id":"r8b","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"supersedes"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:8"]}}
+      ],
+      "expected_class": "diagnose_prohibited_cycle",
+      "expected_portable_meaning": {"diagnostic":"PROHIBITED_SUPERSESSION_CYCLE","history_preserved":true},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-001","GKOS-LINEAGE-003"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-09",
+      "family": "branch-preserving-lineage",
+      "input_validity": "valid",
+      "input": [
+        {"record_id":"r9a","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"supersedes"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:9"]}},
+        {"record_id":"r9b","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:c","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"supersedes"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:9"]}}
+      ],
+      "expected_class": "preserve_parallel_successors",
+      "expected_portable_meaning": {"heads":["uid:b","uid:c"],"authoritative_head":null},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-003","GKOS-IDENTITY-004"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-10",
+      "family": "unresolved-target",
+      "input_validity": "valid",
+      "input": [{"record_id":"r10","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"contradicts"},"object_ref":{"kind":"basename","value":"report.md","resolution_state":"unresolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:10"]}}],
+      "expected_class": "retain_unresolved",
+      "expected_portable_meaning": {"object_resolution":"unresolved"},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-003"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-11",
+      "family": "uid-path-collision",
+      "input_validity": "valid",
+      "input": [{"record_id":"r11","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"path","value":"notes/report.md","resolution_state":"ambiguous","candidate_target_ids":["uid:b","uid:c"]},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:11"]}}],
+      "expected_class": "fail_closed_ambiguous_locator",
+      "expected_portable_meaning": {"resolution":"ambiguous","selected":null},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-003","GKOS-IDENTITY-004"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-12",
+      "family": "rename-move-stable-uid",
+      "input_validity": "valid",
+      "input": [{"record_id":"r12","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:12"]},"extension":{"old_path":"old/report.md","new_path":"new/report.md"}}],
+      "expected_class": "preserve_target_identity",
+      "expected_portable_meaning": {"target":"uid:b"},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-003"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-13",
+      "family": "external-uri-unavailable",
+      "input_validity": "valid",
+      "input": [{"record_id":"r13","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"references"},"object_ref":{"kind":"uri","value":"https://example.invalid/object","resolution_state":"unresolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:13"]}}],
+      "expected_class": "retain_unresolved_external_reference",
+      "expected_portable_meaning": {"uri_role":"locator","live_retrieval":false,"resolution":"unresolved"},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-CONTEXT-002"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-14",
+      "family": "contradictory-assertions",
+      "input_validity": "valid",
+      "input": [
+        {"record_id":"r14a","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"contradicts"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:a"]}},
+        {"record_id":"r14b","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"contradicts"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:b"]}}
+      ],
+      "expected_class": "preserve_both_and_contradiction",
+      "expected_portable_meaning": {"records":["r14a","r14b"],"collapsed":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-15",
+      "family": "correction-preserves-history",
+      "input_validity": "valid",
+      "input": [{"record_id":"r15","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:new","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:old","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:15"]}}],
+      "expected_class": "preserve_original_and_correction",
+      "expected_portable_meaning": {"original":"uid:old","correction":"uid:new","history_preserved":true},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-REVIEW-004"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-16",
+      "family": "supersession-historical-query",
+      "input_validity": "valid",
+      "input": [{"record_id":"r16","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:new","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"supersedes"},"object_ref":{"kind":"gkos_uid","value":"uid:old","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:16"]}}],
+      "expected_class": "preserve_historical_visibility",
+      "expected_portable_meaning": {"old_queryable":true,"new":"uid:new"},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-LINEAGE-001","GKOS-RETENTION-001"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-17",
+      "family": "temporal-validity-overlap",
+      "input_validity": "valid",
+      "input": [{"record_id":"r17","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"related_to"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"valid_from":"2026-09-04T12:00:00.000000Z","valid_until":"2026-09-05T12:00:00.000000Z","provenance":{"source_record_refs":["src:17"]}}],
+      "expected_class": "preserve_temporal_distinction",
+      "expected_portable_meaning": {"authority_precedence_from_time":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-004"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-18",
+      "family": "projection-rebuild-equivalence",
+      "input_validity": "valid",
+      "input": [{"record_id":"r18","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:18"]}}],
+      "expected_class": "portable_meaning_equivalent",
+      "expected_portable_meaning": {"subject":"uid:a","relation":"gkos:corrects","object":"uid:b"},
+      "mismatch_class": "ALLOWED_VARIATION",
+      "requirement_refs": ["GKOS-PROFILE-007"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-19",
+      "family": "record-id-collision",
+      "input_validity": "valid",
+      "input": [
+        {"record_id":"collision","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:19a"]}},
+        {"record_id":"collision","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:c","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:19b"]}}
+      ],
+      "expected_class": "diagnose_record_identity_collision",
+      "expected_portable_meaning": {"overwrite":false,"fail_closed":true},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-001","GKOS-CANON-002"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-20",
+      "family": "core-namespace-squat",
+      "input_validity": "invalid",
+      "input": [{"record_id":"r20","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"gkos","name":"vendor_relation"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:20"]}}],
+      "expected_class": "schema_reject_reserved_core_name",
+      "expected_portable_meaning": {"accepted":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-CONFORMANCE-003"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-21",
+      "family": "missing-resolution-state",
+      "input_validity": "invalid",
+      "input": [{"record_id":"r21","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a"},"relation":{"namespace":"gkos","name":"corrects"},"object_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["src:21"]}}],
+      "expected_class": "schema_reject_missing_resolution_state",
+      "expected_portable_meaning": {"accepted":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-003"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-22",
+      "family": "migration-legacy-wikilink",
+      "input_validity": "valid",
+      "input": [{"record_id":"r22","assertion_kind":"asserted","subject_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"references"},"object_ref":{"kind":"basename","value":"legacy-note","resolution_state":"unresolved"},"actor_ref":null,"evidence_refs":[],"provenance":{"source_record_refs":["legacy:[[legacy-note]]"]}}],
+      "expected_class": "migrate_as_unresolved_locator",
+      "expected_portable_meaning": {"locator":"legacy-note","resolution":"unresolved","identity_invented":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-IDENTITY-003"],
+      "candidate_standing": "proposed-v0.82"
+    },
+    {
+      "id": "L3I-23",
+      "family": "derived-projection-carries-evidence",
+      "input_validity": "invalid",
+      "input": [{"record_id":"r23","assertion_kind":"derived_projection","derived_from_record_id":"r1","subject_ref":{"kind":"gkos_uid","value":"uid:b","resolution_state":"resolved"},"relation":{"namespace":"example.org/rels","name":"inverse"},"object_ref":{"kind":"gkos_uid","value":"uid:a","resolution_state":"resolved"},"actor_ref":{"actor_id":"human:a","actor_class":"human"},"evidence_refs":[{"kind":"gkos_uid","value":"src:a","resolution_state":"resolved"}],"provenance":{"source_record_refs":["r1"]}}],
+      "expected_class": "schema_reject_projection_evidence_gain",
+      "expected_portable_meaning": {"accepted":false},
+      "mismatch_class": "SEMANTIC_DIVERGENCE",
+      "requirement_refs": ["GKOS-PROFILE-007","GKOS-RECEIPT-001"],
+      "candidate_standing": "proposed-v0.82"
+    }
   ]
 }
