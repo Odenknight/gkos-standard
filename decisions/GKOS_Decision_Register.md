@@ -7,26 +7,31 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
+None currently recorded.
+
+## Accepted decisions
+
 ### R23 — Layer-3 interoperability semantics
 
 - **Date:** 2026-09-04
-- **Status:** Proposed development decision; no normative authority
+- **Acceptance date:** 2026-09-04
+- **Accepted exact review head:** `57ccca0025fc587bcaac0910af3c4b2205f7746e`
+- **Status:** Accepted development decision; prospective v0.82 development authority
 - **Owner preparation dispositions:** `1B, 2A, 3B, 4B, 5B, 6B`
 - **Review standing:** different-model-family advisory review completed at
   `792c6355fe8e78955ad829a3455be1e78c0b0a33` with `HOLD`; owner accepted
-  `R23-REV-001..015` with narrowing plus `D1A`, `D2A`, `D3A`; corrected-head
-  verification remains required before any R23 acceptance.
-- **Decision proposed:** Define portable Layer-3 semantics for open relationship
-  vocabulary with a reserved provisional core; type-level relation contracts;
-  canonical direction with derived projections; evidence-preserving assertion
-  identity; fail-closed ambiguous resolution; relation-specific cycle
-  constraints; and branch-preserving lineage without implementation-private or
-  prohibited ordering tiebreaks. Acceptance remains gated by executable portable
-  fixtures, migration analysis, corrected-head checks, and owner disposition.
+  `R23-REV-001..015` with narrowing plus `D1A`, `D2A`, `D3A`; accepted
+  corrections were verified at exact head `57ccca0025fc587bcaac0910af3c4b2205f7746e`.
+- **Decision:** Establish prospective portable Layer-3 development semantics for
+  open relationship vocabulary with a reserved provisional core; type-level
+  relation contracts; canonical direction with derived projections;
+  evidence-preserving assertion identity; fail-closed ambiguous resolution;
+  relation-specific cycle constraints; and branch-preserving lineage without
+  implementation-private or prohibited ordering tiebreaks. `EAR-GRAPH-001..003`
+  remain DRAFTING pending the separately required implementation result sets and
+  exact evidence coordinates.
 - **Record:**
   [R23_Layer3_Interoperability_Semantics_Proposal.md](R23_Layer3_Interoperability_Semantics_Proposal.md)
-
-## Accepted decisions
 
 ### R22 — Canonical informative architecture orientation
 
