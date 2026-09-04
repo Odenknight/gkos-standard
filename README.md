@@ -150,6 +150,8 @@ NIST and other public standards and governance efforts increasingly focus on age
 
 This is an informative relationship, not an endorsement claim. GKOS is not a NIST publication and does not claim NIST, NCCoE, ISO, OWASP, IMDA, or another body's approval, alignment, conformity, certification, or regulatory standing.
 
+Informative crosswalk: A separately versioned mapping of GKOS to ISO/IEC 42001 and NIST AI RMF 1.0 is provided in [`docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md`](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md). It identifies possible evidentiary relationships only and does not establish alignment, conformance, certification, endorsement, or regulatory compliance.
+
 The R21 external-source and review-disposition registers preserve exact reviewed versions, access dates, limitations, corrections, and superseded claims so changing external frameworks do not silently rewrite the Standard.
 
 ## Adoption paths
