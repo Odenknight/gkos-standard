@@ -95,7 +95,7 @@ jobs:
           svg = svg_path.read_text(encoding='utf-8')
           r22 = r22_path.read_text(encoding='utf-8')
           svg_root = ET.parse(svg_path).getroot()
-          svg_text = ' '.join(''.join(svg_root.itertext()).split())
+          svg_text = ' '.join(' '.join(svg_root.itertext()).split())
           mmd_text = ' '.join(mmd.split())
 
           labels = [line.strip() for line in labels_path.read_text(encoding='utf-8').splitlines()
