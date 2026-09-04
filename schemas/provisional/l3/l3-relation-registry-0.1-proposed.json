@@ -1,0 +1,42 @@
+{
+  "registry_id": "V82-L3-RELATIONS-0.1-proposed",
+  "standing": "provisional-non-normative-non-qualifying",
+  "proposed_decision": "R23",
+  "reserved_core_namespace": "gkos",
+  "namespace_note": "The gkos token is reserved only for this R23 candidate core and does not settle a future stable URI namespace strategy.",
+  "relations": [
+    {
+      "namespace": "gkos",
+      "name": "contradicts",
+      "directed": true,
+      "inverse_of": null,
+      "symmetric": false,
+      "antisymmetric": false,
+      "acyclic": false,
+      "branching_permitted": true,
+      "target_resolution_required": true
+    },
+    {
+      "namespace": "gkos",
+      "name": "corrects",
+      "directed": true,
+      "inverse_of": null,
+      "symmetric": false,
+      "antisymmetric": true,
+      "acyclic": false,
+      "branching_permitted": true,
+      "target_resolution_required": true
+    },
+    {
+      "namespace": "gkos",
+      "name": "supersedes",
+      "directed": true,
+      "inverse_of": null,
+      "symmetric": false,
+      "antisymmetric": true,
+      "acyclic": true,
+      "branching_permitted": true,
+      "target_resolution_required": true
+    }
+  ]
+}
