@@ -26,7 +26,7 @@ and multicolor palette of the existing illustrated figures.
 - **Implementation evidence:** the same-author implementation slot is a candidate with public evidence pending; the public independent slot is an evidence target. Neither is a current interoperability or profile claim.
 - **Founder overlay:** named products are implementation examples only and are not mandatory architecture, endorsed dependencies, or conformance evidence.
 - **Detail views retained:** `gkos-control-plane.*` and `gkos-layer-responsibilities.*` remain narrower detail diagrams unless a specific conflict is recorded.
-- **Legend:** solid arrows = represented control/data path; dashed arrows = governed records, receipts, or implementation attachment; dashed grey boxes = informative external bindings; dashed blue box = open public implementation slot; shaded region = founder implementation examples.
+- **Legend:** solid arrows = represented control/data path; dashed arrows = governed records, receipts, or informative binding; dashed grey boxes = informative external bindings; dashed blue box = open public implementation slot; shaded region = founder implementation examples.
 - **Change control:** substantive changes advance the revision. Historical revisions are preserved under `archive/graphics/gkos-canonical-architecture/`. The `.mmd`, `.svg`, `.png`, and label register must remain content-equivalent. Authoritative text and permanent requirements control if the figure differs.
 
 The public README also restores the existing
