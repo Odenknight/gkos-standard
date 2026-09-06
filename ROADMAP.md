@@ -154,3 +154,7 @@ This roadmap does not authorize:
 ## Governance middleware documentation
 
 The [full stack walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md), separate [ISO, EU and NIST proposals](docs/ecosystem/README.md#governance-middleware-proposals), and [bounded pilot plan](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md) support the next evidence-gathering work. They add no profile qualification or production authority.
+
+## Accepted v0.82 development decisions
+
+R22 supplies accepted informative architecture authority; R23 supplies accepted prospective Layer-3 development semantics. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.

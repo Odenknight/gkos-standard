@@ -10,7 +10,7 @@ For each implementation result set, record:
 - ownership/operator identity;
 - whether the implementation is same-author or independently controlled;
 - dependency closure or lock/SBOM reference;
-- GKOS release and Proposed R23 candidate coordinate evaluated;
+- GKOS release and accepted R23 candidate coordinate evaluated;
 - fixture-set identity and digest;
 - runtime, operating system, and architecture;
 - raw result artifact digest;

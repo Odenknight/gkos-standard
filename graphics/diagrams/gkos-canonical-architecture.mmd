@@ -17,7 +17,7 @@ flowchart TB
 
     subgraph RRET["Provisional v0.82 retrieval-to-context pattern — applies when retrieval is used · non-normative · non-qualifying"]
         direction LR
-        RET["Relevance retrieval<br/>may rank an ineligible object first"] --> CAND["Exact candidate set<br/>preserve returned identifiers and raw rank"] --> ELIG["Governance eligibility evaluation<br/>separate from retrieval · no raw-rank rewrite"] --> SUFF["Eligible-candidate sufficiency<br/>none eligible → expand, abstain or escalate"] --> CTX["L6 context assembly<br/>captured Selection Set · deterministic Context Manifest"]
+        RET["Relevance retrieval<br/>may rank an ineligible object first"] --> CAND["Exact candidate set<br/>preserve returned identifiers and raw rank"] --> ELIG["Governance eligibility evaluation<br/>separate from retrieval · no raw-rank rewrite"] --> SUFF["Eligible-candidate sufficiency<br/>none eligible → expand, abstain or escalate"] --> CTX["L6 context assembly<br/>captured Selection Envelope · deterministic Context Manifest"]
     end
 
     GAB["Governed Action Boundary<br/>L4 deterministic controls · applicable L5 disposition · L6 Context Manifest verification<br/>L7 authority and effect-scope admission · mandatory failures fail closed<br/>applicable outcome bound to Decision, State-Change, Authorized Use or Refusal evidence"]
