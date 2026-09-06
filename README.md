@@ -10,7 +10,9 @@ Drafted by Shaun "Oden" Marshall. Refined and published by AI Assistant.
 
 ![Evidence moves through preservation, structure, lineage, validation, review, context, and authorized use](illustrated/figures/fig4-knowledge-flow.png)
 
-GKOS is designed for environments where people, software, models, and AI agents turn information into decisions or actions. It defines governed contracts between existing systems so that retrieval, technical access, model confidence, workflow state, or automation are not silently mistaken for review, approval, or authority.
+GKOS helps make the path from AI evidence to action inspectable. It defines the records and controls needed to connect what an AI system used, what it proposed, who or what could authorize it, and what happened next.
+
+An implementation of GKOS can serve as governance evidence and control middleware across existing data stores, agent runtimes, policy engines and approval systems. It gives those systems a common contract for context, decisions, authority, refusals and outcomes.
 
 When a person or AI system recommends, approves, or takes an action, GKOS is designed to make six questions answerable:
 
@@ -65,6 +67,22 @@ GKOS keeps several things distinct that are frequently collapsed together:
 - consequential actions, refusals, outcomes, and recovery routes.
 
 It does not declare absolute truth. It makes the path from evidence to action explicit enough to inspect, reproduce, challenge, correct, and test.
+
+## From data to authorized action
+
+<img src="graphics/diagrams/gkos-evidence-to-authorized-action.jpg" width="570" alt="GKOS workflow: preserve evidence, prepare context, check controls, obtain required review, validate action-time authority, attempt within limits, and record the outcome or refusal as new evidence.">
+
+The illustration follows a request through preservation (L1–L3), exact context preparation (L6), required controls (L4), required review (L5), and action-time authority (L7). A failed requirement routes to a pause or refusal. An admitted attempt records its result and recovery route, then becomes new L1 evidence for future evaluation without inherited approval.
+
+Layers are cumulative responsibilities, so checks and review can repeat as the proposal or context changes. Access restrictions apply before disclosure. People and deployed systems perform the work; GKOS defines the contracts.
+
+[Read the full stack walkthrough and integration contract](docs/implementation/GKOS_END_TO_END_WORKFLOW.md) · [Download the illustration](graphics/diagrams/gkos-evidence-to-authorized-action.jpg)
+
+## Proposed ISO, EU and NIST add-ins
+
+Separate informative proposals show how GKOS records could support [ISO AI management processes](docs/ecosystem/GKOS_ISO_AI_MANAGEMENT_ADDIN_0.1_DRAFT.md), [EU AI Act evidence workflows](docs/ecosystem/GKOS_EU_AI_ACT_ADDIN_0.1_DRAFT.md), and [NIST AI risk-management activities](docs/ecosystem/GKOS_NIST_AI_GOVERNANCE_ADDIN_0.1_DRAFT.md). Each identifies sources, implementation gaps and pilot tests. They are candidate contributions for review, with no endorsement or conformity claim.
+
+[Review the bounded middleware pilot proposal](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md).
 
 ## The seven cumulative responsibilities
 

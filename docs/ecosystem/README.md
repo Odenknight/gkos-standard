@@ -9,6 +9,16 @@ GKOS Standard. It exists to make GKOS usable in current and future AI systems
 without turning a fast-changing external protocol or vendor implementation into
 a permanent GKOS dependency.
 
+## Governance middleware proposals
+
+- [Full stack walkthrough and enforcement contract](../implementation/GKOS_END_TO_END_WORKFLOW.md)
+- [ISO AI management add-in](GKOS_ISO_AI_MANAGEMENT_ADDIN_0.1_DRAFT.md)
+- [EU AI Act add-in](GKOS_EU_AI_ACT_ADDIN_0.1_DRAFT.md)
+- [NIST AI governance add-in](GKOS_NIST_AI_GOVERNANCE_ADDIN_0.1_DRAFT.md)
+- [Bounded middleware pilot proposal](GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md)
+
+These 2026-09-06 documentation drafts have not received an external standards-body review or a separate independent implementation assessment. The earlier bounded PR #30 review does not establish review of these new add-ins or completion of the whole SOL review packet.
+
 ## Control records
 
 - [`EXTERNAL_SOURCE_REGISTER.md`](EXTERNAL_SOURCE_REGISTER.md) records current

@@ -196,3 +196,7 @@ A later machine-readable register should record:
 
 This document prepares the engagement program only. No submission is authorized
 or claimed by this draft.
+
+## Separate governance contributions — 2026-09-06
+
+The [ISO](GKOS_ISO_AI_MANAGEMENT_ADDIN_0.1_DRAFT.md), [EU](GKOS_EU_AI_ACT_ADDIN_0.1_DRAFT.md) and [NIST](GKOS_NIST_AI_GOVERNANCE_ADDIN_0.1_DRAFT.md) add-ins offer distinct candidate evidence mappings, industry examples and negative tests. European engagement should select a concrete evidence, oversight or documentation question through an appropriate national or JTC 21 route. Participation availability must be checked before any submission. Publication of these drafts is not a submission to any body.

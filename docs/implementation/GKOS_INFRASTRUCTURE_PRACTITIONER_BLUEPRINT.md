@@ -1,5 +1,7 @@
 # Building on GKOS: a practitioner infrastructure blueprint
 
+Publication references reconciled 2026-09-06. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
+
 - **Document ID:** GKOS-INFRA-BLUEPRINT-001
 - **Revision:** 3
 - **Date:** 2026-09-02
@@ -7,7 +9,7 @@
   branch; no independent validation or conformance claimed
 - **Standard baseline:** `gkos-standard` `main` at
   `1f5768fe6b8f847c17030127a3a00e78edf5cd80`
-- **Published baseline:** GKOS-2026-08-20 v0.80
+- **Published baseline:** GKOS-2026-09-03 v0.81
 - **Machine exchange contract:** GKX 2.0
 - **Canonical profile:** GKX-CBOR-1 where required by the applicable artifact
   contract
@@ -214,7 +216,7 @@ A ticket state, vote, or electronic signature is an input unless it satisfies
 the exact Decision Record contract. The active schema prescribes required and
 optional record fields; a deployment may map its workflow fields to them.
 
-The v0.81 development line permits a bounded authorized independent Review
+The published v0.81 edition permits a bounded authorized independent Review
 Agent only under R18's different-model-family, sealed-evidence, deterministic-
 gate, non-self-review, separate-authority, and mandatory-human-escalation
 controls. That does not establish independent conformance verification.
@@ -330,7 +332,7 @@ without treating protocol lifecycle as governance standing.
 
 ## 10. Conformance and risk
 
-GKOS v0.80 is a developmental public pre-standard. No implementation is
+GKOS v0.81 is a developmental public pre-standard. No implementation is
 certified. A serious claim identifies:
 
 - exact Standard and GKX versions;

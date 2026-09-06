@@ -3,11 +3,11 @@ title: GKOS within an existing stack
 ---
 flowchart TB
     accTitle: GKOS control-plane placement
-    accDescr: Human knowledge, including sources, records and notes, connects to the GKOS control plane. Validation, lineage, context, authority and receipts connect that governance responsibility to agent runtimes, workflow engines, and identity and policy systems.
+    accDescr: Human knowledge, including sources, records and notes, connects to the GKOS control plane. Validation, lineage, context, authority and receipts connect that governance responsibility to agent runtimes and workflow engines. Identity and policy systems supply governance inputs; arrows show responsibility relationships, not a required execution order.
     H["Human knowledge<br/>Sources, records, notes"] --> G["GKOS control plane<br/>Validation · lineage · context<br/>authority · receipts"]
     G --> A["Agent runtimes"]
     G --> W["Workflow engines"]
-    G --> I["Identity and policy"]
+    I["Identity and policy"] -.-> G
 
     classDef source fill:#102044,stroke:#102044,color:#ffffff,stroke-width:2px,rx:14,ry:14;
     classDef governance fill:#235FA5,stroke:#235FA5,color:#ffffff,stroke-width:2px,rx:14,ry:14;

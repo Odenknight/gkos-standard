@@ -22,5 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Reject duplicate, missing and invalid crosswalk rows
+        run: python -m unittest discover -s scripts/xw002 -p "test_*.py"
       - name: Verify prose and JSON are generated from the reviewed row source
         run: python scripts/xw002/gen.py --check

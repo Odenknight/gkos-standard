@@ -24,6 +24,50 @@ ROW_SOURCE = "scripts/xw002/rows.py"
 GENERATOR = "scripts/xw002/gen.py"
 PROSE_PLACEHOLDER = "__PROSE_NORMALIZED_SHA256__"
 JSON_PLACEHOLDER = "__JSON_SHA256__"
+REGISTRY_SNAPSHOT = ROOT / "scripts/xw002/requirements-v081.md"
+REGISTRY_SHA256 = "c0d8b5fa6ea7163d0fed2268d132e44199956d225d537697a32cc77b861f2fc3"
+# NIST AI 100-1 Core Tables 1-4; identifiers only, not outcome text.
+SUBCATEGORY_COUNTS = {
+    "GOVERN": (7, 3, 2, 3, 2, 2),
+    "MAP": (6, 3, 5, 2, 2),
+    "MEASURE": (3, 13, 3, 3),
+    "MANAGE": (4, 4, 2, 3),
+}
+VALID_SUBCATEGORIES = {
+    f"{function} {category}.{sub}"
+    for function, counts in SUBCATEGORY_COUNTS.items()
+    for category, count in enumerate(counts, 1)
+    for sub in range(1, count + 1)
+}
+
+
+def validate_rows(rows) -> None:
+    # Normalize checkout line endings; the reference digest is the published Git blob.
+    registry = REGISTRY_SNAPSHOT.read_text(encoding="utf-8")
+    if sha256_text(registry) != REGISTRY_SHA256:
+        raise ValueError("Pinned v0.81 registry snapshot changed")
+    allocation_table = registry.split("## Accepted unpublished allocations", 1)[0]
+    expected = re.findall(r"^\| `(GKOS-[A-Z]+-\d{3})` \|", allocation_table, re.M)
+    if len(expected) != 62 or len(set(expected)) != 62:
+        raise ValueError("Pinned registry must contain 62 unique allocations")
+    ids = [row[0] for row in rows]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate requirement ID")
+    if set(ids) != set(expected):
+        raise ValueError("Missing or unexpected requirement ID")
+    for rid, code, subcategories, artifact, note in rows:
+        if code not in CLASS:
+            raise ValueError(f"Unknown relationship class: {rid}")
+        if len(subcategories) != len(set(subcategories)):
+            raise ValueError(f"Duplicate subcategory: {rid}")
+        if any(sub not in VALID_SUBCATEGORIES for sub in subcategories):
+            raise ValueError(f"Unknown NIST subcategory: {rid}")
+        if (code in {"NDM", "SUP"}) != (len(subcategories) == 0):
+            raise ValueError(f"Class and subcategory set disagree: {rid}")
+        if (code == "SUP") != (rid == "GKOS-DELEGATION-004"):
+            raise ValueError(f"Superseded standing disagrees with v0.81: {rid}")
+        if not artifact.strip() or not note.strip():
+            raise ValueError(f"Missing artifact or rationale: {rid}")
 
 
 def sha256_text(text: str) -> str:
@@ -115,18 +159,20 @@ def build_json(prose_sha: str) -> str:
 
     payload = {
         "crosswalk_id": "GKOS-XW-002",
-        "mapping_version": "0.2.0-draft",
+        "mapping_version": "0.2.1-draft",
         "disposition": (
             "PROPOSED — owner/reviewer disposition required; "
             "no row adopted by appearance"
         ),
         "status": (
-            "informative R21 machine-readable mirror generated from the reviewed "
+            "informative R21 machine-readable mirror generated from the proposed "
             "row source and bound to docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md; "
             "grants no profile claim, certification, alignment, or outcome assertion"
         ),
         "authority": "docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md",
         "requirement_registry": "requirements/REGISTRY.md",
+        "requirement_registry_snapshot": "scripts/xw002/requirements-v081.md",
+        "requirement_registry_sha256": REGISTRY_SHA256,
         "gkos_release": "GKOS-2026-09-03 v0.81",
         "gkos_tag": "v0.81",
         "gkos_commit": COMMIT,
@@ -162,8 +208,8 @@ def build_json(prose_sha: str) -> str:
         },
         "nist_relationship_classes": {
             "Direct evidence candidate": (
-                "A GKOS-mandated artifact can directly contribute evidence toward "
-                "the RMF outcome; sufficiency is an organizational determination."
+                "A mandated artifact directly records a component of the cited outcome; "
+                "it does not establish the complete outcome or organizational effectiveness."
             ),
             "Contributes": (
                 "Relevant but partial; substantial additional organizational "
@@ -174,11 +220,11 @@ def build_json(prose_sha: str) -> str:
                 "threshold, authority, risk tolerance, or legal basis."
             ),
             "No direct mapping": (
-                "No defensible correspondence; recorded explicitly. "
-                "A positive result, not a defect."
+                "No requirement-level outcome mapping asserted; separately justified "
+                "deployment evidence reuse remains possible."
             ),
             "Superseded": (
-                "Requirement superseded in the current development line; see replacement."
+                "Requirement superseded in the pinned v0.81 baseline; see replacement."
             ),
         },
         "nist_ai_rmf_outcomes_not_substantively_implemented": [
@@ -203,6 +249,7 @@ def build_json(prose_sha: str) -> str:
 
 
 def generate() -> tuple[str, str]:
+    validate_rows(ROWS)
     markdown = reconcile_markdown(MD_PATH.read_text(encoding="utf-8"))
     normalized = normalize_prose_for_hash(markdown)
     prose_sha = sha256_text(normalized)

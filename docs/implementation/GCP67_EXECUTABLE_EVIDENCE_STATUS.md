@@ -1,6 +1,14 @@
 # GCP-6/GCP-7 executable evidence status
 
-**Baseline:** GKOS-2026-08-20 v0.80 at `d04011e`
+## Current publication summary — 2026-09-06
+
+The [v0.81 publication receipt](../releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md) reports 101/101 tests, 28/28 mutation gates, zero dependency-audit findings and separate Windows replication for its exact release candidate. The current registry has 62 permanent requirement allocations. These reported release results were not rerun for this editorial summary. Separate execution is not an organizationally independent second implementation. No profile currently qualifies; full semantic coverage remains incomplete.
+
+## Historical v0.80 snapshot
+
+All sections below preserve the earlier baseline and its then-open deficits. They are not the current v0.81 coverage statement. R17 and R18 are included in the published v0.81 edition.
+
+**Historical baseline:** GKOS-2026-08-20 v0.80 at `d04011e`
 
 ## Implemented
 
