@@ -206,3 +206,204 @@ provisional work does not rewrite the published coordinate. R21 does not make
 any vendor, retrieval algorithm, graph store, model, client, or adapter
 normative, and RRET-01 remains provisional, non-normative, and non-qualifying.
 No profile is currently qualified.
+
+## Governed retrieval and context
+
+Similarity search is a candidate-discovery mechanism, not an authorization
+mechanism. A GKOS-aligned retrieval path should be able to establish:
+
+1. the actor, purpose, scope, and applicable restrictions;
+2. access eligibility before restricted material is exposed;
+3. current identity, version, lineage, and supersession state;
+4. relevant contradictions, warnings, and omissions;
+5. the exact material compiled into the Context Manifest; and
+6. the decision or action record produced from that context.
+
+A Context Manifest is therefore more than a prompt dump or retrieval log. It is
+a purpose-bound record of the context presented for a governed use.
+
+Selection may be non-deterministic, but its complete operative output must be
+captured as a canonical Selection Envelope. Assembly is deterministic: identical
+selection, resolved content, schema, policy, compiler, and canonical-profile
+inputs must produce identical Context Manifest bytes and hash.
+
+## Canonical serialization
+
+Canonical artifact identity binds to deterministic CBOR under the
+`GKX-CBOR-1` profile, not to JSON, YAML, Markdown, a database row, or a
+human-readable rendering. SHA-256 is calculated over the canonical payload,
+which includes artifact type, schema version, canonical profile, and every
+applicable digest-bound policy, compiler, and selection reference.
+
+The canonical profile requires definite lengths, shortest exact encodings,
+bytewise lexicographic ordering of canonical encoded map keys, duplicate-key
+refusal, NFC text, fixed-microsecond UTC timestamps, and preservation of
+schema-declared numeric types. A GCP-6 or GCP-7 claimant must also provide a
+human-auditable rendering and parser/verifier whose round trip reproduces the
+canonical hash. See the
+[canonical serialization annex](standard/annexes/Canonical_Serialization.md).
+
+## Core records and receipts
+
+The exact schema program is still developmental. Conceptually, implementations
+must preserve these distinct roles:
+
+| Record role | Answers |
+| --- | --- |
+| Source Record | What was received or observed? |
+| Structured Knowledge Object | What governed object and version is this? |
+| Assertion/Lineage Record | Who claims what, based on which evidence, and how is it related? |
+| Diagnostic/Control Receipt | Which deterministic check ran and what did it find? |
+| Decision Record | Who authorized which disposition, with what scope and conditions? |
+| Context Manifest | What was presented, to whom, for what purpose, under which restrictions? |
+| Authorized Use Record | What action occurred, under which authority, with what outcome? |
+
+“Receipt” is a general evidence role, not a single universal schema. A receipt
+must identify the governed operation and its relevant inputs, actor or system,
+time, result, and binding identifiers as required by its layer contract.
+
+A projection is a derived representation. It must not silently become a
+parallel authority, erase loss, or imply that rendered or indexed content is
+the canonical governed record.
+
+## Profiles and conformance
+
+GKOS defines cumulative GCP-1 through GCP-7 responsibilities plus an
+independent Viewer/Projection Profile. R16 names these tiers:
+
+| Tier | Required responsibilities |
+| --- | --- |
+| GKOS Core | GCP-1 through GCP-5 |
+| GKOS Advanced | GCP-1 through GCP-7 |
+| GCP-6 Context-Only Extension | Core plus read-only GCP-6; no consequential action authority |
+| Viewer/Projection Profile | Independent projection responsibilities |
+
+A conforming claim must name:
+
+- the exact GKOS release and GKX version;
+- the exact profile or requirement set evaluated;
+- the test suite and evidence used;
+- all limitations, exclusions, and approved exceptions;
+- whether the result is self-attested or independently verified; and
+- the implementation version or immutable commit evaluated.
+
+Green tests alone are not evidence that every normative requirement was
+evaluated. Unevaluated or blocked requirements must not be converted into a
+pass. Review the
+[requirements registry](requirements/REGISTRY.md),
+[profile applicability map](requirements/PROFILE_APPLICABILITY.md),
+[conformance runner](conformance/README.md), and
+[fixture catalog](fixtures/README.md).
+
+The active executable suite remains incomplete and declares no qualifying
+profile. No current implementation satisfies the future v1.0
+second-independent-implementation gate.
+
+## Provisional domain work
+
+The Scientific Research Trace Profile is an informative test bed for binding
+research inputs, execution events, artifacts, reviews, reruns, receipts, and
+re-entry proposals. Its schemas and fixtures are explicitly provisional.
+
+Passing the SRTP draft catalog:
+
+- is not a GCP conformance claim;
+- does not certify scientific validity;
+- does not authorize execution or publication;
+- does not establish regulatory compliance; and
+- does not make SRTP normative.
+
+See the [profile proposal](docs/proposals/SRTP_DRAFT_PROFILE.md),
+[traceability proposal](docs/proposals/SRTP_DRAFT_TRACEABILITY.md), and
+[provisional fixtures](fixtures/provisional/science/README.md).
+
+## Implementation boundaries
+
+### GKOS Engine
+
+GKOS Engine is the reference implementation of deterministic machinery used to
+validate, assess, project, and test GKOS/GKX artifacts. It is downstream of the
+standard. Engine behavior cannot silently amend GKOS, and implementation
+experience enters the standard only through the governed proposal and decision
+process.
+
+Do not hard-code an Engine version from this orientation page. Use the
+[version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
+and immutable evidence cited by the relevant claim.
+
+### Lite distributions
+
+A “Lite” product name denotes a distribution or deployment choice, not a
+relaxed GKOS schema or second conformance authority. Any Lite implementation
+must state which operations it omits and what compatibility it preserves. It
+must not accept invalid material merely by redefining the standard.
+
+### Kosmos-Oden and other viewers
+
+A viewer or navigation surface may project governed records without gaining
+promotion, decision, or activation authority. Kosmos-Oden v0.8.0 is an
+implementation example of this boundary: its public package and lockfile pin
+GKOS Engine 2.1.1 at commit
+`f4dfda16eac746c667cf042f908a918d9acc6713`, and its product update is bound to
+Kosmos-Oden commit `a7113c0ca3be8dd230a9549940e2f387d4cb2a96`.
+
+Those exact bindings make the example reproducible; they do not make product
+tests a GKOS conformance result. Kosmos-Oden's visualization is source-content
+read-only and changes no source content. A Viewer/Projection claim must still
+identify loss, provenance, version, the canonical governed source, and its
+immutable evidence.
+
+## Interoperability
+
+GKOS should reuse established mechanisms where their responsibilities overlap:
+
+| Specification | Candidate relationship |
+| --- | --- |
+| W3C PROV | Export or interchange for entity, activity, agent, and derivation data, with explicit GKOS extensions or loss markers |
+| in-toto | Envelope for signed validation, test, and release attestations |
+| SLSA | Complementary source/build assurance and adoption pattern |
+| Sigstore | Candidate public identity-bound signing and transparency mechanism |
+| C2PA | Source evidence for asset credentials and media provenance |
+| MCP authorization | Transport/tool grants that may carry or enforce authority; not a substitute for governed knowledge state |
+
+See the claim-limited
+[provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md).
+
+## Implementer path
+
+1. Select the exact GKOS release and GKX version.
+2. Select the smallest applicable profile or requirement set.
+3. Map each applicable requirement to an implementation component and evidence
+   source.
+4. Preserve stable identities, versions, lineage, restrictions, and authority
+   boundaries across storage and transport choices.
+5. Run deterministic schemas, fixtures, and conformance tooling.
+6. Record unevaluated requirements, blockers, divergences, and exceptions
+   honestly.
+7. Publish a claim only when its exact scope and immutable evidence are bound.
+
+## Technical map
+
+- [Master standard](standard/00_GKOS_Master_Standard.md)
+- [Layer interface contracts](standard/annexes/Layer_Interface_Contracts.md)
+- [Conformance profiles](standard/annexes/Conformance_Profiles.md)
+- [Canonical serialization](standard/annexes/Canonical_Serialization.md)
+- [Authority and refusal receipt fields](standard/annexes/Authority_and_Refusal_Receipt_Fields.md)
+- [Diagnostic-code registry](standard/annexes/Diagnostic_Code_Registry.md)
+- [Governed state change and re-entry](standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md)
+- [Requirements registry](requirements/REGISTRY.md)
+- [Schemas](schemas/README.md)
+- [Conformance runner](conformance/README.md)
+- [Fixtures](fixtures/README.md)
+- [Implementation documentation](docs/implementation/README.md)
+- [Compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
+- [Development decisions](decisions/GKOS_Decision_Register.md)
+- [Known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md)
+
+## Claim boundary
+
+GKOS-2026-09-03 v0.81 is a developmental public pre-standard. It is published,
+owner-authorized, non-consensus, and non-qualifying. Nothing in this document
+establishes accreditation, certification, legal compliance, regulatory
+authorization, scientific validity, product safety, implementation conformance,
+or the future GKOS v1.0 gates.
