@@ -1,8 +1,8 @@
 # GKOS roadmap
 
 - **Release coordinate:** GKOS-2026-09-03 v0.81
-- **Publication standing:** pending the owner-approved verified signed tag and
-  GitHub Release; v0.80 remains published until that event
+- **Publication standing:** live since 2026-09-03; see the
+  [publication and archive receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
 - **Publication binding:** [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
 - **Current profile standing:** no qualifying profile
 - **Machine exchange contract:** GKX 2.0
@@ -12,7 +12,7 @@
 
 This roadmap separates three horizons:
 
-1. publish an honest, exact-bound, non-qualifying v0.81 release;
+1. preserve the completed, exact-bound, non-qualifying v0.81 publication;
 2. make GKOS useful across the current agent and infrastructure ecosystem
    without turning external protocols into permanent dependencies; and
 3. establish the implementation, evidence, governance, and maintenance basis
@@ -21,11 +21,13 @@ This roadmap separates three horizons:
 The prior pre-GKX roadmap remains preserved under `archive/` as historical
 planning evidence.
 
-## Horizon 1 — GKOS v0.81
+## Horizon 1 — GKOS v0.81 publication completed
+
+Publication completed on 2026-09-03. The gates below describe the historical release process, not pending work. The next work is bounded pilot evidence and profile coverage under Horizons 2 and 3. See the [middleware pilot proposal](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md).
 
 ### Release standing
 
-The intended v0.81 release is developmental, owner-authorized, non-consensus,
+The published v0.81 release is developmental, owner-authorized, non-consensus,
 and non-qualifying. `qualifying_profiles` remains derived from complete passing
 catalogs and is not manually asserted.
 
