@@ -59,6 +59,8 @@ a specific binding or pilot.
 
 ## Maintenance rule
 
+For GKOS-XW-002 v0.2.1-draft, the pinned NIST AI 100-1 Core was reopened on 2026-09-06 during corrective drafting. The 2026-09-03 row above is retained as the original baseline review date. The new [author assessment](../reviews/PR42_XW002_CORRECTIVE_DRAFTING_ASSESSMENT_2026-09-06.md) does not complete the required separate review; the mapping has no adopted standing yet.
+
 Before publishing or claiming a protocol binding, the responsible editor must:
 
 1. re-open the primary source;

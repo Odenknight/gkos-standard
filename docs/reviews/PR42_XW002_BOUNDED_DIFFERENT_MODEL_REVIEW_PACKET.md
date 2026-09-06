@@ -42,6 +42,9 @@ Review the exact PR-head versions of:
 - `docs/ecosystem/EXTERNAL_SOURCE_REGISTER.md`;
 - `scripts/xw002/rows.py`;
 - `scripts/xw002/gen.py`;
+- `scripts/xw002/requirements-v081.md` (exact published registry snapshot);
+- `scripts/xw002/test_gen.py` (adversarial generator checks);
+- `docs/reviews/PR42_XW002_CORRECTIVE_DRAFTING_ASSESSMENT_2026-09-06.md` (author corrections, not reviewer findings);
 - `README.md`;
 - `.lycheeignore`;
 - `.github/workflows/xw002-consistency.yml`;
@@ -175,3 +178,9 @@ The reviewer must not claim that this bounded review establishes:
 ## Completion condition
 
 The review gate is complete only when reviewer identity, exact input SHA/tree, all 62 row dispositions, findings, verdict, source-access limitations, owner dispositions, correction verification, final reviewed head, and deterministic/hosted check results are preserved in the repository or PR record.
+
+## Corrected candidate handoff — 2026-09-06
+
+The candidate is now v0.2.1-draft. Its 62-row author assessment proposes narrower mappings; it is not the different-model-family review required above. Inspect every final candidate row anew and do not inherit the earlier 23/25/3/10/1 distribution or the author's RETAIN/CORRECT recommendations as a verdict. The current counts are generated in the crosswalk and JSON.
+
+In addition to the original questions, challenge any remaining direct-evidence class, test the pinned population and duplicate-ID rejection, and confirm that ISO still emits no mappings. Run `python -m unittest discover -s scripts/xw002 -p "test_*.py"` and `python scripts/xw002/gen.py --check` at the recorded review head. Generator integrity is not evidence that the semantic mapping is correct.
