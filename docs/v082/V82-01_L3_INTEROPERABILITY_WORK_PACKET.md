@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-04
 
-**Status:** Owner-dispositioned preparation packet; normative adoption still pending
+**Status:** Implementation work packet under accepted R23; prospective v0.82 development only; release and evidence closure pending
 
 **Baseline:** `gkos-standard` `main` at
 `7d5147fd17f0d1eb42a92b1b4b63b24b812f9b2b` after accepted R22 / PR #43
@@ -152,7 +152,7 @@ interpretation evidence.
 
 The preparation branch contains or must contain:
 
-1. Proposed R23 decision text;
+1. accepted R23 decision text;
 2. provisional record schema and relation-type registry;
 3. portable executable fixtures;
 4. neutral fail-closed comparator and tests;

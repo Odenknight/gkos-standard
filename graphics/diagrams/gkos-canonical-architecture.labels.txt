@@ -25,7 +25,7 @@ separate from retrieval · no raw-rank rewrite
 Eligible-candidate sufficiency
 none eligible → expand, abstain or escalate
 L6 context assembly
-captured Selection Set · deterministic Context Manifest
+captured Selection Envelope · deterministic Context Manifest
 Governed Action Boundary
 L4 deterministic controls · applicable L5 disposition · L6 Context Manifest verification
 L7 authority and effect-scope admission
