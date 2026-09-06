@@ -116,3 +116,11 @@ its presence creates no profile qualification, binding activation,
 interoperability result, or implementation certification. The master standard,
 permanent requirements, and accepted development decisions control. Graphics
 are licensed under CC BY 4.0; see [LICENSE.md](../../LICENSE.md).
+
+## Evidence-to-action workflow and middleware views
+
+- [User-supplied workflow illustration](gkos-evidence-to-authorized-action.jpg), supplied for inclusion on 2026-09-06 and preserved unchanged. Its [accessible full stack explanation](../../docs/implementation/GKOS_END_TO_END_WORKFLOW.md) describes the colors, branches, all seven responsibilities and return to evidence.
+- [Middleware placement SVG](middleware-placement.svg) / [PNG](middleware-placement.png): request, policy, protected enforcement and evidence-storage boundaries.
+- [Separate review views SVG](evidence-review-views.svg) / [PNG](evidence-review-views.png): evidence reuse across ISO, EU and NIST with distinct criteria and judgments.
+
+The two middleware diagrams are editable SVG sources developed for the owner review packet on 2026-09-05; PNG exports use sharp 0.35.4 at 2400 pixels wide. Original illustrated figures remain available. All diagrams are informative; the current layer contract table controls terminology where an earlier illustration abbreviates it.
