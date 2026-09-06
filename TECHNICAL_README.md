@@ -22,6 +22,10 @@ normative annexes control when an overview differs from them.
 [Inspect schemas](schemas/README.md) ·
 [Run conformance tooling](conformance/README.md)
 
+## Current development decisions
+
+[R22](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) is accepted informative documentation authority. [R23](decisions/R23_Layer3_Interoperability_Semantics_Proposal.md) is accepted prospective v0.82 development authority; its [implementation evidence work](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) remains open. Neither changes the immutable v0.81 release or establishes current profile qualification. The [NIST row-level crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) has its own exact-head review gate, separate from the published high-level NIST add-in.
+
 ## End-to-end integration
 
 Start with the [illustrated data-to-action walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md). It explains all seven responsibilities, the protected enforcement boundary, receipt recovery and separate framework review views. The [publication receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md) records the live edition.
@@ -74,13 +78,13 @@ adopts deterministic canonical serialization, and standardizes context,
 authorized-use, refusal, diagnostic, and effect-scope obligations. See
 [R16](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md).
 
-## Proposed v0.82 canonical architecture orientation
+## Accepted informative architecture for v0.82 development
 
 ![GKOS canonical architecture orientation: Standard to GKX seam, plural implementations, conditional retrieval/governance path, governed action boundary, external bindings, governed actors, cross-layer receipts, and separated founder implementation examples](graphics/diagrams/gkos-canonical-architecture.svg)
 
 **GKOS canonical architecture (informative, r3, v0.82 development candidate).** The Standard defines GKX data contracts; implementations consume them and exchange governed records rather than internals. When retrieval is used, retrieval produces an exact candidate set, governance evaluates eligibility separately, and L6 captures selection and deterministically assembles context. Proposed or consequential operations cross the governed boundary, which preserves L4 controls, applicable L5 disposition, L6 context, and L7 authority/effect admission. External MCP/A2A/ACS bindings are informative and versioned: callable is not authorized. Receipts are cross-layer; the shaded founder overlay is an implementation example, not part of the Standard.
 
-[Download PNG](graphics/diagrams/gkos-canonical-architecture.png) · [Editable Mermaid source](graphics/diagrams/gkos-canonical-architecture.mmd) · [Checked label register](graphics/diagrams/gkos-canonical-architecture.labels.txt) · [Proposed R22 record](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
+[Download PNG](graphics/diagrams/gkos-canonical-architecture.png) · [Editable Mermaid source](graphics/diagrams/gkos-canonical-architecture.mmd) · [Checked label register](graphics/diagrams/gkos-canonical-architecture.labels.txt) · [accepted R22 record](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
 
 R22 is Proposed at this preparation head. The figure itself deliberately carries
 no Proposed/Accepted adoption status so owner disposition can later be recorded
@@ -101,7 +105,7 @@ applicable profile and limitations precisely.
 | **L3 Relationships and Lineage** | Connect claims, sources, actors, and objects | Assertion and lineage records | Typed, sourced, temporal, scoped, attributable relationships |
 | **L4 Validation and Control** | Evaluate deterministic rules and restrictions | Diagnostics and control receipts | Mandatory failures block promotion |
 | **L5 Review and Workflow** | Apply authorized disposition | Decision Record | Append-only decision history; when context was used, manifest identity, version, and hash |
-| **L6 Context Presentation** | Capture selection, then deterministically assemble context | Selection Set and Context Manifest | Digest-bound inputs, restrictions, warnings, contradictions, omissions, recipient, purpose, and expiry |
+| **L6 Context Presentation** | Capture selection, then deterministically assemble context | Selection Envelope and Context Manifest | Digest-bound inputs, restrictions, warnings, contradictions, omissions, recipient, purpose, and expiry |
 | **L7 Authorized Use** | Evaluate actor, action, exact context, grant, and effect scope | Authorized Use Record or Refusal Receipt | Distinct actor roles, authority, manifest hash, outcome, and recovery route |
 
 Detailed requirements live in the
@@ -161,7 +165,7 @@ distributed, or re-entrant, as described in the layer contracts above.
 | **L3 Relationships and Lineage** | [Graphiti](https://github.com/getzep/graphiti), [XTDB](https://xtdb.com/), [Neo4j Community Edition](https://github.com/neo4j/neo4j), [Dolt](https://github.com/dolthub/dolt) | Typed direction, actor, provenance, evidence anchors, scope, epistemic state, validity time, version, contradiction and supersession semantics |
 | **L4 Validation and Control** | [Great Expectations](https://greatexpectations.io/), [Soda Core](https://github.com/sodadata/soda-core), [Ragas](https://github.com/explodinggradients/ragas), [OpenTelemetry](https://opentelemetry.io/), [OPA](https://www.openpolicyagent.org/), [Cedar](https://www.cedarpolicy.com/) | Exact policy/check identity and version, evaluated inputs, deterministic outcome, stable diagnostic code, blocking behavior and durable receipt |
 | **L5 Review and Workflow** | [adr-tools](https://github.com/npryce/adr-tools), workflow engines, review systems, and policy-backed approval services | Authorized append-only disposition, actor-role separation, conditions, expiry, supersession and exact binding to governed inputs; policy evaluation alone is not review |
-| **L6 Context Presentation** | [MCP](https://modelcontextprotocol.io/) schemas and metadata, [SPDX](https://spdx.dev/), [CycloneDX](https://cyclonedx.org/), [CUE](https://cuelang.org/) | Captured Selection Set plus deterministic assembly of evidence, contradictions, warnings, restrictions, omissions, recipient, purpose, versions, expiry and reproduction data |
+| **L6 Context Presentation** | [MCP](https://modelcontextprotocol.io/) schemas and metadata, [SPDX](https://spdx.dev/), [CycloneDX](https://cyclonedx.org/), [CUE](https://cuelang.org/) | Captured Selection Envelope plus deterministic assembly of evidence, contradictions, warnings, restrictions, omissions, recipient, purpose, versions, expiry and reproduction data |
 | **L7 Authorized Use** | [Sigstore/Rekor](https://www.sigstore.dev/), [in-toto](https://in-toto.io/), [SPIFFE/SPIRE](https://spiffe.io/), [OpenFGA](https://openfga.dev/) | Exact actor/action/context/grant/effect-scope binding, authorization-time evaluation, outcome, refusal or recovery route, and durable use evidence |
 
 [Obsidian](https://obsidian.md/) is a widely used Markdown client and relevant

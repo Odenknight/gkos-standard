@@ -1,8 +1,8 @@
 # V82-01 Layer-3 migration notes
 
-**Standing:** informative preparation guidance for Proposed R23; not normative.
+**Standing:** informative preparation guidance for accepted R23; not normative.
 
-These notes identify migration risks created by the Proposed R23 semantics. They
+These notes identify migration risks created by the accepted R23 semantics. They
 do not require a v0.81 implementation to change historical records.
 
 ## Required preservation rules
@@ -44,7 +44,7 @@ of a historical resolution field is never treated as evidence of resolution.
    fail-safe resolution rules as other locators.
 5. **Global cycle rejection.** Implementations that reject all cycles must
    separate structural engine limits from relation-specific semantics; a global
-   engine limitation cannot be relabeled a GKOS requirement. The Proposed R23
+   engine limitation cannot be relabeled a GKOS requirement. The accepted R23
    core `gkos:supersedes` relation is specifically directed and acyclic.
 6. **Single-head projection.** Implementations that expose only one lineage head
    must preserve all valid branches in governed state. Any selecting policy must

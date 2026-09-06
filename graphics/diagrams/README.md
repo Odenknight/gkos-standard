@@ -2,7 +2,7 @@
 
 These informative graphics explain GKOS architecture, an accountable decision,
 and adoption choices. The r3 canonical-architecture file set is a v0.82
-development candidate under Proposed R22; the existing control-plane and layer
+development candidate under accepted R22; the existing control-plane and layer
 responsibility diagrams remain narrower detail views. Styling follows the blue
 and multicolor palette of the existing illustrated figures.
 
@@ -17,7 +17,7 @@ and multicolor palette of the existing illustrated figures.
 ## Canonical architecture orientation — r3 v0.82 development candidate
 
 - **Files:** `gkos-canonical-architecture.svg` (reference rendering), `.png` (2× export), `.mmd` (Mermaid source), and `.labels.txt` (checked parity register).
-- **Standing:** informative v0.82 development candidate under Proposed R22; no normative, conformance, binding, implementation, or runtime authority.
+- **Standing:** informative v0.82 development candidate under accepted R22; no normative, conformance, binding, implementation, or runtime authority.
 - **Baseline:** `gkos-standard` `main` `33ac87893ad8581950772d685b6b48673019fe7b`; published v0.81 tag target `8f2a158c6d4b8cabd907d98765766d281aec1247`; inspected `GKOS-Engine` development head `8207958047b3361ae21ac07c5a2abbd26a42a684`.
 - **Reads top to bottom:** Standard → GKX interoperability seam → plural implementation examples/evidence targets → conditional retrieval-to-context candidate → governed action boundary → versioned external bindings and governed actor classes.
 - **Layer boundary:** L4 controls, applicable L5 disposition, L6 context, and L7 authority/effect admission remain distinct.
@@ -111,7 +111,7 @@ Context-Only Extension. These explainers do not replace the exact requirements.
 
 These are post-publication documentation graphics. The live v0.81 edition,
 its signed tag, frozen release package, and Zenodo archive are not altered. The
-r3 canonical architecture is a v0.82 development candidate under Proposed R22;
+r3 canonical architecture is a v0.82 development candidate under accepted R22;
 its presence creates no profile qualification, binding activation,
 interoperability result, or implementation certification. The master standard,
 permanent requirements, and accepted development decisions control. Graphics
