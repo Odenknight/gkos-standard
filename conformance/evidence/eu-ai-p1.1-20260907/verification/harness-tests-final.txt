@@ -1,0 +1,12 @@
+✔ missing observations and executed mismatches have distinct non-success outcomes (0.6741ms)
+✔ selection cannot pick a winner from zero or multiple current candidates (0.4148ms)
+✔ fixture path containment rejects traversal and absolute references (0.1497ms)
+✔ a missing observer produces retained non-success evidence and a real non-zero process exit (752.3513ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 878.1206
