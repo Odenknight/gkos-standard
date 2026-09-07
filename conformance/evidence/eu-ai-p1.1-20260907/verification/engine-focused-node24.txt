@@ -1,0 +1,46 @@
+✔ P1 observer exposes actual UID resolution and one-sided lineage without changing input (11.5124ms)
+✔ P1 observer rejects unavailable input instead of fabricating an observation (0.3191ms)
+✔ namespaced identifiers remain relationship targets but cannot be authored note UIDs (10.0684ms)
+✔ GKX 2.3 nested parser preserves extensions and scalar types (0.994ms)
+✔ bundled GKX 2.3 policy hash matches its canonical deterministic input (0.3928ms)
+✔ GKX 2.3 projection separates origins and scores documentation, not truth (0.9117ms)
+✔ UID-first typed relationships resolve canonically and proposed edges stay non-effective (5.5759ms)
+✔ native 2.3 wikilink targets yield to flat Obsidian relationship corrections (4.0739ms)
+✔ duplicate UID reuse fails closed and is excluded from the UID index (2.1084ms)
+✔ flat editable 2.3 profile validates and projects governance from flat properties (0.3719ms)
+✔ missing sensitivity fails closed to secret by default and invalid sensitivity fails closed (2.0615ms)
+✔ DIV-002: defaultSensitivity option is honored, validated, and never lowers an authored classification (1.0485ms)
+✔ DIV-001: naive wall-clock created_at emits an GKX-TEMPORAL diagnostic (0.5025ms)
+✔ DIV-003: invalid epistemic state falls back to unknown with defaulted-marking and retained diagnostic (0.8138ms)
+✔ same-indent flat block sequence under a top-level key parses (0.1569ms)
+✔ same-indent block sequence under a NESTED key parses (0.1324ms)
+✔ mixed doc: same-indent list followed by another same-level key (0.1157ms)
+✔ deeper-indent block sequence still parses unchanged (0.0825ms)
+✔ flat 2.3 note with same-indent tags projects tags with zero schema errors (0.2113ms)
+✔ refines/blocks/documents now project forward and generate inverse edges (was silently dropped) (2.0168ms)
+✔ canonical YAML parser bounds inline recursion and rejects prototype keys without pollution (37.8946ms)
+✔ canonical YAML parser rejects malformed flow, quotes, and numeric-looking unsupported scalars (0.3315ms)
+✔ canonical YAML parser preserves spaced empty maps and trailing-comma sequence compatibility (0.3655ms)
+✔ frontmatter delimiters, empty headers, physical line caps, BOM, and CRLF are exact (0.5843ms)
+✔ valid public parser and projection envelopes retain their exact compatibility shape (0.2505ms)
+✔ CRITICAL: one-sided `supersedes` invalidates the predecessor (§3.1) (11.0162ms)
+✔ one-sided `superseded_by` produces the same canonical lineage (2.7795ms)
+✔ both sides declared -> ONE deduplicated canonical edge (1.6527ms)
+✔ duplicate declarations warn but do not duplicate edges (1.0166ms)
+✔ self-supersession is ignored with a warning (0.6741ms)
+✔ cycles are detected and reported, graph survives (§3.5) (1.2876ms)
+✔ unresolved lineage target warns and is skipped (0.5662ms)
+✔ multiple direct successors preserve every branch; earliest valid time sets invalid_at without a winner (1.339ms)
+✔ successor timestamp earlier than predecessor remains a branch but cannot set invalid_at (0.7218ms)
+✔ earliest temporally valid successor excludes an invalid earlier branch (0.9595ms)
+✔ HEAD is derived from lineage participation, never from a frontmatter field (§3.4) (0.8696ms)
+✔ canonical GKX API is available from the engine and package subpaths (0.5411ms)
+✔ downstream adapter is immutable, policy-bound, and product-neutral (7.5112ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 152.7422

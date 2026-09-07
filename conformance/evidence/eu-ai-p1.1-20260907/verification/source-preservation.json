@@ -1,0 +1,20 @@
+[
+  {
+    "protected_changes": [],
+    "original_logic_and_tests_unchanged": true,
+    "tracked_file_count": 341,
+    "base_commit": "90d627d4581a95296132a665184838f9e7dbf2cf",
+    "repository": "gkos-standard",
+    "changed_preexisting_files": [
+      "docs/eu-ai-evidence/PHASES.md"
+    ]
+  },
+  {
+    "protected_changes": [],
+    "original_logic_and_tests_unchanged": true,
+    "tracked_file_count": 498,
+    "base_commit": "e5ea87bf5cf2c9a6300814f26d237249d6fb8693",
+    "repository": "GKOS-Engine",
+    "changed_preexisting_files": []
+  }
+]

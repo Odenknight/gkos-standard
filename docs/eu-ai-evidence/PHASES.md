@@ -2,7 +2,7 @@
 
 **Owner:** mariusTalpos
 
-**Last updated:** 2026-09-06
+**Last updated:** 2026-09-07
 
 **Standing:** Fork-owned planning document; informative and non-normative. This is a phase plan and shared tracker, not the Phase 1 proposal or a compliance claim.
 
@@ -32,11 +32,11 @@ If the tracker later moves to another branch or path, update both README links i
 | ID | Phase | Status | Dependencies | Work and evidence links | Next action |
 | --- | --- | --- | --- | --- | --- |
 | P0 | Forks and shared plan | Complete | None | Forks and branches above; this document | Keep the tracker current as work is authorised |
-| P1 | Documentation traceability and review package | Planned — proposal not started | P0 | No proposal, implementation, or demonstration evidence yet | Await the owner's instruction to draft the Phase 1 proposal |
+| P1 | Documentation traceability and review package | In progress — P1.1 implemented; acceptance not established | P0 | [P1.1 spec](specs/01-valid-dossier-and-revisions.md); [findings](../../conformance/evidence/eu-ai-p1.1-20260907/FINDINGS.md); [verification](../../conformance/evidence/eu-ai-p1.1-20260907/verification.json) | Review the retained P11-08 failure and compatibility limits; P1.2/P1.3 remain unimplemented |
 | P2 | Automatic logging and persistence | Planned — not started | P1 reviewed; application/storage boundary selected | None yet | After P1, assess the integration gap and decide scope |
 | P3 | Usable log instructions | Planned — not started | P2 working and reviewed | None yet | Verify instructions against the actual P2 integration |
 
-Only repository setup and this phase plan were authorised in the setup task. Drafting the Phase 1 proposal is a separate next step. No phase implementation or new conformance profile is authorised by this document.
+The owner authorised implementation of P1.1 only on 2026-09-07, after the proposal and specification work. P1.2/P1.3 remain summary placeholders within P1; they do not replace P2 or P3. Original GKOS logic must remain unchanged. No broader implementation, remediation of original logic, or new conformance profile is authorised.
 
 ## Phase 1 — documentation traceability and review package
 
@@ -109,7 +109,7 @@ Only repository setup and this phase plan were authorised in the setup task. Dra
 | Phase | Proposal / scope decision | Standard commit and evidence | Engine commit and evidence | Review / limitations |
 | --- | --- | --- | --- | --- |
 | P0 | Owner requested both forks, a central phase document, and no Phase 1 proposal yet | Planning document and README pointer; source baseline below | README pointer; source baseline below | Setup only; no new runtime tests executed |
-| P1 | Not started | None | None | No demonstration or compliance-support result yet |
+| P1 | [Proposal](P1_PROPOSAL.md); [P1.1 spec](specs/01-valid-dossier-and-revisions.md); owner authorised P1.1 implementation only, preserving original logic | Base `90d627d4581a95296132a665184838f9e7dbf2cf` plus uncommitted fixture/example/evidence additions; [run coordinates and assertions](../../conformance/evidence/eu-ai-p1.1-20260907/run-02/results.json) bind actual file contents | Base `e5ea87bf5cf2c9a6300814f26d237249d6fb8693` plus uncommitted observer and observer-test additions; bundle/source hashes in the same run coordinates | Two Node 24.19.0 processes reproduced 10/11 acceptance passes; P11-08 remains FAIL. Original logic unchanged. [Verification](../../conformance/evidence/eu-ai-p1.1-20260907/verification.json) records compatibility failures and skips. No independent review or P1 completion. |
 | P2 | Not started | None | None | Production logging/storage boundary not selected |
 | P3 | Not started | None | None | Depends on P2's actual log behavior |
 
@@ -134,3 +134,7 @@ The intended outcome is evidence that named GKOS mechanisms support selected sta
 | 2026-09-06 | Keep one central tracker in the Standard fork, discoverable from both READMEs. |
 | 2026-09-06 | Group documentation targets into P1; follow with actual logging in P2 and log instructions in P3. |
 | 2026-09-06 | Stop after setup and phase planning. Draft the Phase 1 proposal only on a later owner instruction. |
+| 2026-09-06 | Owner requested the P1 proposal using this plan and supporting context, with bounded detail suitable for prompting a subsequent specification. Draft linked above; implementation remains a later scope decision. |
+| 2026-09-07 | Owner chose three numbered P1 specification files without another tracker, then requested drafting P1.1 (valid dossier and revisions). P1.2 and P1.3 remain summary placeholders. |
+| 2026-09-07 | Owner requires testing existing GKOS logic without modifying it. Add separate fixtures/example/test files in the forks; report defects or missing capabilities rather than repairing original logic within P1. The proposal and P1.1 spec record this boundary. |
+| 2026-09-07 | Owner authorised implementation of the first spec only. Implemented the fixed fixture, Engine observer, assertions, and evidence reports. Retained the diagnostic failure without changing fixtures, relaxing expectations, or patching original logic; P1.1 acceptance remains unestablished. |
