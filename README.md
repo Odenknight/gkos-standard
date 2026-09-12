@@ -234,6 +234,12 @@ Current standing: **awaiting a public second implementation**.
 
 A second implementation must be publicly inspectable enough to evaluate its source, interpretation path, dependencies, ownership, operation, fixtures, evidence, limitations, and independence. No private repository or unpublished implementation is counted or implied as public second-implementation evidence.
 
+Different ownership is ideal, not mandatory. The outstanding need is different
+functioning products with demonstrated implementation independence; shared
+ownership alone is not a disqualifier. A renamed package or another interface
+to the same implementation does not by itself supply that evidence. See the
+[September 12 owner clarification](docs/decisions/2026-09-12-implementation-independence.md).
+
 Commercial implementation support, hosted validation, training, and assessment tooling are compatible with the project. The term **GKOS certified** is reserved until a governed certification scheme and competent independent certification process exist.
 
 ## Contributing

@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased development — September 12, 2026
+
+- Clarify that different ownership is desirable, not mandatory, for a public
+  second implementation; different functioning products still need evidence
+  of implementation independence. No candidate is qualified by this decision.
+- Repair the conformance README's historical divergence reference without
+  changing the archived discovery record or signed v0.81 release.
+- Reaffirm that Viewer/Projection claims require a manifest, report, and
+  evidence. See the [owner clarification](docs/decisions/2026-09-12-implementation-independence.md).
+
 ## GKOS-2026-09-03 v0.81
 
 **Standing:** live developmental pre-standard, published September 3, 2026

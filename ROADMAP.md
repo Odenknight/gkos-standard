@@ -108,6 +108,14 @@ interpretation path, dependencies, ownership, operations, fixtures, and evidence
 support that conclusion. No private repository or unpublished product is named
 or implied.
 
+Different ownership is desirable, not required. Shared ownership alone does
+not disqualify a candidate: the outstanding need is different functioning
+products with demonstrated implementation independence. Separate names,
+interfaces, or packages alone do not demonstrate a different implementation.
+Public evidence must still explain the interpretation path, shared dependencies,
+operations, fixtures, and limitations. See the
+[owner clarification of September 12](docs/decisions/2026-09-12-implementation-independence.md).
+
 ### E5 — external standards engagement
 
 Prepare claim-limited contributions for NIST/NCCoE, standards-development
