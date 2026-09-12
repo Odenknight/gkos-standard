@@ -20,8 +20,13 @@ adapter-neutral runner that executes `../fixtures/fixtures.manifest.json`
 against any implementation exposing the small adapter contract documented in
 `runner/run.mjs`, and emits a schema-valid conformance claim. An informative
 gkos-engine adapter is included. The executable suite remains incomplete:
-catalog 0.2.0 covers GCP-1/GCP-3 classes only, and known standard/implementation
-divergences are recorded in `../fixtures/DIVERGENCES.md` rather than hidden.
+catalog 0.2.0 covers GCP-1/GCP-3 classes only. The
+[historical divergence register](../fixtures/archive/DIVERGENCES.md) preserves
+the July 22, 2026 findings against Engine 1.0.5; it does not assert that those
+findings remain present in current implementations. Record newly reproduced
+divergences in current issues and implementation reports with exact versions,
+expected and observed behavior, evidence, and disposition. Link historical
+entries where relevant without rewriting their discovery baseline.
 Graph-level expectations (`graph_expect`) declared in the catalog are evaluated
 by a deterministic Standard-owned evaluator over an adapter-neutral graph
 observation. An adapter that omits that observation still reports the affected
@@ -75,6 +80,12 @@ npm run srtp:draft
 ```
 
 ## Current qualification boundary
+
+The Viewer/Projection Profile is separate from the cumulative GCP tiers, but
+still requires the claim manifest, report, and evidence described above.
+Read-only display behavior alone does not establish a qualified profile.
+The [September 12 clarification](../docs/decisions/2026-09-12-implementation-independence.md)
+explains implementation independence and historical-record preservation.
 
 - Fixture catalog 0.2.0 declares no complete qualifying profile. A run therefore
   emits an empty `profiles_claimed` array even when every executable slice passes.
