@@ -7,7 +7,7 @@ permissions: {contents: read}
 jobs:
   dependency-audit:
     name: blocking dependency audit / Node 24
-    runs-on: ubuntu-latest
+    runs-on: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) && 'ubuntu-latest' || fromJSON('["self-hosted","Linux","X64","r720-ci"]') }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -29,7 +29,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [22, 24]
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ startsWith(matrix.os, 'ubuntu-') && !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) && fromJSON('["self-hosted","Linux","X64","r720-ci"]') || matrix.os }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -47,7 +47,7 @@ jobs:
   node-23-informative:
     name: informative ubuntu-latest / Node 23
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) && 'ubuntu-latest' || fromJSON('["self-hosted","Linux","X64","r720-ci"]') }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
