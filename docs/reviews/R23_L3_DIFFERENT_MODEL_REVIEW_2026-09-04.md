@@ -24,7 +24,8 @@
 
 The reviewer reports reviewing these files at the exact head above:
 
-- `decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md`
+- `decisions/R23_Layer3_Interoperability_Semantics_Proposal.md`  
+  (subsequently renamed to `decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md`; content unchanged)
 - `docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md`
 - `schemas/provisional/l3/l3-interoperability-0.1-proposed.json`
 - `fixtures/provisional/l3-interoperability/cases.json`
