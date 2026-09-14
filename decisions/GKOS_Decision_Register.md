@@ -31,7 +31,7 @@ None currently recorded.
   remain DRAFTING pending the separately required implementation result sets and
   exact evidence coordinates.
 - **Record:**
-  [R23_Layer3_Interoperability_Semantics_Proposal.md](R23_Layer3_Interoperability_Semantics_Proposal.md)
+  [R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md](R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md)
 
 ### R22 — Canonical informative architecture orientation
 
