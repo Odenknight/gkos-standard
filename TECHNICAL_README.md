@@ -86,11 +86,11 @@ authorized-use, refusal, diagnostic, and effect-scope obligations. See
 
 [Download PNG](graphics/diagrams/gkos-canonical-architecture.png) · [Editable Mermaid source](graphics/diagrams/gkos-canonical-architecture.mmd) · [Checked label register](graphics/diagrams/gkos-canonical-architecture.labels.txt) · [accepted R22 record](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
 
-R22 is Proposed at this preparation head. The figure itself deliberately carries
-no Proposed/Accepted adoption status so owner disposition can later be recorded
-without changing the reviewed figure digests. Until R22 is accepted, the master
-standard, permanent requirements, accepted decisions, and existing technical
-orientation remain controlling.
+R22 is accepted informative documentation authority. The figure deliberately
+carries no adoption-status label; its reviewed digests remain unchanged.
+The master standard, permanent requirements, and accepted decisions remain
+controlling. R23 supplies prospective Layer-3 development authority; neither
+decision modifies the immutable v0.81 release or establishes qualification.
 
 ## Layer contracts
 

@@ -8,8 +8,9 @@
 - **Current profile standing:** no qualifying profile
 - **Machine exchange contract:** GKX 2.0
 - **Current governance:** owner-authorized v0.x development; not consensus
-- **Accepted development decisions:** R17–R21
-- **Proposed documentation decision:** R22 canonical informative architecture
+- **Accepted development decisions:** R17–R23
+- **Accepted documentation decision:** R22 canonical informative architecture
+- **Accepted prospective semantics:** R23 Layer-3 interoperability for v0.82 development
 - **Current development focus:** v0.82 interoperability, ambiguity resolution,
   retrieval/governance evidence, portable evidence packaging, and public
   implementation work under R21
