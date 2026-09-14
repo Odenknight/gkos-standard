@@ -52,4 +52,4 @@ normative Standard.
 
 ## R23 standing reconciliation — 2026-09-06
 
-[R23](../../decisions/R23_Layer3_Interoperability_Semantics_Proposal.md) was accepted on 2026-09-04 for prospective v0.82 development. EAR-GRAPH-001 through EAR-GRAPH-003 remain DRAFTING because acceptance of semantics does not supply the required implementation results or close interoperability evidence. This update corrects status wording and adds no new development authority.
+[R23](../../decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md) was accepted on 2026-09-04 for prospective v0.82 development. EAR-GRAPH-001 through EAR-GRAPH-003 remain DRAFTING because acceptance of semantics does not supply the required implementation results or close interoperability evidence. This update corrects status wording and adds no new development authority.
