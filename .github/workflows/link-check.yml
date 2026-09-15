@@ -18,4 +18,10 @@ jobs:
             --exclude-path docs/implementation/archive
             --exclude-path fixtures/archive
             --exclude-path schemas/archive
+            # These verified primary-source pages reject automated HEAD/GET
+            # requests with 403. Keep the links in docs; exclude only these URLs.
+            --exclude '^https://www\\.hhs\\.gov/hipaa/for-professionals/faq/2003/are-we-required-to-certify-our-organizations-compliance-with-the-standards/index\\.html            "**/*.md"
+
+            --exclude '^https://ansi\\.org/american-national-standards/ans-introduction/essential-requirements/?            "**/*.md"
+
             "**/*.md"
