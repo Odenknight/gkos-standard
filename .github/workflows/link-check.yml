@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: lycheeverse/lychee-action@v2
         with:
-          # Archived documents preserve their release-era relative links and are
-          # intentionally excluded from the live-document integrity gate.
+          # Archived documents preserve their release-era relative links.
+          # The two exact primary-source URLs reject automated checks with 403.
           args: >-
             --no-progress
             --verbose
@@ -18,4 +18,6 @@ jobs:
             --exclude-path docs/implementation/archive
             --exclude-path fixtures/archive
             --exclude-path schemas/archive
+            --exclude "https://www\\.hhs\\.gov/hipaa/for-professionals/faq/2003/are-we-required-to-certify-our-organizations-compliance-with-the-standards/index\\.html"
+            --exclude "https://ansi\\.org/american-national-standards/ans-introduction/essential-requirements"
             "**/*.md"
