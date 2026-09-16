@@ -1,0 +1,436 @@
+{
+  "format": "dirty-snapshot-v2",
+  "qualification": false,
+  "remote": "https://github.com/Odenknight/gkos-standard.git",
+  "visibility": {
+    "isPrivate": false,
+    "nameWithOwner": "Odenknight/gkos-standard",
+    "url": "https://github.com/Odenknight/gkos-standard"
+  },
+  "source_manifest_sha256": "670a3427862d03dbba039237c49431921b468edeaadfca0fd9a6e0330db8f7c6",
+  "screening_sha256": "52b5b06b31dc361a4f573661669a9ca21b9ae1ba73541dc7afc5935a57e9a975",
+  "checkouts": [
+    {
+      "checkout_id": "1ba6096adfb0920f594e8260d390ae3aa7640e9c7294cc06a5d671f7f3ed1ece",
+      "path": "C:\\Users\\FAC\\Documents\\_AI_builds_GPT\\GKOS-2026-09-01\\v0.81\\repository",
+      "parent_head": "765c081523ec24fae0b462b1c221ea2033c52970",
+      "branch": null,
+      "original_remote": "https://github.com/Odenknight/gkos-standard.git",
+      "files": [
+        {
+          "path": "ROADMAP.md",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "42a6ed8c6a1204caf47e6af9eb1026b840b2dd54",
+              "stage": 0,
+              "sha256": "271559c913bf4055affc684524ed2bcabcff10321d6ddaacf8786f99aeb4da97",
+              "bytes": 7558
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "acc1baa105b203b8d6a5ecec6c650b8aa03ae949b8917daae109f54b0929beff",
+            "bytes": 8248
+          }
+        },
+        {
+          "path": "docs/reviews/2026-09-12_E2_ECOSYSTEM_ASSESSMENT.md",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "33336c37a3ea14c525906002463e0a0491b4072635463d7e1da01dc7dfdc98e2",
+            "bytes": 7696
+          }
+        }
+      ],
+      "prior_exclusions": []
+    },
+    {
+      "checkout_id": "04179109abbdf7a2b932fbae19767cacb8a7be179a4ba549687b21225eafdfab",
+      "path": "C:\\Users\\FAC\\Documents\\_AI_builds_GPT\\GKOS-Engine-check\\orchestration\\2026-08-31\\standard-audit\\gkos-standard",
+      "parent_head": "71b899473473f47172b181973027f3eb7da25104",
+      "branch": null,
+      "original_remote": "https://github.com/Odenknight/gkos-standard.git",
+      "files": [
+        {
+          "path": "conformance/runner/gcp6-replay-evidence/context-manifest.cbor",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "03d9507b12bb07d3d0224359881c0f6b6f7c2eb79346e31ca25925365dc2667b",
+            "bytes": 1338
+          }
+        },
+        {
+          "path": "conformance/runner/gcp6-replay-evidence/context-manifest.rendering.json",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "a58edf81685a11f66a9ba335064f742a5b73013cf824a63155652e10db3fed97",
+            "bytes": 4107
+          }
+        },
+        {
+          "path": "conformance/runner/gcp6-replay-evidence/result.json",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "afb01b5e38cb279879d186cdf36c321a704d580735b07cde045ae1bd277b4d58",
+            "bytes": 707
+          }
+        },
+        {
+          "path": "conformance/runner/gcp6-replay-evidence/selection-envelope.cbor",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "a1ee26b8b6077655154a3fdf73bbd93122033a22b09bc6a47b25bbb3564200eb",
+            "bytes": 1568
+          }
+        }
+      ],
+      "prior_exclusions": []
+    },
+    {
+      "checkout_id": "439d3b16125c5bb6359f570e471e0ed6eb1d5a8477114d1b37a064780e320a13",
+      "path": "C:\\Users\\FAC\\Documents\\_AI_builds_GPT\\GKOS-Engine-check\\orchestration\\upgrades\\standard-r18",
+      "parent_head": "aa9a05315a9a767bd672aa2bb5179c963d9d66ca",
+      "branch": null,
+      "original_remote": "https://github.com/Odenknight/gkos-standard.git",
+      "files": [
+        {
+          "path": "conformance/runner/authority-window.mjs",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "1739cd87ec720310d39a6b7db35be8fd0195c8c5",
+              "stage": 0,
+              "sha256": "50014f2bc990421cea8543785a1e58cbd19a6862ae37d11aa98d3caf97d30617",
+              "bytes": 2094
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "80165b5c917110fc55afced690972d88d5ed579b6695b026ec379fccf3af5b64",
+            "bytes": 1629
+          }
+        },
+        {
+          "path": "conformance/runner/canonical-time.mjs",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "f3cb5fbe95ef7b2e05fbef344f459fe8a68245fe987ce5658565f5c455d5bc3f",
+            "bytes": 678
+          }
+        },
+        {
+          "path": "conformance/runner/canonical.mjs",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "517dee6df718e83921ef46a188a83520672282fd",
+              "stage": 0,
+              "sha256": "b78c9279cbfa8f1da3d201af33d69512945b823459e3d43b3859cd0282016fa1",
+              "bytes": 6640
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "2c875d7636a82e2e7cc397dd8052a55d6567f3dae626902aaffc8851922bdfb7",
+            "bytes": 7130
+          }
+        },
+        {
+          "path": "conformance/runner/gate-evaluator.mjs",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "30a783f642c017c70852206be8d2ef9d05c09e4e",
+              "stage": 0,
+              "sha256": "eb8825e96c8de3d396424b0d8d70fbe64e64cf0637d281a18dd6778eb92316c2",
+              "bytes": 4302
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "f122655c966714ae01264dabe519f828273ae20d4f1bf46821e62f1d2d5ec8f7",
+            "bytes": 8228
+          }
+        },
+        {
+          "path": "conformance/runner/registry-lint.mjs",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "e9075174aa26851173e4109cd7156ad874b962f6",
+              "stage": 0,
+              "sha256": "73f776a3732784fa82bc5c1634b1d5c7f9d551add97ca537eee0752182efcc8e",
+              "bytes": 5014
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "c8529a8eec46540ebf98b45e6eee826039135c30785d407a17bf6a30c0508f72",
+            "bytes": 5697
+          }
+        },
+        {
+          "path": "conformance/runner/test/canonical-replay.test.mjs",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "d993e1d7ff0b4184eaa57bcaa50ea238ad92c4fc",
+              "stage": 0,
+              "sha256": "403b276d9043b1001e6967bfd804e0456e7463010aaef48ad8618589301669f8",
+              "bytes": 1380
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "b92a01e7642bb96ee3e323104e8074249048708fd07f78dab5f1084ece82f304",
+            "bytes": 1563
+          }
+        },
+        {
+          "path": "conformance/runner/test/fail-closed-inputs.test.mjs",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "cce8f3ed64dd78dced9278b9115eac39feb33a839e9f8d8288e273acd99b3c9e",
+            "bytes": 5053
+          }
+        },
+        {
+          "path": "conformance/runner/test/track-a-evidence.test.mjs",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "1cc24e31a19cc919fe8c9892005c5ca32536af6036183935c3947d00b0b2226e",
+            "bytes": 1327
+          }
+        },
+        {
+          "path": "conformance/runner/track-a-evidence.mjs",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "8c0402c18c4fa57c824dd931e4fa57027611031681f6462c9c9bf7a169a4d516",
+            "bytes": 1631
+          }
+        }
+      ],
+      "prior_exclusions": []
+    },
+    {
+      "checkout_id": "ff06d3bf25bd9b525b602170b776c45ba02540435be5661c7b40e68d122c53e8",
+      "path": "C:\\Users\\FAC\\Documents\\_AI_builds_GPT\\Governance\\gkos-standard-R13",
+      "parent_head": "6a7ad71fc027894cd4e2bbb71c3bbadda06cd12f",
+      "branch": "docs/readme-writing-audit",
+      "original_remote": "https://github.com/Odenknight/gkos-standard.git",
+      "files": [
+        {
+          "path": "README.md",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "65033e61b3728d450e8979497e7d13159e8b3d14",
+              "stage": 0,
+              "sha256": "a0d616684982af3765ecbc273479a0a1b4cb0cbc6d2c44bab5f3207ba5c76521",
+              "bytes": 14946
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "46c5939895c01f9819f62d7dd3c7483bda3f2594e2ac2408a546ee101df44bb8",
+            "bytes": 15545
+          }
+        },
+        {
+          "path": "TECHNICAL_README.md",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "dbcce091094917d3e431e5836341ffa633525cce",
+              "stage": 0,
+              "sha256": "6688c8ff1dab5234bca8046097bc8093222a99ee5f2201a530fbc32a03548526",
+              "bytes": 16372
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "4974928c8fd609dd11d9ac037f6ee9bbe802e9cb5f533b1eef07a17e318c76bc",
+            "bytes": 16821
+          }
+        },
+        {
+          "path": "standard/00_GKOS_Master_Standard.md",
+          "staged_status": null,
+          "worktree_status": "M",
+          "untracked": false,
+          "screening_flags": [],
+          "index": [
+            {
+              "mode": "100644",
+              "oid": "eb790b66354b83109c30fe30cf59a541e6560a9c",
+              "stage": 0,
+              "sha256": "9b590d6eb3ffc9aae9ac6941414846e1166aef8a9654f83815a4ba1363c04059",
+              "bytes": 2476
+            }
+          ],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "f600c049652d8ea0b4be8d8c3afadb4e9032d146dae5987ea881bcfece86b6c8",
+            "bytes": 2831
+          }
+        }
+      ],
+      "prior_exclusions": []
+    },
+    {
+      "checkout_id": "1488774fe01e186535167bf874d91b284e1a67a4ff9d14b21dad983cf295178b",
+      "path": "C:\\Users\\FAC\\Documents\\_AI_builds_GPT\\gkos-standard-work",
+      "parent_head": "3ae951f7743b06c977dbe06521c608220d396b65",
+      "branch": "fix/release-checksum-manifest",
+      "original_remote": "https://github.com/Odenknight/gkos-standard.git",
+      "files": [
+        {
+          "path": "docs/SUBA-PRODUCT-LINE-BRANDING-AND-FUNCTIONALITY-HANDOFF.md",
+          "staged_status": null,
+          "worktree_status": null,
+          "untracked": true,
+          "screening_flags": [
+            "DEVELOPMENT_EVIDENCE_SCOPE_REVIEW"
+          ],
+          "index": [],
+          "staged_deleted": false,
+          "working_deleted": false,
+          "working": {
+            "state": "PRESENT",
+            "sha256": "4f9e31fdf5d24d561371ab72a3152507413a7daac95f1178f371e35dd722da8a",
+            "bytes": 1977
+          }
+        }
+      ],
+      "prior_exclusions": []
+    }
+  ],
+  "privacy_routing_authority": "Root task instruction: preserve private evidence and all Kosmos coordination in private GKOS-Engine-Rust; no public export of unproven flagged bytes."
+}
