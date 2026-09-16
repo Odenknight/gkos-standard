@@ -11,6 +11,8 @@ a permanent GKOS dependency.
 
 ## Governance middleware proposals
 
+The [requirement-level NIST crosswalk candidate](../GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) is separate from the high-level proposals below. It remains subject to [PR #42's bounded review gate](../reviews/PR42_XW002_BOUNDED_DIFFERENT_MODEL_REVIEW_PACKET.md); the ISO Annex A portion is verification-held. The [corrective author assessment](../reviews/PR42_XW002_CORRECTIVE_DRAFTING_ASSESSMENT_2026-09-06.md) is preparation for that review, not its completion.
+
 - [Full stack walkthrough and enforcement contract](../implementation/GKOS_END_TO_END_WORKFLOW.md)
 - [ISO AI management add-in](GKOS_ISO_AI_MANAGEMENT_ADDIN_0.1_DRAFT.md)
 - [EU AI Act add-in](GKOS_EU_AI_ACT_ADDIN_0.1_DRAFT.md)
