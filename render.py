@@ -1,6 +1,6 @@
 """Static pages with HTMX navigation; every reading level also works offline."""
 from html import escape as e
-import json, re, math
+import json, re
 from hybrid import NOTES
 from agenda import GROUPS, TOPICS, GROUP_INTRO
 GUIDE='resources/resource-guide.pdf'
@@ -15,7 +15,7 @@ def filename(slug,depth):
 def navlink(slug,depth,label,classes='',current=False,anchor='reading'):
     f=filename(slug,depth)
     active=' aria-current="page"' if current else ''
-    return f'<a class="{classes}" href="{f}#{anchor}" hx-get="{f}" hx-target="#workspace" hx-select="#workspace" hx-swap="outerHTML settle:0ms" hx-sync="body:replace" data-anchor="{anchor}"{active}>{label}</a>'
+    return f'<a class="{classes}" href="{f}" hx-get="{f}" hx-target="#workspace" hx-select="#workspace" hx-swap="outerHTML settle:0ms" hx-sync="body:replace" data-anchor="{anchor}"{active}>{label}</a>'
 
 def clean(s):
     # The shared agenda frame replaces repeated proposal/question callouts.
@@ -26,7 +26,7 @@ def render(content,out,labels,path):
     memberships={s:g for g,(_,_,slugs) in GROUPS.items() for s in slugs}
     allslugs=['message',*GROUPS,*[c['slug'] for c in content if c['slug']!='message']]
     def priorities(slug,depth):
-        selected=memberships.get(slug,slug)
+        selected=slug if slug in ('evidence','engage') else memberships.get(slug,slug)
         modules=[('message','Start'),('access','Access'),('capacity','Capacity'),('learning','Learning'),('map','Convening map'),('evidence','Evidence'),('engage','Engage')]
         links=''.join(navlink(g,depth,f'<span class="module-number">{i:02}</span><span>{name}</span>','rail-link '+('priority '+g if g in ('access','capacity','learning') else ''),g==selected,'topics') for i,(g,name) in enumerate(modules))
         return '<aside class="module-rail"><p class="eyebrow">Discussion notebook</p><nav aria-label="Notebook modules">'+links+'</nav><p class="rail-note">Choose a topic.<br>Set your reading depth.<br>Bring an example to the table.</p></aside>'
@@ -36,14 +36,11 @@ def render(content,out,labels,path):
             name='Three priorities';caption='Three changes in five years';slugs=['access','capacity','learning']
         else:
             name,caption,slugs=GROUPS[group]
-        nodes=[]
+        tiles=[]
         for i,t in enumerate(slugs):
             label=TOPICS[t][0] if t in TOPICS else GROUPS[t][0] if t in GROUPS else by[t]['title']
-            angle=2*math.pi*i/len(slugs)-math.pi/2
-            x=50+37*math.cos(angle);y=50+37*math.sin(angle)
-            link=navlink(t,depth,f'<span>{e(label)}</span>','topic node',t==slug)
-            nodes.append(link.replace('class="topic node"',f'class="topic node" style="--x:{x:.2f}%;--y:{y:.2f}%"'))
-        return f'<nav id="topics" class="topics orbit" aria-label="{name} topics"><div class="orbit-stage"><div class="orbit-center"><strong>{name}</strong><small>{caption}</small></div>{"".join(nodes)}</div><p class="orbit-hint">Choose a topic to update the reading panel.</p></nav>'
+            tiles.append(navlink(t,depth,f'<span class="tile-number">{i+1:02}</span><strong>{e(label)}</strong><span class="tile-arrow" aria-hidden="true">→</span>','topic tile',t==slug))
+        return f'<nav id="topics" class="topics topic-bar" aria-label="{name} topics"><div class="topic-bar-heading"><strong>{name}</strong><span>{caption}</span></div><div class="topic-tiles">{"".join(tiles)}</div></nav>'
     def levelnav(slug,depth):
         return '<nav class="depth" aria-label="Reading depth">'+''.join(navlink(slug,d,labels[d],'depth-link',d==depth) for d in DEPTHS)+'</nav>'
     def overview(slug,depth):
@@ -97,6 +94,9 @@ def render(content,out,labels,path):
             body='<p class="spoken">'+e(note)+'</p>'+boundary
         group=memberships.get(slug,slug)
         kicker=GROUPS[group][0] if group in GROUPS else 'The discussion' if slug=='message' else 'Supporting material'
+        if slug in TOPICS:
+            related=[t for t in GROUPS[memberships[slug]][2] if t!=slug][:2]
+            body+='<nav class="related-topics" aria-label="Related topics"><strong>Continue exploring</strong>'+''.join(navlink(t,depth,e(TOPICS[t][0] if t in TOPICS else by[t]['title'])) for t in related)+'</nav>'
         return f'<article id="reading" tabindex="-1" aria-labelledby="topic-title"><header class="article-head"><p class="eyebrow">{kicker}</p><h1 id="topic-title">{e(title)}</h1>{levelnav(slug,depth)}</header><div class="prose">{body}</div></article>',title
     def document(workspace,title,handout=False):
         return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>{e(title)} · Innovation Convening</title><meta name="description" content="Shaun Oden Marshall’s discussion notebook: access, capacity, and learning."><link rel="stylesheet" href="assets/style.css"><script src="assets/htmx.min.js" defer></script><script src="assets/app.js" defer></script></head><body{' class="handout"' if handout else ''}><a class="skip" href="#reading">Skip to reading</a><div class="shell"><header class="masthead"><a class="brand" href="index.html">Oden <span>/</span> Innovation notebook</a><div class="toolbar"><button id="theme-toggle" aria-pressed="false" type="button">Dark theme</button><button id="present-toggle" aria-pressed="false" type="button">Focus view</button><a href="handout.html">Full handout</a></div></header><div class="intro"><p class="eyebrow">National Innovation Convening · September 23–24, 2026</p><p>Shaun “Oden” Marshall <span>Independent research · Open-source software · Community partnerships</span></p></div><p id="load-status" role="status" aria-live="polite"></p>{workspace}<footer><p>Participant proposals for the Widener-led, NSF-funded convening. Project examples include documented results, work in development, and proposed pilots.</p><nav aria-label="Supporting material"><a href="evidence.html">Repository evidence</a><a href="engage.html">Pilot proposals</a><a href="{AGENDA}">Agenda</a><a href="{GUIDE}">Resource Guide</a><a href="{SBIR}">SBIR handout</a></nav></footer></div></body></html>'''

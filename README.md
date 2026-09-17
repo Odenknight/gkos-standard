@@ -4,7 +4,7 @@ Prepared for Shaun “Oden” Marshall. Canonical source: this directory.
 
 ## Reading experience
 
-Access, Capacity, and Learning are the three top-level choices. Each opens a circular topic menu and one main reading panel. The 13 original talking points remain, with an opening, repository evidence, and pilot proposals. Every topic has Quick read, More context, Technical detail, and Speaker notes views. Fable’s circular orbit sits beside the main reading panel, with an STO-inspired numbered module rail; compact topic pills replace the orbit at smaller widths. Depth carries across topic selections.
+Access, Capacity, and Learning are the three top-level choices. Each opens a circular topic menu and one main reading panel. The 13 original talking points remain, with an opening, repository evidence, and pilot proposals. Every topic has Quick read, More context, Technical detail, and Speaker notes views. An STO-inspired numbered module rail selects a section; rectangular topic tiles sit above the main reading panel, with related links inside it. Navigation uses stable top-of-page positioning without fragment scrolling. Depth carries across topic selections.
 
 All 100 views are complete HTML pages. HTMX 4.0.0 enhances navigation without replacing the whole document. Native links work without JavaScript and from an offline folder. Focus view supports the speaking path, arrow keys, and Escape. `dist/handout.html` includes all 21 content sections for printing.
 

@@ -4,7 +4,7 @@
   "printTopics": 21,
   "checks": [
     "one main article at a time",
-    "three priorities and circular topic menus",
+    "sidebar and horizontal topic tiles",
     "HTMX navigation retains document",
     "depth persists between topics",
     "failed request preserves current view",
@@ -15,13 +15,10 @@
     "200% text no overflow",
     "topic and depth navigation without JavaScript",
     "full printable handout",
-    "HTTP 404 preserves current topic and page title",
-    "packaged /nsf/ subpath with all requests in folder",
-    "100 file hashes verified",
-    "source ZIP rebuilds HTML identically",
-    "file:// navigation with JavaScript enabled",
-    "speaker notes preserve failed qualification scope",
-    "1366 and 1920 layouts"
+    "topic tiles above reading panel",
+    "desktop/mobile scroll remains at top after selection",
+    "related-topic links preserve depth and reset to top",
+    "deployment archive hashes verified"
   ],
   "pageErrors": [],
   "htmx": "4.0.0"

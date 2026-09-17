@@ -15,7 +15,7 @@ After upload, check Access → Independent researchers → Technical detail, the
 
 ## Offline and printing
 
-Open `site/index.html` directly for offline reading. Native page links work without a server; the in-place panel updates use HTTP(S). All four views are complete pages. Select Full handout to print all 21 content sections. Focus view and arrow keys support the speaking path. The circular topic diagram becomes a compact topic row on smaller screens.
+Open `site/index.html` directly for offline reading. Native page links work without a server; the in-place panel updates use HTTP(S). All four views are complete pages. Select Full handout to print all 21 content sections. Focus view and arrow keys support the speaking path. A numbered sidebar selects a section, topic tiles sit above the reading panel, and related links inside the panel open further topics. Navigation starts at the top without animated anchor jumps.
 
 ## Scope
 

@@ -4,7 +4,6 @@
   if(window.htmx)htmx.config.history=false;
   const workspace=()=>document.querySelector('#workspace');
   const status=document.querySelector('#load-status');
-  let pendingAnchor='reading';
   try{root.dataset.theme=localStorage.getItem('innovation-theme')||'light'}catch{}
   const themeButton=document.querySelector('#theme-toggle');
   function themeLabel(){const dark=root.dataset.theme==='dark';themeButton.textContent=dark?'Light theme':'Dark theme';themeButton.setAttribute('aria-pressed',String(dark))}
@@ -18,15 +17,17 @@
   if(!workspace())return;
   // File URLs do not support AJAX. All destinations are complete HTML pages.
   if(location.protocol==='file:')document.querySelectorAll('[hx-get]').forEach(el=>el.removeAttribute('hx-get'));
-  document.addEventListener('htmx:before:request',event=>{pendingAnchor=event.detail.ctx.sourceElement.dataset.anchor||'reading';status.textContent='Loading…'});
+  document.addEventListener('htmx:before:request',event=>{status.textContent='Loading…'});
   document.addEventListener('htmx:after:swap',event=>{
     if(event.detail.ctx.target.id!=='workspace')return;
-    const view=workspace();const url=new URL(view.dataset.file,location.href);url.hash=pendingAnchor;
+    const view=workspace();const url=new URL(view.dataset.file,location.href);
     if(url.href!==location.href)history.pushState({},'',url);
     document.title=document.querySelector('#topic-title').textContent+' · Innovation Convening';
     status.textContent='';
-    const target=document.getElementById(pendingAnchor)||document.querySelector('#reading');
-    target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start'});
+    const target=document.querySelector('#topic-title');
+    target.setAttribute('tabindex','-1');target.focus({preventScroll:true});
+    // Keep the navigation and topic heading together; never scroll to an anchor near the page end.
+    window.scrollTo({top:0,left:0,behavior:'instant'});
   });
   for(const name of ['response:error','error'])document.addEventListener('htmx:'+name,()=>{status.textContent='This view could not load. Your current topic and reading depth are unchanged. Please try again.'});
   document.addEventListener('htmx:before:swap',event=>{if(event.detail.ctx.response?.status>=400){event.preventDefault();event.detail.ctx.title=document.title;}});
