@@ -1,14 +1,15 @@
 """Static pages with HTMX navigation; every reading level also works offline."""
 from html import escape as e
-import json, re
+import json, re, math
+from hybrid import NOTES
 from agenda import GROUPS, TOPICS, GROUP_INTRO
 GUIDE='resources/resource-guide.pdf'
 SBIR='resources/sbir-discussion.pdf'
 AGENDA='https://www.widener.edu/sites/default/files/2026-09/Widener-NSF-NIC-Agenda-2026.pdf'
-DEPTHS=('surface','mid','deep')
+DEPTHS=('surface','mid','deep','notes')
 
 def filename(slug,depth):
-    if slug=='message': return {'surface':'index.html','mid':'mid.html','deep':'deep.html'}[depth]
+    if slug=='message': return {'surface':'index.html','mid':'mid.html','deep':'deep.html','notes':'notes.html'}[depth]
     return slug+('' if depth=='surface' else '-'+depth)+'.html'
 
 def navlink(slug,depth,label,classes='',current=False,anchor='reading'):
@@ -26,14 +27,23 @@ def render(content,out,labels,path):
     allslugs=['message',*GROUPS,*[c['slug'] for c in content if c['slug']!='message']]
     def priorities(slug,depth):
         selected=memberships.get(slug,slug)
-        links=''.join(navlink(g,depth,f'<span class="priority-circle">{i:02}</span><span><strong>{name}</strong><small>{caption}</small></span>','priority '+g,g==selected,'topics') for i,(g,(name,caption,_)) in enumerate(GROUPS.items(),1))
-        return '<nav class="priorities" aria-label="Three priorities">'+links+'</nav>'
+        modules=[('message','Start'),('access','Access'),('capacity','Capacity'),('learning','Learning'),('map','Convening map'),('evidence','Evidence'),('engage','Engage')]
+        links=''.join(navlink(g,depth,f'<span class="module-number">{i:02}</span><span>{name}</span>','rail-link '+('priority '+g if g in ('access','capacity','learning') else ''),g==selected,'topics') for i,(g,name) in enumerate(modules))
+        return '<aside class="module-rail"><p class="eyebrow">Discussion notebook</p><nav aria-label="Notebook modules">'+links+'</nav><p class="rail-note">Choose a topic.<br>Set your reading depth.<br>Bring an example to the table.</p></aside>'
     def topics(slug,depth):
         group=memberships.get(slug,slug)
-        if group not in GROUPS: return ''
-        name,_,slugs=GROUPS[group]
-        links=''.join(navlink(s,depth,f'<span class="topic-circle" aria-hidden="true">{i:02}</span><span>{e(TOPICS[s][0])}</span>','topic',s==slug) for i,s in enumerate(slugs,1))
-        return f'<nav id="topics" class="topics" aria-label="{name} topics"><p class="nav-caption">Explore {name.lower()} <span>Choose a topic</span></p><div class="topic-list">{links}</div></nav>'
+        if group not in GROUPS:
+            name='Three priorities';caption='Three changes in five years';slugs=['access','capacity','learning']
+        else:
+            name,caption,slugs=GROUPS[group]
+        nodes=[]
+        for i,t in enumerate(slugs):
+            label=TOPICS[t][0] if t in TOPICS else GROUPS[t][0] if t in GROUPS else by[t]['title']
+            angle=2*math.pi*i/len(slugs)-math.pi/2
+            x=50+37*math.cos(angle);y=50+37*math.sin(angle)
+            link=navlink(t,depth,f'<span>{e(label)}</span>','topic node',t==slug)
+            nodes.append(link.replace('class="topic node"',f'class="topic node" style="--x:{x:.2f}%;--y:{y:.2f}%"'))
+        return f'<nav id="topics" class="topics orbit" aria-label="{name} topics"><div class="orbit-stage"><div class="orbit-center"><strong>{name}</strong><small>{caption}</small></div>{"".join(nodes)}</div><p class="orbit-hint">Choose a topic to update the reading panel.</p></nav>'
     def levelnav(slug,depth):
         return '<nav class="depth" aria-label="Reading depth">'+''.join(navlink(slug,d,labels[d],'depth-link',d==depth) for d in DEPTHS)+'</nav>'
     def overview(slug,depth):
@@ -50,7 +60,7 @@ def render(content,out,labels,path):
         body=f'<p class="lead">{intro}</p><div class="opening"><h2>A pilot to discuss: {pilot.lower()}</h2><p>{step}</p><p><strong>Progress:</strong> {metric}</p></div>'
         if depth!='surface':
             bridges={'access':'The resource guide asks who faces barriers because of networks, location, institutional size, or access to infrastructure. Community relationships also belong in the innovation ecosystem.', 'capacity':'The guide describes the gap between knowing something and being able to use it. Translation may need organizational capability, validation, market readiness, and sustained partnerships as well as funding.', 'learning':'The SBIR handout presents competing views on repeated support. A productive discussion needs evidence of capability and transition, opportunities for newcomers, and clear reasons to continue or stop.'}
-            body+=f'<h2>Why this belongs on the agenda</h2><p>{bridges[slug]}</p>'
+            body+=f'<h2>Why this belongs on the agenda</h2><p>{bridges.get(slug, 'Connect each example to a discussion question and an actionable next step.')}</p>'
         if depth=='deep':
             body+='<h2>Define the pilot before judging it</h2><p>Agree on the intended user, the barrier, a named owner, the starting conditions, and the evidence needed to judge progress. Preserve limitations and reasons for changing direction. A proposed pilot is not a funded program or a completed evaluation.</p>'
         body+=f'<p class="source-note">Convening prompt: <a href="{GUIDE}#page=15">three changes over the next five years, p. 15</a>. Select a topic above for the specific example, proposal, and evidence.</p>'
@@ -79,7 +89,12 @@ def render(content,out,labels,path):
         body+=f'<p class="source-note">Agenda connection: {sources}. Suggested breakout: Track {track}. Track placement and proposals are my contributions; the handouts provide the discussion context.</p>'
         return label,body
     def article(slug,depth):
-        title,body=overview(slug,depth) if slug=='message' or slug in GROUPS else topicbody(slug,depth)
+        reading_depth='surface' if depth=='notes' else depth
+        title,body=overview(slug,reading_depth) if slug=='message' or slug in GROUPS else topicbody(slug,reading_depth)
+        if depth=='notes':
+            note=NOTES.get(slug, GROUP_INTRO.get(slug, ('','Choose a topic and offer one practical next step.'))[1])
+            boundary=''.join(re.findall(r'<p class="scope">.*?</p>',by.get(slug,{}).get('surface',''),flags=re.S))
+            body='<p class="spoken">'+e(note)+'</p>'+boundary
         group=memberships.get(slug,slug)
         kicker=GROUPS[group][0] if group in GROUPS else 'The discussion' if slug=='message' else 'Supporting material'
         return f'<article id="reading" tabindex="-1" aria-labelledby="topic-title"><header class="article-head"><p class="eyebrow">{kicker}</p><h1 id="topic-title">{e(title)}</h1>{levelnav(slug,depth)}</header><div class="prose">{body}</div></article>',title
@@ -91,7 +106,7 @@ def render(content,out,labels,path):
             order=[s for _,_,s in path]
             index=order.index(slug) if slug in order else 0
             controls='<div class="focus-controls"><span>Speaking path</span>'+navlink(order[(index-1)%len(order)],depth,'← Previous','previous')+navlink(order[(index+1)%len(order)],depth,'Next →','next')+'<small>Arrow keys to move · Esc to leave</small></div>'
-            workspace=f'<main id="workspace" data-topic="{slug}" data-depth="{depth}" data-file="{filename(slug,depth)}">{priorities(slug,depth)}{topics(slug,depth)}{controls}{art}</main>'
+            workspace=f'<main id="workspace" data-topic="{slug}" data-depth="{depth}" data-file="{filename(slug,depth)}">{priorities(slug,depth)}<div class="hub-stage">{topics(slug,depth)}<div class="reading-column">{controls}{art}</div></div></main>'
             (out/filename(slug,depth)).write_text(document(workspace,title),encoding='utf-8')
     sections=[]
     for c in content:
@@ -100,4 +115,4 @@ def render(content,out,labels,path):
     handout='<main id="reading"><h1>Access, Capacity, Learning</h1><p>Complete discussion notebook · <button id="print-page" type="button">Print this handout</button></p>'+''.join(sections)+'</main>'
     (out/'handout.html').write_text(document(handout,'Complete discussion notebook',True),encoding='utf-8')
     (out/'assets/topics.json').write_text(json.dumps({'topics':allslugs,'depths':list(DEPTHS),'path':[s for _,_,s in path],'pages':[filename(s,d) for s in allslugs for d in DEPTHS]},indent=2),encoding='utf-8')
-    print(f'Built {len(allslugs)*3} standalone topic/depth pages and one complete handout.')
+    print(f'Built {len(allslugs)*len(DEPTHS)} standalone topic/depth pages and one complete handout.')

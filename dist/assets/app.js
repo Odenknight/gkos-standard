@@ -1,6 +1,7 @@
 /* Native links remain the fallback; HTMX replaces one complete, consistent view. */
 (()=>{
   const root=document.documentElement;
+  if(window.htmx)htmx.config.history=false;
   const workspace=()=>document.querySelector('#workspace');
   const status=document.querySelector('#load-status');
   let pendingAnchor='reading';
@@ -17,9 +18,9 @@
   if(!workspace())return;
   // File URLs do not support AJAX. All destinations are complete HTML pages.
   if(location.protocol==='file:')document.querySelectorAll('[hx-get]').forEach(el=>el.removeAttribute('hx-get'));
-  document.addEventListener('htmx:beforeRequest',event=>{pendingAnchor=event.detail.elt.dataset.anchor||'reading';status.textContent='Loading…'});
-  document.addEventListener('htmx:afterSwap',event=>{
-    if(event.detail.target.id!=='workspace')return;
+  document.addEventListener('htmx:before:request',event=>{pendingAnchor=event.detail.ctx.sourceElement.dataset.anchor||'reading';status.textContent='Loading…'});
+  document.addEventListener('htmx:after:swap',event=>{
+    if(event.detail.ctx.target.id!=='workspace')return;
     const view=workspace();const url=new URL(view.dataset.file,location.href);url.hash=pendingAnchor;
     if(url.href!==location.href)history.pushState({},'',url);
     document.title=document.querySelector('#topic-title').textContent+' · Innovation Convening';
@@ -27,7 +28,8 @@
     const target=document.getElementById(pendingAnchor)||document.querySelector('#reading');
     target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start'});
   });
-  for(const name of ['responseError','sendError','timeout','swapError'])document.addEventListener('htmx:'+name,()=>{status.textContent='This view could not load. Your current topic and reading depth are unchanged. Please try again.'});
+  for(const name of ['response:error','error'])document.addEventListener('htmx:'+name,()=>{status.textContent='This view could not load. Your current topic and reading depth are unchanged. Please try again.'});
+  document.addEventListener('htmx:before:swap',event=>{if(event.detail.ctx.response?.status>=400){event.preventDefault();event.detail.ctx.title=document.title;}});
   addEventListener('popstate',()=>location.reload());
   addEventListener('keydown',event=>{
     if(!document.body.classList.contains('focus')||event.ctrlKey||event.altKey||event.metaKey||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;

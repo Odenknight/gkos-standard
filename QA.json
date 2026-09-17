@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "standaloneViews": 57,
-  "printTopics": 16,
+  "standaloneViews": 100,
+  "printTopics": 21,
   "checks": [
     "one main article at a time",
     "three priorities and circular topic menus",
@@ -11,10 +11,18 @@
     "rapid requests cannot apply a stale view",
     "browser back restores topic and depth",
     "speaking path and Escape",
-    "all 57 pages fit 375px mobile",
+    "all 100 pages fit 375px mobile",
     "200% text no overflow",
     "topic and depth navigation without JavaScript",
-    "full printable handout"
+    "full printable handout",
+    "HTTP 404 preserves current topic and page title",
+    "packaged /nsf/ subpath with all requests in folder",
+    "100 file hashes verified",
+    "source ZIP rebuilds HTML identically",
+    "file:// navigation with JavaScript enabled",
+    "speaker notes preserve failed qualification scope",
+    "1366 and 1920 layouts"
   ],
-  "pageErrors": []
+  "pageErrors": [],
+  "htmx": "4.0.0"
 }

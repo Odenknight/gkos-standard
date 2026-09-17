@@ -53,6 +53,8 @@ BY['engage']['mid']+=table(['Pilot','Accountable partner to identify','Measure']
 for c in CONTENT:
     c['title']=SHORT[c['slug']] if c['slug'] in ('message','fac','engage','verification') else c['title']
 
+from hybrid import extend
+extend(CONTENT, LABELS)
 from render import render
 
 if __name__ == '__main__':
