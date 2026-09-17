@@ -5,9 +5,10 @@
   const workspace=()=>document.querySelector('#workspace');
   const status=document.querySelector('#load-status');
   root.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-  try{root.dataset.theme=localStorage.getItem('innovation-theme')||root.dataset.theme;root.dataset.palette=localStorage.getItem('innovation-palette')||'sage'}catch{}
+  try{root.dataset.theme=localStorage.getItem('innovation-theme')||root.dataset.theme;root.dataset.palette=localStorage.getItem('innovation-palette')||'gold'}catch{}
   const palette=document.querySelector('#palette-select');
-  palette.value=['sage','ocean','copper'].includes(root.dataset.palette)?root.dataset.palette:'sage';
+  palette.value=['black','gold','silver','red','blue'].includes(root.dataset.palette)?root.dataset.palette:'gold';
+  root.dataset.palette=palette.value;
   palette.addEventListener('change',()=>{root.dataset.palette=palette.value;try{localStorage.setItem('innovation-palette',palette.value)}catch{}});
   const themeButton=document.querySelector('#theme-toggle');
   function themeLabel(){const dark=root.dataset.theme==='dark';themeButton.textContent=dark?'Light theme':'Dark theme';themeButton.setAttribute('aria-pressed',String(dark))}

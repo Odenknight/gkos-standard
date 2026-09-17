@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img" class="art art-commercial-holo" aria-labelledby="commercial-holo-t commercial-holo-d"><title id="commercial-holo-t">AMD HPC accelerator running Mojo kernels to drive a holographic four-nacelle warp-field simulation</title><desc id="commercial-holo-d">Left, an AMD Instinct-class accelerator card. Centre, Mojo kernels for stencil, Laplacian, RK4 and diffusion with the validation record: Float64 within frozen limits, HIP parity 24 of 24, Float32 failed. Right, a holographic panel showing a vessel with four nacelles generating an expanding warp bubble over a spacetime grid, labelled exploratory mathematics and no physical claim.</desc><style>
+svg{--paper:#eef1f5;--paper-2:#f7f8fa;--paper-3:#e2e7ee;--ink:#16202b;--ink-2:#3f4d5c;--ink-3:#6b7987;--rule:#c9d2dc;
+--accent:#0e7c78;--accent-ink:#085552;--accent-soft:#d5ecea;--time:#b8620f;--time-soft:#f5e4d0;
+--pass:#1f7a3a;--fail:#b8322f;--fail-soft:#f6dcdb;--warn:#a36a00;--block:#5b6572;
+--demonstrated:#1f7a3a;--documented:#0e7c78;--in-development:#a36a00;--proposed:#5b6572;
+--g-access:#0e7c78;--g-learning:#5b4b8a;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif;--mono:"JetBrains Mono",Consolas,monospace;
+background:var(--paper)}
+@media (prefers-color-scheme:dark){svg{--paper:#0f151c;--paper-2:#161e27;--paper-3:#1f2933;--ink:#e8edf2;--ink-2:#b7c2cd;--ink-3:#8d9aa7;--rule:#2c3946;--accent:#4fc1bb;--accent-ink:#9fe3df;--accent-soft:#12302f;--time:#e0954a;--time-soft:#3a2712;--g-access:#4fc1bb;--g-learning:#a596d6}}
+@keyframes walkin{0%{transform:translateX(0);opacity:1}70%{transform:translateX(190px);opacity:0}71%{transform:translateX(0);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop{
+ 0%{transform:translate(0,0) rotate(0);opacity:1}
+ 14%{transform:translate(58px,-26px) rotate(140deg);opacity:1}
+ 30%{transform:translate(128px,-34px) rotate(300deg);opacity:1}
+ 44%{transform:translate(186px,-4px) rotate(460deg);opacity:1}
+ 66%{transform:translate(204px,92px) rotate(560deg);opacity:1}
+ 74%{transform:translate(208px,100px) rotate(575deg);opacity:1}
+ 92%{transform:translate(208px,100px) rotate(575deg);opacity:0}
+ 93%{transform:translate(0,0) rotate(0);opacity:0}
+ 100%{transform:translate(0,0) rotate(0);opacity:1}}
+@keyframes land{0%,60%{opacity:0}70%,92%{opacity:.18}93%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes buckle{0%,100%{transform:scaleX(1) scaleY(1)}50%{transform:scaleX(1.14) scaleY(.985)}}
+@keyframes press{0%,100%{transform:translateY(-3px);opacity:.55}50%{transform:translateY(2px);opacity:1}}
+@keyframes wobble{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+@keyframes squirt{0%{transform:translateX(-60px);opacity:0}15%{opacity:1}100%{transform:translateX(230px);opacity:.15}}
+@keyframes fall{0%{transform:translateY(-14px);opacity:0}30%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes thump{0%{transform:rotate(-11deg) scale(1.5);opacity:0}12%{transform:rotate(-11deg) scale(1);opacity:1}100%{transform:rotate(-11deg) scale(1);opacity:1}}
+@keyframes fadein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes dashmove{to{stroke-dashoffset:-24}}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(-24px)}}
+@keyframes sail{0%{transform:translate(0,0);opacity:0}8%{opacity:1}
+ 25%{transform:translate(146px,-70px)}50%{transform:translate(290px,-104px)}75%{transform:translate(434px,-70px)}
+ 94%{opacity:1}100%{transform:translate(568px,0);opacity:0}}
+@keyframes shove{0%,100%{transform:translateX(0)}55%{transform:translateX(7px)}}
+@keyframes through{
+ 0%{transform:translateX(232px) scale(1,1);opacity:0}
+ 6%{opacity:1}
+ 28%{transform:translateX(250px) scale(1,1)}
+ 40%{transform:translateX(262px) scale(.55,.42)}
+ 54%{transform:translateX(280px) scale(.5,.38)}
+ 66%{transform:translateX(304px) scale(1,1)}
+ 88%{transform:translateX(470px) scale(1,1);opacity:1}
+ 96%{transform:translateX(500px) scale(.55,.42);opacity:.5}
+ 100%{transform:translateX(520px) scale(.5,.38);opacity:0}}
+@keyframes bridgetry{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(5deg)}88%{transform:rotate(0)}}
+@keyframes reach{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes pull{to{stroke-dashoffset:-40}}
+@keyframes fray{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes strike{0%{stroke-dashoffset:200}25%,100%{stroke-dashoffset:0}}
+@keyframes popin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes sweep{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,14px)}}
+@keyframes shuffle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop2{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes stall{0%,100%{transform:translateY(0)}45%{transform:translateY(-10px)}55%{transform:translateY(-4px)}}
+@keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes tipA{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes tipB{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes flag{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes spin{0%,60%{transform:rotate(0)}80%,100%{transform:rotate(90deg)}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes nudge2{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes draw{0%{stroke-dashoffset:28}35%,100%{stroke-dashoffset:0}}
+@keyframes reachin{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(34px)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}</style>
+<title id="anim-t">AMD HPC accelerator running Mojo kernels to drive a holographic four-nacelle warp-field simulation</title>
+<desc id="anim-d">Left: an AMD Instinct-class accelerator card. Center: Mojo kernels (stencil, Laplacian, RK4, diffusion) with the validation record. Right: a holographic display of a vessel with four nacelles generating an expanding warp bubble over a spacetime grid. Labels state that kernel results are documented from August 2026 and the simulation is exploratory mathematics with no physical claim.</desc>
+<defs>
+  <linearGradient id="gFlow" x1="0" x2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity="0"/><stop offset=".5" stop-color="var(--accent)" stop-opacity="1"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient>
+  <radialGradient id="gHolo" cx=".5" cy=".55" r=".7"><stop offset="0" stop-color="#0a2a3a"/><stop offset="1" stop-color="#040c14"/></radialGradient>
+  <radialGradient id="gBubble" cx=".5" cy=".5" r=".5"><stop offset=".6" stop-color="#3ee6ff" stop-opacity="0"/><stop offset=".85" stop-color="#3ee6ff" stop-opacity=".35"/><stop offset="1" stop-color="#3ee6ff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gScan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3ee6ff" stop-opacity="0"/><stop offset=".5" stop-color="#3ee6ff" stop-opacity=".18"/><stop offset="1" stop-color="#3ee6ff" stop-opacity="0"/></linearGradient>
+  <clipPath id="holoClip"><rect x="560" y="40" width="320" height="290" rx="14"/></clipPath>
+  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g class="gpu">
+  <rect x="24" y="90" width="230" height="130" rx="10" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="2"/>
+  <rect x="24" y="90" width="230" height="22" rx="10" fill="var(--paper-3)"/>
+  <rect x="60" y="126" width="120" height="76" rx="6" fill="var(--paper-3)" stroke="var(--ink-3)"/>
+  <g class="cores" fill="var(--accent)">
+    <rect x="68" y="134" width="14" height="12" rx="2"/><rect x="86" y="134" width="14" height="12" rx="2"/><rect x="104" y="134" width="14" height="12" rx="2"/><rect x="122" y="134" width="14" height="12" rx="2"/><rect x="140" y="134" width="14" height="12" rx="2"/><rect x="158" y="134" width="14" height="12" rx="2"/>
+    <rect x="68" y="152" width="14" height="12" rx="2"/><rect x="86" y="152" width="14" height="12" rx="2"/><rect x="104" y="152" width="14" height="12" rx="2"/><rect x="122" y="152" width="14" height="12" rx="2"/><rect x="140" y="152" width="14" height="12" rx="2"/><rect x="158" y="152" width="14" height="12" rx="2"/>
+    <rect x="68" y="170" width="14" height="12" rx="2"/><rect x="86" y="170" width="14" height="12" rx="2"/><rect x="104" y="170" width="14" height="12" rx="2"/><rect x="122" y="170" width="14" height="12" rx="2"/><rect x="140" y="170" width="14" height="12" rx="2"/><rect x="158" y="170" width="14" height="12" rx="2"/>
+    <rect x="68" y="188" width="104" height="8" rx="2" opacity=".5"/>
+  </g>
+  <g fill="var(--paper-2)" stroke="var(--ink-3)"><rect x="192" y="130" width="46" height="18" rx="3"/><rect x="192" y="156" width="46" height="18" rx="3"/><rect x="192" y="182" width="46" height="18" rx="3"/></g>
+  <text x="215" y="143" text-anchor="middle" font-size="8" fill="var(--ink-3)" font-family="var(--mono)">HBM</text>
+  <text x="215" y="169" text-anchor="middle" font-size="8" fill="var(--ink-3)" font-family="var(--mono)">HBM</text>
+  <text x="215" y="195" text-anchor="middle" font-size="8" fill="var(--ink-3)" font-family="var(--mono)">HBM</text>
+  <g stroke="var(--ink-3)" stroke-width="2"><path d="M50 220v12M70 220v12M90 220v12M110 220v12M130 220v12M150 220v12M170 220v12M190 220v12M210 220v12M230 220v12"/></g>
+  <g class="brand-slot" data-brand="amd">
+    <text x="40" y="105" font-size="11" font-family="var(--display)" font-weight="800" letter-spacing="1" fill="var(--ink)">AMD</text>
+    <text x="72" y="105" font-size="8" font-family="var(--display)" fill="var(--ink-2)">INSTINCT™</text>
+  </g>
+  <text x="139" y="70" text-anchor="middle" font-size="14" fill="var(--ink-2)" font-family="var(--display)" font-weight="600">AMD HPC accelerator</text>
+  <text x="150" y="254" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">target: Instinct-class · tested: gfx1103</text>
+</g>
+<g class="flow" fill="none" stroke-width="3" stroke-linecap="round">
+  <path d="M254 155 C 285 155, 285 120, 316 120" stroke="var(--rule)"/>
+  <path d="M254 155 C 285 155, 285 190, 316 190" stroke="var(--rule)"/>
+  <path class="pulse" d="M254 155 C 285 155, 285 120, 316 120" stroke="url(#gFlow)"/>
+  <path class="pulse p2" d="M254 155 C 285 155, 285 190, 316 190" stroke="url(#gFlow)"/>
+  <path d="M496 120 C 528 120, 528 185, 560 185" stroke="var(--rule)"/>
+  <path d="M496 190 C 528 190, 528 185, 560 185" stroke="var(--rule)"/>
+  <path class="pulse p3" d="M496 120 C 528 120, 528 185, 560 185" stroke="url(#gFlow)"/>
+  <path class="pulse p4" d="M496 190 C 528 190, 528 185, 560 185" stroke="url(#gFlow)"/>
+</g>
+<g class="kernels" font-family="var(--mono)" font-size="11">
+  <g class="brand-slot" data-brand="mojo">
+    <path d="M394 44 c 6 8 4 14 -2 18 c 8 -2 12 -8 10 -16 c 6 6 8 14 3 20 c 10 -4 12 -16 4 -26 c -1 8 -6 9 -8 4 c -2 -6 0 -10 2 -14 c -8 3 -12 9 -9 14 z" fill="var(--time)"/>
+    <text x="418" y="64" font-size="15" font-family="var(--display)" font-weight="800" fill="var(--ink)">Mojo</text>
+    <text x="418" y="76" font-size="8" font-family="var(--display)" fill="var(--ink-3)">by Modular</text>
+  </g>
+  <rect x="316" y="100" width="180" height="40" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="406" y="125" text-anchor="middle" fill="var(--accent-ink)">stencil · laplacian</text>
+  <rect x="316" y="170" width="180" height="40" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="406" y="195" text-anchor="middle" fill="var(--accent-ink)">rk4 · diffusion · triad</text>
+  <text x="406" y="234" text-anchor="middle" font-size="11" fill="var(--pass)">Float64 · within frozen limits</text>
+  <text x="406" y="252" text-anchor="middle" font-size="11" fill="var(--ink-3)">HIP parity 24 / 24 · Float32 failed</text>
+</g>
+<g class="holo-panel">
+  <rect x="560" y="40" width="320" height="290" rx="14" fill="url(#gHolo)" stroke="#3ee6ff" stroke-opacity=".6" stroke-width="1.5"/>
+  <g clip-path="url(#holoClip)">
+    <g class="hgrid" stroke="#3ee6ff" stroke-opacity=".28" fill="none" stroke-width="1">
+      <path d="M560 300 L720 150 L880 300"/><path d="M600 330 L720 150 L840 330"/><path d="M660 330 L720 150 L780 330"/>
+      <path d="M560 300h320M575 270h290M590 245h260M605 224h230M620 206h200M635 191h170M650 178h140"/>
+      <path class="warpline" d="M560 300h320" stroke-opacity=".7"/>
+    </g>
+    <g class="rings" fill="none" stroke="#3ee6ff" filter="url(#glow)">
+      <ellipse class="ring r1" cx="720" cy="185" rx="60" ry="26" stroke-width="1.5"/>
+      <ellipse class="ring r2" cx="720" cy="185" rx="60" ry="26" stroke-width="1.5"/>
+      <ellipse class="ring r3" cx="720" cy="185" rx="60" ry="26" stroke-width="1.5"/>
+    </g>
+    <ellipse cx="720" cy="185" rx="110" ry="48" fill="url(#gBubble)"/>
+    <g class="vessel" filter="url(#glow)">
+      <ellipse cx="720" cy="182" rx="36" ry="12" fill="#0d3b4a" stroke="#8ff2ff" stroke-width="1.5"/>
+      <path d="M690 182 L750 182" stroke="#8ff2ff" stroke-width="1" opacity=".6"/>
+      <g stroke="#8ff2ff" stroke-width="1.5" fill="none" opacity=".8"><path d="M700 176 L676 158"/><path d="M740 176 L764 158"/><path d="M700 188 L676 206"/><path d="M740 188 L764 206"/></g>
+      <g class="nacelles" fill="#0d3b4a" stroke="#8ff2ff" stroke-width="1.5">
+        <rect x="654" y="152" width="46" height="10" rx="5"/><rect x="754" y="152" width="46" height="10" rx="5"/>
+        <rect x="654" y="202" width="46" height="10" rx="5"/><rect x="754" y="202" width="46" height="10" rx="5"/>
+      </g>
+      <g class="nacglow" fill="#3ee6ff"><circle cx="658" cy="157" r="3"/><circle cx="796" cy="157" r="3"/><circle cx="658" cy="207" r="3"/><circle cx="796" cy="207" r="3"/></g>
+    </g>
+    <rect class="scan" x="560" y="40" width="320" height="60" fill="url(#gScan)"/>
+    <g font-family="var(--mono)" font-size="9.5" fill="#8ff2ff" opacity=".85">
+      <text x="572" y="58">SIM · 4-NACELLE WARP FIELD</text>
+      <text x="572" y="72">grid 256³ · Float64</text>
+      <text x="868" y="58" text-anchor="end">HOLOGRAPHIC VIEW</text>
+      <text x="868" y="72" text-anchor="end">mathematics only</text>
+      <text x="572" y="318">m(t) envelope: ramp · hold · ramp</text>
+      <text x="868" y="318" text-anchor="end">no physical claim</text>
+    </g>
+    <g stroke="#3ee6ff" stroke-width="2" fill="none" opacity=".9"><path d="M566 62V46h16M874 46h-16M874 62V46M566 308v16h16M874 324v-16M858 324h16"/></g>
+  </g>
+  <text x="720" y="28" text-anchor="middle" font-size="14" fill="var(--ink-2)" font-family="var(--display)" font-weight="600">Holographic simulation · four-nacelle warp field</text>
+  <text x="720" y="350" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">exploratory mathematics · Alcubierre geometry · not a device</text>
+</g>
+<g class="mark" transform="translate(24,14)">
+  <path d="M0 14 L10 0 L20 14 L10 28 Z" fill="var(--accent)"/><path d="M14 14 L24 0 L34 14 L24 28 Z" fill="var(--time)" opacity=".85"/>
+  <text x="44" y="20" font-size="15" font-family="var(--display)" font-weight="700" fill="var(--ink)">KosMoj<tspan fill="var(--accent)">AMD</tspan></text>
+</g>
+<text x="24" y="372" font-size="10" fill="var(--ink-3)" font-family="var(--body)">AMD and Instinct are trademarks of Advanced Micro Devices, Inc. Mojo and Modular are trademarks of Modular Inc. Named to indicate interoperability; no endorsement implied.</text>
+</svg>

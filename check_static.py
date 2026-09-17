@@ -16,7 +16,7 @@ pages={}
 for file in root.glob('*.html'):
     p=Page();p.feed(file.read_text(encoding='utf-8'));pages[file.name]=p
     assert len(p.ids)==len(set(p.ids)),(file,'duplicate ids')
-    assert p.articles==(0 if file.name=='handout.html' else 1),(file,p.articles)
+    assert p.articles==(0 if file.name in ('handout.html','images.html') else 1),(file,p.articles)
 for name,p in pages.items():
     for ref in p.refs:
         u=urlparse(ref)
@@ -24,6 +24,6 @@ for name,p in pages.items():
         target=root/unquote(u.path) if u.path else root/name
         assert target.exists(),(name,ref)
         if u.fragment and target.suffix=='.html':assert u.fragment in pages[target.name].ids,(name,ref)
-assert len(pages)==101,len(pages)
+assert len(pages)==102,len(pages)
 assert pages['handout.html'].sections==21
 print('Passed: 100 standalone views, 21-topic full handout, unique IDs, every local asset and cross-page anchor.')

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" class="art art-pipe" aria-labelledby="pipe-t pipe-d"><title id="pipe-t">Work items jammed behind a narrow point in a pipeline while dollar signs arc over the top</title><desc id="pipe-d">A horizontal pipe narrows sharply at two points, labelled no way in without an institution, and no funded engineering. Four teal circles are jammed behind the first narrow point, labelled ready and stuck, while a single amber one deforms to squeeze through. Above the pipe, dollar signs travel along an arc that clears both constrictions, labelled capital sails over the constriction and lands where the squeeze never applied.</desc><style>
+svg{--paper:#eef1f5;--paper-2:#f7f8fa;--paper-3:#e2e7ee;--ink:#16202b;--ink-2:#3f4d5c;--ink-3:#6b7987;--rule:#c9d2dc;
+--accent:#0e7c78;--accent-ink:#085552;--accent-soft:#d5ecea;--time:#b8620f;--time-soft:#f5e4d0;
+--pass:#1f7a3a;--fail:#b8322f;--fail-soft:#f6dcdb;--warn:#a36a00;--block:#5b6572;
+--demonstrated:#1f7a3a;--documented:#0e7c78;--in-development:#a36a00;--proposed:#5b6572;
+--g-access:#0e7c78;--g-learning:#5b4b8a;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif;--mono:"JetBrains Mono",Consolas,monospace;
+background:var(--paper)}
+@media (prefers-color-scheme:dark){svg{--paper:#0f151c;--paper-2:#161e27;--paper-3:#1f2933;--ink:#e8edf2;--ink-2:#b7c2cd;--ink-3:#8d9aa7;--rule:#2c3946;--accent:#4fc1bb;--accent-ink:#9fe3df;--accent-soft:#12302f;--time:#e0954a;--time-soft:#3a2712;--g-access:#4fc1bb;--g-learning:#a596d6}}
+.art-pipe .cx{animation:sail 5s linear infinite}
+.art-pipe .c2{animation-delay:1.7s}
+.art-pipe .c3{animation-delay:3.4s}
+.art-pipe .jam circle{animation:shove 2.2s ease-in-out infinite}
+.art-pipe .jam circle:nth-child(2){animation-delay:.12s}
+.art-pipe .jam circle:nth-child(3){animation-delay:.24s}
+.art-pipe .jam circle:nth-child(4){animation-delay:.36s}
+.art-pipe .squeeze{animation:through 9s cubic-bezier(.2,0,.85,1) infinite}
+@keyframes walkin{0%{transform:translateX(0);opacity:1}70%{transform:translateX(190px);opacity:0}71%{transform:translateX(0);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop{
+ 0%{transform:translate(0,0) rotate(0);opacity:1}
+ 14%{transform:translate(58px,-26px) rotate(140deg);opacity:1}
+ 30%{transform:translate(128px,-34px) rotate(300deg);opacity:1}
+ 44%{transform:translate(186px,-4px) rotate(460deg);opacity:1}
+ 66%{transform:translate(204px,92px) rotate(560deg);opacity:1}
+ 74%{transform:translate(208px,100px) rotate(575deg);opacity:1}
+ 92%{transform:translate(208px,100px) rotate(575deg);opacity:0}
+ 93%{transform:translate(0,0) rotate(0);opacity:0}
+ 100%{transform:translate(0,0) rotate(0);opacity:1}}
+@keyframes land{0%,60%{opacity:0}70%,92%{opacity:.18}93%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes buckle{0%,100%{transform:scaleX(1) scaleY(1)}50%{transform:scaleX(1.14) scaleY(.985)}}
+@keyframes press{0%,100%{transform:translateY(-3px);opacity:.55}50%{transform:translateY(2px);opacity:1}}
+@keyframes wobble{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+@keyframes squirt{0%{transform:translateX(-60px);opacity:0}15%{opacity:1}100%{transform:translateX(230px);opacity:.15}}
+@keyframes fall{0%{transform:translateY(-14px);opacity:0}30%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes thump{0%{transform:rotate(-11deg) scale(1.5);opacity:0}12%{transform:rotate(-11deg) scale(1);opacity:1}100%{transform:rotate(-11deg) scale(1);opacity:1}}
+@keyframes fadein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes dashmove{to{stroke-dashoffset:-24}}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(-24px)}}
+@keyframes sail{0%{transform:translate(0,0);opacity:0}8%{opacity:1}
+ 25%{transform:translate(146px,-70px)}50%{transform:translate(290px,-104px)}75%{transform:translate(434px,-70px)}
+ 94%{opacity:1}100%{transform:translate(568px,0);opacity:0}}
+@keyframes shove{0%,100%{transform:translateX(0)}55%{transform:translateX(7px)}}
+@keyframes through{
+ 0%{transform:translateX(232px) scale(1,1);opacity:0}
+ 6%{opacity:1}
+ 28%{transform:translateX(250px) scale(1,1)}
+ 40%{transform:translateX(262px) scale(.55,.42)}
+ 54%{transform:translateX(280px) scale(.5,.38)}
+ 66%{transform:translateX(304px) scale(1,1)}
+ 88%{transform:translateX(470px) scale(1,1);opacity:1}
+ 96%{transform:translateX(500px) scale(.55,.42);opacity:.5}
+ 100%{transform:translateX(520px) scale(.5,.38);opacity:0}}
+@keyframes bridgetry{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(5deg)}88%{transform:rotate(0)}}
+@keyframes reach{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes pull{to{stroke-dashoffset:-40}}
+@keyframes fray{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes strike{0%{stroke-dashoffset:200}25%,100%{stroke-dashoffset:0}}
+@keyframes popin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes sweep{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,14px)}}
+@keyframes shuffle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop2{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes stall{0%,100%{transform:translateY(0)}45%{transform:translateY(-10px)}55%{transform:translateY(-4px)}}
+@keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes tipA{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes tipB{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes flag{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes spin{0%,60%{transform:rotate(0)}80%,100%{transform:rotate(90deg)}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes nudge2{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes draw{0%{stroke-dashoffset:28}35%,100%{stroke-dashoffset:0}}
+@keyframes reachin{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(34px)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}</style>
+<defs>
+  <marker id="pw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--pass)"/></marker>
+  <clipPath id="pipeClip"><path d="M40 106 L236 106 L268 134 L300 106 L458 106 L490 134 L522 106 L720 106 L720 178 L522 178 L490 150 L458 178 L300 178 L268 150 L236 178 L40 178 Z"/></clipPath>
+</defs>
+<!-- money going over the top -->
+<path d="M96 132 Q 380 -6 664 132" fill="none" stroke="var(--pass)" stroke-width="2" stroke-dasharray="6 8" opacity=".65"/>
+<g class="cash" font-family="var(--display)" font-size="26" font-weight="800" fill="var(--pass)">
+  <text class="cx c1" x="96" y="140">$</text><text class="cx c2" x="96" y="140">$</text><text class="cx c3" x="96" y="140">$</text>
+</g>
+<text x="380" y="20" text-anchor="middle" font-size="11.5" fill="var(--pass)" font-family="var(--mono)">capital sails over the constriction · it lands where the squeeze never applied</text>
+<!-- the pipe -->
+<path d="M40 106 L236 106 L268 134 L300 106 L458 106 L490 134 L522 106 L720 106 L720 178 L522 178 L490 150 L458 178 L300 178 L268 150 L236 178 L40 178 Z"
+      fill="var(--paper-2)" stroke="var(--rule)" stroke-width="2.5"/>
+<!-- work items: a jam before the first pinch -->
+<g clip-path="url(#pipeClip)">
+  <g class="jam" fill="var(--accent)" opacity=".85">
+    <circle cx="74" cy="142" r="21"/><circle cx="120" cy="142" r="21"/><circle cx="166" cy="142" r="21"/><circle cx="210" cy="142" r="21"/>
+  </g>
+  <!-- the one squeezing through, slowly -->
+  <ellipse class="squeeze" cx="0" cy="142" rx="21" ry="21" fill="var(--time)"/>
+</g>
+<g font-family="var(--display)" font-size="10" font-weight="700" fill="var(--ink-2)" text-anchor="middle">
+  <text x="378" y="146">TRANSLATION</text><text x="622" y="146">VALIDATION → MARKET → IMPACT</text>
+</g>
+<text x="140" y="212" text-anchor="middle" font-size="11" fill="var(--accent-ink)" font-family="var(--mono)">ready and stuck</text>
+<g class="pinchlbl" font-family="var(--mono)" font-size="10" fill="var(--time)" text-anchor="middle">
+  <path d="M268 190 v18" stroke="var(--time)" stroke-width="2"/>
+  <text x="268" y="226">no way in</text><text x="268" y="240">without an institution</text>
+  <path d="M490 190 v18" stroke="var(--time)" stroke-width="2"/>
+  <text x="490" y="226">no funded</text><text x="490" y="240">engineering</text>
+</g>
+<text x="380" y="270" text-anchor="middle" font-size="12" fill="var(--ink-3)" font-family="var(--body)">The work queues at the narrow parts. The money never has to go through them.</text>
+</svg>

@@ -1,0 +1,34 @@
+<figure class="art art-pipe" aria-labelledby="pipe-t pipe-d"><svg viewBox="0 0 760 280" role="img" xmlns="http://www.w3.org/2000/svg"><title id="pipe-t">Work items jammed behind a narrow point in a pipeline while dollar signs arc over the top</title><desc id="pipe-d">A horizontal pipe narrows sharply at two points, labelled no way in without an institution, and no funded engineering. Four teal circles are jammed behind the first narrow point, labelled ready and stuck, while a single amber one deforms to squeeze through. Above the pipe, dollar signs travel along an arc that clears both constrictions, labelled capital sails over the constriction and lands where the squeeze never applied.</desc>
+<defs>
+  <marker id="pw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--pass)"/></marker>
+  <clipPath id="pipeClip"><path d="M40 106 L236 106 L268 134 L300 106 L458 106 L490 134 L522 106 L720 106 L720 178 L522 178 L490 150 L458 178 L300 178 L268 150 L236 178 L40 178 Z"/></clipPath>
+</defs>
+<!-- money going over the top -->
+<path d="M96 132 Q 380 -6 664 132" fill="none" stroke="var(--pass)" stroke-width="2" stroke-dasharray="6 8" opacity=".65"/>
+<g class="cash" font-family="var(--display)" font-size="26" font-weight="800" fill="var(--pass)">
+  <text class="cx c1" x="96" y="140">$</text><text class="cx c2" x="96" y="140">$</text><text class="cx c3" x="96" y="140">$</text>
+</g>
+<text x="380" y="20" text-anchor="middle" font-size="11.5" fill="var(--pass)" font-family="var(--mono)">capital sails over the constriction · it lands where the squeeze never applied</text>
+<!-- the pipe -->
+<path d="M40 106 L236 106 L268 134 L300 106 L458 106 L490 134 L522 106 L720 106 L720 178 L522 178 L490 150 L458 178 L300 178 L268 150 L236 178 L40 178 Z"
+      fill="var(--paper-2)" stroke="var(--rule)" stroke-width="2.5"/>
+<!-- work items: a jam before the first pinch -->
+<g clip-path="url(#pipeClip)">
+  <g class="jam" fill="var(--accent)" opacity=".85">
+    <circle cx="74" cy="142" r="21"/><circle cx="120" cy="142" r="21"/><circle cx="166" cy="142" r="21"/><circle cx="210" cy="142" r="21"/>
+  </g>
+  <!-- the one squeezing through, slowly -->
+  <ellipse class="squeeze" cx="0" cy="142" rx="21" ry="21" fill="var(--time)"/>
+</g>
+<g font-family="var(--display)" font-size="10" font-weight="700" fill="var(--ink-2)" text-anchor="middle">
+  <text x="378" y="146">TRANSLATION</text><text x="622" y="146">VALIDATION → MARKET → IMPACT</text>
+</g>
+<text x="140" y="212" text-anchor="middle" font-size="11" fill="var(--accent-ink)" font-family="var(--mono)">ready and stuck</text>
+<g class="pinchlbl" font-family="var(--mono)" font-size="10" fill="var(--time)" text-anchor="middle">
+  <path d="M268 190 v18" stroke="var(--time)" stroke-width="2"/>
+  <text x="268" y="226">no way in</text><text x="268" y="240">without an institution</text>
+  <path d="M490 190 v18" stroke="var(--time)" stroke-width="2"/>
+  <text x="490" y="226">no funded</text><text x="490" y="240">engineering</text>
+</g>
+<text x="380" y="270" text-anchor="middle" font-size="12" fill="var(--ink-3)" font-family="var(--body)">The work queues at the narrow parts. The money never has to go through them.</text>
+</svg><figcaption>The work queues at the narrow parts. The money never has to go through them.</figcaption></figure>

@@ -24,3 +24,7 @@ The ZIP contains the authored presentation and the two PDFs supplied for the con
 Deploying this folder to a public domain makes its contents available under that domain's access rules; the private review site's login is not part of this package.
 
 `SHA256SUMS.txt` records each site's file hash. A separate source ZIP contains the editable Python content/rendering files, assets, and rebuild instructions. Python 3.10+ is sufficient to rebuild; no third-party Python package is required.
+
+## Images and colors
+
+The Colors menu offers Black, Gold, Silver, Red, and Blue in light/dark modes. Images opens the complete appendix. Each topic starts with two illustrations; viewers can hide, show, or swap either one. Selections and favorites stay in that browser. To change the defaults for every visitor, edit the two keys for the topic in `image-library.json` in the source package, rebuild, and upload the result. All original graphics stay in `graphics/`, including those not selected.

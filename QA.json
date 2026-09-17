@@ -16,5 +16,25 @@
     "topic and depth navigation without JavaScript",
     "full printable handout"
   ],
-  "pageErrors": []
+  "pageErrors": [],
+  "images": {
+    "uniqueFigures": 77,
+    "topics": 25,
+    "defaultSlotsPerTopic": 2,
+    "checks": [
+      "hide/show/swap persists through reload and depth changes",
+      "all figures retained in appendix",
+      "topic and favorite filtering",
+      "apply appendix image to chosen slot",
+      "unique visible SVG IDs",
+      "appendix mobile width"
+    ]
+  },
+  "palettes": [
+    "black",
+    "gold",
+    "silver",
+    "red",
+    "blue"
+  ]
 }

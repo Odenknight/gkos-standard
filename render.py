@@ -2,6 +2,7 @@
 from html import escape as e
 import json, re
 from hybrid import NOTES
+from images import image_module, appendix
 from agenda import GROUPS, TOPICS, GROUP_INTRO
 GUIDE='resources/resource-guide.pdf'
 SBIR='resources/sbir-discussion.pdf'
@@ -92,6 +93,8 @@ def render(content,out,labels,path):
             note=NOTES.get(slug, GROUP_INTRO.get(slug, ('','Choose a topic and offer one practical next step.'))[1])
             boundary=''.join(re.findall(r'<p class="scope">.*?</p>',by.get(slug,{}).get('surface',''),flags=re.S))
             body='<p class="spoken">'+e(note)+'</p>'+boundary
+        body=re.sub(r'<figure\b.*?</figure>', '', body, flags=re.S)
+        body+=image_module(slug)
         group=memberships.get(slug,slug)
         kicker=GROUPS[group][0] if group in GROUPS else 'The discussion' if slug=='message' else 'Supporting material'
         if slug in TOPICS:
@@ -99,7 +102,7 @@ def render(content,out,labels,path):
             body+='<nav class="related-topics" aria-label="Related topics"><strong>Continue exploring</strong>'+''.join(navlink(t,depth,e(TOPICS[t][0] if t in TOPICS else by[t]['title'])) for t in related)+'</nav>'
         return f'<article id="reading" tabindex="-1" aria-labelledby="topic-title"><header class="article-head"><p class="eyebrow">{kicker}</p><h1 id="topic-title">{e(title)}</h1>{levelnav(slug,depth)}</header><div class="prose">{body}</div></article>',title
     def document(workspace,title,handout=False):
-        return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>{e(title)} · Innovation Convening</title><meta name="description" content="Shaun Oden Marshall’s discussion notebook: access, capacity, and learning."><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/palettes.css"><script src="assets/htmx.min.js" defer></script><script src="assets/app.js" defer></script></head><body{' class="handout"' if handout else ''}><a class="skip" href="#reading">Skip to reading</a><div class="shell"><header class="masthead"><a class="brand" href="index.html">Oden <span>/</span> Innovation notebook</a><div class="toolbar"><label class="palette-control">Colors <select id="palette-select"><option value="sage">Sage</option><option value="ocean">Ocean</option><option value="copper">Copper</option></select></label><button id="theme-toggle" aria-pressed="false" type="button">Dark theme</button><button id="present-toggle" aria-pressed="false" type="button">Focus view</button><a href="handout.html">Full handout</a></div></header><div class="intro"><p class="eyebrow">National Innovation Convening · September 23–24, 2026</p><p>Shaun “Oden” Marshall <span>Independent research · Open-source software · Community partnerships</span></p></div><p id="load-status" role="status" aria-live="polite"></p>{workspace}<footer><p>Participant proposals for the Widener-led, NSF-funded convening. Project examples include documented results, work in development, and proposed pilots.</p><nav aria-label="Supporting material"><a href="evidence.html">Repository evidence</a><a href="engage.html">Pilot proposals</a><a href="{AGENDA}">Agenda</a><a href="{GUIDE}">Resource Guide</a><a href="{SBIR}">SBIR handout</a></nav></footer></div></body></html>'''
+        return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>{e(title)} · Innovation Convening</title><meta name="description" content="Shaun Oden Marshall’s discussion notebook: access, capacity, and learning."><link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/palettes.css"><script src="assets/htmx.min.js" defer></script><script src="assets/app.js" defer></script><link rel="stylesheet" href="graphics/figures.css"><link rel="stylesheet" href="assets/images.css"><script src="assets/images.js" defer></script></head><body{' class="handout"' if handout else ''}><a class="skip" href="#reading">Skip to reading</a><div class="shell"><header class="masthead"><a class="brand" href="index.html">Oden <span>/</span> Innovation notebook</a><div class="toolbar"><label class="palette-control">Colors <select id="palette-select"><option value="black">Black</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="red">Red</option><option value="blue">Blue</option></select></label><button id="theme-toggle" aria-pressed="false" type="button">Dark theme</button><button id="present-toggle" aria-pressed="false" type="button">Focus view</button><a href="handout.html">Full handout</a><a href="images.html">Images</a></div></header><div class="intro"><p class="eyebrow">National Innovation Convening · September 23–24, 2026</p><p>Shaun “Oden” Marshall <span>Independent research · Open-source software · Community partnerships</span></p></div><p id="load-status" role="status" aria-live="polite"></p>{workspace}<footer><p>Participant proposals for the Widener-led, NSF-funded convening. Project examples include documented results, work in development, and proposed pilots.</p><nav aria-label="Supporting material"><a href="evidence.html">Repository evidence</a><a href="engage.html">Pilot proposals</a><a href="{AGENDA}">Agenda</a><a href="{GUIDE}">Resource Guide</a><a href="{SBIR}">SBIR handout</a></nav></footer></div></body></html>'''
     for slug in allslugs:
         for depth in DEPTHS:
             art,title=article(slug,depth)
@@ -108,9 +111,11 @@ def render(content,out,labels,path):
             controls='<div class="focus-controls"><span>Speaking path</span>'+navlink(order[(index-1)%len(order)],depth,'← Previous','previous')+navlink(order[(index+1)%len(order)],depth,'Next →','next')+'<small>Arrow keys to move · Esc to leave</small></div>'
             workspace=f'<main id="workspace" data-topic="{slug}" data-depth="{depth}" data-file="{filename(slug,depth)}">{priorities(slug,depth)}<div class="hub-stage">{topics(slug,depth)}<div class="reading-column">{controls}{art}</div></div></main>'
             (out/filename(slug,depth)).write_text(document(workspace,title),encoding='utf-8')
+    (out/'images.html').write_text(document(appendix(),'Image appendix'),encoding='utf-8')
     sections=[]
     for c in content:
         title,body=overview('message','deep') if c['slug']=='message' else topicbody(c['slug'],'deep')
+        body=re.sub(r'<figure\b.*?</figure>', '', body, flags=re.S)+image_module(c['slug'])
         sections.append(f'<section class="print-topic" id="{c["slug"]}"><h2>{e(title)}</h2><div class="prose">{body}</div></section>')
     handout='<main id="reading"><h1>Access, Capacity, Learning</h1><p>Complete discussion notebook · <button id="print-page" type="button">Print this handout</button></p>'+''.join(sections)+'</main>'
     (out/'handout.html').write_text(document(handout,'Complete discussion notebook',True),encoding='utf-8')
