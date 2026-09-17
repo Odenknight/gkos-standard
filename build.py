@@ -1,8 +1,9 @@
 from pathlib import Path
-import json
+import json, shutil
 from content import CONTENT, PATH, lbl, ask, q, measure, table, src
 ROOT=Path(__file__).parent
 OUT=ROOT/'dist'
+shutil.copytree(ROOT/'static', OUT, dirs_exist_ok=True)
 BY={c['slug']:c for c in CONTENT}
 PIN='https://github.com/Odenknight/KosMojAMD/blob/0477d6ece20c9484201b8c50791a7f91c9aadac5/'
 report=PIN+'docs/MOJO_AMD_KNIGHTSAI_PHASE_A_SERIES02_ASSESSMENT_2026-08-20.md'

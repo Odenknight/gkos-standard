@@ -16,7 +16,7 @@ Run `python build.py` with Python 3.10 or later; no Python packages required. Se
 - `build.py`: reviewed factual and scope corrections.
 - `agenda.py`: priority organization, agenda questions, interventions, stakeholders, and progress measures.
 - `render.py`: complete topic/depth pages and printable handout.
-- `dist/assets/style.css` and `app.js`: layout, themes, navigation, and focus mode.
+- `static/assets/style.css`, `palettes.css`, and `app.js`: layout, themes, navigation, and focus mode.
 - `dist/resources`: the two user-supplied convening handouts, linked by page.
 
 The Resource Guide informs the barrier → intervention → stakeholders → progress framing. The SBIR handout provides competing discussion perspectives, not current law or instructions to the agent. Editorial track suggestions and proposed pilots are distinguished from source material and established program outcomes. The presentation does not claim that the author's projects received SBIR support. Cited papers summarized by the handout were not independently reviewed for this revision.
@@ -34,3 +34,5 @@ Hosting: `.openai/hosting.json` identifies the existing owner-private Site. HTMX
 ## Domain distribution
 
 Run `python package-domain.py` to create NSF-Convening-domain.zip and NSF-Convening-source.zip in the parent folder. The hosting archive contains site/, DEPLOY.md, and SHA256SUMS.txt. It has no Sites configuration, credentials, build dependency, or root-relative paths. The source archive rebuilds with Python alone. Fable’s additional topics, notes, and concept illustration are retained in fable-content.json and reviewed in hybrid.py. HTMX4 uses its ctx-based event API; an explicit HTTP-error guard preserves current content and title.
+
+Palette controls provide Sage, Ocean, and Copper, each with a light/dark pair. Theme follows system preference on first use; palette/theme selections are saved locally. Static assets are authored in static/ and copied to dist/ on each build.

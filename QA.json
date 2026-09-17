@@ -14,12 +14,7 @@
     "all 100 pages fit 375px mobile",
     "200% text no overflow",
     "topic and depth navigation without JavaScript",
-    "full printable handout",
-    "topic tiles above reading panel",
-    "desktop/mobile scroll remains at top after selection",
-    "related-topic links preserve depth and reset to top",
-    "deployment archive hashes verified"
+    "full printable handout"
   ],
-  "pageErrors": [],
-  "htmx": "4.0.0"
+  "pageErrors": []
 }
