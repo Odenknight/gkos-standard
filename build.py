@@ -53,24 +53,7 @@ BY['engage']['mid']+=table(['Pilot','Accountable partner to identify','Measure']
 for c in CONTENT:
     c['title']=SHORT[c['slug']] if c['slug'] in ('message','fac','engage','verification') else c['title']
 
-def section(c,depth):
-    parts=[c[d] for d in ('surface','mid','deep')[:('surface','mid','deep').index(depth)+1]]
-    body='\n<hr class="more">\n'.join(parts)
-    tags=''.join(f'<span class="track">{t}</span>' for t in c['tracks'])
-    return f'<section class="card" id="{c["slug"]}" tabindex="-1" aria-labelledby="h-{c["slug"]}"><div class="kicker">{c["kicker"]} {tags}</div><h2 id="h-{c["slug"]}">{c["title"]}</h2><div class="body">{body}</div></section>'
+from render import render
 
-def build():
-    for depth,file in FILES.items():
-        depth_links=''.join(f'<a class="depth-link" data-depth="{d}" href="{f}#message" hx-get="{f}" hx-target="#reader" hx-select="#reader" hx-swap="outerHTML settle:0ms" hx-sync="body:replace" aria-current="{str(d==depth).lower()}">{LABELS[d]}</a>' for d,f in FILES.items())
-        nav=''.join(f'<a class="chapter topic" href="#{c["slug"]}">{SHORT[c["slug"]]}</a>' for c in CONTENT)
-        steps=''.join(f'<a class="chapter" href="#{s}" data-step="{n}"><span class="n">{n}</span><span>{t}</span></a>' for n,t,s in PATH)
-        sections=''.join(section(c,depth) for c in CONTENT)
-        page=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Access, Capacity, Learning — {LABELS[depth]}</title><meta name="description" content="Shaun Oden Marshall’s talking points and evidence for the National Innovation Convening."><link rel="stylesheet" href="assets/style.css"><script src="assets/htmx.min.js" defer></script><script src="assets/app.js" defer></script></head><body><a class="skip" href="#message">Skip to content</a><div class="shell"><header class="masthead"><a class="brand" href="index.html">Access · Capacity · <span>Learning</span></a><div class="toolbar"><button id="theme-toggle" type="button" aria-pressed="false">Dark theme</button><button id="present-toggle" type="button" aria-pressed="false">Speaking view</button><a href="handout.html">Print handout</a></div></header><div class="hero" id="top"><p class="eyebrow">National Innovation Convening · September 23–24, 2026</p><h1>Help useful work reach its next step.</h1><p class="lede">Shaun “Oden” Marshall · Independent research, open-source software, and community partnerships.</p><p class="disclaimer">Participant proposals. Project status and evidence limits appear with each example.</p></div><p id="load-status" role="status" aria-live="polite"></p><div id="reader" class="layout" data-depth="{depth}" data-file="{file}"><aside class="side" aria-label="Topics and reading depth"><nav class="depth" aria-label="Reading depth">{depth_links}</nav><details class="topic-menu"><summary>Browse topics and speaking path</summary><h3>Speaking path</h3><nav aria-label="Speaking path">{steps}</nav><h3>Roundtable topics</h3><nav aria-label="All topics">{nav}</nav></details><p class="side-note">Choose a topic when it comes up in conversation. Change depth to see context or evidence.</p></aside><main id="main"><div class="present-controls" hidden><button type="button" id="previous">Previous</button><span id="step-count"></span><button type="button" id="next">Next</button><span class="keyboard-help">← → to move · Esc to leave</span></div><p id="depthnote" class="depthnote">{LABELS[depth]}</p>{sections}</main></div><footer><p>Prepared for the Widener-led, NSF-funded convening. These are participant contributions, not NSF positions. Historical results were not rerun for this presentation.</p><p><a href="https://www.widener.edu/sites/default/files/2026-09/Widener-NSF-NIC-Agenda-2026.pdf">Convening agenda</a> · <a href="https://odenknight.com/science/warp-field-notebook/">Warp Field Notebook</a> · <a href="handout.html">Complete handout</a></p></footer></div></body></html>'''
-        (OUT/file).write_text(page,encoding='utf-8')
-    handout=(OUT/'deep.html').read_text(encoding='utf-8').replace('<body>','<body class="handout">').replace('<title>Access, Capacity, Learning — Technical detail</title>','<title>Access, Capacity, Learning — Handout</title>')
-    handout=handout.replace('<a href="handout.html">Print handout</a>','<button type="button" id="print-page">Print</button>')
-    (OUT/'handout.html').write_text(handout,encoding='utf-8')
-    (OUT/'assets/topics.json').write_text(json.dumps({'topics':[c['slug'] for c in CONTENT],'path':[s for _,_,s in PATH]},indent=2),encoding='utf-8')
-    print(f'Built {len(CONTENT)} sections at 3 depths plus complete handout.')
-if __name__=='__main__': build()
-
+if __name__ == '__main__':
+    render(CONTENT, OUT, LABELS, PATH)

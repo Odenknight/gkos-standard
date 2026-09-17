@@ -1,17 +1,20 @@
 {
   "passed": true,
-  "sections": 16,
-  "mobileFirstTopicY": 554.078125,
+  "standaloneViews": 57,
+  "printTopics": 16,
   "checks": [
-    "depth loads and topic preservation",
-    "failed load retains actual depth and announces failure",
-    "rapid switch cancels stale load",
-    "back navigation restores depth",
-    "presenter arrows and Escape",
-    "mobile topic menu and direct outcomes entry",
-    "200% text no horizontal overflow",
-    "all depths without JavaScript",
-    "16-section print handout"
+    "one main article at a time",
+    "three priorities and circular topic menus",
+    "HTMX navigation retains document",
+    "depth persists between topics",
+    "failed request preserves current view",
+    "rapid requests cannot apply a stale view",
+    "browser back restores topic and depth",
+    "speaking path and Escape",
+    "all 57 pages fit 375px mobile",
+    "200% text no overflow",
+    "topic and depth navigation without JavaScript",
+    "full printable handout"
   ],
   "pageErrors": []
 }
