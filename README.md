@@ -1,5 +1,7 @@
 # Governed Knowledge Operations Standard (GKOS)
 
+**Owner-fork work:** [EU AI evidence demonstration — shared phases and status](docs/eu-ai-evidence/PHASES.md). Informative planning; no compliance or upstream conformance claim.
+
 Drafted by Shaun "Oden" Marshall. Refined and published by AI Assistant.
 
 <!-- markdownlint-disable MD013 -->

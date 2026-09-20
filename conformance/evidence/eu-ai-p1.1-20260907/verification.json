@@ -1,0 +1,277 @@
+{
+  "recorded_at": "2026-09-07T13:33:25.1740350Z",
+  "source_preservation": [
+    {
+      "protected_changes": [],
+      "original_logic_and_tests_unchanged": true,
+      "tracked_file_count": 341,
+      "base_commit": "90d627d4581a95296132a665184838f9e7dbf2cf",
+      "repository": "gkos-standard",
+      "changed_preexisting_files": [
+        "docs/eu-ai-evidence/PHASES.md"
+      ]
+    },
+    {
+      "protected_changes": [],
+      "original_logic_and_tests_unchanged": true,
+      "tracked_file_count": 498,
+      "base_commit": "e5ea87bf5cf2c9a6300814f26d237249d6fb8693",
+      "repository": "GKOS-Engine",
+      "changed_preexisting_files": []
+    }
+  ],
+  "limitations": [
+    "Original GKOS logic and existing tests were not modified. New files trigger an existing Engine allowlist test.",
+    "P11-08 remains FAIL; no warning exemption or fixture revision was introduced.",
+    "The existing retrieval operational failure remains unexplained.",
+    "This record does not claim independent verification or package conformance."
+  ],
+  "format": "eu-ai-p1.1-verification/1",
+  "evidence_files": [
+    {
+      "path": "FINDINGS.md",
+      "sha256": "e3d38fdeadb85ab2fe09d23090fc5e83d07ec440157159b661665f1973aeabaa",
+      "byte_count": 5457
+    },
+    {
+      "path": "run-01.txt",
+      "sha256": "59d5dbac3706045c5a419acaca62aee6ce3e1d328a0d22b325d0e0c509cdc866",
+      "byte_count": 4422
+    },
+    {
+      "path": "run-02.txt",
+      "sha256": "032b188059385fe861c3b3e1f60fbaee89afd9800cfdc0bfadc1689e32c6275b",
+      "byte_count": 4422
+    },
+    {
+      "path": "run-01/observations.json",
+      "sha256": "4f21bc2766f216fc6196293766d7222c3637addf55e75dff4e21101991241b54",
+      "byte_count": 291909
+    },
+    {
+      "path": "run-01/process.json",
+      "sha256": "b661e4c5e2d819a9f595c8b243a4adce42ec8216f74291a8fa691260cd72de55",
+      "byte_count": 210
+    },
+    {
+      "path": "run-01/report.md",
+      "sha256": "21c4db76b653ffbfcac2827c8b9d57576ae6db1a0217556501065177873bced0",
+      "byte_count": 24576
+    },
+    {
+      "path": "run-01/results.json",
+      "sha256": "cc5d5e7c7a1c322d36414fadeff380ccdee496237e5ecc591e114a806dc585b6",
+      "byte_count": 208406
+    },
+    {
+      "path": "run-01/specification.md",
+      "sha256": "e12cdebd893bc78577be763afbc23289eb311ba32de5d370dc6f65d0f49c8871",
+      "byte_count": 24607
+    },
+    {
+      "path": "run-02/observations.json",
+      "sha256": "88727ef7960d3fa79e18f078c887386de07278f7bf2e3026c28e1b892080cd1c",
+      "byte_count": 291909
+    },
+    {
+      "path": "run-02/process.json",
+      "sha256": "a674a195b1c0a431a9861c46744a839573df1274d93ad871fc6881a6bae35f88",
+      "byte_count": 210
+    },
+    {
+      "path": "run-02/report.md",
+      "sha256": "6eba0b5ce48a5c39b710c89f215ab3f0751ee42fe0b1dfead8b948c1f8867ece",
+      "byte_count": 24576
+    },
+    {
+      "path": "run-02/results.json",
+      "sha256": "a630f2de99053a13e7ac3ee92c4c410920caf78dcf3a381e7ed3abb35d2d660f",
+      "byte_count": 208406
+    },
+    {
+      "path": "run-02/specification.md",
+      "sha256": "e12cdebd893bc78577be763afbc23289eb311ba32de5d370dc6f65d0f49c8871",
+      "byte_count": 24607
+    },
+    {
+      "path": "verification/engine-build.txt",
+      "sha256": "5ee6065df586174820e2aa1f07fe33223640e14789f689a902e2e42f5bfd5102",
+      "byte_count": 899
+    },
+    {
+      "path": "verification/engine-dependency-restore.txt",
+      "sha256": "7be213637e65fbaac1e8d889c0f7854eb220e337321e17dbadf3fe049f3393be",
+      "byte_count": 236
+    },
+    {
+      "path": "verification/engine-focused-node24.txt",
+      "sha256": "b05a1d366ac9e35ed6f47e64e5e3e643bd6d7b193a950b1000d3c9e12016456d",
+      "byte_count": 3572
+    },
+    {
+      "path": "verification/engine-retrieval-isolated.txt",
+      "sha256": "0e7483b17fcb334c3f2caa8c1f2f6fc22192542f687cc6e358c50f1abe08e904",
+      "byte_count": 4266
+    },
+    {
+      "path": "verification/engine-tests-node24.txt",
+      "sha256": "e0a72d7e3878c7518133993c3ff3a4059f7a41b915e2be14b128f9e0c54ca0ea",
+      "byte_count": 86098
+    },
+    {
+      "path": "verification/engine-typecheck.txt",
+      "sha256": "c488b68ba3182301d8f759d23fad9fc77427c6214ae666ce71a6d24a12009144",
+      "byte_count": 51
+    },
+    {
+      "path": "verification/harness-tests-final.txt",
+      "sha256": "e7ec788c52688a17f34f5817a82ea05a728ca826ae9722cd55b93d574a34bacc",
+      "byte_count": 497
+    },
+    {
+      "path": "verification/harness-tests-node24.txt",
+      "sha256": "1d75bc2ad2bd50d0da1b8b5d950b2c879d2aa473f561092b2e5ac800845bcdab",
+      "byte_count": 499
+    },
+    {
+      "path": "verification/pre-implementation.json",
+      "sha256": "2ada148a1baa25bf95e61b4ac2959ff6d0b85cb9a0d51056391513780c92223a",
+      "byte_count": 145396
+    },
+    {
+      "path": "verification/report-checks.json",
+      "sha256": "aa3f090e2be7f27e87bd23d939568c63a3f841965fd77cbb08874d914c37c655",
+      "byte_count": 363
+    },
+    {
+      "path": "verification/source-preservation.json",
+      "sha256": "32d009985b206594cb907f0cb5e2c3190be9a71afca5dd4af8505af6103fbe48",
+      "byte_count": 566
+    },
+    {
+      "path": "verification/standard-dependency-restore.txt",
+      "sha256": "5cb6173970138295e9b6117839bba1a0000a516814e7f146ad7f130b00c8e30c",
+      "byte_count": 148
+    },
+    {
+      "path": "verification/standard-tests-final.txt",
+      "sha256": "f022b195ee15c45aabaec51ddf37b931963d1c54edede117393d52e9474d3784",
+      "byte_count": 23165
+    }
+  ],
+  "cross_process_assertions_equal": true,
+  "report_checks": [
+    {
+      "evidence_hashes_verified": true,
+      "actual_process_exit_code": 1,
+      "fail": 1,
+      "pass": 10,
+      "evidence_pointers_verified": 21,
+      "run": "run-01"
+    },
+    {
+      "evidence_hashes_verified": true,
+      "actual_process_exit_code": 1,
+      "fail": 1,
+      "pass": 10,
+      "evidence_pointers_verified": 21,
+      "run": "run-02"
+    }
+  ],
+  "standing": "Codex-assisted self-evaluation; no independent review; P1.1 acceptance not established",
+  "commands": [
+    {
+      "cwd": "gkos-standard",
+      "acceptance_fail": 1,
+      "acceptance_pass": 10,
+      "name": "P1.1 first process",
+      "exit_code": 1,
+      "runtime": "Node 24.19.0",
+      "command": "node --test conformance/runner/examples/eu-ai-evidence/p1-valid-dossier.test.mjs",
+      "log": "run-01.txt"
+    },
+    {
+      "cwd": "gkos-standard",
+      "acceptance_fail": 1,
+      "acceptance_pass": 10,
+      "name": "P1.1 second process",
+      "exit_code": 1,
+      "runtime": "Node 24.19.0",
+      "command": "node --test conformance/runner/examples/eu-ai-evidence/p1-valid-dossier.test.mjs",
+      "log": "run-02.txt"
+    },
+    {
+      "exit_code": 0,
+      "name": "Standard tests and registry lint",
+      "test_count": 113,
+      "command": "npm.cmd test",
+      "cwd": "gkos-standard/conformance/runner",
+      "fail": 0,
+      "skip": 0,
+      "runtime": "Node 22.11.0, npm 10.9.0",
+      "pass": 113,
+      "log": "verification/standard-tests-final.txt"
+    },
+    {
+      "exit_code": 0,
+      "name": "Engine build",
+      "runtime": "Node 22.11.0",
+      "command": "npm.cmd run build",
+      "cwd": "GKOS-Engine",
+      "log": "verification/engine-build.txt"
+    },
+    {
+      "exit_code": 0,
+      "name": "Engine typecheck",
+      "runtime": "Node 22.11.0",
+      "command": "npm.cmd run typecheck",
+      "cwd": "GKOS-Engine",
+      "log": "verification/engine-typecheck.txt"
+    },
+    {
+      "exit_code": 1,
+      "name": "Engine full suite including fresh pretest build",
+      "test_count": 936,
+      "command": "node \"C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" test",
+      "cwd": "GKOS-Engine",
+      "fail": 2,
+      "skip": 6,
+      "runtime": "Node 24.19.0 with runtime bin directory first in process PATH",
+      "pass": 928,
+      "log": "verification/engine-tests-node24.txt"
+    },
+    {
+      "exit_code": 0,
+      "name": "Engine focused suite",
+      "test_count": 38,
+      "command": "node --test test/eu-ai-p1-observer.test.mjs test/lineage.test.mjs test/gkx23.test.mjs test/public-api.test.mjs",
+      "cwd": "GKOS-Engine",
+      "fail": 0,
+      "skip": 0,
+      "runtime": "Node 24.19.0",
+      "pass": 38,
+      "log": "verification/engine-focused-node24.txt"
+    },
+    {
+      "exit_code": 0,
+      "name": "Final harness checks",
+      "test_count": 4,
+      "command": "node --test conformance/runner/examples/eu-ai-evidence/p1-harness.test.mjs",
+      "cwd": "gkos-standard",
+      "fail": 0,
+      "skip": 0,
+      "runtime": "Node 24.19.0",
+      "pass": 4,
+      "log": "verification/harness-tests-final.txt"
+    },
+    {
+      "exit_code": 1,
+      "name": "Filtered retrieval diagnostic rerun",
+      "runtime": "Node 24.19.0",
+      "limitation": "Also fails suite teardown because filtered execution does not consume all declared rows. Not a complete suite result.",
+      "command": "node --test --test-name-pattern \"actual coordinator eval replay emits exact text and pretty canonical JSON offline\" test/retrieval-evaluation-cli.test.mjs",
+      "cwd": "GKOS-Engine",
+      "log": "verification/engine-retrieval-isolated.txt"
+    }
+  ]
+}

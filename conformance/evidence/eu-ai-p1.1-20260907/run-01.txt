@@ -1,0 +1,49 @@
+(node:21372) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+▶ P1.1 valid dossier and revisions — explicit non-qualifying example
+  ✔ P11-01: Fixed inventory, identity and schema validity (1.5242ms)
+  ✔ P11-02: Initial identities (0.25ms)
+  ✔ P11-03: Initial references and current inspection (0.1597ms)
+  ✔ P11-04: Addition preserves original records (0.1905ms)
+  ✔ P11-05: Revised references and canonical lineage (0.1442ms)
+  ✔ P11-06: Revised current and historical state (0.1389ms)
+  ✔ P11-07: Explicit historical inspection preserves original references (0.1292ms)
+  ✖ P11-08: No unexpected diagnostics (0.7312ms)
+  ✔ P11-09: Evaluator rejects missing or incorrect observations (0.0927ms)
+  ✔ P11-10: Repeated observations and substantive outcomes agree (0.0983ms)
+  ✔ P11-11: Evidence coordinates and claim boundaries are present (0.0656ms)
+✖ P1.1 valid dossier and revisions — explicit non-qualifying example (642.5107ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 10
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 776.6968
+
+✖ failing tests:
+
+test at conformance\runner\examples\eu-ai-evidence\p1-valid-dossier.test.mjs:18:13
+✖ P11-08: No unexpected diagnostics (0.7312ms)
+  AssertionError [ERR_ASSERTION]: Observed values differ from the predeclared expectation.
+  Observed: {"A":[{"field":"unresolvedLinks","observed":2},{"uid":"550e8400-e29b-41d4-a716-446655440102","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"dossier-r1.md"},{"uid":"550e8400-e29b-41d4-a716-446655440104","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"evaluation-summary.md"},{"uid":"550e8400-e29b-41d4-a716-446655440101","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"system.md"}],"B":[{"field":"unresolvedLinks","observed":3},{"uid":"550e8400-e29b-41d4-a716-446655440102","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"dossier-r1.md"},{"uid":"550e8400-e29b-41d4-a716-446655440103","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"dossier-r2.md"},{"uid":"550e8400-e29b-41d4-a716-446655440104","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"evaluation-summary.md"},{"uid":"550e8400-e29b-41d4-a716-446655440105","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"review-note.md"},{"uid":"550e8400-e29b-41d4-a716-446655440101","code":"GKX-PROVENANCE-001","severity":"warning","field":"provenance.source_refs","message":"No source reference is declared.","deterministic":true,"sourcePath":"system.md"}]}
+  Expected: {"A":[],"B":[]}
+  
+  'FAIL' !== 'PASS'
+  
+      at TestContext.<anonymous> (file:///C:/Users/Marius/Desktop/Dev/Lusaur/repos/gkos-standard/conformance/runner/examples/eu-ai-evidence/p1-valid-dossier.test.mjs:19:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at TestContext.test (node:internal/test_runner/test:394:20)
+      at TestContext.<anonymous> (file:///C:/Users/Marius/Desktop/Dev/Lusaur/repos/gkos-standard/conformance/runner/examples/eu-ai-evidence/p1-valid-dossier.test.mjs:18:13)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'FAIL',
+    expected: 'PASS',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
