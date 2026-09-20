@@ -13,7 +13,6 @@ and multicolor palette of the existing illustrated figures.
 | Seven cumulative responsibilities | [SVG](gkos-layer-responsibilities.svg) | [PNG](gkos-layer-responsibilities.png) | [Mermaid](gkos-layer-responsibilities.mmd) |
 | A refund decision you can audit | [SVG](gkos-accountable-refund.svg) | [PNG](gkos-accountable-refund.png) | [Editable SVG](gkos-accountable-refund.svg) |
 | Choose an adoption starting point | [SVG](gkos-adoption-paths.svg) | [PNG](gkos-adoption-paths.png) | [Editable SVG](gkos-adoption-paths.svg) |
-
 | CIA triad overview — informative, v0.81 | [SVG](gkos-cia-overview.svg) | [PNG](gkos-cia-overview.png) | [Python](gkos-cia-overview.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
 | CIA triad detailed alignment — informative, v0.81 | [SVG](gkos-cia-triad-alignment.svg) | [PNG](gkos-cia-triad-alignment.png) | [Python](gkos-cia-triad-alignment.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
 
