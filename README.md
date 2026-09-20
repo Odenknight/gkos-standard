@@ -47,6 +47,7 @@ GKOS v0.81 is a developmental pre-standard designed to support AI governance, ac
 [Master standard](standard/00_GKOS_Master_Standard.md) ·
 [Requirements registry](requirements/REGISTRY.md) ·
 [Conformance](conformance/README.md) ·
+[CIA triad alignment](docs/GKOS_CIA_TRIAD_ALIGNMENT.md) ·
 [Reference infrastructure](docs/implementation/GKOS_REFERENCE_INFRASTRUCTURE.md) ·
 [Practitioner blueprint](docs/implementation/GKOS_INFRASTRUCTURE_PRACTITIONER_BLUEPRINT.md) ·
 [Ecosystem interoperability](docs/ecosystem/README.md) ·
@@ -86,6 +87,20 @@ The illustration follows a request through preservation (L1–L3), exact context
 Layers are cumulative responsibilities, so checks and review can repeat as the proposal or context changes. Access restrictions apply before disclosure. People and deployed systems perform the work; GKOS defines the contracts.
 
 [Read the full stack walkthrough and integration contract](docs/implementation/GKOS_END_TO_END_WORKFLOW.md) · [Download the illustration](graphics/diagrams/gkos-evidence-to-authorized-action.jpg)
+
+## GKOS and the CIA triad
+
+The CIA triad expresses three security goals: **Confidentiality**, **Integrity**, and **Availability**. GKOS applies that mindset to the path from evidence to action: respect access restrictions, preserve the basis for decisions, and make authorized use and recovery accountable.
+
+- **Confidentiality:** require authorization before protected information reaches people, agents, logs, or other outputs; preserve sensitivity and purpose restrictions.
+- **Integrity:** preserve sources and lineage, bind decisions to exact evidence, reproduce captured context, and record authorized changes or refusals.
+- **Availability:** govern review queues and record outcomes, refusals, and recovery routes so operators can restore authorized service. Deployments still need backups, redundancy, and tested recovery.
+
+![CIA objectives mapped to GKOS controls, records, and deployment responsibilities](graphics/diagrams/gkos-cia-overview.svg)
+
+This is an informative alignment with v0.81. GKOS supplies governance contracts and evidence; deployed controls and operational tests establish security outcomes.
+
+**[Read the full CIA triad alignment and requirement mapping](docs/GKOS_CIA_TRIAD_ALIGNMENT.md).**
 
 ## Proposed ISO, EU and NIST add-ins
 

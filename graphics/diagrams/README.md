@@ -13,6 +13,8 @@ and multicolor palette of the existing illustrated figures.
 | Seven cumulative responsibilities | [SVG](gkos-layer-responsibilities.svg) | [PNG](gkos-layer-responsibilities.png) | [Mermaid](gkos-layer-responsibilities.mmd) |
 | A refund decision you can audit | [SVG](gkos-accountable-refund.svg) | [PNG](gkos-accountable-refund.png) | [Editable SVG](gkos-accountable-refund.svg) |
 | Choose an adoption starting point | [SVG](gkos-adoption-paths.svg) | [PNG](gkos-adoption-paths.png) | [Editable SVG](gkos-adoption-paths.svg) |
+| CIA triad overview — informative, v0.81 | [SVG](gkos-cia-overview.svg) | [PNG](gkos-cia-overview.png) | [Python](gkos-cia-overview.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
+| CIA triad detailed alignment — informative, v0.81 | [SVG](gkos-cia-triad-alignment.svg) | [PNG](gkos-cia-triad-alignment.png) | [Python](gkos-cia-triad-alignment.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
 
 ## Canonical architecture orientation — r3 v0.82 development candidate
 
@@ -124,3 +126,14 @@ are licensed under CC BY 4.0; see [LICENSE.md](../../LICENSE.md).
 - [Separate review views SVG](evidence-review-views.svg) / [PNG](evidence-review-views.png): evidence reuse across ISO, EU and NIST with distinct criteria and judgments.
 
 The two middleware diagrams are editable SVG sources developed for the owner review packet on 2026-09-05; PNG exports use sharp 0.35.4 at 2400 pixels wide. Original illustrated figures remain available. All diagrams are informative; the current layer contract table controls terminology where an earlier illustration abbreviates it.
+
+## CIA triad graphics
+
+Rebuild with Python 3 and CairoSVG installed:
+
+```sh
+python graphics/diagrams/gkos-cia-overview.build.py
+python graphics/diagrams/gkos-cia-triad-alignment.build.py
+```
+
+Both scripts write SVG and 2× PNG beside their source. These graphics are informative and allocate no requirements or crosswalk identifiers.
