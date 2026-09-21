@@ -1,0 +1,1169 @@
+{
+  "standing": "draft-schema-only-non-qualifying",
+  "cases": [
+    {
+      "id": "preset-shape",
+      "valid": true,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "preset-demo",
+        "kind": "preset",
+        "revision": "1",
+        "authorizer": "demo-human",
+        "approval_ref": {
+          "id": "approval",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "grant_ref": {
+          "id": "grant",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "scope_ref": {
+          "id": "scope",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "qualified_configurations": [
+          {
+            "id": "config",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "gate_set_ref": {
+          "id": "gates",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "eligibility_predicate_ref": {
+          "id": "eligibility",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "field_policy_ref": {
+          "id": "fields",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rules_ref": {
+          "id": "rules",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "hit_policy": "unique",
+        "default_outcome": "hold",
+        "validity_ref": {
+          "id": "validity",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "revocation_ref": {
+          "id": "revocation",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "budget_ref": {
+          "id": "budget",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "reuse_policy_ref": {
+          "id": "reuse",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "failure_scope": "dependent_operations"
+      }
+    },
+    {
+      "id": "evaluation-without-scores",
+      "valid": true,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "abstain-no-output",
+      "valid": true,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "abstain",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    },
+    {
+      "id": "calibrated-ppm",
+      "valid": true,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        },
+        "scores": {
+          "semantics": "calibrated_probability_ppm",
+          "conversion_ref": {
+            "id": "conversion",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "calibration_ref": {
+            "id": "calibration",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "by_label": {
+            "experiment": 900000,
+            "other": 100000
+          }
+        }
+      }
+    },
+    {
+      "id": "unknown-contract",
+      "valid": false,
+      "record": {
+        "contract": "unknown",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authority-smuggling",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        },
+        "accepted": true
+      }
+    },
+    {
+      "id": "abstain-with-output",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "abstain",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ok-missing-output",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    },
+    {
+      "id": "missing-evidence",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad-digest",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "not-a-digest",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "permissive-default",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "preset-demo",
+        "kind": "preset",
+        "revision": "1",
+        "authorizer": "demo-human",
+        "approval_ref": {
+          "id": "approval",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "grant_ref": {
+          "id": "grant",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "scope_ref": {
+          "id": "scope",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "qualified_configurations": [
+          {
+            "id": "config",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "gate_set_ref": {
+          "id": "gates",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "eligibility_predicate_ref": {
+          "id": "eligibility",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "field_policy_ref": {
+          "id": "fields",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rules_ref": {
+          "id": "rules",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "hit_policy": "unique",
+        "default_outcome": "accept",
+        "validity_ref": {
+          "id": "validity",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "revocation_ref": {
+          "id": "revocation",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "budget_ref": {
+          "id": "budget",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "reuse_policy_ref": {
+          "id": "reuse",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "failure_scope": "dependent_operations"
+      }
+    },
+    {
+      "id": "missing-grant",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "preset-demo",
+        "kind": "preset",
+        "revision": "1",
+        "authorizer": "demo-human",
+        "approval_ref": {
+          "id": "approval",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "scope_ref": {
+          "id": "scope",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "qualified_configurations": [
+          {
+            "id": "config",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "gate_set_ref": {
+          "id": "gates",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "eligibility_predicate_ref": {
+          "id": "eligibility",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "field_policy_ref": {
+          "id": "fields",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rules_ref": {
+          "id": "rules",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "hit_policy": "unique",
+        "default_outcome": "hold",
+        "validity_ref": {
+          "id": "validity",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "revocation_ref": {
+          "id": "revocation",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "budget_ref": {
+          "id": "budget",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "reuse_policy_ref": {
+          "id": "reuse",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "failure_scope": "dependent_operations"
+      }
+    },
+    {
+      "id": "ambiguous-hit-policy",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "preset-demo",
+        "kind": "preset",
+        "revision": "1",
+        "authorizer": "demo-human",
+        "approval_ref": {
+          "id": "approval",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "grant_ref": {
+          "id": "grant",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "scope_ref": {
+          "id": "scope",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "qualified_configurations": [
+          {
+            "id": "config",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "gate_set_ref": {
+          "id": "gates",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "eligibility_predicate_ref": {
+          "id": "eligibility",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "field_policy_ref": {
+          "id": "fields",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rules_ref": {
+          "id": "rules",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "hit_policy": "highest-confidence",
+        "default_outcome": "hold",
+        "validity_ref": {
+          "id": "validity",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "revocation_ref": {
+          "id": "revocation",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "budget_ref": {
+          "id": "budget",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "reuse_policy_ref": {
+          "id": "reuse",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "failure_scope": "dependent_operations"
+      }
+    },
+    {
+      "id": "missing-config",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "preset-demo",
+        "kind": "preset",
+        "revision": "1",
+        "authorizer": "demo-human",
+        "approval_ref": {
+          "id": "approval",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "grant_ref": {
+          "id": "grant",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "scope_ref": {
+          "id": "scope",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "qualified_configurations": [],
+        "gate_set_ref": {
+          "id": "gates",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "eligibility_predicate_ref": {
+          "id": "eligibility",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "field_policy_ref": {
+          "id": "fields",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rules_ref": {
+          "id": "rules",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "hit_policy": "unique",
+        "default_outcome": "hold",
+        "validity_ref": {
+          "id": "validity",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "revocation_ref": {
+          "id": "revocation",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "budget_ref": {
+          "id": "budget",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "reuse_policy_ref": {
+          "id": "reuse",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "failure_scope": "dependent_operations"
+      }
+    },
+    {
+      "id": "ppm-out-of-range",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        },
+        "scores": {
+          "semantics": "calibrated_probability_ppm",
+          "conversion_ref": {
+            "id": "conversion",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "calibration_ref": {
+            "id": "calibration",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "by_label": {
+            "experiment": 1000001,
+            "other": 100000
+          }
+        }
+      }
+    },
+    {
+      "id": "fractional-ppm",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        },
+        "scores": {
+          "semantics": "calibrated_probability_ppm",
+          "conversion_ref": {
+            "id": "conversion",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "calibration_ref": {
+            "id": "calibration",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "by_label": {
+            "experiment": 0.91,
+            "other": 100000
+          }
+        }
+      }
+    },
+    {
+      "id": "unbound-calibration",
+      "valid": false,
+      "record": {
+        "contract": "org.oden.gkos.classifier.experimental.v1",
+        "id": "eval-demo",
+        "kind": "evaluation",
+        "request_ref": {
+          "id": "request",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "record_ref": {
+          "id": "note",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "input_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "metadata_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "evidence_refs": [
+          {
+            "id": "evidence",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "task_ref": {
+          "id": "task",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "configuration_ref": {
+          "id": "config",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "evaluator": "demo-evaluator",
+        "processing_authorization_ref": {
+          "id": "processing",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "status": "ok",
+        "observed_at": "2026-09-21T00:00:00Z",
+        "authentication_ref": {
+          "id": "authentication",
+          "revision": "1",
+          "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output": {
+          "label": "experiment",
+          "evidence_refs": [
+            {
+              "id": "span",
+              "revision": "1",
+              "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        },
+        "scores": {
+          "semantics": "calibrated_probability_ppm",
+          "conversion_ref": {
+            "id": "conversion",
+            "revision": "1",
+            "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "by_label": {
+            "experiment": 900000,
+            "other": 100000
+          }
+        }
+      }
+    }
+  ]
+}

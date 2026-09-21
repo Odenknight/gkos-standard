@@ -1,0 +1,736 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/provisional/classifier/classifier-record.draft.schema.json",
+  "title": "Experimental classifier preset and evaluation envelopes; not native GKX kinds",
+  "description": "Shape only. Reference resolution, authority, task labels, timestamps, policy semantics and inference correctness require separate checks.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "contract",
+        "id",
+        "kind",
+        "revision",
+        "authorizer",
+        "approval_ref",
+        "grant_ref",
+        "scope_ref",
+        "task_ref",
+        "qualified_configurations",
+        "gate_set_ref",
+        "eligibility_predicate_ref",
+        "field_policy_ref",
+        "rules_ref",
+        "hit_policy",
+        "default_outcome",
+        "validity_ref",
+        "revocation_ref",
+        "budget_ref",
+        "reuse_policy_ref",
+        "failure_scope"
+      ],
+      "properties": {
+        "contract": {
+          "const": "org.oden.gkos.classifier.experimental.v1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "preset"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authorizer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approval_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "grant_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "scope_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "task_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "qualified_configurations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "revision",
+              "digest"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "revision": {
+                "type": "string",
+                "minLength": 1
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}$"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "gate_set_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "eligibility_predicate_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "field_policy_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "rules_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "hit_policy": {
+          "const": "unique"
+        },
+        "default_outcome": {
+          "const": "hold"
+        },
+        "validity_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "revocation_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "budget_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "reuse_policy_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "failure_scope": {
+          "const": "dependent_operations"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contract",
+        "id",
+        "kind",
+        "request_ref",
+        "record_ref",
+        "input_digest",
+        "metadata_digest",
+        "evidence_refs",
+        "task_ref",
+        "configuration_ref",
+        "evaluator",
+        "processing_authorization_ref",
+        "status",
+        "observed_at",
+        "authentication_ref"
+      ],
+      "properties": {
+        "contract": {
+          "const": "org.oden.gkos.classifier.experimental.v1"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "evaluation"
+        },
+        "request_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "record_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "metadata_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "revision",
+              "digest"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "revision": {
+                "type": "string",
+                "minLength": 1
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}$"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "task_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "configuration_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "evaluator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "processing_authorization_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "abstain",
+            "invalid",
+            "unavailable",
+            "stale"
+          ]
+        },
+        "observed_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authentication_ref": {
+          "type": "object",
+          "required": [
+            "id",
+            "revision",
+            "digest"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "output": {
+          "type": "object",
+          "required": [
+            "label",
+            "evidence_refs"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "revision",
+                  "digest"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "revision": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "digest": {
+                    "type": "string",
+                    "pattern": "^sha256:[0-9a-f]{64}$"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "scores": {
+          "type": "object",
+          "required": [
+            "semantics",
+            "conversion_ref",
+            "calibration_ref",
+            "by_label"
+          ],
+          "properties": {
+            "semantics": {
+              "const": "calibrated_probability_ppm"
+            },
+            "conversion_ref": {
+              "type": "object",
+              "required": [
+                "id",
+                "revision",
+                "digest"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "digest": {
+                  "type": "string",
+                  "pattern": "^sha256:[0-9a-f]{64}$"
+                }
+              },
+              "additionalProperties": false
+            },
+            "calibration_ref": {
+              "type": "object",
+              "required": [
+                "id",
+                "revision",
+                "digest"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "digest": {
+                  "type": "string",
+                  "pattern": "^sha256:[0-9a-f]{64}$"
+                }
+              },
+              "additionalProperties": false
+            },
+            "by_label": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ok"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "output"
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "output"
+                  ]
+                },
+                {
+                  "required": [
+                    "scores"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
