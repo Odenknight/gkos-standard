@@ -62,6 +62,14 @@ The signed v0.81 edition remains the published baseline. Current `main` also con
 
 The separate ISO, EU and NIST add-ins above are informative proposals. The more detailed [NIST requirement crosswalk in PR #42](https://github.com/Odenknight/gkos-standard/pull/42) remains a review candidate until its separate review and merge gates are complete; its ISO Annex A mapping is verification-held.
 
+## Classifier-assisted disposition proposal
+
+A [draft amendment](decisions/proposals/Classifier_Assisted_Disposition_and_Reuse.md)
+proposes bounded classifier services, conditional matrices, assessment reuse and
+separately admitted metadata updates. It includes draft schemas and schema tests;
+owner policy choices and semantic qualification remain open. It creates no
+active requirement, deployment authority or qualified profile.
+
 ## Why GKOS exists
 
 Modern AI systems can retrieve records, combine evidence, create assertions, call tools, delegate work, and change external systems faster than a person can inspect every intermediate step. Conventional logs often show that a call occurred, but not whether the source was current, which contradictions were known, which policy version controlled the operation, which authority was valid at action time, or what corrective route existed afterward.

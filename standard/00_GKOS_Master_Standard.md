@@ -45,6 +45,12 @@ The [R15 Decision Record](../decisions/R15_Governed_State_Change_Reentry_and_Bou
 and [R16 Decision Record](../decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md)
 record the owner-authorized, non-consensus dispositions.
 
+## Pending classifier amendment (non-normative)
+
+The [classifier contract candidate](../docs/v082/CLASSIFIER_DISPOSITION_CONTRACT_DRAFT.md)
+and [proposed decision](../decisions/proposals/Classifier_Assisted_Disposition_and_Reuse.md)
+are review material only. They are not incorporated into the normative surface.
+
 ## Current claim boundary
 
 GKOS Core requires GCP-1 through GCP-5. GKOS Advanced requires GCP-1 through

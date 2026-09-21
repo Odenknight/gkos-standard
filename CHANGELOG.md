@@ -1,5 +1,12 @@
 # Changelog
 
+## Proposed classifier amendment — September 21, 2026
+
+- Add a draft bounded classifier/disposition and assessment-reuse contract,
+  policy questions, Engine handoff and provisional wire schemas/fixtures.
+- Keep active requirements, release standing and runtime authority unchanged;
+  semantic fixtures and independent review remain pending.
+
 ## Unreleased development — September 12, 2026
 
 - Clarify that different ownership is desirable, not mandatory, for a public
