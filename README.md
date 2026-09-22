@@ -1,6 +1,6 @@
 # Governed Knowledge Operations Standard (GKOS)
 
-Drafted by Shaun "Oden" Marshall. Refined and published by AI Assistant.
+Drafted by Shaun "Oden" Marshall, with AI drafting assistance. Published under owner authorization.
 
 <!-- markdownlint-disable MD013 -->
 
