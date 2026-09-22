@@ -7,7 +7,16 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-None currently recorded.
+### R24 — v0.82 informative release gate and publication control
+
+- **Date:** 2026-09-22
+- **Status:** Proposed; owner scope disposition recorded, acceptance pending
+- **Proposal:** Define the gates for publishing current `main` as an
+  informative GKOS v0.82 edition with an unchanged 62-requirement,
+  28-gate-code normative population, R22/R23 kept informative or prospective,
+  and publication only after a separate explicit owner approval.
+- **Record:**
+  [R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md](R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md)
 
 ## Owner clarifications
 

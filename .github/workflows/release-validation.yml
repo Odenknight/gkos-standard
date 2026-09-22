@@ -31,3 +31,8 @@ jobs:
               bash scripts/check-v081-release-candidate.sh
             fi
           fi
+      - name: Validate v0.82 release candidate
+        run: |
+          if [ -d release-candidates/v0.82-rc1 ]; then
+            bash scripts/check-v082-release-candidate.sh
+          fi
