@@ -34,6 +34,12 @@ When preparing a later edition, replace the version-specific DOI only after
 that edition's own archive identity is verified; never reuse v0.81's DOI as
 another edition's identity.
 
+### Prepared v0.82 archive
+
+GKOS-2026-09-22 v0.82 is an informative edition prepared under R24. Its version DOI
+is recorded here only after Zenodo ingests the v0.82 GitHub Release and the
+record is verified. Until then, cite v0.81 by its version DOI.
+
 ### Citation scope
 
 - Cite the **version DOI** when a claim depends on a specific GKOS edition.

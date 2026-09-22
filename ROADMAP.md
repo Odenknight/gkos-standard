@@ -11,8 +11,8 @@
 - **Accepted development decisions:** R17–R23
 - **Accepted documentation decision:** R22 canonical informative architecture
 - **Accepted prospective semantics:** R23 Layer-3 interoperability for the next normative edition after v0.82
-- **Proposed next release:** informative v0.82 under R24; normative
-  population unchanged
+- **Prepared release:** GKOS-2026-09-22 v0.82 informative edition under R24; normative
+  population unchanged; live only after its signed tag and GitHub Release
 - **Current development focus:** Layer-3 interoperability, ambiguity resolution,
   retrieval/governance evidence, portable evidence packaging, and public
   implementation work under R21

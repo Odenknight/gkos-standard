@@ -3,7 +3,7 @@
   "mapping_version": "1.1.0-development",
   "status": "machine-readable mirror",
   "authority": "requirements/PROFILE_APPLICABILITY.md",
-  "gkos_release": "GKOS-2026-08-29 v0.81 release candidate",
+  "gkos_release": "GKOS-2026-09-22 v0.82",
   "qualification_boundary": "This mapping never declares fixture coverage complete or grants a profile claim.",
   "profiles": {
     "GKOS-Core": { "inherits": ["GCP-1", "GCP-2", "GCP-3", "GCP-4", "GCP-5"] },

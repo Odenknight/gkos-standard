@@ -4,18 +4,23 @@ GKOS governs evidence, authority, context, validation, review, and authorized
 use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
-This edition is GKOS-2026-09-03 v0.81, a developmental pre-standard for AI
-governance, accountability, and auditability. It was published on September 3,
-2026 after separate R20 owner approval, a verified signed annotated tag,
-passing post-tag checks, and the GitHub Release. The archived version DOI is
-[10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294).
+This edition is GKOS-2026-09-22 v0.82, an informative edition of the developmental
+pre-standard for AI governance, accountability, and auditability.
+GKOS-2026-09-22 v0.82 is an owner-authorized developmental publication under R24; it takes
+effect only through a verified signed annotated `v0.82` tag and the GitHub
+Release. Until that event, GKOS-2026-09-03 v0.81 remains the published
+edition. Its normative requirement population is unchanged from v0.81:
+62 permanent allocations and 28 mandatory diagnostic gate codes. R22 is
+informative and R23 remains prospective for the next normative edition.
 It is non-consensus and non-qualifying, with no certification or accreditation
 claim. Prior master texts and release packages remain immutable historical
-evidence. See the [publication receipt](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md).
+evidence. See the [v0.82 release package](../releases/2026-09-22-v0.82/README.md) and
+the v0.81 [publication receipt](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
+(version DOI [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)).
 
 R17 adds captured-time authority validity intervals; R18 consolidates GCP-4/5
 review and protected-disclosure contracts; R19 prospectively adopts the eighth
-documentation-intent invariant. R20 controls publication. See the
+documentation-intent invariant. R20 controlled v0.81 publication; R24 controls v0.82. See the
 [v0.81 release package](../releases/2026-09-03-v0.81/README.md) and
 [publication binding](../docs/implementation/V081_PUBLICATION_BINDING.md).
 

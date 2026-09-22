@@ -5,7 +5,7 @@
 
 **Controlling decisions:** `decisions/R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md`; `decisions/R15_Governed_State_Change_Reentry_and_Bounded_Delegation_Development_Decision_Record.md`; `decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md`; `decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md`; `decisions/R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md`
 
-**Edition baseline:** GKOS-2026-09-03 v0.81; 62 permanent allocations are consolidated in this edition. Published September 3, 2026 through the R20 owner-approved signed tag `v0.81`.
+**Edition baseline:** GKOS-2026-09-03 v0.81; 62 permanent allocations are consolidated in this edition. Published September 3, 2026 through the R20 owner-approved signed tag `v0.81`. The GKOS-2026-09-22 v0.82 informative edition carries the same 62 allocations unchanged.
 
 This registry is authoritative for allocated GKOS requirement identifiers. It is append-only: an allocated ID is never deleted, renumbered, or reused. Later changes add dated status/source/replacement mappings; they do not rewrite an allocation's original text. `R13-102` is never allocated and cannot be reused.
 

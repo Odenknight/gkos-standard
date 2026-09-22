@@ -2,8 +2,18 @@
 
 ## Unreleased
 
-Post-v0.81 development on `main`. None of these changes alters the signed
-v0.81 release, creates a qualifying profile, or is itself a publication.
+None.
+
+## GKOS-2026-09-22 v0.82
+
+**Standing:** prepared informative edition; publication takes effect through
+the R24 owner-approved signed `v0.82` tag and GitHub Release. The normative
+population is unchanged from v0.81 (62 permanent allocations, 28 mandatory
+diagnostic gate codes). No profile qualification is created. None of these
+changes alters the signed v0.81 release.
+
+- Consolidate machine-readable release coordinates (R24 G82-06); see the
+  [coordinate record](docs/releases/V082_COORDINATE_CONSOLIDATION.md).
 
 ### Publication records and citation
 
