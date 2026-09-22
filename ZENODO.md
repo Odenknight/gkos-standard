@@ -1,6 +1,6 @@
 # Zenodo Release and DOI Policy
 
-Zenodo archives **tagged GitHub Releases**, not ordinary commits. After this repository is enabled in Zenodo, each eligible GitHub Release produces an immutable version record and a version-specific DOI. Zenodo also maintains a concept DOI representing GKOS across releases.
+Zenodo archives **tagged GitHub Releases**, not ordinary commits. This repository is enabled in Zenodo; each eligible GitHub Release produces an immutable version record and a version-specific DOI. Zenodo also maintains a concept DOI representing GKOS across releases.
 
 ## Release sequence
 

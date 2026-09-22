@@ -1,6 +1,48 @@
 # Changelog
 
-## Unreleased development — September 12, 2026
+## Unreleased
+
+Post-v0.81 development on `main`. None of these changes alters the signed
+v0.81 release, creates a qualifying profile, or is itself a publication.
+
+### Publication records and citation
+
+- Record the live v0.81 publication, verified Zenodo version and concept DOIs,
+  and the publication receipt; update the master standard's status notice
+  (#38). The master standard on `main` therefore differs from the tag.
+- Reconcile post-publication wording across the decision register, registry,
+  profile-applicability note, governance, implementation index, Zenodo policy,
+  compatibility snapshot and legal orientation (consistency review,
+  September 22, 2026).
+
+### Decisions and prospective semantics
+
+- Accept R22 canonical informative architecture r3 as documentation authority
+  only (#43).
+- Accept R23 prospective Layer-3 interoperability semantics for v0.82
+  development, with provisional schemas, fixtures, comparator and V82-01 work
+  packet (#44); rename the R23 record to drop its stale `_Proposal` filename
+  (#53).
+- Reconcile R22/R23 standing and adopt Selection Envelope terminology (#47).
+
+### Evidence, fixtures and CI
+
+- Add the provisional RRET-01 adversarial retrieval corpus and tests (#41).
+- Route Linux CI jobs to the self-hosted R720 runner (#49).
+
+### Orientation and graphics
+
+- Restore README illustrations and render Mermaid diagrams as graphics (#39);
+  add README attribution and two practical explainers (#40).
+- Add the full-stack workflow walkthrough and ISO, EU and NIST middleware
+  proposals; update the Known Limitations annex (#45); preserve the complete
+  roadmap and technical orientation (#46).
+- Assess current public ecosystem evidence for E2 (#51 and follow-up).
+- Reconcile the historical corpus with current standing; add domain guides,
+  corpus status, evolution and standards-engagement notes (#54).
+- Add the CIA triad summary, full alignment and graphics (#55).
+
+### Owner clarification — September 12, 2026
 
 - Clarify that different ownership is desirable, not mandatory, for a public
   second implementation; different functioning products still need evidence

@@ -5,10 +5,9 @@ certify an implementation, or replace the exact release and evidence
 coordinates required by a GKOS claim.
 
 - [`GKOS_REFERENCE_INFRASTRUCTURE.md`](GKOS_REFERENCE_INFRASTRUCTURE.md)
-  is the current PR #30 public reference-architecture candidate. Its bounded
-  different-model-family documentation review is complete and preserved under
-  `docs/reviews/`; accepted findings have been corrected, but the document does
-  not become controlling on `main` until PR #30 is merged. It separates Standard
+  is the public reference architecture, merged through PR #30. Its bounded
+  different-model-family documentation review is preserved under
+  `docs/reviews/`. It remains informative. It separates Standard
   requirements, architecture recommendations, implementation examples, and
   matters not in the Standard; maps the seven GKOS responsibilities to current
   infrastructure classes; and records the R21 protocol, agent-governance,
@@ -29,6 +28,13 @@ coordinates required by a GKOS claim.
   workspace for MCP, A2A, ACS, agent governance, multi-jurisdiction guidance,
   evidence packaging, public pilots, and the call for a public second
   implementation.
+- [`GKOS_END_TO_END_WORKFLOW.md`](GKOS_END_TO_END_WORKFLOW.md) walks the full
+  stack from source capture to authorized action or refusal.
+- [`GCP67_EXECUTABLE_EVIDENCE_STATUS.md`](GCP67_EXECUTABLE_EVIDENCE_STATUS.md)
+  records GCP-6/GCP-7 executable-evidence status without a qualifying claim.
+- [`V081_RATIFIED_BASELINE.md`](V081_RATIFIED_BASELINE.md) and
+  [`V081_PUBLICATION_BINDING.md`](V081_PUBLICATION_BINDING.md) bind the v0.81
+  baseline and its exact published commit.
 - Historical implementation-role material is preserved for provenance and is
   not current GKX 2.0 guidance.
 

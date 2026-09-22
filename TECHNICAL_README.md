@@ -115,7 +115,7 @@ Detailed requirements live in the
 ## Control-plane placement
 
 This control-plane graphic remains a narrower detail view. It does not
-compete with the proposed r3 orientation merely because it focuses on
+compete with the accepted R22 r3 orientation merely because it focuses on
 placement within an existing stack.
 
 ![Human knowledge connects to the GKOS control plane, which connects governance responsibilities to agent runtimes, workflow engines, and identity and policy systems](graphics/diagrams/gkos-control-plane.svg)
@@ -300,8 +300,10 @@ pass. Review the
 [fixture catalog](fixtures/README.md).
 
 The active executable suite remains incomplete and declares no qualifying
-profile. No current implementation satisfies the future v1.0
-second-independent-implementation gate.
+profile. No current implementation satisfies the future v1.0 gate for a
+publicly demonstrated second implementation with demonstrated implementation
+independence (see the
+[owner clarification](docs/decisions/2026-09-12-implementation-independence.md)).
 
 ## Provisional domain work
 
