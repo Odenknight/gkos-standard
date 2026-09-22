@@ -7,16 +7,7 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-### R24 — v0.82 informative release gate and publication control
-
-- **Date:** 2026-09-22
-- **Status:** Proposed; owner scope disposition recorded, acceptance pending
-- **Proposal:** Define the gates for publishing current `main` as an
-  informative GKOS v0.82 edition with an unchanged 62-requirement,
-  28-gate-code normative population, R22/R23 kept informative or prospective,
-  and publication only after a separate explicit owner approval.
-- **Record:**
-  [R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md](R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md)
+None currently recorded.
 
 ## Owner clarifications
 
@@ -28,12 +19,24 @@ These clarify existing decisions without allocating an R-number.
 
 ## Accepted decisions
 
+### R24 — v0.82 informative release gate and publication control
+
+- **Date:** 2026-09-22
+- **Status:** Accepted development decision; v0.82 preparation and publication-control authority
+- **Acceptance:** 2026-09-22; section 3 Option A selected
+- **Decision:** Define the gates for publishing current `main` as an
+  informative GKOS v0.82 edition with an unchanged 62-requirement,
+  28-gate-code normative population, R22/R23 kept informative or prospective,
+  and publication only after a separate explicit owner approval.
+- **Record:**
+  [R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md](R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md)
+
 ### R23 — Layer-3 interoperability semantics
 
 - **Date:** 2026-09-04
 - **Acceptance date:** 2026-09-04
 - **Accepted exact review head:** `57ccca0025fc587bcaac0910af3c4b2205f7746e`
-- **Status:** Accepted development decision; prospective v0.82 development authority
+- **Status:** Accepted development decision; prospective authority for the next normative edition after v0.82 (retargeted under R24 Option A; the record retains its original v0.82 wording)
 - **Owner preparation dispositions:** `1B, 2A, 3B, 4B, 5B, 6B`
 - **Review standing:** different-model-family advisory review completed at
   `792c6355fe8e78955ad829a3455be1e78c0b0a33` with `HOLD`; owner accepted

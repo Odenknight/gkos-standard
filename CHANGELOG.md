@@ -17,7 +17,8 @@ v0.81 release, creates a qualifying profile, or is itself a publication.
 
 ### Decisions and prospective semantics
 
-- Propose R24 v0.82 informative release gate and stage the unpublished
+- Accept R24 v0.82 informative release gate (Option A: R23 targets the next
+  normative edition after v0.82) and stage the unpublished
   `release-candidates/v0.82-rc1` package and validator. No tag, release or
   publication is authorized.
 - Accept R22 canonical informative architecture r3 as documentation authority

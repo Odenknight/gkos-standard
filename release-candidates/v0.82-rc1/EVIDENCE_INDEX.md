@@ -26,7 +26,7 @@ The Ubuntu/Node 23 lane remains informative.
 
 ## Review and repository-control evidence
 
-- R24 accepted by the owner, with the section 3 option (A or B) recorded.
+- R24 accepted by the owner on 2026-09-22 with section 3 Option A recorded.
 - R17–R24, the register, CHANGELOG and release text are mutually consistent.
 - G82-06 machine-readable coordinate consolidation complete.
 - `main` and `v*` tag rulesets active.

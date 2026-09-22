@@ -57,7 +57,8 @@ public-second-implementation: awaiting
 protocol-activation: NOT_AUTHORIZED
 certification-program: NOT_ESTABLISHED
 release-authorization: NOT_GRANTED
-r24-acceptance: PENDING
+r24-acceptance: ACCEPTED-2026-09-22
+r23-wording-option: A
 historical-artifact-validity-preserved: true
 preserves-immutable-releases:
   - releases/2026-09-03-v0.81

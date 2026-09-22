@@ -1,10 +1,10 @@
 # v0.82 publication checklist
 
-Preparation only until R24 is accepted and the owner approves publication.
+Preparation only until the owner approves publication.
 
-1. Owner accepts R24 and selects section 3 option A or B.
-2. Apply G82-06 coordinate consolidation and the selected option on the
-   candidate branch.
+1. Done 2026-09-22: owner accepted R24 and selected section 3 Option A.
+2. Apply G82-06 coordinate consolidation and Option A on the candidate
+   branch.
 3. Freeze one final `release/v0.82-rc1` commit.
 4. Run every mandatory exact-bound repository and conformance check.
 5. Preserve the exact candidate SHA and the evidence and limitation packet.

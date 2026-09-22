@@ -2,14 +2,17 @@
 
 **Date:** 2026-09-22
 
-**Status:** Proposed development decision; not accepted
+**Status:** Accepted development decision; v0.82 preparation and publication-control authority
+
+**Acceptance:** Owner accepted R24 on 2026-09-22 and selected section 3
+Option A.
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 
 **Owner scope disposition:** 2026-09-22 — publish current `main` as GKOS v0.82
 with R22/R23 and ecosystem material kept informative or prospective; no new
 requirements and no qualifying profile. This disposition selects the scope
-only. It does not accept this record or approve publication.
+only. Acceptance of R24 does not approve publication.
 
 **Publication target:** A separately approved GKOS v0.82 developmental
 publication using its actual publication date
@@ -24,7 +27,7 @@ accepted informative architecture (R22), accepted prospective Layer-3
 semantics (R23), provisional fixtures (RRET-01, L3), CI routing and ecosystem
 orientation that the Zenodo archive does not yet preserve.
 
-R24, if accepted, defines the conditions for a v0.82 **informative edition**:
+R24 defines the conditions for a v0.82 **informative edition**:
 a citable, archived snapshot of that material without changing normative
 requirement populations. R24 does not publish v0.82.
 
@@ -54,7 +57,12 @@ a later edition. Before freeze, the candidate must either:
 - **Option B** — keep the “v0.82 development” wording and state in the release
   notes that R23 normative adoption is deferred beyond the v0.82 publication.
 
-The owner selects A or B when accepting R24.
+**Selected: Option A** (owner, 2026-09-22). Current orientation documents
+retarget R23/V82-01 wording to the next normative edition after v0.82.
+Accepted decision records, review records, CHANGELOG history and the
+machine identifier `candidate_standing: proposed-v0.82` in the provisional L3
+fixtures remain unaltered historical coordinates; the identifier does not
+mean R23 is part of the v0.82 edition.
 
 ## 4. Controlling v0.82 gate register
 
@@ -132,7 +140,7 @@ recorded in a follow-up change. The v0.81 DOI is never reused.
 
 ## 5. Authority and exclusions
 
-R24, if accepted, authorizes candidate preparation, correction and preflight.
+R24 authorizes candidate preparation, correction and preflight.
 It does not itself authorize the `v0.82` tag, GitHub Release, DOI publication,
 any conformance or certification claim, normative adoption of R23, protocol
 activation, or any Engine or product release.

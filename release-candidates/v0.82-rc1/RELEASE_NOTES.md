@@ -12,14 +12,16 @@ requirement population is unchanged from v0.81.
 - R22 canonical informative architecture r3 (documentation authority only).
 - R23 accepted prospective Layer-3 interoperability semantics, with provisional
   L3 schemas, fixtures, comparator and the V82-01 work packet.
-  `EAR-GRAPH-001..003` remain DRAFTING; R23 is not normative in this edition.
+  `EAR-GRAPH-001..003` remain DRAFTING. Under R24 Option A, R23 is not
+  normative in this edition; its normative target is the next normative
+  edition after v0.82. The `proposed-v0.82` fixture identifier is historical.
 - Provisional RRET-01 adversarial retrieval corpus and tests.
 - Full-stack workflow walkthrough; informative ISO, EU AI Act and NIST
   middleware proposals and bounded pilot plan; updated Known Limitations annex.
 - CIA triad alignment, domain guides, corpus status, restored graphics and
   practical explainers.
 - Owner clarification on implementation independence (2026-09-12).
-- R24 release gate and publication control.
+- R24 release gate and publication control (accepted 2026-09-22).
 
 ## Unchanged
 

@@ -21,7 +21,7 @@ explicitly approves publication.
   file that would change that commit hash.
 - Profile qualification: none
 - Public second implementation: awaiting
-- Controlling decision: R24 (proposed; acceptance pending)
+- Controlling decision: R24 (accepted 2026-09-22; Option A)
 - Tag: not created
 - Publication: not authorized
 
