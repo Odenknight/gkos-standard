@@ -1,0 +1,105 @@
+{
+  "schema": "gkos-publication-record/v1",
+  "coordinate": "GKOS-2026-09-22 v0.82",
+  "release_class": "informative-edition",
+  "status": "LIVE_DEVELOPMENTAL_PRE_STANDARD",
+  "recorded_at": "2026-09-22T21:45:00Z",
+  "repository": "Odenknight/gkos-standard",
+  "commit": "e2a3dd49a70f6ccaa5fe6c702089ef93adcf9612",
+  "tree": "b71797da1ae35ca20e00bc6181408d58ba0e85f6",
+  "tag": "v0.82",
+  "tag_object": "2b96f60388188191e374487f656fd4f926bbff15",
+  "tag_signature": {
+    "verified": true,
+    "tagger": {
+      "name": "Shaun Allan Marshall",
+      "email": "40664141+Odenknight@users.noreply.github.com"
+    },
+    "key_fingerprint": "SHA256:dwwxvq69ZWPDlS6bzlvZ0uXo76ZKTRqvMSmDGhABhfM"
+  },
+  "authorization": {
+    "decision": "R24",
+    "decision_option": "A",
+    "owner": "Odenknight",
+    "disposition": "APPROVE v0.82 PUBLICATION at e2a3dd49a70f6ccaa5fe6c702089ef93adcf9612",
+    "recorded_at_basis": "Agent observation time; not an asserted original message timestamp."
+  },
+  "github_release": {
+    "id": 394139233,
+    "url": "https://github.com/Odenknight/gkos-standard/releases/tag/v0.82",
+    "published_at": "2026-09-22T21:36:25Z",
+    "publication_date": "2026-09-22",
+    "timezone": "America/New_York",
+    "assets": []
+  },
+  "zenodo": {
+    "record": 22905582,
+    "url": "https://zenodo.org/records/22905582",
+    "version_doi": "10.5281/zenodo.22905582",
+    "concept_doi": "10.5281/zenodo.22269293",
+    "archive": {
+      "key": "Odenknight/gkos-standard-v0.82.zip",
+      "size": 6884403,
+      "md5": "0448a110f818127abc05d31383153518",
+      "sha256": "dab135410d216d0e44eb93758da0c7d6e537310ec443a572c51826c67c8bf5f0",
+      "zip_comment": "e2a3dd49a70f6ccaa5fe6c702089ef93adcf9612",
+      "files_compared": 411,
+      "missing": 0,
+      "extra": 0,
+      "content_mismatches": 0
+    },
+    "metadata_verified": {
+      "version": "0.82",
+      "publication_date": "2026-09-22",
+      "creator": "Marshall, Shaun Allan",
+      "resource_type": "publication/technicalnote",
+      "license": "cc-by-4.0",
+      "is_new_version_of": "10.5281/zenodo.22269294"
+    }
+  },
+  "package_hashes": {
+    "releases/2026-09-22-v0.82/RELEASE_MANIFEST.yml": "2cbe32986343dd6f65e2995e79b88c1fceba2b2d6395d20571ab922b21a37ed1",
+    "releases/2026-09-22-v0.82/SHA256SUMS.txt": "97b71de53389c94e594adba1fb6def1fd15ab7c5c7fe8507c123f9d1239f9044",
+    "releases/2026-09-22-v0.82/SOURCE_SHA256SUMS.txt": "c4380f6405e877d96f8de2743c8fe9dd2c4dc98f246522d519887cd085d9775e"
+  },
+  "checks": {
+    "pr_58_head_tree_equal": true,
+    "pr_58_required_checks_passed": 20,
+    "tag_push_passed": [
+      "Release checksums",
+      "Markdown lint",
+      "Release validation",
+      "Link check",
+      "Conformance runner"
+    ],
+    "tag_push_failed": [
+      {
+        "name": "v0.82 post-tag verification",
+        "run": 35786213428,
+        "cause": "self-hosted runner lacks gh CLI (exit 127) before first check",
+        "owner_disposition": "publish with disclosure",
+        "equivalent_local_verification": "passed against fresh core.autocrlf=false clone of tag"
+      }
+    ]
+  },
+  "ruleset": {
+    "id": 22155727,
+    "restored": true,
+    "exclude": [],
+    "include": [
+      "refs/tags/v*"
+    ],
+    "bypass_actors": 0
+  },
+  "normative_population": {
+    "permanent_requirements": 62,
+    "gate_codes": 28,
+    "new_allocations": 0
+  },
+  "limitations": [
+    "No profile qualification, certification or regulator approval.",
+    "R23 not normative in this edition (R24 Option A).",
+    "No separately operated clean replication recorded.",
+    "Public second implementation remains awaiting."
+  ]
+}

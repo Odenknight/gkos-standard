@@ -6,15 +6,16 @@ governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
 This edition is GKOS-2026-09-22 v0.82, an informative edition of the developmental
 pre-standard for AI governance, accountability, and auditability.
-GKOS-2026-09-22 v0.82 is an owner-authorized developmental publication under R24; it takes
-effect only through a verified signed annotated `v0.82` tag and the GitHub
-Release. Until that event, GKOS-2026-09-03 v0.81 remains the published
-edition. Its normative requirement population is unchanged from v0.81:
+GKOS-2026-09-22 v0.82 is an owner-authorized developmental publication under R24. It was
+published on September 22, 2026 through a verified signed annotated `v0.82`
+tag and the GitHub Release. The archived version DOI is
+[10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582). Its normative requirement population is unchanged from v0.81:
 62 permanent allocations and 28 mandatory diagnostic gate codes. R22 is
 informative and R23 remains prospective for the next normative edition.
 It is non-consensus and non-qualifying, with no certification or accreditation
 claim. Prior master texts and release packages remain immutable historical
-evidence. See the [v0.82 release package](../releases/2026-09-22-v0.82/README.md) and
+evidence. See the [v0.82 publication receipt](../docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md),
+the [v0.82 release package](../releases/2026-09-22-v0.82/README.md) and
 the v0.81 [publication receipt](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
 (version DOI [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)).
 

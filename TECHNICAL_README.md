@@ -11,8 +11,8 @@ conformance evidence, and implementations. It is informative: the
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
 normative annexes control when an overview differs from them.
 
-- **Standard:** GKOS-2026-09-03 v0.81 (published); GKOS-2026-09-22 v0.82 informative
-  edition prepared under R24 with the same normative population
+- **Standard:** GKOS-2026-09-22 v0.82 informative edition (normative population
+  unchanged from GKOS-2026-09-03 v0.81)
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)

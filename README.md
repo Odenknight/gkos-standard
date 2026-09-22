@@ -28,10 +28,10 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 ## Current standing
 
 - **Release coordinate:** GKOS-2026-09-22 v0.82
-- **Publication status:** this informative edition becomes live through the R24 owner-approved, verified signed `v0.82` tag and GitHub Release; until then GKOS-2026-09-03 v0.81 remains published
-- **Release record:** [v0.82 release package](releases/2026-09-22-v0.82/README.md) · [GitHub Releases](https://github.com/Odenknight/gkos-standard/releases) · [v0.81 publication receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
+- **Publication status:** live since September 22, 2026, following R24 owner approval, the verified signed `v0.82` tag and GitHub publication
+- **Release record:** [v0.82 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82) · [publication and archive receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md) · [v0.82 release package](releases/2026-09-22-v0.82/README.md)
 - **Normative population:** unchanged from v0.81 (62 permanent requirements, 28 gate codes)
-- **Version DOI:** assigned by Zenodo after the v0.82 GitHub Release; v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
+- **Version DOI:** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [exact commit and approval binding](docs/implementation/V081_PUBLICATION_BINDING.md)
 - **Maturity:** developmental public pre-standard
@@ -59,7 +59,7 @@ July inputs from current guidance, domain pilots and standards engagement.
 
 ## Published release and current development
 
-The v0.82 informative edition is prepared for publication under R24; until its signed tag and GitHub Release exist, the signed v0.81 edition remains the published baseline. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
+The signed v0.82 informative edition is the published baseline; its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
 
 The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk in PR #42](https://github.com/Odenknight/gkos-standard/pull/42) remains a review candidate until its separate review and merge gates are complete; its ISO Annex A mapping is verification-held.
 
@@ -279,7 +279,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), and the 
 
 Documentation and original graphics are licensed under CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code are licensed under Apache-2.0. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and [ZENODO.md](ZENODO.md) for licensing, attribution, archival publication, and version-specific citation guidance.
 
-Suggested citation for the current published release: Shaun Allan Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-03 v0.81.* Zenodo. [https://doi.org/10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294). After the v0.82 archive is verified, cite GKOS-2026-09-22 v0.82 by its own version DOI; the concept DOI [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293) resolves to the latest version.
+Suggested citation for the current published release: Shaun Allan Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-22 v0.82.* Zenodo. [https://doi.org/10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582). The concept DOI [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293) resolves to the latest version.
 
 ## Maturity and governance boundary
 
