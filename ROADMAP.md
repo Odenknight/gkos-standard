@@ -1,18 +1,17 @@
 # GKOS roadmap
 
-- **Release coordinate:** GKOS-2026-09-03 v0.81
-- **Publication standing:** published and immutable at signed tag `v0.81`
-- **Published source target:** `8f2a158c6d4b8cabd907d98765766d281aec1247`
-- **Publication binding:** [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
-- **Development standing:** `main` is post-v0.81 development
+- **Release coordinate:** GKOS-2026-09-22 v0.82 (informative edition)
+- **Publication standing:** published and immutable at signed tag `v0.82`
+- **Published source target:** `e2a3dd49a70f6ccaa5fe6c702089ef93adcf9612`
+- **Publication binding:** [publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md); v0.81: [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
+- **Development standing:** `main` is post-v0.82 development
 - **Current profile standing:** no qualifying profile
 - **Machine exchange contract:** GKX 2.0
 - **Current governance:** owner-authorized v0.x development; not consensus
 - **Accepted development decisions:** R17–R23
 - **Accepted documentation decision:** R22 canonical informative architecture
 - **Accepted prospective semantics:** R23 Layer-3 interoperability for the next normative edition after v0.82
-- **Prepared release:** GKOS-2026-09-22 v0.82 informative edition under R24; normative
-  population unchanged; live only after its signed tag and GitHub Release
+- **Version DOI:** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582)
 - **Current development focus:** Layer-3 interoperability, ambiguity resolution,
   retrieval/governance evidence, portable evidence packaging, and public
   implementation work under R21

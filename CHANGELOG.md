@@ -2,12 +2,16 @@
 
 ## Unreleased
 
-None.
+- Record the live v0.82 publication, verified Zenodo DOI and publication
+  receipt; repair post-tag verification so it does not depend on the `gh` CLI
+  and can be re-run by manual dispatch.
 
 ## GKOS-2026-09-22 v0.82
 
-**Standing:** prepared informative edition; publication takes effect through
-the R24 owner-approved signed `v0.82` tag and GitHub Release. The normative
+**Standing:** live informative edition, published September 22, 2026 through
+the R24 owner-approved signed tag and GitHub Release. Zenodo version DOI:
+[10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582). See the
+[publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md). The normative
 population is unchanged from v0.81 (62 permanent allocations, 28 mandatory
 diagnostic gate codes). No profile qualification is created. None of these
 changes alters the signed v0.81 release.
