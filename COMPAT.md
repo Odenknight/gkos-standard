@@ -3,6 +3,10 @@
 Ratified by operator: 2026-07-23 · refreshed 2026-07-27 against the current
 ecosystem state.
 
+> **Historical snapshot (2026-07-27).** The rows below are not current. Use the
+> [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
+> for current GKOS, Engine and product coordinates.
+
 One-page train status per [VERSIONING.md](VERSIONING.md). This file is a
 factual snapshot, not a normative document — it does not amend
 `standard/`, `releases/`, or `decisions/`.

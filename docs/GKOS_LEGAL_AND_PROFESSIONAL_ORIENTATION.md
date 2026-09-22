@@ -4,6 +4,11 @@
 
 **Applies to:** GKOS-2026-08-20 v0.80
 
+**Current release note:** The published baseline is now GKOS-2026-09-03 v0.81.
+The seven-layer outline below still applies. v0.81 adds captured-time
+authority validity, GCP-5 review lifecycle and protected-disclosure
+requirements; see the [changelog](../CHANGELOG.md).
+
 **Status:** Informative orientation; the normative standard and annexes govern
 
 ## The short version
@@ -31,7 +36,7 @@ confidence score as authority.
 | **3. Relationships and Lineage** | Separate what a source says, what a person asserts, and what a system infers; record support, conflict, timing, scope, and origin. | An evidence map that distinguishes the exhibit from testimony or analysis | Assertion and lineage records |
 | **4. Validation and Control** | Apply the same declared rule to the same inputs and obtain the same result. Required failures stop the process. | A reproducible control, not an after-the-fact explanation | Diagnostics and control receipts |
 | **5. Review and Workflow** | Record the authorized disposition, conditions, actor, and time in append-only history. | The point at which a responsible actor accepts, rejects, limits, defers, or withdraws | Decision Record |
-| **6. Context Presentation** | Freeze the exact purpose-bound material shown, including required warnings, contradictions, restrictions, and known omissions. | The decision packet of record | Selection Set and Context Manifest |
+| **6. Context Presentation** | Freeze the exact purpose-bound material shown, including required warnings, contradictions, restrictions, and known omissions. | The decision packet of record | Selection Envelope and Context Manifest |
 | **7. Authorized Use** | Bind the exact context to the authority, actors, permitted scope, action, outcome, and recovery route. | The authority and execution receipt | Authorized Use Record or Refusal Receipt |
 
 The layers are cumulative responsibilities. GKOS Core means Layers 1 through
