@@ -10,8 +10,10 @@
 - **Current governance:** owner-authorized v0.x development; not consensus
 - **Accepted development decisions:** R17–R23
 - **Accepted documentation decision:** R22 canonical informative architecture
-- **Accepted prospective semantics:** R23 Layer-3 interoperability for v0.82 development
-- **Current development focus:** v0.82 interoperability, ambiguity resolution,
+- **Accepted prospective semantics:** R23 Layer-3 interoperability for the next normative edition after v0.82
+- **Prepared release:** GKOS-2026-09-22 v0.82 informative edition under R24; normative
+  population unchanged; live only after its signed tag and GitHub Release
+- **Current development focus:** Layer-3 interoperability, ambiguity resolution,
   retrieval/governance evidence, portable evidence packaging, and public
   implementation work under R21
 
@@ -172,6 +174,6 @@ This roadmap does not authorize:
 
 The [full stack walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md), separate [ISO, EU and NIST proposals](docs/ecosystem/README.md#governance-middleware-proposals), and [bounded pilot plan](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md) support the next evidence-gathering work. They add no profile qualification or production authority.
 
-## Accepted v0.82 development decisions
+## Accepted development decisions after v0.81
 
-R22 supplies accepted informative architecture authority; R23 supplies accepted prospective Layer-3 development semantics. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.
+R22 supplies accepted informative architecture authority, carried into the proposed informative v0.82 edition. R23 supplies accepted prospective Layer-3 development semantics for the next normative edition after v0.82 (R24 Option A). R24 controls the informative v0.82 release route. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.

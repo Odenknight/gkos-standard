@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-04
 
-**Status:** Implementation work packet under accepted R23; prospective v0.82 development only; release and evidence closure pending
+**Status:** Implementation work packet under accepted R23; prospective development toward the next normative edition after v0.82 (R24 Option A); release and evidence closure pending. The `v082`/`V82-01` identifiers are retained as stable historical names
 
 **Baseline:** `gkos-standard` `main` at
 `7d5147fd17f0d1eb42a92b1b4b63b24b812f9b2b` after accepted R22 / PR #43

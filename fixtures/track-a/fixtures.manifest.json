@@ -1,6 +1,6 @@
 {
   "catalog_version": "0.1.0-development",
-  "gkos_release": "GKOS-2026-08-29 v0.81 release candidate",
+  "gkos_release": "GKOS-2026-09-22 v0.82",
   "description": "Standard-owned portable baseline/mutation twins for every registered normative gate. The executable evaluator, not an implementation diagnostic, determines the expected stable gate code.",
   "qualifying_profiles": [],
   "complete_requirements": {

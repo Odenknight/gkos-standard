@@ -31,3 +31,13 @@ jobs:
               bash scripts/check-v081-release-candidate.sh
             fi
           fi
+      - name: Preserve v0.82 RC integrity and validate while unpublished
+        run: |
+          if [ -d release-candidates/v0.82-rc1 ]; then
+            (cd release-candidates/v0.82-rc1 && sha256sum -c SHA256SUMS.txt)
+            if grep -q '^version: "0.81"' CITATION.cff; then
+              bash scripts/check-v082-release-candidate.sh
+            fi
+          fi
+      - name: Preserve published v0.81 source integrity
+        run: node scripts/v081-source-checksums.mjs --check releases/2026-09-03-v0.81

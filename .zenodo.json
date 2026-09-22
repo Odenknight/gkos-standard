@@ -1,7 +1,7 @@
 {
-  "title": "GKOS v0.81 — A Developmental Pre-standard for AI Governance, Accountability and Auditability",
+  "title": "GKOS v0.82 — A Developmental Pre-standard for AI Governance, Accountability and Auditability (informative edition)",
   "upload_type": "publication",
-  "description": "The Governed Knowledge Operations Standard (GKOS) is a developmental public pre-standard designed to support AI governance, accountability, and auditability. It defines seven cumulative responsibilities for preserving sources, governing identity and lineage, applying deterministic controls, recording authorized review, assembling purpose-bound context, and recording authorized actions or refusals. Version 0.81 consolidates captured-time authority validity, review lifecycle and protected-disclosure requirements, the eighth documentation-intent invariant, and explicit publication controls. The edition contains 62 permanent requirement allocations and 28 mandatory diagnostic gate codes. This owner-authorized v0.x publication is non-consensus and non-qualifying; it does not establish implementation certification, regulatory approval, or independently demonstrated effectiveness. Public second implementation remains awaiting. Documentation and original graphics are CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code remain Apache-2.0.",
+  "description": "The Governed Knowledge Operations Standard (GKOS) is a developmental public pre-standard designed to support AI governance, accountability, and auditability. It defines seven cumulative responsibilities for preserving sources, governing identity and lineage, applying deterministic controls, recording authorized review, assembling purpose-bound context, and recording authorized actions or refusals. Version 0.82 is an informative edition published under R24: the normative population is unchanged from v0.81 (62 permanent requirement allocations and 28 mandatory diagnostic gate codes). It adds the accepted R22 canonical informative architecture, the accepted prospective R23 Layer-3 interoperability semantics with provisional schemas and fixtures (not normative in this edition), the provisional RRET-01 retrieval corpus, a full-stack workflow walkthrough, informative ISO, EU AI Act and NIST middleware proposals, CIA triad alignment, and domain orientation. This owner-authorized v0.x publication is non-consensus and non-qualifying; it does not establish implementation certification, regulatory approval, or independently demonstrated effectiveness. Public second implementation remains awaiting. Documentation and original graphics are CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code remain Apache-2.0.",
   "creators": [
     {
       "name": "Marshall, Shaun Allan"
@@ -29,10 +29,15 @@
       "identifier": "https://github.com/Odenknight/gkos-standard",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.22269294",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
     }
   ],
   "notes": "Release-level CC BY 4.0 metadata describes the normative standard. Individual implementation artifacts remain Apache-2.0 as declared by LICENSE.md.",
-  "version": "0.81",
-  "publication_date": "2026-09-03",
+  "version": "0.82",
+  "publication_date": "2026-09-22",
   "publication_type": "technicalnote"
 }
