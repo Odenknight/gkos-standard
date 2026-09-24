@@ -80,7 +80,15 @@
         "owner_disposition": "publish with disclosure",
         "equivalent_local_verification": "passed against fresh core.autocrlf=false clone of tag"
       }
-    ]
+    ],
+    "post_publication_ci_rerun": {
+      "workflow": "v0.82 post-tag verification",
+      "run": 35793983589,
+      "trigger": "workflow_dispatch",
+      "completed_at": "2026-09-22T23:05:01Z",
+      "conclusion": "success",
+      "workflow_fix": "PR #59"
+    }
   },
   "ruleset": {
     "id": 22155727,
