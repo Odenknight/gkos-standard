@@ -39,15 +39,16 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 
 ## Current standing
 
-- **Release coordinate:** GKOS-2026-09-24 v0.82.1 (prepared; publication pending)
-- **Publication status:** v0.82.1 is publication-ready, not yet published; v0.82 remains the latest verified publication until the signed tag and GitHub Release succeed
-- **Release record:** [v0.82 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82) · [publication and archive receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md) · [v0.82 release package](releases/2026-09-22-v0.82/README.md)
+- **Release coordinate:** GKOS-2026-09-24 v0.82.1
+- **Publication status:** live since September 24, 2026 in America/New_York; actual GitHub publication `2026-09-25T00:54:27Z`, verified signed tag and post-tag checks
+- **Release record:** [v0.82.1 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1) · [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) · [v0.82.1 release package](releases/2026-09-24-v0.82.1/README.md)
 - **Normative population:** unchanged from v0.81 (62 permanent requirements, 28 gate codes)
+- **Version DOI (v0.82.1):** archive verification pending
 - **Previous edition DOI (v0.82 only):** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [v0.82.1 authorization and exact-commit binding](docs/releases/V0821_PUBLICATION_CONTROL.md)
 - **Maturity:** developmental specification; public working draft
-- **Prepared edition package:** [GKOS-2026-09-24 v0.82.1](releases/2026-09-24-v0.82.1/README.md); unpublished documentation patch; v0.82.1 DOI not yet verified
+- **Edition package:** [GKOS-2026-09-24 v0.82.1](releases/2026-09-24-v0.82.1/README.md); published documentation patch
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
@@ -72,7 +73,7 @@ July inputs from current guidance, domain pilots and standards engagement.
 
 ## Published release and current development
 
-The signed v0.82 informative edition is the published baseline; its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
+The signed v0.82.1 documentation patch is the published edition; its technical baseline is unchanged from v0.82 and its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
 
 The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk in PR #42](https://github.com/Odenknight/gkos-standard/pull/42) remains a review candidate until its separate review and merge gates are complete; its ISO Annex A mapping is verification-held.
 

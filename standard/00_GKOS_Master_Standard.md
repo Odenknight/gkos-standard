@@ -9,14 +9,13 @@ GKOS governs evidence, authority, context, validation, review, and authorized
 use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
-This prepared edition is GKOS-2026-09-24 v0.82.1, a documentation patch of the
-developmental specification / public working draft (not yet published).
-Publication is owner-authorized under the
-[v0.82.1 publication control](../docs/releases/V0821_PUBLICATION_CONTROL.md),
-subject to successful exact-candidate checks and verified signed publication.
-The latest verified publication remains GKOS-2026-09-22 v0.82; its
-[publication receipt](../docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md)
-preserves its own DOI and evidence. No v0.82.1 DOI is asserted.
+This edition is GKOS-2026-09-24 v0.82.1, a published documentation patch of the
+developmental specification / public working draft. The verified signed tag and
+public GitHub Release were published at 2026-09-25T00:54:27Z, September 24 in
+America/New_York, under the owner's recorded publication authorization.
+See the [publication receipt](../docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) for exact-commit CI,
+signature, asset and archive evidence. Historical v0.82 evidence retains its
+own [receipt](../docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md).
 The normative population remains 62 permanent allocations and 28 mandatory
 diagnostic gate codes. GKX 2.0 is unchanged. R22 is informative and R23 remains
 prospective. No profile qualifies; no certification, accreditation or consensus
