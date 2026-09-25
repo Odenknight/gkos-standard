@@ -1,4 +1,4 @@
-# Governed Knowledge Operations Standard (GKOS)
+# Governed Knowledge Operations Specification (GKOS)
 
 Drafted by Shaun "Oden" Marshall, with AI drafting assistance. Published under owner authorization.
 
