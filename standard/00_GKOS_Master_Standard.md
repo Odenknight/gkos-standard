@@ -9,20 +9,19 @@ GKOS governs evidence, authority, context, validation, review, and authorized
 use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
-This edition is GKOS-2026-09-22 v0.82, an informative edition of the developmental
-pre-standard for AI governance, accountability, and auditability.
-GKOS-2026-09-22 v0.82 is an owner-authorized developmental publication under R24. It was
-published on September 22, 2026 through a verified signed annotated `v0.82`
-tag and the GitHub Release. The archived version DOI is
-[10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582). Its normative requirement population is unchanged from v0.81:
-62 permanent allocations and 28 mandatory diagnostic gate codes. R22 is
-informative and R23 remains prospective for the next normative edition.
-It is non-consensus and non-qualifying, with no certification or accreditation
-claim. Prior master texts and release packages remain immutable historical
-evidence. See the [v0.82 publication receipt](../docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md),
-the [v0.82 release package](../releases/2026-09-22-v0.82/README.md) and
-the v0.81 [publication receipt](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
-(version DOI [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)).
+This prepared edition is GKOS-2026-09-24 v0.82.1, a documentation patch of the
+developmental specification / public working draft (not yet published).
+Publication is owner-authorized under the
+[v0.82.1 publication control](../docs/releases/V0821_PUBLICATION_CONTROL.md),
+subject to successful exact-candidate checks and verified signed publication.
+The latest verified publication remains GKOS-2026-09-22 v0.82; its
+[publication receipt](../docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md)
+preserves its own DOI and evidence. No v0.82.1 DOI is asserted.
+The normative population remains 62 permanent allocations and 28 mandatory
+diagnostic gate codes. GKX 2.0 is unchanged. R22 is informative and R23 remains
+prospective. No profile qualifies; no certification, accreditation or consensus
+standing is claimed. Historical titles, identifiers and packages are preserved.
+See the [v0.82.1 package](../releases/2026-09-24-v0.82.1/README.md).
 
 R17 adds captured-time authority validity intervals; R18 consolidates GCP-4/5
 review and protected-disclosure contracts; R19 prospectively adopts the eighth

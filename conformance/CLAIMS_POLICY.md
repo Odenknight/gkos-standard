@@ -1,7 +1,8 @@
 # GKOS conformance-claims policy
 
 Status: owner-authorized clarification of existing claims controls; prepared
-for GKOS-2026-09-24 v0.82.1. The edition is not yet published.
+for GKOS-2026-09-24 v0.82.1. The edition is not yet published. Publication
+status is established by the signed tag, GitHub Release and subsequent receipt.
 
 ## Authority and scope
 

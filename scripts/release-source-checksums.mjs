@@ -8,7 +8,7 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 const [mode, dir] = process.argv.slice(2);
 assert.ok(['--generate', '--check'].includes(mode));
-const match = /^releases\/\d{4}-\d{2}-\d{2}-(v0\.\d+)$/.exec(dir ?? '');
+const match = /^releases\/\d{4}-\d{2}-\d{2}-(v0\.\d+(?:\.\d+)?)$/.exec(dir ?? '');
 assert.ok(match, 'expected releases/YYYY-MM-DD-v0.NN');
 const tag = match[1];
 let publishedRef;
