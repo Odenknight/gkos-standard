@@ -1,5 +1,10 @@
 # GKOS governance
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](conformance/CLAIMS_POLICY.md).
+
 ## Purpose
 
 This document governs amendment, review, publication, and repository authority during the pre-v1.0 development period and identifies the governance work required before GKOS v1.0.

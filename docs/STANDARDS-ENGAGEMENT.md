@@ -1,5 +1,10 @@
 # Standards engagement and assurance boundaries
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](../conformance/CLAIMS_POLICY.md).
+
 Informative strategy, September 15, 2026. GKOS v0.81 is owner-authorized,
 developmental, non-consensus and non-qualifying. This document establishes
 neither an organization nor a certification scheme.

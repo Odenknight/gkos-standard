@@ -13,6 +13,10 @@ None currently recorded.
 
 These clarify existing decisions without allocating an R-number.
 
+- Requested edition 2026-09-24; prepared 2026-09-25 —
+  [Specification status and claims](../docs/decisions/2026-09-24-specification-status-and-claims.md):
+  retain name and acronym; prepare unpublished v0.82.1 documentation patch.
+
 - 2026-09-12 — [Implementation independence](../docs/decisions/2026-09-12-implementation-independence.md):
   different ownership is desirable, not mandatory, for a public second
   implementation; implementation independence must still be demonstrated.

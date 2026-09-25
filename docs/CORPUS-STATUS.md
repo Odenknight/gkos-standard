@@ -3,8 +3,12 @@
 Informative editorial index. Assessed September 15, 2026 against main
 `ce270ced38e8477689074026c6b3f77277ccffec`. No normative amendment.
 
-The published baseline is [v0.81](../README.md#current-standing).
-Accepted R22/R23 development is not a v0.82 release. No profile is qualified.
+Current status clarification for the prepared September 24, 2026 edition:
+the published baseline is [v0.82](../README.md#current-standing).
+v0.82.1 is an unpublished documentation patch. GKOS is a developmental
+specification; its existing name and titles remain unchanged. R22 is informative
+and R23 remains prospective. No profile is qualified. See the
+[claims policy](../conformance/CLAIMS_POLICY.md).
 The master Standard, permanent registry and adopted decisions control;
 guidance and implementation evidence do not create new requirements.
 
