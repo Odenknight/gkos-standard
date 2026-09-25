@@ -1,25 +1,23 @@
 cff-version: 1.2.0
-message: "Please cite the specific verified GKOS release used. Version 0.82 (informative edition) was owner-authorized and published on September 22, 2026; its source archive is preserved by Zenodo. Version 0.81 is DOI 10.5281/zenodo.22269294."
+message: "Prepared v0.82.1 citation; publication pending. Verify the signed tag and GitHub Release before citing this edition as published. No version DOI is yet asserted."
 title: "Governed Knowledge Operations Standard"
-version: "0.82"
-date-released: "2026-09-22"
-doi: "10.5281/zenodo.22905582"
+version: "0.82.1"
+date-released: "2026-09-24"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22269293"
-    description: "Concept DOI for all GKOS versions; use the version DOI for edition-specific claims."
+    description: "Concept DOI for all GKOS versions; not a v0.82.1 version DOI."
 authors:
   - family-names: Marshall
     given-names: Shaun Allan
     alias: Odenknight
 repository-code: "https://github.com/Odenknight/gkos-standard"
 license: CC-BY-4.0
-abstract: "A developmental pre-standard for AI governance, accountability, and auditability that keeps evidence, claims, authority, context, validation, and consequential agent actions distinguishable and traceable."
+abstract: "A developmental specification and public working draft for AI governance, accountability, and auditability. Non-consensus and non-qualifying."
 preferred-citation:
   type: standard
   title: "Governed Knowledge Operations Standard (GKOS)"
-  version: "GKOS-2026-09-22 v0.82"
-  doi: "10.5281/zenodo.22905582"
+  version: "GKOS-2026-09-24 v0.82.1"
   authors:
     - family-names: Marshall
       given-names: Shaun Allan

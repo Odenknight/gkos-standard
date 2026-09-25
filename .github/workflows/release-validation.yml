@@ -21,6 +21,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 24
+      - name: Install exact release-validator dependencies
+        working-directory: conformance/runner
+        run: npm ci
       - name: Validate declared release content
         run: bash scripts/check-current-release.sh
       - name: Preserve RC integrity and validate active candidate

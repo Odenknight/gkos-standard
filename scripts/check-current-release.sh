@@ -11,6 +11,10 @@ if [[ "$version" == "0.81" ]]; then
   exec bash scripts/check-v081-published-release.sh --pre-tag
 fi
 
+if [[ "$version" == "0.82.1" ]]; then
+  exec bash scripts/check-v0821-release.sh
+fi
+
 [[ "$version" =~ ^0\.[0-9]+$ ]] || {
   echo "cannot resolve published version from CITATION.cff" >&2
   exit 1

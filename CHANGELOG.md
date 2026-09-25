@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-### Prepared GKOS-2026-09-24 v0.82.1 (unpublished)
+## GKOS-2026-09-24 v0.82.1
+
+**Standing:** prepared documentation patch; publication pending. The signed tag
+and GitHub Release establish actual publication, not this prepared heading.
 
 - Classify GKOS as a developmental specification / public working draft;
   retain the existing project name, acronym and titles.

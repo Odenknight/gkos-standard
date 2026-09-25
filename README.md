@@ -39,15 +39,15 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 
 ## Current standing
 
-- **Release coordinate:** GKOS-2026-09-22 v0.82
-- **Publication status:** live since September 22, 2026, following R24 owner approval, the verified signed `v0.82` tag and GitHub publication
+- **Release coordinate:** GKOS-2026-09-24 v0.82.1 (prepared; publication pending)
+- **Publication status:** v0.82.1 is publication-ready, not yet published; v0.82 remains the latest verified publication until the signed tag and GitHub Release succeed
 - **Release record:** [v0.82 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82) · [publication and archive receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md) · [v0.82 release package](releases/2026-09-22-v0.82/README.md)
 - **Normative population:** unchanged from v0.81 (62 permanent requirements, 28 gate codes)
-- **Version DOI:** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
+- **Previous edition DOI (v0.82 only):** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
-- **Publication controls:** [exact commit and approval binding](docs/implementation/V081_PUBLICATION_BINDING.md)
+- **Publication controls:** [v0.82.1 authorization and exact-commit binding](docs/releases/V0821_PUBLICATION_CONTROL.md)
 - **Maturity:** developmental specification; public working draft
-- **Prepared next edition:** GKOS-2026-09-24 v0.82.1; unpublished documentation patch
+- **Prepared edition package:** [GKOS-2026-09-24 v0.82.1](releases/2026-09-24-v0.82.1/README.md); unpublished documentation patch; v0.82.1 DOI not yet verified
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
