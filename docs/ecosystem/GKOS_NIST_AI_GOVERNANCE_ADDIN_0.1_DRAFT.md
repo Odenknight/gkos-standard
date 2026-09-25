@@ -8,6 +8,8 @@ GKOS-NIST-ADDIN-0.1 | PROPOSED TECHNICAL CONTRIBUTION
 
 ## External basis
 
+For requirement-level detail, see the [separate 62-row crosswalk candidate](../GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md). This add-in's publication does not approve those mappings; their different-model-family review and owner disposition remain separate gates.
+
 The AI RMF 1.0 is a voluntary risk-management framework. Its Core uses GOVERN, MAP, MEASURE and MANAGE; these functions are not a mandatory sequence. NIST AI 600-1 is the 2024 Generative AI Profile. The NIST AI Resource Center states that an AI RMF revision is in progress, so this proposal pins its mapping to 1.0. [N01](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10), [N02](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/), [N03](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
 
 The AI Agent Standards Initiative addresses standards, open protocols and research into agent security and identity. NCCoE's identity-and-authorization project is a particularly relevant technical audience. It currently reports Reviewing Comments and says the concept-paper comment period is closed. [N04](https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative), [N05](https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization), [N06](https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf)
