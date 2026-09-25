@@ -1,0 +1,260 @@
+{
+  "schema": "gkos-publication-record/v1",
+  "coordinate": "GKOS-2026-09-24 v0.82.1",
+  "release_class": "documentation-patch",
+  "status": "LIVE_DEVELOPMENTAL_SPECIFICATION",
+  "recorded_at": "2026-09-25T01:02:53.957581+00:00",
+  "repository": "Odenknight/gkos-standard",
+  "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+  "tree": "d2ba2c14fd96adacec8baa28b2a963d7d02876f2",
+  "tag": "v0.82.1",
+  "tag_object": "f98a9d5e46cc78d267298dcbed8e23b0770e78bb",
+  "tag_signature": {
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "key_fingerprint": "SHA256:dwwxvq69ZWPDlS6bzlvZ0uXo76ZKTRqvMSmDGhABhfM",
+    "tagger": {
+      "name": "Shaun Allan Marshall",
+      "email": "40664141+Odenknight@users.noreply.github.com",
+      "date": "2026-09-25T00:50:47Z"
+    }
+  },
+  "authorization": {
+    "owner": "Odenknight",
+    "basis": "owner-session-publication-authorization",
+    "separate_exact_sha_approval": false,
+    "scope_quote": "I authorize the necessary release-preparation changes, commits, pushes, pull requests, merges after required checks pass, signed tag creation, and public GitHub Release publication. Continue autonomously within that scope. Do not expose, copy, upload, or print private keys or credentials.",
+    "binding_quote": "This prompt authorizes publication within the stated scope. Preserve it as owner authorization, and bind the resulting release record to the exact tested commit. Do not invent a separate exact-SHA approval or independent review.",
+    "ruleset_quote": "I authorize the narrowly scoped tag-creation ruleset change needed for v0.82.1, preserving update/deletion protections. Complete the release.",
+    "record": "docs/releases/V0821_PUBLICATION_CONTROL.md"
+  },
+  "github_release": {
+    "id": 396192749,
+    "url": "https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1",
+    "published_at": "2026-09-25T00:54:27Z",
+    "publication_date": "2026-09-24",
+    "timezone": "America/New_York",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "EVIDENCE_INDEX.md",
+        "size": 1173,
+        "sha256": "8039d4f3fdeaa62330232f2e748f46571f196cca0531e117b6007746cfb73822",
+        "download_verified": true
+      },
+      {
+        "name": "README.md",
+        "size": 848,
+        "sha256": "25b6c5fd0a16426f58bde31f19b6cd5d07a6f8a108dbd518b886fcfe17cd0112",
+        "download_verified": true
+      },
+      {
+        "name": "RELEASE_MANIFEST.yml",
+        "size": 3604,
+        "sha256": "ddb86e0e89826263f2681788b2e42300a60a4965da4e270f495d223c22c04bf0",
+        "download_verified": true
+      },
+      {
+        "name": "RELEASE_NOTES.md",
+        "size": 1415,
+        "sha256": "c78a5e854c8195a633f5015ce5eefecb5fb7fc7a18f5f8c92ab19bc5663662f1",
+        "download_verified": true
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "size": 418,
+        "sha256": "25edd25a0dd3ab4915c808dfbf27c2ada86b7c994c19c72c760b82e836efaf57",
+        "download_verified": true
+      },
+      {
+        "name": "SOURCE_SHA256SUMS.txt",
+        "size": 49484,
+        "sha256": "d4f96f972566ce088b35de5c7510615bfd7a373b3746cf52f4698380d547a928",
+        "download_verified": true
+      }
+    ]
+  },
+  "checks": {
+    "required_exact_commit": [
+      {
+        "name": "lint",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077023/job/107896727062"
+      },
+      {
+        "name": "links",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077043/job/107896726977"
+      },
+      {
+        "name": "validate",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077036/job/107896726833"
+      },
+      {
+        "name": "checksums",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077014/job/107896726564"
+      },
+      {
+        "name": "blocking dependency audit / Node 24",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077027/job/107896727035"
+      },
+      {
+        "name": "blocking ubuntu-latest / Node 22",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077027/job/107896727150"
+      },
+      {
+        "name": "blocking ubuntu-latest / Node 24",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077027/job/107896727130"
+      },
+      {
+        "name": "blocking windows-latest / Node 22",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077027/job/107896727032"
+      },
+      {
+        "name": "blocking windows-latest / Node 24",
+        "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+        "conclusion": "success",
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077027/job/107896727127"
+      }
+    ],
+    "main_workflows": [
+      {
+        "name": "Release checksums",
+        "run": 36079077014,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077014",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Release validation",
+        "run": 36079077036,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077036",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Conformance runner",
+        "run": 36079077027,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077027",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Markdown lint",
+        "run": 36079077023,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077023",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Link check",
+        "run": 36079077043,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079077043",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      }
+    ],
+    "tag_workflows": [
+      {
+        "name": "Release checksums",
+        "run": 36079437683,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079437683",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Markdown lint",
+        "run": 36079437681,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079437681",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Release validation",
+        "run": 36079437740,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079437740",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "v0.82.1 post-tag verification",
+        "run": 36079437660,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079437660",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Conformance runner",
+        "run": 36079437664,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079437664",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      },
+      {
+        "name": "Link check",
+        "run": 36079437665,
+        "url": "https://github.com/Odenknight/gkos-standard/actions/runs/36079437665",
+        "conclusion": "success",
+        "head_sha": "3a62e4a02d674a574d87e01c10dc88b7715de037"
+      }
+    ],
+    "local": [
+      "package/source inventories",
+      "strict mutation coverage",
+      "runner tests",
+      "dependency audit: zero vulnerabilities",
+      "negative validation: counts, schemas, metadata",
+      "local signed-tag verification",
+      "public asset byte comparison and checksums"
+    ]
+  },
+  "package_hashes": {
+    "RELEASE_MANIFEST.yml": "ddb86e0e89826263f2681788b2e42300a60a4965da4e270f495d223c22c04bf0",
+    "SHA256SUMS.txt": "25edd25a0dd3ab4915c808dfbf27c2ada86b7c994c19c72c760b82e836efaf57",
+    "SOURCE_SHA256SUMS.txt": "d4f96f972566ce088b35de5c7510615bfd7a373b3746cf52f4698380d547a928"
+  },
+  "ruleset": {
+    "general_id": 22155727,
+    "restored": true,
+    "exclude": [],
+    "bypass_actors": 0,
+    "immutable_id": 23971029,
+    "creation_id": 23971030,
+    "creation_bypass_removed": true,
+    "scope": "Only refs/tags/v0.82.1 creation was temporarily permitted to the sole repository administrator; update and deletion remained prohibited."
+  },
+  "zenodo": {
+    "status": "received-awaiting-service-processing",
+    "release_event_response": 202,
+    "integration_ui_status": "Received",
+    "service_notice": "Zenodo reports service slowness and intermittent outages.",
+    "version_doi": null
+  },
+  "normative_population": {
+    "permanent_requirements": 62,
+    "gate_codes": 28,
+    "new_allocations": 0
+  },
+  "limitations": [
+    "Non-consensus developmental specification / public working draft.",
+    "AI-assisted editorial self-review; no independent review or separately operated replication asserted.",
+    "No profile qualification, certification or regulatory approval.",
+    "R23 prospective; no automatic implementation-claim carry-forward."
+  ]
+}

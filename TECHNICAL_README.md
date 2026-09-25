@@ -16,7 +16,7 @@ conformance evidence, and implementations. It is informative: the
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
 normative annexes control when an overview differs from them.
 
-- **Prepared documentation patch:** GKOS-2026-09-24 v0.82.1, unpublished;
+- **Published documentation patch:** GKOS-2026-09-24 v0.82.1;
   technical baseline GKOS-2026-09-22 v0.82 informative edition (normative population
   unchanged from GKOS-2026-09-03 v0.81)
 - **Machine exchange contract:** GKX 2.0

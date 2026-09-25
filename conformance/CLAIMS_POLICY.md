@@ -1,8 +1,8 @@
 # GKOS conformance-claims policy
 
-Status: owner-authorized clarification of existing claims controls; prepared
-for GKOS-2026-09-24 v0.82.1. The edition is not yet published. Publication
-status is established by the signed tag, GitHub Release and subsequent receipt.
+Status: owner-authorized clarification of existing claims controls, published
+in GKOS-2026-09-24 v0.82.1. The verified signed tag, GitHub Release and
+[publication receipt](../docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) establish live status.
 
 ## Authority and scope
 
