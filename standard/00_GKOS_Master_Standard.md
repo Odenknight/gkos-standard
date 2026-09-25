@@ -1,5 +1,10 @@
 # GKOS master standard
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](../conformance/CLAIMS_POLICY.md).
+
 GKOS governs evidence, authority, context, validation, review, and authorized
 use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.

@@ -4,7 +4,7 @@ Drafted by Shaun "Oden" Marshall, with AI drafting assistance. Published under o
 
 <!-- markdownlint-disable MD013 -->
 
-> A developmental public pre-standard for making the path from evidence to consequential action inspectable, testable, and governable.
+> A developmental specification (public working draft) for making the path from evidence to consequential action inspectable, testable, and governable.
 
 **Evidence is not truth. Confidence is not authority. Capability is not authority.**
 
@@ -25,6 +25,18 @@ When a person or AI system recommends, approves, or takes an action, GKOS is des
 
 GKOS does not replace databases, records systems, agent runtimes, workflow engines, identity providers, policy engines, professional judgment, or applicable law. It defines the responsibilities and records that allow those components to participate in a governed evidence-to-action chain.
 
+## Specification status and retained name
+
+GKOS is a developmental specification, published as a public working draft.
+The project name **Governed Knowledge Operations Standard**, acronym **GKOS**,
+and existing titles and identifiers are retained pending a separate owner title
+change. The retained name does not assert consensus, accreditation,
+certification, or regulatory approval. Do not describe the current publication
+as a consensus specification.
+
+See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
+[v0.82.1 preparation record](docs/releases/GKOS_2026-09-24_v0.82.1_PREPARATION.md).
+
 ## Current standing
 
 - **Release coordinate:** GKOS-2026-09-22 v0.82
@@ -34,7 +46,8 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 - **Version DOI:** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [exact commit and approval binding](docs/implementation/V081_PUBLICATION_BINDING.md)
-- **Maturity:** developmental public pre-standard
+- **Maturity:** developmental specification; public working draft
+- **Prepared next edition:** GKOS-2026-09-24 v0.82.1; unpublished documentation patch
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
@@ -283,7 +296,7 @@ Suggested citation for the current published release: Shaun Allan Marshall. *Gov
 
 ## Maturity and governance boundary
 
-GKOS v0.x is a developmental public pre-standard under Founder/Initial Editor governance. It is not an accredited standard, consensus publication, certification program, legal opinion, or regulator approval.
+GKOS v0.x is a developmental specification (public working draft) under Founder/Initial Editor governance. It is not an accredited standard, consensus publication, certification program, legal opinion, or regulator approval.
 
 The v1.0 path requires materially stronger governance and external evidence, including multi-stakeholder maintenance, appeals and succession mechanisms, public review, a publicly demonstrated second implementation, interoperable evidence exchange, pilot results, and archival release controls.
 

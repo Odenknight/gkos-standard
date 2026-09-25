@@ -1,5 +1,10 @@
 # GKOS conformance
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](CLAIMS_POLICY.md).
+
 GKOS defines cumulative GCP-1 through GCP-7 responsibilities plus an
 independent Viewer/Projection Profile. GKOS Core requires GCP-1 through GCP-5;
 GKOS Advanced requires GCP-1 through GCP-7. A named GCP-6 Context-Only

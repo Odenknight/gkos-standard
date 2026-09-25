@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Prepared GKOS-2026-09-24 v0.82.1 (unpublished)
+
+- Classify GKOS as a developmental specification / public working draft;
+  retain the existing project name, acronym and titles.
+- Consolidate existing exact-bound conformance and non-certification controls
+  in `conformance/CLAIMS_POLICY.md`, including SSP and contract guidance.
+- Preserve technical contracts and historical releases; no profile qualifies.
+- Record the requested edition date separately from actual publication, which
+  remains pending. See the v0.82.1 preparation record.
+
 - Record the live v0.82 publication, verified Zenodo DOI and publication
   receipt; repair post-tag verification so it does not depend on the `gh` CLI
   and can be re-run by manual dispatch.

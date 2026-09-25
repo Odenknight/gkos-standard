@@ -1,5 +1,10 @@
 # GKOS technical orientation
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](conformance/CLAIMS_POLICY.md).
+
 <!-- markdownlint-disable MD013 -->
 
 ![The GKOS seven-layer model](illustrated/figures/fig1-seven-layers.png)
@@ -16,7 +21,7 @@ normative annexes control when an overview differs from them.
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
-- **Maturity:** developmental public pre-standard
+- **Maturity:** developmental specification; public working draft
 
 [Return to the public README](README.md) ·
 [Read the master standard](standard/00_GKOS_Master_Standard.md) ·
