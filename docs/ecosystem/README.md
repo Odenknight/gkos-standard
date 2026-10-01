@@ -53,6 +53,11 @@ adapter must add controls or records that the protocol does not supply.
 
 ## Deployment and assessment drafts
 
+- [CMMC Level 2 component-evidence crosswalk](CMMC_LEVEL2_CROSSWALK_0.1_DRAFT.md)
+  is a separately versioned companion to PR #42: complete 110-requirement
+  inventory, 320 objective identifiers, bounded potential evidence and explicit
+  gaps. It is draft guidance and asserts no CMMC assessment result or status.
+
 - [`AGENT_GOVERNANCE_INTEROPERABILITY_DRAFT.md`](AGENT_GOVERNANCE_INTEROPERABILITY_DRAFT.md)
 - [`MULTI_JURISDICTION_DEPLOYMENT_GUIDANCE_DRAFT.md`](MULTI_JURISDICTION_DEPLOYMENT_GUIDANCE_DRAFT.md)
 - [`GKOS_CONFORMANCE_EVIDENCE_PACKAGE_0.1_DRAFT.md`](GKOS_CONFORMANCE_EVIDENCE_PACKAGE_0.1_DRAFT.md)
