@@ -1,0 +1,171 @@
+# PR #42 bounded different-model-family review: GKOS-XW-002 v0.2.1-draft at `37cab1f`
+
+Formatting-only repository copy of Fable’s report. [Original bytes](PR42_XW002_FABLE_REVIEW_20261001.source.txt) are preserved separately; SHA-256 `2cec73c207e89ee76e97a52a9bdb3ffc918658fe3a2a28ad969712dae09802a8`. Table separator spacing and question-number markup are normalized for repository Markdown checks. Findings and verdict are unchanged.
+
+Packet: GKOS-PR42-XW2-REVIEW-001. Task: PR42-XW002-FABLE-20261001 (requester Astra-Oden; owner authorized asking Fable-FAC, 2026-10-01).
+
+**Verdict: `PASS_WITH_CORRECTIONS`.** This review adds one new MAJOR finding, F-007. The historical MAJOR findings F-001 and F-002 are independently confirmed. All three need an explicit owner disposition before merge.
+
+## Reviewer identity (recorded before the substantive review)
+
+| Field | Value |
+| --- | --- |
+| Provider | Anthropic |
+| Model family | Claude |
+| Exact model | Claude Opus 5.5 (`claude-opus-5-5`) |
+| Instance | Claude Code desktop session `207e2d7c-75a6-4e03-9ffd-d4a70f785da4` |
+| Operator / identity | FAC (Shaun Marshall) operating the Fable-FAC agent identity |
+| Start / end | 2026-10-01T06:26:10Z / 2026-10-01T06:32:10Z |
+| PR head / tree | `37cab1fcb3b3902d9efa4abe737bdf452a624b9d` / `40edadad215906230ad897fb6d75d510b22105b4` (GitHub-verified, signed-off) |
+| Base | `b308ff7137bdbb109c31f0ace7e6c49b8988e0d5` |
+| Tools | git, gh, Python 3.14.2, Node 24.18.0, npm, pypdf 6.18.1 |
+| External source | NIST AI 100-1 PDF retrieved 2026-10-01 from `nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf`, SHA-256 `7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1`, 48 pages. Core Tables 1–4 text extracted from PDF pages 27–38 and read in full. |
+| Unavailable | ISO/IEC 42001:2023 licensed text (not needed: the hold was verified only) |
+| Different family | The drafting/adjudication path is GPT-5.6 Sol (packet header). This reviewer is Claude-family. **Disclosure:** the 2026-09-07 historical reviewer was also Claude-family. |
+| Non-authorship | Fable-FAC did not author or commit any part of this candidate. **Disclosure:** on 2026-10-01, before this review, Fable-FAC recommended *parking* PR #42 (`03-pr42-plain-explanation.md`). That was a prioritization view, not a semantic finding. |
+| Independence limit | Same owner and agent fleet as the author. This is a bounded different-model review, **not** organizationally independent assessment. |
+
+## Deterministic checks executed at the head
+
+| Check | Result |
+| --- | --- |
+| `python -m unittest discover -s scripts/xw002 -p "test_*.py"` | 12 tests OK |
+| `python scripts/xw002/gen.py --check` | PASS (prose and JSON generated from `rows.py`) |
+| Population | 62 rows, 62 unique, 0 missing / 0 extra vs. snapshot |
+| Snapshot pin | `scripts/xw002/requirements-v081.md` is **byte-identical** to `requirements/REGISTRY.md` at tag `v0.81` (`8f2a158c`), SHA-256 `c0d8b5fa…2fc3` |
+| Distribution | DEC 5 / CON 23 / DD 3 / NDM 30 / SUP 1 (matches the prose and the disposition record) |
+| Subcategory use | MEASURE 2.8 ×15, GOVERN 3.2 ×9, GOVERN 1.1 ×2, MANAGE 4.1 ×2, MEASURE 2.9 ×2, MEASURE 2.7 ×2, GOVERN 1.2, MEASURE 2.1, MEASURE 2.5, MAP 1.1, MEASURE 2.10 ×1 each. **No** GOVERN 2.1, MEASURE 1.1, MEASURE 1.3, MAP 1.6, MANAGE 1.3, MANAGE 2.4 or MANAGE 4.3. |
+| ISO | JSON `iso_42001.status = verification-held`, no rows. No Annex A identifiers in the prose. |
+| Adequacy verbs | Every occurrence of satisfy/discharge/complete/align/conform/certif/endorse is a negation or a prohibition |
+| Runner (worktree at head, `npm ci`) | 123/123 pass, 0 skipped. `npm audit` 0 vulnerabilities. `fast-uri@3.1.8` |
+| fast-uri 3.1.8 integrity | Lockfile hash equals `npm view fast-uri@3.1.8 dist.integrity` |
+| Release guard | `check-current-release.sh` (development mode) PASS. Strict mode fails ("technical baseline changed"). `--development --post-tag` fails ("development is not publication validation"). An extra lockfile edit fails ("unreviewed dependency change"). Worktree restored clean. |
+| Hosted CI on head | 22/22 check runs `success` |
+
+## Answers to the packet questions
+
+**1.** Yes, pinned to v0.81 (byte-identical snapshot).
+**2.** Yes. The ESR row names AI 100-1, Jan 2023, DOI, Core Tables 1–4, voluntary/no conformance model, a re-review trigger, and no adoption claim.
+**3.** Yes (see adequacy-verb check).
+**4.** Yes. The classes are narrow, and DEC explicitly "does not establish the complete outcome".
+**5.** Yes. 62/62 exactly once, and no Engine codes.
+6–9. See the row table. Weak nexus remains on PROFILE-005 (F-007), CONTEXT-001 MAP 1.1 (F-008) and POLICY-001 (F-010).
+**10.** Yes, MANAGE 2.4 is absent. No requirement concerns AI-system supersession or deactivation for performance reasons.
+**11.** Yes, MANAGE 4.3 is absent.
+**12.** Yes, MEASURE 1.3 is absent.
+**13.** Yes. GOVERN 2.1 is now absent everywhere (F-001 applied), and GOVERN 3.2 is used only on role and oversight rows. See F-009 for one omission.
+**14.** Mostly. CANON-007 was moved to NDM (F-003, confirmed). AUTHUSE-002 is an integrity *refusal*, not canonicalization, so it is acceptable. See F-012 on the §4.4 wording.
+**15.** Acceptable. MEASURE 2.8 is used 15 times, but every note limits it to evidence supply, and §4.3 now says so (F-004).
+**16.** Yes. 2.9 is used only on PROFILE-007 and CONTEXT-004, which present epistemic state and contradictions, not serialization.
+**17.** **No for CONTEXT-001** (F-008). MAP 1.6 is correctly excluded.
+**18.** Mostly. See F-011 (one stale scope claim) and F-013.
+**19.** Yes.
+**20.** Yes.
+**21.** Yes.
+**22.** Yes. The README sentence preserves the non-endorsement statement and adds "does not … replace a deployment-specific control-evidence mapping".
+**23.** Yes.
+**24.** No sentence found that reads as endorsement or compliance out of context.
+
+## Findings
+
+IDs continue from the historical review (`PR42-XW2-REV-F-001`..`-006`).
+
+| ID | Severity | Row / section | Finding | Proposed disposition |
+| --- | --- | --- | --- | --- |
+| F-001 | MAJOR (historical) | DELEGATION-001, AUTHUSE-004, REVIEW-003 | **Confirmed against the primary text.** GOVERN 2.1 is about roles and lines of communication "related to mapping, measuring, and managing AI risks … throughout the organization". Transaction-level roles are not that. The correction is already applied at the head. | Owner: ACCEPT |
+| F-002 | MAJOR (historical) | RECEIPT-003, AUTHUSE-002, CONTEXT-002/-003 | **Confirmed.** MEASURE 2.5 is "The AI system to be deployed is demonstrated to be valid and reliable…". Governance-layer mechanics are not AI-system validity. The correction is already applied. | Owner: ACCEPT |
+| F-003 | MINOR (historical) | CANON-007 | Confirmed. Applied. | — |
+| **F-007** | **MAJOR** | **PROFILE-005** (CON, MEASURE 2.5) | This is the one remaining MEASURE 2.5 row. It rests on the same "reliability" family resemblance that F-002 removed elsewhere: gate-violation fixtures test GKOS refusal mechanisms, not the deployed AI system's validity or generalization limits. Leaving it contradicts the accepted F-002 rationale. | REMAP → **Contributes / MEASURE 2.1** ("Test sets, metrics, and details about the tools used during TEVV are documented"). Executed violation fixtures with registered codes are documented test sets when used in an AI-system evaluation, matching the PROFILE-004 treatment. Note text: "Registered violation fixtures can be documented test sets within an AI-system TEVV record; they do not demonstrate AI-system validity or reliability (MEASURE 2.5)." Owner disposition required. |
+| F-008 | MINOR | CONTEXT-001 (MAP 1.1 + MEASURE 2.8) | MAP 1.1 asks for the AI system's intended purposes and prospective deployment settings to be understood and documented: a system-level, ex-ante outcome. A per-selection `purpose`/`recipient` field is artifact scope, the same reasoning the candidate already uses to put PROFILE-003 and EFFECT-001 at NDM. | DOWNGRADE: remove MAP 1.1 and keep CON / MEASURE 2.8 |
+| F-009 | MINOR | DELEGATION-003 (NDM) | GOVERN 3.2 nexus omitted. The rule defines the role a non-deterministic (model) checker may play inside a human-governed deterministic control: raise restrictiveness only, never downgrade. That is a differentiated human-AI configuration of the same kind as DELEGATION-005 (CON / 3.2). | REMAP → CON / GOVERN 3.2, note "Constrains a non-deterministic checker to restriction-only within a human-governed predicate". Owner may REJECT_WITH_EVIDENCE if "non-deterministic checker" is not read as AI. |
+| F-010 | MINOR | POLICY-001 (DD, GOVERN 1.2) | GOVERN 1.2 concerns integrating *trustworthy-AI characteristics* into policy, and POLICY-001 says nothing about them. GOVERN 1.4 ("risk management process and its outcomes are established through transparent policies, procedures, and other controls") has the stronger nexus: an explicit, versioned, non-substitutable policy identity is a transparency property of a control. | REMAP → DD / GOVERN 1.4 (or DD / GOVERN 1.2 + 1.4) |
+| F-011 | MINOR | §4.3 first paragraph | "GKOS addresses … honest disclosure of what was not measured" is no longer backed by any row: MEASURE 1.1 is unmapped, and CONFORMANCE-001 and PROFILE-006 are NDM. | Delete the phrase, or reword it as "GKOS conformance-claim honesty (not an RMF outcome mapping)" |
+| F-012 | OBSERVATION | §4.4 security/privacy rule | "A hash or access-control rule is insufficient" reads as contradicting AUTHUSE-002 (CON 2.7) and DISCLOSURE-001 (CON 2.7/2.10). | Reword: "A hash construction or access-control rule alone, without refusal or evaluation evidence linked to an identified risk, is insufficient." |
+| F-013 | OBSERVATION | §4.3; JSON `…not_substantively_implemented` | "MANAGE 3 (third-party risk beyond bounded delegation)" implies bounded delegation partly implements MANAGE 3. No row maps MANAGE 3, and delegation concerns agents, not third-party entities. | Drop the parenthetical |
+| F-014 | OBSERVATION | REVIEW-001, REVIEW-003 | MAP 3.5 ("Processes for human oversight are defined, assessed, and documented…") is a plausible additional Contributes for the review lifecycle and the mandatory human-escalation rule. Not required. Raised only because the packet asks for omitted stronger nexuses. | Owner discretion. Do not add for coverage alone. |
+| F-015 | OBSERVATION | REENTRY-004 (DEC) | The narrowest DEC: one operation type. Still defensible, because the declaration record directly shows a human or bounded-delegation authority versus prohibited software inference. | ACCEPT. Keep under re-review. |
+| F-016 | OBSERVATION | ESR-NIST-AIRMF, §8 | The subcategory IDs and wording used in all rows were rechecked today against the primary PDF and match. | Optionally record a 2026-10-01 recheck in the ESR note |
+
+**Maintenance (fast-uri 3.1.6 → 3.1.8):** PASS. The guard is bounded to exactly the three lock fields and cannot be combined with post-tag mode, and published and historical packages are unchanged. The negative checks fail as designed.
+
+## 62-row disposition table
+
+`GKOS ID | Candidate | Disposition | Subcategory checked / basis | Finding`
+
+| GKOS ID | Candidate | Disposition | Basis | Finding |
+| --- | --- | --- | --- | --- |
+| CONFORMANCE-001 | NDM | ACCEPT | MEASURE 1.1 concerns AI-risk measurement selection; UNEVALUATED concerns GKOS fixtures | |
+| CONFORMANCE-002 | NDM | ACCEPT | No RMF outcome nexus | |
+| CONFORMANCE-003 | NDM | ACCEPT | MEASURE 1.3 correctly absent | |
+| IDENTITY-001 | NDM | ACCEPT | Format rule | |
+| IDENTITY-002 | NDM | ACCEPT | Legacy validity | |
+| IDENTITY-003 | NDM | ACCEPT | Identity constraint | |
+| IDENTITY-004 | NDM | ACCEPT | Anti-inference ordering rule | |
+| LINEAGE-001 | NDM | ACCEPT | Graph rule | |
+| LINEAGE-002 | NDM | ACCEPT | Derivation rule | |
+| LINEAGE-003 | NDM | ACCEPT | Technical authority constraint | |
+| RECEIPT-001 | CON 2.8 | ACCEPT | MEASURE 2.8, evidence supply only | |
+| RECEIPT-002 | CON 2.8 | ACCEPT | MEASURE 2.8; GOVERN 2.1 correctly rejected | |
+| RECEIPT-003 | CON 2.8 | ACCEPT | MEASURE 2.8; 2.5 removal confirmed | F-002 |
+| POLICY-001 | DD G1.2 | REMAP | GOVERN 1.4 stronger | F-010 |
+| RETENTION-001 | DD G1.1 | ACCEPT | GOVERN 1.1 (legal requirements managed); basis deployment-declared | |
+| RETENTION-002 | CON 2.8 | ACCEPT | MEASURE 2.8 | |
+| RETENTION-003 | DD G1.1 | ACCEPT | GOVERN 1.1; MANAGE 1.3 correctly rejected | |
+| REENTRY-001 | NDM | ACCEPT | Provenance rule | |
+| REENTRY-002 | NDM | ACCEPT | Semantic constraint | |
+| REENTRY-003 | NDM | ACCEPT | Non-destructive re-entry | |
+| REENTRY-004 | DEC G3.2 | ACCEPT | GOVERN 3.2; narrowest DEC | F-015 |
+| DELEGATION-001 | DEC G3.2 | ACCEPT | GOVERN 3.2; 2.1 removal confirmed | F-001 |
+| DELEGATION-002 | DEC G3.2 | ACCEPT | GOVERN 3.2 (human disposition for major/indeterminate) | |
+| DELEGATION-003 | NDM | REMAP | GOVERN 3.2 nexus omitted | F-009 |
+| DELEGATION-004 | SUP | SUPERSEDED_CONFIRMED | Registry: superseded → REVIEW-001..003 | |
+| DELEGATION-005 | CON G3.2 | ACCEPT | GOVERN 3.2 | |
+| DELEGATION-006 | CON G3.2, M4.1 | ACCEPT | GOVERN 3.2; MANAGE 4.1 ("appeal and override"); 2.4 correctly rejected | |
+| PROFILE-001 | NDM | ACCEPT | Requirement population | |
+| PROFILE-002 | NDM | ACCEPT | Requirement population | |
+| PROFILE-003 | NDM | ACCEPT | MAP 1.1 correctly rejected | |
+| PROFILE-004 | CON 2.1 | ACCEPT | MEASURE 2.1 (TEVV test sets/tools documented) | |
+| PROFILE-005 | CON 2.5 | REMAP | MEASURE 2.5 is AI-system validity → MEASURE 2.1 | **F-007** |
+| PROFILE-006 | NDM | ACCEPT | MEASURE 1.1 correctly rejected | |
+| PROFILE-007 | CON 2.8, 2.9 | ACCEPT | MEASURE 2.9 ("output interpreted within its context") via epistemic state/contradictions | |
+| CANON-001 | NDM | ACCEPT | Representation | |
+| CANON-002 | NDM | ACCEPT | Parser integrity | |
+| CANON-003 | NDM | ACCEPT | Representation | |
+| CANON-004 | NDM | ACCEPT | Representation | |
+| CANON-005 | NDM | ACCEPT | Representation | |
+| CANON-006 | NDM | ACCEPT | Representation | |
+| CANON-007 | NDM | ACCEPT | MEASURE 2.7 correctly rejected | F-003 |
+| CANON-008 | NDM | ACCEPT | MEASURE 2.9 correctly rejected (serialization) | |
+| CONTEXT-001 | CON M1.1, 2.8 | DOWNGRADE | MAP 1.1 is system-level; keep 2.8 | F-008 |
+| CONTEXT-002 | NDM | ACCEPT | 2.5 removal confirmed | F-002 |
+| CONTEXT-003 | NDM | ACCEPT | 2.5 removal confirmed | F-002 |
+| CONTEXT-004 | CON 2.8, 2.9 | ACCEPT | MEASURE 2.8/2.9 | |
+| CONTEXT-005 | CON 2.8 | ACCEPT | MEASURE 2.8 | |
+| AUTHUSE-001 | CON 2.8 | ACCEPT | MEASURE 2.8 | |
+| AUTHUSE-002 | CON 2.7 | ACCEPT | MEASURE 2.7 (integrity refusal evidence); 2.5 removal confirmed | F-002, F-012 |
+| AUTHUSE-003 | CON 2.8 | ACCEPT | MEASURE 2.8; 2.4 correctly rejected | |
+| AUTHUSE-004 | DEC G3.2 | ACCEPT | GOVERN 3.2 (strongest DEC); 2.1 removal confirmed | F-001 |
+| AUTHUSE-005 | CON 2.8 | ACCEPT | MEASURE 2.8; MANAGE 4.3 / 2.4 correctly rejected | |
+| AUTHUSE-006 | CON M4.1, 2.8 | ACCEPT | MANAGE 4.1 ("recovery"); 2.8 | |
+| AUTHUSE-007 | CON 2.8 | ACCEPT | MEASURE 2.8; 2.4 correctly rejected | |
+| EFFECT-001 | NDM | ACCEPT | MAP 1.1 correctly rejected | |
+| EFFECT-002 | CON G3.2 | ACCEPT | GOVERN 3.2; MANAGE 1.3 correctly rejected | |
+| EFFECT-003 | NDM | ACCEPT | MANAGE 1.3 correctly rejected | |
+| REVIEW-001 | CON G3.2 | ACCEPT | GOVERN 3.2 (MAP 3.5 possible) | F-014 |
+| REVIEW-002 | CON 2.8 | ACCEPT | MEASURE 2.8 | |
+| REVIEW-003 | DEC G3.2 | ACCEPT | GOVERN 3.2; MEASURE 1.3 correctly rejected; 2.1 removal confirmed | F-001, F-014 |
+| REVIEW-004 | CON 2.8 | ACCEPT | MEASURE 2.8; MANAGE 4.3 correctly rejected | |
+| DISCLOSURE-001 | CON 2.10, 2.7 | ACCEPT | MEASURE 2.10/2.7, with linkage caveat | F-012 |
+
+**Totals:** 57 ACCEPT, 1 SUPERSEDED_CONFIRMED, 3 REMAP (F-007, F-009, F-010), 1 DOWNGRADE (F-008), 0 HOLD, 0 NO_DIRECT_MAPPING = 62. F-011, F-012 and F-013 are prose-only.
+
+If every correction is accepted, the distribution becomes DEC 5 / CON 24 / DD 3 / NDM 29 / SUP 1.
+
+## Next steps (not performed by this review)
+
+1. Owner disposition of **F-001, F-002 and F-007**: ACCEPT / ACCEPT_WITH_MODIFICATION / REJECT_WITH_EVIDENCE / DEFER. A deferred MAJOR blocks merge.
+2. Author applies the accepted corrections in `rows.py` and the prose, regenerates, and reruns the tests, `--check` and hosted CI.
+3. A bounded corrected-head verification of only the changed rows, which Fable-FAC can do.
+4. Preserve this review in the repository (e.g. `docs/reviews/PR42_XW002_FABLE_REVIEW_20261001.md`) before merge.
+
+This review grants no conformance, alignment, certification, NIST/ISO approval, or merge authority.

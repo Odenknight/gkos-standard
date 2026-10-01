@@ -9,8 +9,11 @@ dispositions, two MAJOR findings and `PASS_WITH_CORRECTIONS`.
 The historical reviewer did not retrieve NIST AI 100-1. It also lacks exact
 start/end times and a served session identifier. Those limitations are
 preserved; this record does not fabricate them or complete the review gate.
-Fable-FAC has been requested to review the corrected exact head using the
-primary source and record the packet's required evidence.
+The [October 1 Fable review](PR42_XW002_FABLE_REVIEW_20261001.md) completes
+the primary-source 62-row review of `37cab1fcb3b3902d9efa4abe737bdf452a624b9d`
+with verdict `PASS_WITH_CORRECTIONS`. Its [original bytes](PR42_XW002_FABLE_REVIEW_20261001.source.txt) have SHA-256
+`2cec73c207e89ee76e97a52a9bdb3ffc918658fe3a2a28ad969712dae09802a8`.
+That verdict is not carried forward to the subsequently corrected head.
 
 ## Prepared corrections and owner disposition
 
@@ -27,12 +30,22 @@ requires an explicit owner disposition for every MAJOR finding.
 | F-004 | OBSERVATION | Add explicit evidence-supply-only MEASURE 2.8 caveat in §4.3 | Prepared as recommended |
 | F-005 | OBSERVATION | Preserve original drafting-model uncertainty | No back-filled identity |
 | F-006 | OBSERVATION | Incorporate current main and preserve its README specification/citation wording and the crosswalk paragraph | Integration conflict resolved |
+| F-007 | MAJOR | Remap PROFILE-005 from MEASURE 2.5 to Contributes / MEASURE 2.1; violation fixtures are documented TEVV test sets when used in an AI-system evaluation | PENDING; recommended ACCEPT |
+| F-008 | MINOR | Remove MAP 1.1 from CONTEXT-001; retain Contributes / MEASURE 2.8 | Prepared as recommended |
+| F-009 | MINOR | Remap DELEGATION-003 to Contributes / GOVERN 3.2, explicitly conditional on the checker being an AI component in human-governed oversight | Prepared with narrower deployment condition |
+| F-010 | MINOR | Remap POLICY-001 to Deployment-declared / GOVERN 1.4, with risk priorities and process substance external | Prepared as recommended; no GOVERN 1.2 mapping retained |
+| F-011 | MINOR | Remove the unsupported unmeasured-risk disclosure claim in §4.3 | Prepared as recommended |
+| F-012 | OBSERVATION | Narrow the §4.4 hash/access-control caveat to mechanics without risk-linked refusal or evaluation evidence | Prepared as recommended |
+| F-013 | OBSERVATION | Remove the bounded-delegation exception to unmapped MANAGE 3 in prose and generated JSON | Prepared as recommended |
+| F-014 | OBSERVATION | Optional MAP 3.5 on REVIEW-001/-003 | Not added: the rules define a review lifecycle but do not mandate assessment of its oversight process; no coverage-only additions |
+| F-015 | OBSERVATION | Retain the narrow REENTRY-004 Direct evidence candidate | Retained with the existing component-only limitation |
+| F-016 | OBSERVATION | Record the October 1 primary-source check | Preserved in the Fable review and this record; no external revision inferred |
 
-Finding IDs above abbreviate `PR42-XW2-REV-F-001` through `-006`.
+Finding IDs above abbreviate `PR42-XW2-REV-F-001` through `-016`.
 These are conservative changes to informative mappings. No requirement text,
 allocation, profile, gate code or ISO Annex A mapping changes. The generated
-distribution is 5 Direct evidence candidate, 23 Contributes, 3
-Deployment-declared, 30 No direct mapping and 1 Superseded.
+distribution is 5 Direct evidence candidate, 24 Contributes, 3
+Deployment-declared, 29 No direct mapping and 1 Superseded.
 
 ## Source and compatibility check
 
@@ -41,7 +54,12 @@ on October 1. GOVERN 2.1 concerns organization-wide risk responsibilities and
 communication; GOVERN 3.2 concerns human-AI roles. MEASURE 2.5 concerns deployed
 AI-system validity/reliability and generalization limits; MEASURE 2.7 concerns
 security/resilience evaluation. These support narrowing the reviewed rows.
-This is an author-side correction check, not Fable's required separate review.
+GOVERN 1.4 concerns transparent risk-management policies and controls based on
+organizational risk priorities. POLICY-001 provides an explicit identity/version
+hook, while that policy substance remains external. For DELEGATION-003 the
+GOVERN 3.2 contribution is conditional on an AI checker; non-determinism does
+not itself prove AI use. These are author-side correction checks, distinct
+from Fable's review of the prior head.
 
 The crosswalk remains pinned to published v0.81, separately informative, with
 ISO verification-held. It neither adopts the proposed Observatory pilot nor
