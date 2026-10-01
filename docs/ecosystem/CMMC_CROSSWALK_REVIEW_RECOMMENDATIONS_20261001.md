@@ -38,9 +38,9 @@ A reviewer with practical CMMC assessment experience would improve the semantic 
 ## Sources checked
 
 - Published GKOS registry, Authority/Refusal annex, Security/Privacy/Retention annex and Diagnostic Code Registry at the companion’s pinned baseline; PR #66 source tree.
-- Official CMMC Level2 Assessment Guide v2.13, pages8 (method tailoring),72 (AU3.3.1),112 (process identification),219 (shared resources): https://dowcio.war.gov/Portals/0/Documents/CMMC/AssessmentGuideL2v2.pdf
-- Official Level2 Scoping Guide v2.13, pages4–6 (asset distinction): https://dowcio.war.gov/Portals/0/Documents/CMMC/ScopingGuideL2v2.pdf
-- Current program notice: https://dowcio.war.gov/CMMC/Resources-Documentation/
-- Contract source: https://www.acquisition.gov/dfars/252.204-7012-safeguarding-covered-defense-information-and-cyber-incident-reporting.
+- Official CMMC Level2 Assessment Guide v2.13, pages8 (method tailoring),72 (AU3.3.1),112 (process identification),219 (shared resources): <https://dowcio.war.gov/Portals/0/Documents/CMMC/AssessmentGuideL2v2.pdf>
+- Official Level2 Scoping Guide v2.13, pages4–6 (asset distinction): <https://dowcio.war.gov/Portals/0/Documents/CMMC/ScopingGuideL2v2.pdf>
+- Current program notice: <https://dowcio.war.gov/CMMC/Resources-Documentation/>
+- Contract source: <https://www.acquisition.gov/dfars/252.204-7012-safeguarding-covered-defense-information-and-cyber-incident-reporting.>
 
 No repository rows were changed by this comparison. Original peer/owner draft records remain intact.
