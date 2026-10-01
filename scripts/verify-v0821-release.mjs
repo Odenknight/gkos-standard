@@ -37,7 +37,27 @@ assert.equal((read('standard/annexes/Diagnostic_Code_Registry.md').match(/^\| GK
 // All technical sources are byte-identical to the predecessor; documentation
 // claims and release administration are deliberately outside this set.
 const immutable = ['requirements', 'schemas', 'fixtures', 'conformance/runner', 'standard/annexes'];
-assert.equal(git('diff', '--name-only', 'v0.82', '--', ...immutable), '', 'technical baseline changed');
+if (process.argv.includes('--development')) {
+  // Published sources remain frozen. The development checkout permits only
+  // the reviewed fast-uri security pin, never runner/schema/fixture changes.
+  assert.ok(!process.argv.includes('--post-tag'), 'development is not publication validation');
+  const published = git('rev-parse', '--verify', 'refs/tags/v0.82.1^{}');
+  assert.equal(git('diff', '--name-only', 'v0.82', published, '--', ...immutable), '', 'published technical baseline changed');
+  const lockPath = 'conformance/runner/package-lock.json';
+  const changed = git('diff', '--name-only', published, '--', ...immutable).split('\n').filter(Boolean);
+  assert.ok(changed.every(p => p === lockPath), 'unreviewed development technical change');
+  const expected = JSON.parse(git('show', `${published}:${lockPath}`));
+  assert.equal(expected.packages['node_modules/fast-uri'].version, '3.1.6');
+  Object.assign(expected.packages['node_modules/fast-uri'], {
+    version: '3.1.8',
+    resolved: 'https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.8.tgz',
+    integrity: 'sha512-GZMtZUTNRpOVIECoXwLNZS5xUGE+mVNbTB8h/7Rwh2TFWcBQiPzTgyZi05BF9UMZKkLJv8XBRJTlU7zg8+ZfMg==',
+  });
+  assert.deepEqual(JSON.parse(read(lockPath)), expected, 'unreviewed dependency change');
+  assert.equal(git('diff', '--name-only', published, '--', 'releases', 'release-candidates'), '', 'published package changed');
+} else {
+  assert.equal(git('diff', '--name-only', 'v0.82', '--', ...immutable), '', 'technical baseline changed');
+}
 const historical = git('diff', '--name-only', 'v0.82', '--', 'releases', 'release-candidates').split('\n').filter(p => p && !p.startsWith(`${dir}/`));
 assert.deepEqual(historical, [], 'historical package changed');
 for (const p of git('ls-files', 'fixtures').split('\n').filter(p => p.endsWith('manifest.json'))) {
@@ -46,7 +66,7 @@ for (const p of git('ls-files', 'fixtures').split('\n').filter(p => p.endsWith('
 }
 assert.match(read('docs/releases/V0821_PUBLICATION_CONTROL.md'), /R23\s+remains prospective/);
 assert.ok(read('conformance/CLAIMS_POLICY.md').includes('does not automatically'));
-console.log(`v0.82.1 content PASS: ${coordinate}; 62 requirements, 28 gates, unchanged technical sources and historical packages`);
+console.log(`v0.82.1 content PASS: ${coordinate}; 62 requirements, 28 gates, ${process.argv.includes('--development') ? 'published baseline preserved; bounded development dependency maintenance' : 'unchanged technical sources'} and historical packages`);
 
 if (process.argv.includes('--post-tag')) {
   const repo = 'Odenknight/gkos-standard';

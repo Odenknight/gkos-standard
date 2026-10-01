@@ -75,6 +75,8 @@ GKOS does not substantively implement the organizational outcomes in GOVERN 3.1 
 
 **No direct mapping is a positive crosswalk result and shall not be treated as a defect requiring a GKOS requirement to be invented.**
 
+MEASURE 2.8 contributions supply evidence for a deployment's transparency/accountability risk examination; no mapped GKOS requirement performs that examination itself.
+
 ### 4.4 Mapping rules
 
 These rules guided the adjudication in §5. They are guidance to the reviewer, not an algorithm.
@@ -110,7 +112,7 @@ These rules guided the adjudication in §5. They are guidance to the reviewer, n
 | `GKOS-LINEAGE-003` | No direct mapping | — | — | Rejecting automatic authoritative succession is a technical authority constraint, not an organizational accountability-risk assessment. |
 | `GKOS-RECEIPT-001` | Contributes | MEASURE 2.8 | State-Change Receipt | Durable state-change evidence can support examination of accountability failures when linked to a MAP-identified risk; it does not itself perform that examination. |
 | `GKOS-RECEIPT-002` | Contributes | MEASURE 2.8 | State-Change Receipt (actor class, predicate id/version) | Actor and predicate attribution can support examination of decision accountability. Actor class alone does not document organizational roles and communication lines under GOVERN 2.1. |
-| `GKOS-RECEIPT-003` | Contributes | MEASURE 2.5, MEASURE 2.8 | rollback/compensation record; manifest binding-mechanism declaration | Tested receipt-loss and compensation behavior can support reliability and accountability-risk assessment for the deployed system; the binding rule alone is not a system-level demonstration. |
+| `GKOS-RECEIPT-003` | Contributes | MEASURE 2.8 | rollback/compensation record; manifest binding-mechanism declaration | Receipt-loss and compensation records can support examination of accountability failures when tied to a MAP-identified risk. The binding rule does not demonstrate deployed AI-system validity, reliability or generalization limits. |
 | `GKOS-POLICY-001` | Deployment-declared | GOVERN 1.2 | policy/predicate identity and version | GKOS requires identified, versioned policy inputs. The organization must supply trustworthiness policy substance and evidence that it is integrated into practice; policy identity alone is insufficient. |
 | `GKOS-RETENTION-001` | Deployment-declared | GOVERN 1.1 | hold-predicate consultation record | Legal/regulatory obligation is deployment-declared. |
 | `GKOS-RETENTION-002` | Contributes | MEASURE 2.8 | disposition receipt binding predicate id/version/result | The recorded hold predicate and result can support assessment of accountability for a disposition when linked to the relevant AI risk; no risk assessment is mandated by this row. |
@@ -119,7 +121,7 @@ These rules guided the adjudication in §5. They are guidance to the reviewer, n
 | `GKOS-REENTRY-002` | No direct mapping | — | — | Non-inheritance of prior standing is a GKOS semantic constraint, not an AI RMF risk-assessment record. |
 | `GKOS-REENTRY-003` | No direct mapping | — | — | Non-destructive re-entry preserves history but does not mandate examination of AI-risk outcomes. |
 | `GKOS-REENTRY-004` | Direct evidence candidate | GOVERN 3.2 | human/delegated supersession declaration | Explicit human or bounded delegated supersession supplies evidence of differentiated human-AI authority; broader oversight policy and operation remain to be demonstrated. |
-| `GKOS-DELEGATION-001` | Direct evidence candidate | GOVERN 2.1, GOVERN 3.2 | delegation grant (bounded, versioned, expiring) | Documented, differentiated human-AI authority. |
+| `GKOS-DELEGATION-001` | Direct evidence candidate | GOVERN 3.2 | delegation grant (bounded, versioned, expiring) | Documented, differentiated human-AI authority; transaction-level delegation does not document organizational AI-risk responsibilities or communication lines. |
 | `GKOS-DELEGATION-002` | Direct evidence candidate | GOVERN 3.2 | routine/major classification by versioned predicate | Routine-only delegation and required prior human disposition for other outcomes directly evidence a human-AI oversight boundary. Major classification is not itself MAP-based risk prioritization under MANAGE 1.3. |
 | `GKOS-DELEGATION-003` | No direct mapping | — | — | Raise-only nondeterministic checking is a GKOS control-integrity rule; no direct AI RMF outcome nexus. |
 | `GKOS-DELEGATION-004` | Superseded | — | — | Superseded for v0.81 line; see GKOS-REVIEW-001..003. |
@@ -138,17 +140,17 @@ These rules guided the adjudication in §5. They are guidance to the reviewer, n
 | `GKOS-CANON-004` | No direct mapping | — | — | Timestamp syntax and anti-ordering rule are technical canonicalization semantics; no direct AI RMF outcome nexus. |
 | `GKOS-CANON-005` | No direct mapping | — | — | Text normalization rule; no RMF outcome nexus. |
 | `GKOS-CANON-006` | No direct mapping | — | — | Absent/null/empty distinction; representation only. |
-| `GKOS-CANON-007` | Contributes | MEASURE 2.7 | SHA-256 canonical hash binding policy/compiler/selection refs | Digest-bound artifact integrity can support a documented security evaluation when its threat model and tamper tests are supplied. A SHA-256 value alone is not security or resilience evaluation. |
+| `GKOS-CANON-007` | No direct mapping | — | — | Canonical hash construction is a representation mechanic; potential downstream security use does not establish a requirement-level security or resilience evaluation nexus. |
 | `GKOS-CANON-008` | No direct mapping | — | — | A human rendering and hash-preserving parser prove a representation round trip, not examination of accountability risks or interpretation of AI output. |
 | `GKOS-CONTEXT-001` | Contributes | MAP 1.1, MEASURE 2.8 | selection envelope | Captured purpose, recipient, selection and omissions can supply operational inputs to deployment-context and accountability-risk analysis. Broader intended use, impacted parties and substantive risk examination remain external. |
-| `GKOS-CONTEXT-002` | Contributes | MEASURE 2.5 | context-manifest assembly log | Closed-input assembly can support component reliability testing in an AI-system evaluation. Test results, deployment relevance and system-level limitations remain necessary. |
-| `GKOS-CONTEXT-003` | Contributes | MEASURE 2.5 | identical manifest bytes/hash | Replay determinism. |
+| `GKOS-CONTEXT-002` | No direct mapping | — | — | Closed-input manifest assembly is a governance-layer mechanic; it does not demonstrate deployed AI-system validity, reliability or generalization limits. |
+| `GKOS-CONTEXT-003` | No direct mapping | — | — | Byte-identical manifest replay is a determinism constraint; it does not demonstrate deployed AI-system validity, reliability or generalization limits. |
 | `GKOS-CONTEXT-004` | Contributes | MEASURE 2.8, MEASURE 2.9 | context-manifest (contradictions, warnings, restrictions, omissions) | Required warnings, contradictions and restrictions can inform accountability-risk examination and contextual interpretation of AI output; their inclusion alone does neither model validation nor risk assessment. |
 | `GKOS-CONTEXT-005` | Contributes | MEASURE 2.8 | Decision Record binding manifest id/version/hash | Binding a disposition to the exact context can support investigation of accountability risks such as approval of changed evidence; the deployment must conduct and document that investigation. |
 | `GKOS-AUTHUSE-001` | Contributes | MEASURE 2.8 | Authorized Use Record | Binding use to context and policy can support assessment of accountability for an AI-assisted operation, with an explicit risk question and analysis supplied by the deployment. |
-| `GKOS-AUTHUSE-002` | Contributes | MEASURE 2.5, MEASURE 2.7 | refusal receipt on hash mismatch | Integrity failure fails closed; 2.7 retained because mismatch is tamper/integrity evidence. |
+| `GKOS-AUTHUSE-002` | Contributes | MEASURE 2.7 | refusal receipt on hash mismatch | Hash-mismatch refusal supplies tamper/integrity evidence relevant to security evaluation; it does not demonstrate deployed AI-system validity, reliability or generalization limits. |
 | `GKOS-AUTHUSE-003` | Contributes | MEASURE 2.8 | authority-basis validity fields | Action-time authority evidence can support assessment of unauthorized-action accountability risks; evaluating a grant is not itself an AI-risk examination or system deactivation. |
-| `GKOS-AUTHUSE-004` | Direct evidence candidate | GOVERN 2.1, GOVERN 3.2 | actor-role fields; delegation chain | Proposing/reviewing/authorizing/executing distinct. GOVERN 1.5 NOT assigned. |
+| `GKOS-AUTHUSE-004` | Direct evidence candidate | GOVERN 3.2 | actor-role fields; delegation chain | Distinct proposing, reviewing, authorizing and executing roles directly evidence human-AI role differentiation. Transaction roles do not document organizational AI-risk responsibilities or communication lines. |
 | `GKOS-AUTHUSE-005` | Contributes | MEASURE 2.8 | Refusal Receipt | A refusal receipt can support examination of whether an AI-assisted operation respected the declared boundary; the organization supplies the risk analysis and interpretation. |
 | `GKOS-AUTHUSE-006` | Contributes | MANAGE 4.1, MEASURE 2.8 | Authorized Use Record outcome + correction/rollback/escalation route | Outcome and recovery-route evidence can contribute to an implemented post-deployment monitoring/recovery plan and accountability-risk examination. A route field alone establishes neither plan implementation nor risk analysis. |
 | `GKOS-AUTHUSE-007` | Contributes | MEASURE 2.8 | GKOS-GATE-L7-001 refusal; captured evaluation time | Captured authority interval and refusal evidence contribute to accountability. Authority interval expiry alone is not MANAGE 2.4 AI-system deactivation. |
@@ -157,11 +159,11 @@ These rules guided the adjudication in §5. They are guidance to the reviewer, n
 | `GKOS-EFFECT-003` | No direct mapping | — | — | Failing closed on incomparable scope is a control rule; it does not itself prioritize AI risks or develop and document a response under MANAGE 1.3. |
 | `GKOS-REVIEW-001` | Contributes | GOVERN 3.2 | review-lifecycle entry record | An authorized proposal-review lifecycle contributes to oversight arrangements when used for AI-system governance; lifecycle entry alone does not document organization-wide responsibilities or communication lines. |
 | `GKOS-REVIEW-002` | Contributes | MEASURE 2.8 | append-only Decision Record bound to exact evidence | Evidence-bound dispositions can support examination of responsibility for reviewed AI-assisted decisions; a disposition is not itself a documented AI-risk examination. |
-| `GKOS-REVIEW-003` | Direct evidence candidate | GOVERN 2.1, GOVERN 3.2 | role separation; different-model-family agent reviewer; sealed packet; human escalation | No self-approval; differentiated human-AI roles and bounded human escalation. This is proposal review, not necessarily the regular AI-system assessment described by MEASURE 1.3. |
+| `GKOS-REVIEW-003` | Direct evidence candidate | GOVERN 3.2 | role separation; different-model-family agent reviewer; sealed packet; human escalation | No self-approval; differentiated human-AI roles and bounded human escalation. Proposal review establishes neither organizational AI-risk communication lines nor regular AI-system assessment under MEASURE 1.3. |
 | `GKOS-REVIEW-004` | Contributes | MEASURE 2.8 | append-only disposition history | Preserved disposition history can support examination of changes in approval/accountability. Routine history is not incident communication or a risk analysis by itself. |
 | `GKOS-DISCLOSURE-001` | Contributes | MEASURE 2.10, MEASURE 2.7 | disclosure authorization; noninterference evidence | Disclosure controls and tested noninterference can contribute to privacy and security-risk evaluation when linked to identified risks; a control requirement alone does not examine or document those risks. |
 
-Distribution (62 rows): Direct evidence candidate 5; Contributes 26; Deployment-declared 3; No direct mapping 27; Superseded 1.
+Distribution (62 rows): Direct evidence candidate 5; Contributes 23; Deployment-declared 3; No direct mapping 30; Superseded 1.
 
 ## 6. Proposed interoperability work (carried from v0.1, unchanged in substance)
 
@@ -198,8 +200,8 @@ Until the work in §6 is implemented and tested, and independently of it for ite
 | generated_json | `docs/ecosystem/EXTERNAL_CROSSWALK.json` |
 | row_source | `scripts/xw002/rows.py` |
 | generator | `scripts/xw002/gen.py` |
-| prose_normalized_sha256 | `67a98c69f5d255cb044ef8158a612ae97d21792c6ba6602da00bce322909b67c` |
-| json_sha256 | `a3e724d32c9dd19d42e4bb0aa9b14851a855366b3d3cc0fc59641f0c7a8ffa4e` |
+| prose_normalized_sha256 | `3c49e12e1493911c73eae7de033e6ecdf16530d48c247132e082008727a95cf6` |
+| json_sha256 | `4fd6a9f6ab2271a66724e135e6501f83d2752cabfebe0dada4d0a90bbd6ada73` |
 | disposition | PROPOSED — owner/reviewer disposition required |
 
 **Binding normalization:** `prose_normalized_sha256` is calculated over the generated Markdown with the two digest-value cells normalized to fixed placeholder tokens before hashing. This avoids a circular self-hash while binding the JSON to the exact generated prose content.

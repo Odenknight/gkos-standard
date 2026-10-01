@@ -12,7 +12,9 @@ if [[ "$version" == "0.81" ]]; then
 fi
 
 if [[ "$version" == "0.82.1" ]]; then
-  exec bash scripts/check-v0821-release.sh
+  # Current development dependencies may differ only under the explicit
+  # maintenance guard; publication and post-tag checks remain strict.
+  exec bash scripts/check-v0821-release.sh --development
 fi
 
 [[ "$version" =~ ^0\.[0-9]+$ ]] || {
