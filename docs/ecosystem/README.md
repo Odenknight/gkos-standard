@@ -89,6 +89,13 @@ second implementation. A future candidate must publish enough source,
 dependency, provenance, fixture, ownership, operational, and assessment evidence
 for its independence and results to be evaluated.
 
+## CMMC review recommendations
+
+- [Comparison and build recommendations](CMMC_CROSSWALK_REVIEW_RECOMMENDATIONS_20261001.md)
+  compares the owner-supplied evidence-map draft with the Level 2 companion,
+  records corrections and prioritizes deployment evidence. Fleet review is
+  requested; these recommendations are proposals, not adopted requirements.
+
 ## Authority boundary
 
 This workspace authorizes no protocol adoption, production connection,
