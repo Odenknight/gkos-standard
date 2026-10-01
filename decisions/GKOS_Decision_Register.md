@@ -9,19 +9,47 @@ ratification, independent certification, accreditation, or regulator approval.
 
 None currently recorded.
 
+## Owner clarifications
+
+These clarify existing decisions without allocating an R-number.
+
+- Requested edition 2026-09-24; prepared 2026-09-25 —
+  [Specification status and claims](../docs/decisions/2026-09-24-specification-status-and-claims.md):
+  retain name and acronym; prepare unpublished v0.82.1 documentation patch.
+
+- 2026-09-12 — [Implementation independence](../docs/decisions/2026-09-12-implementation-independence.md):
+  different ownership is desirable, not mandatory, for a public second
+  implementation; implementation independence must still be demonstrated.
+
 ## Accepted decisions
+
+### R24 — v0.82 informative release gate and publication control
+
+- **Date:** 2026-09-22
+- **Status:** Accepted development decision; v0.82 preparation and publication-control authority
+- **Acceptance:** 2026-09-22; section 3 Option A selected
+- **Decision:** Define the gates for publishing current `main` as an
+  informative GKOS v0.82 edition with an unchanged 62-requirement,
+  28-gate-code normative population, R22/R23 kept informative or prospective,
+  and publication only after a separate explicit owner approval.
+- **Record:**
+  [R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md](R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md)
 
 ### R23 — Layer-3 interoperability semantics
 
 - **Date:** 2026-09-04
 - **Acceptance date:** 2026-09-04
 - **Accepted exact review head:** `57ccca0025fc587bcaac0910af3c4b2205f7746e`
-- **Status:** Accepted development decision; prospective v0.82 development authority
+- **Status:** Accepted development decision; prospective authority for the next normative edition after v0.82 (retargeted under R24 Option A; the record retains its original v0.82 wording)
 - **Owner preparation dispositions:** `1B, 2A, 3B, 4B, 5B, 6B`
 - **Review standing:** different-model-family advisory review completed at
   `792c6355fe8e78955ad829a3455be1e78c0b0a33` with `HOLD`; owner accepted
   `R23-REV-001..015` with narrowing plus `D1A`, `D2A`, `D3A`; accepted
   corrections were verified at exact head `57ccca0025fc587bcaac0910af3c4b2205f7746e`.
+  Records: [review packet](../docs/reviews/R23_L3_BOUNDED_DIFFERENT_MODEL_REVIEW_PACKET.md),
+  [review](../docs/reviews/R23_L3_DIFFERENT_MODEL_REVIEW_2026-09-04.md),
+  [disposition](../docs/reviews/R23_L3_REVIEW_DISPOSITION_2026-09-04.md),
+  [corrected-head verification](../docs/reviews/R23_L3_CORRECTED_HEAD_VERIFICATION_2026-09-04.md).
 - **Decision:** Establish prospective portable Layer-3 development semantics for
   open relationship vocabulary with a reserved provisional core; type-level
   relation contracts; canonical direction with derived projections;
@@ -31,7 +59,7 @@ None currently recorded.
   remain DRAFTING pending the separately required implementation result sets and
   exact evidence coordinates.
 - **Record:**
-  [R23_Layer3_Interoperability_Semantics_Proposal.md](R23_Layer3_Interoperability_Semantics_Proposal.md)
+  [R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md](R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md)
 
 ### R22 — Canonical informative architecture orientation
 
@@ -84,7 +112,7 @@ None currently recorded.
 ### R19 — Documentation-intent eighth invariant
 
 - **Date:** 2026-09-01
-- **Status:** Accepted development decision; unpublished amendment
+- **Status:** Accepted development decision; published in GKOS-2026-09-03 v0.81
 - **Decision:** Supply and adopt the previously undefined eighth documentation-intent position as “Every committed governed state change is durably receipted,” with STD-079 r4 invariants 3–4 and the applicable receipt requirements as provenance; preserve the separate standing of the STD-079 and layer-blocking invariant sets; and adopt only the eight-position DOCSTD §4 intent-review table without claiming historical recovery, publication, conformance, or release qualification.
 - **Record:** [R19_Documentation_Intent_Eighth_Invariant_Development_Decision_Record.md](R19_Documentation_Intent_Eighth_Invariant_Development_Decision_Record.md)
 
@@ -92,13 +120,13 @@ None currently recorded.
 
 - **Date:** 2026-08-29
 - **Status:** Accepted development decision; v0.81 preparation authority
-- **Decision:** Reconstruct and replace the missing Track A authority; allocate atomic GCP-5 review requirements; require protected-disclosure control and portable mutation evidence; permit a separately authorized, different-model-family Review Agent to fulfill bounded Layer-5 review under deterministic gates and mandatory human escalation triggers; bind qualification to exact implementation and environment closure; and authorize automatic v0.81 Standard publication only after every exact-bound release gate passes.
+- **Decision:** Reconstruct and replace the missing Track A authority; allocate atomic GCP-5 review requirements; require protected-disclosure control and portable mutation evidence; permit a separately authorized, different-model-family Review Agent to fulfill bounded Layer-5 review under deterministic gates and mandatory human escalation triggers; bind qualification to exact implementation and environment closure; and authorize automatic v0.81 Standard publication only after every exact-bound release gate passes (automatic-publication clause superseded by R20).
 - **Record:** [R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md](R18_Track_A_GCP45_and_Authorized_Independent_Review_Development_Decision_Record.md)
 
 ### R17 — Authority validity interval semantics
 
 - **Date:** 2026-08-21
-- **Status:** Accepted development decision; unpublished amendment
+- **Status:** Accepted development decision; published in GKOS-2026-09-03 v0.81
 - **Decision:** Use the half-open authority interval `valid_from <= evaluation_time < valid_until`; bind evaluation to captured canonical time at the consequential-effect admission boundary; fail closed before validity, at or after expiry, or when required time evidence is missing or indeterminate; preserve protected state and emit a Refusal Receipt under the existing L7 authority gate.
 - **Record:** [R17_Authority_Validity_Interval_Development_Decision_Record.md](R17_Authority_Validity_Interval_Development_Decision_Record.md)
 

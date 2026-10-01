@@ -1,5 +1,10 @@
 # GKOS governance
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](conformance/CLAIMS_POLICY.md).
+
 ## Purpose
 
 This document governs amendment, review, publication, and repository authority during the pre-v1.0 development period and identifies the governance work required before GKOS v1.0.
@@ -59,7 +64,7 @@ Only decisions made under that future governance model may be described as forma
 
 ## Canonical publication
 
-The canonical v0.79 repository is `Odenknight/gkos-standard`. Migration
-requires a recorded development or governance decision and preservation of
-release history. The v0.79 release remains developmental and non-consensus
-under this document.
+The canonical repository is `Odenknight/gkos-standard`. Migration requires a
+recorded development or governance decision and preservation of release
+history. All v0.x releases, including GKOS-2026-09-03 v0.81, remain
+developmental and non-consensus under this document.

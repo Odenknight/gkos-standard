@@ -13,7 +13,7 @@ development evidence and is not independent conformance verification by itself.
 
 At review launch, bind the exact PR head and include:
 
-- `decisions/R23_Layer3_Interoperability_Semantics_Proposal.md`;
+- `decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md`;
 - `docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md`;
 - `schemas/provisional/l3/l3-interoperability-0.1-proposed.json`;
 - `fixtures/provisional/l3-interoperability/cases.json`;

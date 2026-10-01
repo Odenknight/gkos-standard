@@ -1,5 +1,89 @@
 # Changelog
 
+## Unreleased
+
+## GKOS-2026-09-24 v0.82.1
+
+**Standing:** live documentation patch, published at `2026-09-25T00:54:27Z`
+(September 24 in America/New_York), with verified signed tag and all post-tag
+checks passed. See the [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
+
+- Classify GKOS as a developmental specification / public working draft;
+  retain the existing project name, acronym and titles.
+- Consolidate existing exact-bound conformance and non-certification controls
+  in `conformance/CLAIMS_POLICY.md`, including SSP and contract guidance.
+- Preserve technical contracts and historical releases; no profile qualifies.
+- Reconcile the requested edition date with actual publication in America/New_York;
+  preserve the exact UTC timestamp and immutable prepared package.
+
+- Record the live v0.82 publication, verified Zenodo DOI and publication
+  receipt; repair post-tag verification so it does not depend on the `gh` CLI
+  and can be re-run by manual dispatch.
+
+## GKOS-2026-09-22 v0.82
+
+**Standing:** live informative edition, published September 22, 2026 through
+the R24 owner-approved signed tag and GitHub Release. Zenodo version DOI:
+[10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582). See the
+[publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md). The normative
+population is unchanged from v0.81 (62 permanent allocations, 28 mandatory
+diagnostic gate codes). No profile qualification is created. None of these
+changes alters the signed v0.81 release.
+
+- Consolidate machine-readable release coordinates (R24 G82-06); see the
+  [coordinate record](docs/releases/V082_COORDINATE_CONSOLIDATION.md).
+
+### Publication records and citation
+
+- Record the live v0.81 publication, verified Zenodo version and concept DOIs,
+  and the publication receipt; update the master standard's status notice
+  (#38). The master standard on `main` therefore differs from the tag.
+- Reconcile post-publication wording across the decision register, registry,
+  profile-applicability note, governance, implementation index, Zenodo policy,
+  compatibility snapshot and legal orientation (consistency review,
+  September 22, 2026).
+
+### Decisions and prospective semantics
+
+- Accept R24 v0.82 informative release gate (Option A: R23 targets the next
+  normative edition after v0.82) and stage the unpublished
+  `release-candidates/v0.82-rc1` package and validator. No tag, release or
+  publication is authorized.
+- Accept R22 canonical informative architecture r3 as documentation authority
+  only (#43).
+- Accept R23 prospective Layer-3 interoperability semantics for v0.82
+  development, with provisional schemas, fixtures, comparator and V82-01 work
+  packet (#44); rename the R23 record to drop its stale `_Proposal` filename
+  (#53).
+- Reconcile R22/R23 standing and adopt Selection Envelope terminology (#47).
+
+### Evidence, fixtures and CI
+
+- Add the provisional RRET-01 adversarial retrieval corpus and tests (#41).
+- Route Linux CI jobs to the self-hosted R720 runner (#49).
+
+### Orientation and graphics
+
+- Restore README illustrations and render Mermaid diagrams as graphics (#39);
+  add README attribution and two practical explainers (#40).
+- Add the full-stack workflow walkthrough and ISO, EU and NIST middleware
+  proposals; update the Known Limitations annex (#45); preserve the complete
+  roadmap and technical orientation (#46).
+- Assess current public ecosystem evidence for E2 (#51 and follow-up).
+- Reconcile the historical corpus with current standing; add domain guides,
+  corpus status, evolution and standards-engagement notes (#54).
+- Add the CIA triad summary, full alignment and graphics (#55).
+
+### Owner clarification — September 12, 2026
+
+- Clarify that different ownership is desirable, not mandatory, for a public
+  second implementation; different functioning products still need evidence
+  of implementation independence. No candidate is qualified by this decision.
+- Repair the conformance README's historical divergence reference without
+  changing the archived discovery record or signed v0.81 release.
+- Reaffirm that Viewer/Projection claims require a manifest, report, and
+  evidence. See the [owner clarification](docs/decisions/2026-09-12-implementation-independence.md).
+
 ## GKOS-2026-09-03 v0.81
 
 **Standing:** live developmental pre-standard, published September 3, 2026

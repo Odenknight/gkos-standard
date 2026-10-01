@@ -1,5 +1,10 @@
 # Trademark policy
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](conformance/CLAIMS_POLICY.md).
+
 **Status:** Applications and registrations are pending.
 
 The names **GKOS**, **Governed Knowledge Operations Standard**, the tagline **How knowledge becomes trustworthy**, and official project logos are claimed project marks of Shaun “Oden” Marshall, subject to applicable law and pending filings.

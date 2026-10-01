@@ -1,10 +1,10 @@
-# Governed Knowledge Operations Standard (GKOS)
+# Governed Knowledge Operations Specification (GKOS)
 
-Drafted by Shaun "Oden" Marshall. Refined and published by AI Assistant.
+Drafted by Shaun "Oden" Marshall, with AI drafting assistance. Published under owner authorization.
 
 <!-- markdownlint-disable MD013 -->
 
-> A developmental public pre-standard for making the path from evidence to consequential action inspectable, testable, and governable.
+> A developmental specification (public working draft) for making the path from evidence to consequential action inspectable, testable, and governable.
 
 **Evidence is not truth. Confidence is not authority. Capability is not authority.**
 
@@ -25,15 +25,32 @@ When a person or AI system recommends, approves, or takes an action, GKOS is des
 
 GKOS does not replace databases, records systems, agent runtimes, workflow engines, identity providers, policy engines, professional judgment, or applicable law. It defines the responsibilities and records that allow those components to participate in a governed evidence-to-action chain.
 
+## Specification status and published titles
+
+GKOS is a developmental specification, published as a public working draft.
+This README uses **Governed Knowledge Operations Specification**, following the
+owner's [README title change in PR #63](https://github.com/Odenknight/gkos-standard/pull/63).
+The acronym **GKOS** is unchanged. The signed v0.82.1 edition and earlier
+publications retain their recorded title, **Governed Knowledge Operations Standard**,
+and their existing citations and identifiers. Cite those editions by their
+published title; the current README heading does not rename historical artifacts.
+Neither wording asserts consensus, accreditation, certification, or regulatory
+approval. Do not describe the current publication as a consensus specification.
+
+See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
+[v0.82.1 publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
+
 ## Current standing
 
-- **Release coordinate:** GKOS-2026-09-03 v0.81
-- **Publication status:** live since September 3, 2026, following R20 owner approval, the verified signed `v0.81` tag, passing post-tag checks, and GitHub publication
-- **Release record:** [v0.81 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.81) · [publication and archive receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
-- **Version DOI:** [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
+- **Release coordinate:** GKOS-2026-09-24 v0.82.1
+- **Publication status:** live since September 24, 2026 in America/New_York; actual GitHub publication `2026-09-25T00:54:27Z`, verified signed tag and post-tag checks
+- **Release record:** [v0.82.1 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1) · [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) · [v0.82.1 release package](releases/2026-09-24-v0.82.1/README.md)
+- **Normative population:** unchanged from v0.81 (62 permanent requirements, 28 gate codes)
+- **Version DOI (v0.82.1):** archive verification pending
+- **Previous edition DOI (v0.82 only):** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
-- **Publication controls:** [exact commit and approval binding](docs/implementation/V081_PUBLICATION_BINDING.md)
-- **Maturity:** developmental public pre-standard
+- **Publication controls:** [v0.82.1 authorization and exact-commit binding](docs/releases/V0821_PUBLICATION_CONTROL.md)
+- **Maturity:** developmental specification; public working draft
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
@@ -41,22 +58,26 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 - **Public second implementation:** awaiting a public second implementation
 - **Current ecosystem program:** R21 informative interoperability work for MCP, A2A, ACS, agent governance, evidence packaging, public pilots, and deployment guidance
 
-GKOS v0.81 is a developmental pre-standard designed to support AI governance, accountability, and auditability by binding evidence, claims, deterministic controls, review, authority, context, and outcomes. The exact R20 release gates and separate owner decision were completed, and the edition was published on September 3, 2026. Zenodo preserves the verified source archive. Publication and archival identity establish no profile qualification, certification, or independently demonstrated effectiveness.
+The current v0.82.1 documentation patch clarifies publication status and existing claims controls. Its technical baseline is unchanged from v0.82, with the normative population retained from v0.81. The earlier editions have their own verified archival records; v0.82.1 archive verification remains pending. Publication and archival identity establish no profile qualification, certification, or independently demonstrated effectiveness.
 
 [Technical orientation](TECHNICAL_README.md) ·
 [Master standard](standard/00_GKOS_Master_Standard.md) ·
 [Requirements registry](requirements/REGISTRY.md) ·
 [Conformance](conformance/README.md) ·
+[CIA triad alignment](docs/GKOS_CIA_TRIAD_ALIGNMENT.md) ·
 [Reference infrastructure](docs/implementation/GKOS_REFERENCE_INFRASTRUCTURE.md) ·
 [Practitioner blueprint](docs/implementation/GKOS_INFRASTRUCTURE_PRACTITIONER_BLUEPRINT.md) ·
 [Ecosystem interoperability](docs/ecosystem/README.md) ·
 [Roadmap](ROADMAP.md)
 
+[Documentation corpus status](docs/CORPUS-STATUS.md) distinguishes historical
+July inputs from current guidance, domain pilots and standards engagement.
+
 ## Published release and current development
 
-The signed v0.81 edition remains the published baseline. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Proposal.md) for prospective v0.82 development. Their acceptance does not publish v0.82 or qualify an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
+The signed v0.82.1 documentation patch is the published edition; its technical baseline is unchanged from v0.82 and its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
 
-The separate ISO, EU and NIST add-ins above are informative proposals. The more detailed [NIST requirement crosswalk in PR #42](https://github.com/Odenknight/gkos-standard/pull/42) remains a review candidate until its separate review and merge gates are complete; its ISO Annex A mapping is verification-held.
+The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk in PR #42](https://github.com/Odenknight/gkos-standard/pull/42) remains a review candidate until its separate review and merge gates are complete; its ISO Annex A mapping is verification-held.
 
 ## Why GKOS exists
 
@@ -83,6 +104,20 @@ The illustration follows a request through preservation (L1–L3), exact context
 Layers are cumulative responsibilities, so checks and review can repeat as the proposal or context changes. Access restrictions apply before disclosure. People and deployed systems perform the work; GKOS defines the contracts.
 
 [Read the full stack walkthrough and integration contract](docs/implementation/GKOS_END_TO_END_WORKFLOW.md) · [Download the illustration](graphics/diagrams/gkos-evidence-to-authorized-action.jpg)
+
+## GKOS and the CIA triad
+
+The CIA triad expresses three security goals: **Confidentiality**, **Integrity**, and **Availability**. GKOS applies that mindset to the path from evidence to action: respect access restrictions, preserve the basis for decisions, and make authorized use and recovery accountable.
+
+- **Confidentiality:** require authorization before protected information reaches people, agents, logs, or other outputs; preserve sensitivity and purpose restrictions.
+- **Integrity:** preserve sources and lineage, bind decisions to exact evidence, reproduce captured context, and record authorized changes or refusals.
+- **Availability:** govern review queues and record outcomes, refusals, and recovery routes so operators can restore authorized service. Deployments still need backups, redundancy, and tested recovery.
+
+![CIA objectives mapped to GKOS controls, records, and deployment responsibilities](graphics/diagrams/gkos-cia-overview.svg)
+
+This informative alignment is pinned to the v0.81 technical baseline, unchanged by v0.82 and v0.82.1. GKOS supplies governance contracts and evidence; deployed controls and operational tests establish security outcomes.
+
+**[Read the full CIA triad alignment and requirement mapping](docs/GKOS_CIA_TRIAD_ALIGNMENT.md).**
 
 ## Proposed ISO, EU and NIST add-ins
 
@@ -132,7 +167,7 @@ GKOS does not decide whether the refund policy is fair or lawful. It makes the o
 
 [Download PNG](graphics/diagrams/gkos-control-plane.png) · [Editable diagram source](graphics/diagrams/gkos-control-plane.mmd)
 
-GKOS can be realized as an embedded library, sidecar, service, gateway, event-driven control plane, workflow contract, or federation of existing systems. The Standard does not mandate one database, one cloud, one agent framework, one identity system, or one protocol.
+GKOS can be realized as an embedded library, sidecar, service, gateway, event-driven control plane, workflow contract, or federation of existing systems. The specification does not mandate one database, one cloud, one agent framework, one identity system, or one protocol.
 
 The governing distinction is:
 
@@ -154,15 +189,15 @@ Existing tools remain useful. They simply do not become GKOS-conformant by being
 
 ## Agent and protocol interoperability
 
-GKOS remains protocol-neutral. R21 develops separately versioned, informative implementation bindings so the Standard can remain useful while the agent ecosystem changes.
+GKOS remains protocol-neutral. R21 develops separately versioned, informative implementation bindings so the specification can remain useful while the agent ecosystem changes.
 
-Current reviewed R21 inputs include:
+Recorded R21 external-source baselines include:
 
 - Model Context Protocol `2026-07-28`, with an explicit migration lane from `2025-11-25`;
 - Agent2Agent Protocol `v1.0.1`; and
 - OWASP Agent Control Standard `v0.1.1` public preview.
 
-These external versions must be rechecked before publication or implementation claims. A protocol version, SDK version, service version, gateway version, and product version are separate coordinates.
+These are recorded review baselines, not claims to the latest external versions. Recheck the [external-source register](docs/ecosystem/EXTERNAL_SOURCE_REGISTER.md) and upstream sources before making new publication or implementation claims. A protocol version, SDK version, service version, gateway version, and product version are separate coordinates.
 
 MCP, A2A, and ACS do not become normative GKOS dependencies merely because GKOS publishes a mapping. A binding identifies what the external protocol can carry or observe and what additional GKOS evidence or control is still needed.
 
@@ -174,9 +209,9 @@ NIST and other public standards and governance efforts increasingly focus on age
 
 This is an informative relationship, not an endorsement claim. GKOS is not a NIST publication and does not claim NIST, NCCoE, ISO, OWASP, IMDA, or another body's approval, alignment, conformity, certification, or regulatory standing.
 
-Informative crosswalk: A separately versioned mapping of GKOS to ISO/IEC 42001 and NIST AI RMF 1.0 is provided in [`docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md`](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md). It identifies possible evidentiary relationships only and does not establish alignment, conformance, certification, endorsement, or regulatory compliance.
+Informative crosswalk: [`GKOS-XW-002`](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) proposes evidentiary relationships with NIST AI RMF 1.0 against the published v0.81 baseline; ISO/IEC 42001 Annex A mappings remain verification-held. It does not change current specification requirements or profiles, establish alignment, conformance, certification, endorsement, or regulatory compliance, or replace a deployment-specific control-evidence mapping. A bounded action pilot requires its own execution evidence.
 
-The R21 external-source and review-disposition registers preserve exact reviewed versions, access dates, limitations, corrections, and superseded claims so changing external frameworks do not silently rewrite the Standard.
+The R21 external-source and review-disposition registers preserve exact reviewed versions, access dates, limitations, corrections, and superseded claims so changing external frameworks do not silently rewrite the specification.
 
 ## Adoption paths
 
@@ -236,6 +271,12 @@ Current standing: **awaiting a public second implementation**.
 
 A second implementation must be publicly inspectable enough to evaluate its source, interpretation path, dependencies, ownership, operation, fixtures, evidence, limitations, and independence. No private repository or unpublished implementation is counted or implied as public second-implementation evidence.
 
+Different ownership is ideal, not mandatory. The outstanding need is different
+functioning products with demonstrated implementation independence; shared
+ownership alone is not a disqualifier. A renamed package or another interface
+to the same implementation does not by itself supply that evidence. See the
+[September 12 owner clarification](docs/decisions/2026-09-12-implementation-independence.md).
+
 Commercial implementation support, hosted validation, training, and assessment tooling are compatible with the project. The term **GKOS certified** is reserved until a governed certification scheme and competent independent certification process exist.
 
 ## Contributing
@@ -256,11 +297,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), and the 
 
 Documentation and original graphics are licensed under CC BY 4.0; schemas, fixtures, workflows, scripts, and reference code are licensed under Apache-2.0. See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and [ZENODO.md](ZENODO.md) for licensing, attribution, archival publication, and version-specific citation guidance.
 
-Suggested citation for the current published release: Shaun Allan Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-03 v0.81.* Zenodo. [https://doi.org/10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294).
+Suggested citation for the current published release: Shaun Allan Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-24 v0.82.1.* GitHub, September 24, 2026 (America/New_York). [Signed release and source](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1). See [CITATION.cff](CITATION.cff) and the [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
+
+The v0.82.1 archive and version DOI are not yet verified. The [v0.82 DOI](https://doi.org/10.5281/zenodo.22905582) identifies the previous edition only. The [concept DOI](https://doi.org/10.5281/zenodo.22269293) identifies the archived version series and may lag the latest GitHub publication; it does not substitute for a verified edition-specific DOI.
 
 ## Maturity and governance boundary
 
-GKOS v0.x is a developmental public pre-standard under Founder/Initial Editor governance. It is not an accredited standard, consensus publication, certification program, legal opinion, or regulator approval.
+GKOS v0.x is a developmental specification (public working draft) under Founder/Initial Editor governance. It is not an accredited standard, consensus publication, certification program, legal opinion, or regulator approval.
 
 The v1.0 path requires materially stronger governance and external evidence, including multi-stakeholder maintenance, appeals and succession mechanisms, public review, a publicly demonstrated second implementation, interoperable evidence exchange, pilot results, and archival release controls.
 

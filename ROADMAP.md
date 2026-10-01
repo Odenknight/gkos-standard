@@ -1,16 +1,18 @@
 # GKOS roadmap
 
-- **Release coordinate:** GKOS-2026-09-03 v0.81
-- **Publication standing:** published and immutable at signed tag `v0.81`
-- **Published source target:** `8f2a158c6d4b8cabd907d98765766d281aec1247`
-- **Publication binding:** [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
-- **Development standing:** `main` is post-v0.81 development
+- **Release coordinate:** GKOS-2026-09-22 v0.82 (informative edition)
+- **Publication standing:** published and immutable at signed tag `v0.82`
+- **Published source target:** `e2a3dd49a70f6ccaa5fe6c702089ef93adcf9612`
+- **Publication binding:** [publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md); v0.81: [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
+- **Development standing:** `main` is post-v0.82 development
 - **Current profile standing:** no qualifying profile
 - **Machine exchange contract:** GKX 2.0
 - **Current governance:** owner-authorized v0.x development; not consensus
-- **Accepted development decisions:** R17–R21
-- **Proposed documentation decision:** R22 canonical informative architecture
-- **Current development focus:** v0.82 interoperability, ambiguity resolution,
+- **Accepted development decisions:** R17–R23
+- **Accepted documentation decision:** R22 canonical informative architecture
+- **Accepted prospective semantics:** R23 Layer-3 interoperability for the next normative edition after v0.82
+- **Version DOI:** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582)
+- **Current development focus:** Layer-3 interoperability, ambiguity resolution,
   retrieval/governance evidence, portable evidence packaging, and public
   implementation work under R21
 
@@ -79,8 +81,16 @@ Protocol, SDK, service, gateway, and product versions remain separate.
 
 ### E2 — fixtures and reference adapters
 
-Develop public positive, negative, boundary, mutation, downgrade, bypass,
-disclosure, refusal, and effect-containment fixtures. Reference adapters remain
+**Assessment — September 12, 2026: partially delivered, with substantial
+implemented mechanisms and recorded test evidence; shared coverage remains
+incomplete.** See the [E2 ecosystem assessment](docs/reviews/2026-09-12_E2_ECOSYSTEM_ASSESSMENT.md)
+for public sources, revision boundaries and remaining gaps.
+
+Reuse and extend existing Engine, Lite and Kosmos adapters and fixtures. Map
+recorded results to a versioned shared inventory, then complete uncovered
+positive, negative, boundary, mutation, downgrade, bypass, disclosure, refusal
+and effect-containment scenarios. A2A/ACS execution and complete binding
+coverage were not verified in this assessment. Reference adapters remain
 separately versioned from the Standard and grant no production authority.
 
 ### E3 — public pilots
@@ -107,6 +117,14 @@ profile openly. A candidate is not independent until its public source,
 interpretation path, dependencies, ownership, operations, fixtures, and evidence
 support that conclusion. No private repository or unpublished product is named
 or implied.
+
+Different ownership is desirable, not required. Shared ownership alone does
+not disqualify a candidate: the outstanding need is different functioning
+products with demonstrated implementation independence. Separate names,
+interfaces, or packages alone do not demonstrate a different implementation.
+Public evidence must still explain the interpretation path, shared dependencies,
+operations, fixtures, and limitations. See the
+[owner clarification of September 12](docs/decisions/2026-09-12-implementation-independence.md).
 
 ### E5 — external standards engagement
 
@@ -155,6 +173,6 @@ This roadmap does not authorize:
 
 The [full stack walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md), separate [ISO, EU and NIST proposals](docs/ecosystem/README.md#governance-middleware-proposals), and [bounded pilot plan](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md) support the next evidence-gathering work. They add no profile qualification or production authority.
 
-## Accepted v0.82 development decisions
+## Accepted development decisions after v0.81
 
-R22 supplies accepted informative architecture authority; R23 supplies accepted prospective Layer-3 development semantics. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.
+R22 supplies accepted informative architecture authority, carried into the proposed informative v0.82 edition. R23 supplies accepted prospective Layer-3 development semantics for the next normative edition after v0.82 (R24 Option A). R24 controls the informative v0.82 release route. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.

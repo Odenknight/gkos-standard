@@ -1,0 +1,27 @@
+name: v0.82.1 post-tag verification
+on:
+  push:
+    tags: [v0.82.1]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verify-v0821-tag:
+    runs-on: [self-hosted, Linux, X64, r720-ci]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: refs/tags/v0.82.1
+          fetch-depth: 0
+          fetch-tags: true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Install exact validator dependencies
+        working-directory: conformance/runner
+        run: npm ci
+      - name: Verify signed owner tag, exact CI evidence and release package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/verify-v0821-release.mjs --post-tag
+          bash scripts/check-current-release.sh

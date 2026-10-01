@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1134" viewBox="0 0 1600 1134" role="img" aria-labelledby="cia-title cia-desc">
+  <title id="cia-title">The CIA Triad and GKOS v0.81</title>
+  <desc id="cia-desc">Three rows map the FIPS 199 security objectives to GKOS v0.81. Confidentiality: authorization precedes protected disclosure on every surface (GKOS-DISCLOSURE-001), sensitivity fails closed, authority and effect scope carry audience and sensitivity limits, and Context Manifests are restriction-aware; the implementation adds enforcement, encryption, key management and leak tests. Integrity, the strongest alignment: state-change receipts, deterministic canonical hashing, stable identity and lineage, append-only decisions with distinct actor roles, and exact manifest and authority binding at action time; the implementation adds tamper-resistant storage, signing, trusted time and tests. Availability, partial: recorded refusal distinct from outage, recovery routes on every authorized use, hold-aware retention, and queue governance; the implementation adds backups, redundancy, service objectives and incident response. A strip shows where each objective concentrates across layers L1 to L7. Informative; not a conformance or security claim.</desc>
+  <rect width="1600" height="1134" fill="#FFFFFF"/>
+  <text x="48" y="48" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;fill:#536780;">SECURITY OBJECTIVES × GOVERNANCE EVIDENCE</text>
+  <text x="48" y="90" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:34px;font-weight:bold;fill:#1F2A37;">The CIA Triad and GKOS v0.81</text>
+  <text x="48" y="120" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:normal;fill:#536780;">How the governed evidence GKOS requires supports confidentiality, integrity and availability — and what a deployment still has to add</text>
+  <text x="1552" y="90" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:normal;fill:#536780;">Informative · not a conformance or security claim</text>
+  <text x="48" y="160" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;fill:#536780;">OBJECTIVE (FIPS 199 §3)</text>
+  <text x="372" y="160" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;fill:#536780;">WHAT GKOS REQUIRES OR RECORDS</text>
+  <text x="1144" y="160" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;fill:#536780;">REQUIREMENT / SOURCE</text>
+  <text x="1178" y="160" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;fill:#536780;">IMPLEMENTATION MUST ADD</text>
+  <rect x="48" y="174" width="1504" height="238" rx="12" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <rect x="48" y="174" width="300" height="238" rx="12" fill="#E7F0FA" stroke="none" stroke-width="1.5"/>
+  <rect x="48" y="174" width="8" height="238" rx="4" fill="#235FA5"/>
+  <text x="74" y="218" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:30px;font-weight:bold;fill:#235FA5;">C</text>
+  <text x="110" y="218" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:bold;fill:#1F2A37;">Confidentiality</text>
+  <text x="74" y="250" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">Preserve authorized restrictions</text>
+  <text x="74" y="271" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">on access and disclosure.</text>
+  <rect x="74" y="362" width="214.0" height="28" rx="14" fill="#235FA5" stroke="none" stroke-width="1.5"/>
+  <text x="181.0" y="381" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;fill:#FFFFFF;">Direct normative controls</text>
+  <circle cx="377" cy="199" r="3.5" fill="#235FA5"/>
+  <text x="388" y="204" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Authorization before any protected disclosure — including logs, metrics,</text>
+  <text x="388" y="223" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">errors and diagnostics; denied data must not influence outputs</text>
+  <text x="1144" y="223" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#235FA5;">GKOS-DISCLOSURE-001</text>
+  <circle cx="377" cy="243" r="3.5" fill="#235FA5"/>
+  <text x="388" y="248" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Missing sensitivity fails closed; restrictions raise at once, lower only</text>
+  <text x="388" y="267" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">with authenticated authority; audit inherits sensitivity</text>
+  <text x="1144" y="267" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#235FA5;">Security annex</text>
+  <circle cx="377" cy="287" r="3.5" fill="#235FA5"/>
+  <text x="388" y="292" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Authority scoped by purpose, tenant, audience and sensitivity;</text>
+  <text x="388" y="311" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">delegation can only narrow; effect scope has a sensitivity ceiling</text>
+  <text x="1144" y="311" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#235FA5;">GKOS-EFFECT-001..003</text>
+  <circle cx="377" cy="331" r="3.5" fill="#235FA5"/>
+  <text x="388" y="336" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Context Manifests bind purpose, recipient and restrictions;</text>
+  <text x="388" y="355" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Viewers show restrictions without gaining authority</text>
+  <text x="1144" y="355" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#235FA5;">GKOS-CONTEXT-001/004 · PROFILE-007</text>
+  <line x1="372" y1="376" x2="1144" y2="376" stroke="#D5DCE5"/>
+  <text x="372" y="396" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;fill:#536780;font-style:italic;">Where: L1 sensitivity evidence · L4 control and Refusal Receipts · L6 Selection Envelope and Context Manifest · L7 Authority Receipt and Authorized Use Record</text>
+  <line x1="1158" y1="190" x2="1158" y2="396" stroke="#D5DCE5"/>
+  <rect x="1178" y="199" width="9" height="9" rx="2" fill="none" stroke="#235FA5" stroke-width="1.6"/>
+  <text x="1196" y="210" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Enforcement at the real operation, not</text>
+  <text x="1196" y="228" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">observation-only</text>
+  <rect x="1178" y="247" width="9" height="9" rx="2" fill="none" stroke="#235FA5" stroke-width="1.6"/>
+  <text x="1196" y="258" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Encryption at rest and in transit; key,</text>
+  <text x="1196" y="276" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">credential and revocation management</text>
+  <rect x="1178" y="295" width="9" height="9" rx="2" fill="none" stroke="#235FA5" stroke-width="1.6"/>
+  <text x="1196" y="306" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Leak tests across every surface: logs, errors,</text>
+  <text x="1196" y="324" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">metrics, outputs</text>
+  <rect x="1178" y="343" width="9" height="9" rx="2" fill="none" stroke="#235FA5" stroke-width="1.6"/>
+  <text x="1196" y="354" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Timing side-channel bounds (informative only</text>
+  <text x="1196" y="372" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">in v0.81)</text>
+  <rect x="48" y="428" width="1504" height="238" rx="12" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <rect x="48" y="428" width="300" height="238" rx="12" fill="#EAF5EF" stroke="none" stroke-width="1.5"/>
+  <rect x="48" y="428" width="8" height="238" rx="4" fill="#36803B"/>
+  <text x="74" y="472" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:30px;font-weight:bold;fill:#36803B;">I</text>
+  <text x="110" y="472" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:bold;fill:#1F2A37;">Integrity</text>
+  <text x="74" y="504" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">Guard against improper</text>
+  <text x="74" y="525" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">modification or destruction;</text>
+  <text x="74" y="546" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">includes authenticity and</text>
+  <text x="74" y="567" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">non-repudiation.</text>
+  <rect x="74" y="616" width="168.4" height="28" rx="14" fill="#36803B" stroke="none" stroke-width="1.5"/>
+  <text x="158.2" y="635" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;fill:#FFFFFF;">Strongest alignment</text>
+  <circle cx="377" cy="453" r="3.5" fill="#36803B"/>
+  <text x="388" y="458" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Every committed state change is bound to a State-Change Receipt or it</text>
+  <text x="388" y="477" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">fails closed / rolls back / compensates before commit success</text>
+  <text x="1144" y="477" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#36803B;">GKOS-RECEIPT-001..003</text>
+  <circle cx="377" cy="497" r="3.5" fill="#36803B"/>
+  <text x="388" y="502" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Deterministic GKX-CBOR-1 encoding and SHA-256 hashing; stable identity;</text>
+  <text x="388" y="521" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">lineage keeps every branch, no tiebreak picks a winner</text>
+  <text x="1144" y="521" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#36803B;">GKOS-CANON · IDENTITY · LINEAGE</text>
+  <circle cx="377" cy="541" r="3.5" fill="#36803B"/>
+  <text x="388" y="546" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Append-only Decision Records; distinct proposer / reviewer / authorizer /</text>
+  <text x="388" y="565" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">executor; no self-approval; bounded different-model agent review</text>
+  <text x="1144" y="565" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#36803B;">GKOS-REVIEW-001..004 · AUTHUSE-004</text>
+  <circle cx="377" cy="585" r="3.5" fill="#36803B"/>
+  <text x="388" y="590" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Manifest hash equal at authorization and action time; authority valid</text>
+  <text x="388" y="609" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">at captured action time; explicit policy identity; re-entry restarts at L1 (REENTRY)</text>
+  <text x="1144" y="609" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#36803B;">AUTHUSE-001..003/007 · POLICY-001</text>
+  <line x1="372" y1="630" x2="1144" y2="630" stroke="#D5DCE5"/>
+  <text x="372" y="650" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;fill:#536780;font-style:italic;">Where: L1–L7 end to end · Source Record · Knowledge Object · lineage · Control Receipt · Decision Record · Selection Envelope · Context Manifest · Authorized Use Record · Refusal Receipt</text>
+  <line x1="1158" y1="444" x2="1158" y2="650" stroke="#D5DCE5"/>
+  <rect x="1178" y="453" width="9" height="9" rx="2" fill="none" stroke="#36803B" stroke-width="1.6"/>
+  <text x="1196" y="464" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Tamper-resistant record storage and protected</text>
+  <text x="1196" y="482" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">trust anchors</text>
+  <rect x="1178" y="501" width="9" height="9" rx="2" fill="none" stroke="#36803B" stroke-width="1.6"/>
+  <text x="1196" y="512" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Signing, attestation and trusted time</text>
+  <rect x="1178" y="531" width="9" height="9" rx="2" fill="none" stroke="#36803B" stroke-width="1.6"/>
+  <text x="1196" y="542" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Tamper, stale-context and expired-authority</text>
+  <text x="1196" y="560" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">tests → recorded refusal or rollback</text>
+  <rect x="1178" y="579" width="9" height="9" rx="2" fill="none" stroke="#36803B" stroke-width="1.6"/>
+  <text x="1196" y="590" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Source-quality evaluation — evidence integrity</text>
+  <text x="1196" y="608" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">is not factual truth</text>
+  <rect x="48" y="682" width="1504" height="238" rx="12" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <rect x="48" y="682" width="300" height="238" rx="12" fill="#F0EEF8" stroke="none" stroke-width="1.5"/>
+  <rect x="48" y="682" width="8" height="238" rx="4" fill="#794DA5"/>
+  <text x="74" y="726" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:30px;font-weight:bold;fill:#794DA5;">A</text>
+  <text x="110" y="726" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:bold;fill:#1F2A37;">Availability</text>
+  <text x="74" y="758" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">Ensure timely and reliable access</text>
+  <text x="74" y="779" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:normal;fill:#3B4A5C;">to and use of information.</text>
+  <rect x="74" y="870" width="259.6" height="28" rx="14" fill="#794DA5" stroke="none" stroke-width="1.5"/>
+  <text x="203.8" y="889" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;fill:#FFFFFF;">Partial: governance, not uptime</text>
+  <circle cx="377" cy="707" r="3.5" fill="#794DA5"/>
+  <text x="388" y="712" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Required gate closures leave receipts; escalation where applicable, so</text>
+  <text x="388" y="731" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">an authorized refusal is distinguishable from an outage</text>
+  <text x="1144" y="731" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#794DA5;">GKOS-AUTHUSE-005</text>
+  <circle cx="377" cy="751" r="3.5" fill="#794DA5"/>
+  <text x="388" y="756" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Authorized Use Records bind outcome plus correction, compensation,</text>
+  <text x="388" y="775" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">rollback or escalation route</text>
+  <text x="1144" y="775" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#794DA5;">GKOS-AUTHUSE-006</text>
+  <circle cx="377" cy="795" r="3.5" fill="#794DA5"/>
+  <text x="388" y="800" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Disposition consults a hold predicate first; legal hold overrides deletion;</text>
+  <text x="388" y="819" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">governed erasure keeps a tombstone and decision evidence</text>
+  <text x="1144" y="819" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#794DA5;">GKOS-RETENTION-001..003</text>
+  <circle cx="377" cy="839" r="3.5" fill="#794DA5"/>
+  <text x="388" y="844" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">Review queues need capacity, TTL, aging, workload, sampling and emergency</text>
+  <text x="388" y="863" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14.5px;font-weight:normal;fill:#1F2A37;">procedures; overdue review halts delegated changes; replayable manifests</text>
+  <text x="1144" y="863" text-anchor="end" style="font-family:'DejaVu Sans Mono', Menlo, Consolas, monospace;font-size:12px;font-weight:bold;fill:#794DA5;">GKOS-DELEGATION-006 · CONTEXT-003</text>
+  <line x1="372" y1="884" x2="1144" y2="884" stroke="#D5DCE5"/>
+  <text x="372" y="904" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;fill:#536780;font-style:italic;">Where: L2 stable identity · L4 fail-closed gates · L5 queue governance · L6 replayable manifests · L7 recovery routes — processing may be asynchronous and distributed</text>
+  <line x1="1158" y1="698" x2="1158" y2="904" stroke="#D5DCE5"/>
+  <rect x="1178" y="707" width="9" height="9" rx="2" fill="none" stroke="#794DA5" stroke-width="1.6"/>
+  <text x="1196" y="718" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Backups, restore testing, redundancy and</text>
+  <text x="1196" y="736" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">failover</text>
+  <rect x="1178" y="755" width="9" height="9" rx="2" fill="none" stroke="#794DA5" stroke-width="1.6"/>
+  <text x="1196" y="766" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Measured service and recovery objectives; load</text>
+  <text x="1196" y="784" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">and capacity tests</text>
+  <rect x="1178" y="803" width="9" height="9" rx="2" fill="none" stroke="#794DA5" stroke-width="1.6"/>
+  <text x="1196" y="814" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Incident response that never bypasses a</text>
+  <text x="1196" y="832" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">governance gate to speed recovery</text>
+  <rect x="1178" y="851" width="9" height="9" rx="2" fill="none" stroke="#794DA5" stroke-width="1.6"/>
+  <text x="1196" y="862" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">Plan for governed refusal as a normal service</text>
+  <text x="1196" y="880" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13.5px;font-weight:normal;fill:#1F2A37;">state — GKOS has no uptime artifact</text>
+  <text x="48" y="956" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:bold;fill:#536780;">WHERE EACH OBJECTIVE CONCENTRATES ACROSS THE SEVEN LAYER CONTRACTS</text>
+  <text x="1552" y="956" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;fill:#536780;font-style:italic;">Layers are contracts, not one synchronous pipeline. Receipts are semantic roles — one record may satisfy several.</text>
+  <rect x="48.0" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="62.0" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L1 Sources</text>
+  <circle cx="71.0" cy="1016" r="9" fill="#235FA5" stroke="#235FA5" stroke-width="1.5"/>
+  <text x="71.0" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">C</text>
+  <circle cx="97.0" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="97.0" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="123.0" cy="1016" r="9" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="123.0" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#B7C0CC;">A</text>
+  <rect x="264.2857142857143" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="278.2857142857143" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L2 Identity</text>
+  <circle cx="287.2857142857143" cy="1016" r="9" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="287.2857142857143" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#B7C0CC;">C</text>
+  <circle cx="313.2857142857143" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="313.2857142857143" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="339.2857142857143" cy="1016" r="9" fill="#794DA5" stroke="#794DA5" stroke-width="1.5"/>
+  <text x="339.2857142857143" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">A</text>
+  <rect x="480.57142857142856" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="494.57142857142856" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L3 Lineage</text>
+  <circle cx="503.57142857142856" cy="1016" r="9" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="503.57142857142856" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#B7C0CC;">C</text>
+  <circle cx="529.5714285714286" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="529.5714285714286" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="555.5714285714286" cy="1016" r="9" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="555.5714285714286" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#B7C0CC;">A</text>
+  <rect x="696.8571428571429" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="710.8571428571429" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L4 Control</text>
+  <circle cx="719.8571428571429" cy="1016" r="9" fill="#235FA5" stroke="#235FA5" stroke-width="1.5"/>
+  <text x="719.8571428571429" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">C</text>
+  <circle cx="745.8571428571429" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="745.8571428571429" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="771.8571428571429" cy="1016" r="9" fill="#794DA5" stroke="#794DA5" stroke-width="1.5"/>
+  <text x="771.8571428571429" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">A</text>
+  <rect x="913.1428571428571" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="927.1428571428571" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L5 Review</text>
+  <circle cx="936.1428571428571" cy="1016" r="9" fill="#FFFFFF" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="936.1428571428571" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#B7C0CC;">C</text>
+  <circle cx="962.1428571428571" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="962.1428571428571" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="988.1428571428571" cy="1016" r="9" fill="#794DA5" stroke="#794DA5" stroke-width="1.5"/>
+  <text x="988.1428571428571" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">A</text>
+  <rect x="1129.4285714285713" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="1143.4285714285713" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L6 Context</text>
+  <circle cx="1152.4285714285713" cy="1016" r="9" fill="#235FA5" stroke="#235FA5" stroke-width="1.5"/>
+  <text x="1152.4285714285713" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">C</text>
+  <circle cx="1178.4285714285713" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="1178.4285714285713" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="1204.4285714285713" cy="1016" r="9" fill="#794DA5" stroke="#794DA5" stroke-width="1.5"/>
+  <text x="1204.4285714285713" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">A</text>
+  <rect x="1345.7142857142858" y="970" width="206.28571428571428" height="64" rx="8" fill="#F6F8FB" stroke="#D5DCE5" stroke-width="1.5"/>
+  <text x="1359.7142857142858" y="994" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;fill:#1F2A37;">L7 Use</text>
+  <circle cx="1368.7142857142858" cy="1016" r="9" fill="#235FA5" stroke="#235FA5" stroke-width="1.5"/>
+  <text x="1368.7142857142858" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">C</text>
+  <circle cx="1394.7142857142858" cy="1016" r="9" fill="#36803B" stroke="#36803B" stroke-width="1.5"/>
+  <text x="1394.7142857142858" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">I</text>
+  <circle cx="1420.7142857142858" cy="1016" r="9" fill="#794DA5" stroke="#794DA5" stroke-width="1.5"/>
+  <text x="1420.7142857142858" y="1020" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;">A</text>
+  <text x="48" y="1066" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;fill:#1F2A37;">Alignment: strongest in integrity · direct confidentiality controls · partial availability support</text>
+  <text x="48" y="1090" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;fill:#536780;">Basis: NIST FIPS 199 §3 and the GKOS v0.81 normative surface (master standard, requirement registry, normative annexes; signed tag v0.81, commit 8f2a158). Requirement references are pinned to the published v0.81 baseline.</text>
+  <text x="48" y="1110" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;fill:#536780;">GKOS governance records support security objectives; deployed controls and operational tests establish outcomes. GKOS does not guarantee truth, safety, security or fitness for purpose, and the active fixture catalog declares no qualifying profile.</text>
+</svg>

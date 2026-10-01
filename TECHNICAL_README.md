@@ -1,5 +1,10 @@
 # GKOS technical orientation
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](conformance/CLAIMS_POLICY.md).
+
 <!-- markdownlint-disable MD013 -->
 
 ![The GKOS seven-layer model](illustrated/figures/fig1-seven-layers.png)
@@ -11,11 +16,13 @@ conformance evidence, and implementations. It is informative: the
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
 normative annexes control when an overview differs from them.
 
-- **Standard:** GKOS-2026-09-03 v0.81
+- **Published documentation patch:** GKOS-2026-09-24 v0.82.1;
+  technical baseline GKOS-2026-09-22 v0.82 informative edition (normative population
+  unchanged from GKOS-2026-09-03 v0.81)
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
-- **Maturity:** developmental public pre-standard
+- **Maturity:** developmental specification; public working draft
 
 [Return to the public README](README.md) ·
 [Read the master standard](standard/00_GKOS_Master_Standard.md) ·
@@ -24,7 +31,7 @@ normative annexes control when an overview differs from them.
 
 ## Current development decisions
 
-[R22](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) is accepted informative documentation authority. [R23](decisions/R23_Layer3_Interoperability_Semantics_Proposal.md) is accepted prospective v0.82 development authority; its [implementation evidence work](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) remains open. Neither changes the immutable v0.81 release or establishes current profile qualification. The [NIST row-level crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) has its own exact-head review gate, separate from the published high-level NIST add-in.
+[R22](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) is accepted informative documentation authority. [R23](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md) is accepted prospective development authority for the next normative edition after v0.82 (R24 Option A); its [implementation evidence work](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) remains open. Neither changes the immutable v0.81 release or establishes current profile qualification. The [NIST row-level crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) has its own exact-head review gate, separate from the published high-level NIST add-in.
 
 ## End-to-end integration
 
@@ -86,11 +93,11 @@ authorized-use, refusal, diagnostic, and effect-scope obligations. See
 
 [Download PNG](graphics/diagrams/gkos-canonical-architecture.png) · [Editable Mermaid source](graphics/diagrams/gkos-canonical-architecture.mmd) · [Checked label register](graphics/diagrams/gkos-canonical-architecture.labels.txt) · [accepted R22 record](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
 
-R22 is Proposed at this preparation head. The figure itself deliberately carries
-no Proposed/Accepted adoption status so owner disposition can later be recorded
-without changing the reviewed figure digests. Until R22 is accepted, the master
-standard, permanent requirements, accepted decisions, and existing technical
-orientation remain controlling.
+R22 is accepted informative documentation authority. The figure deliberately
+carries no adoption-status label; its reviewed digests remain unchanged.
+The master standard, permanent requirements, and accepted decisions remain
+controlling. R23 supplies prospective Layer-3 development authority; neither
+decision modifies the immutable v0.81 release or establishes qualification.
 
 ## Layer contracts
 
@@ -115,7 +122,7 @@ Detailed requirements live in the
 ## Control-plane placement
 
 This control-plane graphic remains a narrower detail view. It does not
-compete with the proposed r3 orientation merely because it focuses on
+compete with the accepted R22 r3 orientation merely because it focuses on
 placement within an existing stack.
 
 ![Human knowledge connects to the GKOS control plane, which connects governance responsibilities to agent runtimes, workflow engines, and identity and policy systems](graphics/diagrams/gkos-control-plane.svg)
@@ -300,8 +307,10 @@ pass. Review the
 [fixture catalog](fixtures/README.md).
 
 The active executable suite remains incomplete and declares no qualifying
-profile. No current implementation satisfies the future v1.0
-second-independent-implementation gate.
+profile. No current implementation satisfies the future v1.0 gate for a
+publicly demonstrated second implementation with demonstrated implementation
+independence (see the
+[owner clarification](docs/decisions/2026-09-12-implementation-independence.md)).
 
 ## Provisional domain work
 
