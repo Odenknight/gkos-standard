@@ -1,7 +1,8 @@
 cff-version: 1.2.0
-message: "Cite this specific verified GKOS edition. Version 0.82.1 was published September 24, 2026 in America/New_York (2026-09-25T00:54:27Z). Archive verification remains pending; no version DOI is asserted."
+message: "Cite this specific verified GKOS edition. Version 0.82.1 was published September 24, 2026 in America/New_York (2026-09-25T00:54:27Z). Zenodo archive verified October 7, 2026; cite the edition-specific DOI."
 title: "Governed Knowledge Operations Standard"
 version: "0.82.1"
+doi: "10.5281/zenodo.22949713"
 date-released: "2026-09-24"
 identifiers:
   - type: doi
@@ -22,4 +23,5 @@ preferred-citation:
     - family-names: Marshall
       given-names: Shaun Allan
       alias: Odenknight
+  doi: "10.5281/zenodo.22949713"
   year: 2026
