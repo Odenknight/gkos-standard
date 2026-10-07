@@ -8,10 +8,10 @@
   a status note on the decision register's 2026-09-24 owner-clarification
   entry, the legal orientation, the version compatibility matrix and the two
   infrastructure guides, and add a completion note to the v0.82.1
-  specification-status clarification. Editorial
-  and clarification changes; no requirement, schema, fixture, runner, gate or
-  profile change; historical records and released changelog sections are
-  unchanged.
+  specification-status clarification. Editorial and clarification changes; no
+  requirement, schema, fixture, runner, gate or profile change. The completion
+  note and the decision-register status note are additive: the original text
+  of those records is preserved, and released changelog sections are unchanged.
 - Add a publication note below the GKOS-DOCSTD-001 status line: R19, which
   adopted its Section 4, was published with GKOS-2026-09-03 v0.81. The status
   line itself is unchanged.
