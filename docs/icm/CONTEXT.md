@@ -4,6 +4,8 @@ Status: **proposed**, 2026-10-07, prepared by Fable-FAC for the Founder and Init
 
 This folder grants no authority. It does not amend `GOVERNANCE.md`, `CONTRIBUTING.md`, the requirement registry, any development decision record, any release control or any GitHub ruleset. It is not a GKOS requirement, profile, conformance claim, certification or publication record. Where this folder and those records disagree, those records control.
 
+Updated 2026-10-07 (run `edit-20261007-v083-consolidation`, task A, proposed): routes for the organization map, the beginner's guide and graphics.
+
 ICM (Interpretable Context Methodology) here means three things: this router, one stage contract per bounded job (`NN-<stage>/CONTEXT.md`), and run records kept outside the repository.
 
 ## Mandatory read order
@@ -35,7 +37,13 @@ Read these in full before any stage. Do not trim them to save context.
 | What can be claimed publicly right now? | [conformance-review](conformance-review/README.md) | `01-scope` | `conformance/CLAIMS_POLICY.md`, `docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md` |
 | Prepare a release candidate, a dated release package or a DOI receipt | [release](release/README.md) | `01-gate` | `decisions/R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md`, `docs/releases/V0821_PUBLICATION_CONTROL.md` |
 | Verify a tag, GitHub Release or Zenodo record after a publication action | [release](release/README.md) | `05-owner-actions` or `06-archive-receipt` (late entry, see below) | The control record and publication record the packet names, by path and blob SHA-256 |
+| Where does something live, and is it current, proposed or historical? | [map](map/README.md) | None: read-only lookup; cite the map at its commit | `docs/icm/map/REPO-MAP.md`, `docs/icm/map/repo-map.json`, the area tracker in `docs/icm/map/areas/` |
+| Refresh the map and the area edit ledgers after a change | [map](map/README.md) | `01-update` | `scripts/icm-map.mjs`, `docs/icm/map/README.md` |
+| Create or update the beginner's guide, or its share mirror | [guide](guide/README.md) | `01-scope` | `docs/icm/guide/README.md`, `CITATION.cff`, `docs/icm/map/areas/guide.md` |
+| Audit or fix figures, or add or close a GRAPHIC-NEEDED earmark | [graphics](graphics/README.md) | `01-audit` | `graphics/README.md`, `graphics/diagrams/README.md`, the graphics register |
 | Report a vulnerability | None | Not an ICM task | `SECURITY.md` |
+
+Before choosing a route, the [organization map](map/README.md) tells you which area a file belongs to, its standing, whether it is on a frozen path and which tracker records its edits. The map is a finding aid; the document's own status line and the records above control.
 
 A one-file editorial fix needs one packet and one handoff. The packet may send it from `01-intake` straight to `03-draft` under the rule below.
 

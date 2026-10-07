@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "workflow_id": "guide",
+  "stages": [
+    {"id": "01-scope", "depends_on": []},
+    {"id": "02-draft", "depends_on": ["01-scope"]},
+    {"id": "03-check", "depends_on": ["02-draft"]},
+    {"id": "04-review", "depends_on": ["03-check"]}
+  ]
+}

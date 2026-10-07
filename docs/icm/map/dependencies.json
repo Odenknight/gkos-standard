@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "workflow_id": "map",
+  "stages": [
+    {"id": "01-update", "depends_on": []}
+  ]
+}
