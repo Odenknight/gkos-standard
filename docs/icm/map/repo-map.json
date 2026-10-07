@@ -137,7 +137,7 @@
     {
       "id": "historical-title",
       "source": "H1 names the document historical",
-      "files": 2
+      "files": 3
     },
     {
       "id": "status-line",
@@ -199,8 +199,8 @@
         "unclassified": 0
       },
       "frozen": 35,
-      "current_edition_refs": 4,
-      "stale_edition_candidates": 17,
+      "current_edition_refs": 8,
+      "stale_edition_candidates": 18,
       "pre_standard_current_facing": 0,
       "graphic_needed": 0
     },
@@ -535,8 +535,8 @@
         "unclassified": 0
       },
       "frozen": 0,
-      "current_edition_refs": 0,
-      "stale_edition_candidates": 2,
+      "current_edition_refs": 2,
+      "stale_edition_candidates": 0,
       "pre_standard_current_facing": 0,
       "graphic_needed": 0
     },
@@ -593,13 +593,13 @@
       "tracker_path": "docs/icm/map/areas/governance.md",
       "tracker_exists": true,
       "folder": "governance",
-      "files": 6,
+      "files": 7,
       "standing": {
         "normative": 0,
         "informative": 0,
         "proposed": 4,
         "decision": 0,
-        "historical": 0,
+        "historical": 1,
         "release": 0,
         "generated": 0,
         "process": 0,
@@ -607,7 +607,7 @@
         "unclassified": 2
       },
       "frozen": 0,
-      "current_edition_refs": 0,
+      "current_edition_refs": 2,
       "stale_edition_candidates": 3,
       "pre_standard_current_facing": 0,
       "graphic_needed": 0
@@ -775,7 +775,7 @@
         "unclassified": 0
       },
       "frozen": 0,
-      "current_edition_refs": 80,
+      "current_edition_refs": 82,
       "stale_edition_candidates": 70,
       "pre_standard_current_facing": 3,
       "graphic_needed": 9
@@ -875,7 +875,7 @@
     {"path":".markdownlint.jsonc","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-07-22","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":".zenodo.json","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-09-24","current_edition_refs":3,"stale_edition_candidates":[{"line":4,"token":"v0.82"}],"pre_standard":[{"line":22,"count":1,"class":"current-facing","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"ACKNOWLEDGMENTS.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-07-31","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"CHANGELOG.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-10-07","current_edition_refs":11,"stale_edition_candidates":[{"line":16,"token":"v0.81"},{"line":16,"token":"GKOS-2026-09-03"},{"line":22,"token":"v0.81"},{"line":46,"token":"v0.83"}],"pre_standard":[{"line":20,"count":1,"class":"current-facing","d2_wording":false},{"line":137,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"CHANGELOG.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-10-07","current_edition_refs":13,"stale_edition_candidates":[{"line":16,"token":"v0.81"},{"line":16,"token":"GKOS-2026-09-03"},{"line":22,"token":"v0.81"},{"line":46,"token":"v0.83"}],"pre_standard":[{"line":20,"count":1,"class":"current-facing","d2_wording":false},{"line":143,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"CITATION.cff","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-10-07","current_edition_refs":5,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"CODE_OF_CONDUCT.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"COMPAT.md","area":"root","subarea":"","tracker":"root","standing":"historical","standing_rule":"status-line","frozen":false,"last_commit":"2026-09-22","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
@@ -902,8 +902,8 @@
     {"path":"archive/graphics/gkos-canonical-architecture/README.md","area":"archive","subarea":"graphics","tracker":"archive","standing":"historical","standing_rule":"archive-folder","frozen":false,"last_commit":"2026-09-04","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"archive/illustrated/GKOS-v0.76-Illustrated-Edition.md","area":"archive","subarea":"illustrated","tracker":"archive","standing":"historical","standing_rule":"archive-folder","frozen":false,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[{"line":11,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"archive/standard/00_GKOS_Master_Standard_pre_gkx2.md","area":"archive","subarea":"standard","tracker":"archive","standing":"historical","standing_rule":"archive-folder","frozen":false,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[{"line":4,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"conformance/CLAIMS_POLICY.md","area":"conformance","subarea":"","tracker":"conformance","standing":"decision","standing_rule":"claims-policy","frozen":false,"last_commit":"2026-09-24","current_edition_refs":4,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"conformance/README.md","area":"conformance","subarea":"","tracker":"conformance","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-09-24","current_edition_refs":0,"stale_edition_candidates":[{"line":56,"token":"v0.80"},{"line":59,"token":"v0.80"},{"line":104,"token":"v0.79"},{"line":104,"token":"v0.80"},{"line":105,"token":"v0.80"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"conformance/CLAIMS_POLICY.md","area":"conformance","subarea":"","tracker":"conformance","standing":"decision","standing_rule":"claims-policy","frozen":false,"last_commit":"2026-10-07","current_edition_refs":4,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"conformance/README.md","area":"conformance","subarea":"","tracker":"conformance","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":4,"stale_edition_candidates":[{"line":56,"token":"v0.80"},{"line":58,"token":"v0.82"},{"line":59,"token":"v0.81"},{"line":62,"token":"v0.80"},{"line":109,"token":"v0.80"},{"line":110,"token":"v0.79"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"conformance/adapters/gkos-engine.requirements.json","area":"conformance","subarea":"adapters","tracker":"conformance","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-09-01","current_edition_refs":0,"stale_edition_candidates":[{"line":5,"token":"v0.80"},{"line":5,"token":"GKOS-2026-08-20"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"conformance/evidence/gcp6-replay-v0.1/README.md","area":"conformance","subarea":"evidence","tracker":"conformance","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-08-21","current_edition_refs":0,"stale_edition_candidates":[{"line":3,"token":"v0.80"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"conformance/evidence/gcp6-replay-v0.1/context-manifest.cbor","area":"conformance","subarea":"evidence","tracker":"conformance","standing":"asset","standing_rule":"asset","frozen":false,"last_commit":"2026-08-21","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
@@ -1141,9 +1141,9 @@
     {"path":"docs/v082/V82-01_IMPLEMENTATION_EVIDENCE_TEMPLATE.md","area":"docs","subarea":"v082","tracker":"docs-v082","standing":"informative","standing_rule":"status-line","frozen":false,"last_commit":"2026-09-06","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md","area":"docs","subarea":"v082","tracker":"docs-v082","standing":"unclassified","standing_rule":"none","frozen":false,"last_commit":"2026-10-07","current_edition_refs":2,"stale_edition_candidates":[{"line":5,"token":"v0.82"},{"line":10,"token":"v0.81"},{"line":10,"token":"GKOS-2026-09-03"},{"line":15,"token":"v0.81"},{"line":20,"token":"v0.82"},{"line":184,"token":"v0.81"},{"line":184,"token":"v0.82"}],"pre_standard":[],"graphic_needed":[{"line":67,"id":"GN-037","description":"Layer-3 candidate semantics (prospective R23 material): relation direction and inverses, duplicate and cycle handling, resolver precedence"}],"malformed_earmarks":[]},
     {"path":"docs/v082/V82-01_L3_MIGRATION_NOTES.md","area":"docs","subarea":"v082","tracker":"docs-v082","standing":"informative","standing_rule":"status-line","frozen":false,"last_commit":"2026-09-06","current_edition_refs":0,"stale_edition_candidates":[{"line":6,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"examples/README.md","area":"examples","subarea":"","tracker":"examples","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"examples/README.md","area":"examples","subarea":"","tracker":"examples","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"examples/minimal-governed-lifecycle.md","area":"examples","subarea":"","tracker":"examples","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"examples/specialized-agent-contract.example.yml","area":"examples","subarea":"","tracker":"examples","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[{"line":17,"token":"v0.75"},{"line":17,"token":"GKOS-2026-07-17"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"examples/specialized-agent-contract.example.yml","area":"examples","subarea":"","tracker":"examples","standing":"informative","standing_rule":"informative-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":2,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"fixtures/README.md","area":"fixtures","subarea":"","tracker":"fixtures","standing":"informative","standing_rule":"informative-folder","frozen":true,"last_commit":"2026-09-02","current_edition_refs":0,"stale_edition_candidates":[{"line":39,"token":"v0.80"},{"line":41,"token":"v0.80"},{"line":46,"token":"v0.80"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"fixtures/archive/DIVERGENCES.md","area":"fixtures","subarea":"archive","tracker":"fixtures","standing":"historical","standing_rule":"archive-folder","frozen":true,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"fixtures/archive/README.md","area":"fixtures","subarea":"archive","tracker":"fixtures","standing":"historical","standing_rule":"archive-folder","frozen":true,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
@@ -1203,6 +1203,7 @@
     {"path":"governance/portfolio/GKX-INDEPENDENT-IMPLEMENTATION-RULE.md","area":"governance","subarea":"portfolio","tracker":"governance","standing":"proposed","standing_rule":"status-line","frozen":false,"last_commit":"2026-08-04","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"governance/portfolio/PORTFOLIO-ACCEPTANCE-TRACKS.md","area":"governance","subarea":"portfolio","tracker":"governance","standing":"proposed","standing_rule":"status-line","frozen":false,"last_commit":"2026-08-04","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"governance/portfolio/PORTFOLIO-AUTHORITY-INDEX.md","area":"governance","subarea":"portfolio","tracker":"governance","standing":"proposed","standing_rule":"status-line","frozen":false,"last_commit":"2026-08-04","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"governance/portfolio/README.md","area":"governance","subarea":"portfolio","tracker":"governance","standing":"historical","standing_rule":"historical-title","frozen":false,"last_commit":"2026-10-07","current_edition_refs":2,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"governance/portfolio/REPOSITORY-EVIDENCE-BASELINE.md","area":"governance","subarea":"portfolio","tracker":"governance","standing":"unclassified","standing_rule":"none","frozen":false,"last_commit":"2026-08-04","current_edition_refs":0,"stale_edition_candidates":[{"line":14,"token":"v0.76"},{"line":14,"token":"GKOS-2026-07-20"},{"line":24,"token":"v0.76"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"graphics/GKOS_Implementation_Dashboard_Corrected.png","area":"graphics","subarea":"","tracker":"graphics","standing":"asset","standing_rule":"asset","frozen":false,"last_commit":"2026-07-22","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"graphics/GKOS_Logo_Provisional.svg","area":"graphics","subarea":"","tracker":"graphics","standing":"asset","standing_rule":"asset","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},

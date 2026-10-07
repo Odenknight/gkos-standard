@@ -49,6 +49,12 @@
   with per-area trackers and edit ledgers, and proposed `guide` and `graphics`
   workflows with routes in `docs/icm/CONTEXT.md`. Informative; no normative
   change.
+- Align the conformance README, claims policy and examples with the
+  developmental specification (public working draft) wording and the current
+  GKOS-2026-09-24 v0.82.1 edition, generalize the conformance carry-forward
+  bullet to the current edition, and add a historical index for
+  `governance/portfolio/`. Editorial; no requirement, schema, fixture, runner,
+  gate, profile or claim-rule change.
 
 ## GKOS-2026-09-24 v0.82.1
 
