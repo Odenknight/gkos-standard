@@ -27,7 +27,7 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 
 ## Specification status and published titles
 
-GKOS is a developmental specification, published as a public working draft.
+GKOS is a developmental specification (public working draft).
 This README uses **Governed Knowledge Operations Specification**, following the
 owner's [README title change in PR #63](https://github.com/Odenknight/gkos-standard/pull/63).
 The acronym **GKOS** is unchanged. The signed v0.82.1 edition and earlier
@@ -42,6 +42,8 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 
 ## Current standing
 
+GKOS is a developmental specification (public working draft). It began as a single-author pre-standard concept; the goal is to advance it to a pre-standard through an open, multi-stakeholder committee process.
+
 - **Release coordinate:** GKOS-2026-09-24 v0.82.1
 - **Publication status:** live since September 24, 2026 in America/New_York; actual GitHub publication `2026-09-25T00:54:27Z`, verified signed tag and post-tag checks
 - **Release record:** [v0.82.1 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1) · [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) · [v0.82.1 release package](releases/2026-09-24-v0.82.1/README.md)
@@ -50,7 +52,7 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 - **Previous edition DOI (v0.82 only):** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [v0.82.1 authorization and exact-commit binding](docs/releases/V0821_PUBLICATION_CONTROL.md)
-- **Maturity:** developmental specification; public working draft
+- **Maturity:** developmental specification (public working draft)
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract

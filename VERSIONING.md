@@ -98,7 +98,7 @@ contract is behavioral stability, not feature parity.
   (frontmatter-keymap re-pin). A Suite re-pin follows the same
   changelog/README CI gates as any other version-bump commit.
 - **Kosmos_Research_Studio_Lite** must pin any future GKOS conformance claim to
-  an exact standard, requirement, fixture, runner, and evidence baseline. Its
+  an exact GKOS edition, requirement, fixture, runner, and evidence baseline. Its
   current independent-implementation audit is blocked/indeterminate, so no GCP
   qualification is established. A later claim change requires an explicit
   product release record even if its own version only moves PATCH.
@@ -113,13 +113,16 @@ mechanics, and ceremony.
 
 ## GKOS standard claim versions
 
-The train policy above governs implementation repositories. Standard
+The train policy above governs implementation repositories. GKOS
 conformance claims are separately exact-bound under R16: they name the dated
 GKOS release, GKX version, profile, implementation, fixtures, evidence,
 exceptions, and assessment type.
 
-GKOS-2026-08-20 v0.80 adds and tightens mandatory behavior, so claims against
+GKOS-2026-08-20 v0.80 added and tightened mandatory behavior, so claims against
 v0.79 and earlier do not carry forward. Historical artifacts and claims remain
 unaltered records of what was evaluated at the time; reuse under v0.80 requires
-re-execution against the v0.80 baseline. The prospective patch/minor/major
-carry-forward rules begin at v1.0.0 and are defined by R16-125.
+re-execution against the v0.80 baseline. The current edition,
+GKOS-2026-09-24 v0.82.1, does not automatically carry forward qualification;
+see the [conformance-claims policy](conformance/CLAIMS_POLICY.md). The
+prospective patch/minor/major carry-forward rules begin at v1.0.0 and are
+defined by R16-125.

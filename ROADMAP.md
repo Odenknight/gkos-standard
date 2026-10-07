@@ -18,8 +18,8 @@
 
 This roadmap separates three horizons:
 
-1. preserve the published, exact-bound, non-qualifying v0.81 release while
-   keeping post-publication development distinct;
+1. preserve the published, exact-bound, non-qualifying releases (v0.81, v0.82
+   and v0.82.1) while keeping post-publication development distinct;
 2. make GKOS useful across the current agent and infrastructure ecosystem
    without turning external protocols into permanent dependencies; and
 3. establish the implementation, evidence, governance, and maintenance basis
@@ -28,10 +28,11 @@ This roadmap separates three horizons:
 The prior pre-GKX roadmap remains preserved under `archive/` as historical
 planning evidence.
 
-## Horizon 1 — published GKOS v0.81 baseline
+## Horizon 1 — published baselines
 
-GKOS-2026-09-03 v0.81 is published as a developmental, owner-authorized,
-non-consensus, non-qualifying pre-standard. Its signed tag, dated release
+GKOS-2026-09-03 v0.81 was published as a developmental, owner-authorized,
+non-consensus, non-qualifying pre-standard, its classification at the time.
+Its signed tag, dated release
 package, publication evidence, and Zenodo archive are immutable historical
 coordinates. `qualifying_profiles` remains empty; publication does not qualify
 an implementation or create certification standing.
@@ -45,6 +46,12 @@ rewritten.
 Post-publication documentation must continue to distinguish the signed release
 identity, current development state, implementation coordinates, and future
 conformance evidence.
+
+GKOS-2026-09-22 v0.82 (informative edition) and GKOS-2026-09-24 v0.82.1
+(documentation patch) followed under the R24 publication controls. Each has a
+signed tag, a verified archive and an immutable release package. Neither
+changes the v0.81 normative population or qualifies a profile. Since v0.82.1,
+GKOS is classified as a developmental specification (public working draft).
 
 ## Horizon 2 — ecosystem interoperability under R21
 
@@ -159,7 +166,8 @@ Before v1.0, GKOS must establish and publish at least:
 
 This roadmap does not authorize:
 
-- rewriting, retagging, or replacing the published v0.81 coordinate;
+- rewriting, retagging, or replacing a published coordinate (v0.81, v0.82 or
+  v0.82.1);
 - a qualifying profile;
 - production deployment or credentials;
 - writer or consequential-effect activation;

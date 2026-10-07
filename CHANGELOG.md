@@ -15,6 +15,15 @@
 - Add a publication note below the GKOS-DOCSTD-001 status line: R19, which
   adopted its Section 4, was published with GKOS-2026-09-03 v0.81. The status
   line itself is unchanged.
+- Apply the current nomenclature to the root documents and the master
+  standard: GKOS is a developmental specification (public working draft); the
+  full statement of its single-author pre-standard origin and committee goal
+  appears in the README "Current standing" section and in `NOTICE.md`. Name
+  the current edition GKOS-2026-09-24 v0.82.1 where text treated v0.81 as
+  current, record the merged NIST crosswalk in `TECHNICAL_README.md`, and say
+  "specification" for generic references in current prose. Editorial only;
+  historical sections, published titles and identifiers, and requirement,
+  schema, fixture, runner, gate and profile content are unchanged.
 
 ## GKOS-2026-09-24 v0.82.1
 

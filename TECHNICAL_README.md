@@ -1,6 +1,6 @@
 # GKOS technical orientation
 
-Publication classification: **developmental specification; public working draft**.
+Publication classification: **developmental specification (public working draft)**.
 The existing project name, acronym GKOS, titles and identifiers are retained.
 This classification establishes no consensus or certification standing. See the
 [conformance-claims policy](conformance/CLAIMS_POLICY.md).
@@ -10,7 +10,7 @@ This classification establishes no consensus or certification standing. See the
 ![The GKOS seven-layer model](illustrated/figures/fig1-seven-layers.png)
 
 This document is the technical entry point for implementers. It explains the
-relationship among the standard, machine contract, profiles, schemas,
+relationship among the specification, machine contract, profiles, schemas,
 conformance evidence, and implementations. It is informative: the
 [master standard](standard/00_GKOS_Master_Standard.md), adopted
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
@@ -22,7 +22,7 @@ normative annexes control when an overview differs from them.
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
-- **Maturity:** developmental specification; public working draft
+- **Maturity:** developmental specification (public working draft)
 
 [Return to the public README](README.md) ·
 [Read the master standard](standard/00_GKOS_Master_Standard.md) ·
@@ -31,7 +31,7 @@ normative annexes control when an overview differs from them.
 
 ## Current development decisions
 
-[R22](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) is accepted informative documentation authority. [R23](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md) is accepted prospective development authority for the next normative edition after v0.82 (R24 Option A); its [implementation evidence work](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) remains open. Neither changes the immutable v0.81 release or establishes current profile qualification. The [NIST row-level crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) has its own exact-head review gate, separate from the published high-level NIST add-in.
+[R22](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) is accepted informative documentation authority. [R23](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md) is accepted prospective development authority for the next normative edition after v0.82 (R24 Option A); its [implementation evidence work](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) remains open. Neither changes a published release (v0.81, v0.82 or v0.82.1) or establishes current profile qualification. The [NIST requirement crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation. It remains informative, pinned to its recorded baseline and separate from the high-level NIST add-in.
 
 ## End-to-end integration
 
@@ -43,9 +43,9 @@ Use **Selection Envelope** in prose. The existing schema filename `selection-set
 
 | Category | Canonical name | Authority boundary |
 | --- | --- | --- |
-| Standard | **GKOS** | Defines responsibilities, lifecycle, authority, controls, and conformance |
+| Specification | **GKOS** | Defines responsibilities, lifecycle, authority, controls, and conformance |
 | Exchange contract | **GKX 2.0** | Defines current machine-facing names and interoperable records governed by GKOS |
-| Implementation | **GKOS Engine** | Implements deterministic machinery; does not define or amend the standard |
+| Implementation | **GKOS Engine** | Implements deterministic machinery; does not define or amend the specification |
 | Profile | **GCP-1 through GCP-7** and Viewer/Projection Profile | Defines the exact responsibilities a claimant must demonstrate |
 | Domain draft | **Scientific Research Trace Profile (SRTP)** | Informative and provisional; currently establishes no qualifying profile |
 | Record/artifact | Source Record, Decision Record, Context Manifest, receipts, projections | Carries governed evidence or state; it is not a product name |
@@ -85,7 +85,7 @@ adopts deterministic canonical serialization, and standardizes context,
 authorized-use, refusal, diagnostic, and effect-scope obligations. See
 [R16](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md).
 
-## Accepted informative architecture for v0.82 development
+## Accepted informative architecture (R22, carried into v0.82)
 
 ![GKOS canonical architecture orientation: Standard to GKX seam, plural implementations, conditional retrieval/governance path, governed action boundary, external bindings, governed actors, cross-layer receipts, and separated founder implementation examples](graphics/diagrams/gkos-canonical-architecture.svg)
 
@@ -97,7 +97,7 @@ R22 is accepted informative documentation authority. The figure deliberately
 carries no adoption-status label; its reviewed digests remain unchanged.
 The master standard, permanent requirements, and accepted decisions remain
 controlling. R23 supplies prospective Layer-3 development authority; neither
-decision modifies the immutable v0.81 release or establishes qualification.
+decision modifies a published release or establishes qualification.
 
 ## Layer contracts
 
@@ -290,7 +290,7 @@ independent Viewer/Projection Profile. R16 names these tiers:
 | GCP-6 Context-Only Extension | Core plus read-only GCP-6; no consequential action authority |
 | Viewer/Projection Profile | Independent projection responsibilities |
 
-A conforming claim must name:
+A conformance claim must name:
 
 - the exact GKOS release and GKX version;
 - the exact profile or requirement set evaluated;
@@ -337,8 +337,8 @@ See the [profile proposal](docs/proposals/SRTP_DRAFT_PROFILE.md),
 
 GKOS Engine is the reference implementation of deterministic machinery used to
 validate, assess, project, and test GKOS/GKX artifacts. It is downstream of the
-standard. Engine behavior cannot silently amend GKOS, and implementation
-experience enters the standard only through the governed proposal and decision
+specification. Engine behavior cannot silently amend GKOS, and implementation
+experience enters the specification only through the governed proposal and decision
 process.
 
 Do not hard-code an Engine version from this orientation page. Use the
@@ -350,7 +350,7 @@ and immutable evidence cited by the relevant claim.
 A “Lite” product name denotes a distribution or deployment choice, not a
 relaxed GKOS schema or second conformance authority. Any Lite implementation
 must state which operations it omits and what compatibility it preserves. It
-must not accept invalid material merely by redefining the standard.
+must not accept invalid material merely by redefining the specification.
 
 ### Kosmos-Oden and other viewers
 
