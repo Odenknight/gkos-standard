@@ -834,6 +834,27 @@ coordinator routes them; those aimed at frozen annexes wait for R25.
 - **Q6 (R26-S05).** Introduce the canonical Decision Record in v0.83, or keep it
   for a later edition?
 
+### 7.1 Owner answers (2026-10-07)
+
+The Founder and Initial Editor answered Q1–Q6 on 2026-10-07 in a Claude Code
+session with Fable-FAC. These answers choose options. They do not accept R26,
+which stays proposed until the section 8 prerequisites are met.
+
+| Question | Owner answer |
+| --- | --- |
+| Q1 (R26-A01) | Add a fifth D-1 class: effects on external systems through a tool or service. |
+| Q2 (R26-A02) | Confirmed: the reversibility order; `layer_reach` as the highest layer an effect may change; sensitivity order stays deployment-declared; the presence rule (a dimension stated in only one scope is unknown and fails closed). |
+| Q3 (R26-A04) | Require a policy-declared maximum revocation-status age. |
+| Q4 (R26-A10) | Option A: allocate registered gate codes. Under the v0.83 line, the gate-code population grows from 28. |
+| Q5 (R26-A18) | Option A: both annexes become informative orientation. Move "Missing sensitivity fails closed" into a normative annex, because GCP-1 fixture B01 already tests it. |
+| Q6 (R26-S05) | Introduce the canonical Decision Record in v0.83. Legacy sidecars stay valid. |
+
+The owner also directed that the chosen items be implemented on the v0.83
+development line as an evidence package for acceptance. Under accepted R25,
+normative changes reach `main` only under an accepted Development Decision
+Record. The implementation therefore stays on its own branch until the owner
+accepts R26.
+
 ## 8. Acceptance prerequisites
 
 The owner may accept R26, in whole or by item, after:
