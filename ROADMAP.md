@@ -11,7 +11,7 @@
 - **Accepted development decisions:** R17–R24
 - **Accepted documentation decision:** R22 canonical informative architecture
 - **Accepted prospective semantics:** R23 Layer-3 interoperability for the next normative edition after v0.82
-- **Version DOI:** v0.82.1 archive verification pending; v0.82: [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582)
+- **Version DOI:** v0.82.1: [10.5281/zenodo.22949713](https://doi.org/10.5281/zenodo.22949713), archive verified October 7, 2026; v0.82: [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582)
 - **Current development focus:** Layer-3 interoperability, ambiguity resolution,
   retrieval/governance evidence, portable evidence packaging, and public
   implementation work under R21
@@ -175,4 +175,4 @@ The [full stack walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md), s
 
 ## Accepted development decisions after v0.81
 
-R22 supplies accepted informative architecture authority, carried into the published informative v0.82 edition. R23 supplies accepted prospective Layer-3 development semantics for the next normative edition after v0.82 (R24 Option A). R24 controls the informative v0.82 release route. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.
+R22 supplies accepted informative architecture authority, carried into the published informative v0.82 edition. R23 supplies accepted prospective Layer-3 development semantics for the next normative edition after v0.82 (R24 Option A). R24 controls the informative v0.82 release route. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The informative [NIST crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation; its recorded baseline and claim limits remain in force. The ISO Annex A lane remains verification-held.
