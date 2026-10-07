@@ -39,3 +39,4 @@ Append-only. `planned` until merged.
 | Date | Item | Change | PR | Run |
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `docs/domains/` | planned: D2 nomenclature and current-edition consistency | - | edit-20261007-v083-consolidation (C2) |
+| 2026-10-07 | `docs/domains/README.md` | integrated on the integration branch, not merged: GN-035 earmark after the domain table's closing paragraph | pending | edit-20261007-v083-consolidation (I1) |

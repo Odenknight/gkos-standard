@@ -42,3 +42,4 @@ Append-only. `planned` until merged.
 | Date | Item | Change | PR | Run |
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `docs/ecosystem/` | planned: D2 nomenclature and current-edition consistency | - | edit-20261007-v083-consolidation (C2) |
+| 2026-10-07 | `docs/ecosystem/` earmarks | integrated on the integration branch, not merged: GN-008 and GN-017 (multi-jurisdiction guidance), GN-014, GN-015 and GN-016 (agent governance), GN-018 at two anchors (evidence package), GN-019 (pilot program), GN-036 (`README.md`) | pending | edit-20261007-v083-consolidation (I1) |

@@ -46,3 +46,5 @@ Append-only. `planned` until merged.
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `docs/*.md` | planned: D2 nomenclature, current-edition consistency, tone | - | edit-20261007-v083-consolidation (C2) |
 | 2026-10-07 | `docs/CORPUS-STATUS.md` | planned: correct wrong standings; add `guide/` as informative (beginner) | - | edit-20261007-v083-consolidation (C2) |
+| 2026-10-07 | `docs/CORPUS-STATUS.md` | integrated on the integration branch, not merged: the `guide/` row now links to `guide/README.md`; GN-027 earmark after the documentation-areas table | pending | edit-20261007-v083-consolidation (I1) |
+| 2026-10-07 | `docs/*.md` earmarks | integrated on the integration branch, not merged: GN-030 (`EVOLUTION-AND-OSI.md`), GN-031 (legal and professional orientation), GN-032 (`STANDARDS-ENGAGEMENT.md`) | pending | edit-20261007-v083-consolidation (I1) |

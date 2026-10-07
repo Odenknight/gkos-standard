@@ -42,3 +42,4 @@ Append-only. `planned` until merged.
 | 2026-10-07 | Graphics inventory and register | planned: inventory every figure; write the register with statuses and "Graphics needed" rows | - | edit-20261007-v083-consolidation (D) |
 | 2026-10-07 | Diagram sources with stale current labels | planned: update sources; re-render where the toolchain is available; otherwise mark `stale-needs-render` | - | edit-20261007-v083-consolidation (D) |
 | 2026-10-07 | `graphics/README.md`, `graphics/diagrams/README.md` | planned: consistency update | - | edit-20261007-v083-consolidation (D) |
+| 2026-10-07 | `graphics/REGISTER.md` "Graphics needed" | integrated on the integration branch, not merged: "Inserted" column updated: 30 items Yes, 6 items Yes with the annex anchor pending R25, GN-007 pending R25 (frozen) | pending | edit-20261007-v083-consolidation (I1) |

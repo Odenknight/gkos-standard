@@ -35,3 +35,4 @@ Append-only. `planned` until merged.
 | Date | Item | Change | PR | Run |
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `docs/v082/` | planned: D2 nomenclature and current-edition consistency | - | edit-20261007-v083-consolidation (C2) |
+| 2026-10-07 | `docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md` | integrated on the integration branch, not merged: GN-037 earmark under "Candidate semantics", labelled prospective R23 material | pending | edit-20261007-v083-consolidation (I1) |

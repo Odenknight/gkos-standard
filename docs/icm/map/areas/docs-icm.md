@@ -46,3 +46,4 @@ Append-only. `planned` until merged.
 | 2026-10-07 | `docs/icm/guide/` | planned: new workflow, four stage contracts | - | edit-20261007-v083-consolidation (A) |
 | 2026-10-07 | `docs/icm/graphics/` | planned: new workflow, four stage contracts | - | edit-20261007-v083-consolidation (A) |
 | 2026-10-07 | `docs/icm/map/` | planned: map README, `01-update` contract, generated map, area trackers | - | edit-20261007-v083-consolidation (A) |
+| 2026-10-07 | `docs/icm/map/REPO-MAP.md`, `repo-map.json` | integrated on the integration branch, not merged: regenerated with `node scripts/icm-map.mjs` after integrating C1, C2, D, B and A; `--check` passes | pending | edit-20261007-v083-consolidation (I1) |

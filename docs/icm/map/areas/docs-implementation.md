@@ -46,3 +46,4 @@ Append-only. `planned` until merged.
 | Date | Item | Change | PR | Run |
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `docs/implementation/` | planned: D2 nomenclature and current-edition consistency | - | edit-20261007-v083-consolidation (C2) |
+| 2026-10-07 | `docs/implementation/` earmarks | integrated on the integration branch, not merged: GN-005, GN-012, GN-013 and GN-034 (practitioner blueprint), GN-012 (reference infrastructure), GN-033 (version compatibility matrix) | pending | edit-20261007-v083-consolidation (I1) |

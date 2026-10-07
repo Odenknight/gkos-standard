@@ -54,3 +54,6 @@ Append-only. `planned` until merged.
 | 2026-10-07 | `CHANGELOG.md` `## Unreleased` | planned: one bullet summarizing C1 (C1 is the CHANGELOG integrator) | - | edit-20261007-v083-consolidation (C1) |
 | 2026-10-07 | `.zenodo.json` keyword | planned: no change; keyword kept until the next deposit (recorded in C1 rows) | - | edit-20261007-v083-consolidation (C1) |
 | 2026-10-07 | `README.md` link to the beginner's guide | planned: link line proposed by B in rows; applied by the README integrator | - | edit-20261007-v083-consolidation (B) |
+| 2026-10-07 | `README.md` link to the beginner's guide | integrated on the integration branch, not merged: `[Beginner's guide](guide/README.md)` added to the link row after Technical orientation, as proposed by B | pending | edit-20261007-v083-consolidation (I1) |
+| 2026-10-07 | `CHANGELOG.md` `## Unreleased` | integrated on the integration branch, not merged: bullets for B, C2, D and A added after C1's bullet; released sections unchanged | pending | edit-20261007-v083-consolidation (I1) |
+| 2026-10-07 | Root GRAPHIC-NEEDED earmarks | integrated on the integration branch, not merged: GN-001 and GN-002 (`README.md`), GN-003 (`GOVERNANCE.md`), GN-009, GN-010, GN-011 and GN-029 (`TECHNICAL_README.md`), GN-020 (`VERSIONING.md`), GN-028 (`ROADMAP.md`) | pending | edit-20261007-v083-consolidation (I1) |

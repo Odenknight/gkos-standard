@@ -49,3 +49,5 @@ Append-only. `planned` until merged.
 | 2026-10-07 | `standard/annexes/Authority_and_Refusal_Receipt_Fields.md:118` | planned: current-state prose on the stacked frozen-path branch; merges only after R25 is accepted | - | edit-20261007-v083-consolidation (E) |
 | 2026-10-07 | Annex earmarks | planned: listed in the graphics register only; inserted by the coordinator at integration | - | edit-20261007-v083-consolidation (D) |
 | 2026-10-07 | Annex gaps | planned: proposed wording in R26 and the gap register; no annex edit | - | edit-20261007-v083-consolidation (F) |
+| 2026-10-07 | `standard/00_GKOS_Master_Standard.md` | integrated on the integration branch, not merged: GN-004 earmark after the first paragraph of "Normative surface" | pending | edit-20261007-v083-consolidation (I1) |
+| 2026-10-07 | Annex earmarks | integrated on the integration branch, not merged: correction to the earlier row: the annex anchors of GN-005 to GN-011 were not inserted; they wait for R25 acceptance (frozen path) and the register marks them pending | pending | edit-20261007-v083-consolidation (I1) |
