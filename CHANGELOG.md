@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Reconcile stale edition coordinates and publication-status wording with the
+  published GKOS-2026-09-24 v0.82.1 edition in `NOTICE.md`, `LICENSE.md`,
+  `SECURITY.md`, `ROADMAP.md`, `TECHNICAL_README.md`, `docs/CORPUS-STATUS.md`,
+  a status note on the decision register's 2026-09-24 owner-clarification
+  entry, the legal orientation and the version compatibility matrix. Editorial
+  and clarification changes; no requirement, schema, fixture, runner, gate or
+  profile change; historical records and released changelog sections are
+  unchanged.
+
 ## GKOS-2026-09-24 v0.82.1
 
 **Standing:** live documentation patch, published at `2026-09-25T00:54:27Z`
