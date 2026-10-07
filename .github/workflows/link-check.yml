@@ -18,6 +18,12 @@ jobs:
             --exclude-path docs/implementation/archive
             --exclude-path fixtures/archive
             --exclude-path schemas/archive
+            --exclude-path '(^|/)conformance/evidence/eu-ai-p1\.1-20260907/run-01/specification\.md$'
+            --exclude-path '(^|/)conformance/evidence/eu-ai-p1\.1-20260907/run-02/specification\.md$'
             --exclude "https://www\\.hhs\\.gov/hipaa/for-professionals/faq/2003/are-we-required-to-certify-our-organizations-compliance-with-the-standards/index\\.html"
             --exclude "https://ansi\\.org/american-national-standards/ans-introduction/essential-requirements"
             "**/*.md"
+      # The exact immutable captures above use their original source link base.
+      # This also verifies their hashes; live specifications remain in lychee.
+      - name: Verify captured evidence and original specification link base
+        run: node scripts/check-eu-ai-p1-evidence.mjs

@@ -30,6 +30,12 @@ from the contributor's canonical tracker.
 The blocking Node 22/24 Ubuntu/Windows test lanes now execute the existing
 four-test example harness after the existing runner checks. They do not run
 the known-failing P1.1 Engine demonstration as a qualifying fixture suite.
+CI also verifies the stored evidence bindings and pointers. The two immutable
+captured specification files retain relative links from their original source
+directory. Only those two exact captures are excluded from the ordinary
+location-based link scan; the evidence checker validates their digests and
+local links using `docs/eu-ai-evidence/specs` as the original link base. The
+live specification and other documentation remain in the ordinary link scan.
 No historical report, fixture expectation, existing runner implementation,
 requirement, schema, profile, gate code or published release is changed.
 
@@ -49,6 +55,10 @@ Local verification used Node 24.18.0 and the locked runner dependencies.
   observations agree after the explicitly named timing exclusions.
 - The existing four harness tests pass locally, including missing-observer
   non-success evidence and a real non-zero process exit.
+
+The reusable consistency check is `node scripts/check-eu-ai-p1-evidence.mjs`.
+It also checks the captured specification's links at their original source
+base. It is separate from the failed P1.1 acceptance experiment.
 
 This checks stored-byte consistency and evaluator behavior. It is not a new
 Engine execution, independent historical authentication, or verification of
