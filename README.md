@@ -209,6 +209,8 @@ NIST and other public standards and governance efforts increasingly focus on age
 
 This is an informative relationship, not an endorsement claim. GKOS is not a NIST publication and does not claim NIST, NCCoE, ISO, OWASP, IMDA, or another body's approval, alignment, conformity, certification, or regulatory standing.
 
+Informative crosswalk: [`GKOS-XW-002`](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) proposes evidentiary relationships with NIST AI RMF 1.0 against the published v0.81 baseline; ISO/IEC 42001 Annex A mappings remain verification-held. It does not change current specification requirements or profiles, establish alignment, conformance, certification, endorsement, or regulatory compliance, or replace a deployment-specific control-evidence mapping. A bounded action pilot requires its own execution evidence.
+
 The R21 external-source and review-disposition registers preserve exact reviewed versions, access dates, limitations, corrections, and superseded claims so changing external frameworks do not silently rewrite the specification.
 
 ## Adoption paths
