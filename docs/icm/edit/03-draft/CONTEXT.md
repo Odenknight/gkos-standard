@@ -58,7 +58,7 @@ Produce one commit (or a short series) on the packet's branch that makes the sco
 Objective:
 
 - `git diff --name-only <base_commit>..HEAD` lists only `write_scope` paths.
-- `git diff --check <base_commit>..HEAD` exits 0 (no whitespace errors).
+- `git diff --check <base_commit>..HEAD` exits 0 (no whitespace errors), except a line ending in exactly two spaces used as a Markdown hard line break where the neighbouring lines of the same block already use that convention (for example `NOTICE.md` lines 3-4). List each such exception in the handoff.
 - For `requirements/REGISTRY.md`: the ID and original-requirement-text cells of every existing row are identical to `git show <base_commit>:requirements/REGISTRY.md`, no row is removed, and every changed status or mapping cell has a matching new ledger row.
 - `git log --format=%B <base_commit>..HEAD` shows a `Signed-off-by:` trailer on every commit.
 
