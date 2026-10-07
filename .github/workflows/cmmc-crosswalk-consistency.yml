@@ -1,0 +1,22 @@
+name: CMMC crosswalk consistency
+
+on:
+  push:
+    paths: ['docs/ecosystem/CMMC_LEVEL2_CROSSWALK*', 'scripts/*cmmc*', '.github/workflows/cmmc-crosswalk-consistency.yml']
+  pull_request:
+    paths: ['docs/ecosystem/CMMC_LEVEL2_CROSSWALK*', 'scripts/*cmmc*', '.github/workflows/cmmc-crosswalk-consistency.yml']
+
+permissions: {contents: read}
+
+jobs:
+  draft-boundaries:
+    runs-on: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) && 'ubuntu-latest' || fromJSON('["self-hosted","Linux","X64","r720-ci"]') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check-cmmc-crosswalk.py
+      - run: python -m unittest discover -s scripts -p 'test_cmmc_crosswalk.py'
