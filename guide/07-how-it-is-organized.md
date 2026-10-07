@@ -34,12 +34,12 @@ The [corpus status index](../docs/CORPUS-STATUS.md#reading-and-maintenance-rules
 
 | Folder | What it holds | Standing |
 | --- | --- | --- |
-| [`standard/`](../standard/00_GKOS_Master_Standard.md) | The master standard and its annexes | Normative (annexes say if they are informative) |
+| [`standard/`](../standard/00_GKOS_Master_Standard.md) | The master standard and its annexes | The master standard's [normative surface](../standard/00_GKOS_Master_Standard.md#normative-surface) and the decisions it names say which parts control. Check each annex there and in its status line; the folder alone does not make an annex normative. |
 | [`requirements/`](../requirements/REGISTRY.md) | The permanent requirement registry and profile mapping | Normative; append-only |
 | [`schemas/`](../schemas/README.md) | GKX 2.0 machine schemas | Current machine contracts; the `provisional/` subfolder is draft and non-normative |
 | [`fixtures/`](../fixtures/README.md) | Test files with expected results | Current catalog is non-qualifying; `provisional/` is draft |
 | [`conformance/`](../conformance/README.md) | The runner, adapters and the claims policy | Current tooling and policy |
-| [`decisions/`](../decisions/GKOS_Decision_Register.md) | Development Decision Records R9 to R24 and the register | Accepted records are kept as written |
+| [`decisions/`](../decisions/GKOS_Decision_Register.md) | Development Decision Records, numbered from R9, and the register | Check each record's status line. Accepted records are kept as written; proposed records are not yet decided. |
 | [`docs/implementation/`](../docs/implementation/README.md) | Workflow, reference infrastructure, practitioner blueprint | Informative |
 | [`docs/ecosystem/`](../docs/ecosystem/README.md) | Protocol bindings, add-ins, pilots, registers | Informative development work under R21 |
 | [`docs/domains/`](../docs/domains/README.md) | Sector guidance, such as healthcare or education | Informative candidate applications |

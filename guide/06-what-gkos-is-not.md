@@ -20,7 +20,7 @@ In practice, that means:
 | GKOS is not | Why | Source |
 | --- | --- | --- |
 | A product, database or runtime | It defines contracts. Products carry them out. | [README](../README.md#a-governance-architecture-not-another-runtime) |
-| An accredited or consensus standard | It is a developmental specification under owner-authorized v0.x governance | [README](../README.md#maturity-and-governance-boundary) |
+| An accredited or consensus standard | It is a developmental specification (public working draft) under owner-authorized v0.x governance | [README](../README.md#maturity-and-governance-boundary) |
 | A certification program | "GKOS certified" is reserved until a governed certification scheme and a competent independent process exist | [Claims policy](../conformance/CLAIMS_POLICY.md#permitted-scope-of-claims) |
 | A legal opinion or regulator approval | No GKOS claim alone establishes legal compliance, procurement acceptance or security accreditation | [Claims policy](../conformance/CLAIMS_POLICY.md#permitted-scope-of-claims) |
 | A NIST, ISO or other body's publication | Crosswalks and add-ins are informative proposals with no endorsement | [README](../README.md#why-standards-communities-may-care) |
@@ -72,7 +72,7 @@ The figure helps you pick a starting target. It does not mean any target is curr
 | "GKOS-compliant" or "GKOS-conformant", without qualification | Too broad; hides what was actually tested | An exact, bounded assessment statement (see below) |
 | "GKOS certified" | Reserved; no certification scheme exists | Describe the mechanisms you implemented and the evidence |
 | "the GKOS standard", as a claim of standing | Implies accredited or consensus status | "GKOS, a developmental specification (public working draft)" |
-| "consensus specification" | Not the current classification | "developmental specification" |
+| "consensus specification" | Not the current classification | "developmental specification (public working draft)" |
 | "Core-qualified" or "Advanced-qualified" | No profile qualifies today | Name the requirements tested and the results |
 
 ## How to describe a real implementation

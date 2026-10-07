@@ -43,7 +43,7 @@ The original text above is preserved. On 2026-10-07 the owner set the current
 wording for current-facing documents: "GKOS is a developmental specification
 (public working draft). It began as a single-author pre-standard concept; the
 goal is to advance it to a pre-standard through an open, multi-stakeholder
-committee process." Shorter references say "developmental specification" or
+committee process." The only shorter form for current-state references is
 "developmental specification (public working draft)". Release records,
 publication records, accepted decision records, released changelog sections
 and archives keep their original words. An agent recorded this note from the

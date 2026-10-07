@@ -46,7 +46,7 @@ An earmark marks where a figure would go. Use exactly:
 - Historical figures keep their historical labels. Move or mark them; do not relabel them.
 - Change a raster only by re-rendering it from its source with a recorded command and tool version. Never hand-edit a binary.
 - If no renderer is available, update the source, mark the raster `stale-needs-render` and say so in the handoff.
-- Current-state labels use "developmental specification" and the current edition from `CITATION.cff`.
+- Current-state labels use "developmental specification (public working draft)" and the current edition from `CITATION.cff`.
 - Each figure referenced from Markdown has alt text that says what it shows.
 
 ## Small example

@@ -29,7 +29,7 @@ Do not use this workflow to change the documents the guide links to. A wrong sou
 ## Rules for guide text
 
 - Each page opens with a one-line header that says the page is informative, names the edition it describes and links the claims policy.
-- Current maturity uses the D2 wording exactly: "GKOS is a developmental specification (public working draft). It began as a single-author pre-standard concept; the goal is to advance it to a pre-standard through an open, multi-stakeholder committee process." Shorter references say "developmental specification".
+- Current maturity uses the D2 wording exactly: "GKOS is a developmental specification (public working draft). It began as a single-author pre-standard concept; the goal is to advance it to a pre-standard through an open, multi-stakeholder committee process." The only approved shorter form is "developmental specification (public working draft)".
 - Plain, direct, active voice. Short sentences. Define a term before using it, and link the glossary entry.
 - Every factual statement links to its authoritative file with a relative link. If no file supports a statement, the statement goes.
 - Never claim certification, conformance, consensus, endorsement, accreditation or qualification. Never use *first, only, novel, certified, recognized, admissible* or *approved* as claims about the work.

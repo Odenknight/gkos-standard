@@ -88,7 +88,7 @@ One rule matters more than the labels. **A label is not a decision.** Writing `a
 
 **Epistemic** means "about knowledge": how well something is known. A record's **epistemic state** says how much standing a claim has. For example, is it an observation, a guess, a disputed claim, or accepted knowledge?
 
-GKX 2.0 requires every record to carry the field `epistemic_state`. The [shared schema definitions](../schemas/gkx-common.defs.json) allow twelve values:
+The [GKX 2.0 frontmatter schema](../schemas/gkx-frontmatter-2.0.schema.json) requires the field `epistemic_state` in every record header it governs, such as the knowledge record in [chapter 5](05-a-first-walkthrough.md). Canonical artifacts, such as a Context Manifest or a Decision Record, follow their own schemas instead. Those schemas do not define this field. The [shared schema definitions](../schemas/gkx-common.defs.json) allow twelve values:
 
 `unknown`, `observation`, `reported`, `inferred`, `hypothesis`, `modeled`, `supported`, `contested`, `refuted`, `retracted`, `accepted`, `superseded`.
 

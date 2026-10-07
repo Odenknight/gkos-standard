@@ -89,7 +89,7 @@ A sign-off line on each commit, added with `git commit -s`. It certifies that yo
 
 ### Development Decision Record
 
-A numbered record (R9, R10 and so on) of a v0.x change adopted by the Founder and Initial Editor. It states the evidence, the decision, its limits and its non-consensus status.
+A numbered record (R9, R10 and so on) of a v0.x change for disposition by the Founder and Initial Editor. It states the evidence, the decision or proposed decision, its limits and its non-consensus status. Read its status line: a proposed record changes nothing until it is accepted. The register lists proposed and accepted records separately.
 **Source:** [GOVERNANCE.md](../GOVERNANCE.md#v0x-amendment-path); [decision register](../decisions/GKOS_Decision_Register.md).
 
 ### Developmental specification (public working draft)
