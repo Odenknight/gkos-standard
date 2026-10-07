@@ -1,6 +1,6 @@
 # GKOS conformance
 
-Publication classification: **developmental specification; public working draft**.
+Publication classification: **developmental specification (public working draft)**.
 The existing project name, acronym GKOS, titles and identifiers are retained.
 This classification establishes no consensus or certification standing. See the
 [conformance-claims policy](CLAIMS_POLICY.md).
@@ -13,9 +13,9 @@ profile inherits all applicable lower requirements.
 
 Claims must include a machine-readable manifest
 (`../schemas/conformance-manifest.schema.json`), human-readable report,
-standard and test versions, evidence, limitations, and exceptions.
+GKOS edition and test versions, evidence, limitations, and exceptions.
 Self-attested and independently verified claims must be distinguished. Every
-claim is exact-bound to its dated standard release, GKX version, implementation,
+claim is exact-bound to its dated GKOS edition, GKX version, implementation,
 fixture suite, evidence, exceptions, and assessment type under R16.
 
 The repository retains provisional prose requirements
@@ -53,12 +53,15 @@ The permanent requirement allocations are published in
 those GKOS IDs, while implementation observations remain in non-normative
 adapter maps such as
 [`adapters/gkos-engine.requirements.json`](adapters/gkos-engine.requirements.json).
-v0.80 adds R16 behavior requirements and initial Layer-6/Layer-7 schemas, but
-the missing fixtures remain missing and no qualifying profile is created.
+v0.80 added R16 behavior requirements and initial Layer-6/Layer-7 schemas. The
+missing fixtures remain missing. The current edition, GKOS-2026-09-24 v0.82.1,
+is a documentation patch on the v0.82 technical baseline. Its normative
+population is unchanged from v0.81: 62 permanent requirements and 28 gate codes.
+No published edition creates a qualifying profile.
 
 ## Executable v0.80 evidence foundation
 
-The runner now includes a reference Layer-6 phase split, canonical CBOR
+The runner includes a reference Layer-6 phase split, canonical CBOR
 verifier, declared diagnostic-JSON rendering/parser, clean-process replay test,
 machine-readable applicability and evidence vocabularies, and registry lint.
 The preserved replay result is in
@@ -101,10 +104,12 @@ explains implementation independence and historical-record preservation.
   per-fixture PASS, FAIL, KNOWN-DIVERGENCE, SKIP, or UNEVALUATED.
 - No current implementation has satisfied the v1.0 second-independent-implementation gate.
 - Engine-Lite cannot satisfy that gate because using the pinned Engine's deterministic execution path is its compatibility contract.
-- A v0.79 or earlier claim does not carry forward to v0.80; reassessment is
-  required against the exact v0.80 requirement and fixture baseline.
+- A claim does not carry forward automatically to a later edition, including
+  the current GKOS-2026-09-24 v0.82.1. Reassess against the exact requirement
+  and fixture baseline of the edition you claim. Since v0.80, claims against
+  v0.79 or earlier do not carry forward.
 
-A future external run must pin the required GCP target, standard and fixture
+A future external run must pin the required GCP target, specification and fixture
 commits, runner/adapter rule, candidate source, dependency lock, environment,
 commands, and raw outputs before execution. See
 [TECHNICAL_README.md](../TECHNICAL_README.md) and the

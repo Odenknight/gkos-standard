@@ -14,7 +14,7 @@ versions:
   model: example
   prompt: "1.0"
   tools: "1.0"
-  policy: "GKOS-2026-07-17-v0.75"
+  policy: "GKOS-2026-09-24 v0.82.1"
 risk_limits:
   max_files: 25
   max_fraction: 0.10
