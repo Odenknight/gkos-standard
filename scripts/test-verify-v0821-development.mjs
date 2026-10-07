@@ -27,7 +27,7 @@ const validator = 'scripts/verify-v0821-release.mjs';
 const r25 = 'decisions/R25_V083_Development_Line_Development_Decision_Record.md';
 const immutable = ['requirements', 'schemas', 'fixtures', 'conformance/runner', 'standard/annexes'];
 
-git(root, ['clone', '-q', '--no-checkout', source, repo]);
+git(root, ['clone', '-q', '--no-hardlinks', '--no-checkout', source, repo]);
 const candidateJs = join(root, 'candidate-verify.mjs');
 const baselineJs = join(root, 'baseline-verify.mjs');
 writeFileSync(candidateJs, git(source, ['show', `${commit}:${validator}`]) + '\n');
