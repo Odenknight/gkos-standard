@@ -236,7 +236,7 @@ def build_json(prose_sha: str) -> str:
             "MEASURE 2.12",
             "MEASURE 3",
             "MEASURE 4",
-            "MANAGE 3 (beyond bounded delegation)",
+            "MANAGE 3",
         ],
         "control_rule": (
             "A mapping-rule example does not authorize automatic assignment of that "
