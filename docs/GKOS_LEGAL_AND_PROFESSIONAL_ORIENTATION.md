@@ -4,7 +4,9 @@
 
 **Applies to:** GKOS-2026-08-20 v0.80
 
-**Current release note:** The published baseline is now GKOS-2026-09-03 v0.81.
+**Current release note:** The published edition is now GKOS-2026-09-24 v0.82.1,
+a documentation patch whose technical baseline is GKOS-2026-09-22 v0.82 and whose
+normative population is unchanged from GKOS-2026-09-03 v0.81.
 The seven-layer outline below still applies. v0.81 adds captured-time
 authority validity, GCP-5 review lifecycle and protected-disclosure
 requirements; see the [changelog](../CHANGELOG.md).

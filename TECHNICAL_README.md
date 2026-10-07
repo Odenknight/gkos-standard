@@ -35,7 +35,7 @@ normative annexes control when an overview differs from them.
 
 ## End-to-end integration
 
-Start with the [illustrated data-to-action walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md). It explains all seven responsibilities, the protected enforcement boundary, receipt recovery and separate framework review views. The [publication receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md) records the live edition.
+Start with the [illustrated data-to-action walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md). It explains all seven responsibilities, the protected enforcement boundary, receipt recovery and separate framework review views. The [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) records the live edition.
 
 Use **Selection Envelope** in prose. The existing schema filename `selection-set.schema.json` and serialized identifiers such as `selection_set_id` remain unchanged for compatibility; terminology is not a schema migration.
 
@@ -211,9 +211,10 @@ single transaction without requiring one monolithic platform:
 | L6 | Reproducible evaluation, analysis or inference context | Can another reviewer reconstruct the exact selected inputs, warnings, omissions, policies and versions? |
 | L7 | Deployment, publication, external release, automated decision or tool effect | Was the action permitted for this actor and purpose against this exact context, and is the outcome/refusal durable? |
 
-GKOS-2026-09-03 v0.81 is published at its signed tag and immutable release
-package. Current `main` is post-v0.81 development; later informative or
-provisional work does not rewrite the published coordinate. R21 does not make
+GKOS-2026-09-24 v0.82.1 is published at its signed tag and immutable release
+package; the v0.81 and v0.82 editions keep their own signed tags and packages.
+Current `main` is post-v0.82.1 development; later informative or provisional
+work does not rewrite a published coordinate. R21 does not make
 any vendor, retrieval algorithm, graph store, model, client, or adapter
 normative, and RRET-01 remains provisional, non-normative, and non-qualifying.
 No profile is currently qualified.
@@ -415,8 +416,9 @@ See the claim-limited
 
 ## Claim boundary
 
-GKOS-2026-09-03 v0.81 is a developmental public pre-standard. It is published,
-owner-authorized, non-consensus, and non-qualifying. Nothing in this document
+GKOS-2026-09-24 v0.82.1 is a developmental specification and public working
+draft. It is published, owner-authorized, non-consensus, and non-qualifying.
+Nothing in this document
 establishes accreditation, certification, legal compliance, regulatory
 authorization, scientific validity, product safety, implementation conformance,
 or the future GKOS v1.0 gates.

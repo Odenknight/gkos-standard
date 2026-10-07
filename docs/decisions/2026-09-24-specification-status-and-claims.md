@@ -31,3 +31,8 @@ is not recorded as approval of an as-yet unknown exact release commit.
 Rollback is a revert of this documentation change; historical releases remain
 unchanged. Conflicts: owner directs project terminology; no independent
 institutional approval is asserted.
+
+## Completion note
+
+The original text above is preserved. GKOS-2026-09-24 v0.82.1 was subsequently
+published; see the [publication receipt](../releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
