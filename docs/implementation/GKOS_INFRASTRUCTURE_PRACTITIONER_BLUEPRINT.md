@@ -1,6 +1,6 @@
 # Building on GKOS: a practitioner infrastructure blueprint
 
-Publication references reconciled 2026-09-06. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
+Publication references reconciled to GKOS-2026-09-24 v0.82.1. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
 
 - **Document ID:** GKOS-INFRA-BLUEPRINT-001
 - **Revision:** 3
@@ -9,7 +9,7 @@ Publication references reconciled 2026-09-06. Earlier implementation review date
   branch; no independent validation or conformance claimed
 - **Standard baseline:** `gkos-standard` `main` at
   `1f5768fe6b8f847c17030127a3a00e78edf5cd80`
-- **Published baseline:** GKOS-2026-09-03 v0.81
+- **Published baseline:** GKOS-2026-09-24 v0.82.1 (normative population unchanged from GKOS-2026-09-03 v0.81)
 - **Machine exchange contract:** GKX 2.0
 - **Canonical profile:** GKX-CBOR-1 where required by the applicable artifact
   contract
@@ -332,7 +332,7 @@ without treating protocol lifecycle as governance standing.
 
 ## 10. Conformance and risk
 
-GKOS v0.81 is a developmental public pre-standard. No implementation is
+GKOS v0.82.1 is a developmental public pre-standard. No implementation is
 certified. A serious claim identifies:
 
 - exact Standard and GKX versions;

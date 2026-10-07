@@ -6,7 +6,9 @@
   published GKOS-2026-09-24 v0.82.1 edition in `NOTICE.md`, `LICENSE.md`,
   `SECURITY.md`, `ROADMAP.md`, `TECHNICAL_README.md`, `docs/CORPUS-STATUS.md`,
   a status note on the decision register's 2026-09-24 owner-clarification
-  entry, the legal orientation and the version compatibility matrix. Editorial
+  entry, the legal orientation, the version compatibility matrix and the two
+  infrastructure guides, and add a completion note to the v0.82.1
+  specification-status clarification. Editorial
   and clarification changes; no requirement, schema, fixture, runner, gate or
   profile change; historical records and released changelog sections are
   unchanged.

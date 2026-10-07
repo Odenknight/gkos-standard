@@ -1,6 +1,6 @@
 # GKOS Reference Infrastructure Architecture
 
-Publication references reconciled 2026-09-06. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
+Publication references reconciled to GKOS-2026-09-24 v0.82.1. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
 
 <!-- markdownlint-disable MD013 -->
 
@@ -8,7 +8,7 @@ Publication references reconciled 2026-09-06. Earlier implementation review date
 - **Revision:** r4 bounded-review-completed public draft
 - **Date:** 2026-09-02
 - **Status:** informative implementation guidance; bounded different-model-family documentation review completed; no independent conformance validation, endorsement, certification, procurement recommendation, or production authority claimed
-- **Published Standard baseline:** GKOS-2026-09-03 v0.81
+- **Published Standard baseline:** GKOS-2026-09-24 v0.82.1 (normative population unchanged from GKOS-2026-09-03 v0.81)
 - **Development controls:** R20 and R21 on `main`
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
@@ -124,7 +124,7 @@ A non-deterministic model judge or RAG evaluator may provide evidence or monitor
 
 A ticket state or electronic signature is input evidence unless it independently satisfies the entire required record contract.
 
-**Release standing:** v0.81 is published. It permits a bounded authorized independent Review Agent only under R18's different-model-family, sealed-evidence, deterministic-gate, non-self-review, and human-escalation conditions.
+**Release standing:** v0.82.1 is published, with the normative population unchanged from v0.81. It permits a bounded authorized independent Review Agent only under R18's different-model-family, sealed-evidence, deterministic-gate, non-self-review, and human-escalation conditions.
 
 ### L6 — Context Presentation
 
