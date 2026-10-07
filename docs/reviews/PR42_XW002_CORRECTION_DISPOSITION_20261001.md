@@ -24,13 +24,13 @@ requires an explicit owner disposition for every MAJOR finding.
 
 | Finding | Severity | Prepared correction | Owner disposition |
 | --- | --- | --- | --- |
-| F-001 | MAJOR | Remove GOVERN 2.1 from DELEGATION-001, AUTHUSE-004 and REVIEW-003; retain Direct evidence candidate / GOVERN 3.2 | PENDING; recommended ACCEPT |
-| F-002 | MAJOR | Remove MEASURE 2.5 from RECEIPT-003 and AUTHUSE-002; move CONTEXT-002 and CONTEXT-003 to No direct mapping | PENDING; recommended ACCEPT |
+| F-001 | MAJOR | Remove GOVERN 2.1 from DELEGATION-001, AUTHUSE-004 and REVIEW-003; retain Direct evidence candidate / GOVERN 3.2 | ACCEPTED by the owner, 2026-10-07 (instruction to Fable-FAC: "All mine I accept.") |
+| F-002 | MAJOR | Remove MEASURE 2.5 from RECEIPT-003 and AUTHUSE-002; move CONTEXT-002 and CONTEXT-003 to No direct mapping | ACCEPTED by the owner, 2026-10-07 (instruction to Fable-FAC: "All mine I accept.") |
 | F-003 | MINOR | Move CANON-007 to No direct mapping | Prepared as recommended |
 | F-004 | OBSERVATION | Add explicit evidence-supply-only MEASURE 2.8 caveat in §4.3 | Prepared as recommended |
 | F-005 | OBSERVATION | Preserve original drafting-model uncertainty | No back-filled identity |
 | F-006 | OBSERVATION | Incorporate current main and preserve its README specification/citation wording and the crosswalk paragraph | Integration conflict resolved |
-| F-007 | MAJOR | Remap PROFILE-005 from MEASURE 2.5 to Contributes / MEASURE 2.1; violation fixtures are documented TEVV test sets when used in an AI-system evaluation | PENDING; recommended ACCEPT |
+| F-007 | MAJOR | Remap PROFILE-005 from MEASURE 2.5 to Contributes / MEASURE 2.1; violation fixtures are documented TEVV test sets when used in an AI-system evaluation | ACCEPTED by the owner, 2026-10-07 (instruction to Fable-FAC: "All mine I accept.") |
 | F-008 | MINOR | Remove MAP 1.1 from CONTEXT-001; retain Contributes / MEASURE 2.8 | Prepared as recommended |
 | F-009 | MINOR | Remap DELEGATION-003 to Contributes / GOVERN 3.2, explicitly conditional on the checker being an AI component in human-governed oversight | Prepared with narrower deployment condition |
 | F-010 | MINOR | Remap POLICY-001 to Deployment-declared / GOVERN 1.4, with risk priorities and process substance external | Prepared as recommended; no GOVERN 1.2 mapping retained |
@@ -72,3 +72,10 @@ addresses a separate audit blocker without modifying historical releases.
 Exact corrected-head review, owner dispositions and hosted checks remain
 required before merge. Final head/tree and CI receipts belong in the PR
 conversation after the last evidence-file commit.
+
+## Owner disposition and corrected-head verification — 2026-10-07
+
+The owner accepted F-001, F-002 and F-007 on 2026-10-07. Fable-FAC's bounded
+verification of `0a09875904249633c5ae60fa38893386ad176cbb` is recorded in
+[PR42_XW002_FABLE_CORRECTED_HEAD_VERIFICATION_20261007.md](PR42_XW002_FABLE_CORRECTED_HEAD_VERIFICATION_20261007.md)
+with verdict `PASS` and no new finding. Merge remains the owner's action.
