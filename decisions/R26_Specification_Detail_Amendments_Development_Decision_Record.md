@@ -646,8 +646,14 @@ compatibility impact and fixtures. All wording is proposed.
   hash are unchanged.
 - **Negative fixtures**, each against the same source and projection unless
   stated, and each expected not to satisfy the role:
-  - the projection omits the `gate_code` mapping (the role object fails the
-    role schema);
+  - the projection omits the `refusal_effect` mapping (the role object fails
+    the role schema under both R26-A10 options, because R26-S02 always
+    requires `refusal_effect`);
+  - the projection omits the `gate_code` mapping (under R26-A10 Option A the
+    role object fails the role schema; under Option B, where R26-S02 makes
+    `gate_code` optional, the schema check may pass, but the semantic check
+    fails because the source's L5-003 condition requires its registered gate
+    code);
   - the source `disposition` is `deferred`, which the value table does not
     list;
   - the source `decided_at` is `2026-10-01T14:00:00Z`, which the source schema
