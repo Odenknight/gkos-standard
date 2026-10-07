@@ -7,21 +7,6 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-### R25 — v0.83 development line
-
-- **Date drafted:** 2026-10-07
-- **Status:** Proposed; no acceptance date
-- **Decision proposed:** Open a v0.83 development line on `main`. Published
-  GKOS-2026-09-24 v0.82.1 stays immutable at its signed tag; `main` may change
-  the five technical paths for the next edition under the amendment path;
-  claims stay bound to published editions; current material uses the
-  developmental-specification wording of owner decision D2; v0.83 release
-  gating needs a later release decision on the R24 pattern. The development
-  validator opens the line only after the owner sets the record's accepted
-  status line. Frozen-path edits merge only after acceptance.
-- **Record:**
-  [R25_V083_Development_Line_Development_Decision_Record.md](R25_V083_Development_Line_Development_Decision_Record.md)
-
 ### R26 — Specification detail amendments
 
 - **Date:** 2026-10-07
@@ -54,6 +39,22 @@ These clarify existing decisions without allocating an R-number.
   implementation; implementation independence must still be demonstrated.
 
 ## Accepted decisions
+
+### R25 — v0.83 development line
+
+- **Date drafted:** 2026-10-07
+- **Status:** Accepted development decision; v0.83 development line
+- **Acceptance:** 2026-10-07
+- **Decision:** Open a v0.83 development line on `main`. Published
+  GKOS-2026-09-24 v0.82.1 stays immutable at its signed tag; `main` may change
+  the five technical paths for the next edition under the amendment path;
+  claims stay bound to published editions; current material uses the
+  developmental-specification wording of owner decision D2; v0.83 release
+  gating needs a later release decision on the R24 pattern. The development
+  validator opens the line only after the owner sets the record's accepted
+  status line. Frozen-path edits merge only after acceptance.
+- **Record:**
+  [R25_V083_Development_Line_Development_Decision_Record.md](R25_V083_Development_Line_Development_Decision_Record.md)
 
 ### R24 — v0.82 informative release gate and publication control
 

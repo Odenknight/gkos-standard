@@ -1,11 +1,12 @@
 # R25 — v0.83 development line
 
-Status: Proposed
+Status: Accepted
 
 **Date drafted:** 2026-10-07
 
-**Acceptance:** none. This record is a proposal. Only the Founder and Initial
-Editor may accept it.
+**Acceptance:** Owner accepted R25 on 2026-10-07. The Founder and Initial
+Editor instructed the acceptance and its date in a Claude Code session with
+Fable-FAC, which applied this edit by pull request.
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 

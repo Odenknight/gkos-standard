@@ -55,6 +55,10 @@
   bullet to the current edition, and add a historical index for
   `governance/portfolio/`. Editorial; no requirement, schema, fixture, runner,
   gate, profile or claim-rule change.
+- Accept R25 (2026-10-07): the v0.83 development line is open on `main`.
+  Published GKOS-2026-09-24 v0.82.1 stays immutable at its signed tag;
+  frozen technical paths may change for the next edition under the amendment
+  path, and the development validator now permits them.
 
 ## GKOS-2026-09-24 v0.82.1
 
