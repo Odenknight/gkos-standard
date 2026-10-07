@@ -7,7 +7,37 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-None currently recorded.
+### R25 — v0.83 development line
+
+- **Date drafted:** 2026-10-07
+- **Status:** Proposed; no acceptance date
+- **Decision proposed:** Open a v0.83 development line on `main`. Published
+  GKOS-2026-09-24 v0.82.1 stays immutable at its signed tag; `main` may change
+  the five technical paths for the next edition under the amendment path;
+  claims stay bound to published editions; current material uses the
+  developmental-specification wording of owner decision D2; v0.83 release
+  gating needs a later release decision on the R24 pattern. The development
+  validator opens the line only after the owner sets the record's accepted
+  status line. Frozen-path edits merge only after acceptance.
+- **Record:**
+  [R25_V083_Development_Line_Development_Decision_Record.md](R25_V083_Development_Line_Development_Decision_Record.md)
+
+### R26 — Specification detail amendments
+
+- **Date:** 2026-10-07
+- **Status:** Proposed; no acceptance date; cannot be accepted before R25
+- **Development line:** v0.83 development line opened by R25 (proposed)
+- **Proposal:** Close technical-detail gaps `GAP-001..024` recorded in
+  [GKOS-SPEC-DETAIL-001](../docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md)
+  through 18 drafted normative amendments (`R26-A01..A18`) and 7 schema changes
+  (`R26-S01..S07`): re-adopted v0.76 definitions, effect-scope containment,
+  authority intervals and revocation at action time, Refusal Receipt typing,
+  received-bytes digests, schema-to-CBOR mapping, gate-code specificity and
+  coverage, actor sameness, State-Change Receipt elements, role projections,
+  overdue review, hold results, and closure-rule identity. Allocates no
+  requirement ID or gate code; owner questions Q1-Q6 are open.
+- **Record:**
+  [R26_Specification_Detail_Amendments_Development_Decision_Record.md](R26_Specification_Detail_Amendments_Development_Decision_Record.md)
 
 ## Owner clarifications
 
