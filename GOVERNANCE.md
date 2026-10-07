@@ -1,6 +1,6 @@
 # GKOS governance
 
-Publication classification: **developmental specification; public working draft**.
+Publication classification: **developmental specification (public working draft)**.
 The existing project name, acronym GKOS, titles and identifiers are retained.
 This classification establishes no consensus or certification standing. See the
 [conformance-claims policy](conformance/CLAIMS_POLICY.md).
@@ -39,6 +39,8 @@ External reviewers are being assembled. Their findings SHOULD be preserved and d
 6. Pull request and validation.
 7. Merge, changelog, and release-administration update.
 
+<!-- GRAPHIC-NEEDED: GN-003 Amendment and decision lifecycle: seven-step v0.x amendment path, Development Decision Record states (proposed, accepted, superseded) and the Decision Register -->
+
 Normative-compatible changes require a Development Decision Record. Rejected proposals remain preserved. Security emergencies may impose temporary fail-closed restrictions and require retrospective review.
 
 ## Non-self-certification
@@ -66,5 +68,5 @@ Only decisions made under that future governance model may be described as forma
 
 The canonical repository is `Odenknight/gkos-standard`. Migration requires a
 recorded development or governance decision and preservation of release
-history. All v0.x releases, including GKOS-2026-09-03 v0.81, remain
-developmental and non-consensus under this document.
+history. All v0.x releases, including the current edition GKOS-2026-09-24
+v0.82.1, remain developmental and non-consensus under this document.

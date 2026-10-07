@@ -1,6 +1,6 @@
 # From data to authorized action
 
-**Status:** informative implementation explanation for GKOS-2026-09-03 v0.81; updated 2026-09-06.
+**Status:** informative implementation explanation for GKOS-2026-09-03 v0.81; updated 2026-09-06. The current edition, GKOS-2026-09-24 v0.82.1, keeps the v0.81 normative population, so this explanation still applies.
 
 ![A request preserves sources and context, passes required controls, review and action-time authority, then records an attempted outcome or refusal as new evidence.](../../graphics/diagrams/gkos-evidence-to-authorized-action.jpg)
 
@@ -49,4 +49,5 @@ The separate [ISO](../ecosystem/GKOS_ISO_AI_MANAGEMENT_ADDIN_0.1_DRAFT.md), [EU]
 - [Layer interface contracts](../../standard/annexes/Layer_Interface_Contracts.md)
 - [Authority and refusal receipt fields](../../standard/annexes/Authority_and_Refusal_Receipt_Fields.md)
 - [Practitioner blueprint](GKOS_INFRASTRUCTURE_PRACTITIONER_BLUEPRINT.md)
-- [Publication and archive receipt](../releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
+- [v0.81 publication and archive receipt](../releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
+- [Current edition publication receipt (v0.82.1)](../releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md)

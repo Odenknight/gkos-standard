@@ -139,6 +139,8 @@ not listed in the manifest's own `entries` array. A strict carrier verifier must
 recognize exactly those control files plus the files inventoried by the
 manifest; any other file is undeclared.
 
+<!-- GRAPHIC-NEEDED: GN-018 Conformance evidence package: manifest as semantic root, inventory, evidence locators and digests, claim binding, and the verification procedure -->
+
 ## 6. Package-manifest fields
 
 The candidate package manifest includes:
@@ -399,6 +401,8 @@ A strict verifier should:
     package ID, package-manifest digest, and carrier identity where available.
 
 Verification of package integrity is not conformance assessment.
+
+<!-- GRAPHIC-NEEDED: GN-018 Conformance evidence package: manifest as semantic root, inventory, evidence locators and digests, claim binding, and the verification procedure -->
 
 ## 16. Mutation and negative fixtures
 

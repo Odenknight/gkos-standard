@@ -10,6 +10,11 @@
 **Published baseline:** GKOS-2026-09-03 v0.81 at signed tag target
 `8f2a158c6d4b8cabd907d98765766d281aec1247`
 
+**Current edition note (2026-10-07):** the current edition is GKOS-2026-09-24
+v0.82.1, a documentation patch whose normative population is unchanged from
+v0.81. It does not include R23 semantics. This packet's baseline above is
+preserved as written.
+
 ## 1. Purpose
 
 This is the first substantive v0.82 work packet after R22. It prepares closure
@@ -58,6 +63,8 @@ The owner later accepted `R23-REV-001..015` with narrowing and adopted `D1A`,
   does not settle a future stable URI namespace strategy.
 
 ## 4. Candidate semantics
+
+<!-- GRAPHIC-NEEDED: GN-037 Layer-3 candidate semantics (prospective R23 material): relation direction and inverses, duplicate and cycle handling, resolver precedence -->
 
 ### V82-L3-A — direction, vocabulary, and inverse semantics
 

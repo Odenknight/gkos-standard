@@ -1,7 +1,9 @@
 # From curation to governed evidence and action
 
-Informative explanation, September 15, 2026. Published baseline: v0.81;
-development context: accepted R22/R23. No qualification claim.
+Informative explanation, September 15, 2026. Published baseline when written:
+v0.81. Current edition: GKOS-2026-09-24 v0.82.1, with the same normative
+population. Development context: accepted R22 (informative) and R23
+(prospective). No qualification claim.
 
 GKOS separates evidence, assertions, controls, review, context and authorized use.
 It does not preserve absolute truth or mandate an operating system, event bus,
@@ -20,6 +22,8 @@ A protected write boundary enforces authorized effects; it need not be one agent
 | Protocol and representation | GKX and separately versioned bindings |
 | Implementation | A product realizing declared contracts |
 | Conformance evidence | Exact requirement population, tests and limitations |
+
+<!-- GRAPHIC-NEEDED: GN-030 OSI analogy and its limits in current terms: reference model, GKX and bindings, implementation, conformance evidence; not a network stack or maturity ladder -->
 
 This is an explanatory analogy, not a one-to-one OSI mapping or ISO endorsement.
 Layers are not maturity levels or seven sequential network hops. Use the

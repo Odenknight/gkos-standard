@@ -9,9 +9,15 @@ GKOS Standard. It exists to make GKOS usable in current and future AI systems
 without turning a fast-changing external protocol or vendor implementation into
 a permanent GKOS dependency.
 
+Each draft names the GKOS baseline it was written against, v0.80 or v0.81.
+Read it against that baseline. The current edition is GKOS-2026-09-24 v0.82.1;
+its normative population is unchanged from v0.81. v0.81 added captured-time
+authority validity, GCP-5 review lifecycle and protected-disclosure
+requirements; see the [changelog](../../CHANGELOG.md).
+
 ## Governance middleware proposals
 
-The [requirement-level NIST crosswalk candidate](../GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) is separate from the high-level proposals below. It remains subject to [PR #42's bounded review gate](../reviews/PR42_XW002_BOUNDED_DIFFERENT_MODEL_REVIEW_PACKET.md); the ISO Annex A portion is verification-held. The [corrective author assessment](../reviews/PR42_XW002_CORRECTIVE_DRAFTING_ASSESSMENT_2026-09-06.md) is preparation for that review, not its completion.
+The [requirement-level NIST crosswalk candidate](../GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) is separate from the high-level proposals below. PR #42 merged it after [its bounded review gate](../reviews/PR42_XW002_BOUNDED_DIFFERENT_MODEL_REVIEW_PACKET.md): the [October 1 different-model review](../reviews/PR42_XW002_FABLE_REVIEW_20261001.md) returned `PASS_WITH_CORRECTIONS`, the owner accepted its MAJOR findings on 2026-10-07 (see the [correction disposition](../reviews/PR42_XW002_CORRECTION_DISPOSITION_20261001.md)), and the [corrected-head verification](../reviews/PR42_XW002_FABLE_CORRECTED_HEAD_VERIFICATION_20261007.md) returned `PASS`. These reviews are bounded and not organizationally independent. The mappings remain proposed and informative, and the ISO Annex A portion is verification-held. The [corrective author assessment](../reviews/PR42_XW002_CORRECTIVE_DRAFTING_ASSESSMENT_2026-09-06.md) is preserved as preparation for that review.
 
 - [Full stack walkthrough and enforcement contract](../implementation/GKOS_END_TO_END_WORKFLOW.md)
 - [ISO AI management add-in](GKOS_ISO_AI_MANAGEMENT_ADDIN_0.1_DRAFT.md)
@@ -50,6 +56,8 @@ These 2026-09-06 documentation drafts have not received an external standards-bo
 Bindings are versioned mappings, not GCP profiles. They identify where an
 external protocol may carry or trigger GKOS-governed evidence and where an
 adapter must add controls or records that the protocol does not supply.
+
+<!-- GRAPHIC-NEEDED: GN-036 Protocol bindings: where MCP, A2A and ACS can carry GKOS evidence, and where an adapter must add controls or records -->
 
 ## Deployment and assessment drafts
 

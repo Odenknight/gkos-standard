@@ -15,6 +15,46 @@
 - Add a publication note below the GKOS-DOCSTD-001 status line: R19, which
   adopted its Section 4, was published with GKOS-2026-09-03 v0.81. The status
   line itself is unchanged.
+- Apply the current nomenclature to the root documents and the master
+  standard: GKOS is a developmental specification (public working draft); the
+  full statement of its single-author pre-standard origin and committee goal
+  appears in the README "Current standing" section and in `NOTICE.md`. Name
+  the current edition GKOS-2026-09-24 v0.82.1 where text treated v0.81 as
+  current, record the merged NIST crosswalk in `TECHNICAL_README.md`, and say
+  "specification" for generic references in current prose. Editorial only;
+  historical sections, published titles and identifiers, and requirement,
+  schema, fixture, runner, gate and profile content are unchanged.
+- Add an informative beginner's guide in `guide/`: an index, eight numbered
+  chapters and a glossary, linked to the controlling files and reusing
+  `illustrated/` and `graphics/diagrams/` figures. The README links to it. No
+  requirement, schema, fixture, runner, gate or profile change.
+- Align current-facing documents under `docs/` with the published
+  GKOS-2026-09-24 v0.82.1 edition and the current nomenclature ("developmental
+  specification (public working draft)"). Add current-edition notes where a
+  page named only an older published baseline, record the completed PR #42
+  review gate in the ecosystem index, add a documentation-area standing table
+  to `docs/CORPUS-STATUS.md`, and add dated notes to NAV-002 and to the
+  2026-09-24 owner clarification. Historical release, publication, review and
+  archive records keep their original wording. Editorial and clarification
+  changes only.
+- Add a graphics register (`graphics/REGISTER.md`): every image and diagram
+  with source, use, edition label, style family and status, plus 37
+  graphics-needed items (GN-001 to GN-037). The adoption-paths graphic now
+  names GKOS v0.82.1; its PNG was rendered again from the SVG with sharp
+  0.35.4. New `illustrated/README.md` catalogs the illustrated figures and their
+  fitness for reuse. Insert `GRAPHIC-NEEDED` earmarks at each anchor outside
+  `standard/annexes/`; the annex earmarks wait for the v0.83 line under the
+  proposed R25. Informative only.
+- Add a proposed ICM organization map (`scripts/icm-map.mjs`, `docs/icm/map/`)
+  with per-area trackers and edit ledgers, and proposed `guide` and `graphics`
+  workflows with routes in `docs/icm/CONTEXT.md`. Informative; no normative
+  change.
+- Align the conformance README, claims policy and examples with the
+  developmental specification (public working draft) wording and the current
+  GKOS-2026-09-24 v0.82.1 edition, generalize the conformance carry-forward
+  bullet to the current edition, and add a historical index for
+  `governance/portfolio/`. Editorial; no requirement, schema, fixture, runner,
+  gate, profile or claim-rule change.
 
 ## GKOS-2026-09-24 v0.82.1
 

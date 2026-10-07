@@ -4,7 +4,7 @@ Zenodo archives **tagged GitHub Releases**, not ordinary commits. This repositor
 
 ## Release sequence
 
-1. Merge the authorized standard changes into `main`.
+1. Merge the authorized specification changes into `main`.
 2. Confirm `CITATION.cff`, `.zenodo.json`, release notes, decisions, schemas, fixtures, conformance boundaries, and license routing match the intended version.
 3. Complete the release gate and preserve its results.
 4. Create the signed/annotated tag and GitHub Release for the authorized version.

@@ -1,13 +1,16 @@
 # Standards engagement and assurance boundaries
 
-Publication classification: **developmental specification; public working draft**.
+Publication classification: **developmental specification (public working draft)**.
 The existing project name, acronym GKOS, titles and identifiers are retained.
 This classification establishes no consensus or certification standing. See the
 [conformance-claims policy](../conformance/CLAIMS_POLICY.md).
 
-Informative strategy, September 15, 2026. GKOS v0.81 is owner-authorized,
-developmental, non-consensus and non-qualifying. This document establishes
-neither an organization nor a certification scheme.
+Informative strategy, September 15, 2026; edition reference updated October 7,
+2026. The current edition, GKOS-2026-09-24 v0.82.1, is owner-authorized,
+developmental, non-consensus and non-qualifying. GKOS began as a single-author
+pre-standard concept; the goal is to advance it to a pre-standard through an
+open, multi-stakeholder committee process. This document establishes neither
+an organization nor a certification scheme.
 
 ## Separate objectives
 
@@ -20,6 +23,8 @@ neither an organization nor a certification scheme.
 | Management-system certification | Separate scheme; consider ISO/IEC 17021-1 and applicable requirements |
 | Legal opinion | Qualified counsel, jurisdiction, facts, assumptions and date |
 | Regulatory authorization | Particular product/function and applicable government process |
+
+<!-- GRAPHIC-NEEDED: GN-032 Separate assurance routes: consensus specification, accreditation, certification schemes, legal opinion and regulatory authorization, each distinct from signed publication -->
 
 Framework references are scoping pointers, not accreditation claims or a verified
 clause-level mapping. Confirm current editions and applicability with the

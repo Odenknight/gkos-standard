@@ -1,6 +1,6 @@
 # Trademark policy
 
-Publication classification: **developmental specification; public working draft**.
+Publication classification: **developmental specification (public working draft)**.
 The existing project name, acronym GKOS, titles and identifiers are retained.
 This classification establishes no consensus or certification standing. See the
 [conformance-claims policy](conformance/CLAIMS_POLICY.md).
@@ -11,7 +11,7 @@ The names **GKOS**, **Governed Knowledge Operations Standard**, the tagline **Ho
 
 Open licenses do not grant trademark, certification, endorsement, or accreditation rights.
 
-Truthful nominative use, criticism, education, research, interoperability discussion, and accurate references to specific releases are permitted. Written permission is required to use an official logo as another product or organization brand, imply endorsement or certification, or name an incompatible modified standard “GKOS” without a clear modifier.
+Truthful nominative use, criticism, education, research, interoperability discussion, and accurate references to specific releases are permitted. Written permission is required to use an official logo as another product or organization brand, imply endorsement or certification, or name an incompatible modified specification “GKOS” without a clear modifier.
 
 The shield-and-governed-network design in `graphics/GKOS_Logo_Provisional.svg` is the provisional working logo adopted under R8-072 for the v0.x development period.
 

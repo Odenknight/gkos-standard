@@ -2,6 +2,9 @@
 
 **Status:** Non-normative proposal; not qualifying
 
+**Status note (2026-10-07):** Unchanged. This proposal amends no published
+edition, including the current edition GKOS-2026-09-24 v0.82.1.
+
 **Boundary:** Subordinate to the ratified Layer-6 phase split in R16 and the
 canonical-serialization annex. This draft does not amend GKOS v0.80.
 

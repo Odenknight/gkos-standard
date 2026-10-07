@@ -23,6 +23,8 @@ recommendations, compatibility results, or conformance claims.
 
 ## 1. Read every statement by its class
 
+<!-- GRAPHIC-NEEDED: GN-034 Four statement classes: Standard requires, Architecture recommends, Implementation example, Not in the Standard -->
+
 ### Standard requires
 
 The applicable GKOS release defines required evidence, identity, lineage,
@@ -44,9 +46,10 @@ protocol binding, and the examples below are not universal GKOS requirements.
 
 ## 2. What GKOS is
 
-GKOS is a developmental public pre-standard for governing how evidence becomes
-structured knowledge, how controls and review affect its standing, how context
-is assembled, and how consequential action is authorized and recorded.
+GKOS is a developmental specification (public working draft) for governing
+how evidence becomes structured knowledge, how controls and review affect its
+standing, how context is assembled, and how consequential action is authorized
+and recorded.
 
 It is not:
 
@@ -77,6 +80,8 @@ A committed governed mutation must be durably bound to an applicable receipt
 role. The receipt records actor, authority, policy, operation, before/after
 state binding, outcome, and durability evidence.
 
+<!-- GRAPHIC-NEEDED: GN-005 Governed state change and receipt binding: commit with a State-Change Receipt, or fail closed, roll back or compensate before reporting success -->
+
 ### 3.3 Read, proposal, and write authority remain distinct
 
 A validator or viewer normally reads and reports. A proposal adapter may create
@@ -103,6 +108,8 @@ the package file still reports `2.1.2`.
 | Work and data plane | Storage, extraction, retrieval, inference, agents, workflows, tools, external systems | Performs the operational work |
 | GKOS governance plane | Evidence, identity, lineage, controls, decisions, context, authority, receipts | Defines the governed contracts and claim boundaries |
 | Trust and enforcement plane | Workload identity, credentials, policy decisions, signing, logging, isolation | Supplies assertions and enforcement mechanisms consumed by the governance path |
+
+<!-- GRAPHIC-NEEDED: GN-012 Three logical planes: work and data plane, GKOS governance plane, trust and enforcement plane, and what passes between them -->
 
 These are logical responsibilities, not mandatory network tiers.
 
@@ -221,6 +228,8 @@ Agent only under R18's different-model-family, sealed-evidence, deterministic-
 gate, non-self-review, separate-authority, and mandatory-human-escalation
 controls. That does not establish independent conformance verification.
 
+<!-- GRAPHIC-NEEDED: GN-013 Bounded Review Agent under R18: different model family, sealed evidence, deterministic gates, no self-review, mandatory escalation to an authorized human -->
+
 ### L6 — Context Presentation
 
 **Standard requires:** capture non-deterministic selection, then deterministically
@@ -332,8 +341,8 @@ without treating protocol lifecycle as governance standing.
 
 ## 10. Conformance and risk
 
-GKOS v0.82.1 is a developmental public pre-standard. No implementation is
-certified. A serious claim identifies:
+GKOS v0.82.1 is a developmental specification (public working draft). No
+implementation is certified. A serious claim identifies:
 
 - exact Standard and GKX versions;
 - claimed profile;

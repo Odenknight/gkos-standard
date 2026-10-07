@@ -10,6 +10,6 @@ Recommended attribution:
 
 > Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-24 v0.82.1, by Shaun “Oden” Marshall, licensed under CC BY 4.0. Changes, if any, are identified by the modifier.
 
-The v0.x series is a public pre-standard development and concept-refinement series. It is not a consensus-ratified, accredited, certified, or regulator-approved standard.
+GKOS is a developmental specification (public working draft). It began as a single-author pre-standard concept; the goal is to advance it to a pre-standard through an open, multi-stakeholder committee process. The v0.x series is a public development and concept-refinement series. It is not a consensus-ratified, accredited, certified, or regulator-approved standard.
 
 The OSI comparison is an original architectural analogy. GKOS is not affiliated with or endorsed by ISO, IEC, ITU, or the maintainers of the OSI model.

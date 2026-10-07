@@ -14,7 +14,7 @@ It creates no requirement ID, schema field, test, profile, or certification sche
 Existing normative requirements prevail; a substantive change to them requires
 its own development decision and release assessment.
 
-GKOS is a developmental specification and public working draft. Its retained
+GKOS is a developmental specification (public working draft). Its retained
 name, Governed Knowledge Operations Standard, is a project identifier, not
 an assertion of accredited or consensus standing. Consensus Specification is
 not the current publication classification.

@@ -27,7 +27,7 @@ GKOS does not replace databases, records systems, agent runtimes, workflow engin
 
 ## Specification status and published titles
 
-GKOS is a developmental specification, published as a public working draft.
+GKOS is a developmental specification (public working draft).
 This README uses **Governed Knowledge Operations Specification**, following the
 owner's [README title change in PR #63](https://github.com/Odenknight/gkos-standard/pull/63).
 The acronym **GKOS** is unchanged. The signed v0.82.1 edition and earlier
@@ -42,6 +42,10 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 
 ## Current standing
 
+GKOS is a developmental specification (public working draft). It began as a single-author pre-standard concept; the goal is to advance it to a pre-standard through an open, multi-stakeholder committee process.
+
+<!-- GRAPHIC-NEEDED: GN-001 Specification maturity path: single-author pre-standard concept, developmental specification (public working draft, current), pre-standard through an open committee (goal), v1.0 gates -->
+
 - **Release coordinate:** GKOS-2026-09-24 v0.82.1
 - **Publication status:** live since September 24, 2026 in America/New_York; actual GitHub publication `2026-09-25T00:54:27Z`, verified signed tag and post-tag checks
 - **Release record:** [v0.82.1 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1) · [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) · [v0.82.1 release package](releases/2026-09-24-v0.82.1/README.md)
@@ -50,7 +54,7 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 - **Previous edition DOI (v0.82 only):** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [v0.82.1 authorization and exact-commit binding](docs/releases/V0821_PUBLICATION_CONTROL.md)
-- **Maturity:** developmental specification; public working draft
+- **Maturity:** developmental specification (public working draft)
 - **Governance:** owner-authorized v0.x development; not consensus ratification
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
@@ -61,6 +65,7 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 The current v0.82.1 documentation patch clarifies publication status and existing claims controls. Its technical baseline is unchanged from v0.82, with the normative population retained from v0.81. The v0.81, v0.82 and v0.82.1 editions have verified archival records; the [v0.82.1 receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) binds its archive to the signed release commit. Publication and archival identity establish no profile qualification, certification, or independently demonstrated effectiveness.
 
 [Technical orientation](TECHNICAL_README.md) ·
+[Beginner's guide](guide/README.md) ·
 [Master standard](standard/00_GKOS_Master_Standard.md) ·
 [Requirements registry](requirements/REGISTRY.md) ·
 [Conformance](conformance/README.md) ·
@@ -76,6 +81,8 @@ July inputs from current guidance, domain pilots and standards engagement.
 ## Published release and current development
 
 The signed v0.82.1 documentation patch is the published edition; its technical baseline is unchanged from v0.82 and its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
+
+<!-- GRAPHIC-NEEDED: GN-002 Edition and publication flow: main, release candidate, signed tag, release package, GitHub Release, Zenodo DOI, publication record; v0.81 to v0.82.1 and the v0.83 line -->
 
 The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation. It remains informative, pinned to its recorded GKOS baseline, and establishes no implementation conformance or NIST endorsement; its ISO Annex A mapping remains verification-held.
 

@@ -1,6 +1,6 @@
 # Contributing to GKOS
 
-GKOS welcomes criticism, implementation reports, examples, fixtures, and amendment proposals. Participation does not grant authority to bind the standard.
+GKOS welcomes criticism, implementation reports, examples, fixtures, and amendment proposals. Participation does not grant authority to bind the specification.
 
 Use GitHub Discussions for exploratory questions and amendment concepts. Use issues for actionable ambiguities, defects, implementation reports, or fixture requests. Use pull requests for concrete replacement text or artifacts. Report security-sensitive information through the private process in `SECURITY.md`.
 

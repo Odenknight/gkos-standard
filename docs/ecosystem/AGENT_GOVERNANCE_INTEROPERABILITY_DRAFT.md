@@ -101,6 +101,8 @@ A governed agent deployment should preserve the following lifecycle stages:
 8. **Retirement:** records, credentials, artifacts, holds, and residual effects
    are dispositioned through applicable policy.
 
+<!-- GRAPHIC-NEEDED: GN-015 Agent lifecycle: definition, provisioning, qualification, activation, operation, change, suspension or revocation, retirement, with the evidence each stage keeps -->
+
 ## 5. Layer-by-layer agent mapping
 
 ### L1 — agent inputs and original evidence
@@ -242,6 +244,8 @@ A governed deployment should keep these facts distinct:
 | Purpose-bound authorization | exact grant plus context, target, time, action, effect scope | L7 action-time admission |
 | Executed action | tool, API, workflow, transaction, publication | Outcome and State-Change/Authorized Use evidence |
 
+<!-- GRAPHIC-NEEDED: GN-014 Identity versus authorization: six distinct facts from claimed identity to executed action, each with its GKOS layer -->
+
 A single token must not collapse all six concepts.
 
 ## 7. Capability leases and activation
@@ -276,6 +280,8 @@ For every multi-agent interaction, preserve:
 - reviewer/authorizer/executor roles;
 - final effect and recipient; and
 - outcome and recovery.
+
+<!-- GRAPHIC-NEEDED: GN-016 Multi-agent chain: initiating principal, delegation and subdelegation, per-agent attribution, context passed and omitted, final effect and recovery -->
 
 Each agent's output remains attributable to that agent and does not inherit the
 standing of the agent that requested it.

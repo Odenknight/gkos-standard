@@ -11,7 +11,7 @@
 
 ## 1. Short answer
 
-The CIA triad names three security *objectives*. GKOS is a *governance* standard: it says what evidence, authority, context, and records must exist before knowledge is accepted or acted on, and it requires applicable mandatory checks to fail closed when required evidence is missing or indeterminate. The two fit together this way:
+The CIA triad names three security *objectives*. GKOS is a *governance* specification: it says what evidence, authority, context, and records must exist before knowledge is accepted or acted on, and it requires applicable mandatory checks to fail closed when required evidence is missing or indeterminate. The two fit together this way:
 
 - **Integrity** is where GKOS is strongest. Its contracts preserve evidence, identity, lineage, decisions, exact context, and action records across the knowledge lifecycle.
 - **Confidentiality** is a direct normative concern in v0.81. `GKOS-DISCLOSURE-001` makes authorization a precondition of protected disclosure on every output surface, including logs, metrics, and error messages, and the security annex sets fail-closed handling rules for sensitivity.

@@ -1,6 +1,6 @@
 # GKOS master standard
 
-Publication classification: **developmental specification; public working draft**.
+Publication classification: **developmental specification (public working draft)**.
 The existing project name, acronym GKOS, titles and identifiers are retained.
 This classification establishes no consensus or certification standing. See the
 [conformance-claims policy](../conformance/CLAIMS_POLICY.md).
@@ -10,7 +10,7 @@ use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
 This edition is GKOS-2026-09-24 v0.82.1, a published documentation patch of the
-developmental specification / public working draft. The verified signed tag and
+developmental specification (public working draft). The verified signed tag and
 public GitHub Release were published at 2026-09-25T00:54:27Z, September 24 in
 America/New_York, under the owner's recorded publication authorization.
 See the [publication receipt](../docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) for exact-commit CI,
@@ -24,7 +24,9 @@ See the [v0.82.1 package](../releases/2026-09-24-v0.82.1/README.md).
 
 R17 adds captured-time authority validity intervals; R18 consolidates GCP-4/5
 review and protected-disclosure contracts; R19 prospectively adopts the eighth
-documentation-intent invariant. R20 controlled v0.81 publication; R24 controls v0.82. See the
+documentation-intent invariant. R20 controlled v0.81 publication. R24 controlled
+v0.82 publication, and the v0.82.1 patch applied its controls (see the
+[v0.82.1 publication control](../docs/releases/V0821_PUBLICATION_CONTROL.md)). See the
 [v0.81 release package](../releases/2026-09-03-v0.81/README.md) and
 [publication binding](../docs/implementation/V081_PUBLICATION_BINDING.md).
 
@@ -32,6 +34,8 @@ documentation-intent invariant. R20 controlled v0.81 publication; R24 controls v
 
 The master standard, permanent requirement registry, profile applicability
 mapping, and normative annexes form one controlled surface.
+
+<!-- GRAPHIC-NEEDED: GN-004 Normative surface map: master standard, permanent requirement registry, profile applicability, normative annexes, and the R15 and R16 records that govern them -->
 
 R15 governs State-Change Receipt roles, retention/disposition, Layer-1 re-entry,
 explicit supersession, and bounded delegation:

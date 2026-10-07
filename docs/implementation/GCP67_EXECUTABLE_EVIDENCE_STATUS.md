@@ -2,6 +2,13 @@
 
 ## Current publication summary — 2026-09-06
 
+Current edition note (2026-10-07): the current edition is GKOS-2026-09-24
+v0.82.1, a documentation patch. Its [publication receipt](../releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md)
+reports that the nine mandatory checks passed and that strict mutation coverage
+confirms 62 allocations and 28 gates. Technical sources are unchanged from
+v0.82, and the normative population is unchanged from v0.81. The 2026-09-06
+summary below describes the v0.81 release results and is preserved as written.
+
 The [v0.81 publication receipt](../releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md) reports 101/101 tests, 28/28 mutation gates, zero dependency-audit findings and separate Windows replication for its exact release candidate. The current registry has 62 permanent requirement allocations. These reported release results were not rerun for this editorial summary. Separate execution is not an organizationally independent second implementation. No profile currently qualifies; full semantic coverage remains incomplete.
 
 ## Historical v0.80 snapshot
