@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="826" viewBox="0 0 1280 826" role="img" aria-labelledby="adoption-title adoption-desc">
   <title id="adoption-title">Choose a starting point for your use case</title>
-  <desc id="adoption-desc">Four GKOS adoption paths. For read-only display, use the independent Viewer/Projection Profile without decision or action authority. For governed records and decisions, GKOS Core covers GCP-1 through GCP-5. For reproducible decision-support context, use GKOS Core plus the GCP-6 Context-Only Extension, which grants no consequential action authority. For consequential agents and automation, GKOS Advanced covers GCP-1 through GCP-7, binding context and valid authority to action records. A named claim still requires complete applicable evidence; v0.81 currently qualifies no implementation profile.</desc>
+  <desc id="adoption-desc">Four GKOS adoption paths. For read-only display, use the independent Viewer/Projection Profile without decision or action authority. For governed records and decisions, GKOS Core covers GCP-1 through GCP-5. For reproducible decision-support context, use GKOS Core plus the GCP-6 Context-Only Extension, which grants no consequential action authority. For consequential agents and automation, GKOS Advanced covers GCP-1 through GCP-7, binding context and valid authority to action records. A named claim still requires complete applicable evidence; GKOS v0.82.1 currently qualifies no implementation profile.</desc>
   <defs>
     <style>
       text { font-family: Arial, Helvetica, sans-serif; fill: #102044; }
@@ -55,5 +55,5 @@
   </g>
 
   <text x="48" y="754" class="body" style="font-weight:700">Each named claim requires its complete applicable evidence.</text>
-  <text x="48" y="791" class="note">v0.81 currently qualifies no implementation profile. See the conformance profiles for exact scope.</text>
+  <text x="48" y="791" class="note">GKOS v0.82.1 currently qualifies no implementation profile. See the conformance profiles for exact scope.</text>
 </svg>

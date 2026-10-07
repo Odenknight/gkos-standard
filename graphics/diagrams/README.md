@@ -1,25 +1,30 @@
 # Rendered GKOS diagrams
 
 These informative graphics explain GKOS architecture, an accountable decision,
-and adoption choices. The r3 canonical-architecture file set is a v0.82
-development candidate under accepted R22; the existing control-plane and layer
+adoption choices, the evidence-to-action workflow and the CIA triad alignment.
+The r3 canonical architecture was accepted under R22 on 2026-09-04 and carried
+into the published v0.82 edition under R24. The control-plane and layer
 responsibility diagrams remain narrower detail views. Styling follows the blue
-and multicolor palette of the existing illustrated figures.
+and multicolor palette of the illustrated figures.
+
+The [graphics register](../REGISTER.md) records the status, edition label and
+style family of each file. The current edition is GKOS-2026-09-24 v0.82.1.
 
 | Diagram | Vector graphic | Downloadable image | Editable source |
 | --- | --- | --- | --- |
-| Canonical architecture orientation — r3 v0.82 candidate | [SVG](gkos-canonical-architecture.svg) | [PNG](gkos-canonical-architecture.png) | [Mermaid](gkos-canonical-architecture.mmd) · [labels](gkos-canonical-architecture.labels.txt) |
+| Canonical architecture orientation — r3 (R22) | [SVG](gkos-canonical-architecture.svg) | [PNG](gkos-canonical-architecture.png) | [Mermaid](gkos-canonical-architecture.mmd) · [labels](gkos-canonical-architecture.labels.txt) |
 | GKOS within an existing stack | [SVG](gkos-control-plane.svg) | [PNG](gkos-control-plane.png) | [Mermaid](gkos-control-plane.mmd) |
 | Seven cumulative responsibilities | [SVG](gkos-layer-responsibilities.svg) | [PNG](gkos-layer-responsibilities.png) | [Mermaid](gkos-layer-responsibilities.mmd) |
 | A refund decision you can audit | [SVG](gkos-accountable-refund.svg) | [PNG](gkos-accountable-refund.png) | [Editable SVG](gkos-accountable-refund.svg) |
 | Choose an adoption starting point | [SVG](gkos-adoption-paths.svg) | [PNG](gkos-adoption-paths.png) | [Editable SVG](gkos-adoption-paths.svg) |
-| CIA triad overview — informative, v0.81 | [SVG](gkos-cia-overview.svg) | [PNG](gkos-cia-overview.png) | [Python](gkos-cia-overview.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
-| CIA triad detailed alignment — informative, v0.81 | [SVG](gkos-cia-triad-alignment.svg) | [PNG](gkos-cia-triad-alignment.png) | [Python](gkos-cia-triad-alignment.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
+| CIA triad overview — informative, pinned to the v0.81 basis | [SVG](gkos-cia-overview.svg) | [PNG](gkos-cia-overview.png) | [Python](gkos-cia-overview.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
+| CIA triad detailed alignment — informative, pinned to the v0.81 basis | [SVG](gkos-cia-triad-alignment.svg) | [PNG](gkos-cia-triad-alignment.png) | [Python](gkos-cia-triad-alignment.build.py) · [alignment](../../docs/GKOS_CIA_TRIAD_ALIGNMENT.md) |
 
-## Canonical architecture orientation — r3 v0.82 development candidate
+## Canonical architecture orientation — r3
 
 - **Files:** `gkos-canonical-architecture.svg` (reference rendering), `.png` (2× export), `.mmd` (Mermaid source), and `.labels.txt` (checked parity register).
-- **Standing:** informative v0.82 development candidate under accepted R22; no normative, conformance, binding, implementation, or runtime authority.
+- **Standing:** informative architecture orientation, accepted under R22 on 2026-09-04 and carried into the v0.82 edition under R24; no normative, conformance, binding, implementation, or runtime authority.
+- **Label currency:** the figure still reads "r3 · v0.82 development candidate" and "v0.81 published 2026-09-03". Those labels were correct at review. A refresh to the current edition is a substantive change under R22 §6, so it needs an r4 review and preservation of r3 in the archive first. See register entry GR-01.
 - **Baseline:** `gkos-standard` `main` `33ac87893ad8581950772d685b6b48673019fe7b`; published v0.81 tag target `8f2a158c6d4b8cabd907d98765766d281aec1247`; inspected `GKOS-Engine` development head `8207958047b3361ae21ac07c5a2abbd26a42a684`.
 - **Reads top to bottom:** Standard → GKX interoperability seam → plural implementation examples/evidence targets → conditional retrieval-to-context candidate → governed action boundary → versioned external bindings and governed actor classes.
 - **Layer boundary:** L4 controls, applicable L5 disposition, L6 context, and L7 authority/effect admission remain distinct.
@@ -83,20 +88,32 @@ input/output stem.
 
 ### SVG explainers
 
-The refund and adoption graphics are authored directly as editable SVG. Their
-PNG exports use `sharp` version `0.35.4`, installed in a separate tooling
-environment. From the repository root, the equivalent export is:
+The refund, adoption, middleware and review-view graphics are authored
+directly as editable SVG. Their PNG exports use `sharp` version `0.35.4`,
+installed in a separate tooling environment. Each PNG is twice the SVG width.
+From the repository root, the equivalent export is:
 
 ```js
 import sharp from 'sharp';
 
-for (const stem of ['gkos-accountable-refund', 'gkos-adoption-paths']) {
+const widths = {
+  'gkos-accountable-refund': 2560,
+  'gkos-adoption-paths': 2560,
+  'middleware-placement': 2400,
+  'evidence-review-views': 2400,
+};
+for (const [stem, width] of Object.entries(widths)) {
   await sharp(`graphics/diagrams/${stem}.svg`)
-    .resize({ width: 2560 })
+    .resize({ width })
     .png()
     .toFile(`graphics/diagrams/${stem}.png`);
 }
 ```
+
+On 2026-10-07 this export reproduced the four committed PNGs byte for byte on
+Windows with Node.js 24.18.0. The adoption graphic was then rendered again
+after its note changed from "v0.81" to "GKOS v0.82.1". The
+[register render log](../REGISTER.md#render-log) records the commands.
 
 ## Scope and provenance
 
@@ -111,9 +128,9 @@ The adoption graphic summarizes the [conformance profiles](../../standard/annexe
 including the independent Viewer/Projection Profile and the limits of the
 Context-Only Extension. These explainers do not replace the exact requirements.
 
-These are post-publication documentation graphics. The live v0.81 edition,
-its signed tag, frozen release package, and Zenodo archive are not altered. The
-r3 canonical architecture is a v0.82 development candidate under accepted R22;
+These are documentation graphics. Changing a graphic does not alter any
+published edition, signed tag, release package, or Zenodo archive. The r3
+canonical architecture is informative under R22;
 its presence creates no profile qualification, binding activation,
 interoperability result, or implementation certification. The master standard,
 permanent requirements, and accepted development decisions control. Graphics
@@ -121,7 +138,7 @@ are licensed under CC BY 4.0; see [LICENSE.md](../../LICENSE.md).
 
 ## Evidence-to-action workflow and middleware views
 
-- [User-supplied workflow illustration](gkos-evidence-to-authorized-action.jpg), supplied for inclusion on 2026-09-06 and preserved unchanged. Its [accessible full stack explanation](../../docs/implementation/GKOS_END_TO_END_WORKFLOW.md) describes the colors, branches, all seven responsibilities and return to evidence.
+- [User-supplied workflow illustration](gkos-evidence-to-authorized-action.jpg), supplied for inclusion on 2026-09-06 and preserved unchanged. Its footer reads "Illustrative GKOS v0.81 workflow"; the workflow still matches v0.82.1, and only the owner can supply a revised image (register entry GR-08). Its [accessible full stack explanation](../../docs/implementation/GKOS_END_TO_END_WORKFLOW.md) describes the colors, branches, all seven responsibilities and return to evidence.
 - [Middleware placement SVG](middleware-placement.svg) / [PNG](middleware-placement.png): request, policy, protected enforcement and evidence-storage boundaries.
 - [Separate review views SVG](evidence-review-views.svg) / [PNG](evidence-review-views.png): evidence reuse across ISO, EU and NIST with distinct criteria and judgments.
 
@@ -136,4 +153,4 @@ python graphics/diagrams/gkos-cia-overview.build.py
 python graphics/diagrams/gkos-cia-triad-alignment.build.py
 ```
 
-Both scripts write SVG and 2× PNG beside their source. These graphics are informative and allocate no requirements or crosswalk identifiers.
+Both scripts write SVG and 2× PNG beside their source. These graphics are informative and allocate no requirements or crosswalk identifiers. Their "v0.81" labels pin the requirement basis on purpose; that basis is unchanged in v0.82 and v0.82.1.
