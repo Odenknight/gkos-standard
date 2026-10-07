@@ -24,6 +24,8 @@ an organization nor a certification scheme.
 | Legal opinion | Qualified counsel, jurisdiction, facts, assumptions and date |
 | Regulatory authorization | Particular product/function and applicable government process |
 
+<!-- GRAPHIC-NEEDED: GN-032 Separate assurance routes: consensus specification, accreditation, certification schemes, legal opinion and regulatory authorization, each distinct from signed publication -->
+
 Framework references are scoping pointers, not accreditation claims or a verified
 clause-level mapping. Confirm current editions and applicability with the
 selected body before designing a scheme.

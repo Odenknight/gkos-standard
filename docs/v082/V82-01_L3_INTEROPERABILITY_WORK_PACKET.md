@@ -64,6 +64,8 @@ The owner later accepted `R23-REV-001..015` with narrowing and adopted `D1A`,
 
 ## 4. Candidate semantics
 
+<!-- GRAPHIC-NEEDED: GN-037 Layer-3 candidate semantics (prospective R23 material): relation direction and inverses, duplicate and cycle handling, resolver precedence -->
+
 ### V82-L3-A — direction, vocabulary, and inverse semantics
 
 The candidate must preserve one canonical asserted direction, support an open

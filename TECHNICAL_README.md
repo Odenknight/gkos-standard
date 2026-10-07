@@ -239,6 +239,8 @@ captured as a canonical Selection Envelope. Assembly is deterministic: identical
 selection, resolved content, schema, policy, compiler, and canonical-profile
 inputs must produce identical Context Manifest bytes and hash.
 
+<!-- GRAPHIC-NEEDED: GN-009 Layer-6 phase split: captured Selection Envelope, deterministic assembly, identical inputs giving identical Context Manifest bytes and hash, hash check at action time -->
+
 ## Canonical serialization
 
 Canonical artifact identity binds to deterministic CBOR under the
@@ -254,6 +256,8 @@ schema-declared numeric types. A GCP-6 or GCP-7 claimant must also provide a
 human-auditable rendering and parser/verifier whose round trip reproduces the
 canonical hash. See the
 [canonical serialization annex](standard/annexes/Canonical_Serialization.md).
+
+<!-- GRAPHIC-NEEDED: GN-010 Canonical serialization and artifact hash: GKX-CBOR-1 rules, canonical payload with digest-bound references, SHA-256, verifier round trip from the human-auditable rendering -->
 
 ## Core records and receipts
 
@@ -290,6 +294,8 @@ independent Viewer/Projection Profile. R16 names these tiers:
 | GCP-6 Context-Only Extension | Core plus read-only GCP-6; no consequential action authority |
 | Viewer/Projection Profile | Independent projection responsibilities |
 
+<!-- GRAPHIC-NEEDED: GN-029 Profile tiers: GCP-1 to GCP-5 Core, GCP-6 Context-Only Extension, GCP-1 to GCP-7 Advanced, independent Viewer/Projection -->
+
 A conformance claim must name:
 
 - the exact GKOS release and GKX version;
@@ -298,6 +304,8 @@ A conformance claim must name:
 - all limitations, exclusions, and approved exceptions;
 - whether the result is self-attested or independently verified; and
 - the implementation version or immutable commit evaluated.
+
+<!-- GRAPHIC-NEEDED: GN-011 Conformance evaluation and claim flow: registry, profile applicability, fixtures, runner result states including UNEVALUATED, and the elements a claim must name -->
 
 Green tests alone are not evidence that every normative requirement was
 evaluated. Unevaluated or blocked requirements must not be converted into a

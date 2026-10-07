@@ -177,6 +177,8 @@ A deployment may use another equivalent design, but it should be able to show:
 9. the final action-time re-evaluation; and
 10. the receipt and actual outcome.
 
+<!-- GRAPHIC-NEEDED: GN-017 Multi-jurisdiction evaluation sequence: the ten steps from exact operation to receipt, with the conflict and human-disposition branches -->
+
 A non-deterministic system may identify candidate policies or increase
 restrictiveness, but it cannot silently decide legal applicability or override
 a mandatory hold.
@@ -199,6 +201,8 @@ A conflict record should identify:
 
 No automated system may resolve the conflict merely by choosing the longer
 retention period.
+
+<!-- GRAPHIC-NEEDED: GN-008 Retention and disposition: hold predicate check; indeterminate result or hold/erasure conflict fails closed to human disposition; receipt binds the predicate version -->
 
 ## 11. Cross-border transfer
 

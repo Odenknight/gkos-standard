@@ -35,6 +35,8 @@ v0.82 publication, and the v0.82.1 patch applied its controls (see the
 The master standard, permanent requirement registry, profile applicability
 mapping, and normative annexes form one controlled surface.
 
+<!-- GRAPHIC-NEEDED: GN-004 Normative surface map: master standard, permanent requirement registry, profile applicability, normative annexes, and the R15 and R16 records that govern them -->
+
 R15 governs State-Change Receipt roles, retention/disposition, Layer-1 re-entry,
 explicit supersession, and bounded delegation:
 

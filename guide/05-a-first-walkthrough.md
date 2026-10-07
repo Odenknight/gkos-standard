@@ -133,6 +133,8 @@ If the grant had expired yesterday, the refusal would carry `GKOS-GATE-L7-001` i
 
 A refusal is not a silent failure. It is a durable record that someone can review, and it re-enters as evidence like any other outcome.
 
+<!-- GRAPHIC-NEEDED: GN-025 Refusal path for the refund example: L7 check, gate code GKOS-GATE-L7-002, Refusal Receipt fields, re-entry -->
+
 ## What the records let you answer
 
 Months later, Dana disputes the refund. Here is where each of the six questions from [chapter 2](02-why-it-exists.md#the-six-questions) finds its answer.

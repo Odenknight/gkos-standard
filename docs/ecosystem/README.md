@@ -57,6 +57,8 @@ Bindings are versioned mappings, not GCP profiles. They identify where an
 external protocol may carry or trigger GKOS-governed evidence and where an
 adapter must add controls or records that the protocol does not supply.
 
+<!-- GRAPHIC-NEEDED: GN-036 Protocol bindings: where MCP, A2A and ACS can carry GKOS evidence, and where an adapter must add controls or records -->
+
 ## Deployment and assessment drafts
 
 - [`AGENT_GOVERNANCE_INTEROPERABILITY_DRAFT.md`](AGENT_GOVERNANCE_INTEROPERABILITY_DRAFT.md)

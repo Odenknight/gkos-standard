@@ -23,6 +23,8 @@ A protected write boundary enforces authorized effects; it need not be one agent
 | Implementation | A product realizing declared contracts |
 | Conformance evidence | Exact requirement population, tests and limitations |
 
+<!-- GRAPHIC-NEEDED: GN-030 OSI analogy and its limits in current terms: reference model, GKX and bindings, implementation, conformance evidence; not a network stack or maturity ladder -->
+
 This is an explanatory analogy, not a one-to-one OSI mapping or ISO endorsement.
 Layers are not maturity levels or seven sequential network hops. Use the
 [current adoption profiles](../README.md#adoption-paths), not the old

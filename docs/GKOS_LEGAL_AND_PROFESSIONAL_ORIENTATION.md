@@ -31,6 +31,8 @@ confidence score as authority.
 
 ## The seven layers in plain language
 
+<!-- GRAPHIC-NEEDED: GN-031 Seven layers as a chain of custody, each with its main record, from Source Record to Authorized Use Record or Refusal Receipt -->
+
 | Layer | Plain meaning | Legal or professional analogy | Main record |
 | --- | --- | --- | --- |
 | **1. Original Sources** | Keep what was received or observed without silently rewriting it. | Evidence preservation and chain of custody | Source Record |

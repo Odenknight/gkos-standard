@@ -30,3 +30,5 @@ Before a pilot, select applicable permanent requirements from the
 coordinates, and declare expected positive, negative, boundary and replay cases.
 Publish failures, unsupported outcomes, burden and limitations. A passing subset
 does not qualify a profile. Start with synthetic or appropriately public data.
+
+<!-- GRAPHIC-NEEDED: GN-035 Domain pilot evidence loop: select registry IDs, freeze coordinates, declare positive, negative, boundary and replay cases, run, publish failures and limits -->

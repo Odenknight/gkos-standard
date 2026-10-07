@@ -41,6 +41,8 @@ A **record** is a durable, structured entry that answers one specific question. 
 | Context Manifest | What was presented, to whom, for what purpose, under which restrictions? |
 | Authorized Use Record | What action occurred, under which authority, with what outcome? |
 
+<!-- GRAPHIC-NEEDED: GN-021 Three separate linked records about one refund: evidence, assertion and Decision Record -->
+
 A **receipt** is a role, not one fixed format. Any record that carries the required fields can play the receipt role. For example, a record that a check refused an action plays the **Refusal Receipt** role. See the [authority and refusal receipt fields annex](../standard/annexes/Authority_and_Refusal_Receipt_Fields.md).
 
 Records are append-only where GKOS says so. A Decision Record, for example, is never edited in place. A later decision is added as a new record. See `GKOS-REVIEW-004` in the [requirement registry](../requirements/REGISTRY.md).
@@ -80,6 +82,8 @@ One rule matters more than the labels. **A label is not a decision.** Writing `a
 
 **Controlled by:** [shared schema definitions](../schemas/gkx-common.defs.json) (`origin`), [GKX 2.0 frontmatter schema](../schemas/gkx-frontmatter-2.0.schema.json).
 
+<!-- GRAPHIC-NEEDED: GN-022 A label versus a decision: authorship_origin approved beside an actual Decision Record -->
+
 ## Epistemic state
 
 **Epistemic** means "about knowledge": how well something is known. A record's **epistemic state** says how much standing a claim has. For example, is it an observation, a guess, a disputed claim, or accepted knowledge?
@@ -117,6 +121,8 @@ Four rules from the [security, privacy and retention annex](../standard/annexes/
 - **Audit data is protected at least as much as its subject.** Audit and provenance records inherit or exceed the sensitivity of what they refer to.
 - **Authorization comes before disclosure.** Protected information must not leak into logs, errors, counts or outputs that the recipient is not allowed to see. See `GKOS-DISCLOSURE-001`.
 
+<!-- GRAPHIC-NEEDED: GN-023 Sensitivity labels: the seven labels, the fail-closed path for a missing label, and one-way elevation -->
+
 **Controlled by:** [security, privacy and retention annex](../standard/annexes/Security_Privacy_Retention.md), [requirement registry](../requirements/REGISTRY.md).
 
 ## Supersession
@@ -130,6 +136,8 @@ Two rules:
 - **Software must not guess supersession.** Similarity, confidence, timestamps or ID order cannot decide that one record replaces another. An authorized person or a valid, bounded delegation must declare it. See section 5 of the [governed state change annex](../standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md).
 - **Supersession is its own outcome.** It is not the same as rejection, withdrawal or expiry. Each is recorded separately and traceably. See `GKOS-REVIEW-004`.
 
+<!-- GRAPHIC-NEEDED: GN-006 Layer-1 re-entry and explicit supersession: predecessor preserved, new L1 source with no inherited standing, supersession declared by an authorized human, never inferred -->
+
 **Controlled by:** `GKOS-REENTRY-004`, `GKOS-LINEAGE-001` to `GKOS-LINEAGE-003` in the [requirement registry](../requirements/REGISTRY.md).
 
 ## A note on authority
@@ -140,6 +148,8 @@ Two rules:
 - Being logged in does not grant authority. Authentication is not authorization.
 - A permission can expire or be revoked. GKOS checks it again at the moment of action.
 - A delegated permission can only narrow. It can never be wider or last longer than the permission it came from.
+
+<!-- GRAPHIC-NEEDED: GN-024 Delegation narrowing: a grant and a delegated grant drawn as nested scopes with expiry -->
 
 See [important boundaries](../README.md#important-boundaries) and the [authority and refusal receipt fields annex](../standard/annexes/Authority_and_Refusal_Receipt_Fields.md).
 

@@ -24,6 +24,8 @@ coordinates separate. Matching numbers never imply compatibility.
 | GKOS-Engine-Lite development head reviewed | `1e1f84c547f610ecae2eb459cba53d3f1d00889c` | Development state five commits beyond its signed 2.1.2 tag at the review date | Must remain separate from the tag, package release, and Full Engine pin |
 | Adapter API symbol | `buildGkx23Projection` | Engine API symbol consumed by the informative Standard adapter | An API symbol is not a namespace, requirement, profile, or compatibility claim |
 
+<!-- GRAPHIC-NEEDED: GN-033 Independent coordinate axes: GKOS publication, GKX namespace, canonical profile, projection profile, Engine package and development head -->
+
 Exact implementation coordinates must be rechecked before publication or a
 claim. This table records the 2026-09-02 review state; it is not a moving
 “latest version” service.

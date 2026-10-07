@@ -68,6 +68,8 @@ Identity, credentials, policy evaluation, privileged access, cryptographic integ
 
 These planes are logical responsibilities rather than required network tiers. One application may implement all three; a large organization may distribute them across many services.
 
+<!-- GRAPHIC-NEEDED: GN-012 Three logical planes: work and data plane, GKOS governance plane, trust and enforcement plane, and what passes between them -->
+
 ## 4. Layer-by-layer implementation mapping
 
 ### L1 — Original Sources

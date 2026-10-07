@@ -25,6 +25,8 @@ This roadmap separates three horizons:
 3. establish the implementation, evidence, governance, and maintenance basis
    required before v1.0.
 
+<!-- GRAPHIC-NEEDED: GN-028 Three horizons on one timeline: published baselines v0.81 to v0.82.1, R21 ecosystem stages E0 to E5, v1.0 readiness gates -->
+
 The prior pre-GKX roadmap remains preserved under `archive/` as historical
 planning evidence.
 

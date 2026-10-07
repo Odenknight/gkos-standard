@@ -57,6 +57,8 @@ The [corpus status index](../docs/CORPUS-STATUS.md#reading-and-maintenance-rules
 | [`governance/portfolio/`](../governance/portfolio/PORTFOLIO-AUTHORITY-INDEX.md) | Portfolio authority and acceptance records | Check each file's status line |
 | [`scripts/`](../scripts/check-current-release.sh) | Release and verification checks | Tooling |
 
+<!-- GRAPHIC-NEEDED: GN-027 Repository standing map: normative, decision, informative, proposed, dated records, historical, immutable -->
+
 ## How to tell current from historical
 
 Use these checks, in this order:

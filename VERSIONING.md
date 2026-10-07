@@ -20,6 +20,8 @@ version directly, or tracks the engine's version and derives its own from
 it. No other repository is permitted to define GKX-observable semantics
 independently of the engine.
 
+<!-- GRAPHIC-NEEDED: GN-020 Version train: GKOS-Engine as the single GKX 2.0 version anchor and the dependent repositories that track it -->
+
 ## SemVer, sharpened
 
 All four repositories use SemVer (`MAJOR.MINOR.PATCH`), with one

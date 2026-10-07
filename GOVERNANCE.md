@@ -39,6 +39,8 @@ External reviewers are being assembled. Their findings SHOULD be preserved and d
 6. Pull request and validation.
 7. Merge, changelog, and release-administration update.
 
+<!-- GRAPHIC-NEEDED: GN-003 Amendment and decision lifecycle: seven-step v0.x amendment path, Development Decision Record states (proposed, accepted, superseded) and the Decision Register -->
+
 Normative-compatible changes require a Development Decision Record. Rejected proposals remain preserved. Security emergencies may impose temporary fail-closed restrictions and require retrospective review.
 
 ## Non-self-certification

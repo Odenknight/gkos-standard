@@ -108,6 +108,8 @@ Only decisions made under that future model may be called formal consensus ratif
 
 External reviewers are being assembled now. Their findings are preserved and answered. A complete committee is not required for a v0.x release. You can help by reviewing, testing, and taking part in the governance work for the v1.0 path.
 
+<!-- GRAPHIC-NEEDED: GN-001 Specification maturity path: single-author pre-standard concept, developmental specification (public working draft, current), pre-standard through an open committee (goal), v1.0 gates -->
+
 ---
 
 [Guide index](README.md) · Previous: [7. How the repository is organized](07-how-it-is-organized.md) · Next: [Glossary](glossary.md)

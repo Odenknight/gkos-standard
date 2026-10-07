@@ -38,9 +38,11 @@ released changelog sections and archives keep their original wording.
 | `docs/proposals/` | Proposed and non-normative, except where an adopted decision says otherwise |
 | `docs/reviews/` | Dated review and disposition records; preserved as written |
 | `docs/releases/` | Publication and release-control records; preserved as written |
-| `guide/` | Informative (beginner) |
+| [`guide/`](../guide/README.md) | Informative (beginner) |
 | `releases/`, `release-candidates/` | Immutable release packages; historical except for the current edition's package |
 | `archive/`, `docs/archive/` and other `*/archive/` folders | Historical |
+
+<!-- GRAPHIC-NEEDED: GN-027 Repository standing map: normative, decision, informative, proposed, dated records, historical, immutable -->
 
 ## July source-document dispositions
 

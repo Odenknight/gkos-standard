@@ -24,6 +24,31 @@
   "specification" for generic references in current prose. Editorial only;
   historical sections, published titles and identifiers, and requirement,
   schema, fixture, runner, gate and profile content are unchanged.
+- Add an informative beginner's guide in `guide/`: an index, eight numbered
+  chapters and a glossary, linked to the controlling files and reusing
+  `illustrated/` and `graphics/diagrams/` figures. The README links to it. No
+  requirement, schema, fixture, runner, gate or profile change.
+- Align current-facing documents under `docs/` with the published
+  GKOS-2026-09-24 v0.82.1 edition and the current nomenclature ("developmental
+  specification (public working draft)"). Add current-edition notes where a
+  page named only an older published baseline, record the completed PR #42
+  review gate in the ecosystem index, add a documentation-area standing table
+  to `docs/CORPUS-STATUS.md`, and add dated notes to NAV-002 and to the
+  2026-09-24 owner clarification. Historical release, publication, review and
+  archive records keep their original wording. Editorial and clarification
+  changes only.
+- Add a graphics register (`graphics/REGISTER.md`): every image and diagram
+  with source, use, edition label, style family and status, plus 37
+  graphics-needed items (GN-001 to GN-037). The adoption-paths graphic now
+  names GKOS v0.82.1; its PNG was rendered again from the SVG with sharp
+  0.35.4. New `illustrated/README.md` catalogs the illustrated figures and their
+  fitness for reuse. Insert `GRAPHIC-NEEDED` earmarks at each anchor outside
+  `standard/annexes/`; the annex earmarks wait for the v0.83 line under the
+  proposed R25. Informative only.
+- Add a proposed ICM organization map (`scripts/icm-map.mjs`, `docs/icm/map/`)
+  with per-area trackers and edit ledgers, and proposed `guide` and `graphics`
+  workflows with routes in `docs/icm/CONTEXT.md`. Informative; no normative
+  change.
 
 ## GKOS-2026-09-24 v0.82.1
 

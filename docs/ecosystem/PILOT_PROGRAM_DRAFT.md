@@ -36,6 +36,8 @@ Every pilot must:
 
 ## 3. Pilot sequence
 
+<!-- GRAPHIC-NEEDED: GN-019 Pilot sequence P1 to P8 with graduation criteria and stop conditions -->
+
 ### P1 — Viewer/Projection interoperability
 
 **Goal:** prove that two public viewers or adapters can present the same

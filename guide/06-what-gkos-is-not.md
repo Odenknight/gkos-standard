@@ -40,6 +40,8 @@ From the [README](../README.md#what-gkos-cannot-establish-by-itself), GKOS alone
 
 Those need their own evidence, competent authorities and, where they apply, formal assessment processes.
 
+<!-- GRAPHIC-NEEDED: GN-026 What GKOS records versus what still needs outside evidence or authority, in two columns -->
+
 ## Profiles: what a claim can name
 
 A **profile** is a named set of responsibilities that an implementation can be tested against. GKOS has seven cumulative profiles, GCP-1 to GCP-7, plus a separate Viewer/Projection Profile.
