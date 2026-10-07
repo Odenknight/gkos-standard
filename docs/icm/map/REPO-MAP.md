@@ -6,8 +6,8 @@ Informative tooling output: it grants no authority and does not decide standing.
 - Current edition (from `CITATION.cff`): GKOS-2026-09-24 v0.82.1
 - Files mapped: 532 (tracked plus untracked files that are not ignored)
 - Frozen-path files: 144
-- Stale-edition candidates (outside historical, release, decision, generated and asset files and outside historical sections): 690
-- Current-facing "pre-standard" occurrences without the D2 wording: 14
+- Stale-edition candidates (outside historical, release, decision, generated and asset files and outside historical sections): 699
+- Current-facing "pre-standard" occurrences without the D2 wording: 13
 - GRAPHIC-NEEDED earmarks: 43
 
 ## Standing totals
@@ -47,7 +47,7 @@ Counts per area tracker. Columns: N normative, I informative, P proposed, D deci
 | [docs-reviews](areas/docs-reviews.md) | [docs/reviews/](../../../docs/reviews/) | 18 | 0 | 0 | 1 | 0 | 15 | 0 | 0 | 0 | 0 | 2 | 0 | 5 | 0 | 0 |
 | [docs-v082](areas/docs-v082.md) | [docs/v082/](../../../docs/v082/) | 3 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 8 | 0 | 1 |
 | [examples](areas/examples.md) | [examples/](../../../examples/) | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| [fixtures](areas/fixtures.md) | [fixtures/](../../../fixtures/) | 54 | 0 | 1 | 32 | 0 | 3 | 0 | 0 | 18 | 0 | 0 | 54 | 43 | 0 | 0 |
+| [fixtures](areas/fixtures.md) | [fixtures/](../../../fixtures/) | 54 | 0 | 1 | 32 | 0 | 3 | 0 | 0 | 18 | 0 | 0 | 54 | 44 | 0 | 0 |
 | [github](areas/github.md) | [.github/](../../../.github/) | 15 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 30 | 0 | 0 |
 | [governance](areas/governance.md) | [governance/](../../../governance/) | 7 | 0 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 0 | 2 | 0 | 3 | 0 | 0 |
 | [graphics](areas/graphics.md) | [graphics/](../../../graphics/) | 36 | 0 | 4 | 0 | 0 | 0 | 0 | 0 | 3 | 29 | 0 | 0 | 74 | 4 | 0 |
@@ -55,11 +55,11 @@ Counts per area tracker. Columns: N normative, I informative, P proposed, D deci
 | [illustrated](areas/illustrated.md) | [illustrated/](../../../illustrated/) | 7 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 | 9 | 0 | 3 |
 | [release-candidates](areas/release-candidates.md) | [release-candidates/](../../../release-candidates/) | 12 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | [releases](areas/releases.md) | [releases/](../../../releases/) | 42 | 0 | 0 | 0 | 0 | 0 | 42 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| [requirements](areas/requirements.md) | [requirements/](../../../requirements/) | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 88 | 1 | 0 |
+| [requirements](areas/requirements.md) | [requirements/](../../../requirements/) | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 88 | 0 | 0 |
 | [root](areas/root.md) | repository root, `LICENSES/` | 24 | 0 | 4 | 0 | 0 | 1 | 0 | 0 | 19 | 0 | 0 | 0 | 72 | 3 | 9 |
-| [schemas](areas/schemas.md) | [schemas/](../../../schemas/) | 37 | 15 | 1 | 18 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 37 | 9 | 0 | 0 |
+| [schemas](areas/schemas.md) | [schemas/](../../../schemas/) | 37 | 15 | 1 | 18 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 37 | 15 | 0 | 0 |
 | [scripts](areas/scripts.md) | [scripts/](../../../scripts/) | 15 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 121 | 0 | 0 |
-| [standard](areas/standard.md) | [standard/](../../../standard/) | 12 | 7 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 11 | 20 | 1 | 1 |
+| [standard](areas/standard.md) | [standard/](../../../standard/) | 12 | 7 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 11 | 22 | 1 | 1 |
 
 ## Unclassified files
 
@@ -98,8 +98,7 @@ Lines that use "pre-standard" outside historical, release and decision files and
 | [guide/README.md](../../../guide/README.md) | - | 5 |
 | [guide/glossary.md](../../../guide/glossary.md) | 199, 201 | 97 |
 | [illustrated/README.md](../../../illustrated/README.md) | - | 54 |
-| [requirements/PROFILE_APPLICABILITY.md](../../../requirements/PROFILE_APPLICABILITY.md) | 3 | - |
-| [standard/annexes/Known_Limitations_and_Open_Issues.md](../../../standard/annexes/Known_Limitations_and_Open_Issues.md) | 3 | - |
+| [standard/annexes/Known_Limitations_and_Open_Issues.md](../../../standard/annexes/Known_Limitations_and_Open_Issues.md) | 5 | 4 |
 
 ## Stale-edition candidates
 
@@ -185,7 +184,7 @@ Edition tokens other than the current edition (GKOS-2026-09-24 v0.82.1) in curre
 | [docs/reviews/R23_L3_BOUNDED_DIFFERENT_MODEL_REVIEW_PACKET.md](../../../docs/reviews/R23_L3_BOUNDED_DIFFERENT_MODEL_REVIEW_PACKET.md) | proposed | 1 | 52 |
 | [docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md](../../../docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) | unclassified | 7 | 5, 10, 15, 20, 184 |
 | [docs/v082/V82-01_L3_MIGRATION_NOTES.md](../../../docs/v082/V82-01_L3_MIGRATION_NOTES.md) | informative | 1 | 6 |
-| [fixtures/README.md](../../../fixtures/README.md) | informative | 3 | 39, 41, 46 |
+| [fixtures/README.md](../../../fixtures/README.md) | informative | 4 | 39, 47, 49 |
 | [fixtures/corpus/gcp1-n02-invalid-epistemic.md](../../../fixtures/corpus/gcp1-n02-invalid-epistemic.md) | process | 1 | 12 |
 | [fixtures/fixtures.manifest.json](../../../fixtures/fixtures.manifest.json) | process | 2 | 3 |
 | [fixtures/gcp6/fixtures.manifest.json](../../../fixtures/gcp6/fixtures.manifest.json) | process | 2 | 3 |
@@ -216,8 +215,8 @@ Edition tokens other than the current edition (GKOS-2026-09-24 v0.82.1) in curre
 | [requirements/PROFILE_APPLICABILITY.json](../../../requirements/PROFILE_APPLICABILITY.json) | normative | 2 | 6 |
 | [requirements/PROFILE_APPLICABILITY.md](../../../requirements/PROFILE_APPLICABILITY.md) | normative | 3 | 3, 38 |
 | [requirements/REGISTRY.md](../../../requirements/REGISTRY.md) | normative | 78 | 8, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, ... |
-| [schemas/README.md](../../../schemas/README.md) | informative | 5 | 17, 18, 19, 20, 22 |
-| [schemas/authorized-use-record.r17.schema.json](../../../schemas/authorized-use-record.r17.schema.json) | normative | 1 | 5 |
+| [schemas/README.md](../../../schemas/README.md) | informative | 9 | 17, 18, 19, 20, 21, 22 |
+| [schemas/authorized-use-record.r17.schema.json](../../../schemas/authorized-use-record.r17.schema.json) | normative | 3 | 5 |
 | [schemas/conformance-manifest.schema.json](../../../schemas/conformance-manifest.schema.json) | normative | 2 | 25 |
 | [schemas/proposal-envelope.schema.json](../../../schemas/proposal-envelope.schema.json) | normative | 1 | 30 |
 | [scripts/check-v081-published-release.sh](../../../scripts/check-v081-published-release.sh) | process | 12 | 17, 21, 24, 26, 30, 36, 43, 64, 68, 69, 70, 75 |
@@ -231,12 +230,12 @@ Edition tokens other than the current edition (GKOS-2026-09-24 v0.82.1) in curre
 | [scripts/xw002/requirements-v081.md](../../../scripts/xw002/requirements-v081.md) | process | 73 | 8, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, ... |
 | [scripts/xw002/rows.py](../../../scripts/xw002/rows.py) | process | 1 | 28 |
 | [standard/00_GKOS_Master_Standard.md](../../../standard/00_GKOS_Master_Standard.md) | normative | 5 | 17, 27, 28, 30 |
-| [standard/annexes/Authority_and_Refusal_Receipt_Fields.md](../../../standard/annexes/Authority_and_Refusal_Receipt_Fields.md) | normative | 4 | 4, 109, 119 |
+| [standard/annexes/Authority_and_Refusal_Receipt_Fields.md](../../../standard/annexes/Authority_and_Refusal_Receipt_Fields.md) | normative | 6 | 4, 109, 119 |
 | [standard/annexes/Canonical_Serialization.md](../../../standard/annexes/Canonical_Serialization.md) | normative | 5 | 4, 9, 341, 342 |
 | [standard/annexes/Conformance_Profiles.md](../../../standard/annexes/Conformance_Profiles.md) | normative | 2 | 54, 55 |
 | [standard/annexes/Diagnostic_Code_Registry.md](../../../standard/annexes/Diagnostic_Code_Registry.md) | normative | 2 | 4, 65 |
 | [standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md](../../../standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md) | normative | 1 | 3 |
-| [standard/annexes/Known_Limitations_and_Open_Issues.md](../../../standard/annexes/Known_Limitations_and_Open_Issues.md) | unclassified | 1 | 3 |
+| [standard/annexes/Known_Limitations_and_Open_Issues.md](../../../standard/annexes/Known_Limitations_and_Open_Issues.md) | unclassified | 1 | 22 |
 
 ## GRAPHIC-NEEDED earmarks
 
