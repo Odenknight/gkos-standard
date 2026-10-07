@@ -16,6 +16,8 @@ These clarify existing decisions without allocating an R-number.
 - Requested edition 2026-09-24; prepared 2026-09-25 —
   [Specification status and claims](../docs/decisions/2026-09-24-specification-status-and-claims.md):
   retain name and acronym; prepare unpublished v0.82.1 documentation patch.
+  The patch was published September 24, 2026 (America/New_York); see the
+  [v0.82.1 publication record](../docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
 
 - 2026-09-12 — [Implementation independence](../docs/decisions/2026-09-12-implementation-independence.md):
   different ownership is desirable, not mandatory, for a public second
