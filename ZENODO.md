@@ -1,6 +1,6 @@
 # Zenodo Release and DOI Policy
 
-Zenodo archives **tagged GitHub Releases**, not ordinary commits. After this repository is enabled in Zenodo, each eligible GitHub Release produces an immutable version record and a version-specific DOI. Zenodo also maintains a concept DOI representing GKOS across releases.
+Zenodo archives **tagged GitHub Releases**, not ordinary commits. This repository is enabled in Zenodo; each eligible GitHub Release produces an immutable version record and a version-specific DOI. Zenodo also maintains a concept DOI representing GKOS across releases.
 
 ## Release sequence
 
@@ -33,6 +33,17 @@ Citation updates after archival do not rewrite the signed release snapshot.
 When preparing a later edition, replace the version-specific DOI only after
 that edition's own archive identity is verified; never reuse v0.81's DOI as
 another edition's identity.
+
+### Verified v0.82 archive
+
+GKOS-2026-09-22 v0.82 (informative edition) is published and archived:
+
+- Version DOI: [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582).
+- Concept DOI: [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293).
+- [Public record](https://zenodo.org/records/22905582), technical note, version
+  0.82, dated 2026-09-22, `isNewVersionOf` the v0.81 DOI.
+- [Publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md) binds both DOI identities to the signed tag and
+  exact commit. All 411 archived files match the tagged tree.
 
 ### Citation scope
 

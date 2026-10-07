@@ -6,6 +6,12 @@
 
 **Standing:** Fork-owned planning document; informative and non-normative. This is a phase plan and shared tracker, not the Phase 1 proposal or a compliance claim.
 
+**Upstream integration note (2026-10-07):** This copy preserves mariusTalpos's
+contributor pilot and historical status. Fork-owner instructions below concern
+that pilot; they do not authorize upstream requirements, implementation work,
+or legal claims. The linked fork tracker remains the pilot's canonical tracker.
+See the [upstream review and remaining gates](../reviews/PR48_EU_AI_EVIDENCE_INTEGRATION_REVIEW_20261007.md).
+
 ## Purpose
 
 Demonstrate, in small visible steps, whether GKOS can perform useful documentation and logging functions that support selected EU AI Act requirements. Each demonstration must show both successful behavior and an intentional failure that the system detects.

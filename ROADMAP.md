@@ -1,18 +1,25 @@
 # GKOS roadmap
 
-- **Release coordinate:** GKOS-2026-09-03 v0.81
-- **Publication standing:** pending the owner-approved verified signed tag and
-  GitHub Release; v0.80 remains published until that event
-- **Publication binding:** [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
+- **Release coordinate:** GKOS-2026-09-22 v0.82 (informative edition)
+- **Publication standing:** published and immutable at signed tag `v0.82`
+- **Published source target:** `e2a3dd49a70f6ccaa5fe6c702089ef93adcf9612`
+- **Publication binding:** [publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md); v0.81: [exact commit and approval](docs/implementation/V081_PUBLICATION_BINDING.md)
+- **Development standing:** `main` is post-v0.82 development
 - **Current profile standing:** no qualifying profile
 - **Machine exchange contract:** GKX 2.0
 - **Current governance:** owner-authorized v0.x development; not consensus
-- **Controlling development decisions:** R17–R21 when their exact records are
-  merged on `main`
+- **Accepted development decisions:** R17–R23
+- **Accepted documentation decision:** R22 canonical informative architecture
+- **Accepted prospective semantics:** R23 Layer-3 interoperability for the next normative edition after v0.82
+- **Version DOI:** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582)
+- **Current development focus:** Layer-3 interoperability, ambiguity resolution,
+  retrieval/governance evidence, portable evidence packaging, and public
+  implementation work under R21
 
 This roadmap separates three horizons:
 
-1. publish an honest, exact-bound, non-qualifying v0.81 release;
+1. preserve the published, exact-bound, non-qualifying v0.81 release while
+   keeping post-publication development distinct;
 2. make GKOS useful across the current agent and infrastructure ecosystem
    without turning external protocols into permanent dependencies; and
 3. establish the implementation, evidence, governance, and maintenance basis
@@ -21,52 +28,23 @@ This roadmap separates three horizons:
 The prior pre-GKX roadmap remains preserved under `archive/` as historical
 planning evidence.
 
-## Horizon 1 — GKOS v0.81
+## Horizon 1 — published GKOS v0.81 baseline
 
-### Release standing
+GKOS-2026-09-03 v0.81 is published as a developmental, owner-authorized,
+non-consensus, non-qualifying pre-standard. Its signed tag, dated release
+package, publication evidence, and Zenodo archive are immutable historical
+coordinates. `qualifying_profiles` remains empty; publication does not qualify
+an implementation or create certification standing.
 
-The intended v0.81 release is developmental, owner-authorized, non-consensus,
-and non-qualifying. `qualifying_profiles` remains derived from complete passing
-catalogs and is not manually asserted.
+The publication work formerly listed here is complete. Current `main` may carry
+post-v0.81 informative or provisional development, including R21 ecosystem work
+and RRET-01, without changing what v0.81 means. A correction to the published
+coordinate requires an erratum or later release; the v0.81 package is not
+rewritten.
 
-### Pre-candidate gates
-
-- keep superseded PR #29 closed;
-- correct, review, disposition, and merge PR #30;
-- merge the R20 release-gate and R21 ecosystem-separation decisions through the
-  normal repository process;
-- patch high and critical release-toolchain dependency findings and rerun
-  dependent tests;
-- establish required branch and release-tag controls;
-- make release validation version-aware rather than v0.80-hard-coded; and
-- ensure public documentation uses no private implementation as public
-  independent-implementation evidence.
-
-Only after these predecessor gates pass may `release/v0.81-rc1` be created from
-the exact current `main`.
-
-### Frozen-candidate gates
-
-At one exact release-candidate commit:
-
-- reconcile R17, R18, R19, R20, requirements, applicability, diagnostics,
-  schemas, fixtures, and release text;
-- preserve blocking Ubuntu and Windows lanes on Node 22 and Node 24;
-- preserve the Standard-owned graph evaluator and adversarial false-PASS
-  protections;
-- preserve complete stable-gate mutation coverage for the candidate;
-- execute dependency, secret, link, documentation, conformance, release,
-  checksum, and tag-preflight checks;
-- record exact source, implementation, policy, dependency, toolchain,
-  environment, fixture, result, and artifact identities;
-- disclose real implementation divergences without turning them into a false
-  Standard qualification result;
-- assemble the human and machine evidence package; and
-- permit no unexplained mandatory FAIL, HOLD, BLOCKED, waiver, skip,
-  unsupported capability without a capable PASS, or UNEVALUATED result.
-
-Final publication requires a separate explicit owner approval bound to the
-exact candidate and evidence. CI does not publish automatically.
+Post-publication documentation must continue to distinguish the signed release
+identity, current development state, implementation coordinates, and future
+conformance evidence.
 
 ## Horizon 2 — ecosystem interoperability under R21
 
@@ -103,8 +81,16 @@ Protocol, SDK, service, gateway, and product versions remain separate.
 
 ### E2 — fixtures and reference adapters
 
-Develop public positive, negative, boundary, mutation, downgrade, bypass,
-disclosure, refusal, and effect-containment fixtures. Reference adapters remain
+**Assessment — September 12, 2026: partially delivered, with substantial
+implemented mechanisms and recorded test evidence; shared coverage remains
+incomplete.** See the [E2 ecosystem assessment](docs/reviews/2026-09-12_E2_ECOSYSTEM_ASSESSMENT.md)
+for public sources, revision boundaries and remaining gaps.
+
+Reuse and extend existing Engine, Lite and Kosmos adapters and fixtures. Map
+recorded results to a versioned shared inventory, then complete uncovered
+positive, negative, boundary, mutation, downgrade, bypass, disclosure, refusal
+and effect-containment scenarios. A2A/ACS execution and complete binding
+coverage were not verified in this assessment. Reference adapters remain
 separately versioned from the Standard and grant no production authority.
 
 ### E3 — public pilots
@@ -131,6 +117,14 @@ profile openly. A candidate is not independent until its public source,
 interpretation path, dependencies, ownership, operations, fixtures, and evidence
 support that conclusion. No private repository or unpublished product is named
 or implied.
+
+Different ownership is desirable, not required. Shared ownership alone does
+not disqualify a candidate: the outstanding need is different functioning
+products with demonstrated implementation independence. Separate names,
+interfaces, or packages alone do not demonstrate a different implementation.
+Public evidence must still explain the interpretation path, shared dependencies,
+operations, fixtures, and limitations. See the
+[owner clarification of September 12](docs/decisions/2026-09-12-implementation-independence.md).
 
 ### E5 — external standards engagement
 
@@ -165,7 +159,7 @@ Before v1.0, GKOS must establish and publish at least:
 
 This roadmap does not authorize:
 
-- a v0.81 tag or release;
+- rewriting, retagging, or replacing the published v0.81 coordinate;
 - a qualifying profile;
 - production deployment or credentials;
 - writer or consequential-effect activation;
@@ -174,3 +168,11 @@ This roadmap does not authorize:
 - endorsement of a product or framework;
 - disclosure of private repository identities as public evidence; or
 - use of “GKOS certified” before a governed certification scheme exists.
+
+## Governance middleware documentation
+
+The [full stack walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md), separate [ISO, EU and NIST proposals](docs/ecosystem/README.md#governance-middleware-proposals), and [bounded pilot plan](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md) support the next evidence-gathering work. They add no profile qualification or production authority.
+
+## Accepted development decisions after v0.81
+
+R22 supplies accepted informative architecture authority, carried into the proposed informative v0.82 edition. R23 supplies accepted prospective Layer-3 development semantics for the next normative edition after v0.82 (R24 Option A). R24 controls the informative v0.82 release route. Complete the [V82-01 evidence obligations](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) before closing the three graph ambiguity items. Release publication, profile qualification and interoperability claims retain their separate gates. The [NIST crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) requires its bounded different-model-family review before merge; the ISO Annex A lane remains verification-held.

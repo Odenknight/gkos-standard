@@ -2,7 +2,7 @@
 
 **Status:** developmental orientation; informative, not normative
 
-**Reviewed:** 2026-09-02
+**Implementation/protocol review snapshot:** 2026-09-02. Standard publication coordinate reconciled on 2026-09-06; Engine and protocol pins below were not revalidated.
 
 This matrix keeps Standard publications, machine namespaces, canonical
 profiles, projection profiles, signed package releases, development heads,
@@ -13,9 +13,9 @@ coordinates separate. Matching numbers never imply compatibility.
 
 | Coordinate | Current reviewed value | Meaning | Compatibility rule |
 | --- | --- | --- | --- |
-| GKOS publication | `GKOS-2026-08-20 v0.80` | Current developmental Standard publication | A claim binds to the exact release; prior claims do not carry forward automatically |
+| GKOS publication | `GKOS-2026-09-03 v0.81` | Current developmental Standard publication | A claim binds to the exact release; prior claims do not carry forward automatically |
 | GKX namespace | `2.0` | Current machine exchange namespace | Current records use `gkx_version: "2.0"`; this is not an Engine package version |
-| Canonical artifact profile | `GKX-CBOR-1` | Deterministic CBOR and SHA-256 identity for applicable canonical artifacts | Required by the v0.80 canonicalization annex where the artifact contract invokes it; JSON/YAML renderings are views |
+| Canonical artifact profile | `GKX-CBOR-1` | Deterministic CBOR and SHA-256 identity for applicable canonical artifacts | Required by the applicable canonicalization annex where the artifact contract invokes it; JSON/YAML renderings are views |
 | Standard assessment/SRTP projection coordinate | `gkx-2.0-validating-projection` | Standard schema value and provisional SRTP fixture coordinate | Retained exactly in the SRTP experiment; not inferred from an Engine API name |
 | Engine validating projection profile | `gkx-2.3-validating-projection` | Separately versioned Engine implementation profile | Not the GKX namespace and not interchangeable with the SRTP coordinate |
 | GKOS-Engine signed package release | `2.1.2` at `7bf14b481e78c5ae9d1e14661602be4f24559d0e` | Current reviewed signed reference-implementation tag target | Stable released baseline; later development commits do not inherit this release identity |

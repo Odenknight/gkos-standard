@@ -1,5 +1,10 @@
 # GKOS technical orientation
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](conformance/CLAIMS_POLICY.md).
+
 <!-- markdownlint-disable MD013 -->
 
 ![The GKOS seven-layer model](illustrated/figures/fig1-seven-layers.png)
@@ -11,16 +16,28 @@ conformance evidence, and implementations. It is informative: the
 [development decisions](decisions/GKOS_Decision_Register.md), and applicable
 normative annexes control when an overview differs from them.
 
-- **Standard:** GKOS-2026-09-03 v0.81
+- **Published documentation patch:** GKOS-2026-09-24 v0.82.1;
+  technical baseline GKOS-2026-09-22 v0.82 informative edition (normative population
+  unchanged from GKOS-2026-09-03 v0.81)
 - **Machine exchange contract:** GKX 2.0
 - **Reference implementation baseline:** see the
   [version compatibility matrix](docs/implementation/VERSION_COMPATIBILITY_MATRIX.md)
-- **Maturity:** developmental public pre-standard
+- **Maturity:** developmental specification; public working draft
 
 [Return to the public README](README.md) ·
 [Read the master standard](standard/00_GKOS_Master_Standard.md) ·
 [Inspect schemas](schemas/README.md) ·
 [Run conformance tooling](conformance/README.md)
+
+## Current development decisions
+
+[R22](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) is accepted informative documentation authority. [R23](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md) is accepted prospective development authority for the next normative edition after v0.82 (R24 Option A); its [implementation evidence work](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) remains open. Neither changes the immutable v0.81 release or establishes current profile qualification. The [NIST row-level crosswalk candidate](https://github.com/Odenknight/gkos-standard/pull/42) has its own exact-head review gate, separate from the published high-level NIST add-in.
+
+## End-to-end integration
+
+Start with the [illustrated data-to-action walkthrough](docs/implementation/GKOS_END_TO_END_WORKFLOW.md). It explains all seven responsibilities, the protected enforcement boundary, receipt recovery and separate framework review views. The [publication receipt](docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md) records the live edition.
+
+Use **Selection Envelope** in prose. The existing schema filename `selection-set.schema.json` and serialized identifiers such as `selection_set_id` remain unchanged for compatibility; terminology is not a schema migration.
 
 ## Vocabulary and authority
 
@@ -68,6 +85,20 @@ adopts deterministic canonical serialization, and standardizes context,
 authorized-use, refusal, diagnostic, and effect-scope obligations. See
 [R16](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md).
 
+## Accepted informative architecture for v0.82 development
+
+![GKOS canonical architecture orientation: Standard to GKX seam, plural implementations, conditional retrieval/governance path, governed action boundary, external bindings, governed actors, cross-layer receipts, and separated founder implementation examples](graphics/diagrams/gkos-canonical-architecture.svg)
+
+**GKOS canonical architecture (informative, r3, v0.82 development candidate).** The Standard defines GKX data contracts; implementations consume them and exchange governed records rather than internals. When retrieval is used, retrieval produces an exact candidate set, governance evaluates eligibility separately, and L6 captures selection and deterministically assembles context. Proposed or consequential operations cross the governed boundary, which preserves L4 controls, applicable L5 disposition, L6 context, and L7 authority/effect admission. External MCP/A2A/ACS bindings are informative and versioned: callable is not authorized. Receipts are cross-layer; the shaded founder overlay is an implementation example, not part of the Standard.
+
+[Download PNG](graphics/diagrams/gkos-canonical-architecture.png) · [Editable Mermaid source](graphics/diagrams/gkos-canonical-architecture.mmd) · [Checked label register](graphics/diagrams/gkos-canonical-architecture.labels.txt) · [accepted R22 record](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md)
+
+R22 is accepted informative documentation authority. The figure deliberately
+carries no adoption-status label; its reviewed digests remain unchanged.
+The master standard, permanent requirements, and accepted decisions remain
+controlling. R23 supplies prospective Layer-3 development authority; neither
+decision modifies the immutable v0.81 release or establishes qualification.
+
 ## Layer contracts
 
 The model is cumulative, but processing may be asynchronous, distributed, or
@@ -81,7 +112,7 @@ applicable profile and limitations precisely.
 | **L3 Relationships and Lineage** | Connect claims, sources, actors, and objects | Assertion and lineage records | Typed, sourced, temporal, scoped, attributable relationships |
 | **L4 Validation and Control** | Evaluate deterministic rules and restrictions | Diagnostics and control receipts | Mandatory failures block promotion |
 | **L5 Review and Workflow** | Apply authorized disposition | Decision Record | Append-only decision history; when context was used, manifest identity, version, and hash |
-| **L6 Context Presentation** | Capture selection, then deterministically assemble context | Selection Set and Context Manifest | Digest-bound inputs, restrictions, warnings, contradictions, omissions, recipient, purpose, and expiry |
+| **L6 Context Presentation** | Capture selection, then deterministically assemble context | Selection Envelope and Context Manifest | Digest-bound inputs, restrictions, warnings, contradictions, omissions, recipient, purpose, and expiry |
 | **L7 Authorized Use** | Evaluate actor, action, exact context, grant, and effect scope | Authorized Use Record or Refusal Receipt | Distinct actor roles, authority, manifest hash, outcome, and recovery route |
 
 Detailed requirements live in the
@@ -89,6 +120,10 @@ Detailed requirements live in the
 [artifact mapping](standard/annexes/Layer_Artifact_Mapping.md).
 
 ## Control-plane placement
+
+This control-plane graphic remains a narrower detail view. It does not
+compete with the accepted R22 r3 orientation merely because it focuses on
+placement within an existing stack.
 
 ![Human knowledge connects to the GKOS control plane, which connects governance responsibilities to agent runtimes, workflow engines, and identity and policy systems](graphics/diagrams/gkos-control-plane.svg)
 
@@ -137,7 +172,7 @@ distributed, or re-entrant, as described in the layer contracts above.
 | **L3 Relationships and Lineage** | [Graphiti](https://github.com/getzep/graphiti), [XTDB](https://xtdb.com/), [Neo4j Community Edition](https://github.com/neo4j/neo4j), [Dolt](https://github.com/dolthub/dolt) | Typed direction, actor, provenance, evidence anchors, scope, epistemic state, validity time, version, contradiction and supersession semantics |
 | **L4 Validation and Control** | [Great Expectations](https://greatexpectations.io/), [Soda Core](https://github.com/sodadata/soda-core), [Ragas](https://github.com/explodinggradients/ragas), [OpenTelemetry](https://opentelemetry.io/), [OPA](https://www.openpolicyagent.org/), [Cedar](https://www.cedarpolicy.com/) | Exact policy/check identity and version, evaluated inputs, deterministic outcome, stable diagnostic code, blocking behavior and durable receipt |
 | **L5 Review and Workflow** | [adr-tools](https://github.com/npryce/adr-tools), workflow engines, review systems, and policy-backed approval services | Authorized append-only disposition, actor-role separation, conditions, expiry, supersession and exact binding to governed inputs; policy evaluation alone is not review |
-| **L6 Context Presentation** | [MCP](https://modelcontextprotocol.io/) schemas and metadata, [SPDX](https://spdx.dev/), [CycloneDX](https://cyclonedx.org/), [CUE](https://cuelang.org/) | Captured Selection Set plus deterministic assembly of evidence, contradictions, warnings, restrictions, omissions, recipient, purpose, versions, expiry and reproduction data |
+| **L6 Context Presentation** | [MCP](https://modelcontextprotocol.io/) schemas and metadata, [SPDX](https://spdx.dev/), [CycloneDX](https://cyclonedx.org/), [CUE](https://cuelang.org/) | Captured Selection Envelope plus deterministic assembly of evidence, contradictions, warnings, restrictions, omissions, recipient, purpose, versions, expiry and reproduction data |
 | **L7 Authorized Use** | [Sigstore/Rekor](https://www.sigstore.dev/), [in-toto](https://in-toto.io/), [SPIFFE/SPIRE](https://spiffe.io/), [OpenFGA](https://openfga.dev/) | Exact actor/action/context/grant/effect-scope binding, authorization-time evaluation, outcome, refusal or recovery route, and durable use evidence |
 
 [Obsidian](https://obsidian.md/) is a widely used Markdown client and relevant
@@ -146,100 +181,9 @@ therefore not classified as an open-source component in the table. License,
 edition, and deployment terms for every candidate must be verified before an
 implementation adopts it.
 
-### Product and vendor coverage snapshot
+### Historical ecosystem comparison
 
-The matrix below measures documented component overlap, not product quality or
-GKOS compliance.
-
-- **D** — GKOS defines the layer contract; this is not an implementation claim.
-- **S** — substantial reusable component overlap.
-- **P** — partial or adjacent capability requiring a GKOS adapter and evidence.
-- **—** — no material mapping identified in the reviewed public sources.
-
-| Product or ecosystem | L1 | L2 | L3 | L4 | L5 | L6 | L7 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **Google Cloud / OKF** | P | P | P | P | — | — | P |
-| **Anthropic** | — | — | — | P | P | — | — |
-| **MCP ecosystem** | — | — | — | — | — | P | P |
-| **OpenAI** | — | — | — | P | P | P | — |
-| **Microsoft** | P | — | S | P | — | — | P |
-| **AWS** | — | — | — | S | — | — | P |
-| **Databricks** | P | — | S | P | — | — | P |
-| **Zep / Graphiti** | — | P | S | — | — | — | — |
-| **LangChain ecosystem** | — | — | — | P | P | P | — |
-| **GKOS standard contract** | D | D | D | D | D | D | D |
-
-Why the conservative classifications matter:
-
-- Google [Open Knowledge Format (OKF) v0.2](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
-  adds valuable provenance, trust, lifecycle and attested-computation fields,
-  but its concept identity remains path-based, ordinary links are not the full
-  GKOS assertion contract, trust tiers are advisory, and runtime receipts are
-  not stored in the bundle.
-- [MCP 2026-07-28 authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
-  defines OAuth-based access to protected MCP resources. For HTTP deployments
-  supporting authorization, it uses protected-resource metadata and resource
-  indicators. It does not define GKOS epistemic state, Decision Records,
-  Context Manifests, or Authorized Use Records.
-- Cedar, OPA, IAM, Entra, OpenFGA and similar systems evaluate or enforce
-  authorization. Their closest primary fit is L4 control and L7 enforcement
-  support—not L5 human or organizational disposition by default.
-- Evaluation and observability systems such as OpenAI Evals, LangSmith, MLflow,
-  Ragas and OpenTelemetry can supply L4 evidence. A GKOS adapter must still
-  bind the exact test/policy, inputs, version, result, diagnostic semantics and
-  blocking rule.
-- Catalog and lineage systems such as Microsoft Purview, Databricks Unity
-  Catalog, OpenLineage and Graphiti can supply strong L1/L3 inputs or
-  projections. They do not acquire GKOS promotion or decision authority by
-  storing a graph or lineage event.
-
-Representative primary references for the placements include
-[Anthropic evaluation guidance](https://platform.claude.com/docs/en/test-and-evaluate/develop-tests)
-and the [Claude Agent SDK](https://github.com/anthropics/claude-agent-sdk-python),
-[OpenAI Evals](https://platform.openai.com/docs/guides/evals) and the
-[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/),
-[Microsoft Purview lineage](https://learn.microsoft.com/en-us/purview/data-gov-classic-lineage-user-guide),
-[Amazon Verified Permissions](https://docs.aws.amazon.com/verifiedpermissions/),
-[Cedar](https://github.com/cedar-policy/cedar),
-[Databricks Unity Catalog lineage](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage),
-[MLflow evaluation](https://mlflow.org/docs/latest/ml/evaluation/),
-[Graphiti](https://github.com/getzep/graphiti),
-[LangSmith evaluation](https://docs.langchain.com/langsmith/evaluation), and
-[LangGraph](https://github.com/langchain-ai/langgraph). Products change more
-quickly than GKOS releases; an implemented adapter must pin the exact external
-version and re-evaluate its mapping.
-
-The Google specification named **OKF** is separate from the historical
-**OKF+** name used in this repository. R11 renamed the GKOS technical exchange
-model from OKF+ to **GKX**, and R12 limits Google OKF interoperability to a
-versioned subset. Implementations must not silently map one format into the
-other because both use Markdown and YAML frontmatter.
-
-### What changed in 2026
-
-Two external developments sharpen the adapter boundary:
-
-1. **OKF v0.2** made `sources`, `generated`, `verified`, `status`,
-   `stale_after`, and Attested Computation contracts first-class. An executor
-   returns a declared receipt shape and deterministic attester code checks it.
-   The per-run receipt and verdict remain runtime artifacts rather than stored
-   bundle records. In GKOS terms, those artifacts can become L4 evidence and
-   L1 re-entry sources; they do not become an L7 authorization history unless
-   an adapter binds them to exact context, authority, action and outcome.
-2. **MCP 2026-07-28** strengthened HTTP authorization around OAuth 2.1 roles,
-   protected-resource metadata and target-resource binding. The MCP roadmap's
-   [Agent Identity Working Group](https://modelcontextprotocol.io/development/roadmap)
-   is pursuing workload and user-delegated identity. Roadmap work is not a
-   released identity or governance contract, and authentication of a caller
-   does not establish knowledge-promotion or consequential-use authority.
-
-This convergence supports a bounded GKOS position: provenance, attestation,
-identity, policy and context transport are becoming more capable, while GKOS
-specifies how their outputs participate in one inspectable lifecycle from
-preserved evidence through governed action and Layer-1 re-entry. The reviewed
-sources do not supply that complete seven-contract lifecycle as a single
-governed contract family. This is not a claim that no other system addresses
-similar concerns.
+The [dated vendor snapshot](docs/ecosystem/HISTORICAL_VENDOR_COVERAGE_2026-08-29.md) is retained for background. Its broad overlap ratings are not current adoption evidence. For a candidate adapter, record the exact product/API version, primary source, supported boundary, failure behavior and executable evidence. Use the [integration contract](docs/implementation/GKOS_END_TO_END_WORKFLOW.md#a-contract-implementers-can-test) to evaluate it.
 
 ### Adapter priorities
 
@@ -267,11 +211,12 @@ single transaction without requiring one monolithic platform:
 | L6 | Reproducible evaluation, analysis or inference context | Can another reviewer reconstruct the exact selected inputs, warnings, omissions, policies and versions? |
 | L7 | Deployment, publication, external release, automated decision or tool effect | Was the action permitted for this actor and purpose against this exact context, and is the outcome/refusal durable? |
 
-Current `main` remains GKOS v0.80. v0.81 preparation does not make any vendor,
-retrieval algorithm, graph store, model, client or adapter normative. The
-active fixture catalog must continue to declare no qualifying profile until
-its exact-bound release and coverage gates are satisfied; fail-closed behavior
-is normative, while ingestion and adapter guidance remains informative.
+GKOS-2026-09-03 v0.81 is published at its signed tag and immutable release
+package. Current `main` is post-v0.81 development; later informative or
+provisional work does not rewrite the published coordinate. R21 does not make
+any vendor, retrieval algorithm, graph store, model, client, or adapter
+normative, and RRET-01 remains provisional, non-normative, and non-qualifying.
+No profile is currently qualified.
 
 ## Governed retrieval and context
 
@@ -289,7 +234,7 @@ A Context Manifest is therefore more than a prompt dump or retrieval log. It is
 a purpose-bound record of the context presented for a governed use.
 
 Selection may be non-deterministic, but its complete operative output must be
-captured as a canonical Selection Set. Assembly is deterministic: identical
+captured as a canonical Selection Envelope. Assembly is deterministic: identical
 selection, resolved content, schema, policy, compiler, and canonical-profile
 inputs must produce identical Context Manifest bytes and hash.
 
@@ -362,8 +307,10 @@ pass. Review the
 [fixture catalog](fixtures/README.md).
 
 The active executable suite remains incomplete and declares no qualifying
-profile. No current implementation satisfies the future v1.0
-second-independent-implementation gate.
+profile. No current implementation satisfies the future v1.0 gate for a
+publicly demonstrated second implementation with demonstrated implementation
+independence (see the
+[owner clarification](docs/decisions/2026-09-12-implementation-independence.md)).
 
 ## Provisional domain work
 
@@ -468,6 +415,8 @@ See the claim-limited
 
 ## Claim boundary
 
-GKOS v0.80 is a public pre-standard. Nothing in this document establishes
-accreditation, certification, legal compliance, regulatory authorization,
-scientific validity, product safety, or the future GKOS v1.0 gates.
+GKOS-2026-09-03 v0.81 is a developmental public pre-standard. It is published,
+owner-authorized, non-consensus, and non-qualifying. Nothing in this document
+establishes accreditation, certification, legal compliance, regulatory
+authorization, scientific validity, product safety, implementation conformance,
+or the future GKOS v1.0 gates.

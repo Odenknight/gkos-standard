@@ -11,6 +11,10 @@ if [[ "$version" == "0.81" ]]; then
   exec bash scripts/check-v081-published-release.sh --pre-tag
 fi
 
+if [[ "$version" == "0.82.1" ]]; then
+  exec bash scripts/check-v0821-release.sh
+fi
+
 [[ "$version" =~ ^0\.[0-9]+$ ]] || {
   echo "cannot resolve published version from CITATION.cff" >&2
   exit 1
@@ -48,7 +52,7 @@ for path in "${required_files[@]}"; do
   }
 done
 
-grep -Eq "\*\*(Published|Current) release:\*\* ${release_id}" README.md
+grep -Eq "\*\*(Published release|Current release|Release coordinate):\*\* ${release_id}" README.md
 grep -Fq "GKOS-${release_date} v${version} is an owner-authorized developmental publication" standard/00_GKOS_Master_Standard.md
 grep -Fq "version: \"${version}\"" CITATION.cff
 grep -Fq "date-released: \"${release_date}\"" CITATION.cff
@@ -80,6 +84,10 @@ fi
   cd "$release_dir"
   sha256sum -c SHA256SUMS.txt
 )
+
+if [[ -f "$release_dir/SOURCE_SHA256SUMS.txt" ]]; then
+  node scripts/release-source-checksums.mjs --check "$release_dir"
+fi
 
 unpublished_allocations="$(sed -n '/^## Accepted unpublished allocations$/,/^## Append-only status/p' requirements/REGISTRY.md | grep -Ec '^\| `GKOS-[A-Z]+-[0-9]{3}` ' || true)"
 

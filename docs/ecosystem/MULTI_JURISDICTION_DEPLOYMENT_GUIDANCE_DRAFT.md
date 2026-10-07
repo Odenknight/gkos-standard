@@ -1,10 +1,12 @@
 # Multi-jurisdiction deployment guidance
 
+Publication references reconciled 2026-09-06. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
+
 - **Document ID:** GKOS-MJDG-0.1
 - **Status:** informative R21 draft; not legal advice, normative GKOS text, or a
   universal conflict-of-laws rule
 - **Date:** 2026-09-02
-- **GKOS baseline:** GKOS-2026-08-20 v0.80 and applicable merged development
+- **GKOS baseline:** GKOS-2026-09-03 v0.81 and applicable adopted development
   decisions
 
 ## 1. Purpose

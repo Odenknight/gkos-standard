@@ -1,21 +1,30 @@
 # GKOS master standard
 
+Publication classification: **developmental specification; public working draft**.
+The existing project name, acronym GKOS, titles and identifiers are retained.
+This classification establishes no consensus or certification standing. See the
+[conformance-claims policy](../conformance/CLAIMS_POLICY.md).
+
 GKOS governs evidence, authority, context, validation, review, and authorized
 use. The current technical exchange contract remains GKX 2.0. Canonical
 governed artifacts use the GKX-CBOR-1 profile adopted by R16.
 
-This edition is GKOS-2026-09-03 v0.81, a developmental pre-standard for AI
-governance, accountability, and auditability. It was published on September 3,
-2026 after separate R20 owner approval, a verified signed annotated tag,
-passing post-tag checks, and the GitHub Release. The archived version DOI is
-[10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294).
-It is non-consensus and non-qualifying, with no certification or accreditation
-claim. Prior master texts and release packages remain immutable historical
-evidence. See the [publication receipt](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md).
+This edition is GKOS-2026-09-24 v0.82.1, a published documentation patch of the
+developmental specification / public working draft. The verified signed tag and
+public GitHub Release were published at 2026-09-25T00:54:27Z, September 24 in
+America/New_York, under the owner's recorded publication authorization.
+See the [publication receipt](../docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) for exact-commit CI,
+signature, asset and archive evidence. Historical v0.82 evidence retains its
+own [receipt](../docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md).
+The normative population remains 62 permanent allocations and 28 mandatory
+diagnostic gate codes. GKX 2.0 is unchanged. R22 is informative and R23 remains
+prospective. No profile qualifies; no certification, accreditation or consensus
+standing is claimed. Historical titles, identifiers and packages are preserved.
+See the [v0.82.1 package](../releases/2026-09-24-v0.82.1/README.md).
 
 R17 adds captured-time authority validity intervals; R18 consolidates GCP-4/5
 review and protected-disclosure contracts; R19 prospectively adopts the eighth
-documentation-intent invariant. R20 controls publication. See the
+documentation-intent invariant. R20 controlled v0.81 publication; R24 controls v0.82. See the
 [v0.81 release package](../releases/2026-09-03-v0.81/README.md) and
 [publication binding](../docs/implementation/V081_PUBLICATION_BINDING.md).
 

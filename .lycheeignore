@@ -3,3 +3,10 @@
 ^https://www\.nist\.gov/artificial-intelligence/ai-agent-standards-initiative$
 ^https://www\.nccoe\.nist\.gov/projects/software-and-ai-agent-identity-and-authorization$
 ^https://www\.nist\.gov/itl/ai-risk-management-framework$
+
+# ISO pages return 403 to CI; exact public pages reopened and reviewed 2026-09-06.
+# See docs/ecosystem/EXTERNAL_SOURCE_REGISTER.md for source scope and review.
+^https://www\.iso\.org/standard/42001$
+^https://www\.iso\.org/standard/42005$
+^https://www\.iso\.org/standard/77304\.html$
+^https://www\.iso\.org/about/members$
