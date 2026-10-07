@@ -83,8 +83,8 @@ Current material uses exactly this wording:
 > single-author pre-standard concept; the goal is to advance it to a
 > pre-standard through an open, multi-stakeholder committee process.
 
-Shorter current-state references say “developmental specification” or
-“developmental specification (public working draft)”. “Pre-standard” stays as
+The only shorter form for current-state references is “developmental
+specification (public working draft)”. “Pre-standard” stays as
 history: it names the concept's single-author inception and the committee goal.
 Release records, publication records, accepted decision records, released
 `CHANGELOG.md` sections and archives keep their original words.

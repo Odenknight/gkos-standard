@@ -156,15 +156,30 @@ compatibility impact and fixtures. All wording is proposed.
 - **Gap:** GAP-002.
 - **Target:** `standard/annexes/Authority_and_Refusal_Receipt_Fields.md`, new
   §5.1 after §5.
-- **Change class:** normative-compatible, except the absent-dimension rule,
-  which is breaking (bounded).
+- **Change class:** normative-compatible, except the presence rule, which is
+  breaking (bounded).
 - **Proposed wording:**
 
   > ### 5.1 Containment evaluation
   >
   > A requested effect scope R is contained in an authorizing scope A when every
-  > applicable dimension of R is contained under this table. Evaluation is
-  > deterministic and uses the two scope records and digest-bound policy inputs.
+  > applicable dimension passes the presence check and the containment check
+  > below. Evaluation is deterministic and uses the two scope records and
+  > digest-bound policy inputs.
+  >
+  > **Applicable dimensions.** A dimension is applicable when the effect-scope
+  > schema requires it, when the governing policy declares it required, or when
+  > R or A states it. A dimension that neither scope states and that is not
+  > required is not applicable and is not evaluated.
+  >
+  > **Presence check.** The presence check runs first, for every applicable
+  > dimension, before any containment comparison. An applicable dimension
+  > absent from R or absent from A is unknown, whichever scope omits it. An
+  > absent dimension is never read as unlimited in A or as not requested in R.
+  >
+  > **Containment check.** Each applicable dimension present in both scopes is
+  > compared under this table. Where the table gives no order between the two
+  > values, the dimension is incomparable.
   >
   > | Field | R is contained in A when |
   > | --- | --- |
@@ -178,17 +193,13 @@ compatibility impact and fixtures. All wording is proposed.
   > | `reversibility` | R is at or below A in the order `reversible`, `compensable`, `irreversible` |
   > | `maximum_affected_count` | R is less than or equal to A |
   >
-  > A dimension present in R and absent from A is incomparable. A dimension
-  > absent from R is not requested. A dimension absent from both is not
-  > applicable, unless the governing policy declares it required, in which case
-  > it is unknown.
-  >
   > GKOS does not define an order over the standard sensitivity labels. Without
   > a declared order, two different labels are incomparable.
   >
-  > An unknown or incomparable required dimension fails closed with
+  > An unknown or incomparable applicable dimension fails closed with
   > GKOS-GATE-L7-003 (GKOS-EFFECT-003). A comparable dimension that is not
-  > contained fails closed with GKOS-GATE-L7-002 (GKOS-EFFECT-002).
+  > contained fails closed with GKOS-GATE-L7-002 (GKOS-EFFECT-002). When both
+  > occur in one evaluation, R26-A09's rule for several conditions applies.
   >
   > Containment is evaluated against the actor's standing and against every
   > Authority Receipt in the delegation chain, in chain order. Each derived
@@ -199,12 +210,21 @@ compatibility impact and fixtures. All wording is proposed.
   > Otherwise the action fails closed with GKOS-GATE-L7-002.
 
 - **Compatibility:** implementations that treated an absent authorizing
-  dimension as unlimited now refuse. Scopes that state every dimension are
-  unaffected.
+  dimension as unlimited, or an absent requested dimension as not requested,
+  now refuse. Scopes that state every applicable dimension are unaffected.
 - **Fixtures:** for each row, one contained and one non-contained case; one
-  incomparable sensitivity case with no declared order; one absent-dimension
-  case; one chain where a derived grant widens its predecessor; one
-  `action_class` outside the grant.
+  incomparable sensitivity case with no declared order (expects
+  GKOS-GATE-L7-003). Presence cases, each expecting GKOS-GATE-L7-003:
+  - policy requires `audience`; A states `audience`; R omits it (the case
+    where the omission is in R);
+  - policy requires `audience`; R states it; A omits it;
+  - policy requires `audience`; neither scope states it;
+  - no policy requirement; A states `maximum_affected_count`; R omits it.
+
+  Positive presence case: no policy requirement; neither scope states
+  `audience`; every other dimension is contained (expects admission). Also one
+  chain where a derived grant widens its predecessor, and one `action_class`
+  outside the grant (each expecting GKOS-GATE-L7-002).
 
 ### R26-A03 — Authority interval sources
 
@@ -278,8 +298,17 @@ compatibility impact and fixtures. All wording is proposed.
   > - the registered gate code, and every permanent requirement ID that the
   >   active diagnostic-code registry maps to that code and that applies to the
   >   refused operation;
-  > - the requested effect scope, when the refused operation is an action
-  >   evaluated under GKOS-EFFECT-001; it is absent otherwise;
+  > - the kind of refused operation: `consequential-action` when the refused
+  >   operation is a consequential action (Definitions annex, D-1), whose
+  >   effect scope GKOS-EFFECT-001 governs, and `other` for every other
+  >   operation. This rule does not depend on the gate code, its layer, or
+  >   whether a gate code is present;
+  > - for a `consequential-action` refusal, the requested effect scope as
+  >   presented. If the action presented no effect scope, or one that is not
+  >   schema-valid, the record states that defect (`absent` or `invalid`)
+  >   instead, and its digest-bound inputs bind the bytes received (R26-A06).
+  >   For an `other` refusal, neither the requested effect scope nor the defect
+  >   is present;
   > - the refusal effect, which is one of:
   >   - `block`: the operation was not admitted;
   >   - `refuse`: a request or artifact was rejected;
@@ -293,11 +322,33 @@ compatibility impact and fixtures. All wording is proposed.
   >   (GKOS-RETENTION-003), GKOS-GATE-L4-003 (GKOS-DELEGATION-002), and
   >   GKOS-GATE-L5-005 (GKOS-REVIEW-003).
 
+- **Applicability check.** Schema validation checks the receipt against the
+  operation kind it declares (R26-S02). Whether that declaration is correct is
+  a semantic check: each fixture states the evaluated operation, and the
+  expected receipt carries the matching operation kind. A GKOS-GATE-L7-002 or
+  GKOS-GATE-L7-003 refusal is always a `consequential-action` refusal, because
+  those codes arise only from effect-scope evaluation.
 - **Compatibility:** a new Refusal Receipt schema version (R26-S02).
   Version 1.0.0 receipts remain valid historical evidence.
 - **Fixtures:** an L7-001 refusal citing GKOS-AUTHUSE-003 and
   GKOS-AUTHUSE-007; one refusal per effect value; an L4-003 refusal without an
   escalation route (expects the receipt to be rejected as incomplete).
+  Operation-kind cases:
+  - L7 action refusal: GKOS-GATE-L7-002 for a disclosure outside the
+    deployment boundary, with `requested_effect_scope` (valid);
+  - non-L7 action refusal: GKOS-GATE-L5-005 for a promotion to `accepted`
+    proposed and reviewed by the same actor, with `requested_effect_scope`
+    (valid); the same receipt without it (invalid);
+  - gateless action refusal under R26-A10 Option B: GKOS-AUTHUSE-001 cited
+    with no gate code, for a deletion whose Authorized Use Record lacks the
+    manifest binding, with `requested_effect_scope` (valid); the same receipt
+    without it (invalid);
+  - L7 action with no presented scope: GKOS-GATE-L7-003 with
+    `requested_effect_scope_defect` `absent` (valid);
+  - non-action refusal: GKOS-GATE-L6-002 for an artifact with a duplicate map
+    key, operation kind `other`, no requested scope (valid); the same receipt
+    with a `requested_effect_scope` (invalid);
+  - a GKOS-GATE-L7-002 receipt declaring operation kind `other` (invalid).
 
 ### R26-A06 — Received-bytes digests
 
@@ -529,20 +580,84 @@ compatibility impact and fixtures. All wording is proposed.
 - **Change class:** clarification.
 - **Proposed wording:**
 
-  > A record satisfies a semantic role when a role projection exists: a
-  > declared, versioned mapping from each required role element to a field of
-  > the record, such that the projected values validate against the role's
-  > schema. The implementation MUST declare each role projection it relies on
-  > in its conformance manifest.
+  > A record satisfies a semantic role when a declared role projection builds
+  > from it a role object that validates against the role's schema. The
+  > implementation MUST declare each role projection it relies on in its
+  > conformance manifest, with identity, version and digest.
   >
-  > The role schema validates the projection, not the source record. The source
-  > record keeps its own `artifact_type`, schema and canonical hash. A record
-  > that lacks a required role element does not satisfy the role, and a
-  > dedicated role record is then required.
+  > A role projection builds the role object in two parts:
+  >
+  > 1. **Envelope constants.** The projection sets each envelope field that
+  >    the role schema fixes as a constant (`canonical_profile`,
+  >    `artifact_type` and `schema_version`) to that constant. It never reads
+  >    these fields from the source record. No other role element may be set
+  >    by a constant.
+  > 2. **Field mappings.** Every other role element in the role object comes
+  >    from exactly one source field, by one of three operations: copy the
+  >    value unchanged; wrap a single value as a one-element set, where the
+  >    role element is a set; or translate an enumerated value through a value
+  >    table declared in the projection. A source value missing from the table
+  >    means the record does not satisfy the role. No other conversion is
+  >    permitted. In particular, a timestamp or identifier is not reformatted.
+  >
+  > The role object is a derived view. It adds no fact that the source record
+  > does not state. The role schema validates the role object; the source
+  > record's own schema validates the source record. The source record keeps
+  > its own `artifact_type`, schema and canonical hash. A reference to the
+  > record in its role cites the source record's artifact reference and the
+  > projection's identity, version and digest.
+  >
+  > A record that cannot supply a required role element through a field
+  > mapping does not satisfy the role. A dedicated role record is then
+  > required.
 
 - **Compatibility:** none for dedicated role records.
-- **Fixtures:** a Decision Record projected to the Refusal Receipt role; a
-  projection that omits `gate_code` (does not satisfy the role).
+- **Positive fixture: Decision Record to Refusal Receipt.** The source is a
+  Decision Record valid under the current open sidecar schema
+  (`schemas/decision-record.schema.json`, which permits additional
+  properties). Besides its own required fields (`decision_id`, `disposition`
+  `rejected`, `decided_at` in canonical form `2026-10-01T14:00:00.000000Z`,
+  `actor`), it carries `reviewing_actor` (an actor reference) and the refusal
+  fields `gate_code` `GKOS-GATE-L5-003`, `requirement_ids`
+  [`GKOS-REVIEW-001`], `predicate_ref`, `input_refs` (the digest-bound
+  proposal), `policy_ref`, `operation_kind` `other` (the proposal changes tags
+  only) and `refusal_effect` `refuse`. The projection, declared in the
+  conformance manifest under R26-S04, is:
+
+  | Role element | Built from | Operation |
+  | --- | --- | --- |
+  | `canonical_profile` | none | constant `GKX-CBOR-1` |
+  | `artifact_type` | none | constant `refusal-receipt` |
+  | `schema_version` | none | constant: the R26-S02 version |
+  | `receipt_id` | `decision_id` | copy |
+  | `gate_code` | `gate_code` | copy |
+  | `requirement_ids` | `requirement_ids` | copy |
+  | `predicate_ref` | `predicate_ref` | copy |
+  | `result` | `disposition` | value table: `rejected` to `refused` |
+  | `input_refs` | `input_refs` | copy |
+  | `evaluated_at` | `decided_at` | copy |
+  | `actor_context` | `reviewing_actor` | wrap as a one-element set |
+  | `operation_kind` | `operation_kind` | copy |
+  | `refusal_effect` | `refusal_effect` | copy |
+  | `policy_ref` | `policy_ref` | copy |
+
+  The role object validates against the R26-S02 Refusal Receipt schema, so
+  the record satisfies the role. The source record's `artifact_type` and
+  hash are unchanged.
+- **Negative fixtures**, each against the same source and projection unless
+  stated, and each expected not to satisfy the role:
+  - the projection omits the `gate_code` mapping (the role object fails the
+    role schema);
+  - the source `disposition` is `deferred`, which the value table does not
+    list;
+  - the source `decided_at` is `2026-10-01T14:00:00Z`, which the source schema
+    accepts but the role's canonical timestamp does not, and which the
+    projection may not reformat;
+  - the projection sets `gate_code` by a constant instead of mapping it (an
+    invalid projection declaration);
+  - the projection reads `artifact_type` from the source record (an invalid
+    projection declaration; the role object would also fail the role
+    schema's constant).
 
 ### R26-A14 — Overdue review and exceptions
 
@@ -681,9 +796,9 @@ historical artifacts. All targets are frozen paths and wait for R25.
 | ID | Gap | Schema | Change |
 | --- | --- | --- | --- |
 | R26-S01 | GAP-004, GAP-005 | `authorized-use-record`, `authority-receipt` | Publish one current Authorized Use Record schema (`schema_version` `1.1.0`, from the R17 candidate) and add required `revocation_checks` (receipt reference, status, `checked_at`, method). Add `subject`, `tenant_scope` and `revocation.locator` to the Authority Receipt. Set both README rows to the edition that publishes them. |
-| R26-S02 | GAP-006, GAP-011 | `refusal-receipt` | Replace `requirement_id` with set-ordered `requirement_ids` (one or more). Make `refusal_effect` required with the R26-A05 values. Require `requested_effect_scope` when `gate_code` is an L7 code. Require `escalation_route` for L4-001, L4-002, L4-003 and L5-005. Allow `input_refs` to use received-bytes digests. Under R26-A10 Option B, make `gate_code` optional. |
+| R26-S02 | GAP-006, GAP-011 | `refusal-receipt` | Replace `requirement_id` with set-ordered `requirement_ids` (one or more). Make `refusal_effect` required with the R26-A05 values. Add required `operation_kind` (`consequential-action` or `other`) and optional `requested_effect_scope_defect` (`absent` or `invalid`). When `operation_kind` is `consequential-action`, require exactly one of `requested_effect_scope` and `requested_effect_scope_defect`; when it is `other`, forbid both. When `gate_code` is GKOS-GATE-L7-002 or GKOS-GATE-L7-003, require `operation_kind` `consequential-action`. Require `escalation_route` for L4-001, L4-002, L4-003 and L5-005. Allow `input_refs` to use received-bytes digests. Under R26-A10 Option B, make `gate_code` optional. |
 | R26-S03 | GAP-007 | `gkx-common.defs` | Add `receivedBytesDigest` (`algorithm` `sha-256`, `basis` `received-bytes`, `value`). Let `artifactReference.digest` be either digest form. |
-| R26-S04 | GAP-012, GAP-016, GAP-009 | `conformance-manifest` | Add `receipt_binding` (mechanism and evidence locator), `canonical_rendering` (format, version, verifier locator and SHA-256), `supported_artifact_schemas` (pairs), and `role_projections` (role, source schema, mapping version and digest). |
+| R26-S04 | GAP-012, GAP-016, GAP-009 | `conformance-manifest` | Add `receipt_binding` (mechanism and evidence locator), `canonical_rendering` (format, version, verifier locator and SHA-256), `supported_artifact_schemas` (pairs), and `role_projections` (role, role schema version, source schema, projection identity, version and digest; the field mappings and value tables under R26-A13). |
 | R26-S05 | GAP-013 | `decision-record` | Add a canonical version with `canonical_profile`, `artifact_type`, `schema_version`; required `proposal_ref` and set-ordered `evidence_refs`; `deciding_actor` as an actor reference; `escalated` disposition; canonical timestamps; `predecessor_ref` and per-writer `sequence`; closed properties. Keep the current sidecar schema for legacy records. |
 | R26-S06 | GAP-014 | `proposal-envelope`, `decision-record`, `assessment` | Replace `actorIdentity` with `actorReference` in new versions. Keep `actorIdentity` for legacy sidecars. |
 | R26-S07 | GAP-017 | `authority-receipt` | Add optional `review_deadline_seconds` (integer, at least 1), required when the grant permits delegated actions that need review. |
@@ -702,7 +817,8 @@ coordinator routes them; those aimed at frozen annexes wait for R25.
   implies it.
 - **Q2 (R26-A02).** Confirm the reversibility order and the reading of
   `layer_reach` as the highest layer an effect may change. Confirm that the
-  sensitivity order stays deployment-declared.
+  sensitivity order stays deployment-declared. Confirm the presence rule: a
+  dimension stated in only one scope is unknown and fails closed.
 - **Q3 (R26-A04).** Require a policy-declared maximum revocation-status age, or
   allow a check bound to the same admission transaction instead?
 - **Q4 (R26-A10).** Option A (allocate codes) or Option B (scope rule)?

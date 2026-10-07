@@ -145,12 +145,14 @@ mismatches 4.
   (`schemas/authorized-use-record.schema.json:20`) and the receipt's
   `permitted_action_classes` (`schemas/authority-receipt.schema.json:23`) have no
   stated membership rule.
-- **Resolution.** R26-A02 defines a per-dimension rule, the treatment of absent
-  dimensions, and chain-order evaluation. Owner question Q2 covers the
-  reversibility order and the meaning of `layer_reach`. Fixtures: one contained
-  and one non-contained case per dimension; one incomparable case for sensitivity
-  without a declared order (GKOS-GATE-L7-003). Graphic: requested scope inside
-  actor standing and each delegation link.
+- **Resolution.** R26-A02 defines a per-dimension rule, a presence check that
+  runs before containment and treats a dimension absent from either scope as
+  unknown, and chain-order evaluation. Owner question Q2 covers the
+  reversibility order, the meaning of `layer_reach` and the presence rule.
+  Fixtures: one contained and one non-contained case per dimension; one
+  incomparable case for sensitivity without a declared order (GKOS-GATE-L7-003);
+  a policy-required dimension that A states and R omits (GKOS-GATE-L7-003).
+  Graphic: requested scope inside actor standing and each delegation link.
 
 ### GAP-003 — Which interval GKOS-AUTHUSE-007 tests
 
@@ -397,7 +399,10 @@ mismatches 4.
   schema fixes its own `artifact_type` and forbids other properties
   (`schemas/refusal-receipt.schema.json:13`, line 44;
   `schemas/authorized-use-record.schema.json:16`, line 57).
-- **Resolution.** R26-A13 defines a declared role projection; R26-S04 adds the
+- **Resolution.** R26-A13 defines a declared role projection: the projection
+  sets the role schema's envelope constants itself and maps every other role
+  element from one source field. R26-A13 gives a Decision Record to Refusal
+  Receipt projection with positive and negative fixtures. R26-S04 adds the
   declaration to the manifest.
 
 ### GAP-017 — When review becomes overdue
