@@ -10,6 +10,9 @@
   and clarification changes; no requirement, schema, fixture, runner, gate or
   profile change; historical records and released changelog sections are
   unchanged.
+- Add a publication note below the GKOS-DOCSTD-001 status line: R19, which
+  adopted its Section 4, was published with GKOS-2026-09-03 v0.81. The status
+  line itself is unchanged.
 
 ## GKOS-2026-09-24 v0.82.1
 

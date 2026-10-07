@@ -3,6 +3,13 @@
 **Status:** Section 4 adopted by R19 as an unpublished development procedure;
 all other sections remain proposed and non-normative
 
+**Publication note (2026-10-07):** R19, which adopted Section 4, was published
+with GKOS-2026-09-03 v0.81 (see the R19 entry in the
+[decision register](../../decisions/GKOS_Decision_Register.md) and the
+`decisions` list in the
+[v0.81 release manifest](../../releases/2026-09-03-v0.81/RELEASE_MANIFEST.yml)).
+The other sections remain proposed and non-normative.
+
 **Purpose:** Keep specification and implementation synchronized without making
 the reference implementation the specification authority.
 
