@@ -10,8 +10,9 @@ ratification, independent certification, accreditation, or regulator approval.
 ### R26 — Specification detail amendments
 
 - **Date:** 2026-10-07
-- **Status:** Proposed; no acceptance date; cannot be accepted before R25
-- **Development line:** v0.83 development line opened by R25 (proposed)
+- **Status:** Proposed; no acceptance date
+- **Development line:** v0.83 development line opened by R25 (accepted 2026-10-07)
+- **Owner answers:** Q1–Q6 answered 2026-10-07 (R26 §7.1); implementation proceeds on a branch as the evidence package for acceptance
 - **Proposal:** Close technical-detail gaps `GAP-001..024` recorded in
   [GKOS-SPEC-DETAIL-001](../docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md)
   through 18 drafted normative amendments (`R26-A01..A18`) and 7 schema changes
@@ -20,7 +21,7 @@ ratification, independent certification, accreditation, or regulator approval.
   received-bytes digests, schema-to-CBOR mapping, gate-code specificity and
   coverage, actor sameness, State-Change Receipt elements, role projections,
   overdue review, hold results, and closure-rule identity. Allocates no
-  requirement ID or gate code; owner questions Q1-Q6 are open.
+  requirement ID; gate codes follow Q4 Option A on acceptance.
 - **Record:**
   [R26_Specification_Detail_Amendments_Development_Decision_Record.md](R26_Specification_Detail_Amendments_Development_Decision_Record.md)
 

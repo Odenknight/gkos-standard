@@ -59,6 +59,9 @@
   Published GKOS-2026-09-24 v0.82.1 stays immutable at its signed tag;
   frozen technical paths may change for the next edition under the amendment
   path, and the development validator now permits them.
+- Record the owner's 2026-10-07 answers to R26 questions Q1–Q6 (R26 §7.1).
+  R26 stays proposed; its chosen items are built on the v0.83 line as an
+  evidence package for acceptance.
 
 ## GKOS-2026-09-24 v0.82.1
 

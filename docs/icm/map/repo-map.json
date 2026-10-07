@@ -62,7 +62,7 @@
     {
       "id": "repo-machinery",
       "source": "CI, configuration and scripts",
-      "files": 72
+      "files": 73
     },
     {
       "id": "root-process",
@@ -87,7 +87,7 @@
     {
       "id": "decision-folder",
       "source": "decisions/, docs/decisions/, docs/directives/",
-      "files": 22
+      "files": 24
     },
     {
       "id": "normative-surface",
@@ -132,7 +132,7 @@
     {
       "id": "proposals-folder",
       "source": "docs/proposals/ holds proposals",
-      "files": 4
+      "files": 5
     },
     {
       "id": "historical-title",
@@ -209,12 +209,12 @@
       "tracker_path": "docs/icm/map/areas/decisions.md",
       "tracker_exists": true,
       "folder": "decisions",
-      "files": 20,
+      "files": 22,
       "standing": {
         "normative": 0,
         "informative": 0,
         "proposed": 0,
-        "decision": 19,
+        "decision": 21,
         "historical": 1,
         "release": 0,
         "generated": 0,
@@ -223,7 +223,7 @@
         "unclassified": 0
       },
       "frozen": 0,
-      "current_edition_refs": 3,
+      "current_edition_refs": 19,
       "stale_edition_candidates": 0,
       "pre_standard_current_facing": 0,
       "graphic_needed": 0
@@ -425,11 +425,11 @@
       "tracker_path": "docs/icm/map/areas/docs-proposals.md",
       "tracker_exists": true,
       "folder": "docs/proposals",
-      "files": 4,
+      "files": 5,
       "standing": {
         "normative": 0,
         "informative": 0,
-        "proposed": 4,
+        "proposed": 5,
         "decision": 0,
         "historical": 0,
         "release": 0,
@@ -439,8 +439,8 @@
         "unclassified": 0
       },
       "frozen": 0,
-      "current_edition_refs": 2,
-      "stale_edition_candidates": 7,
+      "current_edition_refs": 4,
+      "stale_edition_candidates": 19,
       "pre_standard_current_facing": 0,
       "graphic_needed": 0
     },
@@ -775,8 +775,8 @@
         "unclassified": 0
       },
       "frozen": 0,
-      "current_edition_refs": 82,
-      "stale_edition_candidates": 70,
+      "current_edition_refs": 84,
+      "stale_edition_candidates": 72,
       "pre_standard_current_facing": 3,
       "graphic_needed": 9
     },
@@ -809,7 +809,7 @@
       "tracker_path": "docs/icm/map/areas/scripts.md",
       "tracker_exists": true,
       "folder": "scripts",
-      "files": 14,
+      "files": 15,
       "standing": {
         "normative": 0,
         "informative": 0,
@@ -818,13 +818,13 @@
         "historical": 0,
         "release": 0,
         "generated": 0,
-        "process": 14,
+        "process": 15,
         "asset": 0,
         "unclassified": 0
       },
       "frozen": 0,
-      "current_edition_refs": 13,
-      "stale_edition_candidates": 116,
+      "current_edition_refs": 24,
+      "stale_edition_candidates": 121,
       "pre_standard_current_facing": 0,
       "graphic_needed": 0
     },
@@ -875,7 +875,7 @@
     {"path":".markdownlint.jsonc","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-07-22","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":".zenodo.json","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-09-24","current_edition_refs":3,"stale_edition_candidates":[{"line":4,"token":"v0.82"}],"pre_standard":[{"line":22,"count":1,"class":"current-facing","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"ACKNOWLEDGMENTS.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-07-31","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"CHANGELOG.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-10-07","current_edition_refs":13,"stale_edition_candidates":[{"line":16,"token":"v0.81"},{"line":16,"token":"GKOS-2026-09-03"},{"line":22,"token":"v0.81"},{"line":46,"token":"v0.83"}],"pre_standard":[{"line":20,"count":1,"class":"current-facing","d2_wording":false},{"line":143,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"CHANGELOG.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-10-07","current_edition_refs":15,"stale_edition_candidates":[{"line":16,"token":"v0.81"},{"line":16,"token":"GKOS-2026-09-03"},{"line":22,"token":"v0.81"},{"line":46,"token":"v0.83"},{"line":58,"token":"v0.83"},{"line":63,"token":"v0.83"}],"pre_standard":[{"line":20,"count":1,"class":"current-facing","d2_wording":false},{"line":150,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"CITATION.cff","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-10-07","current_edition_refs":5,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"CODE_OF_CONDUCT.md","area":"root","subarea":"","tracker":"root","standing":"process","standing_rule":"root-process","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"COMPAT.md","area":"root","subarea":"","tracker":"root","standing":"historical","standing_rule":"status-line","frozen":false,"last_commit":"2026-09-22","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
@@ -954,7 +954,7 @@
     {"path":"conformance/runner/test/track-a-evidence.test.mjs","area":"conformance","subarea":"runner","tracker":"conformance","standing":"process","standing_rule":"repo-machinery","frozen":true,"last_commit":"2026-08-31","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"conformance/runner/test/track-a-gates.test.mjs","area":"conformance","subarea":"runner","tracker":"conformance","standing":"process","standing_rule":"repo-machinery","frozen":true,"last_commit":"2026-08-29","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"conformance/runner/track-a-evidence.mjs","area":"conformance","subarea":"runner","tracker":"conformance","standing":"process","standing_rule":"repo-machinery","frozen":true,"last_commit":"2026-08-31","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"decisions/GKOS_Decision_Register.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":3,"stale_edition_candidates":[],"pre_standard":[{"line":195,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"decisions/GKOS_Decision_Register.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":5,"stale_edition_candidates":[],"pre_standard":[{"line":227,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/OPEN_QUESTIONS.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/R10_Schema_Fixture_Conformance_Dev_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-07-23","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/R11_GKX_Naming_Transition_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-08-02","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
@@ -972,6 +972,8 @@
     {"path":"decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-09-04","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-09-14","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-09-22","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"decisions/R25_V083_Development_Line_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":9,"stale_edition_candidates":[],"pre_standard":[{"line":84,"count":1,"class":"historical","d2_wording":true},{"line":85,"count":1,"class":"historical","d2_wording":false},{"line":88,"count":1,"class":"historical","d2_wording":false}],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":5,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/R9_V0.76_Development_Decision_Record.md","area":"decisions","subarea":"","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-07-20","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"decisions/ratification-questionnaires/GKOS_2026-07-17_v0.75_Ratification_Questionnaire.md","area":"decisions","subarea":"ratification-questionnaires","tracker":"decisions","standing":"decision","standing_rule":"decision-folder","frozen":false,"last_commit":"2026-07-17","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/CORPUS-STATUS.md","area":"docs","subarea":"","tracker":"docs","standing":"informative","standing_rule":"status-line","frozen":false,"last_commit":"2026-10-07","current_edition_refs":2,"stale_edition_candidates":[{"line":10,"token":"v0.82"},{"line":11,"token":"v0.81"},{"line":57,"token":"v0.75"},{"line":57,"token":"GKOS-2026-07-17"}],"pre_standard":[{"line":13,"count":1,"class":"current-facing","d2_wording":true},{"line":14,"count":1,"class":"current-facing","d2_wording":false}],"graphic_needed":[{"line":45,"id":"GN-027","description":"Repository standing map: normative, decision, informative, proposed, dated records, historical, immutable"}],"malformed_earmarks":[]},
@@ -1107,6 +1109,7 @@
     {"path":"docs/implementation/archive/OKF-Plus-2.3-Specialist-Reviewer-Role.md","area":"docs","subarea":"implementation","tracker":"docs-implementation","standing":"historical","standing_rule":"archive-folder","frozen":false,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/implementation/archive/README.md","area":"docs","subarea":"implementation","tracker":"docs-implementation","standing":"historical","standing_rule":"archive-folder","frozen":false,"last_commit":"2026-08-05","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/proposals/GKOS-DOCSTD-001_Documentation_Engineering_Alignment.md","area":"docs","subarea":"proposals","tracker":"docs-proposals","standing":"proposed","standing_rule":"proposals-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":0,"stale_edition_candidates":[{"line":7,"token":"v0.81"},{"line":7,"token":"GKOS-2026-09-03"},{"line":10,"token":"v0.81"},{"line":10,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md","area":"docs","subarea":"proposals","tracker":"docs-proposals","standing":"proposed","standing_rule":"proposals-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":2,"stale_edition_candidates":[{"line":10,"token":"v0.82"},{"line":10,"token":"v0.81"},{"line":75,"token":"v0.76"},{"line":79,"token":"v0.80"},{"line":111,"token":"v0.76"},{"line":112,"token":"v0.78"},{"line":113,"token":"v0.76"},{"line":119,"token":"v0.78"},{"line":122,"token":"v0.76"},{"line":192,"token":"v0.80"},{"line":195,"token":"v0.81"},{"line":196,"token":"v0.80"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/proposals/NAV-002_SELECTION_DISCOVERY_CONTRACT_DRAFT.md","area":"docs","subarea":"proposals","tracker":"docs-proposals","standing":"proposed","standing_rule":"proposals-folder","frozen":false,"last_commit":"2026-10-07","current_edition_refs":2,"stale_edition_candidates":[{"line":9,"token":"v0.80"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/proposals/SRTP_DRAFT_PROFILE.md","area":"docs","subarea":"proposals","tracker":"docs-proposals","standing":"proposed","standing_rule":"proposals-folder","frozen":false,"last_commit":"2026-08-16","current_edition_refs":0,"stale_edition_candidates":[{"line":5,"token":"v0.79"},{"line":5,"token":"GKOS-2026-08-16"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"docs/proposals/SRTP_DRAFT_TRACEABILITY.md","area":"docs","subarea":"proposals","tracker":"docs-proposals","standing":"proposed","standing_rule":"proposals-folder","frozen":false,"last_commit":"2026-08-08","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
@@ -1363,9 +1366,10 @@
     {"path":"scripts/check-v0821-release.sh","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":1,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/icm-map.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/release-source-checksums.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-09-24","current_edition_refs":0,"stale_edition_candidates":[],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"scripts/test-verify-v0821-development.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":10,"stale_edition_candidates":[{"line":114,"token":"v0.81"},{"line":129,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/v081-source-checksums.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-09-03","current_edition_refs":0,"stale_edition_candidates":[{"line":12,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/verify-v081-attestation.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-09-03","current_edition_refs":0,"stale_edition_candidates":[{"line":16,"token":"v0.81"},{"line":18,"token":"v0.81"},{"line":40,"token":"v0.81"},{"line":59,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
-    {"path":"scripts/verify-v0821-release.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":11,"stale_edition_candidates":[{"line":45,"token":"v0.82"},{"line":59,"token":"v0.82"},{"line":61,"token":"v0.82"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
+    {"path":"scripts/verify-v0821-release.mjs","area":"scripts","subarea":"","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":12,"stale_edition_candidates":[{"line":42,"token":"v0.82"},{"line":48,"token":"v0.82"},{"line":52,"token":"v0.83"},{"line":74,"token":"v0.82"},{"line":76,"token":"v0.82"},{"line":84,"token":"v0.83"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/xw002/gen.py","area":"scripts","subarea":"xw002","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":0,"stale_edition_candidates":[{"line":48,"token":"v0.81"},{"line":68,"token":"v0.81"},{"line":176,"token":"v0.81"},{"line":176,"token":"GKOS-2026-09-03"},{"line":177,"token":"v0.81"},{"line":227,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/xw002/requirements-v081.md","area":"scripts","subarea":"xw002","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":0,"stale_edition_candidates":[{"line":8,"token":"v0.81"},{"line":8,"token":"v0.80"},{"line":8,"token":"GKOS-2026-09-03"},{"line":16,"token":"v0.77"},{"line":17,"token":"v0.77"},{"line":18,"token":"v0.77"},{"line":19,"token":"v0.77"},{"line":20,"token":"v0.77"},{"line":21,"token":"v0.77"},{"line":22,"token":"v0.77"},{"line":23,"token":"v0.77"},{"line":24,"token":"v0.77"},{"line":25,"token":"v0.77"},{"line":26,"token":"v0.79"},{"line":27,"token":"v0.79"},{"line":28,"token":"v0.79"},{"line":29,"token":"v0.79"},{"line":30,"token":"v0.79"},{"line":31,"token":"v0.79"},{"line":32,"token":"v0.79"},{"line":33,"token":"v0.79"},{"line":34,"token":"v0.79"},{"line":35,"token":"v0.79"},{"line":36,"token":"v0.79"},{"line":37,"token":"v0.79"},{"line":38,"token":"v0.79"},{"line":39,"token":"v0.79"},{"line":40,"token":"v0.81"},{"line":41,"token":"v0.79"},{"line":42,"token":"v0.79"},{"line":43,"token":"v0.80"},{"line":44,"token":"v0.80"},{"line":45,"token":"v0.80"},{"line":46,"token":"v0.80"},{"line":47,"token":"v0.80"},{"line":48,"token":"v0.80"},{"line":49,"token":"v0.80"},{"line":50,"token":"v0.80"},{"line":51,"token":"v0.80"},{"line":52,"token":"v0.80"},{"line":53,"token":"v0.80"},{"line":54,"token":"v0.80"},{"line":55,"token":"v0.80"},{"line":56,"token":"v0.80"},{"line":57,"token":"v0.80"},{"line":58,"token":"v0.80"},{"line":59,"token":"v0.80"},{"line":60,"token":"v0.80"},{"line":61,"token":"v0.80"},{"line":62,"token":"v0.80"},{"line":63,"token":"v0.80"},{"line":64,"token":"v0.80"},{"line":65,"token":"v0.80"},{"line":66,"token":"v0.80"},{"line":67,"token":"v0.80"},{"line":68,"token":"v0.80"},{"line":69,"token":"v0.80"},{"line":70,"token":"v0.80"},{"line":71,"token":"v0.80"},{"line":72,"token":"v0.81"},{"line":73,"token":"v0.81"},{"line":74,"token":"v0.81"},{"line":75,"token":"v0.81"},{"line":76,"token":"v0.81"},{"line":77,"token":"v0.81"},{"line":81,"token":"v0.81"},{"line":82,"token":"v0.81"},{"line":89,"token":"v0.77"},{"line":91,"token":"v0.79"},{"line":92,"token":"v0.79"},{"line":93,"token":"v0.80"},{"line":96,"token":"v0.81"},{"line":97,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
     {"path":"scripts/xw002/rows.py","area":"scripts","subarea":"xw002","tracker":"scripts","standing":"process","standing_rule":"repo-machinery","frozen":false,"last_commit":"2026-10-07","current_edition_refs":0,"stale_edition_candidates":[{"line":28,"token":"v0.81"}],"pre_standard":[],"graphic_needed":[],"malformed_earmarks":[]},
