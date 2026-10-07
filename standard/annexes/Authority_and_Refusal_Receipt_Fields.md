@@ -115,5 +115,6 @@ R17 defines authority validity as the half-open interval
 Evaluation binds a captured canonical action-evaluation time at the final
 admission or commit boundary for the consequential effect. Missing, malformed,
 unavailable, or indeterminate required time evidence fails closed under
-`GKOS-GATE-L7-001`. This section is an accepted unpublished development
-amendment and does not retroactively modify the immutable v0.80 release.
+`GKOS-GATE-L7-001`. This section was adopted by R17 and published with
+GKOS-2026-09-03 v0.81. It does not retroactively modify the immutable v0.80
+release.

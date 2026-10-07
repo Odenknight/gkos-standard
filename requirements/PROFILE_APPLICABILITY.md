@@ -1,6 +1,6 @@
 # GKOS requirement profile applicability
 
-**Status:** Normative companion mapping for the GKOS v0.81 developmental pre-standard, published 2026-09-03 through the R20 signed release; carried unchanged into the v0.82 informative edition
+**Status:** Normative companion mapping for GKOS, a developmental specification (public working draft). Published 2026-09-03 with GKOS v0.81 through the R20 signed release; carried unchanged into the v0.82 informative edition and the current edition, GKOS-2026-09-24 v0.82.1
 
 **Authority:** R15 through R18
 

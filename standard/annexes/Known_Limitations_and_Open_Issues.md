@@ -1,8 +1,11 @@
 # Annex — Known limitations and open issues
 
-GKOS v0.81 is a developmental public pre-standard. It specifies deterministic
-canonical serialization and the required GCP-6/GCP-7 contract, but it does not
-yet provide:
+GKOS is a developmental specification (public working draft). It began as a
+single-author pre-standard concept; the goal is to advance it to a
+pre-standard through an open, multi-stakeholder committee process. The current
+edition, GKOS-2026-09-24 v0.82.1, specifies deterministic canonical
+serialization and the required GCP-6/GCP-7 contract, but it does not yet
+provide:
 
 - a complete executable conformance suite for GKOS Core, GKOS Advanced,
   GCP-6 Context-Only, or Viewer/Projection;
@@ -13,9 +16,12 @@ yet provide:
 - formal federated governance or an accredited standards-body process;
 - certification or accreditation program.
 
-Publication and DOI archival closure completed on 2026-09-03; see the
-[verified receipt](../../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md).
-This closes publication work, not the implementation and qualification gaps.
+Publication and DOI archival of the current edition are verified; see the
+[v0.82.1 publication record](../../docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md)
+and [archive verification](../../docs/releases/GKOS_2026-09-24_v0.82.1_ARCHIVE_VERIFICATION.json).
+The [v0.81 publication record](../../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md)
+remains the receipt for that edition. Verified publication closes publication
+work; it does not close the implementation and qualification gaps.
 
 The active fixture catalog declares no qualifying profile. Passing available
 tests MUST NOT be represented as full-profile conformance while applicable

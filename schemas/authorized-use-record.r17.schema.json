@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/authorized-use-record.r17.schema.json",
   "title": "GKX Layer-7 Authorized Use Record — R17 development candidate",
-  "description": "Unpublished R17 schema candidate. It does not replace the v0.80 authorized-use-record.schema.json.",
+  "description": "R17 schema candidate, published with GKOS-2026-09-03 v0.81. It does not replace the v0.80 authorized-use-record.schema.json.",
   "type": "object",
   "required": [
     "canonical_profile", "artifact_type", "schema_version",
