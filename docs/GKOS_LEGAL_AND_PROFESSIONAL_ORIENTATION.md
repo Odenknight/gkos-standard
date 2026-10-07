@@ -87,7 +87,8 @@ jurisdiction-specific obligations.
 
 ## What this release does not prove
 
-GKOS v0.80 is a developmental public pre-standard. It is not accredited,
+GKOS is a developmental specification (public working draft). At publication,
+v0.80 was described as a developmental public pre-standard. Neither is accredited,
 consensus-ratified, independently certified, legally recognized, or a legal
 opinion. The active fixture catalog still declares no qualifying profile, and
 publication of schemas is not proof that any implementation satisfies them.

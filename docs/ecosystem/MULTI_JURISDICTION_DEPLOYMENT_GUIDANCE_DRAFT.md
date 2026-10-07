@@ -1,6 +1,6 @@
 # Multi-jurisdiction deployment guidance
 
-Publication references reconciled 2026-09-06. Earlier implementation review dates remain historical. See the [current public standing](../../README.md).
+Publication references reconciled 2026-09-06. Earlier implementation review dates remain historical. The current edition, GKOS-2026-09-24 v0.82.1, keeps the v0.81 normative population, so the baseline below still applies (note added 2026-10-07). See the [current public standing](../../README.md).
 
 - **Document ID:** GKOS-MJDG-0.1
 - **Status:** informative R21 draft; not legal advice, normative GKOS text, or a

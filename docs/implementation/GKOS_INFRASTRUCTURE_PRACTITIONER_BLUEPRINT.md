@@ -44,9 +44,10 @@ protocol binding, and the examples below are not universal GKOS requirements.
 
 ## 2. What GKOS is
 
-GKOS is a developmental public pre-standard for governing how evidence becomes
-structured knowledge, how controls and review affect its standing, how context
-is assembled, and how consequential action is authorized and recorded.
+GKOS is a developmental specification (public working draft) for governing
+how evidence becomes structured knowledge, how controls and review affect its
+standing, how context is assembled, and how consequential action is authorized
+and recorded.
 
 It is not:
 
@@ -332,8 +333,8 @@ without treating protocol lifecycle as governance standing.
 
 ## 10. Conformance and risk
 
-GKOS v0.82.1 is a developmental public pre-standard. No implementation is
-certified. A serious claim identifies:
+GKOS v0.82.1 is a developmental specification (public working draft). No
+implementation is certified. A serious claim identifies:
 
 - exact Standard and GKX versions;
 - claimed profile;

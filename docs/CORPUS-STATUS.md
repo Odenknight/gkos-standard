@@ -1,16 +1,46 @@
 # Documentation corpus status
 
 Informative editorial index. Assessed September 15, 2026 against main
-`ce270ced38e8477689074026c6b3f77277ccffec`. No normative amendment.
+`ce270ced38e8477689074026c6b3f77277ccffec`. Status wording and the area table
+rechecked October 7, 2026 against main
+`797174485e86cbc250f52ac897d86b226c160622`. No normative amendment.
 
 Current status clarification: the published edition is
 [GKOS-2026-09-24 v0.82.1](../README.md#current-standing), a documentation
-patch whose technical baseline is unchanged from v0.82. GKOS is a developmental
-specification; its existing name and titles remain unchanged. R22 is informative
-and R23 remains prospective. No profile is qualified. See the
+patch whose technical baseline is unchanged from v0.82. Its normative
+population is unchanged from v0.81: 62 permanent requirements and 28 gate
+codes. GKOS is a developmental specification (public working draft). It began
+as a single-author pre-standard concept; the goal is to advance it to a
+pre-standard through an open, multi-stakeholder committee process. Its
+existing name and titles remain unchanged. R22 is informative and R23 remains
+prospective. No profile is qualified. See the
 [claims policy](../conformance/CLAIMS_POLICY.md).
 The master Standard, permanent registry and adopted decisions control;
 guidance and implementation evidence do not create new requirements.
+
+## Documentation areas
+
+A document's own status line controls where it is more specific than this
+table. Release records, publication records, accepted decision records,
+released changelog sections and archives keep their original wording.
+
+| Area | Standing |
+| --- | --- |
+| `standard/00_GKOS_Master_Standard.md` and the `normative-annexes` listed in the current release manifest | Normative |
+| Other files under `standard/annexes/` | As the master Standard and the annex's own status line state |
+| `requirements/` | Normative permanent registry and machine companions |
+| `decisions/` | Development decision records; standing per the [decision register](../decisions/GKOS_Decision_Register.md) |
+| `docs/decisions/` | Owner clarifications without an R-number |
+| `docs/directives/` | Development directives under their controlling decision |
+| `docs/*.md`, `docs/implementation/`, `docs/domains/` | Informative |
+| `docs/ecosystem/` | Informative R21 drafts and control registers |
+| `docs/v082/` | Informative preparation material for prospective R23 work |
+| `docs/proposals/` | Proposed and non-normative, except where an adopted decision says otherwise |
+| `docs/reviews/` | Dated review and disposition records; preserved as written |
+| `docs/releases/` | Publication and release-control records; preserved as written |
+| `guide/` | Informative (beginner) |
+| `releases/`, `release-candidates/` | Immutable release packages; historical except for the current edition's package |
+| `archive/`, `docs/archive/` and other `*/archive/` folders | Historical |
 
 ## July source-document dispositions
 

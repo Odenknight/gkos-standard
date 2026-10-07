@@ -13,7 +13,7 @@ coordinates separate. Matching numbers never imply compatibility.
 
 | Coordinate | Current reviewed value | Meaning | Compatibility rule |
 | --- | --- | --- | --- |
-| GKOS publication | `GKOS-2026-09-24 v0.82.1` | Current developmental Standard publication (documentation patch; normative population unchanged from v0.81) | A claim binds to the exact release; prior claims do not carry forward automatically |
+| GKOS publication | `GKOS-2026-09-24 v0.82.1` | Current published edition of the developmental specification (documentation patch; normative population unchanged from v0.81) | A claim binds to the exact release; prior claims do not carry forward automatically |
 | GKX namespace | `2.0` | Current machine exchange namespace | Current records use `gkx_version: "2.0"`; this is not an Engine package version |
 | Canonical artifact profile | `GKX-CBOR-1` | Deterministic CBOR and SHA-256 identity for applicable canonical artifacts | Required by the applicable canonicalization annex where the artifact contract invokes it; JSON/YAML renderings are views |
 | Standard assessment/SRTP projection coordinate | `gkx-2.0-validating-projection` | Standard schema value and provisional SRTP fixture coordinate | Retained exactly in the SRTP experiment; not inferred from an Engine API name |

@@ -34,7 +34,14 @@ coordinates required by a GKOS claim.
   records GCP-6/GCP-7 executable-evidence status without a qualifying claim.
 - [`V081_RATIFIED_BASELINE.md`](V081_RATIFIED_BASELINE.md) and
   [`V081_PUBLICATION_BINDING.md`](V081_PUBLICATION_BINDING.md) bind the v0.81
-  baseline and its exact published commit.
+  baseline and its exact published commit. They are historical records of that
+  publication and keep their original wording.
+- [`GKOS-DIRECTIVE-ENG-210-r4.md`](GKOS-DIRECTIVE-ENG-210-r4.md) is the dated
+  2026-08-15 Engine 2.1 Navigation build directive under R15. It is
+  informative with respect to GKOS conformance.
+- [`20261001_RUNNER_SECURITY_MAINTENANCE.md`](20261001_RUNNER_SECURITY_MAINTENANCE.md)
+  records the dated 2026-10-01 development-runner dependency maintenance and
+  the separate published and development validation modes.
 - Historical implementation-role material is preserved for provenance and is
   not current GKX 2.0 guidance.
 

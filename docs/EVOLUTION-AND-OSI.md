@@ -1,7 +1,9 @@
 # From curation to governed evidence and action
 
-Informative explanation, September 15, 2026. Published baseline: v0.81;
-development context: accepted R22/R23. No qualification claim.
+Informative explanation, September 15, 2026. Published baseline when written:
+v0.81. Current edition: GKOS-2026-09-24 v0.82.1, with the same normative
+population. Development context: accepted R22 (informative) and R23
+(prospective). No qualification claim.
 
 GKOS separates evidence, assertions, controls, review, context and authorized use.
 It does not preserve absolute truth or mandate an operating system, event bus,

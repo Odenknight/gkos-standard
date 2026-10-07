@@ -36,3 +36,16 @@ institutional approval is asserted.
 
 The original text above is preserved. GKOS-2026-09-24 v0.82.1 was subsequently
 published; see the [publication receipt](../releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
+
+## Nomenclature note (2026-10-07)
+
+The original text above is preserved. On 2026-10-07 the owner set the current
+wording for current-facing documents: "GKOS is a developmental specification
+(public working draft). It began as a single-author pre-standard concept; the
+goal is to advance it to a pre-standard through an open, multi-stakeholder
+committee process." Shorter references say "developmental specification" or
+"developmental specification (public working draft)". Release records,
+publication records, accepted decision records, released changelog sections
+and archives keep their original words. An agent recorded this note from the
+owner's instruction to the coordinator of consistency run
+`edit-20261007-v083-consolidation`. It is proposed until the owner merges it.
