@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "workflow_id": "edit",
+  "stages": [
+    {"id": "01-intake", "depends_on": []},
+    {"id": "02-lineage", "depends_on": ["01-intake"]},
+    {"id": "03-draft", "depends_on": ["02-lineage"]},
+    {"id": "04-check", "depends_on": ["03-draft"]},
+    {"id": "05-review", "depends_on": ["04-check"]},
+    {"id": "06-handoff", "depends_on": ["05-review"]}
+  ]
+}

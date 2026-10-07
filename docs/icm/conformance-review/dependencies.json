@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "workflow_id": "conformance-review",
+  "stages": [
+    {"id": "01-scope", "depends_on": []},
+    {"id": "02-sources", "depends_on": ["01-scope"]},
+    {"id": "03-checks", "depends_on": ["02-sources"]},
+    {"id": "04-interpretation", "depends_on": ["02-sources", "03-checks"]},
+    {"id": "05-handoff", "depends_on": ["04-interpretation"]}
+  ]
+}
