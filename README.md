@@ -46,7 +46,7 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 - **Publication status:** live since September 24, 2026 in America/New_York; actual GitHub publication `2026-09-25T00:54:27Z`, verified signed tag and post-tag checks
 - **Release record:** [v0.82.1 release](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1) · [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) · [v0.82.1 release package](releases/2026-09-24-v0.82.1/README.md)
 - **Normative population:** unchanged from v0.81 (62 permanent requirements, 28 gate codes)
-- **Version DOI (v0.82.1):** archive verification pending
+- **Version DOI (v0.82.1):** [10.5281/zenodo.22949713](https://doi.org/10.5281/zenodo.22949713), archive verified October 7, 2026
 - **Previous edition DOI (v0.82 only):** [10.5281/zenodo.22905582](https://doi.org/10.5281/zenodo.22905582) · v0.81: [10.5281/zenodo.22269294](https://doi.org/10.5281/zenodo.22269294)
 - **Concept DOI (all versions):** [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293)
 - **Publication controls:** [v0.82.1 authorization and exact-commit binding](docs/releases/V0821_PUBLICATION_CONTROL.md)
@@ -58,7 +58,7 @@ See the [conformance-claims policy](conformance/CLAIMS_POLICY.md) and
 - **Public second implementation:** awaiting a public second implementation
 - **Current ecosystem program:** R21 informative interoperability work for MCP, A2A, ACS, agent governance, evidence packaging, public pilots, and deployment guidance
 
-The current v0.82.1 documentation patch clarifies publication status and existing claims controls. Its technical baseline is unchanged from v0.82, with the normative population retained from v0.81. The earlier editions have their own verified archival records; v0.82.1 archive verification remains pending. Publication and archival identity establish no profile qualification, certification, or independently demonstrated effectiveness.
+The current v0.82.1 documentation patch clarifies publication status and existing claims controls. Its technical baseline is unchanged from v0.82, with the normative population retained from v0.81. The v0.81, v0.82 and v0.82.1 editions have verified archival records; the [v0.82.1 receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md) binds its archive to the signed release commit. Publication and archival identity establish no profile qualification, certification, or independently demonstrated effectiveness.
 
 [Technical orientation](TECHNICAL_README.md) ·
 [Master standard](standard/00_GKOS_Master_Standard.md) ·
@@ -77,7 +77,7 @@ July inputs from current guidance, domain pilots and standards engagement.
 
 The signed v0.82.1 documentation patch is the published edition; its technical baseline is unchanged from v0.82 and its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
 
-The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk in PR #42](https://github.com/Odenknight/gkos-standard/pull/42) remains a review candidate until its separate review and merge gates are complete; its ISO Annex A mapping is verification-held.
+The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation. It remains informative, pinned to its recorded GKOS baseline, and establishes no implementation conformance or NIST endorsement; its ISO Annex A mapping remains verification-held.
 
 ## Why GKOS exists
 
@@ -299,7 +299,7 @@ Documentation and original graphics are licensed under CC BY 4.0; schemas, fixtu
 
 Suggested citation for the current published release: Shaun Allan Marshall. *Governed Knowledge Operations Standard (GKOS), GKOS-2026-09-24 v0.82.1.* GitHub, September 24, 2026 (America/New_York). [Signed release and source](https://github.com/Odenknight/gkos-standard/releases/tag/v0.82.1). See [CITATION.cff](CITATION.cff) and the [publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md).
 
-The v0.82.1 archive and version DOI are not yet verified. The [v0.82 DOI](https://doi.org/10.5281/zenodo.22905582) identifies the previous edition only. The [concept DOI](https://doi.org/10.5281/zenodo.22269293) identifies the archived version series and may lag the latest GitHub publication; it does not substitute for a verified edition-specific DOI.
+The verified v0.82.1 version DOI is [10.5281/zenodo.22949713](https://doi.org/10.5281/zenodo.22949713). All 426 archived files match the signed release commit. The [v0.82 DOI](https://doi.org/10.5281/zenodo.22905582) identifies the previous edition only. The [concept DOI](https://doi.org/10.5281/zenodo.22269293) identifies the archived version series; use the version DOI for an edition-specific citation.
 
 ## Maturity and governance boundary
 

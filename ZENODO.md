@@ -45,6 +45,23 @@ GKOS-2026-09-22 v0.82 (informative edition) is published and archived:
 - [Publication receipt](docs/releases/GKOS_2026-09-22_v0.82_PUBLICATION_RECORD.md) binds both DOI identities to the signed tag and
   exact commit. All 411 archived files match the tagged tree.
 
+### Verified v0.82.1 archive
+
+GKOS-2026-09-24 v0.82.1 (documentation patch) is published and archived:
+
+- Version DOI: [10.5281/zenodo.22949713](https://doi.org/10.5281/zenodo.22949713).
+- Concept DOI: [10.5281/zenodo.22269293](https://doi.org/10.5281/zenodo.22269293).
+- [Public record](https://zenodo.org/records/22949713), version 0.82.1, edition
+  date 2026-09-24, developmental specification/public working draft,
+  `isNewVersionOf` the v0.82 DOI.
+- [Publication receipt](docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md)
+  and [archive verification](docs/releases/GKOS_2026-09-24_v0.82.1_ARCHIVE_VERIFICATION.json)
+  bind the DOI to the original signed tag and commit. Verification on October 7
+  compared all 426 archive files, with zero differences. The record was created
+  at `2026-09-25T02:18:13.373985Z`; verification was not backdated.
+
+The signed release snapshot and mixed-license routing remain unchanged.
+
 ### Citation scope
 
 - Cite the **version DOI** when a claim depends on a specific GKOS edition.
