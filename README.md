@@ -125,6 +125,13 @@ Separate informative proposals show how GKOS records could support [ISO AI manag
 
 [Review the bounded middleware pilot proposal](docs/ecosystem/GKOS_MIDDLEWARE_PILOT_0.1_DRAFT.md).
 
+Contributor pilot: [mariusTalpos's EU AI evidence demonstration](docs/eu-ai-evidence/PHASES.md)
+preserves fictional inputs, example code and a historical P1.1 self-evaluation.
+Ten of eleven assertions passed; P11-08 failed. P1.1 acceptance is not established,
+P1.2 and P1.3 remain unimplemented, and no legal compliance or GKOS profile
+qualification is claimed. See the [upstream integration review](docs/reviews/PR48_EU_AI_EVIDENCE_INTEGRATION_REVIEW_20261007.md)
+for the contribution's scope and remaining gates.
+
 ## The seven cumulative responsibilities
 
 ![The GKOS seven-layer model and its governing records](illustrated/figures/fig1-seven-layers.png)

@@ -1,0 +1,4 @@
+
+> gkos-engine@2.1.2 typecheck
+> tsc --noEmit
+

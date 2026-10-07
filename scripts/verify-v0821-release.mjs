@@ -1,6 +1,6 @@
 // Patch-specific publication checks; no runner or technical semantics change.
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 const read = p => readFileSync(p, 'utf8');
@@ -38,14 +38,31 @@ assert.equal((read('standard/annexes/Diagnostic_Code_Registry.md').match(/^\| GK
 // claims and release administration are deliberately outside this set.
 const immutable = ['requirements', 'schemas', 'fixtures', 'conformance/runner', 'standard/annexes'];
 if (process.argv.includes('--development')) {
-  // Published sources remain frozen. The development checkout permits only
-  // the reviewed fast-uri security pin, never runner/schema/fixture changes.
+  // Published sources remain frozen. Development permits the reviewed security
+  // pin and, when present, the exact original non-qualifying PR48 additions.
   assert.ok(!process.argv.includes('--post-tag'), 'development is not publication validation');
   const published = git('rev-parse', '--verify', 'refs/tags/v0.82.1^{}');
   assert.equal(git('diff', '--name-only', 'v0.82', published, '--', ...immutable), '', 'published technical baseline changed');
   const lockPath = 'conformance/runner/package-lock.json';
+  const additionsPath = 'scripts/pr48-development-additions.json';
+  const additions = existsSync(additionsPath) ? JSON.parse(read(additionsPath)) : null;
+  const extra = additions?.files ?? {};
+  if (additions) {
+    assert.equal(additions.format, 'gkos-development-additions/pr48/1');
+    assert.equal(additions.source_commit, 'b7c884e147e909c9e6b76b8690384f026fc27eb8');
+    assert.equal(additions.standing, 'informative-example-only; no P1.1 acceptance or profile qualification');
+    const names = [
+      ...['p1-evaluate.mjs', 'p1-fixture.mjs', 'p1-harness.test.mjs', 'p1-report.mjs', 'p1-run.mjs', 'p1-valid-dossier.test.mjs'].map(n => `conformance/runner/examples/eu-ai-evidence/${n}`),
+      ...['dossier-r1.md', 'dossier-r2.md', 'evaluation-summary.md', 'manifest.json', 'review-note.md', 'system.md'].map(n => `fixtures/provisional/eu-ai-evidence/p1/${n}`),
+    ];
+    assert.deepEqual(Object.keys(extra).sort(), names.sort(), 'unreviewed example inventory');
+    assert.equal(git('ls-tree', '-r', '--name-only', published, '--', ...names), '', 'example must not replace a published source');
+    for (const [path, hash] of Object.entries(extra)) {
+      assert.equal(createHash('sha256').update(readFileSync(path)).digest('hex'), hash, `changed PR48 example: ${path}`);
+    }
+  }
   const changed = git('diff', '--name-only', published, '--', ...immutable).split('\n').filter(Boolean);
-  assert.ok(changed.every(p => p === lockPath), 'unreviewed development technical change');
+  assert.ok(changed.every(p => p === lockPath || Object.hasOwn(extra, p)), 'unreviewed development technical change');
   const expected = JSON.parse(git('show', `${published}:${lockPath}`));
   assert.equal(expected.packages['node_modules/fast-uri'].version, '3.1.6');
   Object.assign(expected.packages['node_modules/fast-uri'], {
@@ -66,7 +83,7 @@ for (const p of git('ls-files', 'fixtures').split('\n').filter(p => p.endsWith('
 }
 assert.match(read('docs/releases/V0821_PUBLICATION_CONTROL.md'), /R23\s+remains prospective/);
 assert.ok(read('conformance/CLAIMS_POLICY.md').includes('does not automatically'));
-console.log(`v0.82.1 content PASS: ${coordinate}; 62 requirements, 28 gates, ${process.argv.includes('--development') ? 'published baseline preserved; bounded development dependency maintenance' : 'unchanged technical sources'} and historical packages`);
+console.log(`v0.82.1 content PASS: ${coordinate}; 62 requirements, 28 gates, ${process.argv.includes('--development') ? 'published baseline preserved; bounded development maintenance/additions' : 'unchanged technical sources'} and historical packages`);
 
 if (process.argv.includes('--post-tag')) {
   const repo = 'Odenknight/gkos-standard';

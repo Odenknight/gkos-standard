@@ -1,0 +1,818 @@
+
+> test
+> node --test "test/*.test.mjs" && npm run lint:registries
+
+TAP version 13
+# Subtest: authority window uses inclusive start and exclusive end
+ok 1 - authority window uses inclusive start and exclusive end
+  ---
+  duration_ms: 0.7933
+  ...
+# Subtest: missing, malformed, and inverted time evidence fails closed
+ok 2 - missing, malformed, and inverted time evidence fails closed
+  ---
+  duration_ms: 0.1324
+  ...
+# Subtest: exact-expiry refusal preserves protected state and emits a schema-valid receipt
+ok 3 - exact-expiry refusal preserves protected state and emits a schema-valid receipt
+  ---
+  duration_ms: 99.6029
+  ...
+# Subtest: clean-process replay produces identical canonical bytes and hash
+ok 4 - clean-process replay produces identical canonical bytes and hash
+  ---
+  duration_ms: 238.3745
+  ...
+# Subtest: R19 binds the adopted documentation-intent gate to exactly eight positions
+ok 5 - R19 binds the adopted documentation-intent gate to exactly eight positions
+  ---
+  duration_ms: 3.5587
+  ...
+# Subtest: R19 records prospective adoption and preserves release and set boundaries
+ok 6 - R19 records prospective adoption and preserves release and set boundaries
+  ---
+  duration_ms: 1.8649
+  ...
+# Subtest: evidence-package draft accepts the bounded positive fixture
+ok 7 - evidence-package draft accepts the bounded positive fixture
+  ---
+  duration_ms: 61.767
+  ...
+# Subtest: evidence-package draft rejects parent path traversal
+ok 8 - evidence-package draft rejects parent path traversal
+  ---
+  duration_ms: 36.6653
+  ...
+# Subtest: evidence-package draft rejects backslash paths and undeclared self-digests
+ok 9 - evidence-package draft rejects backslash paths and undeclared self-digests
+  ---
+  duration_ms: 41.4171
+  ...
+# Subtest: evidence-package draft keeps stable package identity separate from content digest
+ok 10 - evidence-package draft keeps stable package identity separate from content digest
+  ---
+  duration_ms: 15.1451
+  ...
+# Subtest: known gate missing and mistyped required evidence always refuses without throwing
+    # Subtest: TA-L1-001
+    ok 1 - TA-L1-001
+      ---
+      duration_ms: 0.8445
+      ...
+    # Subtest: TA-L3-001
+    ok 2 - TA-L3-001
+      ---
+      duration_ms: 0.9701
+      ...
+    # Subtest: TA-L4-001
+    ok 3 - TA-L4-001
+      ---
+      duration_ms: 0.1671
+      ...
+    # Subtest: TA-L4-002
+    ok 4 - TA-L4-002
+      ---
+      duration_ms: 0.1516
+      ...
+    # Subtest: TA-L4-003
+    ok 5 - TA-L4-003
+      ---
+      duration_ms: 0.113
+      ...
+    # Subtest: TA-L4-004
+    ok 6 - TA-L4-004
+      ---
+      duration_ms: 0.1584
+      ...
+    # Subtest: TA-L5-001
+    ok 7 - TA-L5-001
+      ---
+      duration_ms: 0.0804
+      ...
+    # Subtest: TA-L5-002
+    ok 8 - TA-L5-002
+      ---
+      duration_ms: 0.6694
+      ...
+    # Subtest: TA-L5-003
+    ok 9 - TA-L5-003
+      ---
+      duration_ms: 0.8027
+      ...
+    # Subtest: TA-L5-004
+    ok 10 - TA-L5-004
+      ---
+      duration_ms: 0.2883
+      ...
+    # Subtest: TA-L5-005
+    ok 11 - TA-L5-005
+      ---
+      duration_ms: 2.3019
+      ...
+    # Subtest: TA-L5-006
+    ok 12 - TA-L5-006
+      ---
+      duration_ms: 0.2902
+      ...
+    # Subtest: TA-L6-001
+    ok 13 - TA-L6-001
+      ---
+      duration_ms: 0.1187
+      ...
+    # Subtest: TA-L6-002
+    ok 14 - TA-L6-002
+      ---
+      duration_ms: 0.2103
+      ...
+    # Subtest: TA-L6-003
+    ok 15 - TA-L6-003
+      ---
+      duration_ms: 0.1776
+      ...
+    # Subtest: TA-L6-004
+    ok 16 - TA-L6-004
+      ---
+      duration_ms: 0.2979
+      ...
+    # Subtest: TA-L6-005
+    ok 17 - TA-L6-005
+      ---
+      duration_ms: 0.1633
+      ...
+    # Subtest: TA-L6-006
+    ok 18 - TA-L6-006
+      ---
+      duration_ms: 0.1419
+      ...
+    # Subtest: TA-L6-007
+    ok 19 - TA-L6-007
+      ---
+      duration_ms: 0.1814
+      ...
+    # Subtest: TA-L6-008
+    ok 20 - TA-L6-008
+      ---
+      duration_ms: 0.1739
+      ...
+    # Subtest: TA-L6-009
+    ok 21 - TA-L6-009
+      ---
+      duration_ms: 0.4485
+      ...
+    # Subtest: TA-L7-001
+    ok 22 - TA-L7-001
+      ---
+      duration_ms: 0.4139
+      ...
+    # Subtest: TA-L7-002
+    ok 23 - TA-L7-002
+      ---
+      duration_ms: 1.0716
+      ...
+    # Subtest: TA-L7-003
+    ok 24 - TA-L7-003
+      ---
+      duration_ms: 0.236
+      ...
+    # Subtest: TA-L7-004
+    ok 25 - TA-L7-004
+      ---
+      duration_ms: 0.1531
+      ...
+    # Subtest: TA-L7-005
+    ok 26 - TA-L7-005
+      ---
+      duration_ms: 0.1129
+      ...
+    # Subtest: TA-L7-006
+    ok 27 - TA-L7-006
+      ---
+      duration_ms: 0.1057
+      ...
+    # Subtest: TA-L7-007
+    ok 28 - TA-L7-007
+      ---
+      duration_ms: 0.3033
+      ...
+    1..28
+ok 11 - known gate missing and mistyped required evidence always refuses without throwing
+  ---
+  duration_ms: 15.4978
+  ...
+# Subtest: impossible timestamps refuse in encoder, verifier, gate and authority window
+ok 12 - impossible timestamps refuse in encoder, verifier, gate and authority window
+  ---
+  duration_ms: 7.5894
+  ...
+# Subtest: lone UTF-16 surrogates refuse instead of replacement encoding, including keys
+ok 13 - lone UTF-16 surrogates refuse instead of replacement encoding, including keys
+  ---
+  duration_ms: 0.4626
+  ...
+# Subtest: valid leap dates, microsecond boundaries and Unicode preserve exact positive bytes
+ok 14 - valid leap dates, microsecond boundaries and Unicode preserve exact positive bytes
+  ---
+  duration_ms: 4.4906
+  ...
+# Subtest: direct authority evaluation refuses absent records and coerced time evidence
+ok 15 - direct authority evaluation refuses absent records and coerced time evidence
+  ---
+  duration_ms: 0.2662
+  ...
+# Subtest: sparse canonical arrays refuse without silently encoding undefined
+ok 16 - sparse canonical arrays refuse without silently encoding undefined
+  ---
+  duration_ms: 0.8912
+  ...
+# Subtest: unregistered or absent fixture kinds cannot return the open sentinel
+ok 17 - unregistered or absent fixture kinds cannot return the open sentinel
+  ---
+  duration_ms: 0.3845
+  ...
+# Subtest: held contradiction omission refuses with GKOS-GATE-L6-009
+ok 18 - held contradiction omission refuses with GKOS-GATE-L6-009
+  ---
+  duration_ms: 10.4862
+  ...
+# Subtest: rendered-field mutation refuses with GKOS-GATE-L6-008
+ok 19 - rendered-field mutation refuses with GKOS-GATE-L6-008
+  ---
+  duration_ms: 25.1022
+  ...
+# Subtest: resolved-content mutation refuses with GKOS-GATE-L6-007
+ok 20 - resolved-content mutation refuses with GKOS-GATE-L6-007
+  ---
+  duration_ms: 4.921
+  ...
+# Subtest: informative gkos-engine adapter emits the bounded graph observation contract
+ok 21 - informative gkos-engine adapter emits the bounded graph observation contract
+  ---
+  duration_ms: 287.2103
+  ...
+# Subtest: requires an adapter observation instead of silently passing
+ok 22 - requires an adapter observation instead of silently passing
+  ---
+  duration_ms: 1.2476
+  ...
+# Subtest: checks typed contradiction resolution against the paired identity
+ok 23 - checks typed contradiction resolution against the paired identity
+  ---
+  duration_ms: 1.1236
+  ...
+# Subtest: fails a dangling contradiction and a non-UID lineage resolution
+ok 24 - fails a dangling contradiction and a non-UID lineage resolution
+  ---
+  duration_ms: 0.4601
+  ...
+# Subtest: fails closed on unsupported expectation keys
+ok 25 - fails closed on unsupported expectation keys
+  ---
+  duration_ms: 0.1991
+  ...
+# Subtest: rejects adapter-fabricated primary and pair identities
+ok 26 - rejects adapter-fabricated primary and pair identities
+  ---
+  duration_ms: 0.3303
+  ...
+# Subtest: rejects a fabricated UID target_ref even when target_uid names the pair
+ok 27 - rejects a fabricated UID target_ref even when target_uid names the pair
+  ---
+  duration_ms: 0.2041
+  ...
+# Subtest: rejects a fabricated basename target_ref even when target_uid names the pair
+ok 28 - rejects a fabricated basename target_ref even when target_uid names the pair
+  ---
+  duration_ms: 0.2747
+  ...
+# Subtest: rejects projected identities that differ from Standard-parsed frontmatter
+ok 29 - rejects projected identities that differ from Standard-parsed frontmatter
+  ---
+  duration_ms: 0.1713
+  ...
+# Subtest: machine-readable applicability and evidence vocabularies satisfy their schemas
+ok 30 - machine-readable applicability and evidence vocabularies satisfy their schemas
+  ---
+  duration_ms: 48.0054
+  ...
+# Subtest: release approval binds all mandatory evidence and package hashes
+ok 31 - release approval binds all mandatory evidence and package hashes
+  ---
+  duration_ms: 4.2621
+  ...
+# Subtest: release tag requires verified owner identity and one signed attestation
+ok 32 - release tag requires verified owner identity and one signed attestation
+  ---
+  duration_ms: 1.4192
+  ...
+# Subtest: RRET-01 corpus validates and remains provisional/non-qualifying
+ok 33 - RRET-01 corpus validates and remains provisional/non-qualifying
+  ---
+  duration_ms: 53.9087
+  ...
+# Subtest: RRET-01 evidence and RR digests are reproducible and attributable
+ok 34 - RRET-01 evidence and RR digests are reproducible and attributable
+  ---
+  duration_ms: 1.1323
+  ...
+# Subtest: RRET-01 raw retrieval rows contain no governance fields and preserve declared ranking
+ok 35 - RRET-01 raw retrieval rows contain no governance fields and preserve declared ranking
+  ---
+  duration_ms: 0.492
+  ...
+# Subtest: RRET-01 answer composition can only cite evidence objects, never RRs
+ok 36 - RRET-01 answer composition can only cite evidence objects, never RRs
+  ---
+  duration_ms: 0.2363
+  ...
+# Subtest: RRET-01-N01 proves governance can correct a wrong operative retrieval winner
+ok 37 - RRET-01-N01 proves governance can correct a wrong operative retrieval winner
+  ---
+  duration_ms: 0.1464
+  ...
+# Subtest: RRET-01-N05 keeps SOURCE_SCOPED superseded material tagged and non-operative
+ok 38 - RRET-01-N05 keeps SOURCE_SCOPED superseded material tagged and non-operative
+  ---
+  duration_ms: 0.0782
+  ...
+# Subtest: RRET-01-N06 exposes eligible-candidate recall failure before governance
+ok 39 - RRET-01-N06 exposes eligible-candidate recall failure before governance
+  ---
+  duration_ms: 0.1451
+  ...
+# Subtest: RRET-01-N07 defaults omitted caller intent to CURRENT_STATE
+ok 40 - RRET-01-N07 defaults omitted caller intent to CURRENT_STATE
+  ---
+  duration_ms: 0.0734
+  ...
+# Subtest: RRET-01-N08 forbids fallback when no eligible candidate exists
+ok 41 - RRET-01-N08 forbids fallback when no eligible candidate exists
+  ---
+  duration_ms: 0.2856
+  ...
+# Subtest: RRET-01-N09 keeps Human Operator authority outside the agent caller envelope
+ok 42 - RRET-01-N09 keeps Human Operator authority outside the agent caller envelope
+  ---
+  duration_ms: 0.5825
+  ...
+# Subtest: RRET-01-N10 preserves a semantic tie so governance, not ranking, selects current evidence
+ok 43 - RRET-01-N10 preserves a semantic tie so governance, not ranking, selects current evidence
+  ---
+  duration_ms: 0.2288
+  ...
+# Subtest: RRET-01 manifest maps exactly one entry to every corpus case and remains non-qualifying
+ok 44 - RRET-01 manifest maps exactly one entry to every corpus case and remains non-qualifying
+  ---
+  duration_ms: 1.1011
+  ...
+# Subtest: Standard-owned graph evaluation executes GCP3-C01 and GCP3-L01 without creating a profile claim
+ok 45 - Standard-owned graph evaluation executes GCP3-C01 and GCP3-L01 without creating a profile claim
+  ---
+  duration_ms: 431.1717
+  ...
+# Subtest: adversarial graph observation 'fabricated-identities' cannot manufacture a PASS
+ok 46 - adversarial graph observation 'fabricated-identities' cannot manufacture a PASS
+  ---
+  duration_ms: 214.2447
+  ...
+# Subtest: adversarial graph observation 'bogus-uid-ref' cannot manufacture a PASS
+ok 47 - adversarial graph observation 'bogus-uid-ref' cannot manufacture a PASS
+  ---
+  duration_ms: 210.3716
+  ...
+# Subtest: adversarial graph observation 'bogus-basename-ref' cannot manufacture a PASS
+ok 48 - adversarial graph observation 'bogus-basename-ref' cannot manufacture a PASS
+  ---
+  duration_ms: 209.0518
+  ...
+# Subtest: an adapter without graph observations remains non-qualifying and UNEVALUATED
+ok 49 - an adapter without graph observations remains non-qualifying and UNEVALUATED
+  ---
+  duration_ms: 217.693
+  ...
+# PASS  SRTP-P01 — diagnostics: none
+# PASS  SRTP-P02 — diagnostics: none
+# PASS  SRTP-P03 — diagnostics: none
+# PASS  SRTP-P04 — diagnostics: none
+# PASS  SRTP-P05 — diagnostics: none
+# PASS  SRTP-P06 — diagnostics: none
+# PASS  SRTP-N01 — diagnostics: SRTP-ARTIFACT-001, SRTP-INPUT-001
+# PASS  SRTP-N02 — diagnostics: SRTP-ARTIFACT-001, SRTP-EXEC-001, SRTP-INPUT-001
+# PASS  SRTP-N03 — diagnostics: SRTP-ARTIFACT-001, SRTP-EXEC-002, SRTP-INPUT-001
+# PASS  SRTP-N04 — diagnostics: SRTP-ARTIFACT-001
+# PASS  SRTP-N05 — diagnostics: SRTP-CLAIM-001
+# PASS  SRTP-N06 — diagnostics: SRTP-REVIEW-001
+# PASS  SRTP-N07 — diagnostics: SRTP-REVIEW-002
+# PASS  SRTP-N08 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N09 — diagnostics: SRTP-SENSITIVITY-001
+# PASS  SRTP-N10 — diagnostics: SRTP-CONTEXT-001
+# PASS  SRTP-N11 — diagnostics: SRTP-REENTRY-002
+# PASS  SRTP-N12 — diagnostics: SRTP-VERSION-001
+# PASS  SRTP-N13 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N14 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N15 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N16 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-P01 — diagnostics: none
+# PASS  SRTP-P02 — diagnostics: none
+# PASS  SRTP-P03 — diagnostics: none
+# PASS  SRTP-P04 — diagnostics: none
+# PASS  SRTP-P05 — diagnostics: none
+# PASS  SRTP-P06 — diagnostics: none
+# PASS  SRTP-N01 — diagnostics: SRTP-ARTIFACT-001, SRTP-INPUT-001
+# PASS  SRTP-N02 — diagnostics: SRTP-ARTIFACT-001, SRTP-EXEC-001, SRTP-INPUT-001
+# PASS  SRTP-N03 — diagnostics: SRTP-ARTIFACT-001, SRTP-EXEC-002, SRTP-INPUT-001
+# PASS  SRTP-N04 — diagnostics: SRTP-ARTIFACT-001
+# PASS  SRTP-N05 — diagnostics: SRTP-CLAIM-001
+# PASS  SRTP-N06 — diagnostics: SRTP-REVIEW-001
+# PASS  SRTP-N07 — diagnostics: SRTP-REVIEW-002
+# PASS  SRTP-N08 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N09 — diagnostics: SRTP-SENSITIVITY-001
+# PASS  SRTP-N10 — diagnostics: SRTP-CONTEXT-001
+# PASS  SRTP-N11 — diagnostics: SRTP-REENTRY-002
+# PASS  SRTP-N12 — diagnostics: SRTP-VERSION-001
+# PASS  SRTP-N13 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N14 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N15 — diagnostics: SRTP-REENTRY-001
+# PASS  SRTP-N16 — diagnostics: SRTP-REENTRY-001
+# Subtest: SRTP draft graph suite catches every declared negative and remains non-qualifying
+ok 50 - SRTP draft graph suite catches every declared negative and remains non-qualifying
+  ---
+  duration_ms: 129.3255
+  ...
+# Subtest: complete SRTP trace preserves unknown extensions while validating
+ok 51 - complete SRTP trace preserves unknown extensions while validating
+  ---
+  duration_ms: 68.6916
+  ...
+# Subtest: adversarial graph mutations cannot obtain a false PASS
+ok 52 - adversarial graph mutations cannot obtain a false PASS
+  ---
+  duration_ms: 1.0369
+  ...
+# Subtest: schema rejects empty traces and tolerance reruns without a tolerance
+ok 53 - schema rejects empty traces and tolerance reruns without a tolerance
+  ---
+  duration_ms: 41.6392
+  ...
+# Subtest: materialization and evaluation preserve unknown extensions without mutation
+ok 54 - materialization and evaluation preserve unknown extensions without mutation
+  ---
+  duration_ms: 0.6681
+  ...
+# Subtest: declared expected codes cannot substitute for an executed rejecting mutation
+ok 55 - declared expected codes cannot substitute for an executed rejecting mutation
+  ---
+  duration_ms: 3.7643
+  ...
+# Subtest: missing, duplicate and falsely bound case declarations fail execution coverage
+ok 56 - missing, duplicate and falsely bound case declarations fail execution coverage
+  ---
+  duration_ms: 3.2072
+  ...
+# Subtest: every Track A baseline remains open and its mutation closes the expected stable gate
+    # Subtest: TA-L1-001
+    ok 1 - TA-L1-001
+      ---
+      duration_ms: 0.5901
+      ...
+    # Subtest: TA-L3-001
+    ok 2 - TA-L3-001
+      ---
+      duration_ms: 0.0977
+      ...
+    # Subtest: TA-L4-001
+    ok 3 - TA-L4-001
+      ---
+      duration_ms: 0.1617
+      ...
+    # Subtest: TA-L4-002
+    ok 4 - TA-L4-002
+      ---
+      duration_ms: 0.1212
+      ...
+    # Subtest: TA-L4-003
+    ok 5 - TA-L4-003
+      ---
+      duration_ms: 0.1702
+      ...
+    # Subtest: TA-L4-004
+    ok 6 - TA-L4-004
+      ---
+      duration_ms: 0.2695
+      ...
+    # Subtest: TA-L5-001
+    ok 7 - TA-L5-001
+      ---
+      duration_ms: 0.1176
+      ...
+    # Subtest: TA-L5-002
+    ok 8 - TA-L5-002
+      ---
+      duration_ms: 0.2086
+      ...
+    # Subtest: TA-L5-003
+    ok 9 - TA-L5-003
+      ---
+      duration_ms: 0.1931
+      ...
+    # Subtest: TA-L5-004
+    ok 10 - TA-L5-004
+      ---
+      duration_ms: 0.3695
+      ...
+    # Subtest: TA-L5-005
+    ok 11 - TA-L5-005
+      ---
+      duration_ms: 0.2129
+      ...
+    # Subtest: TA-L5-006
+    ok 12 - TA-L5-006
+      ---
+      duration_ms: 0.9709
+      ...
+    # Subtest: TA-L6-001
+    ok 13 - TA-L6-001
+      ---
+      duration_ms: 0.0664
+      ...
+    # Subtest: TA-L6-002
+    ok 14 - TA-L6-002
+      ---
+      duration_ms: 0.0356
+      ...
+    # Subtest: TA-L6-003
+    ok 15 - TA-L6-003
+      ---
+      duration_ms: 0.0295
+      ...
+    # Subtest: TA-L6-004
+    ok 16 - TA-L6-004
+      ---
+      duration_ms: 0.268
+      ...
+    # Subtest: TA-L6-005
+    ok 17 - TA-L6-005
+      ---
+      duration_ms: 0.0393
+      ...
+    # Subtest: TA-L6-006
+    ok 18 - TA-L6-006
+      ---
+      duration_ms: 0.0291
+      ...
+    # Subtest: TA-L6-007
+    ok 19 - TA-L6-007
+      ---
+      duration_ms: 0.0279
+      ...
+    # Subtest: TA-L6-008
+    ok 20 - TA-L6-008
+      ---
+      duration_ms: 0.0267
+      ...
+    # Subtest: TA-L6-009
+    ok 21 - TA-L6-009
+      ---
+      duration_ms: 0.0736
+      ...
+    # Subtest: TA-L7-001
+    ok 22 - TA-L7-001
+      ---
+      duration_ms: 0.1949
+      ...
+    # Subtest: TA-L7-002
+    ok 23 - TA-L7-002
+      ---
+      duration_ms: 0.0407
+      ...
+    # Subtest: TA-L7-003
+    ok 24 - TA-L7-003
+      ---
+      duration_ms: 0.0752
+      ...
+    # Subtest: TA-L7-004
+    ok 25 - TA-L7-004
+      ---
+      duration_ms: 0.0442
+      ...
+    # Subtest: TA-L7-005
+    ok 26 - TA-L7-005
+      ---
+      duration_ms: 0.0296
+      ...
+    # Subtest: TA-L7-006
+    ok 27 - TA-L7-006
+      ---
+      duration_ms: 0.0234
+      ...
+    # Subtest: TA-L7-007
+    ok 28 - TA-L7-007
+      ---
+      duration_ms: 0.026
+      ...
+    1..28
+ok 57 - every Track A baseline remains open and its mutation closes the expected stable gate
+  ---
+  duration_ms: 6.9685
+  ...
+1..57
+# tests 113
+# suites 0
+# pass 113
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1434.5852
+
+> lint:registries
+> node registry-lint.mjs
+
+{
+  "result": "PASS",
+  "registry_version": "1.1.0-development",
+  "applicability_mapping_version": "1.1.0-development",
+  "applicability_overlay_version": "consolidated-into-base",
+  "requirement_count": 62,
+  "gate_code_count": 28,
+  "covered_gate_codes": {
+    "GKOS-GATE-L1-001": [
+      "TA-L1-001"
+    ],
+    "GKOS-GATE-L3-001": [
+      "TA-L3-001"
+    ],
+    "GKOS-GATE-L4-001": [
+      "TA-L4-001"
+    ],
+    "GKOS-GATE-L4-002": [
+      "TA-L4-002"
+    ],
+    "GKOS-GATE-L4-003": [
+      "TA-L4-003"
+    ],
+    "GKOS-GATE-L4-004": [
+      "TA-L4-004"
+    ],
+    "GKOS-GATE-L5-001": [
+      "TA-L5-001"
+    ],
+    "GKOS-GATE-L5-002": [
+      "TA-L5-002"
+    ],
+    "GKOS-GATE-L5-003": [
+      "TA-L5-003"
+    ],
+    "GKOS-GATE-L5-004": [
+      "TA-L5-004"
+    ],
+    "GKOS-GATE-L5-005": [
+      "TA-L5-005"
+    ],
+    "GKOS-GATE-L5-006": [
+      "TA-L5-006"
+    ],
+    "GKOS-GATE-L6-001": [
+      "TA-L6-001"
+    ],
+    "GKOS-GATE-L6-002": [
+      "TA-L6-002"
+    ],
+    "GKOS-GATE-L6-003": [
+      "TA-L6-003"
+    ],
+    "GKOS-GATE-L6-004": [
+      "TA-L6-004"
+    ],
+    "GKOS-GATE-L6-005": [
+      "TA-L6-005"
+    ],
+    "GKOS-GATE-L6-006": [
+      "TA-L6-006"
+    ],
+    "GKOS-GATE-L6-007": [
+      "GCP6-N-CONTENT-001",
+      "TA-L6-007"
+    ],
+    "GKOS-GATE-L6-008": [
+      "GCP6-N-RENDER-001",
+      "TA-L6-008"
+    ],
+    "GKOS-GATE-L6-009": [
+      "GCP6-N-CLOSURE-001",
+      "TA-L6-009"
+    ],
+    "GKOS-GATE-L7-001": [
+      "GCP7-N-AUTH-TIME-001",
+      "TA-L7-001"
+    ],
+    "GKOS-GATE-L7-002": [
+      "TA-L7-002"
+    ],
+    "GKOS-GATE-L7-003": [
+      "TA-L7-003"
+    ],
+    "GKOS-GATE-L7-004": [
+      "TA-L7-004"
+    ],
+    "GKOS-GATE-L7-005": [
+      "TA-L7-005"
+    ],
+    "GKOS-GATE-L7-006": [
+      "TA-L7-006"
+    ],
+    "GKOS-GATE-L7-007": [
+      "TA-L7-007"
+    ]
+  },
+  "uncovered_gate_codes": [],
+  "executed_predicate_gate_codes": {
+    "GKOS-GATE-L1-001": [
+      "TA-L1-001"
+    ],
+    "GKOS-GATE-L3-001": [
+      "TA-L3-001"
+    ],
+    "GKOS-GATE-L4-001": [
+      "TA-L4-001"
+    ],
+    "GKOS-GATE-L4-002": [
+      "TA-L4-002"
+    ],
+    "GKOS-GATE-L4-003": [
+      "TA-L4-003"
+    ],
+    "GKOS-GATE-L4-004": [
+      "TA-L4-004"
+    ],
+    "GKOS-GATE-L5-001": [
+      "TA-L5-001"
+    ],
+    "GKOS-GATE-L5-002": [
+      "TA-L5-002"
+    ],
+    "GKOS-GATE-L5-003": [
+      "TA-L5-003"
+    ],
+    "GKOS-GATE-L5-004": [
+      "TA-L5-004"
+    ],
+    "GKOS-GATE-L5-005": [
+      "TA-L5-005"
+    ],
+    "GKOS-GATE-L5-006": [
+      "TA-L5-006"
+    ],
+    "GKOS-GATE-L6-001": [
+      "TA-L6-001"
+    ],
+    "GKOS-GATE-L6-002": [
+      "TA-L6-002"
+    ],
+    "GKOS-GATE-L6-003": [
+      "TA-L6-003"
+    ],
+    "GKOS-GATE-L6-004": [
+      "TA-L6-004"
+    ],
+    "GKOS-GATE-L6-005": [
+      "TA-L6-005"
+    ],
+    "GKOS-GATE-L6-006": [
+      "TA-L6-006"
+    ],
+    "GKOS-GATE-L6-007": [
+      "TA-L6-007"
+    ],
+    "GKOS-GATE-L6-008": [
+      "TA-L6-008"
+    ],
+    "GKOS-GATE-L6-009": [
+      "TA-L6-009"
+    ],
+    "GKOS-GATE-L7-001": [
+      "TA-L7-001"
+    ],
+    "GKOS-GATE-L7-002": [
+      "TA-L7-002"
+    ],
+    "GKOS-GATE-L7-003": [
+      "TA-L7-003"
+    ],
+    "GKOS-GATE-L7-004": [
+      "TA-L7-004"
+    ],
+    "GKOS-GATE-L7-005": [
+      "TA-L7-005"
+    ],
+    "GKOS-GATE-L7-006": [
+      "TA-L7-006"
+    ],
+    "GKOS-GATE-L7-007": [
+      "TA-L7-007"
+    ]
+  },
+  "executable_uncovered_gate_codes": [],
+  "coverage_scope": "portable-predicate-twins-only; not cumulative profile qualification",
+  "errors": [],
+  "warnings": []
+}

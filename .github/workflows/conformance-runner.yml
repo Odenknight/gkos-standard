@@ -43,6 +43,10 @@ jobs:
       - name: Test runner claim boundaries
         working-directory: conformance/runner
         run: npm test
+      - name: Test non-qualifying EU AI example harness boundaries
+        run: node --test conformance/runner/examples/eu-ai-evidence/p1-harness.test.mjs
+      - name: Verify captured EU AI pilot evidence integrity
+        run: node scripts/check-eu-ai-p1-evidence.mjs
 
   node-23-informative:
     name: informative ubuntu-latest / Node 23

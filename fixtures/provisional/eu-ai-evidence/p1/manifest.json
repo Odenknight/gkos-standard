@@ -1,0 +1,219 @@
+{
+  "fixture_id": "eu-ai-evidence-p1-valid-dossier",
+  "fixture_version": "1.0.0",
+  "standing": "fictional, non-normative, non-qualifying",
+  "expectation_basis": "docs/eu-ai-evidence/specs/01-valid-dossier-and-revisions.md",
+  "now": "2026-09-03T12:00:00.000Z",
+  "allowed_warnings": [],
+  "allowed_info_codes": [
+    "GKX-SCHEMA-002"
+  ],
+  "records": [
+    {
+      "alias": "S",
+      "path": "system.md",
+      "uid": "550e8400-e29b-41d4-a716-446655440101",
+      "required": true,
+      "sha256": "40f976ce933fdca84911bd531a7e6648204ae5d0e0194a06c2061beedaf2cca8",
+      "title": "Example AI system",
+      "timestamp": "2026-09-01T09:00:00.000Z",
+      "metadata": {
+        "record_role": "system",
+        "system_id": "example-ai",
+        "system_version": "demo-build-1"
+      }
+    },
+    {
+      "alias": "D1",
+      "path": "dossier-r1.md",
+      "uid": "550e8400-e29b-41d4-a716-446655440102",
+      "required": true,
+      "sha256": "e84e9e8631512a41bb51cfea58811f8aeab7d6775dc09e304509d89cb8b96521",
+      "title": "Example AI dossier revision 1",
+      "timestamp": "2026-09-01T10:00:00.000Z",
+      "metadata": {
+        "record_role": "dossier",
+        "system_id": "example-ai",
+        "system_version": "demo-build-1",
+        "dossier_id": "example-ai-dossier",
+        "document_revision": "1"
+      }
+    },
+    {
+      "alias": "D2",
+      "path": "dossier-r2.md",
+      "uid": "550e8400-e29b-41d4-a716-446655440103",
+      "required": true,
+      "sha256": "c05c4c710f8144aca84fae7a0f20fb6343433643a57a3a7d5757f8e257be065d",
+      "title": "Example AI dossier revision 2",
+      "timestamp": "2026-09-02T10:00:00.000Z",
+      "metadata": {
+        "record_role": "dossier",
+        "system_id": "example-ai",
+        "system_version": "demo-build-1",
+        "dossier_id": "example-ai-dossier",
+        "document_revision": "2"
+      }
+    },
+    {
+      "alias": "E",
+      "path": "evaluation-summary.md",
+      "uid": "550e8400-e29b-41d4-a716-446655440104",
+      "required": true,
+      "sha256": "af54bc982e119b9862d2e41866d9cb1d2c90cc00781e6bf0ea4dbeca6bf5fb4e",
+      "title": "Example AI fictional evaluation summary",
+      "timestamp": "2026-09-01T09:00:00.000Z",
+      "metadata": {
+        "record_role": "evaluation",
+        "system_id": "example-ai",
+        "system_version": "demo-build-1"
+      }
+    },
+    {
+      "alias": "R",
+      "path": "review-note.md",
+      "uid": "550e8400-e29b-41d4-a716-446655440105",
+      "required": true,
+      "sha256": "dbf0e688bbe4151725a280ccf19901ba663f38754f275cd3567cfeb5ee8181e8",
+      "title": "Example AI fictional review note",
+      "timestamp": "2026-09-02T09:00:00.000Z",
+      "metadata": {
+        "record_role": "review",
+        "system_id": "example-ai",
+        "system_version": "demo-build-1"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440102",
+      "type": "documents",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440101"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440102",
+      "type": "cites",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440104"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440103",
+      "type": "documents",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440101"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440103",
+      "type": "cites",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440104"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440103",
+      "type": "cites",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440105"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440103",
+      "type": "supersedes",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440102"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440104",
+      "type": "documents",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440101"
+    },
+    {
+      "source_uid": "550e8400-e29b-41d4-a716-446655440105",
+      "type": "documents",
+      "target_uid": "550e8400-e29b-41d4-a716-446655440101"
+    }
+  ],
+  "snapshots": {
+    "A": [
+      "S",
+      "D1",
+      "E"
+    ],
+    "B": [
+      "S",
+      "D1",
+      "D2",
+      "E",
+      "R"
+    ]
+  },
+  "requests": {
+    "A": {
+      "system_id": "example-ai",
+      "system_version": "demo-build-1",
+      "dossier_id": "example-ai-dossier",
+      "mode": "current"
+    },
+    "B": {
+      "system_id": "example-ai",
+      "system_version": "demo-build-1",
+      "dossier_id": "example-ai-dossier",
+      "mode": "current"
+    },
+    "C": {
+      "system_id": "example-ai",
+      "system_version": "demo-build-1",
+      "dossier_id": "example-ai-dossier",
+      "mode": "uid",
+      "uid": "550e8400-e29b-41d4-a716-446655440102"
+    }
+  },
+  "expected_inspections": {
+    "A": {
+      "uid": "550e8400-e29b-41d4-a716-446655440102",
+      "document_revision": "1",
+      "status": "current",
+      "head": false,
+      "invalid_at": null,
+      "successors": [],
+      "predecessors": [],
+      "documents": [
+        "550e8400-e29b-41d4-a716-446655440101"
+      ],
+      "cites": [
+        "550e8400-e29b-41d4-a716-446655440104"
+      ],
+      "epistemic_state": "reported"
+    },
+    "B": {
+      "uid": "550e8400-e29b-41d4-a716-446655440103",
+      "document_revision": "2",
+      "status": "current",
+      "head": true,
+      "invalid_at": null,
+      "successors": [],
+      "predecessors": [
+        "550e8400-e29b-41d4-a716-446655440102"
+      ],
+      "documents": [
+        "550e8400-e29b-41d4-a716-446655440101"
+      ],
+      "cites": [
+        "550e8400-e29b-41d4-a716-446655440104",
+        "550e8400-e29b-41d4-a716-446655440105"
+      ],
+      "epistemic_state": "reported"
+    },
+    "C": {
+      "uid": "550e8400-e29b-41d4-a716-446655440102",
+      "document_revision": "1",
+      "status": "historical",
+      "head": false,
+      "invalid_at": "2026-09-02T10:00:00.000Z",
+      "successors": [
+        "550e8400-e29b-41d4-a716-446655440103"
+      ],
+      "predecessors": [],
+      "documents": [
+        "550e8400-e29b-41d4-a716-446655440101"
+      ],
+      "cites": [
+        "550e8400-e29b-41d4-a716-446655440104"
+      ],
+      "epistemic_state": "reported"
+    }
+  }
+}

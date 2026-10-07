@@ -1,0 +1,89 @@
+✖ actual coordinator eval replay emits exact text and pretty canonical JSON offline (5914.1286ms)
+✖ C:\Users\Marius\Desktop\Dev\Lusaur\repos\GKOS-Engine\test\retrieval-evaluation-cli.test.mjs (0.3993ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6012.7465
+
+✖ failing tests:
+
+test at test\retrieval-evaluation-cli.test.mjs:1225:1
+✖ actual coordinator eval replay emits exact text and pretty canonical JSON offline (5914.1286ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 3,
+  -   code: 0,
+      signal: null,
+  +   stderr: 'gkx retrieval eval: operational failure\n',
+  +   stdout: ''
+  -   stderr: '',
+  -   stdout: 'gkx retrieval eval\n' +
+  -     'status: pass\n' +
+  -     'reasons: []\n' +
+  -     'baseline_ndcg_at_k_micros: 1000000\n' +
+  -     'current_ndcg_at_k_micros: 1000000\n' +
+  -     'baseline_evaluation_digest: sha256:0af5053fccb84ae0a9eb3b785a3760e20438300dd49d512c6ab480bfe299e433\n' +
+  -     'current_evaluation_digest: sha256:0af5053fccb84ae0a9eb3b785a3760e20438300dd49d512c6ab480bfe299e433\n' +
+  -     'comparison_digest: sha256:44333a25dc9c40a10e09316a3da2183fd2cb28b19736f269d410727fe1f5f3ae\n'
+    }
+  
+      at TestContext.<anonymous> (file:///C:/Users/Marius/Desktop/Dev/Lusaur/repos/GKOS-Engine/test/retrieval-evaluation-cli.test.mjs:1281:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { code: 3, signal: null, stdout: '', stderr: 'gkx retrieval eval: operational failure\n' },
+    expected: { code: 0, signal: null, stdout: 'gkx retrieval eval\nstatus: pass\nreasons: []\nbaseline_ndcg_at_k_micros: 1000000\ncurrent_ndcg_at_k_micros: 1000000\nbaseline_evaluation_digest: sha256:0af5053fccb84ae0a9eb3b785a3760e20438300dd49d512c6ab480bfe299e433\ncurrent_evaluation_digest: sha256:0af5053fccb84ae0a9eb3b785a3760e20438300dd49d512c6ab480bfe299e433\ncomparison_digest: sha256:44333a25dc9c40a10e09316a3da2183fd2cb28b19736f269d410727fe1f5f3ae\n', stderr: '' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test\retrieval-evaluation-cli.test.mjs:52:6
+✖ C:\Users\Marius\Desktop\Dev\Lusaur\repos\GKOS-Engine\test\retrieval-evaluation-cli.test.mjs (0.3993ms)
+  AssertionError [ERR_ASSERTION]: argv_matrix: unconsumed rows
+  + actual - expected
+  
+  + []
+  - [
+  -   'dash-value',
+  -   'duplicate-fixture',
+  -   'duplicate-output',
+  -   'empty',
+  -   'eval',
+  -   'eval-duplicate-json',
+  -   'eval-json',
+  -   'eval-missing-fixture',
+  -   'eval-missing-value',
+  -   'eval-output-forbidden',
+  -   'eval-short-help-unapproved',
+  -   'retrieval-help-unapproved',
+  -   'retrieval-short-help-unapproved',
+  -   'tune',
+  -   'tune-json-forbidden',
+  -   'tune-missing-output',
+  -   'tune-short-help-unapproved',
+  -   'unknown-command'
+  - ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/Marius/Desktop/Dev/Lusaur/repos/GKOS-Engine/test/retrieval-evaluation-cli.test.mjs:56:12)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1382:25)
+      at TestHook.run (node:internal/test_runner/test:1726:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.runHook (node:internal/test_runner/test:1269:20)
+      at after (node:internal/test_runner/test:1322:20)
+      at Test.run (node:internal/test_runner/test:1408:13) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ 'dash-value', 'duplicate-fixture', 'duplicate-output', 'empty', 'eval', 'eval-duplicate-json', 'eval-json', 'eval-missing-fixture', 'eval-missing-value', 'eval-output-forbidden', 'eval-short-help-unapproved', 'retrieval-help-unapproved', 'retrieval-short-help-unapproved', 'tune', 'tune-json-forbidden', 'tune-missing-output', 'tune-short-help-unapproved', 'unknown-command' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

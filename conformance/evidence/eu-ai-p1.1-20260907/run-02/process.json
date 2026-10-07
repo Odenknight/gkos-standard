@@ -1,0 +1,6 @@
+{
+  "actual_process_exit_code": 1,
+  "expected_process_exit_code": 1,
+  "command": "node --test conformance/runner/examples/eu-ai-evidence/p1-valid-dossier.test.mjs",
+  "ended_at": "2026-09-07T13:27:34.888Z"
+}
