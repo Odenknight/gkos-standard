@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "workflow_id": "release",
+  "stages": [
+    {"id": "01-gate", "depends_on": []},
+    {"id": "02-candidate", "depends_on": ["01-gate"]},
+    {"id": "03-package", "depends_on": ["02-candidate"]},
+    {"id": "04-verify", "depends_on": ["03-package"]},
+    {"id": "05-owner-actions", "depends_on": ["04-verify"]},
+    {"id": "06-archive-receipt", "depends_on": ["05-owner-actions"]}
+  ]
+}
