@@ -80,15 +80,17 @@ legal interpretation is asserted.
    The contributor must supply their own attestation through the documented
    contribution process. A maintainer sign-off cannot manufacture that
    contributor's certification; this integration preserves their history.
-2. Required hosted checks must pass on the final candidate. The current-main
-   lockfile still contains the previously identified fast-uri audit finding.
-   PR #42 proposes bounded maintenance, but its unmerged work is not treated
-   as approved or imported here.
-3. The current release validator freezes the working-tree technical paths
-   against v0.82. This PR adds example/fixture paths in that frozen set.
-   Development validation must explicitly reconcile those additions with the
-   immutable published package before the mandatory gate can pass. This
-   review neither removes the gate nor relaxes published source checksums.
+2. Required hosted checks must pass on the final candidate. The separately
+   merged PR #67 supplies fast-uri 3.1.8 and the bounded development guard.
+   This candidate integrates main `3cc10f4eb012982d7323db9d53947acf5a4579cc`.
+3. The development guard additionally permits exactly the six original example
+   files and six provisional fixture files from contributor head `b7c884e`,
+   pinned by SHA-256 in `scripts/pr48-development-additions.json`. They must
+   be absent from the published tag and match the exact inventory and bytes.
+   No published source may be replaced. Other technical changes still fail;
+   strict publication and post-tag validation still reject the development
+   checkout. Published source checksums remain unchanged. See the
+   [bounded addition record](../implementation/20261007_PR48_DEVELOPMENT_ADDITIONS.md).
 
 P11-08 is a retained experimental failure, not a passing acceptance result.
 Accepting this material into the repository, if its merge gates clear, must

@@ -1,0 +1,19 @@
+{
+  "format": "gkos-development-additions/pr48/1",
+  "source_commit": "b7c884e147e909c9e6b76b8690384f026fc27eb8",
+  "standing": "informative-example-only; no P1.1 acceptance or profile qualification",
+  "files": {
+    "conformance/runner/examples/eu-ai-evidence/p1-evaluate.mjs": "ef221e9fa28cdec65233422726a2a87195b1118e8990cce13184c07b8599dbdb",
+    "conformance/runner/examples/eu-ai-evidence/p1-fixture.mjs": "64304a4d7261f39925b234ceda79b770f75d53f8df23a649e59c61c773bdd8f6",
+    "conformance/runner/examples/eu-ai-evidence/p1-harness.test.mjs": "290cadc63eddbca559666e3029ff6c8ecc2d719b45b329d501663df70eac0b29",
+    "conformance/runner/examples/eu-ai-evidence/p1-report.mjs": "b6ad47871f3ae5997602cbbaba0cc98226c0216ea7150668f14a96d9a6bce53c",
+    "conformance/runner/examples/eu-ai-evidence/p1-run.mjs": "c407499414156d28af6aaf8e7e6fc25b11d155abff915ec4a717db337838d1e0",
+    "conformance/runner/examples/eu-ai-evidence/p1-valid-dossier.test.mjs": "ebb3465642b40823d22f8937268d8719e169eb2b03f4a52a639d0364280ed899",
+    "fixtures/provisional/eu-ai-evidence/p1/dossier-r1.md": "e84e9e8631512a41bb51cfea58811f8aeab7d6775dc09e304509d89cb8b96521",
+    "fixtures/provisional/eu-ai-evidence/p1/dossier-r2.md": "c05c4c710f8144aca84fae7a0f20fb6343433643a57a3a7d5757f8e257be065d",
+    "fixtures/provisional/eu-ai-evidence/p1/evaluation-summary.md": "af54bc982e119b9862d2e41866d9cb1d2c90cc00781e6bf0ea4dbeca6bf5fb4e",
+    "fixtures/provisional/eu-ai-evidence/p1/manifest.json": "29dc1cca57c49d9e82346a7329115a528dd328987ae6f8241ffa13cd98fd9c55",
+    "fixtures/provisional/eu-ai-evidence/p1/review-note.md": "dbf0e688bbe4151725a280ccf19901ba663f38754f275cd3567cfeb5ee8181e8",
+    "fixtures/provisional/eu-ai-evidence/p1/system.md": "40f976ce933fdca84911bd531a7e6648204ae5d0e0194a06c2061beedaf2cca8"
+  }
+}
