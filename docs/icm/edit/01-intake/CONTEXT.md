@@ -2,7 +2,7 @@
 
 ## Goal
 
-Turn the request into an exact edit scope: every target record by path and stable ID, its standing, the change class, the rule or owner instruction that permits the edit, and what is excluded. Done means `scope.json` exists and every target resolves at the packet's `base_commit`, or the stage reports `BLOCKED` with the missing authority named.
+Turn the request into an exact edit scope: every target record by path and stable ID, whether it is an existing record or a proposed new record, its standing, the change class, the rule or owner instruction that permits the edit, and what is excluded. Done means `scope.json` exists, every existing target and supporting reference resolves at the packet's `base_commit`, and every proposed new record has an existing parent folder, an unused path and identifier, and a recorded permitting source; or the stage reports `BLOCKED` with the missing authority named.
 
 ## Governing instructions
 
@@ -22,7 +22,7 @@ Turn the request into an exact edit scope: every target record by path and stabl
 | Decision index | `decisions/GKOS_Decision_Register.md` | Sections naming the targets | Packet `base_commit` |
 | Requirement index | `requirements/REGISTRY.md` | Rows for any cited `GKOS-<AREA>-NNN` ID | Packet `base_commit` |
 | Release coverage | `releases/2026-09-24-v0.82.1/RELEASE_MANIFEST.yml` | `decisions`, `normative-annexes`, `provisional-material` lists | Packet `base_commit` |
-| Targets | `<target-path>` for each target in the packet | Named sections or lines | Packet `base_commit` |
+| Targets | `<target-path>` for each `existing` target in the packet; `<parent-folder>` for each `create` target | Named sections or lines; folder listing | Packet `base_commit` |
 
 ## Dependencies
 
@@ -37,21 +37,22 @@ Turn the request into an exact edit scope: every target record by path and stabl
 
 1. Record the checkout state (executed by the worker): `git rev-parse HEAD`, `git status --porcelain`, `git branch --show-current`. Stop if HEAD differs from `base_commit`.
 2. Read the governing instructions in full, then the inputs.
-3. Resolve each target to a path and stable ID: requirement IDs `GKOS-<AREA>-NNN`, decisions `R<N>`, ambiguity IDs `EAR-*`, fixture IDs, review IDs such as `R23-REV-001`. If the request names a topic, search for records with `git grep -n "<term>"` and list candidates; do not guess one.
-4. Confirm each target exists at the base commit: `git cat-file -e <base_commit>:<path>`.
-5. Classify each target. Normative: `standard/00_GKOS_Master_Standard.md`, the annexes listed as `normative-annexes` in the current release manifest, `requirements/`. Decision: `decisions/`, `docs/decisions/`. Informative or proposed: as the document's own status line says. Historical: `archive/`, `docs/archive/`, `docs/implementation/archive/`, `fixtures/archive/`, `schemas/archive/`, `releases/`, `release-candidates/`, publication records under `docs/releases/`.
-6. Assign one change class per target. Normative compatible or higher needs a Development Decision Record accepted by the owner, or the edit is limited to drafting that proposal.
-7. Record the permitting rule: an owner instruction reference, an accepted R-decision, or a `CONTRIBUTING.md` route. If none exists, stop with `BLOCKED`.
-8. List exclusions explicitly: historical targets, any path the packet does not name, and anything under `releases/` or `release-candidates/`.
-9. Write `scope.json`, then `HANDOFF.json` last.
+3. Resolve each target to a path and stable ID: requirement IDs `GKOS-<AREA>-NNN`, decisions `R<N>`, ambiguity IDs `EAR-*`, fixture IDs, review IDs such as `R23-REV-001`. If the request names a topic, search for records with `git grep -n -I "<term>"` and list candidates; do not guess one. Mark each target `existing` (the edit changes a record present at the base commit) or `create` (the edit adds a record, such as a new R-series proposal, an owner clarification under `docs/decisions/` or a successor record).
+4. Existing targets and supporting references (records cited as context, such as the decision a new proposal amends or supersedes): confirm each path exists at the base commit, `git cat-file -e <base_commit>:<path>`, and each cited ID has a hit, `git grep -n -I "<id>" <base_commit>`.
+5. Proposed new records (`create`): confirm the parent folder exists (`git cat-file -e <base_commit>:<parent-folder>`), the new path does not (`git cat-file -e <base_commit>:<path>` exits non-zero), and the new identifier is unused (`git grep -n -I -w "<new-id>" <base_commit>` exits 1). Keep `-I`: without it, `git grep -n "R25" b308ff7` matches bytes inside two PNG files under `graphics/diagrams/`. The new path must not match the release-validation rejection `/(draft|pre-0\.75|v0\.[0-6])`. Record the permitting source for the creation.
+6. Classify each target. Normative: `standard/00_GKOS_Master_Standard.md`, the annexes listed as `normative-annexes` in the current release manifest, `requirements/`. Decision: `decisions/`, `docs/decisions/`. Informative or proposed: as the document's own status line says. Historical: `archive/`, `docs/archive/`, `docs/implementation/archive/`, `fixtures/archive/`, `schemas/archive/`, `releases/`, `release-candidates/`, publication records under `docs/releases/`. A `create` target is `proposed` until the owner acts.
+7. Assign one change class per target. Normative compatible or higher needs a Development Decision Record accepted by the owner, or the edit is limited to drafting that proposal.
+8. Record the permitting rule: an owner instruction reference, an accepted R-decision, or a `CONTRIBUTING.md` route. If none exists, stop with `BLOCKED`.
+9. List exclusions explicitly: historical targets, any path the packet does not name, and anything under `releases/` or `release-candidates/`.
+10. Write `scope.json`, then `HANDOFF.json` last.
 
 ## Verification
 
 Objective:
 
-- Every target path passes `git cat-file -e <base_commit>:<path>` (exit 0).
-- Every cited ID is found by `git grep -n "<id>" <base_commit>` (at least one hit).
-- `scope.json` parses as JSON and names `base_commit`, targets, change class, permitting rule and exclusions.
+- Every `existing` target and every supporting reference passes `git cat-file -e <base_commit>:<path>` (exit 0), and every cited existing ID is found by `git grep -n -I "<id>" <base_commit>` (at least one hit).
+- Every `create` target: its parent folder passes `git cat-file -e`, its own path fails it, its new identifier has no hit from `git grep -n -I -w "<new-id>" <base_commit>`, and its permitting source is recorded.
+- `scope.json` parses as JSON and names `base_commit`, targets with their kind, change class, permitting rule and exclusions.
 
 Interpretation (reviewer judgment):
 
@@ -62,12 +63,14 @@ Interpretation (reviewer judgment):
 
 | Artifact | Location | Format |
 | --- | --- | --- |
-| Scope | `<run>/output/<task-id>/<attempt>/scope.json` | JSON: `base_commit`, `targets[]` (`path`, `ids[]`, `standing`, `lines`), `change_class`, `permitting_rule`, `exclusions[]`, `pr_template` (draft field values) |
+| Scope | `<run>/output/<task-id>/<attempt>/scope.json` | JSON: `base_commit`, `targets[]` (`path`, `kind` `existing` or `create`, `ids[]`, `standing`, `lines`; for `create` also `parent`, `new_id`, `id_check`), `supporting_refs[]`, `change_class`, `permitting_rule`, `exclusions[]`, `pr_template` (draft field values) |
 | Handoff | `<run>/output/<task-id>/<attempt>/HANDOFF.json` | Kit template; status `submitted`, `blocked` or `uncertain` |
 
 ## Failure behavior
 
 - No permitting rule or owner instruction → `BLOCKED`; name what decision is missing and who makes it (the Founder and Initial Editor).
 - A target is historical or under `releases/` or `release-candidates/` → `BLOCKED` for that target; propose a successor record instead.
+- An `existing` target or supporting reference is missing at the base commit → `BLOCKED` for that target; name the missing path or ID.
+- A `create` target's path already exists or its identifier is already used → `uncertain`; report the collision; the coordinator chooses the path or identifier.
 - The request touches security-sensitive detail → stop; tell the coordinator to route it through `SECURITY.md`; write nothing about the detail in run records.
 - Topic resolves to several plausible records → `uncertain`; list them; do not pick one.

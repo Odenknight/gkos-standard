@@ -18,15 +18,15 @@ A reviewer who did not author the candidate reads the exact commit against its s
 | Source | Exact reference | Scope | Revision/digest |
 | --- | --- | --- | --- |
 | Sealed packet | Task packet `tasks/<task-id>.json` naming the candidate commit and the files below | Full packet | SHA-256 in `RUN.json` |
-| Scope | `<run>/output/<task-id>/<attempt>/scope.json` from `01-intake` | Full | Digest in its HANDOFF.json |
-| Lineage | `<run>/output/<task-id>/<attempt>/lineage.md` from `02-lineage` | Full | Digest in its HANDOFF.json |
-| Check results | `<run>/output/<task-id>/<attempt>/results.json` from `04-check` | Full | Digest in its HANDOFF.json |
+| Scope | `<run>/output/<task-id>/<attempt>/scope.json` from `01-intake` | Full; on router entry at this stage, the records the sealed packet names instead | Digest in its HANDOFF.json |
+| Lineage | `<run>/output/<task-id>/<attempt>/lineage.md` from `02-lineage` | Full; absent when `02-lineage` is `NOT_APPLICABLE` or the sealed packet names other records | Digest in its HANDOFF.json |
+| Check results | `<run>/output/<task-id>/<attempt>/results.json` from `04-check` | Full; on router entry at this stage, the hosted required-check results for the exact head | Digest in its HANDOFF.json, or the check-run URLs and head SHA |
 | Candidate | `git diff <base_commit>..<candidate-commit>` | Full diff | Candidate commit |
 | Reference text | `requirements/REGISTRY.md` and each decision named in the lineage file | Cited rows and sections | Packet `base_commit` |
 
 ## Dependencies
 
-- `04-check` accepted for the same candidate commit. If a deterministic check is `FAIL`, the reviewer may still review but cannot return `PASS`.
+- `04-check` accepted for the same candidate commit, or, on router entry at this stage for another author's draft or PR head, verified prior evidence named in the packet for `01-intake` through `04-check` (the exact head commit and its hosted required-check results). If a deterministic check is `FAIL`, the reviewer may still review but cannot return `PASS`.
 
 ## Allowed writes
 

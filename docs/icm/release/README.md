@@ -12,10 +12,12 @@ Use this workflow to prepare a GKOS edition for the Founder and Initial Editor's
 | `02-candidate` | Assemble and freeze one release-candidate package and its validator | Agent prepares on a `release/` branch | Frozen candidate commit, RC package |
 | `03-package` | Prepare the dated release package and citation bump in one PR branch | Agent prepares | Package commit, checksums |
 | `04-verify` | Rerun every required check on the exact candidate; build the owner evidence table | Agent verifies | `evidence.md` |
-| `05-owner-actions` | Verify each owner action in order: merge, exact-SHA approval, ruleset change, signed tag, post-tag checks, GitHub Release | Owner acts; agent verifies | `owner-actions.json` |
-| `06-archive-receipt` | Verify the Zenodo record and archive bytes; prepare the DOI receipt change | Agent verifies and prepares; owner merges | Receipt branch |
+| `05-owner-actions` | Verify each publication action in order against the controlling record: merge, publication authorization (exact-SHA owner disposition or prospective executor-bound authorization), ruleset change, signed tag, post-tag checks, GitHub Release; record who acted | Owner, or an executor the owner authorized in a control record, acts; agent verifies | `owner-actions.json` |
+| `06-archive-receipt` | Verify the Zenodo record and archive bytes; prepare the DOI receipt, or a dated archive-verification supplement when a publication record already exists | Agent verifies and prepares; owner merges | Receipt branch |
 
 `02-candidate` may be `NOT_APPLICABLE` when the controlling gate record does not require a separate candidate package (v0.82.1 used its publication PR head as the candidate and has no `release-candidates/` folder).
+
+A packet may enter at `05-owner-actions` or `06-archive-receipt` when the earlier stages are already recorded in the repository. It names those records, by path and blob SHA-256 at `base_commit`, as verified prior evidence for each bypassed stage (router, "Skips and late entry"). `dependencies.json` keeps the full graph.
 
 ## Precedents in this repository
 
@@ -35,4 +37,4 @@ Use this workflow to prepare a GKOS edition for the Founder and Initial Editor's
 
 ## Current pending item at the base commit
 
-`README.md` states that the v0.82.1 archive and version DOI are not yet verified. That is a `06-archive-receipt` task.
+`README.md` states that the v0.82.1 archive and version DOI are not yet verified. That is a `06-archive-receipt` task, entered late with `docs/releases/V0821_PUBLICATION_CONTROL.md` and the v0.82.1 publication record pair as prior evidence. Because `docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md` and `.json` already exist, its output is a dated archive-verification supplement that links them; they are not rewritten.

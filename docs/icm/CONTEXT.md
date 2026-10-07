@@ -34,10 +34,19 @@ Read these in full before any stage. Do not trim them to save context.
 | Which decision is current for topic X? | [conformance-review](conformance-review/README.md) | `01-scope` | `decisions/GKOS_Decision_Register.md`, `docs/ecosystem/AMBIGUITY_REGISTER.md` |
 | What can be claimed publicly right now? | [conformance-review](conformance-review/README.md) | `01-scope` | `conformance/CLAIMS_POLICY.md`, `docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md` |
 | Prepare a release candidate, a dated release package or a DOI receipt | [release](release/README.md) | `01-gate` | `decisions/R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md`, `docs/releases/V0821_PUBLICATION_CONTROL.md` |
-| Verify a tag, GitHub Release or Zenodo record after an owner action | [release](release/README.md) | `05-owner-actions` or `06-archive-receipt` | The latest file under `docs/releases/` named in the packet |
+| Verify a tag, GitHub Release or Zenodo record after a publication action | [release](release/README.md) | `05-owner-actions` or `06-archive-receipt` (late entry, see below) | The control record and publication record the packet names, by path and blob SHA-256 |
 | Report a vulnerability | None | Not an ICM task | `SECURITY.md` |
 
-A one-file editorial fix needs one packet and one handoff. The packet may send it from `01-intake` straight to `03-draft`; record that choice in the packet.
+A one-file editorial fix needs one packet and one handoff. The packet may send it from `01-intake` straight to `03-draft` under the rule below.
+
+## Skips and late entry
+
+Each workflow's `dependencies.json` lists the full stage graph, and a packet does not edit it. A packet may skip a stage, or enter a workflow after its first stage, only when it names every bypassed stage and gives one of these for each:
+
+- **Verified prior evidence:** an accepted handoff, or a repository record at `base_commit`, named by path and SHA-256, that already holds what the bypassed stage would produce. Example: a late entry at `release/06-archive-receipt` for v0.82.1 names `docs/releases/V0821_PUBLICATION_CONTROL.md` and `docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.json` as the evidence for `01-gate` through `05-owner-actions` (`02-candidate` was `NOT_APPLICABLE` for v0.82.1).
+- **`NOT_APPLICABLE` with a reason:** the stage does not apply under the rule its workflow `README.md` states. Example: `02-lineage` and `05-review` for a non-normative editorial fix in an informative document.
+
+A dependency edge is satisfied by an accepted stage, by verified prior evidence named in the packet, or by a `NOT_APPLICABLE` record in the packet; never by an empty or missing output folder. The artifacts a bypassed stage would have written become optional inputs for later stages, which read the named evidence instead. The handoff lists every bypassed stage with its evidence or reason.
 
 ## Where run records live
 

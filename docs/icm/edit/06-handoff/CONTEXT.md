@@ -16,13 +16,14 @@ Give the Founder and Initial Editor one summary that is enough to decide: what c
 | Source | Exact reference | Scope | Revision/digest |
 | --- | --- | --- | --- |
 | Assignment | Task packet `tasks/<task-id>.json` | Full | SHA-256 in `RUN.json` |
-| Predecessors | HANDOFF.json of `01-intake` through `05-review` | Full | Digests in `RUN.json` accepted results |
-| Review | `<run>/output/<task-id>/<attempt>/REVIEW.md` | Verdict and findings | Digest in its HANDOFF.json |
+| Predecessors | HANDOFF.json of each stage in the route the packet declares; for a stage recorded `NOT_APPLICABLE` or satisfied by prior evidence, its packet entry | Full | Digests in `RUN.json` accepted results |
+| Review | `<run>/output/<task-id>/<attempt>/REVIEW.md` | Verdict and findings; absent when the packet records `05-review` as `NOT_APPLICABLE` | Digest in its HANDOFF.json |
 | Shared-file rows | `<run>/output/<task-id>/<attempt>/rows.md` | Proposed rows | Digest in its HANDOFF.json |
 
 ## Dependencies
 
-- `05-review` accepted, or the packet records why review was skipped (non-normative typo fix only).
+- `05-review` accepted, or recorded `NOT_APPLICABLE` in the packet with its reason under the router's "Skips and late entry" rule (non-normative editorial fix only, as the workflow `README.md` defines it).
+- Every other stage in the packet's route accepted, satisfied by verified prior evidence named in the packet, or recorded `NOT_APPLICABLE`.
 
 ## Allowed writes
 
@@ -32,7 +33,7 @@ Give the Founder and Initial Editor one summary that is enough to decide: what c
 ## Procedure
 
 1. Verify that every predecessor handoff names the same candidate commit, or record the successor commit chain after accepted corrections.
-2. Summarize in plain sentences: targets, change class, permitting rule, lineage points, check counts (`PASS`, `FAIL`, `BLOCKED`, `NOT_RUN`, `NOT_APPLICABLE`), review verdict, open findings with proposed dispositions for the owner to choose from.
+2. Summarize in plain sentences: targets, change class, permitting rule, lineage points, check counts (`PASS`, `FAIL`, `BLOCKED`, `NOT_RUN`, `NOT_APPLICABLE`), review verdict, open findings with proposed dispositions for the owner to choose from. List every stage the packet bypassed, with its prior evidence or its `NOT_APPLICABLE` reason; when `05-review` was `NOT_APPLICABLE`, say plainly that no independent review was done.
 3. Fill `PR-BODY.md` from `.github/PULL_REQUEST_TEMPLATE.md`: decision or proposal ID, affected requirement, change class, compatibility, security/privacy, migration, fixtures, doc impact, rollback path, evidence. Leave checklist boxes the author cannot truthfully tick unticked.
 4. List owner decisions separately: open a PR or not; merge after the nine required checks pass; dispositions of review findings; apply the proposed `CHANGELOG.md` and register rows (integrator after merge decision); any release consequence.
 5. Write `HANDOFF.json` last with status `submitted`.

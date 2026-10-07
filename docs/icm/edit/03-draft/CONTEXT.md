@@ -20,14 +20,14 @@ Produce one commit (or a short series) on the packet's branch that makes the sco
 | --- | --- | --- | --- |
 | Assignment | Task packet `tasks/<task-id>.json` | `write_scope`, `branch`, `base_commit` | SHA-256 in `RUN.json` |
 | Predecessor | `<run>/output/<task-id>/<attempt>/scope.json` | Full file | Digest in its HANDOFF.json |
-| Predecessor | `<run>/output/<task-id>/<attempt>/lineage.md` | Full file | Digest in its HANDOFF.json |
+| Predecessor | `<run>/output/<task-id>/<attempt>/lineage.md` | Full file; absent when the packet records `02-lineage` as `NOT_APPLICABLE` | Digest in its HANDOFF.json |
 | Decision template by precedent | `decisions/R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md` | Header fields and section layout | Packet `base_commit` |
 | Clarification template by precedent | `docs/decisions/2026-09-24-specification-status-and-claims.md` | Status, disposition, classification, rollback lines | Packet `base_commit` |
 | Targets | `<target-path>` per the scope file | Declared lines or sections | Packet `base_commit` |
 
 ## Dependencies
 
-- `02-lineage` accepted, or the packet records that `02-lineage` was skipped for a non-normative target.
+- `02-lineage` accepted, or recorded `NOT_APPLICABLE` in the packet with its reason under the router's "Skips and late entry" rule and the conditions in the workflow `README.md` (non-normative editorial fix only).
 
 ## Allowed writes
 
@@ -41,7 +41,7 @@ Produce one commit (or a short series) on the packet's branch that makes the sco
 1. Confirm the assignment generation and accepted dependencies. Create the branch: `git switch -c <branch> <base_commit>`.
 2. Edit only `write_scope` paths. Per record type:
    - Requirement registry: never edit an ID or its original requirement text, and never delete a row. A new allocation, if the owner has allocated it, goes under "Accepted unpublished allocations" with a dated row in "Append-only status and replacement ledger". A status or replacement-mapping cell changes only together with a new dated ledger row that cites the owner source (precedent: the 2026-09-03 ledger row recording status cells updated on 2026-09-22).
-   - Decision record: a new proposal is a new file under `decisions/` using the next unused R-number (R25 at the base commit; confirm with `git grep -n "R25"`). Status line reads "Proposed"; no acceptance date; include the `GOVERNANCE.md` disclosure list. The register row goes under "Proposed decisions" (integrator).
+   - Decision record: a new proposal is a new file under `decisions/` using the next unused R-number (R25 at the base commit; `git grep -n -I -w "R25" <base_commit>` exits 1, as `01-intake` checks). Name it by the convention for new records, `R<N>_<Title>_Development_Decision_Record.md`, from the start, so acceptance needs no rename (PR #53 had to rename R23's record). Status line reads "Proposed"; no acceptance date; include the `GOVERNANCE.md` disclosure list. The register row goes under "Proposed decisions" (integrator).
    - Owner clarification: new file `docs/decisions/<yyyy-mm-dd>-<slug>.md`, status "proposed" until the owner confirms.
    - Superseding an accepted record: add a successor record that names its predecessor; leave the predecessor's text unchanged.
    - `CHANGELOG.md`: one proposed line under `## Unreleased`, in `rows.md` unless you are the integrator.

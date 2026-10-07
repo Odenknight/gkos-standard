@@ -17,7 +17,10 @@ Do not use it for release packages (use [release](../release/README.md)) or for 
 | `05-review` | Independent advisory review of the exact commit against lineage and evidence | `REVIEW.md` with a verdict |
 | `06-handoff` | Package the candidate for the Founder and Initial Editor's decision | Owner summary and a filled PR template |
 
-`dependencies.json` is linear. A packet may route a non-normative typo fix `01-intake → 03-draft → 04-check → 06-handoff`; the packet must say so and why.
+`dependencies.json` is linear and lists every stage. Skips and late entries follow the router's "Skips and late entry" rule; the edges stay as they are and are satisfied by evidence or a `NOT_APPLICABLE` record named in the packet.
+
+- **Non-normative editorial fix** (a typo, stale coordinate or broken link in an informative document): the packet may route it `01-intake → 03-draft → 04-check → 06-handoff` and records `02-lineage` and `05-review` as `NOT_APPLICABLE` with the reason. `lineage.md` and `REVIEW.md` then become optional inputs for `03-draft` and `06-handoff`. `02-lineage` may be `NOT_APPLICABLE` only when `01-intake` shows that every target is informative, lies outside the five frozen directories, is not read by `scripts/check-current-release.sh` or `scripts/verify-v0821-release.mjs`, and is not a historical record or a deliberate historical pin. Otherwise both stages run.
+- **Review of another author's draft or PR head** (router entry at `05-review`): the packet names verified prior evidence for `01-intake` through `04-check`: the exact head commit, its hosted required-check results, and the records the sealed packet lists in place of `scope.json` and `lineage.md`.
 
 ## How it maps to existing repository processes
 
@@ -43,7 +46,7 @@ Do not use it for release packages (use [release](../release/README.md)) or for 
 
 Task: `NOTICE.md` names release GKOS-2026-08-05 v0.77 while `CITATION.cff` names 0.82.1.
 
-1. `01-intake`: target `NOTICE.md` lines 4 and 11; class Editorial; governing rule `docs/CORPUS-STATUS.md` maintenance rule plus the owner instruction recorded in the packet. The packet skips `02-lineage` and `05-review` only if the owner confirms the attribution line is not a deliberate historical pin.
+1. `01-intake`: target `NOTICE.md` lines 4 and 11; class Editorial; governing rule `docs/CORPUS-STATUS.md` maintenance rule plus the owner instruction recorded in the packet. The packet records `02-lineage` and `05-review` as `NOT_APPLICABLE` only if the owner confirms the attribution line is not a deliberate historical pin; otherwise both run.
 2. `03-draft`: branch `docs/notice-edition-coordinate-<yyyymmdd>`, one commit with DCO sign-off, proposed `CHANGELOG.md` line in the handoff.
 3. `04-check`: markdown lint and the release-validation commands on the exact commit.
 4. `06-handoff`: summary, PR template fields, check counts. The owner decides whether a PR is opened and merged.
