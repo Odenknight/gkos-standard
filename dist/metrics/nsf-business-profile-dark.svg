@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="475.2pt" viewBox="0 0 864 475.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-24T15:35:46.529522</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 475.2 
+L 864 475.2 
+L 864 0 
+L 0 0 
+z
+" style="fill: #11151d"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 276.48 337.392 
+L 812.16 337.392 
+L 812.16 114.048 
+L 276.48 114.048 
+z
+" style="fill: #11151d"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 276.48 337.392 
+L 276.48 114.048 
+" clip-path="url(#p9431c62e20)" style="fill: none; stroke: #354052; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #bac4d2" x="276.48" y="357.268953" transform="rotate(-0 276.48 357.268953)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 400.48 337.392 
+L 400.48 114.048 
+" clip-path="url(#p9431c62e20)" style="fill: none; stroke: #354052; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #bac4d2" x="400.48" y="357.268953" transform="rotate(-0 400.48 357.268953)">25%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 524.48 337.392 
+L 524.48 114.048 
+" clip-path="url(#p9431c62e20)" style="fill: none; stroke: #354052; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #bac4d2" x="524.48" y="357.268953" transform="rotate(-0 524.48 357.268953)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 648.48 337.392 
+L 648.48 114.048 
+" clip-path="url(#p9431c62e20)" style="fill: none; stroke: #354052; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #bac4d2" x="648.48" y="357.268953" transform="rotate(-0 648.48 357.268953)">75%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 772.48 337.392 
+L 772.48 114.048 
+" clip-path="url(#p9431c62e20)" style="fill: none; stroke: #354052; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #bac4d2" x="772.48" y="357.268953" transform="rotate(-0 772.48 357.268953)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11"/>
+     <g id="text_6">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f3f5f8" x="266.48" y="149.442984" transform="rotate(-0 266.48 149.442984)">Fewer than 10 employees</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f3f5f8" x="266.48" y="230.658984" transform="rotate(-0 266.48 230.658984)">Created in the last 5 years</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13"/>
+     <g id="text_8">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f3f5f8" x="266.48" y="311.874477" transform="rotate(-0 266.48 311.874477)">New to NSF</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 276.48 124.2 
+L 752.64 124.2 
+L 752.64 164.808 
+L 276.48 164.808 
+z
+" clip-path="url(#p9431c62e20)" style="fill: #74a9ff"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 276.48 205.416 
+L 643.52 205.416 
+L 643.52 246.024 
+L 276.48 246.024 
+z
+" clip-path="url(#p9431c62e20)" style="fill: #e5ba57"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 276.48 286.632 
+L 584 286.632 
+L 584 327.24 
+L 276.48 327.24 
+z
+" clip-path="url(#p9431c62e20)" style="fill: #74a9ff"/>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f3f5f8" x="760.08" y="148.66025" transform="rotate(-0 760.08 148.66025)">96%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f3f5f8" x="650.96" y="229.87625" transform="rotate(-0 650.96 229.87625)">74%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f3f5f8" x="591.44" y="311.09225" transform="rotate(-0 591.44 311.09225)">62%</text>
+   </g>
+  </g>
+  <g id="text_12">
+   <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f3f5f8" x="60.48" y="33.264" transform="rotate(-0 60.48 33.264)">Small teams. Many first-time NSF recipients.</text>
+  </g>
+  <g id="text_13">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #bac4d2" x="60.48" y="59.4" transform="rotate(-0 60.48 59.4)">FY2024 • Profile of 255 small businesses receiving NSF Phase I awards</text>
+  </g>
+  <g id="text_14">
+   <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f3f5f8" x="60.48" y="403.92" transform="rotate(-0 60.48 403.92)">Discussion: What support helps small teams turn research into a working business?</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #bac4d2" transform="translate(60.48 427.557266)">Source: NSF America’s Seed Fund overview, page 2, FY2024 awardee profile. Retrieved September 24, 2026.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #bac4d2" transform="translate(60.48 439.56)">Categories overlap; percentages are rounded. These figures do not measure selection rates or business outcomes.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9431c62e20">
+   <rect x="276.48" y="114.048" width="535.68" height="223.344"/>
+  </clipPath>
+ </defs>
+</svg>
