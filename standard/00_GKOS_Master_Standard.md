@@ -35,6 +35,13 @@ The [R15 Decision Record](../decisions/R15_Governed_State_Change_Reentry_and_Bou
 and [R16 Decision Record](../decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md)
 record the owner-authorized, non-consensus dispositions.
 
+## Accepted unpublished amendments
+
+R17 defines half-open authority-validity intervals and captured canonical
+action-evaluation time. It is accepted development work targeted at a future
+release; it does not alter v0.80 or its normative surface. See the
+[R17 Decision Record](../decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md).
+
 ## Current claim boundary
 
 GKOS Core requires GCP-1 through GCP-5. GKOS Advanced requires GCP-1 through
