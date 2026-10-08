@@ -938,6 +938,19 @@ stay proposed. It publishes no edition, qualifies no profile, and supports no
 certification, consensus or endorsement claim (section 10). The published
 v0.82.1 edition keeps 62 requirements and 28 gate codes.
 
+**Implementation merge (owner direction, 2026-10-07).** The accepted items
+reach `main` without the text of R26-A01, A04, A17 and A18. The evidence
+matrix for that merge covers the 233 rows of the accepted items: 233 pass,
+0 fail, against 40 pass on `main` at `231c68c`. Two accepted items cite
+definitions that only R26-A01 supplies. R26-A05 cites "Definitions annex,
+D-1" (consequential use), and R26-A14 cites "Annex Definitions D-2"
+(authority precedence). The owner directed that both citations merge as
+drafted. D-1 and D-2 become normative only when R26-A01 is accepted. Until
+then, those terms keep the status GAP-001 records for GKOS-AUTHUSE-003 and
+GKOS-DELEGATION-006. The reference runner's five-class D-1 list in
+`conformance/runner/operation-kind.mjs` is fixture vocabulary for R26-A05,
+not normative text.
+
 ## 8. Acceptance prerequisites
 
 The owner may accept R26, in whole or by item, after:
