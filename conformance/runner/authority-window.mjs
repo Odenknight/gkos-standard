@@ -21,7 +21,7 @@ export const evaluateAuthorityWindow = (record) => {
   };
 };
 
-// R26-A03 (proposed; v0.83 development line): for delegated authority the evaluation time must lie
+// R26-A03 (accepted 2026-10-07; v0.83 development line): for delegated authority the evaluation time must lie
 // in the half-open interval of every receipt in the chain, from the originating grant to the final
 // grantee. `issued_at` is not a validity bound. An empty or missing chain is indeterminate.
 export const evaluateAuthorityChain = (record) => {

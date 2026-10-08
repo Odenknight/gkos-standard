@@ -1,12 +1,12 @@
 # R26-A12 fixtures — State-Change Receipt role elements
 
-Development fixtures for proposed R26-A12 on the v0.83 development line.
+Development fixtures for R26-A12 (accepted 2026-10-07) on the v0.83 development line.
 They are non-qualifying and support no conformance claim.
 
 - **Requirements:** GKOS-RECEIPT-001, GKOS-RECEIPT-002, GKOS-RECEIPT-003.
 - **Normative text:**
   [Governed state change annex §1](../../../../standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md#1-universal-state-change-receipting)
-  (R26-A12, proposed).
+  (R26-A12, accepted 2026-10-07).
 - **File:** `cases.json`. Each case gives a candidate record under its own
   field names, a `role_field_map` from the R26-A12 role elements to those
   fields, and the change context that makes conditional elements required

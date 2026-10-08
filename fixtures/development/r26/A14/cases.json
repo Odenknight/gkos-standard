@@ -1,6 +1,6 @@
 {
   "suite": "GKOS-v0.83-development-R26-A14-overdue-review-and-exceptions",
-  "standing": "Development fixtures for proposed R26-A14. Non-qualifying. Records use the portable gate fixture interface (kind deferred-review) with the overdue inputs R26-A14 defines, instead of a precomputed overdue boolean.",
+  "standing": "Development fixtures for R26-A14, accepted under R26 (accepted in part 2026-10-07). Non-qualifying. Records use the portable gate fixture interface (kind deferred-review) with the overdue inputs R26-A14 defines, instead of a precomputed overdue boolean.",
   "requirement_refs": [
     "GKOS-DELEGATION-006"
   ],

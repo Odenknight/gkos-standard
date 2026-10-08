@@ -1,6 +1,6 @@
 # R26-S04 fixtures — conformance manifest declarations
 
-Development fixtures for R26-S04 (proposed; v0.83 development line) against
+Development fixtures for R26-S04 (accepted 2026-10-07; v0.83 development line) against
 `schemas/conformance-manifest.r26.schema.json`. They are non-qualifying.
 Cases: [`cases.json`](cases.json).
 

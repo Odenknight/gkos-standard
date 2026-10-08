@@ -1,7 +1,7 @@
 # R26-S03 fixtures — received-bytes digest definitions
 
-**Status:** Development fixtures proposed under R26 (Status: Proposed) for the
-v0.83 development line. Non-qualifying. They support no conformance claim.
+**Status:** Development fixtures accepted under R26 (accepted in part 2026-10-07) for
+the v0.83 development line. Non-qualifying. They support no conformance claim.
 
 **Requirement IDs:** GKOS-CANON-007 (digest-bound references), through
 R26-A06.

@@ -1,4 +1,4 @@
-// R26-A13 (proposed; v0.83 development line): satisfying a semantic role with an existing record
+// R26-A13 (accepted 2026-10-07; v0.83 development line): satisfying a semantic role with an existing record
 // through a declared role projection (Authority and Refusal Receipt Fields annex section 1).
 //
 // evaluateRoleProjection({ source, projection, sourceValidator, roleValidator }) checks the

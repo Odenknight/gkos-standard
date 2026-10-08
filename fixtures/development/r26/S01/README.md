@@ -1,7 +1,7 @@
 # R26-S01 — Authority Receipt and Authorized Use Record 1.1.0
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
 Tests `schemas/authority-receipt-1.1.0.schema.json` (adds `subject`, `tenant_scope`, `revocation.locator`) and `schemas/authorized-use-record-1.1.0.schema.json` (from the R17 candidate, with required `revocation_checks`). Earlier versions stay valid for historical artifacts.
 

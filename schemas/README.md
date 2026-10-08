@@ -8,7 +8,7 @@ against a schema.
 
 | Schema | Layer | Status |
 | --- | --- | --- |
-| gkx-common.defs.json | shared | active shared definitions; R26-S03 received-bytes digest definitions (proposed; v0.83 development line) |
+| gkx-common.defs.json | shared | active shared definitions; R26-S03 received-bytes digest definitions (accepted 2026-10-07; v0.83 development line) |
 | gkx-frontmatter-2.0.schema.json | L2 | active GKX 2.0 frontmatter |
 | assessment.schema.json | L4 | active development schema |
 | diagnostics-sidecar.schema.json | L4 | active development schema with gate-code mapping |
@@ -20,16 +20,16 @@ against a schema.
 | refusal-receipt.schema.json | cross-layer | active v0.80 Refusal Receipt role schema |
 | authority-receipt.schema.json | L7 | R17 development schema, published with GKOS-2026-09-03 v0.81 |
 | authorized-use-record.r17.schema.json | L7 | R17 development candidate, published with GKOS-2026-09-03 v0.81; does not replace v0.80 |
-| authority-receipt-1.1.0.schema.json | L7 | R26-S01 and R26-S07 (proposed); v0.83 development line; unpublished until a later authorized edition publishes it; does not replace 1.0.0 for historical receipts |
-| authorized-use-record-1.1.0.schema.json | L7 | R26-S01 (proposed); v0.83 development line; unpublished until a later authorized edition publishes it; current Authorized Use Record schema on that line, from the R17 candidate; does not invalidate v0.80 or R17 records |
-| selection-set-1.1.0.schema.json | L6 | R26-S03 and R26-A06 selection envelope 1.1.0 (proposed; v0.83 development line; unpublished): member, omission and closure references may use a received-bytes digest; 1.0.0 stays valid for historical and published envelopes |
-| context-manifest-1.1.0.schema.json | L6 | R26-S03 and R26-A06 Context Manifest 1.1.0 (proposed; v0.83 development line; unpublished): member and omission references may use a received-bytes digest; 1.0.0 stays valid for historical and published manifests |
-| refusal-receipt-1.1.0.schema.json | cross-layer | R26-S02 (proposed; R26-A10 Option A); v0.83 development line; unpublished until a later authorized edition publishes it; does not replace 1.0.0 for historical receipts |
+| authority-receipt-1.1.0.schema.json | L7 | R26-S01 and R26-S07 (accepted 2026-10-07); v0.83 development line; unpublished until a later authorized edition publishes it; does not replace 1.0.0 for historical receipts |
+| authorized-use-record-1.1.0.schema.json | L7 | R26-S01 (accepted 2026-10-07); v0.83 development line; unpublished until a later authorized edition publishes it; current Authorized Use Record schema on that line, from the R17 candidate; does not invalidate v0.80 or R17 records |
+| selection-set-1.1.0.schema.json | L6 | R26-S03 and R26-A06 selection envelope 1.1.0 (accepted 2026-10-07; v0.83 development line; unpublished): member, omission and closure references may use a received-bytes digest; 1.0.0 stays valid for historical and published envelopes |
+| context-manifest-1.1.0.schema.json | L6 | R26-S03 and R26-A06 Context Manifest 1.1.0 (accepted 2026-10-07; v0.83 development line; unpublished): member and omission references may use a received-bytes digest; 1.0.0 stays valid for historical and published manifests |
+| refusal-receipt-1.1.0.schema.json | cross-layer | R26-S02 (accepted 2026-10-07; R26-A10 Option A); v0.83 development line; unpublished until a later authorized edition publishes it; does not replace 1.0.0 for historical receipts |
 | conformance-manifest.schema.json | claims | active development schema |
-| decision-record.canonical-1.0.0.schema.json | L5 | R26-S05/S06 canonical Decision Record (proposed; v0.83 development line); `decision-record.schema.json` stays valid for legacy sidecars |
-| proposal-envelope.r26.schema.json | L5 | R26-S06 version with actor references (proposed; v0.83 development line); does not replace `proposal-envelope.schema.json` |
-| assessment.r26.schema.json | L4 | R26-S06 version with actor references (proposed; v0.83 development line); does not replace `assessment.schema.json` |
-| conformance-manifest.r26.schema.json | claims | R26-S04 version adding receipt binding, canonical rendering, supported artifact schemas and role projections (proposed; v0.83 development line); superset of `conformance-manifest.schema.json` |
+| decision-record.canonical-1.0.0.schema.json | L5 | R26-S05/S06 canonical Decision Record (accepted 2026-10-07; v0.83 development line); `decision-record.schema.json` stays valid for legacy sidecars |
+| proposal-envelope.r26.schema.json | L5 | R26-S06 version with actor references (accepted 2026-10-07; v0.83 development line); does not replace `proposal-envelope.schema.json` |
+| assessment.r26.schema.json | L4 | R26-S06 version with actor references (accepted 2026-10-07; v0.83 development line); does not replace `assessment.schema.json` |
+| conformance-manifest.r26.schema.json | claims | R26-S04 version adding receipt binding, canonical rendering, supported artifact schemas and role projections (accepted 2026-10-07; v0.83 development line); superset of `conformance-manifest.schema.json` |
 | provisional/science/*.draft.schema.json | cross-layer SRTP | provisional, informative, and non-qualifying |
 | archive/*.draft.schema.json | historical | archived, non-current schema evidence |
 

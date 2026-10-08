@@ -1,4 +1,4 @@
-// R26-A05 (proposed; v0.83 development line): operation-kind applicability of a Refusal Receipt
+// R26-A05 (accepted 2026-10-07; v0.83 development line): operation-kind applicability of a Refusal Receipt
 // (Authority and Refusal Receipt Fields annex section 4). Schema validation checks the receipt
 // against the operation kind it declares; this module checks that the declared kind is correct for
 // the refused operation. The kind is `consequential-action` when the refused operation is in a

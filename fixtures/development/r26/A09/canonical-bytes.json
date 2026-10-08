@@ -1,6 +1,6 @@
 {
   "suite": "GKOS-v0.83-development-R26-A09-canonical-verifier-bytes",
-  "status": "proposed; v0.83 development line; R26 not accepted",
+  "status": "accepted under R26 (accepted in part 2026-10-07); v0.83 development line",
   "verifier": "conformance/runner/canonical.mjs verifyCanonicalBytes",
   "cases": [
     {"id":"R26-A09-P01","class":"positive","requirement_ids":["GKOS-CANON-002"],"cbor_hex":"a2616101616202","description":"map {a:1, b:2} with keys in bytewise order","expected_codes":[]},

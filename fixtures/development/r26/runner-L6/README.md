@@ -1,8 +1,8 @@
 # Runner L6 fixtures — received-bytes digest basis
 
-<!-- R26-A06 (proposed; v0.83 development line) -->
+<!-- R26-A06 (accepted 2026-10-07; v0.83 development line) -->
 
-**Status:** development fixtures for R26 (proposed). They grant no profile
+**Status:** development fixtures for R26 (accepted in part 2026-10-07). They grant no profile
 claim and are not part of the active qualifying catalog.
 
 **Requirement ID:** GKOS-CANON-007.

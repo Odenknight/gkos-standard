@@ -1,7 +1,7 @@
 # R26-S02 — Refusal Receipt 1.1.0 schema
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
 Tests the structural rules of `schemas/refusal-receipt-1.1.0.schema.json` that R26-A05 does not already cover. Under R26-A10 Option A, `gate_code` stays required.
 

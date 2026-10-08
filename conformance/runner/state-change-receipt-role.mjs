@@ -1,4 +1,4 @@
-// R26-A12 (proposed; v0.83 development line): check that a record satisfies the State-Change Receipt
+// R26-A12 (accepted 2026-10-07; v0.83 development line): check that a record satisfies the State-Change Receipt
 // role under a declared role-element field map (Governed State Change annex section 1). Ported from
 // packet R4's proposed module. It reports satisfaction and missing elements; it is not a gate.
 import { isCanonicalTimestamp } from "./canonical-time.mjs";

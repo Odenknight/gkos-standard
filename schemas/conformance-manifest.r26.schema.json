@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/conformance-manifest.r26.schema.json",
   "title": "GKOS conformance claim manifest — R26 version",
-  "description": "Exact-bound machine-readable conformance claim under R16: dated standard release, GKX version, implementation, fixture suite, immutable evidence, limitations, exceptions, and assessment type. R26-S04 (proposed; v0.83 development line) adds receipt_binding, canonical_rendering, supported_artifact_schemas and role_projections. Every manifest valid under conformance-manifest.schema.json is valid under this version. The obligation to declare each item comes from the requirement or annex that names it, not from this schema.",
+  "description": "Exact-bound machine-readable conformance claim under R16: dated standard release, GKX version, implementation, fixture suite, immutable evidence, limitations, exceptions, and assessment type. R26-S04 (accepted 2026-10-07; v0.83 development line) adds receipt_binding, canonical_rendering, supported_artifact_schemas and role_projections. Every manifest valid under conformance-manifest.schema.json is valid under this version. The obligation to declare each item comes from the requirement or annex that names it, not from this schema.",
   "type": "object",
   "required": [
     "claim_id",

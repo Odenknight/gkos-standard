@@ -1,6 +1,6 @@
 # R26-S06 fixtures — actor references
 
-Development fixtures for R26-S06 (proposed; v0.83 development line) against
+Development fixtures for R26-S06 (accepted 2026-10-07; v0.83 development line) against
 `schemas/proposal-envelope.r26.schema.json` and
 `schemas/assessment.r26.schema.json`. The Decision Record part of R26-S06 is
 the canonical Decision Record's `deciding_actor`; see

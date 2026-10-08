@@ -16,7 +16,7 @@ const manifestBindingFields = ["manifest_id", "manifest_version", "digest_algori
 const shapes = {
   reentry: ["L1-001", {mutates_predecessor:bool}],
   supersession: ["L3-001", {inferred:bool, authorized_declaration:bool}],
-  // R26-A15 (proposed; v0.83 development line): result vocabulary no-hold|hold|unavailable|indeterminate;
+  // R26-A15 (accepted 2026-10-07; v0.83 development line): result vocabulary no-hold|hold|unavailable|indeterminate;
   // legacy `clear` maps to no-hold.
   // `hold_required` is the legacy (pre-R26) result carrier and stays accepted when present.
   hold: ["L4-001", {evaluation:v => ["no-hold", "hold", "unavailable", "indeterminate", "clear"].includes(v), erasure_required:bool}],
@@ -44,7 +44,7 @@ const shapes = {
   "receipt-binding": ["L7-005", {reported_committed:bool, durable_receipt:bool}],
   recovery: ["L7-006", {applicable_route:bool, route_usable:bool}],
   "protected-disclosure": ["L7-007", {authorized:bool, exposed:bool, influenced_unauthorized_surface:bool}],
-  // R26-A10 Option A (proposed; v0.83 development line): one registered code per listed condition.
+  // R26-A10 Option A (accepted 2026-10-07; v0.83 development line): one registered code per listed condition.
   "reentry-standing": ["L1-002", {inherited_standing:texts}],
   "reentry-preservation": ["L1-003", {predecessor_mutated:bool, predecessor_destroyed:bool}],
   "note-identity": ["L2-001", {historical_uid:text, resulting_uid:text}],
@@ -55,17 +55,17 @@ const shapes = {
   "delegation-authority": ["L4-008", {confers_general_write:bool}],
   "deterministic-assembly": ["L6-010", {live_operations:v => texts(v) && v.every(x => liveOperations.includes(x))}],
   "authorized-use-binding": ["L7-008", {bound_manifest_fields:texts}],
-  // R26-A03 (proposed; v0.83 development line): every receipt in the delegation chain.
+  // R26-A03 (accepted 2026-10-07; v0.83 development line): every receipt in the delegation chain.
   "authority-interval": ["L7-001", {evaluation_time:isCanonicalTimestamp, chain:v => Array.isArray(v) && v.length > 0}],
-  // R26-A11 (proposed; v0.83 development line): actor references; a class-only value is undetermined.
+  // R26-A11 (accepted 2026-10-07; v0.83 development line): actor references; a class-only value is undetermined.
   "role-separation": ["L5-005", {proposer:isActorReference, reviewer:isActorReference}],
 };
-// R26-A15 (proposed; v0.83 development line): a plain `hold` refuses and cites GKOS-RETENTION-001
+// R26-A15 (accepted 2026-10-07; v0.83 development line): a plain `hold` refuses and cites GKOS-RETENTION-001
 // with GKOS-GATE-L4-009 (disposition refused: active hold), allocated under the owner answer of
 // 2026-10-07 (R26 section 7.2). It is distinct from GKOS-GATE-L4-006, a commit made without the
 // hold predicate or its bound result.
 
-// R26-A14 (proposed; v0.83 development line): overdue review computed from the deadline, commit
+// R26-A14 (accepted 2026-10-07; v0.83 development line): overdue review computed from the deadline, commit
 // time, review status and evaluation time. Records with the legacy `overdue` boolean are unchanged.
 const MICROS = /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})\.(\d{6})Z$/;
 const toMicros = value => {

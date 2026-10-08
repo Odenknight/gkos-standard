@@ -16,7 +16,7 @@ no independent review has taken place.
 
 **Companion decision record:**
 [R26 — Specification detail amendments](../../decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md)
-(Status: Proposed).
+(Status: Accepted in part, 2026-10-07; R26 section 7.3).
 
 ## 1. Purpose and method
 

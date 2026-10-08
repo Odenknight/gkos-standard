@@ -1,4 +1,4 @@
-// R26 (proposed; v0.83 development line): focused checks for the second-round advisory review
+// R26 (accepted in part 2026-10-07; v0.83 development line): focused checks for the second-round advisory review
 // findings r26-REV-005 (residual), r26-REV-010, r26-REV-011 and r26-REV-012, beyond the catalog rows.
 import test from "node:test";
 import assert from "node:assert/strict";

@@ -12,7 +12,7 @@ A state change MUST NOT be represented as committed when required receipt bindin
 
 The record satisfying this role MUST identify the actor class and, where consulted, the deterministic predicate identity/version and whether a non-deterministic checker increased restrictiveness.
 
-<!-- R26-A12 (proposed; v0.83 development line) -->
+<!-- R26-A12 (accepted 2026-10-07; v0.83 development line) -->
 A record satisfying the State-Change Receipt role MUST carry, under its own field names:
 
 - its identity and version;
@@ -43,13 +43,13 @@ The deletion/disposition record satisfying the State-Change Receipt role MUST bi
 
 An unavailable or indeterminate mandatory hold evaluation, or a detected hold/erasure conflict, MUST fail closed and be routed for authorized human disposition. GKOS does not itself decide the applicable legal obligation.
 
-<!-- R26-A15 (proposed; v0.83 development line) -->
+<!-- R26-A15 (accepted 2026-10-07; v0.83 development line) -->
 A hold-predicate evaluation returns exactly one of `no-hold`, `hold`, `unavailable`, or `indeterminate`. Deletion or disposition commits solely on `no-hold`.
 
-<!-- R26-A15 (proposed; v0.83 development line); gate code GKOS-GATE-L4-009 per owner answer 2026-10-07, R26 section 7.2 -->
+<!-- R26-A15 (accepted 2026-10-07; v0.83 development line); gate code GKOS-GATE-L4-009 per owner answer 2026-10-07, R26 section 7.2 -->
 On `hold`, the deletion or disposition MUST NOT commit, and a record satisfying the Refusal Receipt role cites GKOS-RETENTION-001 with GKOS-GATE-L4-009 (disposition refused: active hold). When a governed erasure obligation also applies, the conflict fails closed with GKOS-GATE-L4-002 and is routed for authorized human disposition. `unavailable` and `indeterminate` fail closed with GKOS-GATE-L4-001 and are routed the same way.
 
-<!-- R26-A15 (proposed; v0.83 development line) -->
+<!-- R26-A15 (accepted 2026-10-07; v0.83 development line) -->
 The deletion or disposition record binds the predicate identity, version and digest, the result, and the captured evaluation time.
 
 Retention requirements are domain-neutral. Navigation archives are examples, not the normative scope.
@@ -86,16 +86,16 @@ Bounded supersession delegation MUST NOT confer or imply general governed write 
 
 When required review of actions under a delegation becomes overdue, that delegation MUST NOT authorize additional state changes until the overdue condition is dispositioned or a higher-precedence, bounded exception is explicitly authorized, time-limited, and durably receipted.
 
-<!-- R26-A14 (proposed; v0.83 development line) -->
+<!-- R26-A14 (accepted 2026-10-07; v0.83 development line) -->
 A delegation whose actions require review MUST declare a review deadline: a maximum interval between an action's captured commit time and its review disposition. The grant or the policy it binds carries the deadline.
 
-<!-- R26-A14 (proposed; v0.83 development line) -->
+<!-- R26-A14 (accepted 2026-10-07; v0.83 development line) -->
 Review of an action is overdue when the captured evaluation time is at or after the action's commit time plus that interval and no review disposition is recorded. A missing deadline, or an unavailable or indeterminate commit time or review status, counts as overdue.
 
-<!-- R26-A14 (proposed; v0.83 development line) -->
+<!-- R26-A14 (accepted 2026-10-07; v0.83 development line) -->
 While any review under the delegation is overdue, the delegation authorizes no further state change. A refused change emits GKOS-GATE-L5-001.
 
-<!-- R26-A14 (proposed; v0.83 development line) -->
+<!-- R26-A14 (accepted 2026-10-07; v0.83 development line) -->
 A higher-precedence exception is an Authority Receipt from an authority of higher precedence than the delegation under Annex Definitions D-2. It MUST name the delegation and the overdue condition, carry a `valid_until`, and be bound in the State-Change Receipt role record of each change it permits.
 
 ## 7. Navigation standing

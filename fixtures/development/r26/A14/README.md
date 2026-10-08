@@ -1,12 +1,12 @@
 # R26-A14 fixtures — Overdue review and exceptions
 
-Development fixtures for proposed R26-A14 on the v0.83 development line.
+Development fixtures for R26-A14 (accepted 2026-10-07) on the v0.83 development line.
 They are non-qualifying and support no conformance claim.
 
 - **Requirement:** GKOS-DELEGATION-006 (gate code GKOS-GATE-L5-001).
 - **Normative text:**
   [Governed state change annex §6](../../../../standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md#6-bounded-supersession-delegation)
-  (R26-A14, proposed).
+  (R26-A14, accepted 2026-10-07).
 - **Depends on:** R26-A01 Annex Definitions D-2 (precedence; R26-A01 stays
   proposed and its annex is not on `main`) and R26-S07
   `review_deadline_seconds` on the Authority Receipt. The fixtures carry the

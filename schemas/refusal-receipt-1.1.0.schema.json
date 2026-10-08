@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/refusal-receipt-1.1.0.schema.json",
   "title": "GKX Refusal Receipt role 1.1.0",
-  "description": "R26-S02 (proposed; v0.83 development line; unpublished), with R26-A10 Option A: gate_code stays required. Refusal Receipt 1.0.0 stays valid for historical receipts. Schema validation checks the receipt against the operation kind it declares; whether that declaration, and the cited requirement IDs, are correct for the refused operation is a semantic check (R26-A05).",
+  "description": "R26-S02 (accepted 2026-10-07; v0.83 development line; unpublished), with R26-A10 Option A: gate_code stays required. Refusal Receipt 1.0.0 stays valid for historical receipts. Schema validation checks the receipt against the operation kind it declares; whether that declaration, and the cited requirement IDs, are correct for the refused operation is a semantic check (R26-A05).",
   "type": "object",
   "required": [
     "canonical_profile", "artifact_type", "schema_version",

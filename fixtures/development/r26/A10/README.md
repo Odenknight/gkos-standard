@@ -1,8 +1,8 @@
 # R26-A10 fixtures — gate codes under GKOS-PROFILE-005 (Option A)
 
-<!-- R26-A10 (proposed; v0.83 development line) -->
+<!-- R26-A10 (accepted 2026-10-07; v0.83 development line) -->
 
-**Status:** development fixtures for R26 (proposed), owner answer Q4
+**Status:** development fixtures for R26 (accepted in part 2026-10-07), owner answer Q4
 Option A. They grant no profile claim and are not part of the active
 qualifying catalog.
 

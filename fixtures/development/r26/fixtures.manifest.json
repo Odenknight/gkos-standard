@@ -1,8 +1,8 @@
 {
   "catalog_version": "R26-DEVELOPMENT-0.1.0",
-  "gkos_release": "v0.83 development line (unpublished); R26 Status: Proposed",
-  "status": "development; R26 proposed; non-qualifying",
-  "description": "Development fixtures for the proposed R26 amendments on the v0.83 development line. Not a published edition, not a profile claim and not conformance evidence. Rows marked NOT_MODELED are not evaluated by the reference runner; gate_expectation on such rows is the fixture's declared expectation, not executed coverage. runner_status records what the reference runner (conformance/runner) evaluates.",
+  "gkos_release": "v0.83 development line (unpublished); R26 Status: Accepted in part (2026-10-07)",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
+  "description": "Development fixtures for the R26 amendments accepted on 2026-10-07 (R26 section 7.3) on the v0.83 development line. Not a published edition, not a profile claim and not conformance evidence. Rows marked NOT_MODELED are not evaluated by the reference runner; gate_expectation on such rows is the fixture's declared expectation, not executed coverage. runner_status records what the reference runner (conformance/runner) evaluates.",
   "qualifying_profiles": [],
   "complete_requirements": {},
   "fixtures": [

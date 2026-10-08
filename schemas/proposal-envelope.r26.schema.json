@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/proposal-envelope.r26.schema.json",
   "title": "Proposal envelope (L5 ingress) — R26 version",
-  "description": "The structural unit an agent or human submits to request a note change without writing the note. Sidecar location: .gkx/proposals/<proposal-id>.yaml. R26-S06 (proposed; v0.83 development line): proposer is an actor reference. proposal-envelope.schema.json stays valid for legacy sidecars.",
+  "description": "The structural unit an agent or human submits to request a note change without writing the note. Sidecar location: .gkx/proposals/<proposal-id>.yaml. R26-S06 (accepted 2026-10-07; v0.83 development line): proposer is an actor reference. proposal-envelope.schema.json stays valid for legacy sidecars.",
   "type": "object",
   "required": [
     "proposal_id",

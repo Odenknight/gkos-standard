@@ -1,4 +1,4 @@
-// R26 (proposed; v0.83 development line): execute the development fixture catalog
+// R26 (accepted in part 2026-10-07; v0.83 development line): execute the development fixture catalog
 // fixtures/development/r26/fixtures.manifest.json through the reference runner. Rows the runner
 // does not model stay NOT_MODELED; this test checks they are labelled so and never counted.
 import test from "node:test";

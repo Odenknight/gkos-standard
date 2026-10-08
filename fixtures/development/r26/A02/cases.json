@@ -1,7 +1,7 @@
 {
   "item": "R26-A02",
   "title": "Effect-scope containment",
-  "status": "development; proposed under R26; non-qualifying",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
   "requirement_ids": [
     "GKOS-EFFECT-001",
     "GKOS-EFFECT-002",

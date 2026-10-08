@@ -1,9 +1,9 @@
 # R26-A05 — Refusal Receipt content
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
-Tests the Refusal Receipt content proposed for annex §4 through the Refusal Receipt 1.1.0 schema (R26-S02, R26-A10 Option A).
+Tests the Refusal Receipt content added to annex §4 through the Refusal Receipt 1.1.0 schema (R26-S02, R26-A10 Option A).
 
 **Requirement IDs:** `GKOS-AUTHUSE-005`, `GKOS-PROFILE-005`.
 

@@ -1,7 +1,7 @@
 # R26-A16 fixtures — closure rule identity
 
-**Status:** Development fixtures proposed under R26 (Status: Proposed) for the
-v0.83 development line. Non-qualifying. They support no conformance claim.
+**Status:** Development fixtures accepted under R26 (accepted in part 2026-10-07) for
+the v0.83 development line. Non-qualifying. They support no conformance claim.
 
 **Amendment:** Canonical Serialization annex §10.2 (R26-A16).
 

@@ -1,9 +1,9 @@
 # R26-A03 — Authority interval sources
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
-Tests the interval rules proposed for annex §7.1: every receipt in the delegation chain must be valid at the evaluation time, the empty interval grants no authority, `issued_at` is not a validity bound, and the effect-scope window is a containment dimension.
+Tests the interval rules added to annex §7.1: every receipt in the delegation chain must be valid at the evaluation time, the empty interval grants no authority, `issued_at` is not a validity bound, and the effect-scope window is a containment dimension.
 
 **Requirement IDs:** `GKOS-AUTHUSE-003`, `GKOS-AUTHUSE-007`, `GKOS-DELEGATION-001`.
 

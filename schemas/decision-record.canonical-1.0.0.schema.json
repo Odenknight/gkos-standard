@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.canonical-1.0.0.schema.json",
   "title": "GKX canonical Decision Record",
-  "description": "R26-S05 and R26-S06 (proposed; v0.83 development line). Canonical GKX-CBOR-1 Decision Record. The open sidecar schema decision-record.schema.json stays valid for legacy records. Arrays marked x-gkx-set-order are logical sets sorted by canonical CBOR member bytes before encoding. Authoritative order within a writer stream comes from sequence and predecessor_ref, not from decided_at.",
+  "description": "R26-S05 and R26-S06 (accepted 2026-10-07; v0.83 development line). Canonical GKX-CBOR-1 Decision Record. The open sidecar schema decision-record.schema.json stays valid for legacy records. Arrays marked x-gkx-set-order are logical sets sorted by canonical CBOR member bytes before encoding. Authoritative order within a writer stream comes from sequence and predecessor_ref, not from decided_at.",
   "type": "object",
   "required": [
     "canonical_profile", "artifact_type", "schema_version",

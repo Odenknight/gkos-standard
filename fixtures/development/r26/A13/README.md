@@ -1,9 +1,9 @@
 # R26-A13 — Satisfying a role with an existing record
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
-Tests the role-projection rule proposed for annex §1: a Decision Record satisfies the Refusal Receipt role through a declared projection that sets envelope constants and maps every other element from one source field by copy, wrap as a one-element set, or a declared value table.
+Tests the role-projection rule added to annex §1: a Decision Record satisfies the Refusal Receipt role through a declared projection that sets envelope constants and maps every other element from one source field by copy, wrap as a one-element set, or a declared value table.
 
 **Requirement IDs:** `GKOS-AUTHUSE-005`, `GKOS-REVIEW-001`.
 

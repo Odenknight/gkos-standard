@@ -1,6 +1,6 @@
 {
   "suite": "GKOS-v0.83-development-R26-A10-portable-mutation-twins",
-  "status": "proposed; v0.83 development line; R26 not accepted",
+  "status": "accepted under R26 (accepted in part 2026-10-07); v0.83 development line",
   "cases": [
     {"id":"R26-A10-REENTRY-002","requirement_ids":["GKOS-REENTRY-002"],"expected":"GKOS-GATE-L1-002","baseline":{"kind":"reentry-standing","inherited_standing":[]},"mutation":{"kind":"reentry-standing","inherited_standing":["authorized-use-standing"]}},
     {"id":"R26-A10-REENTRY-003","requirement_ids":["GKOS-REENTRY-003"],"expected":"GKOS-GATE-L1-003","baseline":{"kind":"reentry-preservation","predecessor_mutated":false,"predecessor_destroyed":false},"mutation":{"kind":"reentry-preservation","predecessor_mutated":false,"predecessor_destroyed":true}},

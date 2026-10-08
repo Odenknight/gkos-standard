@@ -123,7 +123,7 @@ export const verifyCanonicalBytes = (bytes) => {
     if (keyDefect) throw new Error(`GKOS-GATE-L6-002 ${keyDefect}`, { cause: error });
     throw new Error("GKOS-GATE-L6-001 invalid canonical CBOR", { cause: error });
   }
-  // R26-A07 (proposed; v0.83 development line): GKX-CBOR-1 payloads contain no tags, byte
+  // R26-A07 (accepted 2026-10-07; v0.83 development line): GKX-CBOR-1 payloads contain no tags, byte
   // strings, `undefined` or simple values other than false, true and null. A prohibited item
   // is GKOS-GATE-L6-001 under the most-specific rule, before any value check.
   const prohibited = prohibitedItem(bytes);
@@ -169,7 +169,7 @@ const digestRef = (artifactId, artifactVersion, digest) => ({
   digest: { algorithm: "sha-256", canonical_profile: "GKX-CBOR-1", value: digest },
 });
 
-// R26-A06 (proposed; v0.83 development line): a verifier recomputes each
+// R26-A06 (accepted 2026-10-07; v0.83 development line): a verifier recomputes each
 // digest over the bytes its basis names. A received-bytes digest covers the
 // exact bytes. A GKX-CBOR-1 digest covers canonical CBOR payload bytes, so the
 // bytes must pass the canonical verifier. Any mismatch is GKOS-GATE-L6-007.
@@ -198,7 +198,7 @@ export const verifyDigestBinding = (digest, bytes, registry) => {
   return true;
 };
 
-// Edition boundary for assembly (r26-REV-005; R26-A06 and R26-S03, proposed; v0.83
+// Edition boundary for assembly (r26-REV-005; R26-A06 and R26-S03, accepted 2026-10-07; v0.83
 // development line). The selection envelope's declared schema version selects the path:
 //
 // - `1.1.0` (selection-set-1.1.0, R26): every member and closure reference is recomputed by
@@ -309,7 +309,7 @@ export const parseDiagnosticJson = (rendering) => {
 };
 
 // ---------------------------------------------------------------------------------------------
-// R26-A07 and R26-A08 (proposed; v0.83 development line): schema-driven artifact verification.
+// R26-A07 and R26-A08 (accepted 2026-10-07; v0.83 development line): schema-driven artifact verification.
 //
 // verifyCanonicalBytes above stays the schema-less structural check (its field-name timestamp
 // heuristic is kept for existing callers). verifyArtifactBytes decodes with CBOR major types

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/authorized-use-record-1.1.0.schema.json",
   "title": "GKX Layer-7 Authorized Use Record 1.1.0",
-  "description": "R26-S01 (proposed; v0.83 development line; unpublished). The one current Authorized Use Record schema on the v0.83 line, built from the R17 candidate (schema_version 1.1.0-development) with required revocation_checks (R26-S01). The R26-A04 rules for which checks are required stay proposed. The v0.80 schema and the R17 candidate stay valid for historical records.",
+  "description": "R26-S01 (accepted 2026-10-07; v0.83 development line; unpublished). The one current Authorized Use Record schema on the v0.83 line, built from the R17 candidate (schema_version 1.1.0-development) with required revocation_checks (R26-S01). The R26-A04 rules for which checks are required stay proposed. The v0.80 schema and the R17 candidate stay valid for historical records.",
   "type": "object",
   "required": [
     "canonical_profile", "artifact_type", "schema_version",

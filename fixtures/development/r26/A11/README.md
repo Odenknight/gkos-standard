@@ -1,9 +1,9 @@
 # R26-A11 — Actor identity and sameness
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
-Tests the actor-sameness rule proposed for annex §1.1: same `actor_id` and same or both-absent `identity_provider`; policy declarations may merge actors; a class-only value does not identify an actor.
+Tests the actor-sameness rule added to annex §1.1: same `actor_id` and same or both-absent `identity_provider`; policy declarations may merge actors; a class-only value does not identify an actor.
 
 **Requirement IDs:** `GKOS-REVIEW-003`, `GKOS-AUTHUSE-004`.
 

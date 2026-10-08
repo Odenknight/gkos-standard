@@ -1,4 +1,4 @@
-// R26-A11 (proposed; v0.83 development line): actor references and sameness for role separation
+// R26-A11 (accepted 2026-10-07; v0.83 development line): actor references and sameness for role separation
 // under GKOS-REVIEW-003 and GKOS-AUTHUSE-004.
 const text = (value) => typeof value === "string" && value.trim().length > 0 && value.isWellFormed();
 const providerOk = (ref) => !Object.hasOwn(ref, "identity_provider") || text(ref.identity_provider);

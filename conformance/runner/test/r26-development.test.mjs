@@ -1,4 +1,4 @@
-// R26 (proposed; v0.83 development line): A06 digest basis and A09 most-specific L6 code in the
+// R26 (accepted in part 2026-10-07; v0.83 development line): A06 digest basis and A09 most-specific L6 code in the
 // canonical verifier and A10 Option A gate codes in the portable evaluator.
 import test from "node:test";
 import assert from "node:assert/strict";

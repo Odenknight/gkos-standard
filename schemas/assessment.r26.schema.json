@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/assessment.r26.schema.json",
   "title": "Deterministic assessment (L4 control receipt) — R26 version",
-  "description": "Reproducible documentation-quality assessment: same bytes + engine version + policy hash => same output. Interpretation is fixed: documentation-and-support quality, not truth. Sidecar location: .gkx/assessments/<uid>.assessment.yaml (serialized YAML/JSON of this shape). R26-S06 (proposed; v0.83 development line): assessor.id is an actor reference. assessment.schema.json stays valid for legacy sidecars.",
+  "description": "Reproducible documentation-quality assessment: same bytes + engine version + policy hash => same output. Interpretation is fixed: documentation-and-support quality, not truth. Sidecar location: .gkx/assessments/<uid>.assessment.yaml (serialized YAML/JSON of this shape). R26-S06 (accepted 2026-10-07; v0.83 development line): assessor.id is an actor reference. assessment.schema.json stays valid for legacy sidecars.",
   "type": "object",
   "required": [
     "assessmentId",

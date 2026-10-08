@@ -1,6 +1,6 @@
 // Load every schemas/*.json into one Ajv 2020 instance by `$id` and file name, as run.mjs and the
 // schema tests do, and expose the declared (artifact_type, schema_version) pairs (R26-A08,
-// proposed; v0.83 development line).
+// accepted 2026-10-07; v0.83 development line).
 import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import Ajv2020 from "ajv/dist/2020.js";

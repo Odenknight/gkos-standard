@@ -33,7 +33,7 @@
       "additionalProperties": false
     },
     "receivedBytesDigest": {
-      "description": "R26-S03 (proposed; v0.83 development line). SHA-256 over the exact received bytes of content that is not a canonical GKOS artifact (Canonical Serialization annex section 8, R26-A06). Never labeled GKX-CBOR-1.",
+      "description": "R26-S03 (accepted 2026-10-07; v0.83 development line). SHA-256 over the exact received bytes of content that is not a canonical GKOS artifact (Canonical Serialization annex section 8, R26-A06). Never labeled GKX-CBOR-1.",
       "type": "object",
       "required": ["algorithm", "basis", "value"],
       "properties": {
@@ -44,7 +44,7 @@
       "additionalProperties": false
     },
     "artifactDigest": {
-      "description": "R26-S03 (proposed; v0.83 development line). Either digest form: a GKX-CBOR-1 canonical digest or a received-bytes digest.",
+      "description": "R26-S03 (accepted 2026-10-07; v0.83 development line). Either digest form: a GKX-CBOR-1 canonical digest or a received-bytes digest.",
       "oneOf": [
         { "$ref": "#/$defs/sha256Digest" },
         { "$ref": "#/$defs/receivedBytesDigest" }
@@ -150,7 +150,7 @@
       "additionalProperties": false
     },
     "artifactReferenceAnyDigest": {
-      "description": "R26-S03 (proposed; v0.83 development line). artifactReference whose digest is either digest form. For new schema versions; artifactReference stays unchanged for earlier versions.",
+      "description": "R26-S03 (accepted 2026-10-07; v0.83 development line). artifactReference whose digest is either digest form. For new schema versions; artifactReference stays unchanged for earlier versions.",
       "type": "object",
       "required": ["artifact_id", "artifact_version", "digest"],
       "properties": {

@@ -1,6 +1,6 @@
 # R26-S05 fixtures — canonical Decision Record
 
-Development fixtures for R26-S05 (proposed; v0.83 development line; owner
+Development fixtures for R26-S05 (accepted 2026-10-07; v0.83 development line; owner
 answer Q6) against `schemas/decision-record.canonical-1.0.0.schema.json`
 (`artifact_type` `decision-record`, `schema_version` `1.0.0`). They are
 non-qualifying. Cases: [`cases.json`](cases.json).

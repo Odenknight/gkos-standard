@@ -1,7 +1,7 @@
 # R26-S07 — Authority Receipt review deadline
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
 Tests the optional `review_deadline_seconds` field (integer, at least 1) in `schemas/authority-receipt-1.1.0.schema.json`.
 

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/selection-set-1.1.0.schema.json",
   "title": "GKX Layer-6 selection envelope 1.1.0",
-  "description": "R26-S03 and R26-A06 (proposed; v0.83 development line; unpublished). Selection envelope 1.0.0 with member, known-omission and closure-input object_ref allowed to use either digest form (artifactReferenceAnyDigest): a GKX-CBOR-1 digest for a canonical GKOS artifact, or a received-bytes digest for content that is not one. Selection envelope 1.0.0 stays valid for historical and published envelopes. The reference runner assembles a 1.1.0 envelope by recomputing every digest over the bytes its basis names.",
+  "description": "R26-S03 and R26-A06 (accepted 2026-10-07; v0.83 development line; unpublished). Selection envelope 1.0.0 with member, known-omission and closure-input object_ref allowed to use either digest form (artifactReferenceAnyDigest): a GKX-CBOR-1 digest for a canonical GKOS artifact, or a received-bytes digest for content that is not one. Selection envelope 1.0.0 stays valid for historical and published envelopes. The reference runner assembles a 1.1.0 envelope by recomputing every digest over the bytes its basis names.",
   "type": "object",
   "required": [
     "canonical_profile",

@@ -1,10 +1,10 @@
 # Annex — Diagnostic-code registry
 
 **Status:** Normative development annex adopted by R16 and extended by R18 for
-the GKOS v0.81 development line. R26 (proposed) extends it on the v0.83
-development line.
+the GKOS v0.81 development line. R26 (accepted in part 2026-10-07) extends it
+on the v0.83 development line.
 
-<!-- R26-A10 (proposed; v0.83 development line) -->
+<!-- R26-A10 (accepted 2026-10-07; v0.83 development line) -->
 **Registry version:** 1.2.0-development
 
 ## 1. Rules
@@ -21,20 +21,20 @@ normative meaning.
 A required refusal or freeze without its registered code is not a passing gate
 result.
 
-<!-- R26-A09 (proposed; v0.83 development line) -->
+<!-- R26-A09 (accepted 2026-10-07; v0.83 development line) -->
 When one detected condition matches more than one registered code, the
 implementation MUST emit the code whose condition names the defect most
 specifically. GKOS-GATE-L6-001 applies to an encoding defect that no other
 L6 code names. A duplicate or out-of-order map key is GKOS-GATE-L6-002 even
 when it is detected by re-encoding comparison.
 
-<!-- R26-A09 (proposed; v0.83 development line) -->
+<!-- R26-A09 (accepted 2026-10-07; v0.83 development line) -->
 When an evaluation detects several independent conditions, the record
 satisfying the Refusal Receipt role MUST report at least one detected code
 and SHOULD report every detected code. A fixture MAY list several
 acceptable codes.
 
-<!-- R26-A10 (proposed; v0.83 development line) -->
+<!-- R26-A10 (accepted 2026-10-07; v0.83 development line) -->
 Each listed requirement receives one registered gate code at the layer
 where its violation is detected. The conditions are: rewriting a
 historical note identity (L2); selecting a lineage successor by timestamp,
@@ -48,7 +48,7 @@ navigation, randomness, wall-clock read or mutable lookup during
 deterministic assembly (L6); Authorized Use Record missing the manifest
 binding (L7).
 
-<!-- R26-A10 (proposed; v0.83 development line) -->
+<!-- R26-A10 (accepted 2026-10-07; v0.83 development line) -->
 The listed requirements are GKOS-IDENTITY-003, GKOS-LINEAGE-003,
 GKOS-POLICY-001, GKOS-RETENTION-001, GKOS-RETENTION-002, GKOS-REENTRY-002,
 GKOS-REENTRY-003, GKOS-DELEGATION-001, GKOS-DELEGATION-005,
@@ -56,12 +56,12 @@ GKOS-CONTEXT-002 and GKOS-AUTHUSE-001. Section 2 gives the allocated codes.
 
 ## 2. Active codes
 
-<!-- R26-A10 (proposed; v0.83 development line) -->
+<!-- R26-A10 (accepted 2026-10-07; v0.83 development line) -->
 Rows GKOS-GATE-L1-002, L1-003, L2-001, L3-002, L4-005 through L4-008, L6-010
 and L7-008 are allocated under R26-A10 Option A. They take the next free
 number in each layer.
 
-<!-- R26-A15 (proposed; v0.83 development line); owner answer 2026-10-07, R26 section 7.2 -->
+<!-- R26-A15 (accepted 2026-10-07; v0.83 development line); owner answer 2026-10-07, R26 section 7.2 -->
 Row GKOS-GATE-L4-009 is allocated for R26-A15 under the owner answer of
 2026-10-07 (second round). It takes the next free L4 number. It identifies a
 refusal: the hold predicate returned `hold`, so the deletion or disposition

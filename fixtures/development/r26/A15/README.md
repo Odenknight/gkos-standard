@@ -1,6 +1,6 @@
 # R26-A15 fixtures — Hold-predicate results
 
-Development fixtures for proposed R26-A15 on the v0.83 development line.
+Development fixtures for R26-A15 (accepted 2026-10-07) on the v0.83 development line.
 They are non-qualifying and support no conformance claim.
 
 - **Requirements:** GKOS-RETENTION-001 and GKOS-RETENTION-003 (gate codes
@@ -8,7 +8,7 @@ They are non-qualifying and support no conformance claim.
   allocated under R26-A10 Option A).
 - **Normative text:**
   [Governed state change annex §3](../../../../standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md#3-retention-and-disposition)
-  (R26-A15, proposed).
+  (R26-A15, accepted 2026-10-07).
 - **File:** `cases.json`. Each record uses the portable gate fixture interface,
   kind `hold`, with the R26-A15 result vocabulary (`no-hold`, `hold`,
   `unavailable`, `indeterminate`) and the bound predicate identity, version,

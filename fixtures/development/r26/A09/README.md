@@ -1,8 +1,8 @@
 # R26-A09 fixtures — most specific gate code
 
-<!-- R26-A09 (proposed; v0.83 development line) -->
+<!-- R26-A09 (accepted 2026-10-07; v0.83 development line) -->
 
-**Status:** development fixtures for R26 (proposed). They grant no profile
+**Status:** development fixtures for R26 (accepted in part 2026-10-07). They grant no profile
 claim and are not part of the active qualifying catalog.
 
 **Requirement IDs:** GKOS-CANON-002 (and GKOS-CANON-001 for the controls).

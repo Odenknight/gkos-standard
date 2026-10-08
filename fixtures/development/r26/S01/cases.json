@@ -1,7 +1,7 @@
 {
   "item": "R26-S01",
   "title": "Authority Receipt and Authorized Use Record 1.1.0",
-  "status": "development; proposed under R26; non-qualifying",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
   "requirement_ids": [
     "GKOS-AUTHUSE-001",
     "GKOS-AUTHUSE-003",

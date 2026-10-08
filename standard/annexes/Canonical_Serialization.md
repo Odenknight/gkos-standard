@@ -56,11 +56,11 @@ identity or hash of the governed artifact. Layer-1 source fingerprints,
 signatures, authority receipts, and transport attestations retain their
 separate governed roles.
 
-<!-- R26-A07 (proposed; v0.83 development line) -->
+<!-- R26-A07 (accepted 2026-10-07; v0.83 development line) -->
 
 ### 2.1 Schema data model to CBOR
 
-<!-- R26-A07 (proposed; v0.83 development line) -->
+<!-- R26-A07 (accepted 2026-10-07; v0.83 development line) -->
 GKOS schemas describe the canonical data model in JSON Schema 2020-12
 terms. A schema-valid value is encoded as follows:
 
@@ -74,19 +74,19 @@ terms. A schema-valid value is encoded as follows:
 | integer | major type 0 or 1; values outside the range those types encode are prohibited |
 | number that is not declared integer | floating point under §5 |
 
-<!-- R26-A07 (proposed; v0.83 development line) -->
+<!-- R26-A07 (accepted 2026-10-07; v0.83 development line) -->
 Where a schema permits both integer and floating-point values for one field,
 a sibling field MUST declare the type, as `score_type` does in the selection
 envelope. The declared type governs the encoding.
 
-<!-- R26-A07 (proposed; v0.83 development line) -->
+<!-- R26-A07 (accepted 2026-10-07; v0.83 development line) -->
 GKX-CBOR-1 payloads MUST NOT contain tags (major type 6), byte strings
 (major type 2), the simple value `undefined`, or other simple values.
 Canonical timestamps are text strings; tags 0 and 1 are not used. A
 prohibited tag is GKOS-GATE-L6-001 under the most-specific rule of the
 Diagnostic Code Registry.
 
-<!-- R26-A07 (proposed; v0.83 development line) -->
+<!-- R26-A07 (accepted 2026-10-07; v0.83 development line) -->
 A verifier MUST identify timestamp, set-ordered, and numeric-type fields
 from the applicable schema, not from field names.
 
@@ -109,7 +109,7 @@ payload MUST also contain the applicable digest-bound references:
 A friendly version label without an immutable digest does not satisfy a
 digest-bound reference.
 
-<!-- R26-A08 (proposed; v0.83 development line) -->
+<!-- R26-A08 (accepted 2026-10-07; v0.83 development line) -->
 
 A canonical verifier MUST declare the (`artifact_type`, `schema_version`)
 pairs it supports. It MUST refuse, with GKOS-GATE-L6-001
@@ -118,7 +118,7 @@ pairs it supports. It MUST refuse, with GKOS-GATE-L6-001
 that set. It MUST NOT validate the payload against another schema version
 or infer the type from field names.
 
-<!-- R26-A08 (proposed; v0.83 development line) -->
+<!-- R26-A08 (accepted 2026-10-07; v0.83 development line) -->
 Each (`artifact_type`, `schema_version`) pair identifies one schema. Two
 schemas MUST NOT share a pair.
 
@@ -222,7 +222,7 @@ The external digest representation MUST identify:
 - canonical profile: GKX-CBOR-1; and
 - the lowercase hexadecimal digest.
 
-<!-- R26-A06 (proposed; v0.83 development line) -->
+<!-- R26-A06 (accepted 2026-10-07; v0.83 development line) -->
 
 A digest-bound reference names the bytes it covers. A `GKX-CBOR-1` digest
 covers the canonical CBOR payload bytes of a GKOS artifact. Bytes that are
@@ -231,7 +231,7 @@ resolved selection content, or an input refused before canonical decoding,
 MUST be referenced by a received-bytes digest: algorithm `sha-256`, basis
 `received-bytes`, and the lowercase hexadecimal SHA-256 of the exact bytes.
 
-<!-- R26-A06 (proposed; v0.83 development line) -->
+<!-- R26-A06 (accepted 2026-10-07; v0.83 development line) -->
 An implementation MUST NOT label a received-bytes digest as `GKX-CBOR-1`. A
 verifier recomputes each digest over the bytes its basis names. A mismatch
 fails closed with GKOS-GATE-L6-007.
@@ -332,20 +332,20 @@ knowledge snapshot and the deterministic contradiction, warning, restriction,
 or lineage-closure rule. “The system held the information” is not testable
 without those bindings.
 
-<!-- R26-A16 (proposed; v0.83 development line) -->
+<!-- R26-A16 (accepted 2026-10-07; v0.83 development line) -->
 
 The deterministic closure rule that decides required contradictions,
 warnings, restrictions and lineage items under GKOS-CONTEXT-004 MUST be a
 digest-bound component. The Context Manifest `policy_ref`, or a component
 that `policy_ref` digest-binds, identifies it.
 
-<!-- R26-A16 (proposed; v0.83 development line) -->
+<!-- R26-A16 (accepted 2026-10-07; v0.83 development line) -->
 The rule evaluates the eligible snapshot named by the selection envelope's
 `eligible_snapshot_ref` and the captured selection envelope, and nothing
 else. A required item missing from the manifest `members` fails closed with
 GKOS-GATE-L6-009.
 
-<!-- R26-A16 (proposed; v0.83 development line) -->
+<!-- R26-A16 (accepted 2026-10-07; v0.83 development line) -->
 The manifest `restrictions` list is display text. A restriction that governs
 use MUST also appear in `members` with kind `restriction`.
 

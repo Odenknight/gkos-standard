@@ -1,9 +1,9 @@
 # R26-A02 — Effect-scope containment
 
-Development fixtures for the v0.83 development line. R26 is proposed, not
-accepted. These fixtures are non-qualifying and support no conformance claim.
+Development fixtures for the v0.83 development line, accepted under R26
+(accepted in part 2026-10-07). These fixtures are non-qualifying and support no conformance claim.
 
-Tests the containment evaluation proposed for the Authority and Refusal Receipt Fields annex §5.1: the presence check, the per-row containment table, chain-order evaluation and `action_class` membership. Owner answer Q2 confirmed the reversibility order, the reading of `layer_reach`, the deployment-declared sensitivity order and the presence rule.
+Tests the containment evaluation added to the Authority and Refusal Receipt Fields annex §5.1: the presence check, the per-row containment table, chain-order evaluation and `action_class` membership. Owner answer Q2 confirmed the reversibility order, the reading of `layer_reach`, the deployment-declared sensitivity order and the presence rule.
 
 **Requirement IDs:** `GKOS-EFFECT-001`, `GKOS-EFFECT-002`, `GKOS-EFFECT-003`.
 

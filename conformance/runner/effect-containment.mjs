@@ -1,4 +1,4 @@
-// R26-A02 (proposed; v0.83 development line): effect-scope containment evaluation, Authority and
+// R26-A02 (accepted 2026-10-07; v0.83 development line): effect-scope containment evaluation, Authority and
 // Refusal Receipt Fields annex section 5.1. Deterministic: it reads the requested scope R, the
 // authorizing scopes in chain order (actor standing first) and digest-bound policy inputs, and
 // nothing else. It returns the detected gate codes; it is not the boolean `effect-containment`

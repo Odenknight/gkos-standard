@@ -47,7 +47,7 @@ if (developmentCatalog) {
     for (const [code, ids] of Object.entries(developmentTwins.coverage)) (executedTwins.coverage[code] ??= []).push(...ids);
   }
 }
-// R26-A08 (proposed; v0.83 development line): each (artifact_type, schema_version) pair
+// R26-A08 (accepted 2026-10-07; v0.83 development line): each (artifact_type, schema_version) pair
 // identifies one schema; two schemas MUST NOT share a pair.
 const schemaDocuments = readdirSync(resolve(root, "schemas")).filter((name) => name.endsWith(".json")).map((name) => readJson(`schemas/${name}`));
 for (const { pair, schema_ids: ids } of duplicateArtifactPairs(supportedArtifactPairs(schemaDocuments))) {

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Odenknight/gkos-standard/schemas/authority-receipt-1.1.0.schema.json",
   "title": "GKX Authority Receipt role 1.1.0",
-  "description": "R26-S01 and R26-S07 (proposed; v0.83 development line; unpublished). Adds subject, tenant_scope, revocation.locator and review_deadline_seconds to Authority Receipt 1.0.0, which stays valid for historical receipts. review_deadline_seconds is required when the grant permits delegated actions that need review; the grant or the policy it binds may carry the deadline (R26-A14), so that condition is a semantic check, not a schema constraint.",
+  "description": "R26-S01 and R26-S07 (accepted 2026-10-07; v0.83 development line; unpublished). Adds subject, tenant_scope, revocation.locator and review_deadline_seconds to Authority Receipt 1.0.0, which stays valid for historical receipts. review_deadline_seconds is required when the grant permits delegated actions that need review; the grant or the policy it binds may carry the deadline (R26-A14), so that condition is a semantic check, not a schema constraint.",
   "type": "object",
   "required": [
     "canonical_profile", "artifact_type", "schema_version",

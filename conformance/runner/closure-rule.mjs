@@ -1,4 +1,4 @@
-// R26-A16 (proposed; v0.83 development line): closure-rule identity (Canonical Serialization
+// R26-A16 (accepted 2026-10-07; v0.83 development line): closure-rule identity (Canonical Serialization
 // annex section 10.2). The closure rule that decides the required contradictions, warnings,
 // restrictions and lineage items is a digest-bound component that the Context Manifest
 // `policy_ref` identifies. The rule evaluates the eligible snapshot named by the selection

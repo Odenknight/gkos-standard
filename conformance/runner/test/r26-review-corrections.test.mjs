@@ -1,4 +1,4 @@
-// R26 (proposed; v0.83 development line): focused checks for the corrections to the advisory
+// R26 (accepted in part 2026-10-07; v0.83 development line): focused checks for the corrections to the advisory
 // review findings r26-REV-003..007 and for the runner wave 2 modules, beyond the catalog rows.
 import test from "node:test";
 import assert from "node:assert/strict";
