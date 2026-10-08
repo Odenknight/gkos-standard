@@ -27,7 +27,7 @@ The Resource Guide informs the barrier → intervention → stakeholders → pro
 
 The S02-I report was retrieved through the authenticated GitHub connector at pinned commit 0477d6ece20c9484201b8c50791a7f91c9aadac5 on 2026-09-17. It confirms 24/24 input/output identity, Float64 pass, Float32 fail, overall protocol fail, and no performance qualification. The numerical work was not rerun; raw data was not independently inspected. Anonymous report access returned 404; attendees may need repository access. No repository visibility was changed.
 
-Design: Fable-FAC's original prototype, revised by Astra-Oden around the user's FAC navigation reference. Wren, JEFFREY, and Castor reviews were requested previously; absent findings are not represented as accepted reviews.
+Design: Fable-FAC's original prototype, revised by Astra-Oden around the user's FAC navigation reference. JEFFREY’s revision-3 evidence matrix was reviewed on 2026-09-17 and accepted for its pinned S02-I document cross-check. It matches the existing numbers and scope limits. Raw artifacts were not rehashed and GPU tests were not rerun. Its live-readiness observations are dated reviewer findings, not independent release acceptance by this presentation. Wren and Castor findings remain unaccepted unless separately recorded.
 
 Hosting: `.openai/hosting.json` identifies the existing owner-private Site. HTMX is vendored with its license. Existing odenknight.com content is untouched.
 
