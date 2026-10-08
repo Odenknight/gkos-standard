@@ -1,13 +1,15 @@
 # R26 — Specification detail amendments
 
-Status: Proposed
+Status: Accepted in part
 
 **Date:** 2026-10-07
 
-**Acceptance date:** none. This record is a proposal awaiting owner disposition.
+**Acceptance date:** 2026-10-07, by item (section 7.3). The owner accepted
+R26-A02, A03, A05–A16 and R26-S01–S07. R26-A01, A04, A17 and A18 stay
+proposed until GKOS-Engine reference evidence exists for them.
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
-(disposition pending)
+(accepted in part 2026-10-07; section 7.3)
 
 **Prepared by:** worker-claude-F, an agent running Claude Opus 5.5, for the
 run-scoped coordinator Fable-FAC (run `edit-20261007-v083-consolidation`,
@@ -854,6 +856,87 @@ development line as an evidence package for acceptance. Under accepted R25,
 normative changes reach `main` only under an accepted Development Decision
 Record. The implementation therefore stays on its own branch until the owner
 accepts R26.
+
+### 7.2 Owner answers (2026-10-07, second round)
+
+The Founder and Initial Editor answered the questions the implementation
+raised on 2026-10-07, in a Claude Code session with Fable-FAC. Like section
+7.1, these answers choose options. They do not accept R26, which stays
+proposed until the section 8 prerequisites are met for each item accepted.
+
+| Question | Owner answer |
+| --- | --- |
+| Acceptance scope (section 8) | R26 will be accepted by item. R26-A01, R26-A04, R26-A17 and R26-A18 stay proposed until GKOS-Engine reference evidence exists for them. Every other chosen item is a candidate for acceptance on reference-runner evidence. |
+| Gate code for the R26-A15 refusal on `hold` | Allocate a new, separate L4 code meaning "disposition refused: active hold", distinct from GKOS-GATE-L4-006. It takes the next free L4 number: GKOS-GATE-L4-009, mapped to GKOS-RETENTION-001. It settles "gate-code treatment under R26-A10" in R26-A15. |
+| GCP-6 replay fixture under R26-A06 | Keep the published GCP-6 replay fixture and its preserved evidence as historical evidence, unchanged. The additive 1.1.0 selection-set and context-manifest schemas and the v0.83-line replay fixture (`R26-A06-P-ASSEMBLY-004`, assembled on the 1.1.0 path) stand. |
+| Diagnostic registry version label | Confirmed: `1.2.0-development`. |
+| R26-A13 source schema | Confirmed: the open sidecar Decision Record schema (`decision-record.schema.json`), as drafted. |
+
+The implementation records these answers on the integration branch
+`work/v083-r26-implementation`. GKOS-GATE-L4-009 appears in the
+Diagnostic-code registry annex, `requirements/DIAGNOSTIC_CODES.json`,
+`requirements/PROFILE_APPLICABILITY.md` and the R26-A15 paragraph of the
+Governed state change annex, each under an R26-A15 marker. The published
+v0.82.1 edition keeps 62 requirements and 28 gate codes.
+
+### 7.3 Owner acceptance by item (2026-10-07)
+
+The Founder and Initial Editor accepted R26 by item on 2026-10-07. The owner
+instructed the acceptance in a Claude Code session with Fable-FAC, which
+applied this edit by pull request. The section 8 prerequisites held for every
+accepted item:
+
+1. R25 was accepted on 2026-10-07.
+2. The owner answered the section 7 questions (sections 7.1 and 7.2).
+3. A different-model-family advisory review (OpenAI Codex, GPT family) ran
+   over this record and the gap register, and over the implementation in
+   three rounds. The dispositions are recorded. The third round recommended
+   PASS_WITH_CORRECTIONS, and its one remaining finding (r26-REV-013, R26-A16)
+   was corrected before acceptance.
+4. Every accepted item has fixtures in the development catalog
+   (`fixtures/development/r26/`) that fail on `main` at `8c20b05` and pass
+   with the reference implementation. The evidence matrix has 264 rows: 233
+   pass, 0 fail, and 31 are not modeled, all in the items that stay proposed.
+5. The exact-head repository checks passed on branch
+   `work/v083-r26-implementation` at `3e07593`: reference runner 417/417,
+   development validator 60/60, registry lint with mutation coverage,
+   current-release check, markdownlint, links, Ajv and the ICM map check, and
+   pull request CI.
+
+| Item | Disposition |
+| --- | --- |
+| R26-A02 | Accepted 2026-10-07 |
+| R26-A03 | Accepted 2026-10-07 |
+| R26-A05 | Accepted 2026-10-07 |
+| R26-A06 | Accepted 2026-10-07 |
+| R26-A07 | Accepted 2026-10-07 |
+| R26-A08 | Accepted 2026-10-07 |
+| R26-A09 | Accepted 2026-10-07 |
+| R26-A10 | Accepted 2026-10-07 |
+| R26-A11 | Accepted 2026-10-07 |
+| R26-A12 | Accepted 2026-10-07 |
+| R26-A13 | Accepted 2026-10-07 |
+| R26-A14 | Accepted 2026-10-07 |
+| R26-A15 | Accepted 2026-10-07 |
+| R26-A16 | Accepted 2026-10-07 |
+| R26-S01 | Accepted 2026-10-07 |
+| R26-S02 | Accepted 2026-10-07 |
+| R26-S03 | Accepted 2026-10-07 |
+| R26-S04 | Accepted 2026-10-07 |
+| R26-S05 | Accepted 2026-10-07 |
+| R26-S06 | Accepted 2026-10-07 |
+| R26-S07 | Accepted 2026-10-07 |
+| R26-A01 | Proposed; awaits GKOS-Engine reference evidence |
+| R26-A04 | Proposed; awaits GKOS-Engine reference evidence |
+| R26-A17 | Proposed; awaits GKOS-Engine reference evidence |
+| R26-A18 | Proposed; awaits GKOS-Engine reference evidence |
+
+Acceptance authorizes the accepted items on the v0.83 development line. Their
+annex text, schemas, fixtures and reference-runner changes reach `main` by
+pull request from the integration branch, without the text of the items that
+stay proposed. It publishes no edition, qualifies no profile, and supports no
+certification, consensus or endorsement claim (section 10). The published
+v0.82.1 edition keeps 62 requirements and 28 gate codes.
 
 ## 8. Acceptance prerequisites
 
