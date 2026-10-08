@@ -1,0 +1,2 @@
+const {chromium}=require('C:/Users/FAC/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1366,height:900}});await p.goto('https://sto.odenknight.com/',{waitUntil:'domcontentloaded'});console.log((await p.locator('body').innerText()).slice(0,1800));await b.close()})().catch(e=>{console.error(e.message);process.exit(1)});

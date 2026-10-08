@@ -1,0 +1,33 @@
+<figure class="art art-funnel" aria-labelledby="funnel-t funnel-d"><svg viewBox="0 0 760 320" role="img" xmlns="http://www.w3.org/2000/svg"><title id="funnel-t">A firehose of AI-produced artifacts spraying into a narrow verification funnel, with most spilling onto the floor</title><desc id="funnel-d">A box labelled AI output feeds a hose that sprays labelled artifacts: code, draft, plot, plan, proof. They hit a narrow funnel labelled VERIFICATION, one at a time. Most artifacts spill onto the floor marked unchecked, piling up. A single item passes through marked checked.</desc>
+<!-- the hose -->
+<g class="hose">
+  <rect x="20" y="96" width="120" height="64" rx="10" fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2"/>
+  <text x="80" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink-2)" font-family="var(--display)">AI</text>
+  <text x="80" y="142" text-anchor="middle" font-size="9" fill="var(--ink-3)" font-family="var(--mono)">output</text>
+  <path d="M140 128 h60" stroke="var(--rule)" stroke-width="18" stroke-linecap="round"/>
+</g>
+<!-- the spray of artifacts -->
+<g class="spray" font-family="var(--mono)" font-size="9" fill="var(--accent)">
+  <g class="dot d1"><rect x="210" y="60" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="71" text-anchor="middle">code</text></g>
+  <g class="dot d2"><rect x="210" y="92" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="103" text-anchor="middle">draft</text></g>
+  <g class="dot d3"><rect x="210" y="124" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="135" text-anchor="middle">plot</text></g>
+  <g class="dot d4"><rect x="210" y="156" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="167" text-anchor="middle">plan</text></g>
+  <g class="dot d5"><rect x="210" y="188" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="199" text-anchor="middle">proof</text></g>
+</g>
+<!-- narrow funnel -->
+<path d="M420 40 L560 40 L510 170 L510 232 L470 232 L470 170 Z" fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="2.5"/>
+<text x="490" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink-2)" font-family="var(--display)">VERIFICATION</text>
+<text x="490" y="106" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">one</text>
+<text x="490" y="120" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">at a</text>
+<text x="490" y="134" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">time</text>
+<!-- spill -->
+<g class="spill" fill="var(--time)" opacity=".75">
+  <rect x="372" y="206" width="30" height="12" rx="3"/><rect x="342" y="226" width="30" height="12" rx="3"/>
+  <rect x="580" y="212" width="30" height="12" rx="3"/><rect x="608" y="232" width="30" height="12" rx="3"/>
+  <rect x="356" y="250" width="30" height="12" rx="3"/><rect x="594" y="254" width="30" height="12" rx="3"/>
+</g>
+<text x="380" y="292" text-anchor="middle" font-size="11" fill="var(--time)" font-family="var(--mono)">unchecked · piling up on the floor</text>
+<!-- trickle out the bottom -->
+<g class="drip"><rect x="482" y="244" width="16" height="16" rx="4" fill="var(--pass)"/></g>
+<text x="620" y="252" font-size="11" fill="var(--pass)" font-family="var(--mono)">checked</text>
+</svg><figcaption>Production got cheap. Checking did not.</figcaption></figure>

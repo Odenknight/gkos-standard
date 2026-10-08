@@ -1,0 +1,536 @@
+{
+  "schema": "luna-mailbox-monitor/v1",
+  "inspection_owner": "mailbox_inspection",
+  "inspected_utc": "2026-09-09T01:52:41Z",
+  "baseline": false,
+  "delta_basis": "Compared with prior checkpoint. No substantive post-checkpoint mailbox, decision, evidence, or handoff changes detected; archived historical artifacts and checkpoint/lock self-changes excluded.",
+  "scope": {
+    "canonical_root": "mailbox",
+    "board": "mailbox/BOARD.md",
+    "guidance": [
+      "mailbox/AGENTS.md",
+      "mailbox/README.md",
+      "mailbox/shared/evidence/MIGRATION-2026-09-08.md",
+      "mailbox/shared/evidence/MIGRATION-RECEIPT-2026-09-08.json"
+    ],
+    "message_locations": [
+      "mailbox/owner/inbox",
+      "mailbox/agents/*/inbox"
+    ],
+    "statuses_changed": false,
+    "messages_archived": false,
+    "board_changed": false
+  },
+  "messages": [
+    {
+      "id": "MSG-0001",
+      "path": "mailbox/owner/inbox/20260908-1316_MSG-0001_lead-correspondence_to_owner_od-01-identity-fields-fac-disclosure-scope-and-p.md",
+      "status": "open",
+      "sha256": "306f3143847d241e1717310867b852e7b448dd01b671d092f41f202ccdf06547",
+      "classification": "initial_backlog",
+      "owner_input": "OD-01: reply email, affiliation, ORCID; corpus disclosure scope; paper order"
+    },
+    {
+      "id": "MSG-0013",
+      "path": "mailbox/owner/inbox/20260908-1443_MSG-0013_paper-editor_to_owner_p-02-facts-only-you-can-settle-four-short-questi.md",
+      "status": "open",
+      "sha256": "4651f5037dd5a02b8028c82cdd41e9fb4017c51b412df5e683d6247841e25193",
+      "classification": "initial_backlog",
+      "owner_input": "P-02: CT design interpretation; identity/network ambiguity record; retroactive HASHES decision; conformance wording"
+    },
+    {
+      "id": "MSG-0017",
+      "path": "mailbox/owner/inbox/20260908-1454_MSG-0017_lead-correspondence_to_owner_s-01-nist-ai-300-1-rev2-passed-independent-revie.md",
+      "status": "open",
+      "sha256": "1b4c9fdf354aebcdbe3a6cedbfad9c075698228a716ee6b9b7614a25fa0bf08e",
+      "classification": "initial_backlog",
+      "owner_input": "S-01 voice note and OD-01; separate send instruction remains required"
+    },
+    {
+      "id": "MSG-0004",
+      "path": "mailbox/agents/technical-fixtures/inbox/20260908-1316_MSG-0004_lead-correspondence_to_technical-fixtures_evidence-annex-examples-for-s-01-and-fixture-inv.md",
+      "status": "open",
+      "sha256": "686832125b786891b593a05902334ad7ff9632a550d511934c2c8e7fa08c360d",
+      "classification": "initial_backlog",
+      "owner_input": null
+    },
+    {
+      "id": "MSG-0019",
+      "path": "mailbox/owner/inbox/20260908-1504_MSG-0019_technical-fixtures_to_owner_od-02-annex-example-scope-and-whether-to-add-a-d.md",
+      "status": "open",
+      "sha256": "51a5a242fc6e502e0cd5a60336d62020b59b1c08a1d51a1ac98d43f98657dc09",
+      "classification": "new_owner_decision",
+      "owner_input": "OD-02: leave Supersedes none for S-01; choose Engine-only digest-verifier gate now versus standard v0.82 candidate versus proposed example"
+    },
+    {
+      "id": "MSG-0023",
+      "path": "mailbox/agents/technical-fixtures/inbox/20260908-1702_MSG-0023_lead-correspondence_to_technical-fixtures_od-02-accepted-engine-maintainer-owns-verifier-i.md",
+      "status": "open",
+      "sha256": "c2cd2c1e8cc90472c2a7cfe7369c8f979cedb253a91780ea6d1fb05e761b4da5",
+      "classification": "expected_local_update",
+      "owner_input": null
+    },
+    {
+      "id": "MSG-0024",
+      "path": "mailbox/archive/2026-09/20260908-1721_MSG-0024_reviewer_to_lead-correspondence_review-of-s-01-rev3-return-minor-substance-verif.md",
+      "status": "done",
+      "sha256": "c598ce926f3ec6335ade36e2c911812402eb999636f9c607d600e7290c2791f0",
+      "classification": "new_actionable_review",
+      "owner_input": "S-01 rev4 has no PASS; owner wording review remains"
+    },
+    {
+      "id": "MSG-0025",
+      "path": "mailbox/owner/inbox/20260908-1721_MSG-0025_lead-correspondence_to_owner_s-01-rev4-ready-for-your-wording-pass-every-tech.md",
+      "status": "open",
+      "sha256": "81678998b0a7dfd2895f4954df19c680aefe34c4c853aee60843cc62e1512888",
+      "classification": "new_actionable_owner_review",
+      "owner_input": "Review cover-letter wording and Part F one-line review statement; email identity already resolved by OD-01"
+    },
+    {
+      "id": "MSG-0026",
+      "path": "mailbox/archive/2026-09/20260908-1723_MSG-0026_paper-editor_to_lead-correspondence_msg-0021-done-p-02-assembled-draft-1-sections-1-.md",
+      "status": "done",
+      "sha256": "03297c2225eb16ef7fa1cb27837d401d5d0d4cd1bc7211fe57bf74606ae47ef8",
+      "classification": "new_actionable_paper_handoff",
+      "owner_input": "P-02 owner decisions routed in MSG-0027"
+    },
+    {
+      "id": "MSG-0027",
+      "path": "mailbox/owner/inbox/20260908-1723_MSG-0027_paper-editor_to_owner_p-02-draft-1-is-assembled-five-decisions-for-the.md",
+      "status": "open",
+      "sha256": "55c409d2b53982267e2340b5641441ad615de713d37b734adda738a0968b5c45",
+      "classification": "new_actionable_owner_decision",
+      "owner_input": "Five P-02 decisions; overlaps MSG-0013 and should be answered once"
+    }
+  ],
+  "baseline_inventory_added": [
+    {
+      "path": "mailbox/shared/evidence/FIXTURE-INVENTORY-2026-09-08.md",
+      "sha256": "7ddd42333ba86a38677777f3dc6d0c3d9a5934ccf9f76f1980234312ad5da71a",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/FIXTURE-INVENTORY-2026-09-08_GKOS-Engine-test.log",
+      "sha256": "aa4a2460e908c1b7f24cb985c171fd2bd031bb23aa6df0430cb1163b7bc6078e",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/FIXTURE-INVENTORY-2026-09-08_GKOS-Engine-Lite-test.log",
+      "sha256": "b63d989f9bfb716877878a8d5d75b838956ca86a905650fb7584c7fa62d835d0",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/FIXTURE-INVENTORY-2026-09-08_GKOS-Engine-digest-demo.log",
+      "sha256": "6473a19b558b55c687406626d76831e6a6e62d0fe9b1b734d5ade016e493bf8d",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0009_no-eligible-results-code-path.md",
+      "sha256": "17b371ed531fa985735447e35238c4708be2672118610ef5646826dc2b17b7b8",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/INITIAL-SOURCE-REGISTER.md",
+      "sha256": "e0846980fea8c722e0464e187e1d4dafc90885866a6a4866d6c8bfa13f406a05",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/MIGRATION-2026-09-08.md",
+      "sha256": "cc8d231d3e61e65afb7f49a5fcae88ffa3cc5cf9cc089062dae793cda7f4f3cf",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/MIGRATION-RECEIPT-2026-09-08.json",
+      "sha256": "0385b3bb1a25f60dcfb90082667d0da9223381cdfb43f12895ff195efb27ad44",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VAULT-KOSMOS-ATTRIBUTION-2026-09-08.md",
+      "sha256": "8018168a1b8b477e4768504a922a0e296e3f68b4eaef7434748ee0b5772e46fd",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0001_git-tag-v-v0.81.txt",
+      "sha256": "7cb2d611dc9f5d563a1af3b324c3ff05a5c87f6457f02bc996bcd437fc91759c",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0001_github-ssh-signing-keys.json",
+      "sha256": "83604cf4f88222786e8b3e0d0caec10a32db1b006fe255adca2d8f3e6de0a92b",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0001_the-v081-tag-of-odenknightgkos-standar.md",
+      "sha256": "842fde621ddf83ab12707bef6d5534930f6d0fe3d822acf059a85fdbbdc399fe",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0002_zenodo-22269294-record-page.html",
+      "sha256": "bef140a1a96994029153dca8c00b1750b9a5a764fb9db2dc68d7bb40e8a29e8a",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0002_zenodo-22269294.json",
+      "sha256": "bef140a1a96994029153dca8c00b1750b9a5a764fb9db2dc68d7bb40e8a29e8a",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0002_zenodo-record-105281zenodo22269294-wa.md",
+      "sha256": "5792df72c8084415f7efa98f543c6b570f3cfd5ff538c7a02bf5bdf52f533082",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0003_the-wayback-machine-holds-a-capture-of-g.md",
+      "sha256": "f573b3e030adeba137945d092450f91b83f8a8f545f0e084d6ab162ebd957481",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0003_wayback-cdx-gkos-standard.txt",
+      "sha256": "be7f77aac987cf5e58af6fc329f1cdd57985013153e7e76cfcfcdc32a90d5a38",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0003_wayback-cdx-retry.txt",
+      "sha256": "8a96b66346239490ba2755335f843437eb0affae8aea825d50af399dfb92a55b",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0004_license-notice-pr-body-draft.md",
+      "sha256": "e337df96c78ca7bb43a084e2fbbfb25eb914deff88155d4e23a4784e9cdf6a12",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0004_licensemd-and-noticemd-at-current-main.md",
+      "sha256": "d5aa1c8ef9a4cdf3a1e90a8c3f436b996447df3d1d280bc462b3606f1385bde9",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0005_a-uspto-trademark-application-for-gkos-h.md",
+      "sha256": "d1340e0966a23f21cc53a435c95756d987cdd054d32e35c2aa3dafc5824fde1f",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0007_federal-register-2026-16371.json",
+      "sha256": "2ada2e3c14d42374fb4e0cc0e610af39310ec40bf84fe4b24b05ad24937fc9a7",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0007_federal-register-2026-16371.txt",
+      "sha256": "e05a7a96a371927969b4d58c6a3a5d9c948533b8c46e78fdce0e6df1e25da855",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0007_federal-register-nvd-search.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0007_the-nvd-modernization-rfi-exists-as-dock.md",
+      "sha256": "8ae2a7fb2bdd831de2a8928e84cc23f4e34a88b766b47eed6bb95bd19b332e18",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0008_datatracker-draft-nelson-agent-delegation-receipts.json",
+      "sha256": "b5047c80e2665fcb2ebc105367fc262d16122033fef3269d210005f33955b340",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0008_datatracker-draft-sharif-agent-audit-trail.json",
+      "sha256": "34835a27a13fe4012be741cce6d607e82c7029bda8d6f7a97404e4999ceef0f5",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    },
+    {
+      "path": "mailbox/shared/evidence/VR-0008_draft-nelson-agent-delegation-receipts-i.md",
+      "sha256": "c0ced9e9056ca576cb5cb7bfbc0e96a42c068f489c5a20e384c8222b763aaacc",
+      "reason": "no prior checkpoint fingerprint; recorded as baseline inventory, not proven new"
+    }
+  ],
+  "verified_handoffs": [
+    {
+      "artifact": "submissions/S-01_NIST-AI-300-1/drafts/rev2.md",
+      "sha256": "ae5f4e6c466d385327ad0c23a05f2effb17b039bac0b52f24ffd17aef6c0a7df",
+      "finding": "exists; referenced S-01 draft"
+    },
+    {
+      "artifact": "submissions/S-01_NIST-AI-300-1/drafts/review-rev2.md",
+      "sha256": "26552f571db02fb39acbbfb29d90f99f237fc46b120db1a53fa8b4f69095c2ad",
+      "finding": "exists; verdict PASS; all eight rev1 findings closed; known open items explicitly excluded from PASS"
+    },
+    {
+      "artifact": "mailbox/shared/evidence/VR-0001_allowed_signers",
+      "sha256": "aef7aa15530710b5fc86d17eba10d03fa33d8fb070bbe992cc8b3e1e66e3f48b",
+      "finding": "exists; supporting receipt referenced by review"
+    },
+    {
+      "artifact": "mailbox/shared/evidence/VR-0006_kit-part-d-field-ids-designations-and-.md",
+      "sha256": "72a5167af02e1331d2327d7138b421fc01418b4c07db946be79ab91485058c63",
+      "finding": "exists; field/designation evidence referenced by review"
+    }
+  ],
+  "material_findings": [
+    "MSG-0017 reports review-rev2 PASS, and review-rev2 is present; PASS is limited to the review scope and does not close OD-01, Zenodo date, Engine version, annex, or owner voice items.",
+    "MSG-0013's conformance=false is a broad conformance result. It should not by itself erase evidence for individual implemented mechanisms; use specified versus implemented per mechanism and require mechanism-level evidence.",
+    "No owner decisions are filed in shared/decisions; BOARD lists MSG-0001, MSG-0013, MSG-0017, and new MSG-0019 as waiting on owner, with MSG-0004 as the open technical-fixtures task.",
+    "MSG-0019 requests OD-02: leave the S-01 worked artifact Supersedes field as none for now; build a digest verifier in GKOS-Engine now while treating standard registration as a v0.82 candidate; or keep the annex example proposed. The message says this does not block rev3.",
+    "Current-main fixture inventory records Engine HEAD 650eab4a6752227cae336d7556a57826c22a0d5a and Lite HEAD 1e1f84c547f610ecae2eb459cba53d3f1d00889c. Engine local run initially had two CRLF checkout failures, then runtime-qualification rerun passed 13/13 after LF normalization; the full suite was not rerun after normalization. The scheduled Phase 4 Retrieval Observation workflow failed on 2026-09-07 and 2026-09-08 (runs 34105302635 and 34206749198) and was not investigated.",
+    "VR-0009 verifies NO_ELIGIBLE_RESULTS as a retrieval confidence reason code in Engine/Lite and distinguishes it from the gkos-standard Refusal Receipt role; no Engine record is validated against the standard refusal-receipt schema."
+  ],
+  "checks": [
+    "Read AGENTS.md, README.md, BOARD.md, migration guidance and receipt.",
+    "Enumerated all live inboxes; read all non-.keep messages.",
+    "Checked referenced rev2 draft and review-rev2 existence and SHA-256.",
+    "Inspected complete MSG-0019 and the newly inventoried fixture/VR-0009 evidence; no message status, archive, reply, board, or task execution performed.",
+    "Checkpoint updated under exclusive lock; checkpoint and lock self-changes excluded from delta.",
+    "No post-checkpoint message, decision, evidence, or handoff changes detected; tracked hashes unchanged; checkpoint and lock self-changes excluded from delta.",
+    "Read MSG-0023, MSG-0024, MSG-0025, MSG-0026, and MSG-0027 fully; verified rev4, review-rev3, P-02 assembly, and P-01 eval-design artifact hashes.",
+    "No status, archive, reply, board, implementation, or external research action taken; checkpoint and lock self-changes excluded from delta.",
+    "Preserved P-01/P-02/P-03 and prior backlog; owner email identity treated as resolved by OD-01, not re-raised from MSG-0025.",
+    "Read complete live relevant messages MSG-0013, MSG-0023, MSG-0025, and MSG-0027; all hashes match the checkpoint.",
+    "Enumerated all message IDs through MSG-0027 and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Missing tracked inbox paths are already archived historical messages; no new action inferred.",
+    "Checkpoint updated under exclusive lock at 2026-09-08T22:07:51Z; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated all live inboxes and checked mailbox files modified after 2026-09-08T22:07:51Z; none found outside checkpoint/lock self-changes.",
+    "Compared tracked message, decision, evidence, and handoff inventory against prior checkpoint; no substantive changes detected.",
+    "Checkpoint updated under exclusive lock at ",
+    "09/08/2026 22:39:27",
+    "; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated all live inboxes and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Recorded 23 untracked shared-evidence files as baseline inventory additions, not proven new; checkpoint and lock self-changes excluded.",
+    "Read complete relevant changed messages: none; no changed message hashes detected.",
+    "Checkpoint updated under exclusive lock at 2026-09-08T23:11:13Z; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated all live inboxes and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Missing tracked inbox paths are already archived historical messages; known untracked evidence references remain baseline/handoff artifacts, not new changes.",
+    "Checkpoint updated under exclusive lock at 2026-09-08T23:43:08Z; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated all live inboxes and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Missing tracked inbox paths resolve to already archived terminal messages; no new action inferred.",
+    "Checkpoint updated under exclusive lock at 2026-09-09T00:15:27Z; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated live inboxes and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Missing tracked inbox paths resolve to already archived terminal messages; no new action inferred.",
+    "Checkpoint updated under exclusive lock at ",
+    "09/09/2026 00:47:15",
+    "; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated live inboxes and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Missing tracked message paths resolve to already archived terminal messages; no new action inferred.",
+    "Read complete live relevant messages MSG-0013, MSG-0023, MSG-0025, and MSG-0027; hashes unchanged.",
+    "Checkpoint updated under exclusive lock at 2026-09-09T01:19:34Z; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved.",
+    "Enumerated live inboxes and compared tracked message, decision, evidence, and handoff hashes; no substantive post-checkpoint changes detected.",
+    "Missing tracked message paths resolve to known archived terminal messages; no new action inferred.",
+    "Checkpoint updated under exclusive lock at 2026-09-09T01:52:41Z; checkpoint and lock self-changes excluded from delta.",
+    "No status, archive, reply, board, implementation, or external research action taken; P-01/P-02/P-03 preserved."
+  ],
+  "post_checkpoint_artifacts": [
+    {
+      "path": "submissions/S-01_NIST-AI-300-1/drafts/rev4.md",
+      "sha256": "6dc2ac48fc4d65d34384422531123fdd289d92e93701f7d1122474fd3204f623",
+      "finding": "exists; rev4 draft applies three rev3 editorial fixes; no rev4 PASS file found"
+    },
+    {
+      "path": "submissions/S-01_NIST-AI-300-1/drafts/review-rev3.md",
+      "sha256": "bd90cac4126886c7c97c2455e58a22fb042cfcf197513ff325b3c5320839e2d4",
+      "finding": "exists; reviewer verdict RETURN minor, substance verified"
+    },
+    {
+      "path": "papers/P-02_local-llm-infrastructure/drafts/P-02-assembly-draft1.md",
+      "sha256": "0debd4b804ed1650eb4bf5ac4e84ca201aa798ad69d4615b0d30f4d9440d0e9c",
+      "finding": "exists; assembled draft 1, owner decisions requested in MSG-0027"
+    },
+    {
+      "path": "papers/P-01_hallucination-reduction-FAC-retrieval/drafts/eval-design-draft1.md",
+      "sha256": "3e651b8b1440561cfa43c5e3aee26afdd582130fdb57121752cd3c14c134aed8",
+      "finding": "exists; proposed evaluation design; counts not yet decided"
+    }
+  ],
+  "post_checkpoint_decisions": [
+    {
+      "path": "mailbox/shared/decisions/OD-01_identity-disclosure-paper-priority.md",
+      "sha256": "e33670ed22556d277c04d726335b461c03f573c05116961800bb94ff95aac093",
+      "finding": "owner decision recorded; expected known update"
+    },
+    {
+      "path": "mailbox/shared/decisions/OD-02_annex-and-engine-verifier.md",
+      "sha256": "0cf32d9bc8664e24bfd89b58b00e65ec5a2375f06f707c78f1c94425a4a9b2aa",
+      "finding": "owner decision recorded; expected known update"
+    }
+  ],
+  "inspection_history": [
+    {
+      "inspected_utc": "2026-09-08T21:35:48Z",
+      "baseline_checkpoint": "2026-09-08T20:37:02Z",
+      "new_actionable_ids": [
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022"
+      ],
+      "summary": "S-01 rev3 minor RETURN with substance verified; rev4 draft exists without PASS; owner wording review remains. P-02 draft 1 assembled with five owner decisions overlapping MSG-0013.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-08T22:07:51Z",
+      "baseline_checkpoint": "2026-09-08T21:35:48Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-08T22:39:27Z",
+      "baseline_checkpoint": "2026-09-08T22:07:51Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-08T23:11:13Z",
+      "baseline_checkpoint": "2026-09-08T22:39:27Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-08T23:43:08Z",
+      "baseline_checkpoint": "2026-09-08T23:11:13Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-09T00:15:27Z",
+      "baseline_checkpoint": "2026-09-08T23:43:08Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-09T00:47:15Z",
+      "baseline_checkpoint": "2026-09-09T00:15:27Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-09T01:19:34Z",
+      "baseline_checkpoint": "2026-09-09T00:47:15Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    },
+    {
+      "inspected_utc": "2026-09-09T01:52:41Z",
+      "baseline_checkpoint": "2026-09-09T01:19:34Z",
+      "new_actionable_ids": [],
+      "expected_ids": [
+        "MSG-0023",
+        "OD-01",
+        "OD-02",
+        "MSG-0020",
+        "MSG-0021",
+        "MSG-0022",
+        "MSG-0024",
+        "MSG-0025",
+        "MSG-0026",
+        "MSG-0027"
+      ],
+      "summary": "UNCHANGED: no substantive post-checkpoint mailbox, decision, evidence, or handoff changes.",
+      "checkpoint_success": true
+    }
+  ]
+}

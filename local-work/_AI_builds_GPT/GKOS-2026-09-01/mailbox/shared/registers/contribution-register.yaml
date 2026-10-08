@@ -1,0 +1,103 @@
+# contribution-register.yaml   version: 1   maintained_by: Shaun Marshall
+# Schema: Submission Kit 2026-09-08 Part B. Maximum five entries.
+# Rule: no external submission cites a mechanism until its entry has a `finding` set by the owner.
+# Rule: null means unknown. Never fill dates or hashes from inference.
+register_version: 1
+register_date: 2026-09-08
+baseline:
+  standard_version: "v0.81"             # verified VR-0001: tag v0.81, SSH-signed
+  standard_commit: "8f2a158c6d4b8cabd907d98765766d281aec1247"   # verified VR-0001 (git rev-list -n1 v0.81)
+  standard_doi: "10.5281/zenodo.22269294"                        # resolves to Zenodo (VR-0002); deposit contents NOT verified, Zenodo 504 on 2026-09-08
+  earliest_public_evidence:
+    date: null
+    kind: null                          # github_release | wayback_capture | zenodo_deposit | other
+    url: null
+    note: "VR-0003: no Wayback capture of any GKOS repo exists as of 2026-09-08. Earliest independent evidence will be the Zenodo deposit timestamp once Zenodo is reachable, or the GitHub release publication timestamp."
+
+entries:
+  - id: CR-01
+    title: Refusal Receipt as a governed record
+    mechanism: >
+      When a control fails or eligibility is not met, the system emits a record identifying
+      the requested operation, the policy version evaluated, the failing control, and a
+      reason code, and this record is retained with the same sensitivity inheritance as
+      an accepted-use record. Refusal is evidence, not absence of evidence.
+    gkos_clause: "v0.81 standard/annexes/Authority_and_Refusal_Receipt_Fields.md sec 4 Refusal Receipt; schemas/refusal-receipt.schema.json (verified VR-0009, byte-identical at tag v0.81). Kit cited v0.75 sec 7.4/11, which do not exist as numbered clauses in v0.81."
+    gkos_file_path: null
+    engine_implementation: >
+      GKOS-Engine at commit 650eab4a6752227cae336d7556a57826c22a0d5a emits the NO_ELIGIBLE_RESULTS reason code from src/retrieval/confidence.ts (line 11) and src/retrieval/coordinator.ts (lines 203, 863, 934); fixture contracts/retrieval/gkos-retrieval-1.0.0-draft.2/conformance-fixture.json (line 44) and test/retrieval-temporal.test.mjs (lines 334, 415) exercise it. GKOS-Engine-Lite at 1e1f84c547f610ecae2eb459cba53d3f1d00889c carries the same rule in rust/crates/gkos-retrieval/src/confidence.rs (line 19). This reason code is a retrieval confidence signal on an empty result; it is not an implementation of the gkos-standard Refusal Receipt role, which no Engine record is currently validated against. (VR-0009)
+    engine_implementation_note: "Do not say the Engine implements Refusal Receipts. VR-0009."
+    fixture_evidence: null
+    earliest_evidence: { date: null, artifact: null, digest_sha256: null }
+    related_work:
+      - name: draft-sharif-agent-audit-trail-03
+        date: "2026-09-05"              # verified VR-0008; Kit cited -00, superseded
+        url: https://datatracker.ietf.org/doc/draft-sharif-agent-audit-trail/
+        overlap: null
+        difference: null
+      - name: draft-nelson-agent-delegation-receipts-10
+        date: "2026-06-13"              # verified VR-0008, rev 10
+        url: https://datatracker.ietf.org/doc/draft-nelson-agent-delegation-receipts/
+        overlap: null
+        difference: null
+    finding: not_established
+    claimable_statement: null
+    do_not_claim: "first; only; novel; no equivalent exists"
+
+  - id: CR-02
+    title: Layer-1 re-entry rule
+    mechanism: null
+    gkos_clause: "v0.75 sec 7.8 (candidate; verify)"
+    gkos_file_path: null
+    engine_implementation: null
+    fixture_evidence: null
+    earliest_evidence: { date: null, artifact: null, digest_sha256: null }
+    related_work: []
+    finding: not_established
+    claimable_statement: null
+    do_not_claim: "first; only; novel"
+
+  - id: CR-03
+    title: Purpose-bound reproducible Context Manifest
+    mechanism: null
+    gkos_clause: "v0.75 sec 7.6 (candidate; verify)"
+    gkos_file_path: null
+    engine_implementation: null
+    fixture_evidence: null
+    earliest_evidence: { date: null, artifact: null, digest_sha256: null }
+    related_work: []
+    finding: not_established
+    claimable_statement: null
+    do_not_claim: "first; only; novel"
+
+  - id: CR-04
+    title: Cumulative GCP conformance ladder with self-attested vs independent distinction
+    mechanism: null
+    gkos_clause: "v0.75 sec 10 (candidate; verify)"
+    gkos_file_path: null
+    engine_implementation: null
+    fixture_evidence: null
+    earliest_evidence: { date: null, artifact: null, digest_sha256: null }
+    related_work: []
+    finding: not_established
+    claimable_statement: null
+    do_not_claim: "first; only; novel; certified"
+
+  - id: CR-05
+    title: Universal receipting invariant
+    mechanism: null
+    gkos_clause: "OD-8 (candidate; verify)"
+    gkos_file_path: null
+    engine_implementation: null
+    fixture_evidence: null
+    earliest_evidence: { date: null, artifact: null, digest_sha256: null }
+    related_work: []
+    finding: not_established
+    claimable_statement: null
+    do_not_claim: "first; only; novel"
+
+not_candidates:
+  - delegation receipts (Nelson)
+  - hash-chained logs (Sharif and many others)
+  - "evaluation is not approval" (XACML PDP/PEP)
+  - read-only access makes grounding safe

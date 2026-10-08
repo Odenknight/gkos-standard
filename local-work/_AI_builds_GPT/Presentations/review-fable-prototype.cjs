@@ -1,0 +1,28 @@
+const { chromium } = require('C:/Users/FAC/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs = require('fs');
+(async () => {
+ const browser = await chromium.launch({headless:true});
+ const page = await browser.newPage({viewport:{width:1366,height:900}});
+ const errors=[]; page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:8767/',{waitUntil:'networkidle'});
+ await page.screenshot({path:'C:/Users/FAC/Documents/_AI_builds_GPT/Presentations/fable-prototype-desktop.png'});
+ const result={sections:await page.locator('section.card').count(),surface:{depth:await page.locator('html').getAttribute('data-depth'),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)}};
+ await page.locator('button[data-depth=deep]').click(); await page.waitForLoadState('networkidle');
+ result.deep={textLength:(await page.locator('#modernization .body').innerText()).length,errors:await page.locator('.body.error').count()};
+ await page.route('**/fragments/**/mid.html',route=>route.abort());
+ await page.locator('button[data-depth=mid]').click(); await page.waitForLoadState('networkidle');
+ result.failedMid={textLength:(await page.locator('#modernization .body').innerText()).length,errorCount:await page.locator('.body.error').count(),label:await page.locator('#depthnote').innerText()};
+ await page.unroute('**/fragments/**/mid.html');
+ await page.locator('button[data-depth=surface]').click();
+ const baseline=(await page.locator('#modernization .body').innerText()).length;
+ await page.route('**/fragments/**/deep.html',async route=>{await new Promise(r=>setTimeout(r,500)); await route.continue()});
+ await page.locator('button[data-depth=deep]').click(); await page.locator('button[data-depth=surface]').click(); await page.waitForLoadState('networkidle');
+ result.rapidSwitch={expected:baseline,actual:(await page.locator('#modernization .body').innerText()).length,selected:await page.locator('html').getAttribute('data-depth')};
+ const phone=await browser.newPage({viewport:{width:375,height:812}}); await phone.goto('http://127.0.0.1:8767/',{waitUntil:'networkidle'});
+ result.mobile={overflow:await phone.evaluate(()=>document.documentElement.scrollWidth>innerWidth),firstTopicY:(await phone.locator('#message').boundingBox()).y};
+ await phone.screenshot({path:'C:/Users/FAC/Documents/_AI_builds_GPT/Presentations/fable-prototype-mobile.png'});
+ const nojs=await browser.newPage({javaScriptEnabled:false}); await nojs.goto('http://127.0.0.1:8767/'); result.nojs={sections:await nojs.locator('section.card').count(),surfaceReadable:await nojs.locator('#modernization .body').innerText()};
+ result.pageErrors=errors;
+ fs.writeFileSync('C:/Users/FAC/Documents/_AI_builds_GPT/Presentations/fable-prototype-review.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));
+ await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

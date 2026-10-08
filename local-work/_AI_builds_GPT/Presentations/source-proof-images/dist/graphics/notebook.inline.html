@@ -1,0 +1,34 @@
+<figure class="art art-notebook" aria-labelledby="notebook-t notebook-d"><svg viewBox="0 0 760 320" role="img" xmlns="http://www.w3.org/2000/svg"><title id="notebook-t">An open notebook whose left page lists what worked and whose right page keeps the failures and a correction, struck through but still legible</title><desc id="notebook-d">An open two-page notebook. The left page, WHAT WORKED, lists the stencil port, Float64 within limits, byte-identical results 24 of 24, and reusable tooling. The right page, WHAT DID NOT, KEPT ANYWAY, shows struck-through but readable entries for the Float32 accuracy miss and a TOOLCHAIN_ABSENT finding with a correction noting the Pixi environment was present, plus unmeasured speed and an overall failed protocol. An eraser sits to one side labelled unused.</desc>
+<g class="book">
+  <rect x="60" y="34" width="640" height="238" rx="8" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="2.5"/>
+  <path d="M380 34 v238" stroke="var(--rule)" stroke-width="2.5"/>
+  <g stroke="var(--rule)" stroke-width="1" opacity=".55">
+    <path d="M86 78h268M86 106h268M86 134h268M86 162h268M86 190h268M86 218h268M86 246h268"/>
+    <path d="M406 78h268M406 106h268M406 134h268M406 162h268M406 190h268M406 218h268M406 246h268"/>
+  </g>
+</g>
+<!-- left page: what worked -->
+<text x="86" y="62" font-size="11" font-weight="700" fill="var(--accent-ink)" font-family="var(--display)">WHAT WORKED</text>
+<g font-family="var(--mono)" font-size="10" fill="var(--ink-2)">
+  <text x="86" y="102">stencil ported, runs on gfx1103</text>
+  <text x="86" y="130">Float64 within frozen limits</text>
+  <text x="86" y="158">byte-identical to HIP, 24 / 24</text>
+  <text x="86" y="186">tooling reusable by other work</text>
+</g>
+<g fill="var(--pass)"><circle cx="352" cy="98" r="5"/><circle cx="352" cy="126" r="5"/><circle cx="352" cy="154" r="5"/><circle cx="352" cy="182" r="5"/></g>
+<!-- right page: what did not, still legible -->
+<text x="406" y="62" font-size="11" font-weight="700" fill="var(--time)" font-family="var(--display)">WHAT DID NOT — KEPT ANYWAY</text>
+<g font-family="var(--mono)" font-size="10" fill="var(--ink-3)">
+  <text x="406" y="102">Float32 missed accuracy</text><path class="strike s1" d="M402 98 h172" stroke="var(--fail)" stroke-width="2"/>
+  <text x="406" y="130">TOOLCHAIN_ABSENT</text><path class="strike s2" d="M402 126 h146" stroke="var(--fail)" stroke-width="2"/>
+  <text x="426" y="158" fill="var(--accent-ink)">↳ wrong. Pixi env was there.</text>
+  <text x="406" y="186">speed: never measured</text>
+  <text x="406" y="214">overall protocol: failed</text>
+</g>
+<g class="eraser">
+  <rect x="592" y="222" width="86" height="34" rx="6" fill="var(--paper-3)" stroke="var(--ink-3)" stroke-width="2"/>
+  <text x="635" y="244" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--display)">unused</text>
+  <path d="M600 214 l70 -22" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="3 4"/>
+</g>
+<text x="380" y="300" text-anchor="middle" font-size="12" fill="var(--ink-3)" font-family="var(--body)">The hypothesis is still unproven. The methods, the tooling and the corrections are not.</text>
+</svg><figcaption>The eraser goes unused. That is the method.</figcaption></figure>

@@ -1,0 +1,30 @@
+{
+  "sections": 15,
+  "surface": {
+    "depth": "surface",
+    "overflow": false
+  },
+  "deep": {
+    "textLength": 4775,
+    "errors": 0
+  },
+  "failedMid": {
+    "textLength": 4775,
+    "errorCount": 0,
+    "label": "Showing the mid-level view. Switch levels in the sidebar any time; your choice is remembered on this device."
+  },
+  "rapidSwitch": {
+    "expected": 592,
+    "actual": 592,
+    "selected": "surface"
+  },
+  "mobile": {
+    "overflow": false,
+    "firstTopicY": 1772.546875
+  },
+  "nojs": {
+    "sections": 15,
+    "surfaceReadable": "We rewrote part of our scientific computing tools in Mojo and checked the new version against the established one. Across 24 test cases the two programs gave exactly the same answers. That was only the first test.\n\nWe then compared the answers with independent mathematical references. The higher-precision version passed. The lower-precision version failed.\n\nTwo programs can agree perfectly and still miss the target. Agreement and accuracy are different questions.\n\nReported qualification results from the 20 August 2026 campaign. Not a new experiment. Not a speed comparison.\nDEMONSTRATED"
+  },
+  "pageErrors": []
+}

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" class="art art-funnel" aria-labelledby="funnel-t funnel-d"><title id="funnel-t">A firehose of AI-produced artifacts spraying into a narrow verification funnel, with most spilling onto the floor</title><desc id="funnel-d">A box labelled AI output feeds a hose that sprays labelled artifacts: code, draft, plot, plan, proof. They hit a narrow funnel labelled VERIFICATION, one at a time. Most artifacts spill onto the floor marked unchecked, piling up. A single item passes through marked checked.</desc><style>
+svg{--paper:#eef1f5;--paper-2:#f7f8fa;--paper-3:#e2e7ee;--ink:#16202b;--ink-2:#3f4d5c;--ink-3:#6b7987;--rule:#c9d2dc;
+--accent:#0e7c78;--accent-ink:#085552;--accent-soft:#d5ecea;--time:#b8620f;--time-soft:#f5e4d0;
+--pass:#1f7a3a;--fail:#b8322f;--fail-soft:#f6dcdb;--warn:#a36a00;--block:#5b6572;
+--demonstrated:#1f7a3a;--documented:#0e7c78;--in-development:#a36a00;--proposed:#5b6572;
+--g-access:#0e7c78;--g-learning:#5b4b8a;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif;--mono:"JetBrains Mono",Consolas,monospace;
+background:var(--paper)}
+@media (prefers-color-scheme:dark){svg{--paper:#0f151c;--paper-2:#161e27;--paper-3:#1f2933;--ink:#e8edf2;--ink-2:#b7c2cd;--ink-3:#8d9aa7;--rule:#2c3946;--accent:#4fc1bb;--accent-ink:#9fe3df;--accent-soft:#12302f;--time:#e0954a;--time-soft:#3a2712;--g-access:#4fc1bb;--g-learning:#a596d6}}
+.art-funnel .dot{animation:squirt 2.8s linear infinite}
+.art-funnel .d2{animation-delay:.4s}
+.art-funnel .d3{animation-delay:.8s}
+.art-funnel .d4{animation-delay:1.2s}
+.art-funnel .d5{animation-delay:1.6s}
+.art-funnel .drip{animation:fall 2s ease-in infinite}
+@keyframes walkin{0%{transform:translateX(0);opacity:1}70%{transform:translateX(190px);opacity:0}71%{transform:translateX(0);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop{
+ 0%{transform:translate(0,0) rotate(0);opacity:1}
+ 14%{transform:translate(58px,-26px) rotate(140deg);opacity:1}
+ 30%{transform:translate(128px,-34px) rotate(300deg);opacity:1}
+ 44%{transform:translate(186px,-4px) rotate(460deg);opacity:1}
+ 66%{transform:translate(204px,92px) rotate(560deg);opacity:1}
+ 74%{transform:translate(208px,100px) rotate(575deg);opacity:1}
+ 92%{transform:translate(208px,100px) rotate(575deg);opacity:0}
+ 93%{transform:translate(0,0) rotate(0);opacity:0}
+ 100%{transform:translate(0,0) rotate(0);opacity:1}}
+@keyframes land{0%,60%{opacity:0}70%,92%{opacity:.18}93%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes buckle{0%,100%{transform:scaleX(1) scaleY(1)}50%{transform:scaleX(1.14) scaleY(.985)}}
+@keyframes press{0%,100%{transform:translateY(-3px);opacity:.55}50%{transform:translateY(2px);opacity:1}}
+@keyframes wobble{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+@keyframes squirt{0%{transform:translateX(-60px);opacity:0}15%{opacity:1}100%{transform:translateX(230px);opacity:.15}}
+@keyframes fall{0%{transform:translateY(-14px);opacity:0}30%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes thump{0%{transform:rotate(-11deg) scale(1.5);opacity:0}12%{transform:rotate(-11deg) scale(1);opacity:1}100%{transform:rotate(-11deg) scale(1);opacity:1}}
+@keyframes fadein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes dashmove{to{stroke-dashoffset:-24}}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(-24px)}}
+@keyframes sail{0%{transform:translate(0,0);opacity:0}8%{opacity:1}
+ 25%{transform:translate(146px,-70px)}50%{transform:translate(290px,-104px)}75%{transform:translate(434px,-70px)}
+ 94%{opacity:1}100%{transform:translate(568px,0);opacity:0}}
+@keyframes shove{0%,100%{transform:translateX(0)}55%{transform:translateX(7px)}}
+@keyframes through{
+ 0%{transform:translateX(232px) scale(1,1);opacity:0}
+ 6%{opacity:1}
+ 28%{transform:translateX(250px) scale(1,1)}
+ 40%{transform:translateX(262px) scale(.55,.42)}
+ 54%{transform:translateX(280px) scale(.5,.38)}
+ 66%{transform:translateX(304px) scale(1,1)}
+ 88%{transform:translateX(470px) scale(1,1);opacity:1}
+ 96%{transform:translateX(500px) scale(.55,.42);opacity:.5}
+ 100%{transform:translateX(520px) scale(.5,.38);opacity:0}}
+@keyframes bridgetry{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(5deg)}88%{transform:rotate(0)}}
+@keyframes reach{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes pull{to{stroke-dashoffset:-40}}
+@keyframes fray{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes strike{0%{stroke-dashoffset:200}25%,100%{stroke-dashoffset:0}}
+@keyframes popin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes sweep{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,14px)}}
+@keyframes shuffle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop2{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes stall{0%,100%{transform:translateY(0)}45%{transform:translateY(-10px)}55%{transform:translateY(-4px)}}
+@keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes tipA{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes tipB{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes flag{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes spin{0%,60%{transform:rotate(0)}80%,100%{transform:rotate(90deg)}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes nudge2{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes draw{0%{stroke-dashoffset:28}35%,100%{stroke-dashoffset:0}}
+@keyframes reachin{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(34px)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}</style>
+<!-- the hose -->
+<g class="hose">
+  <rect x="20" y="96" width="120" height="64" rx="10" fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2"/>
+  <text x="80" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink-2)" font-family="var(--display)">AI</text>
+  <text x="80" y="142" text-anchor="middle" font-size="9" fill="var(--ink-3)" font-family="var(--mono)">output</text>
+  <path d="M140 128 h60" stroke="var(--rule)" stroke-width="18" stroke-linecap="round"/>
+</g>
+<!-- the spray of artifacts -->
+<g class="spray" font-family="var(--mono)" font-size="9" fill="var(--accent)">
+  <g class="dot d1"><rect x="210" y="60" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="71" text-anchor="middle">code</text></g>
+  <g class="dot d2"><rect x="210" y="92" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="103" text-anchor="middle">draft</text></g>
+  <g class="dot d3"><rect x="210" y="124" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="135" text-anchor="middle">plot</text></g>
+  <g class="dot d4"><rect x="210" y="156" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="167" text-anchor="middle">plan</text></g>
+  <g class="dot d5"><rect x="210" y="188" width="34" height="14" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="227" y="199" text-anchor="middle">proof</text></g>
+</g>
+<!-- narrow funnel -->
+<path d="M420 40 L560 40 L510 170 L510 232 L470 232 L470 170 Z" fill="var(--paper-2)" stroke="var(--ink-3)" stroke-width="2.5"/>
+<text x="490" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink-2)" font-family="var(--display)">VERIFICATION</text>
+<text x="490" y="106" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">one</text>
+<text x="490" y="120" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">at a</text>
+<text x="490" y="134" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="var(--mono)">time</text>
+<!-- spill -->
+<g class="spill" fill="var(--time)" opacity=".75">
+  <rect x="372" y="206" width="30" height="12" rx="3"/><rect x="342" y="226" width="30" height="12" rx="3"/>
+  <rect x="580" y="212" width="30" height="12" rx="3"/><rect x="608" y="232" width="30" height="12" rx="3"/>
+  <rect x="356" y="250" width="30" height="12" rx="3"/><rect x="594" y="254" width="30" height="12" rx="3"/>
+</g>
+<text x="380" y="292" text-anchor="middle" font-size="11" fill="var(--time)" font-family="var(--mono)">unchecked · piling up on the floor</text>
+<!-- trickle out the bottom -->
+<g class="drip"><rect x="482" y="244" width="16" height="16" rx="4" fill="var(--pass)"/></g>
+<text x="620" y="252" font-size="11" fill="var(--pass)" font-family="var(--mono)">checked</text>
+</svg>

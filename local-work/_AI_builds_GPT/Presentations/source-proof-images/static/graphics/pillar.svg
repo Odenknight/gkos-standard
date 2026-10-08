@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" class="art art-pillar" aria-labelledby="pillar-t pillar-d"><title id="pillar-t">A sagging slab cracking over a single buckling unfunded support, while four funded pillars hold only the edges</title><desc id="pillar-d">Heavy downward arrows labelled research, industry, government, healthcare and defense press on a wide slab. The slab sags and a red crack opens at its centre. Four thick pillars marked funded stand at the edges and carry none of the middle. A single amber support beneath the centre is visibly buckling under the load, with stress marks, and is labelled one person, unpaid since 2014, carrying the span.</desc><style>
+svg{--paper:#eef1f5;--paper-2:#f7f8fa;--paper-3:#e2e7ee;--ink:#16202b;--ink-2:#3f4d5c;--ink-3:#6b7987;--rule:#c9d2dc;
+--accent:#0e7c78;--accent-ink:#085552;--accent-soft:#d5ecea;--time:#b8620f;--time-soft:#f5e4d0;
+--pass:#1f7a3a;--fail:#b8322f;--fail-soft:#f6dcdb;--warn:#a36a00;--block:#5b6572;
+--demonstrated:#1f7a3a;--documented:#0e7c78;--in-development:#a36a00;--proposed:#5b6572;
+--g-access:#0e7c78;--g-learning:#5b4b8a;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif;--mono:"JetBrains Mono",Consolas,monospace;
+background:var(--paper)}
+@media (prefers-color-scheme:dark){svg{--paper:#0f151c;--paper-2:#161e27;--paper-3:#1f2933;--ink:#e8edf2;--ink-2:#b7c2cd;--ink-3:#8d9aa7;--rule:#2c3946;--accent:#4fc1bb;--accent-ink:#9fe3df;--accent-soft:#12302f;--time:#e0954a;--time-soft:#3a2712;--g-access:#4fc1bb;--g-learning:#a596d6}}
+.art-pillar .twig{transform-origin:380px 266px;animation:buckle 3s ease-in-out infinite}
+.art-pillar .stress path{animation:pulse 1.6s ease-in-out infinite}
+.art-pillar .crack{animation:pulse 2.6s ease-in-out infinite}
+.art-pillar .load path{animation:press 2.6s ease-in-out infinite}
+@keyframes walkin{0%{transform:translateX(0);opacity:1}70%{transform:translateX(190px);opacity:0}71%{transform:translateX(0);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop{
+ 0%{transform:translate(0,0) rotate(0);opacity:1}
+ 14%{transform:translate(58px,-26px) rotate(140deg);opacity:1}
+ 30%{transform:translate(128px,-34px) rotate(300deg);opacity:1}
+ 44%{transform:translate(186px,-4px) rotate(460deg);opacity:1}
+ 66%{transform:translate(204px,92px) rotate(560deg);opacity:1}
+ 74%{transform:translate(208px,100px) rotate(575deg);opacity:1}
+ 92%{transform:translate(208px,100px) rotate(575deg);opacity:0}
+ 93%{transform:translate(0,0) rotate(0);opacity:0}
+ 100%{transform:translate(0,0) rotate(0);opacity:1}}
+@keyframes land{0%,60%{opacity:0}70%,92%{opacity:.18}93%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes buckle{0%,100%{transform:scaleX(1) scaleY(1)}50%{transform:scaleX(1.14) scaleY(.985)}}
+@keyframes press{0%,100%{transform:translateY(-3px);opacity:.55}50%{transform:translateY(2px);opacity:1}}
+@keyframes wobble{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+@keyframes squirt{0%{transform:translateX(-60px);opacity:0}15%{opacity:1}100%{transform:translateX(230px);opacity:.15}}
+@keyframes fall{0%{transform:translateY(-14px);opacity:0}30%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes thump{0%{transform:rotate(-11deg) scale(1.5);opacity:0}12%{transform:rotate(-11deg) scale(1);opacity:1}100%{transform:rotate(-11deg) scale(1);opacity:1}}
+@keyframes fadein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes dashmove{to{stroke-dashoffset:-24}}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(-24px)}}
+@keyframes sail{0%{transform:translate(0,0);opacity:0}8%{opacity:1}
+ 25%{transform:translate(146px,-70px)}50%{transform:translate(290px,-104px)}75%{transform:translate(434px,-70px)}
+ 94%{opacity:1}100%{transform:translate(568px,0);opacity:0}}
+@keyframes shove{0%,100%{transform:translateX(0)}55%{transform:translateX(7px)}}
+@keyframes through{
+ 0%{transform:translateX(232px) scale(1,1);opacity:0}
+ 6%{opacity:1}
+ 28%{transform:translateX(250px) scale(1,1)}
+ 40%{transform:translateX(262px) scale(.55,.42)}
+ 54%{transform:translateX(280px) scale(.5,.38)}
+ 66%{transform:translateX(304px) scale(1,1)}
+ 88%{transform:translateX(470px) scale(1,1);opacity:1}
+ 96%{transform:translateX(500px) scale(.55,.42);opacity:.5}
+ 100%{transform:translateX(520px) scale(.5,.38);opacity:0}}
+@keyframes bridgetry{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(5deg)}88%{transform:rotate(0)}}
+@keyframes reach{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes pull{to{stroke-dashoffset:-40}}
+@keyframes fray{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes strike{0%{stroke-dashoffset:200}25%,100%{stroke-dashoffset:0}}
+@keyframes popin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes sweep{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,14px)}}
+@keyframes shuffle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop2{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes stall{0%,100%{transform:translateY(0)}45%{transform:translateY(-10px)}55%{transform:translateY(-4px)}}
+@keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes tipA{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes tipB{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes flag{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes spin{0%,60%{transform:rotate(0)}80%,100%{transform:rotate(90deg)}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes nudge2{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes draw{0%{stroke-dashoffset:28}35%,100%{stroke-dashoffset:0}}
+@keyframes reachin{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(34px)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}</style>
+<!-- the load pressing down -->
+<g class="load" stroke="var(--ink-3)" stroke-width="3" fill="none" stroke-linecap="round">
+  <path d="M120 18 v34" marker-end="url(#ld)"/><path d="M230 14 v40" marker-end="url(#ld)"/>
+  <path d="M380 8 v50" marker-end="url(#ld)"/>
+  <path d="M530 14 v40" marker-end="url(#ld)"/><path d="M640 18 v34" marker-end="url(#ld)"/>
+</g>
+<defs><marker id="ld" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/></marker></defs>
+<text x="380" y="14" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family="var(--mono)">research · industry · government · healthcare · defense</text>
+<!-- the slab, sagging over the middle -->
+<g class="slab">
+  <path d="M50 76 Q 380 112 710 76 L710 128 Q 380 164 50 128 Z" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="2.5"/>
+  <text x="380" y="126" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink-2)" font-family="var(--display)">EVERYTHING BUILT ON TOP OF IT</text>
+</g>
+<!-- the crack opening above the weak support -->
+<g class="crack" stroke="var(--fail)" stroke-width="2.5" fill="none" stroke-linecap="round">
+  <path d="M380 95 l-9 13 l11 11 l-9 13 l7 12"/>
+  <path d="M352 100 l-10 9" opacity=".7"/><path d="M410 100 l10 9" opacity=".7"/>
+</g>
+<!-- four funded pillars, straight and solid -->
+<g fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2">
+  <rect x="88" y="134" width="56" height="130"/><rect x="178" y="141" width="56" height="123"/>
+  <rect x="526" y="141" width="56" height="123"/><rect x="616" y="134" width="56" height="130"/>
+</g>
+<g font-family="var(--mono)" font-size="9" fill="var(--ink-3)" text-anchor="middle">
+  <text x="116" y="282">funded</text><text x="206" y="282">funded</text><text x="554" y="282">funded</text><text x="644" y="282">funded</text>
+</g>
+<!-- the one unfunded support, buckling under the whole middle -->
+<g class="twig">
+  <path d="M380 146 C 352 184, 410 222, 380 264" stroke="var(--time)" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <g class="stress" stroke="var(--fail)" stroke-width="2" stroke-linecap="round">
+    <path d="M336 196 l-13 -7"/><path d="M334 208 l-14 3"/>
+    <path d="M424 196 l13 -7"/><path d="M426 208 l14 3"/>
+  </g>
+</g>
+<path d="M40 266 h680" stroke="var(--ink-3)" stroke-width="2.5"/>
+<!-- callout -->
+<g class="callout">
+  <path d="M250 212 h56" stroke="var(--time)" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="244" y="200" text-anchor="end" font-size="13" font-weight="700" fill="var(--time)" font-family="var(--display)">one person</text>
+  <text x="244" y="218" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="var(--body)">unpaid since 2014</text>
+  <text x="244" y="236" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="var(--body)">carrying the span</text>
+</g>
+<defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--time)"/></marker></defs>
+<text x="380" y="300" text-anchor="middle" font-size="12" fill="var(--time)" font-family="var(--body)">Take this one away and the four funded pillars do not hold the middle up.</text>
+<text x="380" y="320" text-anchor="middle" font-size="11" fill="var(--ink-3)" font-family="var(--mono)">load-bearing is not the same as well-supported</text>
+</svg>

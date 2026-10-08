@@ -1,0 +1,62 @@
+from pathlib import Path
+import json, shutil
+from content import CONTENT, PATH, lbl, ask, q, measure, table, src
+ROOT=Path(__file__).parent
+OUT=ROOT/'dist'
+shutil.copytree(ROOT/'static', OUT, dirs_exist_ok=True)
+BY={c['slug']:c for c in CONTENT}
+PIN='https://github.com/Odenknight/KosMojAMD/blob/0477d6ece20c9484201b8c50791a7f91c9aadac5/'
+report=PIN+'docs/MOJO_AMD_KNIGHTSAI_PHASE_A_SERIES02_ASSESSMENT_2026-08-20.md'
+# Content corrections are kept in this single reproducible build, not patched output.
+for c in CONTENT:
+    for depth in ('surface','mid','deep'):
+        c[depth]=c[depth].replace(lbl('demonstrated'),lbl('documented'))
+        c[depth]=c[depth].replace('Built with HTML, CSS, and HTMX 4.0.0 (vendored, no build step, no tracking). The surface level works with JavaScript disabled. The mid-level and deep-dive views load as HTML fragments.','All three reading levels are available as complete pages. Use the technical view for a printable handout.')
+BY['message']['deep']='''<p>These are participant proposals for the National Innovation Roadmap. Track tags indicate where a topic may fit; they are editorial suggestions.</p>'''+table(['Label','Meaning'],[[lbl('documented'),'A result or approach described in retained source records; not independently reproduced for this presentation.'],[lbl('in development'),'Implementation work with remaining qualification or readiness questions.'],[lbl('proposed'),'A recommendation or possible pilot; not a claim that it already exists.']])+src([('Widener convening','https://www.widener.edu/academics/colleges-schools/school-engineering/nsf-national-innovation-convening'),('Convening agenda','https://www.widener.edu/sites/default/files/2026-09/Widener-NSF-NIC-Agenda-2026.pdf')])
+BY['message']['mid']=BY['message']['mid'].replace('demonstrated, documented, in development, or proposed','documented, in development, or proposed')
+BY['pathway']['deep']=BY['pathway']['deep'].replace('Here the root cause is structural, not a lack of talent: the systems that move research forward assume an institution sits behind the applicant. Portals, eligibility rules, indirect-cost models, and introductions all presume that.','A barrier to investigate is the assumption that an institution supplies staff, infrastructure, and introductions. Its importance will vary by program and applicant.').replace('No accountable handoff for individuals, informal teams, and small nonprofits.','Identify where individuals, informal teams, and small nonprofits lack an accountable handoff.')
+BY['opensource']['deep']='''<p>Open-source projects provide reusable research tools. Maintaining them can require testing, documentation, security work, and support that a research grant does not always cover. The proposal is to recognize and fund that work explicitly.</p><p>The Mojo ports and Rust/Mojo development attempts in this portfolio offer cases for discussion. They do not establish that every rewrite improves performance or that every open-source project lacks funding.</p>'''
+BY['modernization']['title']='Scientific software: agreement and accuracy'
+BY['modernization']['surface'] += '<p class="scope"><strong>Scope:</strong> S02-I, 20 August 2026. Overall protocol: failed. Applies to the tested stencil and environment. No new GPU run, speed qualification, or physical-feasibility finding.</p>'+src([('Pinned qualification report',report)])
+BY['modernization']['mid']=BY['modernization']['mid'].replace('Not measured','Not qualified here').replace('This campaign says nothing about performance','No performance qualification is established by these results').replace('so the failure could not be explained away afterward','so any later change to those limits requires a new protocol version').replace('It tells us exactly where the tool can be trusted and where it cannot.','It records which tested criteria passed and which need further work.')
+BY['modernization']['deep']=BY['modernization']['deep'].replace('2.32 × 10⁻³','2.32488 × 10⁻³').replace('1.56 × 10⁻²','1.5625 × 10⁻²')
+BY['modernization']['deep'] += '<p>Relative L2 and scaled L∞ are separate protocol metrics, not universal pointwise percentage errors. The referenced raw dataset was not independently inspected for this presentation.</p>'
+BY['gkos']['deep']=BY['gkos']['deep'].replace('Division of labor that has held up in practice:','Proposed division of labor:').replace('active evidence in draft PR 18 with stated qualification gaps','implementation and qualification records; consult the current repository for status')
+BY['verification']['surface']=BY['verification']['surface'].replace('AI can write code, run analysis, draft documentation, and propose experiments faster than people can check them.','AI can accelerate code, analysis, documentation, and proposed experiments. Checking that output still takes time and expertise.')
+BY['verification']['deep']=BY['verification']['deep'].replace('No one could argue the limits afterward.','A later scientifically justified change requires a new protocol; the original failure remains on record.')
+BY['library']['title']='Connect existing research records'
+BY['library']['kicker']='Talking point 7'
+BY['library']['surface']='''<p>A Unified Research Library could connect existing repositories through a shared catalog. Original custodians would keep their data, permissions, and expertise.</p><p>Make it easier to find a question, its evidence, and what was learned across projects.</p>'''+lbl('proposed')
+old_deep=BY['library']['deep']
+BY['library']['deep']='''<p>Start with interoperable records, stable source identifiers, and a small shared vocabulary. Preserve licensing, attribution, access restrictions, corrections, and disagreements. AI could propose categories and related records; deterministic checks can enforce structure, while people review ambiguous interpretations.</p><p>Records reconstructed later must be labeled as reconstruction, not preregistration.</p>'''+src([('Registered Reports','https://www.cos.io/initiatives/registered-reports')])
+outcomes=dict(slug='outcomes',title='Record more than pass or fail',kicker='Talking point 8',tracks=['Track B','Track D'],surface='''<p>An experiment may be blocked, completed with mixed results, or outside a tool’s valid range. One pass/fail label cannot explain all of that.</p><p class="key">In the documented Mojo test, agreement passed; Float64 accuracy passed; Float32 accuracy failed. The overall protocol still failed.</p>'''+lbl('documented')+src([('S02-I report',report)]),mid=ask('Preserve execution status, criterion results, reasons, and the next decision as separate fields.')+measure('A reviewer can explain what uncertainty an attempt resolved and why the next step changed.'),deep=old_deep)
+CONTENT.insert(CONTENT.index(BY['library'])+1,outcomes)
+BY['storage']['deep']='''<p>The supplied Mojo explainer identifies an externally retained raw record that this presentation has not independently inspected. The general stewardship need is clear: connect a report to identifiable artifacts, integrity checks, retention terms, and a usable access path.</p><p>A storage allocation becomes more useful when another researcher can locate and understand the evidence, subject to its access and licensing rules.</p>'''
+BY['notebook']['surface'] += '<p class="scope">Mathematics and code only; no demonstration of physical feasibility.</p>'+src([('Warp Field Notebook','https://odenknight.com/science/warp-field-notebook/')])
+BY['observatory']['title']='The Observatory: an evidence exhibit in development'
+BY['observatory']['surface']='''<p>The proposed convening exhibit would let a visitor inspect one research record: what was tested, what happened, which evidence supports it, and what changed after review.</p><p class="scope">The participant workflow is in development. This presentation is not a live Observatory connection.</p>'''+lbl('in development')
+BY['observatory']['mid']=ask('Use one reviewed, sanitized research example to test whether evidence records are understandable.')+q('Could an unfamiliar participant explain what was tested, what happened, and what remains unresolved?')
+BY['observatory']['deep']='''<p>The intended workflow distinguishes an authored replay, a live Engine result, and a proposed capability. Any live participant demonstration needs separate readiness evidence, including access controls and the approved corpus.</p><p>Semantic or graph search would aid discovery. The source record remains the basis of the claim. These are demonstration requirements, not a statement that every integration is ready.</p>'''+src([('Observatory repository','https://github.com/Odenknight/GKOS-Observatory'),('Release record','https://github.com/Odenknight/GKOS-Observatory/blob/main/docs/CURRENT-RELEASE.md')])
+BY['fac']['surface'] += '<p class="scope">Community observations suggest questions; they do not establish health benefits or causation.</p>'
+BY['fac']['deep']=BY['fac']['deep'].replace('Next step already identified:','A possible next step:').replace('publicly invites people with ideas to contact it','provides a community engagement entry point to investigate')
+BY['assistance']['deep']=BY['assistance']['deep'].replace('The Observatory demonstrates a small, concrete part of that now.','An Observatory exhibit could illustrate the research-record part of the proposal.').replace('University RSE groups (institution-only today)','University research software engineering groups; access varies')
+BY['assistance']['mid']=BY['assistance']['mid'].replace('The missing piece is an accessible engineering service: RSE and maintenance','The proposed addition is accessible engineering assistance: research software engineering and maintenance')
+BY['evidence']['surface']=BY['evidence']['surface'].replace('Six public repositories carry the strongest evidence behind these talking points. Each keeps its failures, blocked attempts, and corrections next to its successes.','These six repositories are the starting points identified in the supplied materials. Specific result claims should be checked against their dated reports. Repository access and current readiness may vary.')
+BY['evidence']['mid']=BY['evidence']['mid'].replace('What every repository preserves on purpose:','What useful evidence records should preserve:')
+BY['evidence']['deep']=BY['evidence']['deep'].replace('Their READMEs are being reconciled','Their roles and evidence boundaries need to be reconciled').replace('listed after status and evidence boundaries are reconciled','identified in the supplied materials, with current status requiring review')
+BY['engage']['deep']='''<p>Start with a bounded pilot, an accountable partner, and a measure of success. Preserve source records and limitations so later reviewers can assess what the pilot established.</p>'''
+PATH=[(n,t,'outcomes' if slug=='library' else slug) for n,t,slug in PATH]
+LABELS={'surface':'Quick read','mid':'More context','deep':'Technical detail'}
+FILES={'surface':'index.html','mid':'mid.html','deep':'deep.html'}
+SHORT={'message':'Three priorities','pathway':'Independent researchers','portal':'Finding support','opensource':'Open-source stewardship','modernization':'Mojo: agreement and accuracy','gkos':'Evidence and decisions','verification':'AI and verification','library':'Unified Research Library','outcomes':'Experiment outcomes','storage':'Storage and stewardship','notebook':'Warp Field Notebook','observatory':'Observatory exhibit','fac':'Community research / FAC','assistance':'Technical assistance','evidence':'Repository evidence','engage':'Three pilot proposals'}
+BY['engage']['mid']+=table(['Pilot','Accountable partner to identify','Measure'],[['Supported referrals','Receiving program and named navigator','Time to a useful connection; referrals completed'],['Technical assistance','Engineering or validation team','External adoption; reproducible results; maintenance continuity'],['Reusable research records','Source custodians and reviewers','Review effort; missing evidence; reusable learning']])
+# Metadata is kept out of the reader's main argument.
+for c in CONTENT:
+    c['title']=SHORT[c['slug']] if c['slug'] in ('message','fac','engage','verification') else c['title']
+
+from hybrid import extend
+extend(CONTENT, LABELS)
+from render import render
+
+if __name__ == '__main__':
+    render(CONTENT, OUT, LABELS, PATH)

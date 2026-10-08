@@ -1,0 +1,43 @@
+"""Reviewed additions from Fable's hub; canonical rendering remains in render.py."""
+import json,re
+from pathlib import Path
+from agenda import GROUPS,GROUP_INTRO,TOPICS
+FABLE=json.loads((Path(__file__).parent/'fable-content.json').read_text(encoding='utf-8'))
+NOTES=dict(FABLE['notes'])
+NOTES['outcomes']=NOTES.pop('dispositions')
+NOTES.update({
+'commercial':'A possible product is a supported numerical kernel library. The S02-I stencil result is one qualification example: Float64 passed, Float32 failed, and the overall protocol failed. It does not qualify a whole library. Before a product claim, we need target-user discovery, more hardware testing, a benchmark, and a support plan. The animated display is a concept, not a physical result.',
+'evidence':'These repositories are starting points for checking my examples. Specific claims need dated reports and their scope. Some links may require repository access. No experiments were rerun for this presentation.',
+'storage':'Storage capacity alone does not make evidence reusable. The supplied campaign record points to raw artifacts outside the repository. This presentation has not independently inspected them. Pair retention with curation, integrity checks, and a usable access path.',
+'agenda':'My examples connect to the agenda through three questions: who can reach support, what makes a result usable, and what evidence improves the next decision? Commercialization needs user discovery as well as technical qualification. Capitalization needs clear milestones. Partnerships need accountable handoffs.',
+'journey':'The guide follows discovery through translation, validation, commercialization, scale, and impact. My examples raise questions about entry to translation and access to validation support. These are barriers to investigate with others, not claims that every project follows the same path.',
+'verification':'AI can accelerate production of code and research artifacts. Checking them still needs expertise. Set criteria before the run, keep corrections visible, and budget verification alongside acceleration.',
+'portal':'Funding search exists, but a useful referral also needs follow-through. My proposal is a named navigator, dated opportunity records, and a record of whether the connection helped.',
+})
+
+def extend(content,labels):
+    extra={c['slug']:dict(c) for c in FABLE['extra']}
+    extra['agenda']['surface']='<p>Use the agenda as a conversation map: barriers, commercialization, capitalization, partnerships, and the four Roadmap tracks. These are suggested connections for my examples.</p>'
+    extra['agenda']['mid']=extra['agenda']['mid'].replace('Validated kernel library on affordable AMD hardware as a fundable product; the accuracy record as the sales sheet.','A proposed supported kernel library: technical qualification and customer discovery are separate milestones.').replace('Institutional affiliation as a hidden requirement.','Investigate barriers faced by people without institutional support.').replace('SBIR-scale awards for validated building blocks.','staged support tied to explicit qualification milestones.')
+    extra['agenda']['deep']=extra['agenda']['deep'].replace('Support systems assume an institution: staff, offices, infrastructure, introductions. Maintenance and validation are unfunded and invisible.','Investigate where missing staff, infrastructure, introductions, or maintenance support slows progress. The cause will vary by program and participant.').replace('No accountable first handoff; no stewardship funding; no interoperable record of what happened and why.','Look for gaps in first handoffs, stewardship support, and interoperable evidence records.')
+    extra['sbir']['surface']='<p>The supplied SBIR handout presents competing views on stable support, commercialization, graduation, and opportunities for newcomers. A useful question across those views is: what did continued support change?</p>'
+    extra['sbir']['mid']=extra['sbir']['mid'].replace('Murphy (SBA):','The Murphy interview:')+'<p>These are summaries of discussion positions in the handout, not current eligibility rules or funding decisions.</p>'
+    extra['sbir']['deep']+='<p>Learning can complement commercial or mission progress; it does not automatically justify another award. The Mojo example is a technical reporting case, not an SBIR award evaluation.</p><p class="sources"><a href="resources/sbir-discussion.pdf">Participant handout, pp. 1–3</a></p>'
+    extra['journey']['surface']='<p>The guide follows Discovery → Translation → Validation → Commercialization → Scale → Impact. My examples raise two practical questions: how does someone without institutional support reach translation, and how do they obtain the engineering needed for validation?</p>'
+    extra['journey']['deep']='<p>AI may reduce effort in some tasks while creating more work for review in others. The guide’s AI discussion asks where human judgment remains essential. The Mojo example supports the narrower practice of checking each technical criterion; it is not an evaluation of the AI studies summarized in the guide.</p><p class="sources"><a href="resources/resource-guide.pdf#page=13">Resource Guide, p. 13</a></p>'
+    animation=FABLE['animation'].replace('AMD HPC accelerator running Mojo kernels to drive a holographic four-nacelle warp-field simulation','Concept illustration: AMD hardware, Mojo kernels, and an exploratory four-nacelle visualization').replace('target: Instinct-class · tested so far: gfx1103','hardware concept · qualification is device-specific')
+    # Use plain brand names; do not misrepresent drawn marks as official brand artwork.
+    animation=re.sub(r'<path d="M394 44.*?/>','',animation,flags=re.S)
+    commercial=dict(FABLE['commercial'])
+    commercial['title']='From research kernels to a possible product'
+    commercial['surface']='<p>A supported numerical kernel library is a product hypothesis to test with researchers and engineering teams. The first questions are which workload matters, which hardware they use, and what evidence would make the tool useful.</p><p class="scope">Proposed product. S02-I qualified specific criteria for one tested stencil; Float32 accuracy and the overall protocol failed. No library-wide accuracy, speed, cost, or physical-feasibility claim follows from it.</p>'+animation+'<p class="scope">Concept illustration, not live computation or a validated physical simulation. AMD and Mojo are product names, not endorsements.</p>'
+    commercial['mid']='<p>Start with customer discovery and a bounded technical pilot. A prospective user should help choose the workload and acceptance criteria. Qualification on additional hardware, reproducible packaging, documentation, and a support plan are separate milestones.</p>'
+    commercial['deep']='<h3>Evidence needed before a product claim</h3><ul><li>Criterion-level numerical results for each supported workload and precision.</li><li>Testing on the intended hardware and software versions.</li><li>A benchmark with a defined baseline, environment, and repeatable method.</li><li>User interviews and a pilot that tests usefulness, not just technical novelty.</li><li>Clear licensing, maintenance ownership, and a sustainable support arrangement.</li></ul><p>No price advantage, vendor portability, or customer demand has been established by the S02-I report. Exploratory spacetime work can motivate a workload without establishing physical feasibility.</p>'
+    content.extend([commercial,*extra.values()])
+    labels['notes']='Speaker notes'
+    GROUPS['capacity'][2].insert(3,'commercial')
+    GROUPS['access'][2].extend(['storage','journey'])
+    GROUPS['capacity'][2].remove('storage')
+    GROUPS['map']=('Convening map','Find the session, question, and evidence.', ['three','agenda','sbir','evidence','engage'])
+    GROUP_INTRO['map']=('Bring the right example into the discussion.','This map connects the three priorities to the agenda and the two supplied handouts. Select a topic for the reading, a response, or a practical proposal.','A focused roundtable contribution','Start with the question being discussed. Offer one relevant example, then one next step with a named partner.','A specific proposal that someone can own and assess.')
+    TOPICS['commercial']=('A possible product','What would turn a research component into something people can use and support?','Run customer discovery alongside a bounded qualification and packaging pilot.','Prospective users, numerical specialists, maintainers, and translation partners.','Evidence of user need, reproducible qualification, and a clear support plan.',9,'A · Barriers to translation','Validation → Commercialization')

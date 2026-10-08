@@ -1,0 +1,251 @@
+{
+  "topics": {
+    "modernization": [
+      "modernization-agreement",
+      "modernization-archers",
+      "modernization-clocks",
+      "modernization-ruler",
+      "modernization-subtract"
+    ],
+    "commercial": [
+      "commercial-holo",
+      "commercial-tags"
+    ],
+    "message": [
+      "message",
+      "message-ladder",
+      "message-scales",
+      "message-roads",
+      "message-seed"
+    ],
+    "pathway": [
+      "door",
+      "pathway-form",
+      "pathway-moat",
+      "pathway-turnstile",
+      "pathway-waved"
+    ],
+    "assistance": [
+      "assistance",
+      "assistance-blocks",
+      "assistance-lastmile",
+      "assistance-scaffold",
+      "assistance-relayfix"
+    ],
+    "outcomes": [
+      "stamp",
+      "outcomes-faders",
+      "outcomes-chart",
+      "outcomes-dash",
+      "outcomes-jar",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "gkos": [
+      "gkos",
+      "gkos-custody",
+      "gkos-links",
+      "gkos-xray",
+      "gkos-bag",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "fac": [
+      "knight",
+      "fac-phones",
+      "fac-board",
+      "fac-road",
+      "fac-survey"
+    ],
+    "engage": [
+      "engage",
+      "engage-toolbelt",
+      "engage-doors",
+      "engage-checklist",
+      "engage-circle"
+    ],
+    "access": [
+      "access",
+      "access-key"
+    ],
+    "capacity": [
+      "capacity",
+      "capacity-gauge"
+    ],
+    "learning": [
+      "learning",
+      "learning-ledger"
+    ],
+    "map": [
+      "map",
+      "map-compass"
+    ],
+    "portal": [
+      "relay",
+      "portal-switchboard"
+    ],
+    "opensource": [
+      "pillar",
+      "opensource-jenga"
+    ],
+    "verification": [
+      "funnel",
+      "verification-belt"
+    ],
+    "library": [
+      "islands",
+      "library-cards",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "storage": [
+      "crate",
+      "storage-container",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "notebook": [
+      "notebook",
+      "notebook-bin",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "observatory": [
+      "observatory",
+      "observatory-vitrine",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "evidence": [
+      "evidence",
+      "evidence-books",
+      "gkos-layers7",
+      "gkos-exchange",
+      "gkos-boundary"
+    ],
+    "three": [
+      "badge",
+      "three-keys"
+    ],
+    "agenda": [
+      "agenda",
+      "agenda-seats"
+    ],
+    "sbir": [
+      "sbir",
+      "sbir-scoreboard"
+    ],
+    "journey": [
+      "pipe",
+      "journey-stairs"
+    ]
+  },
+  "defaults": {
+    "modernization": [
+      "modernization-agreement",
+      "modernization-archers"
+    ],
+    "commercial": [
+      "commercial-holo",
+      "commercial-tags"
+    ],
+    "message": [
+      "message",
+      "message-ladder"
+    ],
+    "pathway": [
+      "door",
+      "pathway-form"
+    ],
+    "assistance": [
+      "assistance",
+      "assistance-blocks"
+    ],
+    "outcomes": [
+      "stamp",
+      "outcomes-faders"
+    ],
+    "gkos": [
+      "gkos",
+      "gkos-custody"
+    ],
+    "fac": [
+      "knight",
+      "fac-phones"
+    ],
+    "engage": [
+      "engage",
+      "engage-toolbelt"
+    ],
+    "access": [
+      "access",
+      "access-key"
+    ],
+    "capacity": [
+      "capacity",
+      "capacity-gauge"
+    ],
+    "learning": [
+      "learning",
+      "learning-ledger"
+    ],
+    "map": [
+      "map",
+      "map-compass"
+    ],
+    "portal": [
+      "relay",
+      "portal-switchboard"
+    ],
+    "opensource": [
+      "pillar",
+      "opensource-jenga"
+    ],
+    "verification": [
+      "funnel",
+      "verification-belt"
+    ],
+    "library": [
+      "islands",
+      "library-cards"
+    ],
+    "storage": [
+      "crate",
+      "storage-container"
+    ],
+    "notebook": [
+      "notebook",
+      "notebook-bin"
+    ],
+    "observatory": [
+      "observatory",
+      "observatory-vitrine"
+    ],
+    "evidence": [
+      "evidence",
+      "evidence-books"
+    ],
+    "three": [
+      "badge",
+      "three-keys"
+    ],
+    "agenda": [
+      "agenda",
+      "agenda-seats"
+    ],
+    "sbir": [
+      "sbir",
+      "sbir-scoreboard"
+    ],
+    "journey": [
+      "pipe",
+      "journey-stairs"
+    ]
+  }
+}

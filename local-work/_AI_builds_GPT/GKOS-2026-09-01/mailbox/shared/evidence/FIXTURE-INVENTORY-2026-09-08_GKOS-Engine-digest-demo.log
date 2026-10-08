@@ -1,0 +1,49 @@
+date: 2026-09-08T18:39:56Z
+repo: GKOS-Engine @ 650eab4a6752227cae336d7556a57826c22a0d5a
+cmd: node _digest-demo.mjs   (script text in FIXTURE evidence file; dist built by npm run build via pretest)
+== intact config
+{
+  "vaultId": "gkos-engine-v2.1.1-docs",
+  "digest": "sha256:e8ba2885bed24fb3f150a1f3176b56c15379e8da6b7dd38ea34d5c64a3eb847c"
+}
+verifyVaultNavigationConfig: true
+auditNavigation findings: []
+== one byte changed in vaultId ("1" -> "2"), declared digest unchanged
+{
+  "vaultId": "gkos-engine-v2.1.2-docs",
+  "digest": "sha256:e8ba2885bed24fb3f150a1f3176b56c15379e8da6b7dd38ea34d5c64a3eb847c"
+}
+verifyVaultNavigationConfig: false
+auditNavigation findings:
+[
+  {
+    "code": "NAV_CONFIG_DIGEST_MISMATCH",
+    "severity": "error",
+    "path": "",
+    "message": "Vault Navigation configuration digest does not match its canonical bytes.",
+    "action": "review",
+    "autoFix": false
+  }
+]
+exit: 0
+
+== script text (_digest-demo.mjs) ==
+// Runs GKOS-Engine's own exported navigation config digest check (dist/navigation.mjs, built from src/navigation/config.ts and src/navigation/audit.ts).
+import { buildVaultNavigationConfig, verifyVaultNavigationConfig, auditNavigation } from "./dist/navigation.mjs";
+const config = await buildVaultNavigationConfig({
+  configId: "018f0000-0000-7000-8000-000000000001", version: 1, vaultId: "gkos-engine-v2.1.1-docs",
+  promotedMocNames: [], createdAt: "2026-08-15T00:00:00Z", createdBy: "tool:gkx-cli",
+  policy: { id: "engine.cli.public-only-discoverability", version: "1.0.0" },
+});
+const snapshot = { vaultId: config.vaultId, directories: [], sources: [] };
+console.log("== intact config");
+console.log(JSON.stringify({ vaultId: config.vaultId, digest: config.digest }, null, 2));
+console.log("verifyVaultNavigationConfig:", await verifyVaultNavigationConfig(config));
+console.log("auditNavigation findings:", JSON.stringify(await auditNavigation(snapshot, config)));
+// change exactly one source byte in the signed body; keep the declared digest unchanged
+const tampered = { ...config, vaultId: config.vaultId.replace("v2.1.1", "v2.1.2") };
+console.log("== one byte changed in vaultId (\"1\" -> \"2\"), declared digest unchanged");
+console.log(JSON.stringify({ vaultId: tampered.vaultId, digest: tampered.digest }, null, 2));
+console.log("verifyVaultNavigationConfig:", await verifyVaultNavigationConfig(tampered));
+console.log("auditNavigation findings:");
+console.log(JSON.stringify(await auditNavigation({ ...snapshot, vaultId: tampered.vaultId }, tampered), null, 2));

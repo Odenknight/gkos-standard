@@ -1,0 +1,46 @@
+<figure class="art art-gkos-boundary" aria-labelledby="gkos-boundary-t gkos-boundary-d"><svg viewBox="0 0 760 400" role="img" xmlns="http://www.w3.org/2000/svg"><title id="gkos-boundary-t">A single sharing boundary showing which layers stay inside and exactly what a Context Manifest carries across</title><desc id="gkos-boundary-d">Left panel, STAYS ON THE INSIDE: Layer 1 the original files as received, Layer 2 identity and full version history, Layer 3 every assertion including rejected, Layer 4 raw diagnostics and failures, Layer 5 deliberation and dissent, and trade secrets and personal data; custody, retention and sensitivity remain the holder's responsibility. A locked gate in the middle is marked disclosure equals consequential use. Right panel, CROSSES, Layer 6 Context Manifest: recipient named not the public; purpose, one stated use; expiry, a date not forever; accepted assertions with evidence anchors; contradictions included not filtered; restrictions, what you may not do; omissions, something is withheld here. It is reproducible and can be checked against what was actually held.</desc>
+<text x="380" y="24" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--ink)" font-family="var(--display)">One boundary, in detail</text>
+<text x="380" y="42" text-anchor="middle" font-size="9.5" fill="var(--ink-3)" font-family="var(--mono)">the same rule applies at every crossing, in both directions</text>
+<!-- left: stays -->
+<g class="stays">
+  <rect x="24" y="60" width="300" height="272" rx="10" fill="var(--paper-2)" stroke="var(--rule)" stroke-width="2.5"/>
+  <text x="174" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink-2)" font-family="var(--display)">STAYS ON THE INSIDE</text>
+  <g font-family="var(--mono)" font-size="10" fill="var(--ink-2)">
+    <g class="sr"><circle cx="50" cy="112" r="4" fill="var(--accent)"/><text x="64" y="116">L1 the original files, as received</text></g>
+    <g class="sr"><circle cx="50" cy="140" r="4" fill="var(--accent)"/><text x="64" y="144">L2 identity and full version history</text></g>
+    <g class="sr"><circle cx="50" cy="168" r="4" fill="var(--accent)"/><text x="64" y="172">L3 every assertion, including rejected</text></g>
+    <g class="sr"><circle cx="50" cy="196" r="4" fill="var(--time)"/><text x="64" y="200">L4 raw diagnostics and failures</text></g>
+    <g class="sr"><circle cx="50" cy="224" r="4" fill="var(--time)"/><text x="64" y="228">L5 deliberation and dissent</text></g>
+    <g class="sr"><circle cx="50" cy="252" r="4" fill="var(--fail)"/><text x="64" y="256" fill="var(--fail)">trade secrets, personal data</text></g>
+  </g>
+  <text x="174" y="300" text-anchor="middle" font-size="9.5" fill="var(--ink-3)" font-family="var(--mono)">custody, retention and sensitivity</text>
+  <text x="174" y="314" text-anchor="middle" font-size="9.5" fill="var(--ink-3)" font-family="var(--mono)">remain the holder's responsibility</text>
+</g>
+<!-- the gate -->
+<g class="thegate">
+  <path d="M368 60 v272" stroke="var(--fail)" stroke-width="3" stroke-dasharray="7 8"/>
+  <rect x="344" y="176" width="48" height="44" rx="6" fill="var(--paper)" stroke="var(--fail)" stroke-width="2.5"/>
+  <path d="M356 190 v-6 a 12 12 0 0 1 24 0 v6" fill="none" stroke="var(--fail)" stroke-width="2.5"/>
+  <rect x="352" y="192" width="32" height="22" rx="3" fill="var(--fail)"/>
+  <text x="368" y="252" text-anchor="middle" font-size="9" fill="var(--fail)" font-family="var(--mono)">disclosure =</text>
+  <text x="368" y="264" text-anchor="middle" font-size="9" fill="var(--fail)" font-family="var(--mono)">consequential use</text>
+</g>
+<!-- right: crosses -->
+<g class="crosses">
+  <rect x="412" y="60" width="324" height="272" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2.5"/>
+  <text x="574" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--accent-ink)" font-family="var(--display)">CROSSES · L6 CONTEXT MANIFEST</text>
+  <g font-family="var(--mono)" font-size="10" fill="var(--ink-2)">
+    <g class="cr2"><text x="430" y="116">recipient</text><text x="722" y="116" text-anchor="end" fill="var(--ink-3)">named, not "the public"</text></g>
+    <g class="cr2"><text x="430" y="140">purpose</text><text x="722" y="140" text-anchor="end" fill="var(--ink-3)">one stated use</text></g>
+    <g class="cr2"><text x="430" y="164">expiry</text><text x="722" y="164" text-anchor="end" fill="var(--ink-3)">a date, not forever</text></g>
+    <g class="cr2"><text x="430" y="188">accepted assertions</text><text x="722" y="188" text-anchor="end" fill="var(--ink-3)">with evidence anchors</text></g>
+    <g class="cr2"><text x="430" y="212">contradictions</text><text x="722" y="212" text-anchor="end" fill="var(--fail)">included, not filtered</text></g>
+    <g class="cr2"><text x="430" y="236">restrictions</text><text x="722" y="236" text-anchor="end" fill="var(--ink-3)">what you may not do</text></g>
+    <g class="cr2"><text x="430" y="260">omissions</text><text x="722" y="260" text-anchor="end" fill="var(--time)">"something is withheld here"</text></g>
+  </g>
+  <text x="574" y="300" text-anchor="middle" font-size="9.5" fill="var(--accent-ink)" font-family="var(--mono)">reproducible: the same manifest can be rebuilt</text>
+  <text x="574" y="314" text-anchor="middle" font-size="9.5" fill="var(--accent-ink)" font-family="var(--mono)">and checked against what was actually held</text>
+</g>
+<text x="380" y="360" text-anchor="middle" font-size="11.5" fill="var(--ink-3)" font-family="var(--body)">The receiver learns what was withheld without learning what it was.</text>
+<text x="380" y="382" text-anchor="middle" font-size="11.5" fill="var(--ink-3)" font-family="var(--body)">That is what makes a secret and an open record able to sit in the same system.</text>
+</svg><figcaption>The receiver learns what was withheld without learning what it was.</figcaption></figure>

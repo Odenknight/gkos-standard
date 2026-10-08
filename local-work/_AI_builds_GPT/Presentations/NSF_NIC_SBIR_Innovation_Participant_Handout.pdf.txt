@@ -1,0 +1,129 @@
+
+PAGE 1
+NSF NATIONAL INNOVATION CONVENING  |  PARTICIPANT HANDOUT 
+Accelerating Innovation Discovery and Commercialization Translation 
+ 
+NSF NATIONAL INNOVATION CONVENING 2026 
+SBIR/STTR, Commercialization &  
+Innovation Acceleration  
+Selected Article Summaries & Bibliography 
+PRE-CONVENING READING HANDOUT 
+Purpose. These four readings offer complementary—and at times competing—perspectives on how federal small-
+business innovation programs can better move promising technologies from research and early validation to adoption, 
+procurement, and commercial impact. Together, they raise questions central to the National Innovation Convening: 
+how to reward outcomes, preserve experimentation, broaden participation, reduce friction, and strengthen the 
+pathways that connect discovery to use. 
+As you read, consider: What should the federal innovation system optimize for—commercial sales, mission impact, 
+technical learning, new-firm participation, follow-on investment, procurement transition, or some combination? Where 
+are the most consequential bottlenecks, and which actors are best positioned to remove them?  
+The readings are summarized below to support discussion; participants are encouraged to consult the full articles for the authors’ 
+complete arguments and evidence. 
+1. Nurturing America’s Seed Fund 
+Gail Cohen, Maryann P. Feldman, and Scott Stern | Issues in Science and Technology | Summer 2026 
+Cohen, Feldman, and Stern argue that SBIR/STTR should be understood as a mission -oriented innovation 
+infrastructure rather than as a single-purpose commercialization program. Drawing on National Academies 
+evaluations across DOE, NIH, NSF, and DOD, they conclude that the p rograms generate meaningful innovation and 
+transition outcomes, but that success looks different across agency missions. The authors caution against uniform rules 
+or a single performance metric and instead call for long-term program stability, stronger technology-transition 
+pathways, reduced administrative bottlenecks, broader participation, and much better integrated data.  
+Key ideas for participants 
+• Agency context matters: commercialization can mean FDA progress at NIH, private-capital attraction at NSF, energy-
+technology deployment at DOE, or integration into defense systems at DOD. 
+• Multiple-award firms should not automatically be treated as program failures; in some mission environments, repeated 
+awards build specialized capabilities and institutional knowledge. 
+• The authors favor multifaceted evaluation that captures technical progress, mission value, follow-on funding, procurement, 
+private investment, and other forms of transition. 
+• Priority reforms include permanence or greater funding stability, better Phase III/transition mechanisms, faster processes, 
+inclusive outreach, and stronger data infrastructure. 
+NIC CONNECTION  A national innovation roadmap may need to preserve mission -specific flexibility while creating 
+shared measures of progress, stronger transition infrastructure, and better cross-agency learning. 
+2. Reauthorizing the Small Business Innovation Research Program Isn’t Enough 
+Lars Erik Schönander | Issues in Science and Technology | Spring 2026 
+Schönander argues that reauthorization is necessary but insufficient because SBIR’s larger challenge is the 
+commercialization ecosystem surrounding the program. He highlights two concerns: long -term dependence by some 
+“multiple award winners” that do not demonstrate sufficient commercialization, and the difficulty many technically 
+promising firms face in scaling from feasibility to market or procurement. His proposed reforms seek both to open the 
+
+PAGE 2
+NSF NATIONAL INNOVATION CONVENING  |  PARTICIPANT HANDOUT 
+Accelerating Innovation Discovery and Commercialization Translation 
+program to new entrants and to strengthen the path across the  “valley of death,” including experimental selection 
+mechanisms, commercialization-readiness assessment, matched funding, gap funding, and stronger university 
+research-translation systems. 
+Key ideas for participants 
+• Reform should address both incumbent dependence and barriers that discourage capable first-time applicants. 
+• Possible experiments include qualified-proposal lotteries and occasional “golden tickets” for high-risk, high-reward ideas 
+that conventional consensus review may miss. 
+• Commercialization readiness should be assessed explicitly through market, regulatory, supply-chain, customer, and techno-
+economic evidence—not technical merit alone. 
+• Universities are critical to the pipeline; promotion incentives, complex licensing practices, and weak translation support can 
+impede academic entrepreneurship. 
+NIC CONNECTION  Innovation acceleration requires attention beyond the grant itself: selection, customer 
+discovery, adoption readiness, gap funding, university technology transfer, procurement, and scale-up must operate 
+as a connected system. 
+3. Ideas for Improving the SBIR Program 
+Forum response by Warren Katz, Chair, The Alliance for Commercial Technology in Government | Issues in Science and Technology | 
+Summer 2026 
+This response takes a more prescriptive view of SBIR reform. Katz argues that the program should more clearly 
+function as seed funding that helps firms commercialize and then graduate, rather than becoming a recurring source of 
+operating revenue. He contends that persistent “SBIR mills ” can crowd out newcomers and lock up intellectual 
+property without sufficient market impact. To sharpen incentives toward commercialization, he recommends a lifetime 
+funding cap, a smaller employee-size threshold, much heavier weighting of commercial viab ility in award decisions, 
+and dedicated DOD procurement resources to help promising technologies reach end users.  
+Key ideas for participants 
+• The central performance test should be whether public R&D support leads toward products, services, customers, and  non-
+SBIR revenue. 
+• Katz proposes restoring a $75 million lifetime SBIR funding cap per company and reducing the employee eligibility 
+threshold from 500 to 200. 
+• He recommends making commercial viability 50% of award criteria, evaluated by professionals with relevant 
+commercialization expertise. 
+• He also calls for a standing DOD procurement-side budget to support end-user matches for the new Strategic Breakthrough 
+production phase. 
+NIC CONNECTION  This perspective pushes participants to ask when continued public R&D support is productive 
+persistence and when it becomes dependency—and how the system can create clearer graduation and procurement 
+pathways. 
+4. SBA Looks to Right-Size Small Business Rules…Again 
+Terry Gerton interview with Emily Murphy | Federal News Network | August 25, 2026 
+This interview examines the Small Business Administration’s proposed changes to federal small -business size 
+standards and connects that debate to SBIR policy. Murphy describes the tension between simplifying eligibili ty rules, 
+allowing firms room to grow, and protecting genuinely small firms from competition with much larger companies. On 
+SBIR, she argues that the more useful question is not simply how many awards a company has received, but what those 
+awards produced. She advocates stronger past-performance information that captures whether Phase I and II work 
+advanced R&D, generated useful learning, and improved the prospects for transition and commercialization.  
+
+PAGE 3
+NSF NATIONAL INNOVATION CONVENING  |  PARTICIPANT HANDOUT 
+Accelerating Innovation Discovery and Commercialization Translation 
+Key ideas for participants 
+• Eligibility design can unintentionally create either barriers to growth or competitive disadvantages for smaller firms.  
+• Simplifying size standards may reduce administrative complexity, but broad categories can group firms with very different 
+economic characteristics. 
+• Repeated SBIR awards should be evaluated through results and progress rather than award counts alone. 
+• Better cross-agency sharing of SBIR past-performance and technical-learning information could improve future award 
+decisions and Phase III commercialization. 
+NIC CONNECTION  The interview reinforces a recurring NIC theme: policy design should reward demonstrable 
+progress and learning while avoiding one-size-fits-all rules that distort competition or discourage growth. 
+Cross-Cutting Themes for NIC Discussion 
+Define success broadly—but clearly. The readings disagree on how strongly commercialization should dominate 
+evaluation, but all emphasize the need to connect public R&D investments to meaningful outcomes.  
+Fix the transition system, not only the award system. Customer discovery, procurement, gap funding, regulatory 
+pathways, private capital, licensing, and scale-up repeatedly emerge as decisive constraints. 
+Balance new entrants with experienced performers. Broadening participation is important, but experience can also 
+create mission-relevant capability. Better performance data can help distinguish productive persistence from 
+dependency. 
+Reduce friction while preserving rigor. Long proposals, slow reviews, complex contracting, size rules, and university 
+licensing can deter innovators. Simplification should target real bottlenecks without lowering technical or mission 
+standards. 
+Build a learning innovation system. Integrated data and cross-agency visibility can help policymakers and program 
+managers understand what works, for whom, in which mission context, and why. 
+Selected Bibliography 
+Cohen, Gail, Maryann P. Feldman, and Scott Stern. “Nurturing America’s Seed Fund.” Issues in Science and Technology 
+42, no. 4 (Summer 2026): 30–35. doi:10.58875/FTCC3806. 
+Gerton, Terry. “SBA Looks to Right-Size Small Business Rules…Again.” Interview with Emily Murphy, Senior Fellow, 
+George Mason University Baroni Center for Government Contracting. Federal News Network, August 25, 2026.  
+Katz, Warren. “Ideas for Improving the SBIR Program.” Issues in Science and Technology 42, no. 4 (Summer 2026). 
+Forum discussion of “Reauthorizing the Small Business Innovation Research Program Isn’t Enough.”  
+Schönander, Lars Erik. “Reauthorizing the Small Business Innovation Research Program Isn’t En ough.” Issues in 
+Science and Technology 42, no. 3 (Spring 2026): 99–102. doi:10.58875/DZWE5937. 
+Prepared for participants in the NSF National Innovation Convening 
+Accelerating Innovation Discovery and Commercialization Translation: A National Dialogue with the Innovation Community 

@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "submission_id": "GKOS-NIST-AI3001-2026-001",
+  "revision": 1,
+  "prepared_on": "2026-09-08",
+  "state": "draft",
+  "author": {
+    "name": "Shaun “Oden” Marshall",
+    "role": "Founder and Initial Editor, GKOS",
+    "affiliation": null,
+    "public_email": null
+  },
+  "target": {
+    "channel": "nist_ai_300_1",
+    "publication": "NIST AI 300-1 ipd",
+    "route": "email",
+    "endpoint": "ai-standards+doczd@nist.gov",
+    "instructions_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.300-1.ipd.pdf",
+    "verified_on": "2026-09-08",
+    "deadline": {
+      "date": "2026-09-16",
+      "time": null,
+      "timezone": null,
+      "rule": "consideration_date",
+      "source_id": "S-NIST"
+    }
+  },
+  "ai_assistance": {
+    "used": true,
+    "tools_and_tasks": [
+      "ChatGPT: preparation of this template and illustrative comment"
+    ],
+    "disclosure": "AI assistance was used to prepare this draft. Author review of the actual submission remains pending.",
+    "human_checks": [],
+    "review_completed": false
+  },
+  "rights_note": "Confirm applicable terms for actual outbound material; this example grants no new rights and assumes no ownership assignment.",
+  "sources": [
+    {
+      "id": "S-NIST",
+      "title": "NIST AI 300-1 initial public draft",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.300-1.ipd.pdf",
+      "version": "July 2026 ipd",
+      "checked_on": "2026-09-08",
+      "supports": "Recipient route, scope, AI disclosure and consideration date.",
+      "limitations": "Exact target lines for proposed comment still need verification."
+    }
+  ],
+  "artifacts": [],
+  "evidence": [],
+  "claims": [],
+  "comments": [
+    {
+      "id": "C-001",
+      "kind": "technical",
+      "target_location": "Candidate location: documentation freshness/interoperability; exact clause and lines unresolved.",
+      "scope_fit": "Revision identification for supporting evidence in public dataset/model documentation.",
+      "problem": "A mutable reference can resolve to different evidence after assessment.",
+      "proposed_text": "Where documentation cites supporting evidence, the reference should identify the evidence revision used and a means of locating it.",
+      "rationale": "A reader can distinguish the evidence revisions used for successive assessments.",
+      "burden": "Use existing revision identifiers where available; avoid imposing a new system on all documentarians.",
+      "verification": "Illustrative only: retain revision A, change source to B, and check whether the two references remain distinguishable.",
+      "example_status": "illustrative",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "limitations": "Does not prove truth, authority, novelty, or legal admissibility."
+    }
+  ],
+  "open_items": [
+    "Supply public contact and confirm affiliation.",
+    "Resolve exact target clause/lines and check existing provisions.",
+    "Resolve exact GKOS citation if it will be included.",
+    "Complete human review and truthful final disclosure.",
+    "Prepare and hash outbound files; approve exact artifact set."
+  ],
+  "author_disposition": {
+    "status": "pending",
+    "by": null,
+    "at": null,
+    "outbound_artifact_ids": []
+  },
+  "events": [],
+  "baselines": [
+    {
+      "id": "B-STANDARD",
+      "component": "GKOS-standard",
+      "version": null,
+      "repository_url": null,
+      "commit": null,
+      "artifact_id": null,
+      "version_doi": null,
+      "concept_doi": null,
+      "status": "unresolved"
+    }
+  ]
+}

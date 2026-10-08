@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" class="art art-outcomes-dash" aria-labelledby="outcomes-dash-t outcomes-dash-d"><title id="outcomes-dash-t">A traffic light showing red beside an instrument panel of four dials and an action line</title><desc id="outcomes-dash-d">Left: a traffic light with the red lamp lit, captioned stop, that is all. Right: a panel of four dials labelled parity, float64, float32 and speed, with needles in different positions and one marked not applicable, above an action line reading ship float64, investigate float32 separately.</desc><style>
+svg{--paper:#eef1f5;--paper-2:#f7f8fa;--paper-3:#e2e7ee;--ink:#16202b;--ink-2:#3f4d5c;--ink-3:#6b7987;--rule:#c9d2dc;
+--accent:#0e7c78;--accent-ink:#085552;--accent-soft:#d5ecea;--time:#b8620f;--time-soft:#f5e4d0;
+--pass:#1f7a3a;--fail:#b8322f;--fail-soft:#f6dcdb;--warn:#a36a00;--block:#5b6572;
+--demonstrated:#1f7a3a;--documented:#0e7c78;--in-development:#a36a00;--proposed:#5b6572;
+--g-access:#0e7c78;--g-learning:#5b4b8a;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Source Serif 4",Georgia,serif;--mono:"JetBrains Mono",Consolas,monospace;
+background:var(--paper)}
+@media (prefers-color-scheme:dark){svg{--paper:#0f151c;--paper-2:#161e27;--paper-3:#1f2933;--ink:#e8edf2;--ink-2:#b7c2cd;--ink-3:#8d9aa7;--rule:#2c3946;--accent:#4fc1bb;--accent-ink:#9fe3df;--accent-soft:#12302f;--time:#e0954a;--time-soft:#3a2712;--g-access:#4fc1bb;--g-learning:#a596d6}}
+.art-outcomes-dash .red{animation:pulse 1.8s ease-in-out infinite}
+@keyframes walkin{0%{transform:translateX(0);opacity:1}70%{transform:translateX(190px);opacity:0}71%{transform:translateX(0);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop{
+ 0%{transform:translate(0,0) rotate(0);opacity:1}
+ 14%{transform:translate(58px,-26px) rotate(140deg);opacity:1}
+ 30%{transform:translate(128px,-34px) rotate(300deg);opacity:1}
+ 44%{transform:translate(186px,-4px) rotate(460deg);opacity:1}
+ 66%{transform:translate(204px,92px) rotate(560deg);opacity:1}
+ 74%{transform:translate(208px,100px) rotate(575deg);opacity:1}
+ 92%{transform:translate(208px,100px) rotate(575deg);opacity:0}
+ 93%{transform:translate(0,0) rotate(0);opacity:0}
+ 100%{transform:translate(0,0) rotate(0);opacity:1}}
+@keyframes land{0%,60%{opacity:0}70%,92%{opacity:.18}93%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes buckle{0%,100%{transform:scaleX(1) scaleY(1)}50%{transform:scaleX(1.14) scaleY(.985)}}
+@keyframes press{0%,100%{transform:translateY(-3px);opacity:.55}50%{transform:translateY(2px);opacity:1}}
+@keyframes wobble{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+@keyframes squirt{0%{transform:translateX(-60px);opacity:0}15%{opacity:1}100%{transform:translateX(230px);opacity:.15}}
+@keyframes fall{0%{transform:translateY(-14px);opacity:0}30%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes thump{0%{transform:rotate(-11deg) scale(1.5);opacity:0}12%{transform:rotate(-11deg) scale(1);opacity:1}100%{transform:rotate(-11deg) scale(1);opacity:1}}
+@keyframes fadein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes dashmove{to{stroke-dashoffset:-24}}
+@keyframes sway{0%,100%{transform:translateX(0)}50%{transform:translateX(-24px)}}
+@keyframes sail{0%{transform:translate(0,0);opacity:0}8%{opacity:1}
+ 25%{transform:translate(146px,-70px)}50%{transform:translate(290px,-104px)}75%{transform:translate(434px,-70px)}
+ 94%{opacity:1}100%{transform:translate(568px,0);opacity:0}}
+@keyframes shove{0%,100%{transform:translateX(0)}55%{transform:translateX(7px)}}
+@keyframes through{
+ 0%{transform:translateX(232px) scale(1,1);opacity:0}
+ 6%{opacity:1}
+ 28%{transform:translateX(250px) scale(1,1)}
+ 40%{transform:translateX(262px) scale(.55,.42)}
+ 54%{transform:translateX(280px) scale(.5,.38)}
+ 66%{transform:translateX(304px) scale(1,1)}
+ 88%{transform:translateX(470px) scale(1,1);opacity:1}
+ 96%{transform:translateX(500px) scale(.55,.42);opacity:.5}
+ 100%{transform:translateX(520px) scale(.5,.38);opacity:0}}
+@keyframes bridgetry{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(5deg)}88%{transform:rotate(0)}}
+@keyframes reach{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes pull{to{stroke-dashoffset:-40}}
+@keyframes fray{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes strike{0%{stroke-dashoffset:200}25%,100%{stroke-dashoffset:0}}
+@keyframes popin{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes sweep{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,14px)}}
+@keyframes shuffle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drop2{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes stall{0%,100%{transform:translateY(0)}45%{transform:translateY(-10px)}55%{transform:translateY(-4px)}}
+@keyframes rise{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes tipA{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes tipB{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes flag{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes spin{0%,60%{transform:rotate(0)}80%,100%{transform:rotate(90deg)}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes nudge2{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes draw{0%{stroke-dashoffset:28}35%,100%{stroke-dashoffset:0}}
+@keyframes reachin{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(34px)}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(9px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes trek{to{stroke-dashoffset:-52}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important}}</style>
+<g class="light">
+  <rect x="70" y="40" width="88" height="196" rx="14" fill="var(--paper-3)" stroke="var(--ink-2)" stroke-width="2.5"/>
+  <circle cx="114" cy="86" r="24" fill="var(--ink-3)" opacity=".22"/>
+  <circle cx="114" cy="140" r="24" fill="var(--ink-3)" opacity=".22"/>
+  <circle class="red" cx="114" cy="194" r="24" fill="var(--fail)"/>
+  <text x="114" y="262" text-anchor="middle" font-size="10.5" fill="var(--ink-3)" font-family="var(--mono)">stop. that is all.</text>
+</g>
+<text x="216" y="146" text-anchor="middle" font-size="22" font-weight="800" fill="var(--ink-3)" font-family="var(--display)">vs</text>
+<g class="cockpit">
+  <rect x="270" y="40" width="440" height="196" rx="14" fill="var(--paper-2)" stroke="var(--accent)" stroke-width="2.5"/>
+  <g class="dials">
+    <g><circle cx="342" cy="106" r="38" fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2"/><path d="M342 106 l24 -18" stroke="var(--pass)" stroke-width="3.5" stroke-linecap="round"/><text x="342" y="160" text-anchor="middle" font-size="8.5" fill="var(--ink-3)" font-family="var(--mono)">parity</text></g>
+    <g><circle cx="438" cy="106" r="38" fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2"/><path d="M438 106 l20 -22" stroke="var(--pass)" stroke-width="3.5" stroke-linecap="round"/><text x="438" y="160" text-anchor="middle" font-size="8.5" fill="var(--ink-3)" font-family="var(--mono)">float64</text></g>
+    <g><circle cx="534" cy="106" r="38" fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2"/><path d="M534 106 l-26 12" stroke="var(--fail)" stroke-width="3.5" stroke-linecap="round"/><text x="534" y="160" text-anchor="middle" font-size="8.5" fill="var(--ink-3)" font-family="var(--mono)">float32</text></g>
+    <g><circle cx="630" cy="106" r="38" fill="var(--paper-3)" stroke="var(--rule)" stroke-width="2" stroke-dasharray="5 5"/><text x="630" y="112" text-anchor="middle" font-size="9" fill="var(--ink-3)" font-family="var(--mono)">n/a</text><text x="630" y="160" text-anchor="middle" font-size="8.5" fill="var(--ink-3)" font-family="var(--mono)">speed</text></g>
+  </g>
+  <rect x="302" y="184" width="376" height="32" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="490" y="205" text-anchor="middle" font-size="10.5" fill="var(--accent-ink)" font-family="var(--mono)">action: ship float64, investigate float32 separately</text>
+</g>
+<text x="380" y="268" text-anchor="middle" font-size="12" fill="var(--ink-3)" font-family="var(--body)">A red light tells you to stop. Instruments tell you what to do next.</text>
+</svg>

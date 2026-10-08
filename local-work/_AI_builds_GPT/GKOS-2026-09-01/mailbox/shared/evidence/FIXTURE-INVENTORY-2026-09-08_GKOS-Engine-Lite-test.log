@@ -1,0 +1,59 @@
+cmd: npm ci && npm test
+date: 2026-09-08T18:35:24Z
+node v24.18.0 npm 10.9.4 MINGW64_NT-10.0-26200 FAC-Media 3.6.9-b4195d69.x86_64 2026-06-06 17:49 UTC x86_64 Msys
+npm warn skipping integrity check for git dependency ssh://git@github.com/Odenknight/GKOS-Engine.git
+
+added 1 package, and audited 2 packages in 11s
+
+found 0 vulnerabilities
+
+> gkos-engine-lite@2.1.2 test
+> node --test "test/*.test.mjs"
+
+✔ allows the six delegated Lite command paths (3.2803ms)
+✔ rejects unsupported and future upstream commands before delegation (0.6058ms)
+✔ preserves Phase-3 validate and index arguments byte-for-byte without interpreting schema (0.2503ms)
+✔ preserves the pinned search as-of flag and value byte-for-byte at the delegation boundary (0.2401ms)
+✔ DIV-002: missing sensitivity fails closed to secret; invalid sensitivity fails closed (7.8651ms)
+✔ DIV-002: defaultSensitivity option is honored, validated, and never lowers an authored classification (2.3009ms)
+✔ DIV-001: naive wall-clock created_at emits a GKX-TEMPORAL diagnostic (3.3384ms)
+✔ DIV-003: invalid epistemic state falls back to unknown with defaulted-marking and retained diagnostic (1.2928ms)
+✔ friendly assistance names hide internal task vocabulary (1.1716ms)
+✔ missing assistance arguments produce friendly examples (1.1804ms)
+✔ sidecar URL is restricted to loopback (0.3969ms)
+✔ validates sidecar proposals before returning them (61.4527ms)
+✔ fails closed when sidecar returns an authoritative patch (4.0995ms)
+✔ GkxIndex threads defaultSensitivity into the effective projection (31.8747ms)
+✔ GkxIndex without options fails closed to secret for an unlabeled note (3.7761ms)
+✔ metadata policy accepts an exact reviewed commit and locks it byte-for-byte (102.9754ms)
+✔ metadata policy accepts a reviewed semver tag only with matching versions and immutable resolution (89.4851ms)
+✔ metadata policy rejects mutable branches and commit/lock mismatches (160.408ms)
+✔ okf-lite validate produces identical output to gkos-engine's own CLI (288.82ms)
+✔ okf-lite assess --json produces identical output to gkos-engine's own CLI (244.7792ms)
+✔ okf-lite Phase-3 validate preserves exact argv, output bytes, and source bytes (256.9155ms)
+✔ okf-lite Phase-3 strict index is byte-identical after an exact clean-state replay (1553.1786ms)
+✔ okf-lite search returns byte-identical contract output through the Engine CLI boundary (431.7547ms)
+✔ okf-lite search --as-of is byte-identical to the exact pinned Full CLI (424.4675ms)
+✔ stderr parity normalizes only the exact SQLite experimental-warning PID (0.4081ms)
+✔ okf-lite --help banner reflects the Lite scope framing (70.0194ms)
+✔ okf-lite with no args exits non-zero and still prints the Lite banner (64.7856ms)
+✔ Phase 3 runtime migration changes only the exact Full pin coordinate (7.1111ms)
+✔ Phase 1 delegated and local proposal-only boundaries match the compatibility fixture (0.5989ms)
+✔ Phase 3 CLI help adds only authorized ingest lines atop the derived Phase 2 help (214.0852ms)
+✔ Phase 2 pin preserves the separately classified Phase 1 graph and Graphiti goldens (26.0432ms)
+✔ Phase 1 deterministic golden comparison rejects simulated CRLF checkout bytes (150.2854ms)
+✔ Phase 1 compatibility comparison rejects a deliberate interface perturbation (3.881ms)
+✔ Phase 0 fixtures remain immutable and Phase 1 records exact authorized old-to-new deltas (38.1596ms)
+✔ frozen Phase-3 argument and local-path matrices are exact Full/Lite differentials (9365.4742ms)
+✔ frozen Phase-3 validation and every index status are exact Full/Lite differentials (5470.424ms)
+✔ profile/operational errors and every search-routing row remain exact pass-throughs (3327.5724ms)
+✔ okf-lite invoked through a symlinked/junctioned package dir still runs (388.7623ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18379.0889
+exit: 0

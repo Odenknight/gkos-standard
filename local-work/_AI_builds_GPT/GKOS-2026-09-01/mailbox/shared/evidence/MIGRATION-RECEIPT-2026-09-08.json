@@ -1,0 +1,75 @@
+{
+  "status": "executed",
+  "files": [
+    {
+      "source": "submissions_papers/mailbox/README.md",
+      "destination": "mailbox/archive/2026-09/setup-consolidation/PROTOCOL.md",
+      "source_sha256": "4268beb3029d4807cabe2896e3748ceab3400365212be498942dcc47dc8bfefa",
+      "destination_sha256": "4268beb3029d4807cabe2896e3748ceab3400365212be498942dcc47dc8bfefa",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/mailbox/WORK_QUEUE.md",
+      "destination": "mailbox/archive/2026-09/setup-consolidation/WORK_QUEUE.md",
+      "source_sha256": "5cfd5da860926567e1509113ac33e73a89592e8a4813e1a5e23ef8a7b39f0fdf",
+      "destination_sha256": "5cfd5da860926567e1509113ac33e73a89592e8a4813e1a5e23ef8a7b39f0fdf",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/mailbox/templates/MESSAGE.md",
+      "destination": "mailbox/archive/2026-09/setup-consolidation/MESSAGE.md",
+      "source_sha256": "f62a0d6342d7cf1dc7e5fcde07f82a4675460c4cd9794f3525afbd4f9fed24be",
+      "destination_sha256": "f62a0d6342d7cf1dc7e5fcde07f82a4675460c4cd9794f3525afbd4f9fed24be",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/mailbox/messages/20260908-coordinator-setup.md",
+      "destination": "mailbox/archive/2026-09/setup-consolidation/SETUP-HANDOFF.md",
+      "source_sha256": "3b17b0ada6230536d89e170c5c78999a32011f3729f4c69e180d29dbe61bc3db",
+      "destination_sha256": "3b17b0ada6230536d89e170c5c78999a32011f3729f4c69e180d29dbe61bc3db",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/evidence/SOURCE_REGISTER.md",
+      "destination": "mailbox/shared/evidence/INITIAL-SOURCE-REGISTER.md",
+      "source_sha256": "0650d95d83376ce7de69e583a930903cc49765425ca0d17a5a90c4efaee26f68",
+      "destination_sha256": "e0846980fea8c722e0464e187e1d4dafc90885866a6a4866d6c8bfa13f406a05",
+      "adjusted": true
+    },
+    {
+      "source": "submissions_papers/papers/RESEARCH_PLAN.md",
+      "destination": "papers/SHARED-RESEARCH-PLAN.md",
+      "source_sha256": "29def7b5c87976d1f44e70599597c262f322c8512c2509a7db147444fcf84c7e",
+      "destination_sha256": "3312d82d22e6f8306cdba1916c48c4ed3a1b7421f4f7eee4fb745893b93dab78",
+      "adjusted": true
+    },
+    {
+      "source": "submissions_papers/papers/CASE_STUDY_TEMPLATE.md",
+      "destination": "papers/CASE_STUDY_TEMPLATE.md",
+      "source_sha256": "b9dbb79f10c84edbe47b1667ff0a0a86130f5334cc3557f33596ac58885d2081",
+      "destination_sha256": "b9dbb79f10c84edbe47b1667ff0a0a86130f5334cc3557f33596ac58885d2081",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/notes/CAPTURE_TEMPLATE.md",
+      "destination": "papers/notes/CAPTURE_TEMPLATE.md",
+      "source_sha256": "66d62aa03b44ad4b7e2ad8f3812a7f106e42394222b73ca4e5f81504492aac74",
+      "destination_sha256": "66d62aa03b44ad4b7e2ad8f3812a7f106e42394222b73ca4e5f81504492aac74",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/submissions/TRACKER.md",
+      "destination": "mailbox/archive/2026-09/setup-consolidation/TRACKER.md",
+      "source_sha256": "6c293d005a188645df692137cc3780f19d2ea642759c8b5094a3183bca90de6d",
+      "destination_sha256": "6c293d005a188645df692137cc3780f19d2ea642759c8b5094a3183bca90de6d",
+      "adjusted": false
+    },
+    {
+      "source": "submissions_papers/START_HERE.md",
+      "destination": "mailbox/archive/2026-09/setup-consolidation/START_HERE.md",
+      "source_sha256": "7a7073028916bf136acd607a5107c1b7141f2cd01fcdbe5c1176fe7afc27a6e0",
+      "destination_sha256": "7a7073028916bf136acd607a5107c1b7141f2cd01fcdbe5c1176fe7afc27a6e0",
+      "adjusted": false
+    }
+  ]
+}

@@ -1,0 +1,467 @@
+
+PAGE 1
+1 | P a g e  
+ 
+ NSF NATIONAL INNOV ATION 
+CONVENING 
+Innovation Acceleration Resource Guide 
+Accelerating Innovation Discovery and Commercialization Translation: 
+A National Dialogue with the Innovation Community 
+September 23–24, 2026 
+Pamela R. McCauley, Ph.D., CPE, Principal Investigator  
+Kimberlee Zamora, Ph.D., Co-Principal Investigator 
+Widener University School of Engineering  
+ 
+Purpose of This Guide 
+The National Innovation Convening brings together leaders and stakeholders from across the 
+U.S. innovation ecosystem to explore how the nation can more effectively move promising 
+discoveries from research to translation, commercialization, adoption, and societal impact. 
+This resource guide provides a common intellectual and policy foundation to inform the 
+discussions. It combines: 
+Part I — Evidence Base: Selected Peer-Reviewed Research 
+This section highlights research addressing innovation, artificial intelligence, commercialization, 
+technology transfer, innovation ecosystems, and the barriers that often separate discovery from 
+impact. 
+Part II — National Innovation Policy & Strategy Resources 
+Selected federal and National Academies resources illustrating current strategies, programs, and 
+policy approaches designed to strengthen U.S. innovation capacity. 
+Part III — Pre-Convening Reflection Questions 
+This section provides questions designed to help participants arrive prepared to contribute ideas 
+and actionable recommendations to the National Innovation Roadmap. 
+These resources are recommended rather than required reading. Participants are encouraged 
+to review the materials most relevant to your expertise and experience. 
+  
+
+PAGE 2
+2 | P a g e  
+ 
+PART I 
+EVIDENCE BASE — SELECTED PEER-
+REVIEWED RESEARCH 
+1. Building the Capacity to Innovate 
+Cohen, W. M., & Levinthal, D. A. (1990). Absorptive capacity: A new perspective on 
+learning and innovation. Administrative Science Quarterly, 35(1), 128–152. 
+Why it matters 
+This landmark article introduced the concept of absorptive capacity—the ability of an 
+organization to recognize valuable external knowledge, assimilate it, and apply it commercially. 
+The authors argue that prior knowledge and organizational learning capacity strongly influence 
+innovation performance. 
+For the NIC, the concept raises an important question: producing excellent research is not 
+enough. Organizations, regions, and innovation ecosystems must also possess the ability to 
+identify, absorb, translate, and deploy knowledge. 
+Consider: 
+What capabilities do universities, companies, federal agencies, and regions need in order to 
+recognize and rapidly act on promising discoveries? 
+DOI: 10.2307/2393553 
+2. Open Innovation and Cross-Sector Collaboration 
+Bogers, M., Chesbrough, H., & Moedas, C. (2018). Open innovation: Research, practices, 
+and policies. California Management Review, 60(2), 5–16. 
+Why it matters 
+Innovation increasingly occurs across organizational boundaries rather than entirely within 
+individual institutions. This article examines open innovation at the intersection of research, 
+organizational practice, and public policy and discusses opportunities and challenges created by 
+external knowledge flows and collaboration. 
+This framework is highly relevant to the NIC, where participants represent universities, 
+companies, investors, entrepreneurs, government, technology-transfer organizations, and other 
+parts of the innovation system. 
+
+PAGE 3
+3 | P a g e  
+ 
+Consider: 
+What institutional or policy barriers make it unnecessarily difficult for knowledge, technologies, 
+talent, and capital to move across sectors? 
+DOI: 10.1177/0008125617745086 
+3. From Discovery to Transformative Innovation 
+Pettigrew, R. I., & Cooke, J. P. (2022). At the nexus of science, engineering, and medicine: 
+Pasteur's quadrant reconsidered. PNAS Nexus, 1(3), pgac092. 
+Why it matters 
+The authors reconsider the traditional distinction between basic and applied research and 
+emphasize the importance of convergence, interdisciplinary exchange, and movement among 
+research approaches in producing transformative innovation. 
+The article encourages a more dynamic understanding of the pathway from discovery to impact. 
+Consider: 
+Should federal research systems more intentionally support movement between basic research, 
+use-inspired research, application, prototyping, and commercialization? 
+DOI: 10.1093/pnasnexus/pgac092 
+Artificial Intelligence and Innovation 
+4. Generative AI and Professional Productivity 
+Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of 
+generative artificial intelligence. Science, 381(6654), 187–192. 
+Why it matters 
+In a preregistered experiment involving 453 college-educated professionals, researchers found 
+that access to generative AI significantly increased productivity: average completion time 
+declined by approximately 40%, while output quality increased by approximately 18%. 
+The findings suggest that AI can significantly alter how knowledge work is performed. 
+Consider: 
+If similar productivity improvements can occur in research, engineering, entrepreneurship, 
+technology transfer, and commercialization, where could AI most significantly shorten the 
+innovation cycle? 
+
+PAGE 4
+4 | P a g e  
+ 
+DOI: 10.1126/science.adh2586 
+5. Generative AI, Expertise, and Knowledge Diffusion 
+Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at work. The Quarterly 
+Journal of Economics, 140(2), 889–942. 
+Why it matters 
+This large-scale study examined the introduction of a generative AI assistant among 5,172 
+customer-support agents. The research found significant productivity benefits and provides 
+important evidence regarding how AI can transfer knowledge and capability across a workforce. 
+For innovation systems, this raises the possibility that AI could help broaden access to 
+specialized knowledge that historically resided within a relatively small number of experts. 
+Consider: 
+Could AI democratize access to expertise in areas such as entrepreneurship, intellectual property, 
+regulatory navigation, engineering design, market assessment, and commercialization? 
+DOI: 10.1093/qje/qjae044 
+6. Understanding the Limits of AI 
+Dell'Acqua, F., et al. (2026). Navigating the jagged technological frontier: Field 
+experimental evidence of the effects of artificial intelligence on knowledge worker 
+productivity and quality. Organization Science, 37(2), 403–423. 
+Why it matters 
+A preregistered experiment involving 758 knowledge workers demonstrated that AI significantly 
+improved performance on tasks falling within its capabilities, but the researchers also identified 
+an important “jagged technological frontier”: AI is highly capable on some tasks while 
+remaining unreliable on seemingly similar ones. 
+This finding is important for avoiding an overly simplistic assumption that AI automatically 
+improves every aspect of innovation. 
+Consider: 
+Where should innovators rely heavily on AI, and where must human expertise, judgment, 
+validation, and oversight remain dominant? 
+DOI: 10.1287/orsc.2025.21838 
+
+PAGE 5
+5 | P a g e  
+ 
+Commercialization and the “Valley of Death” 
+7. Open Innovation and the Commercialization Gap 
+Stefan, I. (2022). Does open innovation enable or hinder crossing the valley of death? 
+International Journal of Innovation Management, 26(9). 
+Why it matters 
+The article examines whether open innovation can help organizations move technologies from 
+R&D to commercialization. It finds that collaboration can help bridge the commercialization gap 
+through mechanisms such as collaborative platforms and inter-industry partnerships, but 
+collaboration can also introduce challenges including conflicting interests and opportunistic 
+behavior. 
+Consider: 
+What forms of collaboration are most effective at moving technologies across the valley of 
+death—and what makes some partnerships fail? 
+DOI: 10.1142/S1363919622400254 
+8. Understanding the Challenges Facing Technology 
+Startups 
+Gbadegeshin, S. A., et al. (2022). Overcoming the valley of death: A new model for high 
+technology startups. Sustainable Futures, 4, 100077. 
+Why it matters 
+Drawing on a review of 128 scholarly sources and empirical data from 30 technology startups, 
+this study develops a framework for understanding the challenges that emerging technology 
+ventures encounter during their earliest stages. 
+The barriers extend beyond financing and include organizational capacity, market readiness, 
+technology maturity, partnerships, and commercialization strategy. 
+Consider: 
+Are today's innovation programs addressing the entire commercialization journey—or primarily 
+the funding gap? 
+DOI: 10.1016/j.sftr.2022.100077 
+9. Policy Barriers to Translation 
+
+PAGE 6
+6 | P a g e  
+ 
+Meslin, E. M., Blasimme, A., & Cambon-Thomsen, A. (2013). Mapping the translational 
+science policy “valley of death.” Clinical and Translational Medicine, 2, 14. 
+Why it matters 
+This article broadens the valley-of-death concept by demonstrating that policy itself can create 
+barriers to translation. Regulatory, ethical, institutional, and governance environments can slow 
+progress just as significantly as scientific or financial limitations. 
+Consider: 
+What policies or administrative practices intended to support or protect innovation may 
+unintentionally slow it? 
+DOI: 10.1186/2001-1326-2-14 
+Universities, Technology Transfer, and 
+Entrepreneurship 
+10. Technology Transfer Offices and Commercialization 
+Siegel, D. S., Veugelers, R., & Wright, M. (2007). Technology transfer offices and 
+commercialization of university intellectual property: Performance and policy 
+implications. Oxford Review of Economic Policy, 23(4), 640–660. 
+Why it matters 
+The authors examine university technology-transfer performance and conclude that universities 
+and regions need coherent, feasible commercialization strategies rather than treating patenting 
+and licensing as isolated activities. 
+Consider: 
+Should the next generation of technology-transfer organizations be measured primarily by 
+patents and licenses—or by broader measures of economic and societal impact? 
+DOI: 10.1093/oxrep/grm036 
+11. Academic Entrepreneurship After Bayh-Dole 
+Grimaldi, R., Kenney, M., Siegel, D. S., & Wright, M. (2011). 30 years after Bayh-Dole: 
+Reassessing academic entrepreneurship. Research Policy, 40(8), 1045–1057. 
+Why it matters 
+
+PAGE 7
+7 | P a g e  
+ 
+This article examines the evolution of university commercialization and academic 
+entrepreneurship since enactment of the Bayh-Dole Act and considers the institutional, 
+managerial, and policy structures influencing university-based innovation. 
+Consider: 
+Are university incentives, promotion systems, intellectual-property practices, and organizational 
+structures adequately designed to support translation and entrepreneurship? 
+DOI: 10.1016/j.respol.2011.04.005 
+Innovation Ecosystems 
+12. Measuring Entrepreneurial Ecosystems 
+Johnson, E. E., Hemmatian, I., Lanahan, L., & Joshi, A. M. (2022). A framework and 
+databases for measuring entrepreneurial ecosystems. Research Policy, 51(2), 104398. 
+Why it matters 
+This work places relationships among entrepreneurs, firms, government organizations, 
+accelerators, and research institutions at the center of entrepreneurial ecosystem performance. It 
+also highlights multiple roles government can play, including catalyst, coordinator, certifier, and 
+customer. 
+Consider: 
+What indicators should the United States use to determine whether an innovation ecosystem is 
+truly healthy and productive? 
+DOI: 10.1016/j.respol.2021.104398 
+  
+
+PAGE 8
+8 | P a g e  
+ 
+PART II 
+NATIONAL INNOV ATION POLICY & 
+STRATEGY RESOURCES 
+1. NSF FY 2026–2030 Strategic Plan 
+The current NSF Strategic Plan identifies transformative research and innovation, U.S. 
+technological leadership, STEM talent, partnerships, and measurable impact as major agency 
+priorities. It also asks an especially relevant question for the NIC: how NSF can better measure 
+the outcomes and impact of its investments in U.S. research and innovation. 
+NIC relevance: 
+This provides an important overarching framework for considering how federal research 
+investments translate into economic growth, national security, technological leadership, and 
+societal benefit. 
+Roadmap question: 
+How should the United States define and measure the impact of publicly supported 
+innovation? 
+2. NSF Directorate for Technology, Innovation and 
+Partnerships — TIP 
+NSF TIP focuses explicitly on use-inspired and translational research and organizes its work 
+around accelerating critical and emerging technologies, expanding the geography of innovation, 
+and building a competition-ready workforce. Its portfolio includes Accelerating Research 
+Translation, I-Corps, Regional Innovation Engines, Translation to Practice, America's Seed 
+Fund, technology accelerators, and other programs. 
+NIC relevance: 
+TIP provides a contemporary federal model for connecting research, technology translation, 
+entrepreneurship, regional development, workforce, and industry partnerships. 
+Roadmap question: 
+What gaps remain between excellent federal innovation programs and the ability to move 
+discoveries rapidly and routinely into use? 
+3. NSF Innovation Corps — I-Corps™ 
+
+PAGE 9
+9 | P a g e  
+ 
+NSF I-Corps provides immersive entrepreneurial education that helps scientists and engineers 
+move beyond the laboratory, understand customer and market needs, and accelerate the 
+transformation of invention into impact. NSF identifies technology translation, entrepreneurial 
+workforce development, economic impact, and innovation ecosystems among the program's 
+central objectives. 
+NIC relevance: 
+I-Corps demonstrates the importance of combining technology development with customer 
+discovery, mentorship, market understanding, and entrepreneurial capability. 
+Roadmap question: 
+Which elements of the I-Corps model should be expanded, adapted, or connected more 
+directly with later stages of commercialization? 
+4. NSF Translation to Practice 
+NSF's Translation to Practice initiative supports use-inspired research, translational activity, 
+partnerships, commercial applications, market learning, and industry adoption. NSF explicitly 
+recognizes that translation from scientific discovery to societal impact often follows nonlinear 
+pathways. 
+NIC relevance: 
+The program directly addresses one of the central questions of the Convening: how the national 
+innovation system can shorten the distance between research and real-world application. 
+Roadmap question: 
+What support is most commonly missing between proof-of-concept and adoption? 
+5. NSF Regional Innovation Engines 
+NSF Engines are designed to create sustainable, place-based innovation ecosystems built around 
+cross-sector coalitions involving academia, industry, government, nonprofits, communities, 
+entrepreneurs, and workforce organizations. Their core functions include use-inspired R&D, 
+translation of innovation results to society, and workforce development. 
+NIC relevance: 
+The Engines model encourages participants to consider innovation as an ecosystem-level 
+challenge, rather than simply the responsibility of individual researchers or startups. 
+Roadmap question: 
+What makes an innovation ecosystem self-sustaining after initial federal investment ends? 
+ 
+
+PAGE 10
+10 | P a g e  
+ 
+6. America's AI Action Plan 
+The federal AI strategy emphasizes acceleration of AI innovation, development of supporting 
+infrastructure, workforce and scientific capacity, and strengthening U.S. leadership in artificial 
+intelligence. 
+NIC relevance: 
+AI should be considered not only as an industry or emerging technology, but also as a potential 
+horizontal innovation accelerator capable of affecting discovery, design, modeling, 
+experimentation, decision-making, manufacturing, commercialization, and workforce 
+development. 
+Roadmap question: 
+Where can AI responsibly remove time, cost, and friction from today's innovation process? 
+7. National Academies — Strategic Innovation and 
+Commercialization 
+National Academies of Sciences, Engineering, and Medicine. Strategic Innovation and 
+Commercialization: Supporting IP and Tech Transfer to Advance U.S. Research 
+Competitiveness. 
+This National Academies resource examines intellectual property, technology transfer, 
+commercialization, partnerships, and research competitiveness. 
+NIC relevance: 
+It invites consideration of whether today's technology-transfer structures adequately support an 
+innovation system increasingly characterized by interdisciplinary research, rapid technological 
+change, global competition, and cross-sector partnerships. 
+Roadmap question: 
+Which parts of the current technology-transfer system enable commercialization, and 
+which create unnecessary friction? 
+8. NIST — Federal Technology Transfer and Laboratory-to-
+Market Activities 
+NIST plays an important coordinating role in federal technology transfer and tracks mechanisms 
+including patents, licensing, Cooperative Research and Development Agreements, and other 
+approaches for transferring federally developed technologies toward commercial or societal use. 
+NIC relevance: 
+Federal laboratories represent an enormous source of research expertise and intellectual property, 
+
+PAGE 11
+11 | P a g e  
+ 
+yet their integration with universities, startups, investors, and regional ecosystems can vary 
+considerably. 
+Roadmap question: 
+How can federal laboratories participate more seamlessly in America's broader innovation 
+ecosystem? 
+9. CHIPS for America — Research and Development 
+Programs 
+CHIPS R&D provides an instructive model of a mission-driven innovation strategy intended to 
+connect invention, development, prototyping, deployment, workforce development, and 
+commercial scale. NIST describes three goals: building domestic capacity to invent and deploy 
+semiconductor technologies, accelerating ideas to market, and developing the necessary 
+semiconductor workforce. 
+NIC relevance: 
+The CHIPS model provides an opportunity to examine whether integrated approaches involving 
+shared infrastructure, prototyping, workforce investment, industry participation, and 
+commercialization could be applied to other critical technology areas. 
+Roadmap question: 
+What aspects of mission-driven models such as CHIPS could accelerate commercialization 
+in other industries? 
+  
+
+PAGE 12
+12 | P a g e  
+ 
+PART III 
+PRE-CONVENING REFLECTION 
+QUESTIONS 
+Participants are encouraged to reflect on the following questions before arriving at the National 
+Innovation Convening. 
+1. Identify the Barrier 
+What is the single greatest barrier you encounter—or observe—in moving promising 
+discoveries toward implementation or commercialization? 
+Consider barriers involving: 
+• Funding 
+• Technology readiness 
+• Market validation 
+• Regulatory processes 
+• Intellectual property 
+• University policies 
+• Technology-transfer processes 
+• Access to industry partners 
+• Access to investors 
+• Entrepreneurial expertise 
+• Talent and workforce 
+• Infrastructure and prototyping 
+• Risk tolerance 
+• Organizational culture 
+• Federal policies or administrative requirements 
+2. Identify the Intervention 
+If you could change one policy, practice, incentive, program, or institutional structure to 
+remove that barrier, what would you change? 
+Participants should be prepared to move beyond describing problems and suggest actionable 
+interventions. 
+3. Consider the Innovation Journey 
+Think about the pathway: 
+
+PAGE 13
+13 | P a g e  
+ 
+DISCOVERY → TRANSLATION → VALIDATION → 
+COMMERCIALIZATION → SCALE → IMPACT 
+Where does the innovation process most frequently slow down or fail? 
+What resources, partnerships, capabilities, or policies are missing at that stage? 
+4. Consider Artificial Intelligence 
+Where could AI have the greatest positive impact on the innovation lifecycle? 
+Consider: 
+• Scientific discovery 
+• Literature and knowledge synthesis 
+• Experimental design 
+• Engineering design 
+• Simulation and digital twins 
+• Prototyping 
+• Customer discovery 
+• Market analysis 
+• Intellectual-property analysis 
+• Regulatory preparation 
+• Manufacturing 
+• Supply-chain planning 
+• Entrepreneurship 
+• Investor readiness 
+• Technology-transfer processes 
+Also consider: 
+Where should AI not replace human judgment? 
+5. Consider the Innovation Ecosystem 
+Which relationships must become stronger for innovation to move faster? 
+Examples may include: 
+University ↔ Industry 
+University ↔ Investors 
+Researchers ↔ Entrepreneurs 
+Federal Agencies ↔ Industry 
+Federal Laboratories ↔ Universities 
+Startups ↔ Large Corporations 
+
+PAGE 14
+14 | P a g e  
+ 
+Research Institutions ↔ Communities 
+Universities ↔ Regional Economic Development Organizations 
+What currently prevents those relationships from working effectively? 
+6. Consider Incentives 
+Are researchers, universities, companies, federal laboratories, investors, and other 
+innovation stakeholders rewarded for the behaviors necessary to accelerate innovation? 
+If not: 
+What incentives need to change? 
+7. Consider Access to Innovation 
+Who currently has access to America's innovation ecosystem—and who does not? 
+Consider geographic location, institutional size, research infrastructure, access to capital, access 
+to networks, workforce availability, and participation by emerging innovation regions. 
+How can the nation's innovation capacity be expanded beyond the institutions and regions 
+that have historically dominated technology commercialization? 
+8. Consider Scale 
+The United States has many successful innovation programs. 
+The larger question is whether successful models can be connected and scaled. 
+Which existing program, model, or practice should be expanded nationally? 
+What would be required to do so? 
+  
+
+PAGE 15
+15 | P a g e  
+ 
+THE NATIONAL INNOV ATION 
+ROADMAP CHALLENGE 
+Throughout the Convening, participants will be asked to move from: 
+Observation → Barrier Identification → Root Cause → Intervention → Action 
+The goal is not simply to identify what is wrong with the innovation system. 
+The goal is to identify what can be changed. 
+As you prepare for the National Innovation Convening, consider: 
+If the United States could make only three major changes during the next five 
+years to dramatically accelerate innovation discovery and commercialization, 
+what should those changes be? 
+Your insights, experience, and recommendations will help inform the development of the: 
+NATIONAL INNOV ATION ROADMAP 
+From Discovery to Impact 
+Accelerating American Innovation through Research, Technology, Talent, Partnerships, 
+and Translation 
+ 

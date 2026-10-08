@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warp Field Notebook</title>
+<meta name="description" content="A plain-language, interactive walkthrough of the LDD warp-physics numerical experiments: what each one asked, what the simulations showed, and which experiments could test whether time-modulating an Alcubierre warp field helps.">
+<link rel="stylesheet" href="vendor/fonts.css">
+<link rel="stylesheet" href="styles-wrap-v2.css">
+<script src="vendor/htmx.min.js"></script>
+<script src="enhancements.js" defer></script>
+<script src="app.js" defer></script>
+<script>try { const t = localStorage.getItem("warp-theme"); if (["light","dark"].includes(t)) document.documentElement.dataset.theme=t; } catch {}</script>
+</head>
+<body>
+<a class="skip" href="#chapter">Skip to chapter</a>
+<div class="shell">
+  <header class="masthead">
+    <a class="brand" href="#start">Warp Field <span>Notebook</span></a>
+    <div class="meta">LDD program · Computational Spacetime Dynamics Research · evidence snapshot 2026-07-23 to 2026-08-25 · mathematics and code only</div>
+    <div class="toolbar"><button id="theme-toggle" type="button" aria-pressed="false">Light / Dark Mode</button><button id="print-report" type="button">Print chapter</button><button id="export-data" type="button">Download chart data</button></div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div>
+      <div class="eyebrow">What the simulations actually showed</div>
+      <h1 id="hero-h">What can an impossible journey teach us?</h1>
+      <p class="lede">Over five weeks a small research program ran roughly fifty numbered computer experiments on the mathematics of "warp bubble" spacetimes. This notebook explains, without physics training, what each experiment asked, what the numbers said, and what they did not say. Follow 25 next-step stories: what we might learn, why even a null result matters, and who beyond warp research might benefit. Open the technical notes whenever you want the equations’ side of the story.</p>
+      <div class="disclaimer"><b>Read this first.</b> Nothing here is a machine, a measurement, or a demonstration. Every result is a property of equations run on ordinary computers. The geometries studied are known to require matter with negative energy, which nobody has. Where an experiment failed, the failure is reported as a failure. Historical figures are report transcriptions; the verification chapter records what was checked. Forecast percentages are subjective planning estimates, not measured probabilities.</div>
+    </div>
+    <figure class="hero-fig">
+      <svg viewBox="0 0 520 340" role="img" aria-label="Diagram: a warp bubble wall where space is compressed ahead and stretched behind, with a time envelope m(t) drawn underneath">
+        <defs>
+          <clipPath id="hc"><rect x="0" y="0" width="520" height="215"/></clipPath>
+        </defs>
+        <g clip-path="url(#hc)" stroke="var(--rule)" stroke-width="1" fill="none">
+          <!-- grid lines distorted by the bubble: compressed ahead (right), stretched behind (left) -->
+          <path d="M40 20 V200 M80 20 V200 M120 20 V200 M155 20 V200 M182 20 V200 M204 20 V200"/>
+          <path d="M316 20 V200 M338 20 V200 M365 20 V200 M400 20 V200 M440 20 V200 M480 20 V200"/>
+          <path d="M20 45 H500 M20 85 H500 M20 125 H500 M20 165 H500"/>
+        </g>
+        <!-- wall: a ring, thicker where energy demand is; passengers in the flat interior -->
+        <circle cx="260" cy="105" r="62" fill="var(--paper-2)" stroke="var(--accent)" stroke-width="10" opacity="0.95"/>
+        <circle cx="260" cy="105" r="62" fill="none" stroke="var(--time)" stroke-width="2" stroke-dasharray="3 5"/>
+        <circle cx="260" cy="105" r="6" fill="var(--ink)"/>
+        <text x="260" y="128" text-anchor="middle" font-family="var(--display)" font-size="10" fill="var(--ink-2)">flat interior</text>
+        <text x="260" y="26" text-anchor="middle" font-family="var(--display)" font-size="11" fill="var(--accent-ink)" font-weight="600">wall: where the negative energy would have to be</text>
+        <text x="120" y="215" text-anchor="middle" font-family="var(--display)" font-size="10.5" fill="var(--ink-3)">space stretched behind</text>
+        <text x="400" y="215" text-anchor="middle" font-family="var(--display)" font-size="10.5" fill="var(--ink-3)">space squeezed ahead</text>
+        <path d="M355 105 h60" stroke="var(--ink-2)" stroke-width="1.5" marker-end="url(#ar)"/>
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink-2)"/></marker></defs>
+        <text x="385" y="98" text-anchor="middle" font-family="var(--display)" font-size="10" fill="var(--ink-2)">v ≤ 0.1 c</text>
+        <!-- time envelope -->
+        <g transform="translate(40,250)">
+          <line x1="0" y1="60" x2="440" y2="60" stroke="var(--rule)"/>
+          <path d="M0 60 C 60 60, 70 4, 120 4 L 320 4 C 370 4, 380 60, 440 60" fill="none" stroke="var(--time)" stroke-width="2.5"/>
+          <path d="M0 60 C 60 60, 70 4, 120 4 L 320 4 C 370 4, 380 60, 440 60 Z" fill="var(--time)" opacity="0.12"/>
+          <text x="220" y="-6" text-anchor="middle" font-family="var(--display)" font-size="11" fill="var(--time)" font-weight="600">m(t): the field's strength over time — turn on, hold, turn off</text>
+          <text x="60" y="78" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="var(--ink-3)">turn-on ramp</text>
+          <text x="220" y="78" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="var(--ink-3)">plateau</text>
+          <text x="380" y="78" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="var(--ink-3)">turn-off ramp</text>
+        </g>
+      </svg>
+      <figcaption>The two objects every experiment shares: the bubble wall (teal), where the energy demand lives, and the time envelope m(t) (amber), which is what "temporal modulation" changes.</figcaption>
+    </figure>
+  </section>
+
+  <div class="layout">
+    <aside class="rail">
+      <div class="eyebrow">Chapters</div>
+      <nav aria-label="Chapters">
+        <button class="chapter" data-chapter="start" hx-get="fragments/start.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">00</span><span>How to read this</span></button>
+        <button class="chapter" data-chapter="foundations" hx-get="fragments/foundations.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">01</span><span>Checking the math</span></button>
+        <button class="chapter time" data-chapter="time" hx-get="fragments/time.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">02</span><span>Switching it on and off</span></button>
+        <button class="chapter time" data-chapter="ringing" hx-get="fragments/ringing.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">03</span><span>Shaking the field</span></button>
+        <button class="chapter" data-chapter="fullgr" hx-get="fragments/fullgr.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">04</span><span>Letting spacetime move</span></button>
+        <button class="chapter" data-chapter="audit" hx-get="fragments/audit.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">05</span><span>Trying to break it</span></button>
+        <button class="chapter time" data-chapter="next" hx-get="fragments/next.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">06</span><span>25 future experiments</span></button>
+        <button class="chapter" data-chapter="glossary" hx-get="fragments/glossary.html" hx-target="#chapter" hx-swap="innerHTML" hx-indicator="#chapter"><span class="k">07</span><span>Glossary</span></button>
+        <button class="chapter" data-chapter="verification" hx-get="fragments/verification.html" hx-target="#chapter" hx-swap="innerHTML"><span class="k">08</span><span>Evidence &amp; verification</span></button>
+      </nav>
+      <div class="aside">Chapters numbered 00 to 08 follow the program's own order of work: math checks, then time behaviour, then full relativity. Amber chapters are the ones about time.</div>
+    </aside>
+
+    <main id="chapter" aria-live="polite" tabindex="-1">
+      <noscript>JavaScript is required for interactive chapters. <a href="fragments/next.html">Read all 25 proposals</a> or <a href="fragments/verification.html">read the verification summary</a>.</noscript>
+      <div class="loading">Loading chapter…</div>
+    </main>
+  </div>
+
+  <footer>
+    <span>Source: <a href="https://github.com/Odenknight/Computational-Spacetime-Dynamics-Research">Odenknight/Computational-Spacetime-Dynamics-Research</a>, reports dated 2026-07-23 to 2026-08-25.</span>
+    <span>Built with HTMX 4.0.0 (vendored), hand-written SVG, and no framework. Fully self-hosted: no external requests. Chapters are HTML fragments under <code>docs/explainer/fragments/</code>.</span>
+    <span>Evidence classes: CAL (calibration) · A (analytic checks) · B-TF (test field on a fixed background) · C-FEAS (full relativity, feasibility). None is promoted to another.</span>
+  </footer>
+</div>
+</body>
+</html>
+
