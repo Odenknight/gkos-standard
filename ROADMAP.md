@@ -79,8 +79,16 @@ Protocol, SDK, service, gateway, and product versions remain separate.
 
 ### E2 — fixtures and reference adapters
 
-Develop public positive, negative, boundary, mutation, downgrade, bypass,
-disclosure, refusal, and effect-containment fixtures. Reference adapters remain
+**Assessment — September 12, 2026: partially delivered, with substantial
+implemented mechanisms and recorded test evidence; shared coverage remains
+incomplete.** See the [E2 ecosystem assessment](docs/reviews/2026-09-12_E2_ECOSYSTEM_ASSESSMENT.md)
+for public sources, revision boundaries and remaining gaps.
+
+Reuse and extend existing Engine, Lite and Kosmos adapters and fixtures. Map
+recorded results to a versioned shared inventory, then complete uncovered
+positive, negative, boundary, mutation, downgrade, bypass, disclosure, refusal
+and effect-containment scenarios. A2A/ACS execution and complete binding
+coverage were not verified in this assessment. Reference adapters remain
 separately versioned from the Standard and grant no production authority.
 
 ### E3 — public pilots
