@@ -1,0 +1,1080 @@
+{
+  "item": "R26-S01",
+  "title": "Authority Receipt and Authorized Use Record 1.1.0",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
+  "requirement_ids": [
+    "GKOS-AUTHUSE-001",
+    "GKOS-AUTHUSE-003",
+    "GKOS-AUTHUSE-007"
+  ],
+  "evaluation": "schema",
+  "cases": [
+    {
+      "case_id": "R26-S01-01",
+      "title": "Authority Receipt 1.1.0 with subject, tenant_scope and revocation.locator",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authority-receipt-1.1.0.schema.json",
+        "expect": "valid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authority-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-authority-leaf",
+        "receipt_version": "1.0.0",
+        "issuer": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "subject": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "grantor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "grantee": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authority_source_ref": {
+          "artifact_id": "fixture:r26-authority-source",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "permitted_action_classes": [
+          "record-export"
+        ],
+        "effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "purpose_scope": [
+          "r26-fixture"
+        ],
+        "tenant_scope": [
+          "tenant:alpha"
+        ],
+        "delegation_permitted": true,
+        "issued_at": "2026-10-01T11:00:00.000000Z",
+        "valid_from": "2026-10-01T12:00:00.000000Z",
+        "valid_until": "2026-10-01T18:00:00.000000Z",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "revocation": {
+          "status": "not-revoked",
+          "checked_at": "2026-10-01T12:00:00.000000Z",
+          "method": "status-list",
+          "locator": "https://status.example/lists/r26#leaf"
+        },
+        "nonce": "fixture-r26-nonce-001",
+        "proof_mechanism": "fixture-signature"
+      },
+      "reason": "All annex section 2 fields that S01 adds are present."
+    },
+    {
+      "case_id": "R26-S01-02",
+      "title": "Authority Receipt 1.1.0 without subject",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authority-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authority-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-authority-leaf",
+        "receipt_version": "1.0.0",
+        "issuer": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "grantor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "grantee": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authority_source_ref": {
+          "artifact_id": "fixture:r26-authority-source",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "permitted_action_classes": [
+          "record-export"
+        ],
+        "effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "purpose_scope": [
+          "r26-fixture"
+        ],
+        "tenant_scope": [
+          "tenant:alpha"
+        ],
+        "delegation_permitted": true,
+        "issued_at": "2026-10-01T11:00:00.000000Z",
+        "valid_from": "2026-10-01T12:00:00.000000Z",
+        "valid_until": "2026-10-01T18:00:00.000000Z",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "revocation": {
+          "status": "not-revoked",
+          "checked_at": "2026-10-01T12:00:00.000000Z",
+          "method": "status-list",
+          "locator": "https://status.example/lists/r26#leaf"
+        },
+        "nonce": "fixture-r26-nonce-001",
+        "proof_mechanism": "fixture-signature"
+      },
+      "reason": "Annex section 2 requires the subject; S01 adds it as required."
+    },
+    {
+      "case_id": "R26-S01-03",
+      "title": "Authority Receipt 1.1.0 without revocation.locator",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authority-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authority-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-authority-leaf",
+        "receipt_version": "1.0.0",
+        "issuer": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "subject": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "grantor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "grantee": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authority_source_ref": {
+          "artifact_id": "fixture:r26-authority-source",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "permitted_action_classes": [
+          "record-export"
+        ],
+        "effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "purpose_scope": [
+          "r26-fixture"
+        ],
+        "tenant_scope": [
+          "tenant:alpha"
+        ],
+        "delegation_permitted": true,
+        "issued_at": "2026-10-01T11:00:00.000000Z",
+        "valid_from": "2026-10-01T12:00:00.000000Z",
+        "valid_until": "2026-10-01T18:00:00.000000Z",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "revocation": {
+          "status": "not-revoked",
+          "checked_at": "2026-10-01T12:00:00.000000Z",
+          "method": "status-list"
+        },
+        "nonce": "fixture-r26-nonce-001",
+        "proof_mechanism": "fixture-signature"
+      },
+      "reason": "Annex section 2 requires the revocation locator."
+    },
+    {
+      "case_id": "R26-S01-04",
+      "title": "Authority Receipt 1.0.0 stays valid under its own schema",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authority-receipt.schema.json",
+        "expect": "valid"
+      },
+      "artifact_file": "fixtures/gcp7/authority-window.json",
+      "reason": "Earlier versions stay valid for historical artifacts (R26 section 5)."
+    },
+    {
+      "case_id": "R26-S01-05",
+      "title": "Authority Receipt 1.0.0 is not silently accepted as 1.1.0",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authority-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact_file": "fixtures/gcp7/authority-window.json",
+      "reason": "Each (artifact_type, schema_version) pair identifies one schema."
+    },
+    {
+      "case_id": "R26-S01-06",
+      "title": "Authorized Use Record 1.1.0 binding one revocation check per chain receipt",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-AUTHUSE-002"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authorized-use-record-1.1.0.schema.json",
+        "expect": "valid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authorized-use-record",
+        "schema_version": "1.1.0",
+        "record_id": "fixture:r26-aur-001",
+        "record_version": "1.0.0",
+        "action_class": "record-export",
+        "purpose": "r26-fixture",
+        "context_manifest_ref": {
+          "artifact_id": "fixture:r26-context",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "compiler_ref": {
+          "component_id": "fixture:r26-compiler",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "proposing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authorizing_actor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "executing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "delegation_chain": [
+          {
+            "artifact_id": "fixture:r26-authority-root",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          },
+          {
+            "artifact_id": "fixture:r26-authority-leaf",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        ],
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "authorized_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "authority_basis_ref": {
+          "artifact_id": "fixture:r26-authority-leaf",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "authority_evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "authority_validity_result": "valid",
+        "revocation_checks": [
+          {
+            "receipt_ref": {
+              "artifact_id": "fixture:r26-authority-root",
+              "artifact_version": "1.0.0",
+              "digest": {
+                "algorithm": "sha-256",
+                "canonical_profile": "GKX-CBOR-1",
+                "value": "1111111111111111111111111111111111111111111111111111111111111111"
+              }
+            },
+            "status": "not-revoked",
+            "checked_at": "2026-10-01T12:58:00.000000Z",
+            "method": "status-list"
+          },
+          {
+            "receipt_ref": {
+              "artifact_id": "fixture:r26-authority-leaf",
+              "artifact_version": "1.0.0",
+              "digest": {
+                "algorithm": "sha-256",
+                "canonical_profile": "GKX-CBOR-1",
+                "value": "2222222222222222222222222222222222222222222222222222222222222222"
+              }
+            },
+            "status": "not-revoked",
+            "checked_at": "2026-10-01T12:59:00.000000Z",
+            "method": "status-list"
+          }
+        ],
+        "acted_at": "2026-10-01T13:00:00.000000Z",
+        "outcome": "completed",
+        "recovery_route": {
+          "kind": "rollback",
+          "procedure_ref": "fixture:r26-rollback"
+        }
+      },
+      "reason": "R26-A04: the record binds the checks it relied on."
+    },
+    {
+      "case_id": "R26-S01-07",
+      "title": "Authorized Use Record 1.1.0 without revocation_checks",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authorized-use-record-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authorized-use-record",
+        "schema_version": "1.1.0",
+        "record_id": "fixture:r26-aur-001",
+        "record_version": "1.0.0",
+        "action_class": "record-export",
+        "purpose": "r26-fixture",
+        "context_manifest_ref": {
+          "artifact_id": "fixture:r26-context",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "compiler_ref": {
+          "component_id": "fixture:r26-compiler",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "proposing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authorizing_actor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "executing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "delegation_chain": [
+          {
+            "artifact_id": "fixture:r26-authority-root",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          },
+          {
+            "artifact_id": "fixture:r26-authority-leaf",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        ],
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "authorized_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "authority_basis_ref": {
+          "artifact_id": "fixture:r26-authority-leaf",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "authority_evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "authority_validity_result": "valid",
+        "acted_at": "2026-10-01T13:00:00.000000Z",
+        "outcome": "completed",
+        "recovery_route": {
+          "kind": "rollback",
+          "procedure_ref": "fixture:r26-rollback"
+        }
+      },
+      "reason": "S01 makes revocation_checks required."
+    },
+    {
+      "case_id": "R26-S01-08",
+      "title": "Authorized Use Record 1.1.0 with an empty revocation_checks set",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authorized-use-record-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authorized-use-record",
+        "schema_version": "1.1.0",
+        "record_id": "fixture:r26-aur-001",
+        "record_version": "1.0.0",
+        "action_class": "record-export",
+        "purpose": "r26-fixture",
+        "context_manifest_ref": {
+          "artifact_id": "fixture:r26-context",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "compiler_ref": {
+          "component_id": "fixture:r26-compiler",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "proposing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authorizing_actor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "executing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "delegation_chain": [
+          {
+            "artifact_id": "fixture:r26-authority-root",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          },
+          {
+            "artifact_id": "fixture:r26-authority-leaf",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        ],
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "authorized_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "authority_basis_ref": {
+          "artifact_id": "fixture:r26-authority-leaf",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "authority_evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "authority_validity_result": "valid",
+        "revocation_checks": [],
+        "acted_at": "2026-10-01T13:00:00.000000Z",
+        "outcome": "completed",
+        "recovery_route": {
+          "kind": "rollback",
+          "procedure_ref": "fixture:r26-rollback"
+        }
+      },
+      "reason": "Every action has at least the authority-basis receipt to check (R26-A04)."
+    },
+    {
+      "case_id": "R26-S01-09",
+      "title": "Revocation check with a status outside the receipt status vocabulary",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authorized-use-record-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authorized-use-record",
+        "schema_version": "1.1.0",
+        "record_id": "fixture:r26-aur-001",
+        "record_version": "1.0.0",
+        "action_class": "record-export",
+        "purpose": "r26-fixture",
+        "context_manifest_ref": {
+          "artifact_id": "fixture:r26-context",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "compiler_ref": {
+          "component_id": "fixture:r26-compiler",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "proposing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authorizing_actor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "executing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "delegation_chain": [
+          {
+            "artifact_id": "fixture:r26-authority-root",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          },
+          {
+            "artifact_id": "fixture:r26-authority-leaf",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        ],
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "authorized_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "authority_basis_ref": {
+          "artifact_id": "fixture:r26-authority-leaf",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "authority_evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "authority_validity_result": "valid",
+        "revocation_checks": [
+          {
+            "receipt_ref": {
+              "artifact_id": "fixture:r26-authority-leaf",
+              "artifact_version": "1.0.0",
+              "digest": {
+                "algorithm": "sha-256",
+                "canonical_profile": "GKX-CBOR-1",
+                "value": "2222222222222222222222222222222222222222222222222222222222222222"
+              }
+            },
+            "status": "unknown",
+            "checked_at": "2026-10-01T12:59:00.000000Z",
+            "method": "status-list"
+          }
+        ],
+        "acted_at": "2026-10-01T13:00:00.000000Z",
+        "outcome": "completed",
+        "recovery_route": {
+          "kind": "rollback",
+          "procedure_ref": "fixture:r26-rollback"
+        }
+      },
+      "reason": "Status uses the Authority Receipt vocabulary: not-revoked, revoked, indeterminate."
+    },
+    {
+      "case_id": "R26-S01-10",
+      "title": "R17 candidate record stays valid under the R17 candidate schema",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authorized-use-record.r17.schema.json",
+        "expect": "valid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authorized-use-record",
+        "schema_version": "1.1.0-development",
+        "record_id": "fixture:r26-aur-001",
+        "record_version": "1.0.0",
+        "action_class": "record-export",
+        "purpose": "r26-fixture",
+        "context_manifest_ref": {
+          "artifact_id": "fixture:r26-context",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "compiler_ref": {
+          "component_id": "fixture:r26-compiler",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "proposing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authorizing_actor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "executing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "delegation_chain": [
+          {
+            "artifact_id": "fixture:r26-authority-root",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          },
+          {
+            "artifact_id": "fixture:r26-authority-leaf",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        ],
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "authorized_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "authority_basis_ref": {
+          "artifact_id": "fixture:r26-authority-leaf",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "authority_evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "authority_validity_result": "valid",
+        "acted_at": "2026-10-01T13:00:00.000000Z",
+        "outcome": "completed",
+        "recovery_route": {
+          "kind": "rollback",
+          "procedure_ref": "fixture:r26-rollback"
+        }
+      },
+      "reason": "Earlier versions stay valid for historical artifacts."
+    },
+    {
+      "case_id": "R26-S01-11",
+      "title": "R17 candidate record is not accepted as 1.1.0",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "authorized-use-record-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "authorized-use-record",
+        "schema_version": "1.1.0-development",
+        "record_id": "fixture:r26-aur-001",
+        "record_version": "1.0.0",
+        "action_class": "record-export",
+        "purpose": "r26-fixture",
+        "context_manifest_ref": {
+          "artifact_id": "fixture:r26-context",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "compiler_ref": {
+          "component_id": "fixture:r26-compiler",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "proposing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "authorizing_actor": {
+          "actor_id": "u-1001",
+          "actor_class": "human",
+          "identity_provider": "idp.example"
+        },
+        "executing_actor": {
+          "actor_id": "agent-exec-01",
+          "actor_class": "agent",
+          "identity_provider": "agents.example"
+        },
+        "delegation_chain": [
+          {
+            "artifact_id": "fixture:r26-authority-root",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "1111111111111111111111111111111111111111111111111111111111111111"
+            }
+          },
+          {
+            "artifact_id": "fixture:r26-authority-leaf",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "2222222222222222222222222222222222222222222222222222222222222222"
+            }
+          }
+        ],
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "authorized_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a",
+            "res:b"
+          ],
+          "environment": "production",
+          "reversibility": "compensable"
+        },
+        "authority_basis_ref": {
+          "artifact_id": "fixture:r26-authority-leaf",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        },
+        "authority_evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "authority_validity_result": "valid",
+        "acted_at": "2026-10-01T13:00:00.000000Z",
+        "outcome": "completed",
+        "recovery_route": {
+          "kind": "rollback",
+          "procedure_ref": "fixture:r26-rollback"
+        }
+      },
+      "reason": "schema_version 1.1.0-development is a different pair; the record also lacks revocation_checks."
+    }
+  ],
+  "notes": [
+    "Before: evaluated on the base commit, where the 1.1.0 schema file does not exist."
+  ]
+}

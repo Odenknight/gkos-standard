@@ -2,6 +2,62 @@
 
 ## Unreleased
 
+- R26 implementation of the accepted items (v0.83 development line; R26
+  accepted in part 2026-10-07, R26 §7.3). Annex text, marked
+  `<!-- R26-Axx (accepted 2026-10-07; ...) -->`: Authority and Refusal
+  Receipt Fields annex gains role projections, actor identity, typed Refusal
+  Receipt content, effect-scope containment and authority interval sources
+  (A02, A03, A05, A11, A13); Canonical Serialization annex gains the
+  schema-to-CBOR mapping, declared artifact identities, received-bytes digests
+  and digest-bound closure rules (A06-A08, A16); governed state change annex
+  gains the State-Change Receipt role elements, review deadlines and
+  hold-predicate results (A12, A14, A15). R26-A01 (Definitions annex), A04
+  (revocation status at action time), A17 (GKOS-IDENTITY-001 interpretation
+  row) and A18 (standing of two annexes) stay proposed and are not included;
+  the accepted A05 and A14 text cites Definitions D-1 and D-2 as drafted.
+- R26-A09 and A10 Option A (accepted 2026-10-07): the Diagnostic Code Registry
+  adds the most-specific-code rule and ten gate codes (L1-002, L1-003, L2-001,
+  L3-002, L4-005 to L4-008, L6-010, L7-008), registry version
+  `1.2.0-development`, mirrored in `requirements/DIAGNOSTIC_CODES.json`. Under
+  R26-A15 and the owner answer of R26 §7.2 it also adds GKOS-GATE-L4-009
+  (disposition refused: active hold), so `main` carries 39 gate codes. The
+  v0.82.1 validator asserts the published 62 requirements and 28 gate codes
+  against the published tag.
+- R26 schemas (accepted 2026-10-07; R26-S01 to S07): new versions
+  `authority-receipt-1.1.0`, `authorized-use-record-1.1.0`,
+  `refusal-receipt-1.1.0`, `decision-record.canonical-1.0.0`,
+  `proposal-envelope.r26`, `assessment.r26`, `conformance-manifest.r26`,
+  `selection-set-1.1.0` and `context-manifest-1.1.0`, and received-bytes
+  digest definitions in `gkx-common.defs.json`. Earlier schema versions are
+  unchanged and stay valid.
+- R26 development fixtures and reference runner for the accepted items (v0.83
+  development line): 233 non-qualifying cases under `fixtures/development/r26/`
+  with the catalog `fixtures.manifest.json`, executed by `npm test`. The
+  runner gains authority-chain intervals, actor-reference sameness,
+  schema-driven artifact verification with declared artifact identities and
+  schema-declared set order, received-bytes digest checks through the typed
+  verifier, an R26 (1.1.0) context-assembly path that verifies every
+  `GKX-CBOR-1` reference as a canonical artifact through the schema registry
+  and refuses raw content so labelled, the most-specific L6-002 code, the ten
+  new gate predicates, review-deadline and hold-result evaluation (the
+  plain-hold refusal carries GKOS-GATE-L4-009), a State-Change Receipt role
+  check, effect-scope containment (A02), operation-kind applicability (A05),
+  role-projection construction (A13) and closure-rule evaluation (A16).
+  Existing catalogs, Track-A twins and the GCP-6 replay output are unchanged;
+  1.0.0 selection envelopes keep the published assembly path. Fixtures for
+  R26-A01, A04, A17 and A18 are not included.
+- R26 advisory review corrections (accepted items): the v0.82.1 validator's
+  append-only check on the open v0.83 line compares the original requirement
+  text and each published gate row, not only identifiers, and rejects
+  duplicate requirement IDs and gate codes before that comparison
+  (r26-REV-002); findings r26-REV-003 to r26-REV-009 are corrected in the
+  runner and annex text; R26 assembly verifies artifact identity through the
+  schema registry (r26-REV-005); role projection value tables translate
+  enumerated values only (r26-REV-010); unsupported or malformed
+  policy-required dimensions fail closed with GKOS-GATE-L7-003 (r26-REV-011);
+  closure evaluation refuses absent, null or malformed snapshot contents, and
+  held-item digests that name more than one basis, with GKOS-GATE-L6-009
+  (r26-REV-012, r26-REV-013).
 - Accept R26 by item (2026-10-07; R26 §7.3): R26-A02, A03, A05–A16 and
   R26-S01–S07 are accepted on the v0.83 development line; R26-A01, A04, A17
   and A18 stay proposed until GKOS-Engine reference evidence exists. Record

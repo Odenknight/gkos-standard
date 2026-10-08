@@ -1,0 +1,949 @@
+{
+  "suite": "R26-S05 canonical Decision Record",
+  "status": "development; non-qualifying",
+  "cases": [
+    {
+      "id": "R26-S05-P01",
+      "class": "positive",
+      "requirement_ids": [
+        "GKOS-REVIEW-002",
+        "GKOS-REVIEW-004",
+        "GKOS-CONTEXT-005"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "valid",
+      "reason": "Complete canonical Decision Record bound to the proposal, the exact evidence reviewed and the Context Manifest.",
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-P02",
+      "class": "positive",
+      "requirement_ids": [
+        "GKOS-REVIEW-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "valid",
+      "reason": "Escalation is a disposition under GKOS-REVIEW-004; the legacy enum lacks it.",
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "escalated",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-P03",
+      "class": "positive",
+      "requirement_ids": [
+        "GKOS-REVIEW-002",
+        "GKOS-REVIEW-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "valid",
+      "reason": "First record of a writer stream: predecessor_ref is explicitly null and sequence is 0.",
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "predecessor_ref": null,
+        "sequence": 0
+      }
+    },
+    {
+      "id": "R26-S05-N01",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-002"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "No proposal binding.",
+      "expect_paths": [
+        "proposal_ref"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N02",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-002"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "No binding to the exact evidence reviewed.",
+      "expect_paths": [
+        "evidence_refs"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N03",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "Class-only actor does not identify an individual (R26-S06).",
+      "expect_paths": [
+        "deciding_actor"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": "human",
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N04",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CANON-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "Offset timestamp is not canonical.",
+      "expect_paths": [
+        "decided_at"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T16:00:00.000000+02:00",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N05",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CANON-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "Timestamp without six fractional digits is not canonical.",
+      "expect_paths": [
+        "decided_at"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N06",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CANON-007"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "Closed properties: a loose legacy field is refused.",
+      "expect_paths": [
+        ""
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2,
+        "proposal_hash": "sha256:abc123"
+      }
+    },
+    {
+      "id": "R26-S05-N07",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "No per-writer sequence number; authoritative order cannot be established.",
+      "expect_paths": [
+        "sequence"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        }
+      }
+    },
+    {
+      "id": "R26-S05-N08",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CANON-001"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "Payload identity names another artifact type.",
+      "expect_paths": [
+        "artifact_type"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N09",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CONTEXT-005"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "context_used is true but no manifest is bound.",
+      "expect_paths": [
+        ""
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "accepted",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-N10",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-004"
+      ],
+      "schema": "decision-record.canonical-1.0.0.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "invalid",
+      "reason": "Disposition outside the registered vocabulary.",
+      "expect_paths": [
+        "disposition"
+      ],
+      "instance": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "decision-record",
+        "schema_version": "1.0.0",
+        "decision_id": "fixture:decision-0002",
+        "disposition": "approved-ish",
+        "deciding_actor": {
+          "actor_id": "reviewer-17",
+          "actor_class": "human",
+          "identity_provider": "idp:fixture"
+        },
+        "decided_at": "2026-10-01T14:00:00.000000Z",
+        "proposal_ref": {
+          "artifact_id": "fixture:proposal-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "evidence_refs": [
+          {
+            "artifact_id": "fixture:evidence-0001",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          },
+          {
+            "artifact_id": "fixture:evidence-0002",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ],
+        "context_used": true,
+        "context_manifest_ref": {
+          "artifact_id": "fixture:context-manifest-0002",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        },
+        "predecessor_ref": {
+          "artifact_id": "fixture:decision-0001",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        "sequence": 2
+      }
+    },
+    {
+      "id": "R26-S05-C01",
+      "class": "compatibility",
+      "requirement_ids": [
+        "GKOS-REVIEW-004"
+      ],
+      "schema": "decision-record.schema.json",
+      "legacy_schema": "decision-record.schema.json",
+      "expect": "valid",
+      "reason": "Legacy open sidecar stays valid under decision-record.schema.json (R26 section 9).",
+      "instance": {
+        "decision_id": "legacy:decision-0001",
+        "disposition": "rejected",
+        "actor": "human",
+        "decided_at": "2026-09-01T09:00:00+02:00",
+        "proposal_hash": "sha256:abc123",
+        "prev_hash": null,
+        "legacy_note": "open sidecar keeps additional properties"
+      }
+    }
+  ]
+}

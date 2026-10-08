@@ -1,0 +1,32 @@
+{
+  "fixture_id": "R26-A06-P-MEMBER-001",
+  "r26_item": "R26-A06",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "positive",
+  "requirement_ids": [
+    "GKOS-CANON-007",
+    "GKOS-CONTEXT-001"
+  ],
+  "subject": "digest-recompute",
+  "schema_ref": "schemas/gkx-common.defs.json#/$defs/artifactReferenceAnyDigest",
+  "selection_member": {
+    "object_ref": {
+      "artifact_id": "fixture:claim-a-source",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "basis": "received-bytes",
+        "value": "1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198"
+      }
+    },
+    "score_type": "not-applicable",
+    "score": null,
+    "inclusion_reason": "Raw Layer-1 source bytes selected as resolved content"
+  },
+  "resolved_bytes_base64": "IyBTb3VyY2Ugbm90ZQoKQ2xhaW0gQTogdGhlIGNvbnRyb2wgcGFzc2VkLgo=",
+  "expected": {
+    "result": "accepted",
+    "gate_codes": []
+  },
+  "reason": "Resolved selection content that is not a canonical GKOS artifact is referenced by a received-bytes digest; the verifier recomputes SHA-256 over the exact received bytes and they match."
+}

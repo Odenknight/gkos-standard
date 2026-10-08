@@ -1,0 +1,7 @@
+{
+  "suite": "GKOS-v0.83-development-R26-A15-portable-mutation-twin",
+  "status": "accepted under R26 (accepted in part 2026-10-07); v0.83 development line",
+  "cases": [
+    {"id":"R26-A15-HOLD-TWIN","requirement_ids":["GKOS-RETENTION-001"],"expected":"GKOS-GATE-L4-009","baseline":{"kind":"hold","evaluation":"no-hold","erasure_required":false},"mutation":{"kind":"hold","evaluation":"hold","erasure_required":false}}
+  ]
+}

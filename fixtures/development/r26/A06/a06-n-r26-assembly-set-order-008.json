@@ -1,0 +1,127 @@
+{
+  "fixture_id": "R26-A06-N-ASSEMBLY-008",
+  "r26_item": "R26-A06",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "negative",
+  "requirement_ids": [
+    "GKOS-CANON-007"
+  ],
+  "subject": "r26-assembly",
+  "selection_schema": "selection-set-1.1.0.schema.json",
+  "selection_envelope": {
+    "canonical_profile": "GKX-CBOR-1",
+    "artifact_type": "selection-envelope",
+    "schema_version": "1.1.0",
+    "selection_set_id": "fixture:r26-a06-selection",
+    "selection_set_version": "1.0.0",
+    "purpose": "R26-A06 assembly over received-bytes and canonical references",
+    "recipient": "fixture-reviewer",
+    "query_or_instruction": "Select the source note and its held contradiction",
+    "selected_by": {
+      "actor_id": "tool:gkos-ts",
+      "actor_class": "tool"
+    },
+    "eligible_snapshot_ref": {
+      "artifact_id": "fixture:r26-a06-snapshot",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "36f5215ee40b3ad10e5454da20141acba7f300a88f23347dd874c09203d17ef9"
+      }
+    },
+    "selection_policy_ref": {
+      "component_id": "fixture:r26-a06-selection-policy",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      }
+    },
+    "selected_at": "2026-10-07T12:00:00.000000Z",
+    "members": [
+      {
+        "object_ref": {
+          "artifact_id": "fixture:r26-a06-source-note",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "basis": "received-bytes",
+            "value": "1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198"
+          }
+        },
+        "score_type": "not-applicable",
+        "score": null,
+        "inclusion_reason": "Raw Layer-1 source bytes selected as resolved content"
+      }
+    ],
+    "known_omissions": [],
+    "closure_inputs": [
+      {
+        "kind": "contradiction",
+        "object_ref": {
+          "artifact_id": "fixture:r26-a06-contradiction-b",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "60644ed8d87457bea449796f480e0d6102b5a3bafe8ab72647e3b3df832b8066"
+          }
+        }
+      }
+    ]
+  },
+  "eligible_snapshot": {
+    "snapshot_id": "fixture:r26-a06-snapshot",
+    "snapshot_version": "1.0.0",
+    "required_closure": [
+      {
+        "kind": "contradiction",
+        "object_ref": {
+          "artifact_id": "fixture:r26-a06-contradiction-b",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "60644ed8d87457bea449796f480e0d6102b5a3bafe8ab72647e3b3df832b8066"
+          }
+        }
+      }
+    ]
+  },
+  "assembly_inputs": {
+    "manifest_id": "fixture:r26-a06-manifest",
+    "manifest_version": "1.0.0",
+    "compiled_at": "2026-10-07T12:01:00.000000Z",
+    "policy_ref": {
+      "component_id": "fixture:r26-a06-context-policy",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      }
+    },
+    "compiler_ref": {
+      "component_id": "gkos-ts-reference-compiler",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      }
+    }
+  },
+  "resolved_content_base64": {
+    "1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198": "IyBTb3VyY2Ugbm90ZQoKQ2xhaW0gQTogdGhlIGNvbnRyb2wgcGFzc2VkLgo=",
+    "60644ed8d87457bea449796f480e0d6102b5a3bafe8ab72647e3b3df832b8066": "sGdtZW1iZXJzgaRlc2NvcmX5OgBqb2JqZWN0X3JlZqNmZGlnZXN0o2V2YWx1ZXhAYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWlhbGdvcml0aG1nc2hhLTI1NnFjYW5vbmljYWxfcHJvZmlsZWpHS1gtQ0JPUi0xa2FydGlmYWN0X2lkb2ZpeHR1cmU6Y2xhaW0tYXBhcnRpZmFjdF92ZXJzaW9uZTEuMC4wanNjb3JlX3R5cGVlZmxvYXRwaW5jbHVzaW9uX3JlYXNvbngaUHJpbWFyeSBzZWxlY3RlZCBhc3NlcnRpb25ncHVycG9zZXgjUjI2IGNhbm9uaWNhbCBzZXJpYWxpemF0aW9uIGZpeHR1cmVpcmVjaXBpZW50cGZpeHR1cmUtcmV2aWV3ZXJrc2VsZWN0ZWRfYXR4GzIwMjYtMTAtMDFUMTQ6MDA6MDAuMDAwMDAwWmtzZWxlY3RlZF9ieaJoYWN0b3JfaWRsdG9vbDpna29zLXRza2FjdG9yX2NsYXNzZHRvb2xtYXJ0aWZhY3RfdHlwZXJzZWxlY3Rpb24tZW52ZWxvcGVuY2xvc3VyZV9pbnB1dHOAbnNjaGVtYV92ZXJzaW9uZTEuMC4wb2tub3duX29taXNzaW9uc4BwYXV0aG9yaXplZF9zY29wZaZpcmVzb3VyY2Vzgm9maXh0dXJlOmNsYWltLWJvZml4dHVyZTpjbGFpbS1hanZhbGlkX2Zyb214GzIwMjYtMTAtMDFUMDA6MDA6MDAuMDAwMDAwWmtlbnZpcm9ubWVudGdmaXh0dXJla3ZhbGlkX3VudGlseBsyMDI2LTEwLTAyVDAwOjAwOjAwLjAwMDAwMFpsZWZmZWN0X2NsYXNzc2Rpc2Nsb3N1cmUtaW50ZXJuYWxtcmV2ZXJzaWJpbGl0eWpyZXZlcnNpYmxlcHNlbGVjdGlvbl9zZXRfaWR4H2ZpeHR1cmU6cjI2LWNhbm9uaWNhbC1zZWxlY3Rpb25xY2Fub25pY2FsX3Byb2ZpbGVqR0tYLUNCT1ItMXRxdWVyeV9vcl9pbnN0cnVjdGlvbnBTZWxlY3QgdGhlIGNsYWltdHNlbGVjdGlvbl9wb2xpY3lfcmVmo2ZkaWdlc3SjZXZhbHVleEBjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjaWFsZ29yaXRobWdzaGEtMjU2cWNhbm9uaWNhbF9wcm9maWxlakdLWC1DQk9SLTFsY29tcG9uZW50X2lkeBxmaXh0dXJlOnIyNi1zZWxlY3Rpb24tcG9saWN5cWNvbXBvbmVudF92ZXJzaW9uZTEuMC4wdWVsaWdpYmxlX3NuYXBzaG90X3JlZqNmZGlnZXN0o2V2YWx1ZXhAYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmlhbGdvcml0aG1nc2hhLTI1NnFjYW5vbmljYWxfcHJvZmlsZWpHS1gtQ0JPUi0xa2FydGlmYWN0X2lkdGZpeHR1cmU6cjI2LXNuYXBzaG90cGFydGlmYWN0X3ZlcnNpb25lMS4wLjB1c2VsZWN0aW9uX3NldF92ZXJzaW9uZTEuMC4w"
+  },
+  "expected": {
+    "result": "refused",
+    "gate_codes": [
+      "GKOS-GATE-L6-007"
+    ]
+  },
+  "reason": "The closure input resolves to the R26-A07-N-SETORDER-010 bytes under a matching GKX-CBOR-1 digest. Its map keys are canonical, but authorized_scope.resources, a schema-declared set, is out of canonical order. Typed artifact verification refuses it (GKOS-GATE-L6-001), so R26 assembly refuses with GKOS-GATE-L6-007."
+}

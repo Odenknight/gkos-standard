@@ -1,0 +1,127 @@
+{
+  "fixture_id": "R26-A06-N-ASSEMBLY-006",
+  "r26_item": "R26-A06",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "negative",
+  "requirement_ids": [
+    "GKOS-CANON-007"
+  ],
+  "subject": "r26-assembly",
+  "selection_schema": "selection-set-1.1.0.schema.json",
+  "selection_envelope": {
+    "canonical_profile": "GKX-CBOR-1",
+    "artifact_type": "selection-envelope",
+    "schema_version": "1.1.0",
+    "selection_set_id": "fixture:r26-a06-selection",
+    "selection_set_version": "1.0.0",
+    "purpose": "R26-A06 assembly over received-bytes and canonical references",
+    "recipient": "fixture-reviewer",
+    "query_or_instruction": "Select the source note and its held contradiction",
+    "selected_by": {
+      "actor_id": "tool:gkos-ts",
+      "actor_class": "tool"
+    },
+    "eligible_snapshot_ref": {
+      "artifact_id": "fixture:r26-a06-snapshot",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "36f5215ee40b3ad10e5454da20141acba7f300a88f23347dd874c09203d17ef9"
+      }
+    },
+    "selection_policy_ref": {
+      "component_id": "fixture:r26-a06-selection-policy",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      }
+    },
+    "selected_at": "2026-10-07T12:00:00.000000Z",
+    "members": [
+      {
+        "object_ref": {
+          "artifact_id": "fixture:r26-a06-source-note",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "fb8e20fc2e4c3f248c60c39bd652f3c1347298bb977b8b4d5903b85055620603"
+          }
+        },
+        "score_type": "not-applicable",
+        "score": null,
+        "inclusion_reason": "Raw Layer-1 source bytes selected as resolved content"
+      }
+    ],
+    "known_omissions": [],
+    "closure_inputs": [
+      {
+        "kind": "contradiction",
+        "object_ref": {
+          "artifact_id": "fixture:r26-a06-contradiction-b",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "d9e7525ea7c7ec46e8a2b0780f4d647af533ae26647759bfd45ea4cd2294441a"
+          }
+        }
+      }
+    ]
+  },
+  "eligible_snapshot": {
+    "snapshot_id": "fixture:r26-a06-snapshot",
+    "snapshot_version": "1.0.0",
+    "required_closure": [
+      {
+        "kind": "contradiction",
+        "object_ref": {
+          "artifact_id": "fixture:r26-a06-contradiction-b",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "d9e7525ea7c7ec46e8a2b0780f4d647af533ae26647759bfd45ea4cd2294441a"
+          }
+        }
+      }
+    ]
+  },
+  "assembly_inputs": {
+    "manifest_id": "fixture:r26-a06-manifest",
+    "manifest_version": "1.0.0",
+    "compiled_at": "2026-10-07T12:01:00.000000Z",
+    "policy_ref": {
+      "component_id": "fixture:r26-a06-context-policy",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      }
+    },
+    "compiler_ref": {
+      "component_id": "gkos-ts-reference-compiler",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      }
+    }
+  },
+  "resolved_content_base64": {
+    "fb8e20fc2e4c3f248c60c39bd652f3c1347298bb977b8b4d5903b85055620603": "YWI=",
+    "d9e7525ea7c7ec46e8a2b0780f4d647af533ae26647759bfd45ea4cd2294441a": "rWhzZXF1ZW5jZQJqZGVjaWRlZF9hdHgbMjAyNi0xMC0wMVQxNDowMDowMC4wMDAwMDBaa2RlY2lzaW9uX2lkeB9maXh0dXJlOnIyNi1hMDYtY29udHJhZGljdGlvbi1ia2Rpc3Bvc2l0aW9uaHJlamVjdGVkbGNvbnRleHRfdXNlZPVscHJvcG9zYWxfcmVmo2ZkaWdlc3SjZXZhbHVleEBhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhaWFsZ29yaXRobWdzaGEtMjU2cWNhbm9uaWNhbF9wcm9maWxlakdLWC1DQk9SLTFrYXJ0aWZhY3RfaWR1Zml4dHVyZTpwcm9wb3NhbC0wMDAycGFydGlmYWN0X3ZlcnNpb25lMS4wLjBtYXJ0aWZhY3RfdHlwZW9kZWNpc2lvbi1yZWNvcmRtZXZpZGVuY2VfcmVmc4KjZmRpZ2VzdKNldmFsdWV4QGJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJpYWxnb3JpdGhtZ3NoYS0yNTZxY2Fub25pY2FsX3Byb2ZpbGVqR0tYLUNCT1ItMWthcnRpZmFjdF9pZHVmaXh0dXJlOmV2aWRlbmNlLTAwMDFwYXJ0aWZhY3RfdmVyc2lvbmUxLjAuMKNmZGlnZXN0o2V2YWx1ZXhAY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2lhbGdvcml0aG1nc2hhLTI1NnFjYW5vbmljYWxfcHJvZmlsZWpHS1gtQ0JPUi0xa2FydGlmYWN0X2lkdWZpeHR1cmU6ZXZpZGVuY2UtMDAwMnBhcnRpZmFjdF92ZXJzaW9uZTEuMC4wbmRlY2lkaW5nX2FjdG9yo2hhY3Rvcl9pZGtyZXZpZXdlci0xN2thY3Rvcl9jbGFzc2VodW1hbnFpZGVudGl0eV9wcm92aWRlcmtpZHA6Zml4dHVyZW5zY2hlbWFfdmVyc2lvbmUxLjAuMG9wcmVkZWNlc3Nvcl9yZWajZmRpZ2VzdKNldmFsdWV4QGVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVpYWxnb3JpdGhtZ3NoYS0yNTZxY2Fub25pY2FsX3Byb2ZpbGVqR0tYLUNCT1ItMWthcnRpZmFjdF9pZHVmaXh0dXJlOmRlY2lzaW9uLTAwMDFwYXJ0aWZhY3RfdmVyc2lvbmUxLjAuMHFjYW5vbmljYWxfcHJvZmlsZWpHS1gtQ0JPUi0xdGNvbnRleHRfbWFuaWZlc3RfcmVmo2ZkaWdlc3SjZXZhbHVleEBkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkaWFsZ29yaXRobWdzaGEtMjU2cWNhbm9uaWNhbF9wcm9maWxlakdLWC1DQk9SLTFrYXJ0aWZhY3RfaWR4HWZpeHR1cmU6Y29udGV4dC1tYW5pZmVzdC0wMDAycGFydGlmYWN0X3ZlcnNpb25lMS4wLjA="
+  },
+  "expected": {
+    "result": "refused",
+    "gate_codes": [
+      "GKOS-GATE-L6-007"
+    ]
+  },
+  "reason": "Raw UTF-8 \"ab\" (bytes 61 62) is labeled GKX-CBOR-1. The bytes happen to be canonical CBOR for the text string \"b\", so a structural check alone accepts them; they carry no artifact identity. R26 assembly verifies GKX-CBOR-1 bytes as a canonical artifact of a declared (artifact_type, schema_version) pair, so it refuses with GKOS-GATE-L6-007."
+}

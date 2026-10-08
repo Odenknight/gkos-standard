@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/refusal-receipt-1.1.0.schema.json",
+  "title": "GKX Refusal Receipt role 1.1.0",
+  "description": "R26-S02 (accepted 2026-10-07; v0.83 development line; unpublished), with R26-A10 Option A: gate_code stays required. Refusal Receipt 1.0.0 stays valid for historical receipts. Schema validation checks the receipt against the operation kind it declares; whether that declaration, and the cited requirement IDs, are correct for the refused operation is a semantic check (R26-A05).",
+  "type": "object",
+  "required": [
+    "canonical_profile", "artifact_type", "schema_version",
+    "receipt_id", "gate_code", "requirement_ids", "predicate_ref",
+    "result", "input_refs", "evaluated_at", "actor_context",
+    "operation_kind", "refusal_effect", "policy_ref"
+  ],
+  "properties": {
+    "canonical_profile": { "const": "GKX-CBOR-1" },
+    "artifact_type": { "const": "refusal-receipt" },
+    "schema_version": { "const": "1.1.0" },
+    "receipt_id": { "type": "string", "minLength": 1 },
+    "gate_code": {
+      "type": "string",
+      "pattern": "^GKOS-GATE-L[1-7]-\\d{3}$"
+    },
+    "requirement_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": { "type": "string", "pattern": "^GKOS-[A-Z]+-\\d{3}$" }
+    },
+    "predicate_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" },
+    "result": { "const": "refused" },
+    "input_refs": {
+      "type": "array",
+      "minItems": 1,
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": { "$ref": "gkx-common.defs.json#/$defs/artifactReferenceAnyDigest" }
+    },
+    "evaluated_at": { "$ref": "gkx-common.defs.json#/$defs/canonicalTimestamp" },
+    "actor_context": {
+      "type": "array",
+      "minItems": 1,
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": { "$ref": "gkx-common.defs.json#/$defs/actorReference" }
+    },
+    "operation_kind": { "type": "string", "enum": ["consequential-action", "other"] },
+    "requested_effect_scope": { "$ref": "gkx-common.defs.json#/$defs/effectScope" },
+    "requested_effect_scope_defect": { "type": "string", "enum": ["absent", "invalid"] },
+    "refusal_effect": { "type": "string", "enum": ["block", "refuse", "rollback", "compensate", "freeze"] },
+    "escalation_route": { "type": "string", "minLength": 1 },
+    "policy_ref": { "$ref": "gkx-common.defs.json#/$defs/componentReference" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "operation_kind": { "const": "consequential-action" } },
+        "required": ["operation_kind"]
+      },
+      "then": {
+        "oneOf": [
+          { "required": ["requested_effect_scope"], "not": { "required": ["requested_effect_scope_defect"] } },
+          { "required": ["requested_effect_scope_defect"], "not": { "required": ["requested_effect_scope"] } }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": { "operation_kind": { "const": "other" } },
+        "required": ["operation_kind"]
+      },
+      "then": {
+        "not": { "anyOf": [{ "required": ["requested_effect_scope"] }, { "required": ["requested_effect_scope_defect"] }] }
+      }
+    },
+    {
+      "if": {
+        "properties": { "gate_code": { "enum": ["GKOS-GATE-L7-002", "GKOS-GATE-L7-003"] } },
+        "required": ["gate_code"]
+      },
+      "then": {
+        "properties": { "operation_kind": { "const": "consequential-action" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "gate_code": { "enum": ["GKOS-GATE-L4-001", "GKOS-GATE-L4-002", "GKOS-GATE-L4-003", "GKOS-GATE-L5-005"] } },
+        "required": ["gate_code"]
+      },
+      "then": { "required": ["escalation_route"] }
+    }
+  ],
+  "additionalProperties": false
+}

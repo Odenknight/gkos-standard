@@ -1,0 +1,252 @@
+{
+  "item": "R26-A03",
+  "title": "Authority interval sources",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
+  "requirement_ids": [
+    "GKOS-AUTHUSE-003",
+    "GKOS-AUTHUSE-007",
+    "GKOS-DELEGATION-001"
+  ],
+  "evaluation": "semantic",
+  "cases": [
+    {
+      "case_id": "R26-A03-01",
+      "title": "Control: every link valid at evaluation time",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T10:00:00.000000Z",
+          "valid_until": "2026-10-01T20:00:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T11:00:00.000000Z",
+          "valid_from": "2026-10-01T12:00:00.000000Z",
+          "valid_until": "2026-10-01T18:00:00.000000Z"
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval",
+      "reason": "The evaluation time lies in the half-open interval of every receipt."
+    },
+    {
+      "case_id": "R26-A03-02",
+      "title": "Leaf valid, parent expired",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T10:00:00.000000Z",
+          "valid_until": "2026-10-01T12:30:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T11:00:00.000000Z",
+          "valid_from": "2026-10-01T12:00:00.000000Z",
+          "valid_until": "2026-10-01T18:00:00.000000Z"
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-001",
+        "requirement_ids": [
+          "GKOS-AUTHUSE-003",
+          "GKOS-AUTHUSE-007"
+        ]
+      },
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval",
+      "reason": "The parent's valid_until is before the evaluation time; every link must be valid."
+    },
+    {
+      "case_id": "R26-A03-03",
+      "title": "Leaf valid, parent not yet valid",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T13:30:00.000000Z",
+          "valid_until": "2026-10-01T20:00:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T11:00:00.000000Z",
+          "valid_from": "2026-10-01T12:00:00.000000Z",
+          "valid_until": "2026-10-01T18:00:00.000000Z"
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-001",
+        "requirement_ids": [
+          "GKOS-AUTHUSE-003",
+          "GKOS-AUTHUSE-007"
+        ]
+      },
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval",
+      "reason": "The parent's valid_from is after the evaluation time; every link must be valid."
+    },
+    {
+      "case_id": "R26-A03-04",
+      "title": "Parent valid_until equals evaluation time (half-open end)",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T10:00:00.000000Z",
+          "valid_until": "2026-10-01T13:00:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T11:00:00.000000Z",
+          "valid_from": "2026-10-01T12:00:00.000000Z",
+          "valid_until": "2026-10-01T18:00:00.000000Z"
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-001",
+        "requirement_ids": [
+          "GKOS-AUTHUSE-003",
+          "GKOS-AUTHUSE-007"
+        ]
+      },
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval",
+      "reason": "Authority is expired exactly at valid_until (half-open interval), checked on each link."
+    },
+    {
+      "case_id": "R26-A03-05",
+      "title": "Empty interval: valid_from equals valid_until",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T10:00:00.000000Z",
+          "valid_until": "2026-10-01T20:00:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T11:00:00.000000Z",
+          "valid_from": "2026-10-01T13:00:00.000000Z",
+          "valid_until": "2026-10-01T13:00:00.000000Z"
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-001",
+        "requirement_ids": [
+          "GKOS-AUTHUSE-003",
+          "GKOS-AUTHUSE-007"
+        ]
+      },
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval",
+      "reason": "A receipt whose valid_from is not earlier than its valid_until grants no authority."
+    },
+    {
+      "case_id": "R26-A03-06",
+      "title": "issued_at after evaluation time is not a validity bound",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T10:00:00.000000Z",
+          "valid_until": "2026-10-01T20:00:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T13:30:00.000000Z",
+          "valid_from": "2026-10-01T12:00:00.000000Z",
+          "valid_until": "2026-10-01T18:00:00.000000Z"
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "reason": "issued_at records issuance; it is not a validity bound (R26-A03). Whether a receipt issued after the evaluation time is otherwise acceptable is outside R26-A03.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval"
+    },
+    {
+      "case_id": "R26-A03-07",
+      "title": "Evaluation time inside every receipt interval but outside the authorizing effect-scope window",
+      "evaluation_time": "2026-10-01T13:00:00.000000Z",
+      "chain": [
+        {
+          "receipt_id": "fixture:r26-authority-root",
+          "issued_at": "2026-10-01T09:00:00.000000Z",
+          "valid_from": "2026-10-01T10:00:00.000000Z",
+          "valid_until": "2026-10-01T20:00:00.000000Z"
+        },
+        {
+          "receipt_id": "fixture:r26-authority-leaf",
+          "issued_at": "2026-10-01T11:00:00.000000Z",
+          "valid_from": "2026-10-01T12:00:00.000000Z",
+          "valid_until": "2026-10-01T18:00:00.000000Z"
+        }
+      ],
+      "requested_effect_window": {
+        "valid_from": "2026-10-01T13:00:00.000000Z",
+        "valid_until": "2026-10-01T13:30:00.000000Z"
+      },
+      "authorized_effect_window": {
+        "valid_from": "2026-10-01T14:00:00.000000Z",
+        "valid_until": "2026-10-01T16:00:00.000000Z"
+      },
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "reason": "The effect applies from the evaluation time, which is before the authorizing scope's valid_from; the effect-scope window is a containment dimension under section 5.1.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-003",
+        "GKOS-AUTHUSE-007",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "authority-interval"
+    }
+  ],
+  "notes": [
+    "Chain links are excerpts of Authority Receipts (originating grant first) with the fields under test.",
+    "The runner's evaluateAuthorityWindow evaluates one receipt window. The gate-evaluator authority kind accepts one window, so chain iteration and effect-scope windows are NOT_MODELED there."
+  ]
+}

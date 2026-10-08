@@ -1,0 +1,202 @@
+{
+  "item": "R26-A11",
+  "title": "Actor identity and sameness",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
+  "requirement_ids": [
+    "GKOS-REVIEW-003",
+    "GKOS-AUTHUSE-004"
+  ],
+  "evaluation": "semantic",
+  "cases": [
+    {
+      "case_id": "R26-A11-01",
+      "title": "Same actor_id, different identity providers (distinct)",
+      "proposer": {
+        "actor_id": "u-17",
+        "actor_class": "human",
+        "identity_provider": "idp-a.example"
+      },
+      "reviewer": {
+        "actor_id": "u-17",
+        "actor_class": "human",
+        "identity_provider": "idp-b.example"
+      },
+      "expected": {
+        "outcome": "admit",
+        "same_actor": false
+      },
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "kind": "role-separation",
+      "operation": "proposal promoted to accepted; proposer and reviewer roles must be distinct",
+      "reason": "Equal actor_id with different identity_provider values denotes different actors."
+    },
+    {
+      "case_id": "R26-A11-02",
+      "title": "Same actor_id, one identity provider absent (distinct)",
+      "proposer": {
+        "actor_id": "u-17",
+        "actor_class": "human",
+        "identity_provider": "idp-a.example"
+      },
+      "reviewer": {
+        "actor_id": "u-17",
+        "actor_class": "human"
+      },
+      "expected": {
+        "outcome": "admit",
+        "same_actor": false
+      },
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "kind": "role-separation",
+      "operation": "proposal promoted to accepted; proposer and reviewer roles must be distinct",
+      "reason": "identity_provider values must be equal or both absent; one absent means different actors."
+    },
+    {
+      "case_id": "R26-A11-03",
+      "title": "Alias policy merges two references; one proposes and the other reviews",
+      "proposer": {
+        "actor_id": "u-17",
+        "actor_class": "human",
+        "identity_provider": "idp-a.example"
+      },
+      "reviewer": {
+        "actor_id": "jdoe",
+        "actor_class": "human",
+        "identity_provider": "idp-b.example"
+      },
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-actor-alias-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "6666666666666666666666666666666666666666666666666666666666666666"
+          }
+        },
+        "same_actor_declarations": [
+          [
+            {
+              "actor_id": "u-17",
+              "identity_provider": "idp-a.example"
+            },
+            {
+              "actor_id": "jdoe",
+              "identity_provider": "idp-b.example"
+            }
+          ]
+        ]
+      },
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L5-005",
+        "requirement_ids": [
+          "GKOS-REVIEW-003",
+          "GKOS-AUTHUSE-004"
+        ],
+        "same_actor": true
+      },
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "kind": "role-separation",
+      "operation": "proposal promoted to accepted; proposer and reviewer roles must be distinct",
+      "reason": "A versioned policy declaration merges the two references, so proposer and reviewer are the same actor."
+    },
+    {
+      "case_id": "R26-A11-04",
+      "title": "Class-only proposer value human",
+      "proposer": "human",
+      "reviewer": {
+        "actor_id": "u-2002",
+        "actor_class": "human",
+        "identity_provider": "idp.example"
+      },
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L5-005",
+        "requirement_ids": [
+          "GKOS-REVIEW-003",
+          "GKOS-AUTHUSE-004"
+        ],
+        "same_actor": "undetermined"
+      },
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "kind": "role-separation",
+      "operation": "proposal promoted to accepted; proposer and reviewer roles must be distinct",
+      "reason": "A class-only value does not identify an actor, so distinctness cannot be determined and the check fails closed."
+    },
+    {
+      "case_id": "R26-A11-05",
+      "title": "Control: same actor_id and same identity provider (same)",
+      "proposer": {
+        "actor_id": "u-17",
+        "actor_class": "human",
+        "identity_provider": "idp-a.example"
+      },
+      "reviewer": {
+        "actor_id": "u-17",
+        "actor_class": "human",
+        "identity_provider": "idp-a.example"
+      },
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L5-005",
+        "requirement_ids": [
+          "GKOS-REVIEW-003",
+          "GKOS-AUTHUSE-004"
+        ],
+        "same_actor": true
+      },
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "kind": "role-separation",
+      "operation": "proposal promoted to accepted; proposer and reviewer roles must be distinct",
+      "reason": "Equal actor_id and equal identity_provider denote the same actor."
+    },
+    {
+      "case_id": "R26-A11-06",
+      "title": "Control: same actor_id, both identity providers absent (same)",
+      "proposer": {
+        "actor_id": "u-17",
+        "actor_class": "human"
+      },
+      "reviewer": {
+        "actor_id": "u-17",
+        "actor_class": "human"
+      },
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L5-005",
+        "requirement_ids": [
+          "GKOS-REVIEW-003",
+          "GKOS-AUTHUSE-004"
+        ],
+        "same_actor": true
+      },
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "kind": "role-separation",
+      "operation": "proposal promoted to accepted; proposer and reviewer roles must be distinct",
+      "reason": "Equal actor_id with both identity_provider values absent denotes the same actor."
+    }
+  ],
+  "notes": [
+    "The runner's review-independence kind compares two opaque strings (proposer_id, reviewer_id). Before results map actor_id (or the class-only value) to those strings. Actor-reference sameness, provider scoping and alias declarations are NOT_MODELED.",
+    "Schema support for actor references in proposals, decisions and assessments is R26-S06 (packet R5)."
+  ]
+}

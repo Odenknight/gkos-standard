@@ -1,0 +1,1400 @@
+{
+  "suite": "R26-S04 conformance manifest declarations",
+  "status": "development; non-qualifying",
+  "note": "role_schema_version and the schema_version constant are 1.1.0, the R26-S02 Refusal Receipt version (schemas/refusal-receipt-1.1.0.schema.json); the supported-pair set names refusal-receipt 1.1.0 to match the declared role projection. Aligned at integration.",
+  "cases": [
+    {
+      "id": "R26-S04-P01",
+      "class": "positive",
+      "requirement_ids": [
+        "GKOS-RECEIPT-003",
+        "GKOS-CANON-001",
+        "GKOS-CANON-008",
+        "GKOS-AUTHUSE-005"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "valid",
+      "reason": "Manifest declares receipt binding, canonical rendering, supported (artifact_type, schema_version) pairs and the R26-A13 Decision Record to Refusal Receipt projection.",
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-P02",
+      "class": "compatibility",
+      "requirement_ids": [
+        "GKOS-CONFORMANCE-002"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "valid",
+      "reason": "A manifest without the new declarations stays schema-valid; the declaring obligation comes from the requirement or annex that names it.",
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z"
+      }
+    },
+    {
+      "id": "R26-S04-N01",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-RECEIPT-003"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "Binding mechanism without its evidence locator.",
+      "expect_paths": [
+        "receipt_binding"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-N02",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CANON-008"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "Verifier digest is not a lowercase SHA-256 hex value.",
+      "expect_paths": [
+        "canonical_rendering.verifier_sha256"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "sha256:4444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-N03",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-CANON-001"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "An empty supported-pair set declares nothing a verifier can accept.",
+      "expect_paths": [
+        "supported_artifact_schemas"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-N04",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "R26-A13 negative: the projection sets gate_code by a constant (invalid projection declaration).",
+      "expect_paths": [
+        "role_projections.0.field_mappings.4"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "constant",
+                "constant": "GKOS-GATE-L5-003"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-N05",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "R26-A13 negative: the projection reads artifact_type from the source record (invalid projection declaration).",
+      "expect_paths": [
+        "role_projections.0.field_mappings.1"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "copy",
+                "source_field": "artifact_type"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-N06",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "Value-table mapping without a declared value table.",
+      "expect_paths": [
+        "role_projections.0.field_mappings.7"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "projection_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition"
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R26-S04-N07",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005"
+      ],
+      "schema": "conformance-manifest.r26.schema.json",
+      "legacy_schema": "conformance-manifest.schema.json",
+      "expect": "invalid",
+      "reason": "Projection declared without its digest.",
+      "expect_paths": [
+        "role_projections.0"
+      ],
+      "instance": {
+        "claim_id": "fixture:claim-r26-s04",
+        "implementation": {
+          "name": "fixture-implementation",
+          "version": "0.0.1"
+        },
+        "standard": {
+          "gkos_release": "GKOS v0.83 development line (unpublished)",
+          "technical_spec": "GKX 2.0",
+          "technical_spec_status": "developmental",
+          "last_ratified_baseline": "GKX 2.0"
+        },
+        "evidence_status": "evidence_incomplete",
+        "requirements_verified": [],
+        "profiles_claimed": [],
+        "tier_claims": [],
+        "applicability": {
+          "mapping_version": "fixture",
+          "mapping_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "evidence_vocabulary_version": "fixture",
+          "evidence_vocabulary_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "attestation": {
+          "mode": "self-attested",
+          "attested_by": "fixture",
+          "assessment_date": "2026-10-07"
+        },
+        "fixtures": {
+          "catalog_version": "fixture",
+          "executed": 0,
+          "passed": 0,
+          "failed": 0,
+          "skipped": 0,
+          "results": []
+        },
+        "evidence": [
+          {
+            "locator": "fixture://evidence/claim-r26-s04",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+          }
+        ],
+        "limitations": [
+          "Development fixture; no profile claim."
+        ],
+        "exceptions": [],
+        "generated_at": "2026-10-07T00:00:00.000000Z",
+        "receipt_binding": {
+          "mechanism": "atomic-transaction",
+          "evidence_locator": "fixture://evidence/receipt-binding"
+        },
+        "canonical_rendering": {
+          "format": "cbor-diagnostic-notation",
+          "version": "RFC 8949 section 8",
+          "verifier_locator": "fixture://verifier/gkx-cbor-1",
+          "verifier_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "supported_artifact_schemas": [
+          {
+            "artifact_type": "decision-record",
+            "schema_version": "1.0.0"
+          },
+          {
+            "artifact_type": "refusal-receipt",
+            "schema_version": "1.1.0"
+          }
+        ],
+        "role_projections": [
+          {
+            "role": "refusal-receipt",
+            "role_schema_version": "1.1.0",
+            "source_schema": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.schema.json",
+            "projection_id": "fixture:projection/decision-record-to-refusal-receipt",
+            "projection_version": "1.0.0",
+            "field_mappings": [
+              {
+                "role_element": "canonical_profile",
+                "operation": "constant",
+                "constant": "GKX-CBOR-1"
+              },
+              {
+                "role_element": "artifact_type",
+                "operation": "constant",
+                "constant": "refusal-receipt"
+              },
+              {
+                "role_element": "schema_version",
+                "operation": "constant",
+                "constant": "1.1.0"
+              },
+              {
+                "role_element": "receipt_id",
+                "operation": "copy",
+                "source_field": "decision_id"
+              },
+              {
+                "role_element": "gate_code",
+                "operation": "copy",
+                "source_field": "gate_code"
+              },
+              {
+                "role_element": "requirement_ids",
+                "operation": "copy",
+                "source_field": "requirement_ids"
+              },
+              {
+                "role_element": "predicate_ref",
+                "operation": "copy",
+                "source_field": "predicate_ref"
+              },
+              {
+                "role_element": "result",
+                "operation": "value-table",
+                "source_field": "disposition",
+                "value_table": [
+                  {
+                    "source_value": "rejected",
+                    "role_value": "refused"
+                  }
+                ]
+              },
+              {
+                "role_element": "input_refs",
+                "operation": "copy",
+                "source_field": "input_refs"
+              },
+              {
+                "role_element": "evaluated_at",
+                "operation": "copy",
+                "source_field": "decided_at"
+              },
+              {
+                "role_element": "actor_context",
+                "operation": "wrap-set",
+                "source_field": "reviewing_actor"
+              },
+              {
+                "role_element": "operation_kind",
+                "operation": "copy",
+                "source_field": "operation_kind"
+              },
+              {
+                "role_element": "refusal_effect",
+                "operation": "copy",
+                "source_field": "refusal_effect"
+              },
+              {
+                "role_element": "policy_ref",
+                "operation": "copy",
+                "source_field": "policy_ref"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

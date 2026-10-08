@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/decision-record.canonical-1.0.0.schema.json",
+  "title": "GKX canonical Decision Record",
+  "description": "R26-S05 and R26-S06 (accepted 2026-10-07; v0.83 development line). Canonical GKX-CBOR-1 Decision Record. The open sidecar schema decision-record.schema.json stays valid for legacy records. Arrays marked x-gkx-set-order are logical sets sorted by canonical CBOR member bytes before encoding. Authoritative order within a writer stream comes from sequence and predecessor_ref, not from decided_at.",
+  "type": "object",
+  "required": [
+    "canonical_profile", "artifact_type", "schema_version",
+    "decision_id", "disposition", "deciding_actor", "decided_at",
+    "proposal_ref", "evidence_refs", "predecessor_ref", "sequence"
+  ],
+  "properties": {
+    "canonical_profile": { "const": "GKX-CBOR-1" },
+    "artifact_type": { "const": "decision-record" },
+    "schema_version": { "const": "1.0.0" },
+    "decision_id": { "type": "string", "minLength": 1 },
+    "disposition": {
+      "type": "string",
+      "enum": ["accepted", "rejected", "deferred", "withdrawn", "expired", "superseded", "escalated"]
+    },
+    "deciding_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "decided_at": { "$ref": "gkx-common.defs.json#/$defs/canonicalTimestamp" },
+    "proposal_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "evidence_refs": {
+      "description": "The exact evidence reviewed (GKOS-REVIEW-002).",
+      "type": "array",
+      "uniqueItems": true,
+      "x-gkx-set-order": "canonical-cbor-bytewise",
+      "items": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" }
+    },
+    "context_used": { "type": "boolean" },
+    "context_manifest_ref": { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+    "reviewing_actor": { "$ref": "gkx-common.defs.json#/$defs/actorReference" },
+    "predecessor_ref": {
+      "description": "Predecessor link in the writer's chain; null for the first record of a writer stream.",
+      "oneOf": [
+        { "$ref": "gkx-common.defs.json#/$defs/artifactReference" },
+        { "type": "null" }
+      ]
+    },
+    "sequence": {
+      "description": "Monotonic per-writer sequence number (Canonical Serialization annex §6.1).",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "context_used": { "const": true } },
+        "required": ["context_used"]
+      },
+      "then": { "required": ["context_manifest_ref"] }
+    }
+  ],
+  "additionalProperties": false
+}

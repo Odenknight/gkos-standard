@@ -1,0 +1,1004 @@
+{
+  "item": "R26-S02",
+  "title": "Refusal Receipt 1.1.0 schema",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
+  "requirement_ids": [
+    "GKOS-AUTHUSE-005",
+    "GKOS-PROFILE-005"
+  ],
+  "evaluation": "schema",
+  "cases": [
+    {
+      "case_id": "R26-S02-01",
+      "title": "Refusal Receipt 1.0.0 stays valid under its own schema",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt.schema.json",
+        "expect": "valid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.0.0",
+        "receipt_id": "fixture:r26-legacy-refusal",
+        "gate_code": "GKOS-GATE-L4-003",
+        "requirement_id": "GKOS-DELEGATION-002",
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "refusal_effect": "no change admitted",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "Version 1.0.0 receipts remain valid historical evidence, including this one without an escalation route."
+    },
+    {
+      "case_id": "R26-S02-02",
+      "title": "Refusal Receipt 1.0.0 is not accepted as 1.1.0",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.0.0",
+        "receipt_id": "fixture:r26-legacy-refusal",
+        "gate_code": "GKOS-GATE-L4-003",
+        "requirement_id": "GKOS-DELEGATION-002",
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "refusal_effect": "no change admitted",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "Different schema_version; singular requirement_id; free-text refusal_effect; no operation_kind."
+    },
+    {
+      "case_id": "R26-S02-03",
+      "title": "1.1.0 receipt using singular requirement_id",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-002",
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "refuse",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "requirement_id": "GKOS-CANON-002"
+      },
+      "reason": "requirement_ids replaces requirement_id."
+    },
+    {
+      "case_id": "R26-S02-04",
+      "title": "Empty requirement_ids",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-002",
+        "requirement_ids": [],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "refuse",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "One or more requirement IDs."
+    },
+    {
+      "case_id": "R26-S02-05",
+      "title": "Duplicate requirement_ids member",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L7-001",
+        "requirement_ids": [
+          "GKOS-AUTHUSE-003",
+          "GKOS-AUTHUSE-003"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "consequential-action",
+        "refusal_effect": "block",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        }
+      },
+      "reason": "requirement_ids is a set."
+    },
+    {
+      "case_id": "R26-S02-06",
+      "title": "Missing refusal_effect",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-002",
+        "requirement_ids": [
+          "GKOS-CANON-002"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "refusal_effect is required."
+    },
+    {
+      "case_id": "R26-S02-07",
+      "title": "Missing operation_kind",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-002",
+        "requirement_ids": [
+          "GKOS-CANON-002"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "refusal_effect": "refuse",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "operation_kind is required."
+    },
+    {
+      "case_id": "R26-S02-08",
+      "title": "Consequential-action refusal with both scope and defect",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "consequential-action",
+        "refusal_effect": "block",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "requested_effect_scope": {
+          "effect_class": "record-export",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "reversible"
+        },
+        "requested_effect_scope_defect": "invalid"
+      },
+      "reason": "Exactly one of requested_effect_scope and requested_effect_scope_defect."
+    },
+    {
+      "case_id": "R26-S02-09",
+      "title": "Other refusal with a defect",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-002",
+        "requirement_ids": [
+          "GKOS-CANON-002"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "refuse",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "requested_effect_scope_defect": "absent"
+      },
+      "reason": "An other refusal forbids the defect."
+    },
+    {
+      "case_id": "R26-S02-10",
+      "title": "L4-001 refusal without escalation route",
+      "requirement_ids": [
+        "GKOS-RETENTION-003",
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L4-001",
+        "requirement_ids": [
+          "GKOS-RETENTION-003"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "consequential-action",
+        "refusal_effect": "block",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "requested_effect_scope": {
+          "effect_class": "delete",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "irreversible"
+        }
+      },
+      "reason": "Escalation route required for L4-001."
+    },
+    {
+      "case_id": "R26-S02-11",
+      "title": "L4-002 refusal without escalation route",
+      "requirement_ids": [
+        "GKOS-RETENTION-003",
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L4-002",
+        "requirement_ids": [
+          "GKOS-RETENTION-003"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "consequential-action",
+        "refusal_effect": "block",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "requested_effect_scope": {
+          "effect_class": "delete",
+          "resources": [
+            "res:a"
+          ],
+          "environment": "production",
+          "reversibility": "irreversible"
+        }
+      },
+      "reason": "Escalation route required for L4-002."
+    },
+    {
+      "case_id": "R26-S02-12",
+      "title": "L5-005 refusal without escalation route",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L5-005",
+        "requirement_ids": [
+          "GKOS-REVIEW-003",
+          "GKOS-AUTHUSE-004"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "block",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "Escalation route required for L5-005."
+    },
+    {
+      "case_id": "R26-S02-13",
+      "title": "L7-003 refusal declaring kind other",
+      "requirement_ids": [
+        "GKOS-EFFECT-003",
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-input",
+            "artifact_version": "1.0.0",
+            "digest": {
+              "algorithm": "sha-256",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "block",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "L7-002 and L7-003 require consequential-action."
+    },
+    {
+      "case_id": "R26-S02-14",
+      "title": "Input reference with a received-bytes digest",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "valid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-001",
+        "requirement_ids": [
+          "GKOS-CANON-001"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-received-bytes",
+            "artifact_version": "received",
+            "digest": {
+              "algorithm": "sha-256",
+              "basis": "received-bytes",
+              "value": "8888888888888888888888888888888888888888888888888888888888888888"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "refuse",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "input_refs may use received-bytes digests (R26-S02, R26-A06)."
+    },
+    {
+      "case_id": "R26-S02-15",
+      "title": "Received-bytes digest labelled GKX-CBOR-1",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-PROFILE-005"
+      ],
+      "kind": "schema",
+      "schema": {
+        "against": "refusal-receipt-1.1.0.schema.json",
+        "expect": "invalid"
+      },
+      "artifact": {
+        "canonical_profile": "GKX-CBOR-1",
+        "artifact_type": "refusal-receipt",
+        "schema_version": "1.1.0",
+        "receipt_id": "fixture:r26-refusal",
+        "gate_code": "GKOS-GATE-L6-001",
+        "requirement_ids": [
+          "GKOS-CANON-001"
+        ],
+        "predicate_ref": {
+          "component_id": "fixture:r26-predicate",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "result": "refused",
+        "input_refs": [
+          {
+            "artifact_id": "fixture:r26-received-bytes",
+            "artifact_version": "received",
+            "digest": {
+              "algorithm": "sha-256",
+              "basis": "received-bytes",
+              "canonical_profile": "GKX-CBOR-1",
+              "value": "8888888888888888888888888888888888888888888888888888888888888888"
+            }
+          }
+        ],
+        "evaluated_at": "2026-10-01T13:00:00.000000Z",
+        "actor_context": [
+          {
+            "actor_id": "agent-exec-01",
+            "actor_class": "agent",
+            "identity_provider": "agents.example"
+          }
+        ],
+        "operation_kind": "other",
+        "refusal_effect": "refuse",
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "reason": "A digest is one form or the other; a received-bytes digest is not labelled GKX-CBOR-1."
+    }
+  ],
+  "notes": [
+    "Before: evaluated on the base commit, where the 1.1.0 schema file does not exist."
+  ]
+}

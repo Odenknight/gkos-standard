@@ -1,0 +1,24 @@
+{
+  "fixture_id": "R26-S03-P-REF-005",
+  "r26_item": "R26-S03",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "positive",
+  "requirement_ids": [
+    "GKOS-CANON-007"
+  ],
+  "subject": "schema-definition",
+  "schema_ref": "schemas/gkx-common.defs.json#/$defs/artifactReferenceAnyDigest",
+  "instance": {
+    "artifact_id": "fixture:claim-a-source",
+    "artifact_version": "1.0.0",
+    "digest": {
+      "algorithm": "sha-256",
+      "canonical_profile": "GKX-CBOR-1",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  "expected": {
+    "result": "valid"
+  },
+  "reason": "Artifact reference with a GKX-CBOR-1 digest."
+}

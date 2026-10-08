@@ -1,0 +1,8 @@
+{
+  "snapshot_id": "fixture:r26-a16-snapshot-held-malformed",
+  "snapshot_version": "1.0.0",
+  "description": "Eligible snapshot whose held item is a bare identifier, without kind or digest-bound reference.",
+  "held_items": [
+    "fixture:contradiction-b"
+  ]
+}

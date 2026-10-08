@@ -1,0 +1,20 @@
+{
+  "snapshot_id": "fixture:r26-a16-snapshot-digest-extra-basis",
+  "snapshot_version": "1.0.0",
+  "description": "Eligible snapshot whose held contradiction digest names canonical_profile GKX-CBOR-1 and also carries basis \"unsupported\".",
+  "held_items": [
+    {
+      "kind": "contradiction",
+      "object_ref": {
+        "artifact_id": "fixture:contradiction-b",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "basis": "unsupported",
+          "value": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      }
+    }
+  ]
+}

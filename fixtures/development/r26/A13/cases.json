@@ -1,0 +1,320 @@
+{
+  "item": "R26-A13",
+  "title": "Satisfying a role with an existing record",
+  "status": "development; accepted under R26 (accepted in part 2026-10-07); non-qualifying",
+  "requirement_ids": [
+    "GKOS-AUTHUSE-005",
+    "GKOS-REVIEW-001"
+  ],
+  "evaluation": "role-projection",
+  "cases": [
+    {
+      "case_id": "R26-A13-01",
+      "title": "Decision Record satisfies the Refusal Receipt role through the declared projection",
+      "expected": {
+        "satisfies_role": true,
+        "role_object_file": "expected.role-object.json",
+        "source_schema_valid": true
+      },
+      "reason": "Every role element comes from one source field or an envelope constant; the role object validates against the R26-S02 schema; the source keeps its own artifact_type and hash.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-02",
+      "title": "Projection omits the refusal_effect mapping",
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "refusal_effect"
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "role-schema",
+        "missing": "refusal_effect"
+      },
+      "reason": "R26-S02 always requires refusal_effect.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-03",
+      "title": "Projection omits the gate_code mapping",
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "gate_code"
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "role-schema",
+        "missing": "gate_code"
+      },
+      "reason": "Under R26-A10 Option A (owner answer Q4) gate_code stays required, so the role object fails the role schema. The Option B branch of this case does not apply.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-04",
+      "title": "Source disposition deferred, which the value table does not list",
+      "source_patch": {
+        "disposition": "deferred"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "failure": "value-table",
+        "source_schema_valid": true
+      },
+      "reason": "A source value missing from the table means the record does not satisfy the role.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-05",
+      "title": "Source decided_at 2026-10-01T14:00:00Z (valid for the source, not canonical for the role)",
+      "source_patch": {
+        "decided_at": "2026-10-01T14:00:00Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "failure": "role-schema",
+        "source_schema_valid": true
+      },
+      "reason": "The projection copies the value unchanged and may not reformat it; the role's canonical timestamp rejects it.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-06",
+      "title": "Projection sets gate_code by a constant",
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "gate_code"
+        },
+        {
+          "op": "add-constant",
+          "role_element": "gate_code",
+          "value": "GKOS-GATE-L5-003"
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "projection-declaration"
+      },
+      "reason": "Only canonical_profile, artifact_type and schema_version may be set by a constant. The role object would validate, so the defect is in the declaration.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-07",
+      "title": "Projection reads artifact_type from the source record",
+      "projection_patch": [
+        {
+          "op": "remove-constant",
+          "role_element": "artifact_type"
+        },
+        {
+          "op": "add-mapping",
+          "mapping": {
+            "role_element": "artifact_type",
+            "source_field": "artifact_type",
+            "operation": "copy"
+          }
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "projection-declaration",
+        "also_fails_role_schema": true
+      },
+      "reason": "Envelope constants are never read from the source. The copied value decision-record also fails the role schema's constant.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-08",
+      "title": "Value table reformats the decided_at timestamp into the role's canonical form",
+      "source_patch": {
+        "decided_at": "2026-10-01T14:00:00Z"
+      },
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "evaluated_at"
+        },
+        {
+          "op": "add-mapping",
+          "mapping": {
+            "role_element": "evaluated_at",
+            "source_field": "decided_at",
+            "operation": "value-table",
+            "value_table": {
+              "2026-10-01T14:00:00Z": "2026-10-01T14:00:00.000000Z"
+            }
+          }
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "projection-declaration",
+        "source_schema_valid": true
+      },
+      "reason": "Reviewer mutation r26-REV-010. A value table translates only an enumerated value; decided_at is a timestamp, not an enumerated field, and evaluated_at is a canonical timestamp. A timestamp is not reformatted, so the declaration is defective. Without the rule the role object equals the positive fixture's expected role object.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-09",
+      "title": "Value table rewrites the decision_id identifier",
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "receipt_id"
+        },
+        {
+          "op": "add-mapping",
+          "mapping": {
+            "role_element": "receipt_id",
+            "source_field": "decision_id",
+            "operation": "value-table",
+            "value_table": {
+              "fixture:r26-decision-0001": "fixture:r26-refusal-0001"
+            }
+          }
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "projection-declaration",
+        "source_schema_valid": true
+      },
+      "reason": "An identifier is not reformatted or replaced. decision_id is not an enumerated field of the source schema and receipt_id is not an enumerated role element, so a value table on them is a declaration defect.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-10",
+      "title": "Value table converts a proposal_hash digest into the receipt identifier",
+      "source_patch": {
+        "proposal_hash": "sha256:4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "receipt_id"
+        },
+        {
+          "op": "add-mapping",
+          "mapping": {
+            "role_element": "receipt_id",
+            "source_field": "proposal_hash",
+            "operation": "value-table",
+            "value_table": {
+              "sha256:4444444444444444444444444444444444444444444444444444444444444444": "fixture:r26-refusal-0001"
+            }
+          }
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "projection-declaration",
+        "source_schema_valid": true
+      },
+      "reason": "A digest is not converted. proposal_hash is a content hash, not an enumerated field, so a value table on it is a declaration defect.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    },
+    {
+      "case_id": "R26-A13-11",
+      "title": "Value table maps disposition to a value the role schema does not declare",
+      "projection_patch": [
+        {
+          "op": "remove-mapping",
+          "role_element": "result"
+        },
+        {
+          "op": "add-mapping",
+          "mapping": {
+            "role_element": "result",
+            "source_field": "disposition",
+            "operation": "value-table",
+            "value_table": {
+              "rejected": "denied"
+            }
+          }
+        }
+      ],
+      "expected": {
+        "satisfies_role": false,
+        "failure": "projection-declaration",
+        "source_schema_valid": true
+      },
+      "reason": "Both fields are enumerated, but denied is not an enumerated value of the role element result. A value table entry must map a declared source value to a declared role value.",
+      "requirement_ids": [
+        "GKOS-AUTHUSE-005",
+        "GKOS-REVIEW-001"
+      ],
+      "kind": "role-projection",
+      "source_file": "source.decision-record.json",
+      "projection_file": "projection.decision-record-to-refusal-receipt.json"
+    }
+  ],
+  "notes": [
+    "Source: a Decision Record valid under the current open sidecar schema (decision-record.schema.json), as R26-A13 drafts it. The canonical Decision Record of R26-S05 (packet R5) has closed properties and cannot carry the refusal fields, so it is not the source schema for this fixture.",
+    "The projection declaration shape here is a fixture stand-in. R26-S04 (packet R5) defines the conformance-manifest role_projections field; the declaration is to be re-expressed in that shape at integration.",
+    "Role-object schema validation uses the runner's Ajv 2020 configuration. Building the role object from a projection, and checking the declaration, has no reference module: NOT_MODELED (the evaluation harness for this evidence package applies the three operations directly)."
+  ]
+}

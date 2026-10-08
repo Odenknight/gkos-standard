@@ -1,0 +1,255 @@
+{
+  "suite": "R26-S06 actor references",
+  "status": "development; non-qualifying",
+  "note": "The Decision Record half of R26-S06 is the canonical Decision Record's deciding_actor; see S05 case R26-S05-N03.",
+  "cases": [
+    {
+      "id": "R26-S06-P01",
+      "class": "positive",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "proposal-envelope.r26.schema.json",
+      "legacy_schema": "proposal-envelope.schema.json",
+      "expect": "valid",
+      "reason": "Proposer is an actor reference that identifies an individual actor.",
+      "instance": {
+        "proposal_id": "fixture:proposal-0002",
+        "target_uid": "019270a0-0000-7000-8000-000000000002",
+        "input_hash": "sha256:1111",
+        "patch": {
+          "tags": [
+            "fixture"
+          ]
+        },
+        "proposer": {
+          "actor_id": "agent-run-42",
+          "actor_class": "agent",
+          "identity_provider": "agent-registry:fixture"
+        },
+        "submitted_at": "2026-10-01T13:00:00.000000Z",
+        "evidence_set_hash": "sha256:2222"
+      }
+    },
+    {
+      "id": "R26-S06-N01",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "proposal-envelope.r26.schema.json",
+      "legacy_schema": "proposal-envelope.schema.json",
+      "expect": "invalid",
+      "reason": "Class-only proposer cannot support role separation.",
+      "expect_paths": [
+        "proposer"
+      ],
+      "instance": {
+        "proposal_id": "fixture:proposal-0002",
+        "target_uid": "019270a0-0000-7000-8000-000000000002",
+        "input_hash": "sha256:1111",
+        "patch": {
+          "tags": [
+            "fixture"
+          ]
+        },
+        "proposer": "human",
+        "submitted_at": "2026-10-01T13:00:00.000000Z",
+        "evidence_set_hash": "sha256:2222"
+      }
+    },
+    {
+      "id": "R26-S06-N02",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "proposal-envelope.r26.schema.json",
+      "legacy_schema": "proposal-envelope.schema.json",
+      "expect": "invalid",
+      "reason": "Actor reference without actor_id.",
+      "expect_paths": [
+        "proposer"
+      ],
+      "instance": {
+        "proposal_id": "fixture:proposal-0002",
+        "target_uid": "019270a0-0000-7000-8000-000000000002",
+        "input_hash": "sha256:1111",
+        "patch": {
+          "tags": [
+            "fixture"
+          ]
+        },
+        "proposer": {
+          "actor_class": "human"
+        },
+        "submitted_at": "2026-10-01T13:00:00.000000Z",
+        "evidence_set_hash": "sha256:2222"
+      }
+    },
+    {
+      "id": "R26-S06-P02",
+      "class": "positive",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "assessment.r26.schema.json",
+      "legacy_schema": "assessment.schema.json",
+      "expect": "valid",
+      "reason": "Assessor identity is an actor reference.",
+      "instance": {
+        "assessmentId": "fixture:assessment-0001",
+        "targetUid": "019270a0-0000-7000-8000-000000000002",
+        "profile": "gkx-2.0-validating-projection",
+        "policy": {
+          "id": "policy:assessment",
+          "version": "1.0.0",
+          "hash": "sha256:3333",
+          "weights": {
+            "structural_completeness": 1
+          },
+          "missingValueBehavior": "exclude"
+        },
+        "assessor": {
+          "id": {
+            "actor_id": "gkos-engine",
+            "actor_class": "tool",
+            "identity_provider": "tool-registry:fixture"
+          },
+          "engineVersion": "1.0.5"
+        },
+        "inputHash": "sha256:4444",
+        "calculatedAt": "2026-10-01T12:00:00.000000Z",
+        "scores": {
+          "structural_completeness": 0.5,
+          "provenance_quality": 0.5,
+          "evidence_support": 0.5,
+          "relationship_integrity": 0.5,
+          "temporal_freshness": 0.5,
+          "contradiction_status": 0.5,
+          "review_readiness": 0.5,
+          "overall": 0.5
+        },
+        "interpretation": "documentation-and-support-quality-not-truth"
+      }
+    },
+    {
+      "id": "R26-S06-N03",
+      "class": "negative",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "assessment.r26.schema.json",
+      "legacy_schema": "assessment.schema.json",
+      "expect": "invalid",
+      "reason": "Legacy actorIdentity string is replaced in the new version.",
+      "expect_paths": [
+        "assessor.id"
+      ],
+      "instance": {
+        "assessmentId": "fixture:assessment-0001",
+        "targetUid": "019270a0-0000-7000-8000-000000000002",
+        "profile": "gkx-2.0-validating-projection",
+        "policy": {
+          "id": "policy:assessment",
+          "version": "1.0.0",
+          "hash": "sha256:3333",
+          "weights": {
+            "structural_completeness": 1
+          },
+          "missingValueBehavior": "exclude"
+        },
+        "assessor": {
+          "id": "tool:gkos-engine",
+          "engineVersion": "1.0.5"
+        },
+        "inputHash": "sha256:4444",
+        "calculatedAt": "2026-10-01T12:00:00.000000Z",
+        "scores": {
+          "structural_completeness": 0.5,
+          "provenance_quality": 0.5,
+          "evidence_support": 0.5,
+          "relationship_integrity": 0.5,
+          "temporal_freshness": 0.5,
+          "contradiction_status": 0.5,
+          "review_readiness": 0.5,
+          "overall": 0.5
+        },
+        "interpretation": "documentation-and-support-quality-not-truth"
+      }
+    },
+    {
+      "id": "R26-S06-C01",
+      "class": "compatibility",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "proposal-envelope.schema.json",
+      "legacy_schema": "proposal-envelope.schema.json",
+      "expect": "valid",
+      "reason": "Legacy sidecar keeps actorIdentity under proposal-envelope.schema.json (R26-S06).",
+      "instance": {
+        "proposal_id": "fixture:proposal-0002",
+        "target_uid": "019270a0-0000-7000-8000-000000000002",
+        "input_hash": "sha256:1111",
+        "patch": {
+          "tags": [
+            "fixture"
+          ]
+        },
+        "proposer": "human",
+        "submitted_at": "2026-10-01T13:00:00.000000Z",
+        "evidence_set_hash": "sha256:2222"
+      }
+    },
+    {
+      "id": "R26-S06-C02",
+      "class": "compatibility",
+      "requirement_ids": [
+        "GKOS-REVIEW-003",
+        "GKOS-AUTHUSE-004"
+      ],
+      "schema": "assessment.schema.json",
+      "legacy_schema": "assessment.schema.json",
+      "expect": "valid",
+      "reason": "Legacy sidecar keeps actorIdentity under assessment.schema.json (R26-S06).",
+      "instance": {
+        "assessmentId": "fixture:assessment-0001",
+        "targetUid": "019270a0-0000-7000-8000-000000000002",
+        "profile": "gkx-2.0-validating-projection",
+        "policy": {
+          "id": "policy:assessment",
+          "version": "1.0.0",
+          "hash": "sha256:3333",
+          "weights": {
+            "structural_completeness": 1
+          },
+          "missingValueBehavior": "exclude"
+        },
+        "assessor": {
+          "id": "tool:gkos-engine",
+          "engineVersion": "1.0.5"
+        },
+        "inputHash": "sha256:4444",
+        "calculatedAt": "2026-10-01T12:00:00.000000Z",
+        "scores": {
+          "structural_completeness": 0.5,
+          "provenance_quality": 0.5,
+          "evidence_support": 0.5,
+          "relationship_integrity": 0.5,
+          "temporal_freshness": 0.5,
+          "contradiction_status": 0.5,
+          "review_readiness": 0.5,
+          "overall": 0.5
+        },
+        "interpretation": "documentation-and-support-quality-not-truth"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "fixture_id": "R26-S03-N-RBD-003",
+  "r26_item": "R26-S03",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "negative",
+  "requirement_ids": [
+    "GKOS-CANON-007"
+  ],
+  "subject": "schema-definition",
+  "schema_ref": "schemas/gkx-common.defs.json#/$defs/receivedBytesDigest",
+  "instance": {
+    "algorithm": "sha-256",
+    "basis": "received-bytes",
+    "value": "1D583C30D0F76FFC4064A8A04EEF578063ABEC478BF6E4DDFE15542E89DB1198"
+  },
+  "expected": {
+    "result": "invalid"
+  },
+  "reason": "The digest value is lowercase hexadecimal (R26-A06)."
+}

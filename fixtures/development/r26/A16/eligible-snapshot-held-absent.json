@@ -1,0 +1,5 @@
+{
+  "snapshot_id": "fixture:r26-a16-snapshot-held-absent",
+  "snapshot_version": "1.0.0",
+  "description": "Eligible snapshot without a held_items collection. Its contents cannot be evaluated."
+}

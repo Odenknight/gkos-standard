@@ -1,0 +1,8 @@
+{
+  "rule_id": "fixture:r26-closure-rule-a",
+  "rule_version": "1.0.0",
+  "required_kinds": [
+    "contradiction",
+    "restriction"
+  ]
+}

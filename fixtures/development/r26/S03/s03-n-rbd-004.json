@@ -1,0 +1,21 @@
+{
+  "fixture_id": "R26-S03-N-RBD-004",
+  "r26_item": "R26-S03",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "negative",
+  "requirement_ids": [
+    "GKOS-CANON-007"
+  ],
+  "subject": "schema-definition",
+  "schema_ref": "schemas/gkx-common.defs.json#/$defs/artifactDigest",
+  "instance": {
+    "algorithm": "sha-256",
+    "basis": "received-bytes",
+    "canonical_profile": "GKX-CBOR-1",
+    "value": "1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198"
+  },
+  "expected": {
+    "result": "invalid"
+  },
+  "reason": "A digest carrying both the canonical label and the received-bytes basis matches neither form."
+}

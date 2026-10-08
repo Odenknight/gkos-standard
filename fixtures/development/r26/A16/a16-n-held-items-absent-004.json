@@ -1,0 +1,75 @@
+{
+  "fixture_id": "R26-A16-N-HELD-ABSENT-004",
+  "r26_item": "R26-A16",
+  "status": "Development fixture accepted under R26 (accepted in part 2026-10-07) for the v0.83 development line; non-qualifying.",
+  "class": "negative",
+  "requirement_ids": [
+    "GKOS-CONTEXT-004"
+  ],
+  "subject": "closure",
+  "eligible_snapshot": "fixtures/development/r26/A16/eligible-snapshot-held-absent.json",
+  "closure_rules": [
+    "fixtures/development/r26/A16/closure-rule-a.json",
+    "fixtures/development/r26/A16/closure-rule-b.json"
+  ],
+  "selection_envelope": "fixtures/development/r26/A16/selection-envelope-held-absent.json",
+  "context_manifest": {
+    "canonical_profile": "GKX-CBOR-1",
+    "artifact_type": "context-manifest",
+    "schema_version": "1.0.0",
+    "manifest_id": "fixture:r26-a16-manifest-held-absent",
+    "manifest_version": "1.0.0",
+    "purpose": "R26 canonical serialization fixture",
+    "recipient": "fixture-reviewer",
+    "selection_set_ref": {
+      "artifact_id": "fixture:r26-a16-selection-held-absent",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "2c980861cb70cdc8c20e63509f5ac8a6bc05983b4d29627cf26bfdb97f09a9ea"
+      }
+    },
+    "policy_ref": {
+      "component_id": "fixture:r26-closure-rule-a",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "1fa18c5ab97abaaeac1b10ca5f1960c59e8658ca0995dd6e062eb459f8bf5161"
+      }
+    },
+    "compiler_ref": {
+      "component_id": "gkos-ts-reference-compiler",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      }
+    },
+    "compiled_at": "2026-10-01T14:01:00.000000Z",
+    "members": [
+      {
+        "kind": "context",
+        "object_ref": {
+          "artifact_id": "fixture:claim-a",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    ],
+    "known_omissions": []
+  },
+  "expected": {
+    "result": "refused",
+    "gate_codes": [
+      "GKOS-GATE-L6-009"
+    ]
+  },
+  "reason": "Reviewer mutation r26-REV-012. The snapshot is digest-bound, but binding it does not establish that its contents are evaluable. With held_items absent the closure rule cannot determine the required set, so evaluation fails closed with GKOS-GATE-L6-009; it is not read as an empty set, so a manifest without closure members does not pass."
+}

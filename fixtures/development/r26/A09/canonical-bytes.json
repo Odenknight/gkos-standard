@@ -1,0 +1,14 @@
+{
+  "suite": "GKOS-v0.83-development-R26-A09-canonical-verifier-bytes",
+  "status": "accepted under R26 (accepted in part 2026-10-07); v0.83 development line",
+  "verifier": "conformance/runner/canonical.mjs verifyCanonicalBytes",
+  "cases": [
+    {"id":"R26-A09-P01","class":"positive","requirement_ids":["GKOS-CANON-002"],"cbor_hex":"a2616101616202","description":"map {a:1, b:2} with keys in bytewise order","expected_codes":[]},
+    {"id":"R26-A09-N01","class":"negative","requirement_ids":["GKOS-CANON-002"],"cbor_hex":"a2616101616102","description":"duplicate map key a","expected_codes":["GKOS-GATE-L6-002"]},
+    {"id":"R26-A09-N02","class":"negative","requirement_ids":["GKOS-CANON-002"],"cbor_hex":"a2616202616101","description":"map keys b, a out of bytewise order; detected by re-encoding comparison","expected_codes":["GKOS-GATE-L6-002"]},
+    {"id":"R26-A09-N03","class":"negative","requirement_ids":["GKOS-CANON-002"],"cbor_hex":"a1616ba2617a01616102","description":"nested map keys z, a out of bytewise order","expected_codes":["GKOS-GATE-L6-002"]},
+    {"id":"R26-A09-N04","class":"negative","requirement_ids":["GKOS-CANON-001","GKOS-CANON-002"],"cbor_hex":"bf616201616101ff","description":"indefinite-length map whose keys are also out of order; two independent conditions, either code is acceptable","expected_codes":["GKOS-GATE-L6-001","GKOS-GATE-L6-002"]},
+    {"id":"R26-A09-C01","class":"negative","requirement_ids":["GKOS-CANON-001"],"cbor_hex":"9f01ff","description":"control: indefinite-length array stays GKOS-GATE-L6-001","expected_codes":["GKOS-GATE-L6-001"]},
+    {"id":"R26-A09-C02","class":"negative","requirement_ids":["GKOS-CANON-001"],"cbor_hex":"a161611801","description":"control: sorted map with a non-shortest integer head stays GKOS-GATE-L6-001","expected_codes":["GKOS-GATE-L6-001"]}
+  ]
+}

@@ -2,13 +2,15 @@ import { evaluateGate } from "./gate-evaluator.mjs";
 
 // Execute catalog-bound predicate twins. This establishes predicate coverage only,
 // not receipts, protected-state preservation or cumulative profile qualification.
-export function evaluateTrackATwins(catalog, suite) {
+// `file` names the catalog-relative twin file the bindings must cite; the R26
+// development twins use the same contract at their own path.
+export function evaluateTrackATwins(catalog, suite, file = "track-a/cases.json") {
   const errors = [];
   const coverage = {};
   const ids = new Set();
   for (const fixture of catalog.fixtures) {
     const matches = suite.cases.filter(item => item.id === fixture.case_id);
-    if (ids.has(fixture.fixture_id) || matches.length !== 1 || fixture.file !== "track-a/cases.json") {
+    if (ids.has(fixture.fixture_id) || matches.length !== 1 || fixture.file !== file) {
       errors.push(`${fixture.fixture_id}: missing, duplicate or unsupported executable binding`);
       continue;
     }
