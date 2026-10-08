@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Accept R26 by item (2026-10-07; R26 §7.3): R26-A02, A03, A05–A16 and
+  R26-S01–S07 are accepted on the v0.83 development line; R26-A01, A04, A17
+  and A18 stay proposed until GKOS-Engine reference evidence exists. Record
+  the owner's second-round answers (R26 §7.2), including GKOS-GATE-L4-009
+  for the R26-A15 refusal on an active hold. Decision records only; the
+  accepted items' implementation reaches `main` by a separate pull request.
+  The published v0.82.1 edition is unchanged.
 - Reconcile stale edition coordinates and publication-status wording with the
   published GKOS-2026-09-24 v0.82.1 edition in `NOTICE.md`, `LICENSE.md`,
   `SECURITY.md`, `ROADMAP.md`, `TECHNICAL_README.md`, `docs/CORPUS-STATUS.md`,

@@ -7,23 +7,8 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-### R26 — Specification detail amendments
-
-- **Date:** 2026-10-07
-- **Status:** Proposed; no acceptance date
-- **Development line:** v0.83 development line opened by R25 (accepted 2026-10-07)
-- **Owner answers:** Q1–Q6 answered 2026-10-07 (R26 §7.1); implementation proceeds on a branch as the evidence package for acceptance
-- **Proposal:** Close technical-detail gaps `GAP-001..024` recorded in
-  [GKOS-SPEC-DETAIL-001](../docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md)
-  through 18 drafted normative amendments (`R26-A01..A18`) and 7 schema changes
-  (`R26-S01..S07`): re-adopted v0.76 definitions, effect-scope containment,
-  authority intervals and revocation at action time, Refusal Receipt typing,
-  received-bytes digests, schema-to-CBOR mapping, gate-code specificity and
-  coverage, actor sameness, State-Change Receipt elements, role projections,
-  overdue review, hold results, and closure-rule identity. Allocates no
-  requirement ID; gate codes follow Q4 Option A on acceptance.
-- **Record:**
-  [R26_Specification_Detail_Amendments_Development_Decision_Record.md](R26_Specification_Detail_Amendments_Development_Decision_Record.md)
+No R-record is wholly proposed. R26 items R26-A01, A04, A17 and A18 stay
+proposed inside the partly accepted R26 record below.
 
 ## Owner clarifications
 
@@ -40,6 +25,26 @@ These clarify existing decisions without allocating an R-number.
   implementation; implementation independence must still be demonstrated.
 
 ## Accepted decisions
+
+### R26 — Specification detail amendments
+
+- **Date:** 2026-10-07
+- **Status:** Accepted in part (by item); v0.83 development line
+- **Acceptance:** 2026-10-07 for R26-A02, A03, A05–A16 and R26-S01–S07 (R26 §7.3).
+  R26-A01, A04, A17 and A18 stay proposed until GKOS-Engine reference evidence exists
+- **Development line:** v0.83 development line opened by R25 (accepted 2026-10-07)
+- **Owner answers:** Q1–Q6 answered 2026-10-07 (R26 §7.1); second-round answers 2026-10-07 (R26 §7.2), including GKOS-GATE-L4-009 for R26-A15
+- **Decision:** Close technical-detail gaps `GAP-001..024` recorded in
+  [GKOS-SPEC-DETAIL-001](../docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md)
+  through 18 drafted normative amendments (`R26-A01..A18`) and 7 schema changes
+  (`R26-S01..S07`): re-adopted v0.76 definitions, effect-scope containment,
+  authority intervals and revocation at action time, Refusal Receipt typing,
+  received-bytes digests, schema-to-CBOR mapping, gate-code specificity and
+  coverage, actor sameness, State-Change Receipt elements, role projections,
+  overdue review, hold results, and closure-rule identity. Allocates no
+  requirement ID; gate codes follow Q4 Option A (39 on the development line).
+- **Record:**
+  [R26_Specification_Detail_Amendments_Development_Decision_Record.md](R26_Specification_Detail_Amendments_Development_Decision_Record.md)
 
 ### R25 — v0.83 development line
 

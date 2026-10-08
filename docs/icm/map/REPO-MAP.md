@@ -6,7 +6,7 @@ Informative tooling output: it grants no authority and does not decide standing.
 - Current edition (from `CITATION.cff`): GKOS-2026-09-24 v0.82.1
 - Files mapped: 532 (tracked plus untracked files that are not ignored)
 - Frozen-path files: 144
-- Stale-edition candidates (outside historical, release, decision, generated and asset files and outside historical sections): 699
+- Stale-edition candidates (outside historical, release, decision, generated and asset files and outside historical sections): 700
 - Current-facing "pre-standard" occurrences without the D2 wording: 13
 - GRAPHIC-NEEDED earmarks: 43
 
@@ -56,7 +56,7 @@ Counts per area tracker. Columns: N normative, I informative, P proposed, D deci
 | [release-candidates](areas/release-candidates.md) | [release-candidates/](../../../release-candidates/) | 12 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | [releases](areas/releases.md) | [releases/](../../../releases/) | 42 | 0 | 0 | 0 | 0 | 0 | 42 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | [requirements](areas/requirements.md) | [requirements/](../../../requirements/) | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 88 | 0 | 0 |
-| [root](areas/root.md) | repository root, `LICENSES/` | 24 | 0 | 4 | 0 | 0 | 1 | 0 | 0 | 19 | 0 | 0 | 0 | 72 | 3 | 9 |
+| [root](areas/root.md) | repository root, `LICENSES/` | 24 | 0 | 4 | 0 | 0 | 1 | 0 | 0 | 19 | 0 | 0 | 0 | 73 | 3 | 9 |
 | [schemas](areas/schemas.md) | [schemas/](../../../schemas/) | 37 | 15 | 1 | 18 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 37 | 15 | 0 | 0 |
 | [scripts](areas/scripts.md) | [scripts/](../../../scripts/) | 15 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 121 | 0 | 0 |
 | [standard](areas/standard.md) | [standard/](../../../standard/) | 12 | 7 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 11 | 22 | 1 | 1 |
@@ -81,7 +81,7 @@ Lines that use "pre-standard" outside historical, release and decision files and
 | File | Lines | D2 wording lines |
 | --- | --- | --- |
 | [.zenodo.json](../../../.zenodo.json) | 22 | - |
-| [CHANGELOG.md](../../../CHANGELOG.md) | 20 | - |
+| [CHANGELOG.md](../../../CHANGELOG.md) | 27 | - |
 | [NOTICE.md](../../../NOTICE.md) | - | 13 |
 | [README.md](../../../README.md) | - | 45, 47 |
 | [ROADMAP.md](../../../ROADMAP.md) | 36 | - |
@@ -111,7 +111,7 @@ Edition tokens other than the current edition (GKOS-2026-09-24 v0.82.1) in curre
 | [.github/workflows/v081-post-tag-verification.yml](../../../.github/workflows/v081-post-tag-verification.yml) | process | 10 | 1, 6, 24, 28, 35, 39, 43, 51, 55, 60 |
 | [.github/workflows/v082-post-tag-verification.yml](../../../.github/workflows/v082-post-tag-verification.yml) | process | 11 | 1, 6, 18, 40, 41, 43, 44, 47, 55, 56, 61 |
 | [.zenodo.json](../../../.zenodo.json) | process | 1 | 4 |
-| [CHANGELOG.md](../../../CHANGELOG.md) | process | 6 | 16, 22, 46, 58, 63 |
+| [CHANGELOG.md](../../../CHANGELOG.md) | process | 7 | 6, 23, 29, 53, 65, 70 |
 | [README.md](../../../README.md) | informative | 17 | 52, 54, 65, 83, 85, 125, 219, 309 |
 | [ROADMAP.md](../../../ROADMAP.md) | informative | 23 | 3, 6, 13, 14, 21, 28, 35, 43, 44, 45, 52, 55, ... |
 | [TECHNICAL_README.md](../../../TECHNICAL_README.md) | informative | 11 | 20, 21, 34, 88, 92, 215 |

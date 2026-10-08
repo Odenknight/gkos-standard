@@ -28,7 +28,7 @@ Development decision records (R-series), the decision register, open questions a
 | `GKOS_Decision_Register.md` | major | decision | current; integrator-only |
 | Accepted R-records | major | decision | immutable |
 | R25 v0.83 development line | major | decision | planned; proposed |
-| R26 specification detail amendments | major | decision | planned; proposed |
+| R26 specification detail amendments | major | decision | current; accepted in part 2026-10-07 (A01, A04, A17, A18 proposed) |
 | `OPEN_QUESTIONS.md` | minor | decision | current |
 | R13 proposal; ratification questionnaire | minor | historical | historical |
 
@@ -45,3 +45,4 @@ Append-only. `planned` until merged.
 | 2026-10-07 | `decisions/R25_V083_Development_Line_Development_Decision_Record.md` | planned: new record, `Status: Proposed`, with the GOVERNANCE disclosure list | - | edit-20261007-v083-consolidation (E) |
 | 2026-10-07 | `decisions/GKOS_Decision_Register.md` "Proposed decisions" | planned: rows for R25 and R26 (E is the register integrator) | - | edit-20261007-v083-consolidation (E) |
 | 2026-10-07 | `decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md` | planned: new record, `Status: Proposed` | - | edit-20261007-v083-consolidation (F) |
+| 2026-10-07 | `decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md`; `decisions/GKOS_Decision_Register.md` | owner acceptance by item (R26 §7.2, §7.3); register entry moved to Accepted decisions | planned | Fable-FAC (owner instruction) |
