@@ -11,10 +11,13 @@
 
 GKOS is a control-plane architecture for knowledge used by people and AI
 agents. It keeps evidence, claims, decisions, context, authority, and actions
-distinguishable and auditable—without replacing the tools that store data,
-run agents, manage workflows, or enforce identity.
+separate and auditable. It works with—rather than replaces—the tools that store
+data, run agents, manage workflows, and enforce identity.
 
-- **Current release:** GKOS-2026-08-20 v0.80
+- **Current release:** GKOS v0.80
+- **Release tag:** [`v0.80`](https://github.com/Odenknight/gkos-standard/releases/tag/v0.80)
+- **Release date:** 2026-08-20
+- **Release identifier:** `GKOS-2026-08-20 v0.80`
 - **Maturity:** public pre-standard; developmental and open for testing
 - **Machine exchange contract:** GKX 2.0
 - **Canonical repository:** `Odenknight/gkos-standard`
@@ -52,7 +55,7 @@ domain profile.
 
 AI systems can retrieve documents, combine evidence, propose conclusions, call
 tools, and act faster than a person can inspect every intermediate step. Most
-systems can answer *what is similar to this query?* Far fewer can reliably
+systems can answer *What is similar to this query?* Far fewer can reliably
 answer:
 
 - What was the original evidence?
@@ -143,7 +146,10 @@ rank, model confidence, or tool access into approval.
 
 ## Required tiers and adoption paths
 
-GKOS can be adopted incrementally. R16 defines these named claim tiers:
+GKOS can be adopted incrementally. A Governed Capability Profile (GCP) states
+which cumulative responsibilities an implementation claims. The
+[R16 decision](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md)
+defines these named claim tiers:
 
 | Tier | Required depth | What it establishes |
 | --- | --- | --- |
@@ -172,13 +178,13 @@ Product names do not create additional GKOS layers or competing standards.
 ## Implementations in the GKOS ecosystem
 
 GKOS is implementation-neutral. These public projects illustrate different
-ways its responsibilities can be implemented. Their inclusion does not establish
+ways to implement its responsibilities. Listing a project here does not imply
 endorsement, certification, or a GKOS conformance result.
 
 | Implementation | Demonstrates | Claim boundary |
 | --- | --- | --- |
 | [GKOS Engine](https://github.com/Odenknight/GKOS-Engine) | Deterministic parsing, validation, assessment, graphing, projection, and read-only navigation for GKX records | Reference implementation; not the standard and not an independent implementation |
-| [Kosmos-Oden v0.8.0](https://github.com/Odenknight/Kosmos-Oden) | Read-only visualization and lineage traversal over governed knowledge records, using exact-pinned GKOS Engine 2.1.1 | Product example; not the standard, an endorsement, or a conformance result |
+| [Kosmos-Oden v0.8.0](https://github.com/Odenknight/Kosmos-Oden) | Read-only visualization and lineage traversal over governed knowledge records, with an exact pin to GKOS Engine 2.1.1 | Product example; not the standard, an endorsement, or a conformance result |
 
 Formal conformance claims must identify the exact GKOS release, GKX version,
 profile, implementation version, test suite, limitations, and immutable evidence.
@@ -236,6 +242,10 @@ appeals, succession, and signed archival publication remain v1.0 work.
 | Comparing standards | [Provenance landscape crosswalk](docs/GKOS_PROVENANCE_LANDSCAPE_CROSSWALK.md) |
 | Proposing a change | [Contributing](CONTRIBUTING.md) and [governance](GOVERNANCE.md) |
 | Reviewing current limitations | [Known limitations](standard/annexes/Known_Limitations_and_Open_Issues.md) and [roadmap](ROADMAP.md) |
+
+For work adopted after the current release, review the
+[changelog](CHANGELOG.md) and [decision register](decisions/GKOS_Decision_Register.md).
+Unreleased amendments do not silently change the v0.80 release.
 
 ## Repository map
 

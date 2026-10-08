@@ -68,6 +68,14 @@ adopts deterministic canonical serialization, and standardizes context,
 authorized-use, refusal, diagnostic, and effect-scope obligations. See
 [R16](decisions/R16_Required_Conformance_Profiles_and_GCP67_Enablement_Development_Decision_Record.md).
 
+R17 is an accepted, unpublished development amendment over v0.80. It defines
+authority validity as the half-open interval
+`valid_from <= evaluation_time < valid_until`, requires a captured canonical
+action-evaluation time, and fails closed when required time evidence is
+invalid or indeterminate. R17 does not modify the v0.80 release or establish a
+GCP-7 claim. See
+[R17](decisions/R17_Authority_Validity_Interval_Development_Decision_Record.md).
+
 ## Layer contracts
 
 The model is cumulative, but processing may be asynchronous, distributed, or
