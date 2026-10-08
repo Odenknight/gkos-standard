@@ -1,0 +1,68 @@
+{
+  "fixture_id": "R26-A06-P-REFUSAL-003",
+  "r26_item": "R26-A06",
+  "status": "Development fixture proposed under R26 (Status: Proposed) for the v0.83 development line; non-qualifying.",
+  "class": "positive",
+  "requirement_ids": [
+    "GKOS-CANON-001",
+    "GKOS-AUTHUSE-005"
+  ],
+  "subject": "refusal-receipt-input-binding",
+  "refused_input_bytes_hex": "bf6161f5ff",
+  "refused_input_expected_gate_code": "GKOS-GATE-L6-001",
+  "schema_ref": "schemas/refusal-receipt-1.1.0.schema.json (packet R1, R26-S02; not in this packet)",
+  "receipt": {
+    "canonical_profile": "GKX-CBOR-1",
+    "artifact_type": "refusal-receipt",
+    "schema_version": "1.1.0",
+    "receipt_id": "fixture:r26-a06-refusal-003",
+    "gate_code": "GKOS-GATE-L6-001",
+    "requirement_ids": [
+      "GKOS-CANON-001"
+    ],
+    "predicate_ref": {
+      "component_id": "gkos-ts-canonical-verifier",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      }
+    },
+    "result": "refused",
+    "input_refs": [
+      {
+        "artifact_id": "fixture:received-input-003",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "basis": "received-bytes",
+          "value": "c116ffee38aa15a27b3fa8790cd6971628ed885effac5831b65c6e4a3fc36384"
+        }
+      }
+    ],
+    "evaluated_at": "2026-10-07T12:00:00.000000Z",
+    "actor_context": [
+      {
+        "actor_id": "tool:gkos-ts",
+        "actor_class": "tool"
+      }
+    ],
+    "operation_kind": "other",
+    "refusal_effect": "refuse",
+    "policy_ref": {
+      "component_id": "fixture:r26-canonical-policy",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      }
+    }
+  },
+  "expected": {
+    "result": "valid",
+    "input_ref_digest_recomputes": true
+  },
+  "reason": "An input refused before canonical decoding has no canonical bytes; the receipt binds it by a received-bytes digest over the exact bytes received."
+}

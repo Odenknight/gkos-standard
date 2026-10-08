@@ -1,0 +1,13 @@
+{
+  "suite": "GKOS-v0.83-development-R26-A06-runner-digest-basis",
+  "status": "proposed; v0.83 development line; R26 not accepted",
+  "verifier": "conformance/runner/canonical.mjs verifyDigestBinding",
+  "source": "Cases P01 and N01 reuse the bytes and digests of packet R2 fixtures R26-A06-P-MEMBER-001 and R26-A06-N-MISLABEL-002.",
+  "cases": [
+    {"id":"R26-RL6-P01","class":"positive","requirement_ids":["GKOS-CANON-007"],"bytes_hex":"2320536f75726365206e6f74650a0a436c61696d20413a2074686520636f6e74726f6c207061737365642e0a","digest":{"algorithm":"sha-256","basis":"received-bytes","value":"1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198"},"expected_codes":[],"reason":"Raw source bytes referenced by a received-bytes digest recompute over the exact bytes."},
+    {"id":"R26-RL6-N01","class":"negative","requirement_ids":["GKOS-CANON-007"],"bytes_hex":"2320536f75726365206e6f74650a0a436c61696d20413a2074686520636f6e74726f6c207061737365642e0a","digest":{"algorithm":"sha-256","canonical_profile":"GKX-CBOR-1","value":"1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198"},"expected_codes":["GKOS-GATE-L6-007"],"reason":"A received-bytes digest labelled GKX-CBOR-1; the bytes are not canonical CBOR."},
+    {"id":"R26-RL6-P02","class":"positive","requirement_ids":["GKOS-CANON-007"],"bytes_hex":"a1616101","digest":{"algorithm":"sha-256","canonical_profile":"GKX-CBOR-1","value":"eb989b4a620fd259ae02181bdab4fc3eb6dc6b45eb7322999bb1416bce318926"},"expected_codes":[],"reason":"A GKX-CBOR-1 digest over canonical payload bytes."},
+    {"id":"R26-RL6-N02","class":"negative","requirement_ids":["GKOS-CANON-007"],"bytes_hex":"a1616102","digest":{"algorithm":"sha-256","basis":"received-bytes","value":"eb989b4a620fd259ae02181bdab4fc3eb6dc6b45eb7322999bb1416bce318926"},"expected_codes":["GKOS-GATE-L6-007"],"reason":"The bytes do not match the received-bytes digest."},
+    {"id":"R26-RL6-N03","class":"negative","requirement_ids":["GKOS-CANON-007"],"bytes_hex":"a1616101","digest":{"algorithm":"sha-256","canonical_profile":"GKX-CBOR-1","basis":"received-bytes","value":"eb989b4a620fd259ae02181bdab4fc3eb6dc6b45eb7322999bb1416bce318926"},"expected_codes":["GKOS-GATE-L6-007"],"reason":"A digest that names both bases names neither."}
+  ]
+}

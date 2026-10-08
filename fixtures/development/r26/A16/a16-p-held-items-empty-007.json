@@ -1,0 +1,73 @@
+{
+  "fixture_id": "R26-A16-P-HELD-EMPTY-007",
+  "r26_item": "R26-A16",
+  "status": "Development fixture proposed under R26 (Status: Proposed) for the v0.83 development line; non-qualifying.",
+  "class": "positive",
+  "requirement_ids": [
+    "GKOS-CONTEXT-004"
+  ],
+  "subject": "closure",
+  "eligible_snapshot": "fixtures/development/r26/A16/eligible-snapshot-held-empty.json",
+  "closure_rules": [
+    "fixtures/development/r26/A16/closure-rule-a.json",
+    "fixtures/development/r26/A16/closure-rule-b.json"
+  ],
+  "selection_envelope": "fixtures/development/r26/A16/selection-envelope-held-empty.json",
+  "context_manifest": {
+    "canonical_profile": "GKX-CBOR-1",
+    "artifact_type": "context-manifest",
+    "schema_version": "1.0.0",
+    "manifest_id": "fixture:r26-a16-manifest-held-empty",
+    "manifest_version": "1.0.0",
+    "purpose": "R26 canonical serialization fixture",
+    "recipient": "fixture-reviewer",
+    "selection_set_ref": {
+      "artifact_id": "fixture:r26-a16-selection-held-empty",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "87d227612343b6906feab95c84da43503b19546dcbb77107a3333ad6ffdc2613"
+      }
+    },
+    "policy_ref": {
+      "component_id": "fixture:r26-closure-rule-a",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "1fa18c5ab97abaaeac1b10ca5f1960c59e8658ca0995dd6e062eb459f8bf5161"
+      }
+    },
+    "compiler_ref": {
+      "component_id": "gkos-ts-reference-compiler",
+      "component_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      }
+    },
+    "compiled_at": "2026-10-01T14:01:00.000000Z",
+    "members": [
+      {
+        "kind": "context",
+        "object_ref": {
+          "artifact_id": "fixture:claim-a",
+          "artifact_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    ],
+    "known_omissions": []
+  },
+  "expected": {
+    "result": "accepted",
+    "gate_codes": []
+  },
+  "reason": "An explicit empty held_items array is evaluable: the snapshot holds nothing, so the rule's required set is empty and a manifest without closure members passes. This is handled separately from an absent or null collection."
+}

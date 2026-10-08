@@ -1,0 +1,6 @@
+{
+  "snapshot_id": "fixture:r26-a16-snapshot-held-null",
+  "snapshot_version": "1.0.0",
+  "description": "Eligible snapshot whose held_items is null. Its contents cannot be evaluated.",
+  "held_items": null
+}

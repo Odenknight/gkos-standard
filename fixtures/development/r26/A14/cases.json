@@ -1,0 +1,429 @@
+{
+  "suite": "GKOS-v0.83-development-R26-A14-overdue-review-and-exceptions",
+  "standing": "Development fixtures for proposed R26-A14. Non-qualifying. Records use the portable gate fixture interface (kind deferred-review) with the overdue inputs R26-A14 defines, instead of a precomputed overdue boolean.",
+  "requirement_refs": [
+    "GKOS-DELEGATION-006"
+  ],
+  "cases": [
+    {
+      "id": "R26-A14-01",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "evaluation one microsecond before the deadline; review pending: not overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-01T23:59:59.999999Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": true,
+        "gate_code": null
+      }
+    },
+    {
+      "id": "R26-A14-02",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "evaluation exactly at the deadline; review pending: overdue, delegation frozen",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-02T00:00:00.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-03",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "missing review deadline counts as overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-01T00:00:01.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-04",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "overdue with an exception from an equal-precedence authority",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": {
+          "authority_receipt_ref": "authority-receipt:exception-1",
+          "precedence_relative_to_delegation": "equal",
+          "names_delegation_ref": "delegation:r26-a14",
+          "names_condition": "review-overdue",
+          "valid_until": "2026-10-05T00:00:00.000000Z",
+          "bound_in_state_change_receipt": true
+        }
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-05",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "overdue with a valid higher-precedence exception",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": {
+          "authority_receipt_ref": "authority-receipt:exception-1",
+          "precedence_relative_to_delegation": "higher",
+          "names_delegation_ref": "delegation:r26-a14",
+          "names_condition": "review-overdue",
+          "valid_until": "2026-10-05T00:00:00.000000Z",
+          "bound_in_state_change_receipt": true
+        }
+      },
+      "expected": {
+        "authorizes_state_change": true,
+        "gate_code": null
+      }
+    },
+    {
+      "id": "R26-A14-06",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "unavailable commit time counts as overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": null,
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-01T00:00:01.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-07",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "indeterminate review status counts as overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "indeterminate"
+          }
+        ],
+        "evaluation_time": "2026-10-01T00:00:01.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-08",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "review disposition recorded; evaluation after the deadline: not overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "dispositioned"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": true,
+        "gate_code": null
+      }
+    },
+    {
+      "id": "R26-A14-09",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "one of two reviews overdue: delegation frozen",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "dispositioned"
+          },
+          {
+            "action_ref": "action:2",
+            "commit_time": "2026-10-01T12:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-10",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "exception without valid_until",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": {
+          "authority_receipt_ref": "authority-receipt:exception-1",
+          "precedence_relative_to_delegation": "higher",
+          "names_delegation_ref": "delegation:r26-a14",
+          "names_condition": "review-overdue",
+          "bound_in_state_change_receipt": true
+        }
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-11",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "exception whose valid_until equals the evaluation time (expired)",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": {
+          "authority_receipt_ref": "authority-receipt:exception-1",
+          "precedence_relative_to_delegation": "higher",
+          "names_delegation_ref": "delegation:r26-a14",
+          "names_condition": "review-overdue",
+          "valid_until": "2026-10-03T00:00:00.000000Z",
+          "bound_in_state_change_receipt": true
+        }
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-12",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "exception not bound in the State-Change Receipt role record",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": {
+          "authority_receipt_ref": "authority-receipt:exception-1",
+          "precedence_relative_to_delegation": "higher",
+          "names_delegation_ref": "delegation:r26-a14",
+          "names_condition": "review-overdue",
+          "valid_until": "2026-10-05T00:00:00.000000Z",
+          "bound_in_state_change_receipt": false
+        }
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-13",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "exception does not name the delegation",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "2026-10-01T00:00:00.000000Z",
+            "review_status": "pending"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": {
+          "authority_receipt_ref": "authority-receipt:exception-1",
+          "precedence_relative_to_delegation": "higher",
+          "names_delegation_ref": "delegation:other",
+          "names_condition": "review-overdue",
+          "valid_until": "2026-10-05T00:00:00.000000Z",
+          "bound_in_state_change_receipt": true
+        }
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-14",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "review disposition recorded but commit time null: unavailable commit time counts as overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": null,
+            "review_status": "dispositioned"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    },
+    {
+      "id": "R26-A14-15",
+      "requirement_ids": [
+        "GKOS-DELEGATION-006"
+      ],
+      "description": "review disposition recorded but commit time not a canonical timestamp: indeterminate commit time counts as overdue",
+      "record": {
+        "kind": "deferred-review",
+        "delegation_ref": "delegation:r26-a14",
+        "review_deadline_seconds": 86400,
+        "actions": [
+          {
+            "action_ref": "action:1",
+            "commit_time": "invalid",
+            "review_status": "dispositioned"
+          }
+        ],
+        "evaluation_time": "2026-10-03T00:00:00.000000Z",
+        "exception": null
+      },
+      "expected": {
+        "authorizes_state_change": false,
+        "gate_code": "GKOS-GATE-L5-001"
+      }
+    }
+  ]
+}

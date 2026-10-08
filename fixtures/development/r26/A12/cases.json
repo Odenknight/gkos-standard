@@ -1,0 +1,1007 @@
+{
+  "suite": "GKOS-v0.83-development-R26-A12-state-change-receipt-role-elements",
+  "standing": "Development fixtures for proposed R26-A12. Non-qualifying. Each case gives a candidate record under its own field names, a role_field_map from R26-A12 role elements to those fields, and the change context that makes conditional elements required.",
+  "requirement_refs": [
+    "GKOS-RECEIPT-001",
+    "GKOS-RECEIPT-002",
+    "GKOS-RECEIPT-003"
+  ],
+  "role_elements": {
+    "always": [
+      "identity",
+      "version",
+      "actor_ref",
+      "actor_class",
+      "operation",
+      "outcome",
+      "binding_mechanism",
+      "binding_identifier",
+      "captured_time"
+    ],
+    "when_requires_authority": [
+      "authority_basis_ref"
+    ],
+    "when_policy_took_part": [
+      "policy_identity",
+      "policy_version",
+      "policy_digest"
+    ],
+    "when_predicate_consulted": [
+      "predicate_identity",
+      "predicate_version",
+      "nondeterministic_checker_increased_restrictiveness"
+    ],
+    "unless_creation": [
+      "before_state_ref"
+    ],
+    "after_state": "after_state_ref, or tombstone_ref when deletion_or_erasure",
+    "outcome_values": [
+      "committed",
+      "rolled-back",
+      "compensated",
+      "refused"
+    ],
+    "digest_bound": [
+      "before_state_ref",
+      "after_state_ref",
+      "tombstone_ref"
+    ]
+  },
+  "cases": [
+    {
+      "id": "R26-A12-01",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "outcome committed: configuration change record satisfies the role under its own field names",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000a12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000002a"
+          }
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": true,
+        "missing_elements": []
+      }
+    },
+    {
+      "id": "R26-A12-02",
+      "requirement_ids": [
+        "GKOS-RECEIPT-003"
+      ],
+      "description": "outcome rolled-back: after-state reference is digest-bound to the restored state",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000a12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "status": "rolled-back",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": true,
+        "missing_elements": []
+      }
+    },
+    {
+      "id": "R26-A12-03",
+      "requirement_ids": [
+        "GKOS-RECEIPT-003"
+      ],
+      "description": "outcome compensated: compensation identifier recorded",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "deterministic-compensation"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000a12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000002a"
+          }
+        },
+        "status": "compensated",
+        "durability": {
+          "mechanism": "deterministic-compensation",
+          "txn_id": "compensation:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": true,
+        "missing_elements": []
+      }
+    },
+    {
+      "id": "R26-A12-04",
+      "requirement_ids": [
+        "GKOS-RECEIPT-003"
+      ],
+      "description": "outcome refused: refusal time captured; after-state reference is digest-bound to the unchanged state",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000a12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "status": "refused",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": true,
+        "missing_elements": []
+      }
+    },
+    {
+      "id": "R26-A12-05",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "creation without a prior state: before-state reference absent",
+      "context": {
+        "requires_authority": false,
+        "policy_took_part": false,
+        "predicate_consulted": false,
+        "creation": true,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "journaled-two-phase"
+      },
+      "role_field_map": {
+        "identity": "receipt_id",
+        "version": "receipt_version",
+        "actor_ref": "ingested_by",
+        "actor_class": "ingested_by_class",
+        "operation": "operation",
+        "after_state_ref": "created_source",
+        "outcome": "outcome",
+        "binding_mechanism": "binding.kind",
+        "binding_identifier": "binding.journal_entry",
+        "captured_time": "committed_at"
+      },
+      "record": {
+        "receipt_id": "ingest:0009",
+        "receipt_version": "1",
+        "ingested_by": "actor:ingest-service",
+        "ingested_by_class": "system",
+        "operation": "ingest-source",
+        "created_source": {
+          "ref": "source:L1-0009",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000009"
+          }
+        },
+        "outcome": "committed",
+        "binding": {
+          "kind": "journaled-two-phase",
+          "journal_entry": "journal:0009"
+        },
+        "committed_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": true,
+        "missing_elements": []
+      }
+    },
+    {
+      "id": "R26-A12-06",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "erasure with a tombstone reference in place of an after-state reference",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": true,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "disposition_id",
+        "version": "disposition_version",
+        "actor_ref": "actor.id",
+        "actor_class": "actor.class",
+        "authority_basis_ref": "authority",
+        "policy_identity": "policy_ref.id",
+        "policy_version": "policy_ref.version",
+        "policy_digest": "policy_ref.digest",
+        "predicate_identity": "hold_predicate.id",
+        "predicate_version": "hold_predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "hold_predicate.checker_increased_restrictiveness",
+        "operation": "action",
+        "before_state_ref": "subject",
+        "tombstone_ref": "tombstone",
+        "outcome": "outcome",
+        "binding_mechanism": "binding.mechanism",
+        "binding_identifier": "binding.id",
+        "captured_time": "committed_at"
+      },
+      "record": {
+        "disposition_id": "disposition:0005",
+        "disposition_version": "1",
+        "actor": {
+          "id": "actor:records-officer",
+          "class": "human"
+        },
+        "authority": "authority-receipt:erasure-order-2",
+        "policy_ref": {
+          "id": "policy:retention",
+          "version": "3.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000000c"
+          }
+        },
+        "hold_predicate": {
+          "id": "policy:hold-predicate",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "action": "erase",
+        "subject": {
+          "ref": "artifact:archived-77",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000004d"
+          }
+        },
+        "tombstone": {
+          "ref": "tombstone:archived-77",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000077"
+          }
+        },
+        "outcome": "committed",
+        "binding": {
+          "mechanism": "atomic-transaction",
+          "id": "txn:0005"
+        },
+        "committed_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": true,
+        "missing_elements": []
+      }
+    },
+    {
+      "id": "R26-A12-07",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "update record missing the after-state binding: does not satisfy the role",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000a12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "missing_elements": [
+          "after_state_ref"
+        ]
+      }
+    },
+    {
+      "id": "R26-A12-08",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "after-state reference without a digest: not digest-bound, does not satisfy the role",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000a12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42"
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "missing_elements": [
+          "after_state_ref"
+        ]
+      }
+    },
+    {
+      "id": "R26-A12-09",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "policy digest is the boolean false: not a digest, does not satisfy the role",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": false
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000002a"
+          }
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "missing_elements": [
+          "policy_digest"
+        ]
+      }
+    },
+    {
+      "id": "R26-A12-10",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "policy digest is an empty object: not a digest, does not satisfy the role",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {}
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000002a"
+          }
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "missing_elements": [
+          "policy_digest"
+        ]
+      }
+    },
+    {
+      "id": "R26-A12-11",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "policy digest is the text not-a-digest: not a digest, does not satisfy the role",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": "not-a-digest"
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000002a"
+          }
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "missing_elements": [
+          "policy_digest"
+        ]
+      }
+    },
+    {
+      "id": "R26-A12-12",
+      "requirement_ids": [
+        "GKOS-RECEIPT-001"
+      ],
+      "description": "policy digest value is uppercase and short: not a lowercase SHA-256, does not satisfy the role",
+      "context": {
+        "requires_authority": true,
+        "policy_took_part": true,
+        "predicate_consulted": true,
+        "creation": false,
+        "deletion_or_erasure": false,
+        "manifest_binding_mechanism": "atomic-transaction"
+      },
+      "role_field_map": {
+        "identity": "change_id",
+        "version": "change_version",
+        "actor_ref": "changed_by.ref",
+        "actor_class": "changed_by.class",
+        "authority_basis_ref": "authority_ref",
+        "policy_identity": "policy.id",
+        "policy_version": "policy.version",
+        "policy_digest": "policy.digest",
+        "predicate_identity": "predicate.id",
+        "predicate_version": "predicate.version",
+        "nondeterministic_checker_increased_restrictiveness": "predicate.checker_increased_restrictiveness",
+        "operation": "op",
+        "before_state_ref": "prior",
+        "after_state_ref": "result_state",
+        "tombstone_ref": "tombstone",
+        "outcome": "status",
+        "binding_mechanism": "durability.mechanism",
+        "binding_identifier": "durability.txn_id",
+        "captured_time": "recorded_at"
+      },
+      "record": {
+        "change_id": "cfg-change:0001",
+        "change_version": "1",
+        "changed_by": {
+          "ref": "actor:operator-7",
+          "class": "human"
+        },
+        "authority_ref": "authority-receipt:grant-3",
+        "policy": {
+          "id": "policy:config-governance",
+          "version": "2.1.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0A12"
+          }
+        },
+        "predicate": {
+          "id": "predicate:routine-change",
+          "version": "1.0.0",
+          "checker_increased_restrictiveness": false
+        },
+        "op": "update-configuration",
+        "prior": {
+          "ref": "state:config@41",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000029"
+          }
+        },
+        "result_state": {
+          "ref": "state:config@42",
+          "digest": {
+            "algorithm": "sha-256",
+            "value": "000000000000000000000000000000000000000000000000000000000000002a"
+          }
+        },
+        "status": "committed",
+        "durability": {
+          "mechanism": "atomic-transaction",
+          "txn_id": "txn:0001"
+        },
+        "recorded_at": "2026-10-07T12:00:00.000000Z"
+      },
+      "expected": {
+        "satisfies_role": false,
+        "missing_elements": [
+          "policy_digest"
+        ]
+      }
+    }
+  ]
+}

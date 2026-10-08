@@ -1,0 +1,32 @@
+{
+  "fixture_id": "R26-A06-N-MISLABEL-002",
+  "r26_item": "R26-A06",
+  "status": "Development fixture proposed under R26 (Status: Proposed) for the v0.83 development line; non-qualifying.",
+  "class": "negative",
+  "requirement_ids": [
+    "GKOS-CANON-007"
+  ],
+  "subject": "digest-recompute",
+  "selection_member": {
+    "object_ref": {
+      "artifact_id": "fixture:claim-a-source",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "1d583c30d0f76ffc4064a8a04eef578063abec478bf6e4ddfe15542e89db1198"
+      }
+    },
+    "score_type": "not-applicable",
+    "score": null,
+    "inclusion_reason": "Raw Layer-1 source bytes selected as resolved content"
+  },
+  "resolved_bytes_base64": "IyBTb3VyY2Ugbm90ZQoKQ2xhaW0gQTogdGhlIGNvbnRyb2wgcGFzc2VkLgo=",
+  "expected": {
+    "result": "refused",
+    "gate_codes": [
+      "GKOS-GATE-L6-007"
+    ]
+  },
+  "reason": "The digest value is SHA-256 over raw source bytes but is labeled GKX-CBOR-1. The labeled basis names canonical CBOR payload bytes; the resolved bytes are not a canonical GKOS artifact, so no recomputation over the named basis matches."
+}

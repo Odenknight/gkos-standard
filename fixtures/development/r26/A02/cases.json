@@ -1,0 +1,1879 @@
+{
+  "item": "R26-A02",
+  "title": "Effect-scope containment",
+  "status": "development; proposed under R26; non-qualifying",
+  "requirement_ids": [
+    "GKOS-EFFECT-001",
+    "GKOS-EFFECT-002",
+    "GKOS-EFFECT-003"
+  ],
+  "evaluation": "containment",
+  "cases": [
+    {
+      "case_id": "R26-A02-01",
+      "title": "effect_class equal",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "effect_class"
+    },
+    {
+      "case_id": "R26-A02-02",
+      "title": "effect_class included by a declared policy inclusion",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "effect_class_inclusions": [
+          {
+            "outer": "record-export",
+            "inner": "record-export-summary"
+          }
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export-summary",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "effect_class"
+    },
+    {
+      "case_id": "R26-A02-03",
+      "title": "effect_class different, no declared inclusion",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-delete",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "effect_class"
+    },
+    {
+      "case_id": "R26-A02-04",
+      "title": "resources: each member of R equals a member of A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a",
+          "res:b"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "resources"
+    },
+    {
+      "case_id": "R26-A02-05",
+      "title": "resources: member matched by a digest-bound policy predicate",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "resource_matchers": [
+          {
+            "predicate_ref": {
+              "component_id": "fixture:r26-prefix-matcher",
+              "component_version": "1.0.0",
+              "digest": {
+                "algorithm": "sha-256",
+                "canonical_profile": "GKX-CBOR-1",
+                "value": "7777777777777777777777777777777777777777777777777777777777777777"
+              }
+            },
+            "semantics": "prefix"
+          }
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a/child-1"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a/"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "resources"
+    },
+    {
+      "case_id": "R26-A02-06",
+      "title": "resources: R names a resource outside A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a",
+          "res:z"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "resources"
+    },
+    {
+      "case_id": "R26-A02-07",
+      "title": "environment equal",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "environment"
+    },
+    {
+      "case_id": "R26-A02-08",
+      "title": "environment different",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "staging",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "environment"
+    },
+    {
+      "case_id": "R26-A02-09",
+      "title": "audience: R is a subset of A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "audience": [
+          "team:x"
+        ]
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "audience": [
+              "team:x",
+              "team:y"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "audience"
+    },
+    {
+      "case_id": "R26-A02-10",
+      "title": "audience: R names a recipient outside A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "audience": [
+          "team:z"
+        ]
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "audience": [
+              "team:x",
+              "team:y"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "audience"
+    },
+    {
+      "case_id": "R26-A02-11",
+      "title": "sensitivity_ceiling below A under a declared order",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "sensitivity_order": [
+          "public",
+          "internal",
+          "restricted",
+          "confidential",
+          "regulated",
+          "phi",
+          "secret"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "sensitivity_ceiling": "internal"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "sensitivity_ceiling": "confidential"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "sensitivity_ceiling"
+    },
+    {
+      "case_id": "R26-A02-12",
+      "title": "sensitivity_ceiling above A under a declared order",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "sensitivity_order": [
+          "public",
+          "internal",
+          "restricted",
+          "confidential",
+          "regulated",
+          "phi",
+          "secret"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "sensitivity_ceiling": "secret"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "sensitivity_ceiling": "internal"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "sensitivity_ceiling"
+    },
+    {
+      "case_id": "R26-A02-13",
+      "title": "sensitivity_ceiling: different labels, no declared order",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "sensitivity_ceiling": "internal"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "sensitivity_ceiling": "confidential"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "sensitivity_ceiling"
+    },
+    {
+      "case_id": "R26-A02-14",
+      "title": "sensitivity_ceiling: equal labels, no declared order",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "sensitivity_ceiling": "internal"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "sensitivity_ceiling": "internal"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "sensitivity_ceiling"
+    },
+    {
+      "case_id": "R26-A02-15",
+      "title": "valid_from/valid_until: R window inside A window",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "valid_from": "2026-10-01T13:00:00.000000Z",
+        "valid_until": "2026-10-01T14:00:00.000000Z"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "valid_from": "2026-10-01T12:00:00.000000Z",
+            "valid_until": "2026-10-01T18:00:00.000000Z"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "valid_from, valid_until"
+    },
+    {
+      "case_id": "R26-A02-16",
+      "title": "valid_from/valid_until: R window ends after A window",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "valid_from": "2026-10-01T13:00:00.000000Z",
+        "valid_until": "2026-10-01T19:00:00.000000Z"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "valid_from": "2026-10-01T12:00:00.000000Z",
+            "valid_until": "2026-10-01T18:00:00.000000Z"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "valid_from, valid_until"
+    },
+    {
+      "case_id": "R26-A02-17",
+      "title": "layer_reach: R at or below A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "layer_reach": 3
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "layer_reach": 5
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "layer_reach"
+    },
+    {
+      "case_id": "R26-A02-18",
+      "title": "layer_reach: R above A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "layer_reach": 6
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "layer_reach": 5
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "layer_reach"
+    },
+    {
+      "case_id": "R26-A02-19",
+      "title": "reversibility: reversible within compensable",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "reversibility"
+    },
+    {
+      "case_id": "R26-A02-20",
+      "title": "reversibility: irreversible beyond compensable",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "irreversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "reversibility"
+    },
+    {
+      "case_id": "R26-A02-21",
+      "title": "maximum_affected_count: R at or below A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "maximum_affected_count": 10
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "maximum_affected_count": 100
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "maximum_affected_count"
+    },
+    {
+      "case_id": "R26-A02-22",
+      "title": "maximum_affected_count: R above A",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "maximum_affected_count": 101
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "maximum_affected_count": 100
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "row": "maximum_affected_count"
+    },
+    {
+      "case_id": "R26-A02-23",
+      "title": "Presence: policy requires audience; A states it; R omits it",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": [
+          "audience"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "audience": [
+              "team:x"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence",
+      "reason": "audience is applicable because the policy requires it; it is absent from R, so it is unknown."
+    },
+    {
+      "case_id": "R26-A02-24",
+      "title": "Presence: policy requires audience; R states it; A omits it",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": [
+          "audience"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible",
+        "audience": [
+          "team:x"
+        ]
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence",
+      "reason": "audience is applicable because the policy requires it; it is absent from A, so it is unknown. An absent dimension is never read as unlimited in A."
+    },
+    {
+      "case_id": "R26-A02-25",
+      "title": "Presence: policy requires audience; neither scope states it",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": [
+          "audience"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence",
+      "reason": "audience is applicable because the policy requires it; absent from both scopes, so it is unknown."
+    },
+    {
+      "case_id": "R26-A02-26",
+      "title": "Presence: no policy requirement; A states maximum_affected_count; R omits it",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable",
+            "maximum_affected_count": 100
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence",
+      "reason": "maximum_affected_count is applicable because A states it; it is absent from R, so it is unknown, never read as not requested."
+    },
+    {
+      "case_id": "R26-A02-27",
+      "title": "Presence: no policy requirement; neither scope states audience; every other dimension contained",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "admit"
+      },
+      "row": "presence",
+      "reason": "audience is neither stated nor required, so it is not applicable and not evaluated."
+    },
+    {
+      "case_id": "R26-A02-28",
+      "title": "Delegation chain: derived grant widens its predecessor",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003",
+        "GKOS-DELEGATION-001"
+      ],
+      "kind": "effect-containment",
+      "row": "chain",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b",
+              "res:c"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        },
+        {
+          "source": "receipt:fixture:r26-authority-root",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        },
+        {
+          "source": "receipt:fixture:r26-authority-leaf",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b",
+              "res:c"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          },
+          "derived": true
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "reason": "R is contained in every scope, but the leaf grant names res:c, which its predecessor does not grant. Each derived grant's scope MUST be contained in its predecessor's scope."
+    },
+    {
+      "case_id": "R26-A02-29",
+      "title": "Authorized Use Record action_class outside the grant",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "row": "action_class",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "action_class": "record-delete",
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        },
+        {
+          "source": "receipt:fixture:r26-authority-root",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          },
+          "permitted_action_classes": [
+            "record-delete",
+            "record-export"
+          ]
+        },
+        {
+          "source": "receipt:fixture:r26-authority-leaf",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          },
+          "permitted_action_classes": [
+            "record-export"
+          ],
+          "derived": true
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-002",
+        "requirement_ids": [
+          "GKOS-EFFECT-002"
+        ]
+      },
+      "reason": "record-delete is not a member of the leaf receipt's permitted_action_classes."
+    },
+    {
+      "case_id": "R26-A02-30",
+      "title": "Policy requires a dimension GKOS does not define (custom-required)",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": [
+          "custom-required"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence (policy-required dimensions)",
+      "reason": "custom-required is required by the policy, so it is applicable, but it is not a GKOS effect-scope dimension and the evaluator cannot compare it. It is unknown and fails closed; it is never dropped. Reviewer mutation r26-REV-011."
+    },
+    {
+      "case_id": "R26-A02-31",
+      "title": "Policy required_dimensions is null",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": null
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence (policy-required dimensions)",
+      "reason": "A required_dimensions declaration that is not a list of dimension names cannot be evaluated; it fails closed."
+    },
+    {
+      "case_id": "R26-A02-32",
+      "title": "Policy required_dimensions is a single string, not a list",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": "audience"
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence (policy-required dimensions)",
+      "reason": "A required_dimensions declaration that is not a list fails closed; it is not read as one dimension or as none."
+    },
+    {
+      "case_id": "R26-A02-33",
+      "title": "Policy required_dimensions holds a non-text entry",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": [
+          "audience",
+          7
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence (policy-required dimensions)",
+      "reason": "A required_dimensions entry that is not a dimension name fails closed."
+    },
+    {
+      "case_id": "R26-A02-34",
+      "title": "Policy requires a supported dimension and an unknown one",
+      "requirement_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003"
+      ],
+      "kind": "effect-containment",
+      "policy": {
+        "policy_ref": {
+          "component_id": "fixture:r26-policy",
+          "component_version": "1.0.0",
+          "digest": {
+            "algorithm": "sha-256",
+            "canonical_profile": "GKX-CBOR-1",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "required_dimensions": [
+          "environment",
+          "colour"
+        ]
+      },
+      "requested": {
+        "effect_class": "record-export",
+        "resources": [
+          "res:a"
+        ],
+        "environment": "production",
+        "reversibility": "reversible"
+      },
+      "authorizing": [
+        {
+          "source": "actor-standing",
+          "scope": {
+            "effect_class": "record-export",
+            "resources": [
+              "res:a",
+              "res:b"
+            ],
+            "environment": "production",
+            "reversibility": "compensable"
+          }
+        }
+      ],
+      "expected": {
+        "outcome": "refuse",
+        "gate_code": "GKOS-GATE-L7-003",
+        "requirement_ids": [
+          "GKOS-EFFECT-003"
+        ]
+      },
+      "row": "presence (policy-required dimensions)",
+      "reason": "environment is contained, but colour is a policy-required dimension the evaluator does not support. The unknown required dimension fails closed even when every supported dimension is contained."
+    }
+  ],
+  "notes": [
+    "Each case gives the requested scope R, the authorizing scopes in chain order (actor standing first), and the policy inputs the evaluation may use. Policy inputs are fixture stand-ins for a digest-bound policy.",
+    "Rows R26-A02-01..22 hold every non-tested dimension contained, so each case isolates one table row.",
+    "Evaluated by conformance/runner/effect-containment.mjs (evaluateEffectContainment), which takes the requested scope, the authorizing scopes in chain order and the digest-bound policy inputs. The boolean gate-evaluator kind effect-containment is unchanged."
+  ]
+}

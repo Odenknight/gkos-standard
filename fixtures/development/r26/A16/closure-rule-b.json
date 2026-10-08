@@ -1,0 +1,9 @@
+{
+  "rule_id": "fixture:r26-closure-rule-b",
+  "rule_version": "1.0.0",
+  "required_kinds": [
+    "contradiction",
+    "restriction",
+    "warning"
+  ]
+}

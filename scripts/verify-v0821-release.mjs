@@ -31,13 +31,29 @@ assert.equal(zenodo.publication_date, date);
 assert.equal(zenodo.creators[0].name, 'Marshall, Shaun Allan');
 assert.equal(zenodo.license, 'cc-by-4.0');
 assert.ok(zenodo.related_identifiers.some(x => x.identifier === '10.5281/zenodo.22905582' && x.relation === 'isNewVersionOf'));
-const allocations = read('requirements/REGISTRY.md').split('## Active allocations')[1].split('## Accepted unpublished allocations')[0].match(/^\| `GKOS-[A-Z]+-[0-9]{3}` /gm) ?? [];
-assert.equal(allocations.length, 62);
-assert.equal((read('standard/annexes/Diagnostic_Code_Registry.md').match(/^\| GKOS-GATE-L[0-9]-[0-9]{3} \|/gm) ?? []).length, 28);
+const registryPath = 'requirements/REGISTRY.md';
+const gatePath = 'standard/annexes/Diagnostic_Code_Registry.md';
+const allocationsIn = text => text.split('## Active allocations')[1].split('## Accepted unpublished allocations')[0].match(/^\| `GKOS-[A-Z]+-[0-9]{3}` /gm) ?? [];
+const gatesIn = text => text.match(/^\| GKOS-GATE-L[0-9]-[0-9]{3} \|/gm) ?? [];
+// R25 opens the v0.83 development line only when its tracked record holds
+// the owner-set marker line 'Status: Accepted' and no 'Status: Proposed'.
+// Strict and post-tag runs never read it.
+const r25 = 'decisions/R25_V083_Development_Line_Development_Decision_Record.md';
+let developmentLine = false;
+if (process.argv.includes('--development') && git('ls-files', '--', r25)) {
+  const lines = read(r25).split(/\r?\n/);
+  developmentLine = lines.includes('Status: Accepted') && !lines.includes('Status: Proposed');
+}
+if (!developmentLine) {
+  // Strict, post-tag and proposed-state development runs assert the edition
+  // counts in the checkout itself, exactly as before R26.
+  assert.equal(allocationsIn(read(registryPath)).length, 62);
+  assert.equal(gatesIn(read(gatePath)).length, 28);
+}
 // All technical sources are byte-identical to the predecessor; documentation
 // claims and release administration are deliberately outside this set.
 const immutable = ['requirements', 'schemas', 'fixtures', 'conformance/runner', 'standard/annexes'];
-let developmentLine = false;
+let developmentCounts = '';
 if (process.argv.includes('--development')) {
   // The published v0.82.1 tag stays frozen at v0.82. Until R25 is accepted,
   // main permits only the reviewed fast-uri security pin. After acceptance,
@@ -49,14 +65,41 @@ if (process.argv.includes('--development')) {
   // Untracked, non-ignored files are invisible to git diff (REV-012).
   const untracked = git('ls-files', '--others', '--exclude-standard', '--', ...immutable, 'releases', 'release-candidates');
   assert.equal(untracked, '', 'untracked file in protected path');
-  // R25 opens the v0.83 development line only when its tracked record holds
-  // the owner-set marker line 'Status: Accepted' and no 'Status: Proposed'.
-  const r25 = 'decisions/R25_V083_Development_Line_Development_Decision_Record.md';
-  if (git('ls-files', '--', r25)) {
-    const lines = read(r25).split(/\r?\n/);
-    developmentLine = lines.includes('Status: Accepted') && !lines.includes('Status: Proposed');
-  }
-  if (!developmentLine) {
+  if (developmentLine) {
+    // On the open v0.83 line the edition counts are asserted against the
+    // published v0.82.1 tag, while main may grow. The registries are
+    // append-only, so every published allocation and gate code must remain.
+    const publishedAllocations = allocationsIn(git('show', `${published}:${registryPath}`));
+    const publishedGates = gatesIn(git('show', `${published}:${gatePath}`));
+    assert.equal(publishedAllocations.length, 62);
+    assert.equal(publishedGates.length, 28);
+    // Identifiers are unique (r26-REV-002). The comparisons below key rows by
+    // identifier, so a duplicate row could mask a rewritten original; reject
+    // duplicates first, on the tag and on main.
+    const duplicates = rows => [...new Set(rows.filter((row, i) => rows.indexOf(row) !== i))];
+    assert.deepEqual(duplicates(publishedAllocations), [], 'duplicate requirement ID in published registry');
+    assert.deepEqual(duplicates(publishedGates), [], 'duplicate gate code in published registry');
+    assert.deepEqual(duplicates(allocationsIn(read(registryPath))), [], 'duplicate requirement ID on main');
+    assert.deepEqual(duplicates(gatesIn(read(gatePath))), [], 'duplicate gate code on main');
+    const mainAllocations = new Set(allocationsIn(read(registryPath)));
+    const mainGates = new Set(gatesIn(read(gatePath)));
+    const lost = [...publishedAllocations.filter(row => !mainAllocations.has(row)), ...publishedGates.filter(row => !mainGates.has(row))];
+    assert.deepEqual(lost, [], 'published allocation or gate code missing on main');
+    // Append-only covers content, not only identifiers (r26-REV-002). Each published
+    // allocation keeps its original requirement text; status, source and replacement
+    // cells may gain dated updates. Each published gate row keeps its exact definition.
+    const cells = row => row.split(/(?<!\\)\|/).slice(1, -1).map(cell => cell.trim());
+    const originalTexts = text => new Map(text.split('## Active allocations')[1].split('## Accepted unpublished allocations')[0]
+      .split('\n').filter(line => /^\| `GKOS-[A-Z]+-[0-9]{3}` \|/.test(line)).map(line => [cells(line)[0], cells(line)[1]]));
+    const gateRows = text => new Map(text.split('\n').filter(line => /^\| GKOS-GATE-L[0-9]-[0-9]{3} \|/.test(line)).map(line => [cells(line)[0], cells(line).join(' | ')]));
+    const mainTexts = originalTexts(read(registryPath));
+    const rewritten = [...originalTexts(git('show', `${published}:${registryPath}`))].filter(([id, text]) => mainTexts.get(id) !== text).map(([id]) => id);
+    assert.deepEqual(rewritten, [], 'published requirement text changed on main');
+    const mainGateRows = gateRows(read(gatePath));
+    const redefined = [...gateRows(git('show', `${published}:${gatePath}`))].filter(([code, row]) => mainGateRows.get(code) !== row).map(([code]) => code);
+    assert.deepEqual(redefined, [], 'published gate definition changed on main');
+    developmentCounts = `; main ${mainAllocations.size} requirements, ${mainGates.size} gates`;
+  } else {
     const lockPath = 'conformance/runner/package-lock.json';
     const changed = git('diff', '--name-only', published, '--', ...immutable).split('\n').filter(Boolean);
     assert.ok(changed.every(p => p === lockPath), 'unreviewed development technical change');
@@ -81,7 +124,7 @@ for (const p of git('ls-files', 'fixtures').split('\n').filter(p => p.endsWith('
 }
 assert.match(read('docs/releases/V0821_PUBLICATION_CONTROL.md'), /R23\s+remains prospective/);
 assert.ok(read('conformance/CLAIMS_POLICY.md').includes('does not automatically'));
-console.log(`v0.82.1 content PASS: ${coordinate}; 62 requirements, 28 gates, ${process.argv.includes('--development') ? (developmentLine ? 'published baseline preserved; R25 v0.83 development line open' : 'published baseline preserved; bounded development dependency maintenance') : 'unchanged technical sources'} and historical packages`);
+console.log(`v0.82.1 content PASS: ${coordinate}; ${developmentLine ? 'v0.82.1 tag ' : ''}62 requirements, 28 gates${developmentCounts}, ${process.argv.includes('--development') ? (developmentLine ? 'published baseline preserved; R25 v0.83 development line open' : 'published baseline preserved; bounded development dependency maintenance') : 'unchanged technical sources'} and historical packages`);
 
 if (process.argv.includes('--post-tag')) {
   const repo = 'Odenknight/gkos-standard';

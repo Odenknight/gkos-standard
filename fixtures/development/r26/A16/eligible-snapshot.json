@@ -1,0 +1,43 @@
+{
+  "snapshot_id": "fixture:r26-a16-snapshot",
+  "snapshot_version": "1.0.0",
+  "description": "Eligible snapshot. Held items carry their kind; the snapshot does not state which are required. The closure rule decides that.",
+  "held_items": [
+    {
+      "kind": "contradiction",
+      "object_ref": {
+        "artifact_id": "fixture:contradiction-b",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "value": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      }
+    },
+    {
+      "kind": "warning",
+      "object_ref": {
+        "artifact_id": "fixture:warning-c",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "value": "2222222222222222222222222222222222222222222222222222222222222222"
+        }
+      }
+    },
+    {
+      "kind": "restriction",
+      "object_ref": {
+        "artifact_id": "fixture:restriction-r",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "value": "3333333333333333333333333333333333333333333333333333333333333333"
+        }
+      }
+    }
+  ]
+}

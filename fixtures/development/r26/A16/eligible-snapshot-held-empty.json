@@ -1,0 +1,6 @@
+{
+  "snapshot_id": "fixture:r26-a16-snapshot-held-empty",
+  "snapshot_version": "1.0.0",
+  "description": "Eligible snapshot with an explicit empty held_items array: it holds no contradictions, warnings, restrictions or lineage items.",
+  "held_items": []
+}

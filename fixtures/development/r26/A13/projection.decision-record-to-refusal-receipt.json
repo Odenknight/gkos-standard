@@ -1,0 +1,78 @@
+{
+  "projection_id": "fixture:r26-decision-record-to-refusal-receipt",
+  "projection_version": "1.0.0",
+  "digest": {
+    "algorithm": "sha-256",
+    "canonical_profile": "GKX-CBOR-1",
+    "value": "5555555555555555555555555555555555555555555555555555555555555555"
+  },
+  "role": "refusal-receipt",
+  "role_schema": "refusal-receipt-1.1.0.schema.json",
+  "role_schema_version": "1.1.0",
+  "source_schema": "decision-record.schema.json",
+  "constants": {
+    "canonical_profile": "GKX-CBOR-1",
+    "artifact_type": "refusal-receipt",
+    "schema_version": "1.1.0"
+  },
+  "mappings": [
+    {
+      "role_element": "receipt_id",
+      "source_field": "decision_id",
+      "operation": "copy"
+    },
+    {
+      "role_element": "gate_code",
+      "source_field": "gate_code",
+      "operation": "copy"
+    },
+    {
+      "role_element": "requirement_ids",
+      "source_field": "requirement_ids",
+      "operation": "copy"
+    },
+    {
+      "role_element": "predicate_ref",
+      "source_field": "predicate_ref",
+      "operation": "copy"
+    },
+    {
+      "role_element": "result",
+      "source_field": "disposition",
+      "operation": "value-table",
+      "value_table": {
+        "rejected": "refused"
+      }
+    },
+    {
+      "role_element": "input_refs",
+      "source_field": "input_refs",
+      "operation": "copy"
+    },
+    {
+      "role_element": "evaluated_at",
+      "source_field": "decided_at",
+      "operation": "copy"
+    },
+    {
+      "role_element": "actor_context",
+      "source_field": "reviewing_actor",
+      "operation": "wrap-set"
+    },
+    {
+      "role_element": "operation_kind",
+      "source_field": "operation_kind",
+      "operation": "copy"
+    },
+    {
+      "role_element": "refusal_effect",
+      "source_field": "refusal_effect",
+      "operation": "copy"
+    },
+    {
+      "role_element": "policy_ref",
+      "source_field": "policy_ref",
+      "operation": "copy"
+    }
+  ]
+}

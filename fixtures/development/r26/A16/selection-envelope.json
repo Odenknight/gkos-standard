@@ -1,0 +1,76 @@
+{
+  "canonical_profile": "GKX-CBOR-1",
+  "artifact_type": "selection-envelope",
+  "schema_version": "1.0.0",
+  "selection_set_id": "fixture:r26-a16-selection",
+  "selection_set_version": "1.0.0",
+  "purpose": "R26 canonical serialization fixture",
+  "recipient": "fixture-reviewer",
+  "query_or_instruction": "Select the claim",
+  "selected_by": {
+    "actor_id": "tool:gkos-ts",
+    "actor_class": "tool"
+  },
+  "eligible_snapshot_ref": {
+    "artifact_id": "fixture:r26-a16-snapshot",
+    "artifact_version": "1.0.0",
+    "digest": {
+      "algorithm": "sha-256",
+      "canonical_profile": "GKX-CBOR-1",
+      "value": "a80939963cf2629fd755b70c479af806d9341f990927860c4cf94e02cc6a50d3"
+    }
+  },
+  "selection_policy_ref": {
+    "component_id": "fixture:r26-selection-policy",
+    "component_version": "1.0.0",
+    "digest": {
+      "algorithm": "sha-256",
+      "canonical_profile": "GKX-CBOR-1",
+      "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  },
+  "selected_at": "2026-10-01T14:00:00.000000Z",
+  "members": [
+    {
+      "object_ref": {
+        "artifact_id": "fixture:claim-a",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "score_type": "not-applicable",
+      "score": null,
+      "inclusion_reason": "Primary selected assertion"
+    }
+  ],
+  "known_omissions": [],
+  "closure_inputs": [
+    {
+      "kind": "restriction",
+      "object_ref": {
+        "artifact_id": "fixture:restriction-r",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "value": "3333333333333333333333333333333333333333333333333333333333333333"
+        }
+      }
+    },
+    {
+      "kind": "contradiction",
+      "object_ref": {
+        "artifact_id": "fixture:contradiction-b",
+        "artifact_version": "1.0.0",
+        "digest": {
+          "algorithm": "sha-256",
+          "canonical_profile": "GKX-CBOR-1",
+          "value": "1111111111111111111111111111111111111111111111111111111111111111"
+        }
+      }
+    }
+  ]
+}

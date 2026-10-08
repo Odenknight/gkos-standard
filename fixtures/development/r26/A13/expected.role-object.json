@@ -1,0 +1,50 @@
+{
+  "canonical_profile": "GKX-CBOR-1",
+  "artifact_type": "refusal-receipt",
+  "schema_version": "1.1.0",
+  "receipt_id": "fixture:r26-decision-0001",
+  "gate_code": "GKOS-GATE-L5-003",
+  "requirement_ids": [
+    "GKOS-REVIEW-001"
+  ],
+  "predicate_ref": {
+    "component_id": "fixture:r26-review-lifecycle-predicate",
+    "component_version": "1.0.0",
+    "digest": {
+      "algorithm": "sha-256",
+      "canonical_profile": "GKX-CBOR-1",
+      "value": "3333333333333333333333333333333333333333333333333333333333333333"
+    }
+  },
+  "result": "refused",
+  "input_refs": [
+    {
+      "artifact_id": "fixture:r26-proposal-tags-only",
+      "artifact_version": "1.0.0",
+      "digest": {
+        "algorithm": "sha-256",
+        "canonical_profile": "GKX-CBOR-1",
+        "value": "4444444444444444444444444444444444444444444444444444444444444444"
+      }
+    }
+  ],
+  "evaluated_at": "2026-10-01T14:00:00.000000Z",
+  "actor_context": [
+    {
+      "actor_id": "u-2002",
+      "actor_class": "human",
+      "identity_provider": "idp.example"
+    }
+  ],
+  "operation_kind": "other",
+  "refusal_effect": "refuse",
+  "policy_ref": {
+    "component_id": "fixture:r26-policy",
+    "component_version": "1.0.0",
+    "digest": {
+      "algorithm": "sha-256",
+      "canonical_profile": "GKX-CBOR-1",
+      "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  }
+}

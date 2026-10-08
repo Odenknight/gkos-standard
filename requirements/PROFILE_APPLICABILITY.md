@@ -66,3 +66,17 @@ consequential action, GCP-7 applies.
 No profile claim is permitted unless the active catalog declares the profile
 complete and every required executable expectation passes under
 GKOS-CONFORMANCE-001..003 and GKOS-PROFILE-005.
+
+<!-- R26-A10 (proposed; v0.83 development line) -->
+For GKOS-PROFILE-005, GKOS-IDENTITY-003, GKOS-LINEAGE-003, GKOS-POLICY-001,
+GKOS-RETENTION-001, GKOS-RETENTION-002, GKOS-REENTRY-002, GKOS-REENTRY-003,
+GKOS-DELEGATION-001, GKOS-DELEGATION-005, GKOS-CONTEXT-002 and
+GKOS-AUTHUSE-001 each receive one registered gate code at the layer where
+their violation is detected. The Diagnostic-code registry annex, sections 1
+and 2, lists the conditions and codes.
+
+<!-- R26-A15 (proposed; v0.83 development line); owner answer 2026-10-07, R26 section 7.2 -->
+GKOS-RETENTION-001 also receives GKOS-GATE-L4-009 for a deletion or
+disposition refused because the hold predicate returned `hold`. Its
+applicability is unchanged: GCP-4 for retention and disposition control, and
+GCP-7 when deletion or disposition is executed.
