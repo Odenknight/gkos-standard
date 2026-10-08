@@ -1,16 +1,17 @@
 import { createHash } from "node:crypto";
 import cbor from "cbor";
+import { isCanonicalTimestamp } from "./canonical-time.mjs";
 
 const { encodeCanonical, decodeFirstSync } = cbor;
 
-const canonicalTimestamp = /^\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d\.\d{6}Z$/;
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const clone = (value) => structuredClone(value);
 
 const inspectCanonicalValue = (value, path = "$") => {
   if (typeof value === "string") {
+    if (!value.isWellFormed()) throw new Error(`GKOS-GATE-L6-005 invalid Unicode text at ${path}`);
     if (value !== value.normalize("NFC")) throw new Error(`GKOS-GATE-L6-005 non-NFC text at ${path}`);
-    if ((path.endsWith("_at") || path.endsWith("_from") || path.endsWith("_until")) && !canonicalTimestamp.test(value)) {
+    if ((path.endsWith("_at") || path.endsWith("_from") || path.endsWith("_until")) && !isCanonicalTimestamp(value)) {
       throw new Error(`GKOS-GATE-L6-004 invalid canonical timestamp at ${path}`);
     }
     return;
@@ -22,7 +23,10 @@ const inspectCanonicalValue = (value, path = "$") => {
   if (value === undefined) throw new Error(`GKOS-GATE-L6-006 undefined is not a canonical artifact value at ${path}`);
   if (value === null || typeof value === "boolean" || typeof value === "bigint") return;
   if (Array.isArray(value)) {
-    value.forEach((item, index) => inspectCanonicalValue(item, `${path}[${index}]`));
+    for (let index = 0; index < value.length; index++) {
+      if (!Object.hasOwn(value, index)) throw new Error(`GKOS-GATE-L6-006 sparse array at ${path}[${index}]`);
+      inspectCanonicalValue(value[index], `${path}[${index}]`);
+    }
     return;
   }
   if (Object.getPrototypeOf(value) !== Object.prototype) throw new Error(`unsupported canonical value at ${path}`);
@@ -40,7 +44,13 @@ export const canonicalEncode = (value) => {
 export const canonicalHash = (value) => sha256(canonicalEncode(value));
 
 export const verifyCanonicalBytes = (bytes) => {
-  const decoded = decodeFirstSync(bytes, { required: true, preventDuplicateKeys: true });
+  let decoded;
+  try {
+    decoded = decodeFirstSync(bytes, { required: true, preventDuplicateKeys: true, preferMap: false });
+  } catch (error) {
+    if (error.code === "ERR_ENCODING_INVALID_ENCODED_DATA") throw new Error("GKOS-GATE-L6-005 invalid UTF-8", { cause: error });
+    throw new Error("GKOS-GATE-L6-001 invalid canonical CBOR", { cause: error });
+  }
   const reencoded = canonicalEncode(decoded);
   if (!Buffer.from(bytes).equals(reencoded)) throw new Error("GKOS-GATE-L6-001 non-canonical CBOR encoding");
   return decoded;
