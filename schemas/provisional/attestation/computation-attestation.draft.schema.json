@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/provisional/attestation/computation-attestation.draft.schema.json",
+  "type": "object",
+  "required": [
+    "canonical_profile",
+    "artifact_type",
+    "schema_version",
+    "attestation_id",
+    "definition_ref",
+    "request_digest",
+    "checker_ref",
+    "checker_dependencies_digest",
+    "run_id",
+    "executor_id",
+    "presentation_digest",
+    "checks",
+    "verdict",
+    "reason_codes",
+    "emitted_at",
+    "origin",
+    "sensitivity"
+  ],
+  "properties": {
+    "canonical_profile": {
+      "const": "GKX-CBOR-1"
+    },
+    "artifact_type": {
+      "const": "provisional-computation-attestation"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "attestation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "definition_ref": {
+      "$ref": "../../gkx-common.defs.json#/$defs/artifactReference"
+    },
+    "request_digest": {
+      "$ref": "../../gkx-common.defs.json#/$defs/receivedBytesDigest"
+    },
+    "checker_ref": {
+      "$ref": "../../gkx-common.defs.json#/$defs/artifactReferenceAnyDigest"
+    },
+    "checker_dependencies_digest": {
+      "$ref": "../../gkx-common.defs.json#/$defs/receivedBytesDigest"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "executor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "execution_receipt_digest": {
+      "$ref": "../../gkx-common.defs.json#/$defs/receivedBytesDigest"
+    },
+    "result_digest": {
+      "$ref": "../../gkx-common.defs.json#/$defs/receivedBytesDigest"
+    },
+    "presentation_digest": {
+      "$ref": "../../gkx-common.defs.json#/$defs/receivedBytesDigest"
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "description": "Order follows definition.required_checks; the runtime rejects omitted, duplicate, or reordered check identities.",
+      "items": {
+        "type": "object",
+        "required": [
+          "check",
+          "outcome",
+          "reason"
+        ],
+        "properties": {
+          "check": {
+            "enum": [
+              "executor_identity",
+              "execution_binding",
+              "evidence_integrity",
+              "method_match",
+              "parameter_bounds",
+              "input_binding",
+              "environment_match",
+              "result_fidelity"
+            ]
+          },
+          "outcome": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "PARTIAL",
+              "UNEVALUATED"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "PARTIAL",
+        "UNEVALUATED"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "emitted_at": {
+      "$ref": "../../gkx-common.defs.json#/$defs/canonicalTimestamp"
+    },
+    "origin": {
+      "$ref": "../../gkx-common.defs.json#/$defs/origin"
+    },
+    "sensitivity": {
+      "$ref": "../../gkx-common.defs.json#/$defs/sensitivity"
+    }
+  },
+  "additionalProperties": false,
+  "title": "Computation attestation \u2014 provisional evidence receipt, never an authority grant",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verdict": {
+            "const": "PASS"
+          }
+        },
+        "required": [
+          "verdict"
+        ]
+      },
+      "then": {
+        "required": [
+          "execution_receipt_digest",
+          "result_digest"
+        ],
+        "properties": {
+          "checks": {
+            "items": {
+              "properties": {
+                "outcome": {
+                  "const": "PASS"
+                }
+              }
+            }
+          },
+          "reason_codes": {
+            "maxItems": 0
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "reason_codes": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

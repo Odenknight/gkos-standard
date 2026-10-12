@@ -1,0 +1,4 @@
+{
+  "operation": "sum-minor-units",
+  "field": "amount_minor"
+}

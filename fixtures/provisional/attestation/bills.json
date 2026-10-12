@@ -1,0 +1,12 @@
+[
+  {
+    "item": "synthetic-001",
+    "kind": "consultation",
+    "amount_minor": 7000
+  },
+  {
+    "item": "synthetic-002",
+    "kind": "therapy",
+    "amount_minor": 5000
+  }
+]

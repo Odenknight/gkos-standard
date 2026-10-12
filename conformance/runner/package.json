@@ -8,7 +8,8 @@
     "lint:registries": "node registry-lint.mjs",
     "lint:mutation-coverage": "node registry-lint.mjs --require-mutation-coverage",
     "gcp6:replay": "node replay-fixture.mjs --out-dir gcp6-replay-evidence",
-    "srtp:draft": "node srtp-graph.mjs --out srtp-draft-report.json"
+    "srtp:draft": "node srtp-graph.mjs --out srtp-draft-report.json",
+    "cap:draft": "node computation-attestation.mjs"
   },
   "dependencies": {
     "ajv": "^8.17.0",

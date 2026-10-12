@@ -1,0 +1,8 @@
+{
+  "baseline": "-76.123456",
+  "rerun": "-76.123455",
+  "absolute": "0.000002",
+  "relative": "0",
+  "units": "Eh",
+  "comparison": "abs(a-b) <= absolute + relative * max(abs(a),abs(b))"
+}

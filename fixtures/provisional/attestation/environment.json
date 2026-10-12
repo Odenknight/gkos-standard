@@ -1,0 +1,5 @@
+{
+  "interpreter": "gkos-attestation-fixture-executor",
+  "version": "0.1.0",
+  "arithmetic": "safe-integer-minor-units"
+}
