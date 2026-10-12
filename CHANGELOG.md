@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Proposed CAP-DRAFT-0.1 computation attestation experiment: provisional schemas,
+  bounded aggregate executor/checker, adversarial fixtures, canonical replay,
+  separate scalar rerun comparison, testing parameters and five-domain examples.
+  No active schema, requirement, gate code, published version or conformance
+  standing changes. See `docs/proposals/CAP_DRAFT_PROFILE.md`.
+
 - R26 implementation of the accepted items (v0.83 development line; R26
   accepted in part 2026-10-07, R26 §7.3). Annex text, marked
   `<!-- R26-Axx (accepted 2026-10-07; ...) -->`: Authority and Refusal

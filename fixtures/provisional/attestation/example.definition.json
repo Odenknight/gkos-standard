@@ -1,0 +1,62 @@
+{
+  "canonical_profile": "GKX-CBOR-1",
+  "artifact_type": "provisional-computation-definition",
+  "schema_version": "0.1.0",
+  "gkx_version": "2.0",
+  "uid": "019a0000-0000-7000-8000-000000000001",
+  "title": "Synthetic bill aggregate; not a legal entitlement calculation",
+  "type": "gkx:ComputationDefinition",
+  "created_at": "2026-10-12T08:00:00.000000Z",
+  "epistemic_state": "modeled",
+  "sensitivity": "public",
+  "authorship_origin": "authored",
+  "computation_version": "0.1.0",
+  "method_ref": {
+    "artifact_id": "aggregate-method",
+    "artifact_version": "0.1.0",
+    "digest": {
+      "algorithm": "sha-256",
+      "basis": "received-bytes",
+      "value": "76af2104a101d5361961032ed5799d95474e8c2bb20213ad95741d53dce5eb40"
+    }
+  },
+  "executor_id": "fixture:aggregate-executor",
+  "environment_digest": {
+    "algorithm": "sha-256",
+    "basis": "received-bytes",
+    "value": "aa65b59ce591d48627deff1f469a8249178dd5d3ef2d42684801e0d77bf21aff"
+  },
+  "parameter_schema": {
+    "type": "object",
+    "required": [
+      "maximum_rows"
+    ],
+    "properties": {
+      "maximum_rows": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      }
+    },
+    "additionalProperties": false
+  },
+  "input_names": [
+    "bills"
+  ],
+  "required_checks": [
+    "executor_identity",
+    "execution_binding",
+    "evidence_integrity",
+    "method_match",
+    "parameter_bounds",
+    "input_binding",
+    "environment_match",
+    "result_fidelity"
+  ],
+  "output": {
+    "name": "total",
+    "representation": "integer-minor-units",
+    "units": "USD-cent",
+    "rounding": "none"
+  }
+}

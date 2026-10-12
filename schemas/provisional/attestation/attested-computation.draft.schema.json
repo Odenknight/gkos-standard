@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Odenknight/gkos-standard/schemas/provisional/attestation/attested-computation.draft.schema.json",
+  "type": "object",
+  "required": [
+    "canonical_profile",
+    "artifact_type",
+    "schema_version",
+    "type",
+    "created_at",
+    "computation_version",
+    "method_ref",
+    "executor_id",
+    "environment_digest",
+    "parameter_schema",
+    "input_names",
+    "required_checks",
+    "output",
+    "sensitivity",
+    "authorship_origin"
+  ],
+  "properties": {
+    "canonical_profile": {
+      "const": "GKX-CBOR-1"
+    },
+    "artifact_type": {
+      "const": "provisional-computation-definition"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "type": {
+      "const": "gkx:ComputationDefinition"
+    },
+    "created_at": {
+      "$ref": "../../gkx-common.defs.json#/$defs/canonicalTimestamp"
+    },
+    "computation_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "method_ref": {
+      "$ref": "../../gkx-common.defs.json#/$defs/artifactReferenceAnyDigest"
+    },
+    "executor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment_digest": {
+      "$ref": "../../gkx-common.defs.json#/$defs/receivedBytesDigest"
+    },
+    "parameter_schema": {
+      "type": "object",
+      "required": [
+        "type",
+        "required",
+        "properties",
+        "additionalProperties"
+      ],
+      "properties": {
+        "type": {
+          "const": "object"
+        },
+        "required": {
+          "const": [
+            "maximum_rows"
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "required": [
+            "maximum_rows"
+          ],
+          "properties": {
+            "maximum_rows": {
+              "type": "object",
+              "required": [
+                "type",
+                "minimum",
+                "maximum"
+              ],
+              "properties": {
+                "type": {
+                  "const": "integer"
+                },
+                "minimum": {
+                  "const": 1
+                },
+                "maximum": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "additionalProperties": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "input_names": {
+      "const": [
+        "bills"
+      ]
+    },
+    "required_checks": {
+      "const": [
+        "executor_identity",
+        "execution_binding",
+        "evidence_integrity",
+        "method_match",
+        "parameter_bounds",
+        "input_binding",
+        "environment_match",
+        "result_fidelity"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "name",
+        "representation",
+        "units",
+        "rounding"
+      ],
+      "properties": {
+        "name": {
+          "const": "total"
+        },
+        "representation": {
+          "const": "integer-minor-units"
+        },
+        "units": {
+          "const": "USD-cent"
+        },
+        "rounding": {
+          "const": "none"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sensitivity": {
+      "$ref": "../../gkx-common.defs.json#/$defs/sensitivity"
+    },
+    "authorship_origin": {
+      "$ref": "../../gkx-common.defs.json#/$defs/origin"
+    }
+  },
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "$ref": "../../gkx-frontmatter-2.0.schema.json"
+    }
+  ],
+  "title": "Computation definition \u2014 provisional bounded aggregate pilot",
+  "description": "Informative and non-qualifying. The first executable dialect is an integer aggregate, not a universal computation interpreter. Approval remains a separate digest-bound Decision Record."
+}

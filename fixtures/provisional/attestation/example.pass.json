@@ -1,0 +1,98 @@
+{
+  "checks": [
+    {
+      "check": "executor_identity",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "execution_binding",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "evidence_integrity",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "method_match",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "parameter_bounds",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "input_binding",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "environment_match",
+      "reason": "verified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "result_fidelity",
+      "reason": "verified",
+      "outcome": "PASS"
+    }
+  ],
+  "origin": "derived",
+  "run_id": "aggregate-001",
+  "verdict": "PASS",
+  "emitted_at": "2026-10-12T08:00:00.000000Z",
+  "checker_ref": {
+    "digest": {
+      "basis": "received-bytes",
+      "value": "e2a579ad97b1b9dfdf874d54c395ca1b8265744b38a883e5968c2c7b0485df33",
+      "algorithm": "sha-256"
+    },
+    "artifact_id": "cap-reference-checker",
+    "artifact_version": "0.1.0"
+  },
+  "executor_id": "fixture:aggregate-executor",
+  "sensitivity": "public",
+  "reason_codes": [],
+  "artifact_type": "provisional-computation-attestation",
+  "result_digest": {
+    "basis": "received-bytes",
+    "value": "24541608b2e4a44dc1433c5b6b4d55bef72dde2e2f0c8cb2247f50e91c87e539",
+    "algorithm": "sha-256"
+  },
+  "attestation_id": "cap:aggregate-001",
+  "definition_ref": {
+    "digest": {
+      "value": "e3f593148d9c8d0da91f27472622d853389ecd4b7e55362ce5209469be074fc8",
+      "algorithm": "sha-256",
+      "canonical_profile": "GKX-CBOR-1"
+    },
+    "artifact_id": "019a0000-0000-7000-8000-000000000001",
+    "artifact_version": "0.1.0"
+  },
+  "request_digest": {
+    "basis": "received-bytes",
+    "value": "a6a2ee404fcc332d59ec9377c9d58e6cf5d0667a6e14c10bb9e4b65dc4f7b667",
+    "algorithm": "sha-256"
+  },
+  "schema_version": "0.1.0",
+  "canonical_profile": "GKX-CBOR-1",
+  "presentation_digest": {
+    "basis": "received-bytes",
+    "value": "24541608b2e4a44dc1433c5b6b4d55bef72dde2e2f0c8cb2247f50e91c87e539",
+    "algorithm": "sha-256"
+  },
+  "execution_receipt_digest": {
+    "basis": "received-bytes",
+    "value": "bb31f7ba00f8570cff953ea54456aa5cf87675554283cd7531b848d06f7b9761",
+    "algorithm": "sha-256"
+  },
+  "checker_dependencies_digest": {
+    "basis": "received-bytes",
+    "value": "9126d2203ff4f2020409fa69903b50b4f41688c6410ebd9b5529fadd55145a27",
+    "algorithm": "sha-256"
+  }
+}

@@ -19,6 +19,13 @@ Promotion to the active schema surface requires:
 
 ## Current provisional areas
 
+### `attestation/`
+
+Contains proposed `CAP-DRAFT-0.1`: a bounded aggregate dialect, canonical
+attestation records, deterministic adversarial fixtures, separate scalar rerun
+comparison, test parameters and five-domain guidance. Reuses existing GKOS roles
+without changing active schemas or claims. See [README](attestation/README.md).
+
 ### `science/`
 
 Contains the `SRTP-DRAFT-0.1` scientific trace experiment. Its schemas and
