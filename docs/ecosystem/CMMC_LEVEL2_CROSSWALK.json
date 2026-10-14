@@ -1,0 +1,1649 @@
+{
+  "version": "0.1-draft",
+  "standing": "DRAFT-NOT-INDEPENDENTLY-REVIEWED",
+  "author": "Astra-Oden",
+  "prepared": "2026-10-01",
+  "level": 2,
+  "assessment_performed": false,
+  "cmmc_status_claim": null,
+  "gkos_baseline": {
+    "tag": "v0.82.1",
+    "commit": "3a62e4a02d674a574d87e01c10dc88b7715de037",
+    "registry_sha256": "68e2169b1a56a8cee72adceb87cd4b9637f3f6e5488b27b60ca88446372871cc"
+  },
+  "external_baseline": {
+    "cmmc_guide": "2.13 / September 2024",
+    "nist_requirements": "SP800-171 Revision2 / updated January2021",
+    "nist_assessment": "SP800-171A June2018",
+    "requirement_count": 110,
+    "objective_count": 320,
+    "objective_catalog_sha256": "bb8af6cf52757e092cf0c29ad71fad55025c2fb4f66f5ddbdc782c0c754da22a",
+    "sources": [
+      {
+        "url": "https://dowcio.war.gov/Portals/0/Documents/CMMC/AssessmentGuideL2v2.pdf",
+        "sha256": "0dcaba1626a0d23893981d74dd3f0f2338fff54cece67d81bc811ce76392d867",
+        "accessed": "2026-10-01"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171r2.pdf",
+        "sha256": "298bdbfcf6a4890a564b225c893230a0b32b2e69e3b98dd898aaeb1d544c5e12",
+        "accessed": "2026-10-01"
+      },
+      {
+        "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171A.pdf",
+        "sha256": "21bf3acc43f4284f723639b82eb71e3ce597fa3610f7e9dcf5e8484e22bc0f71",
+        "accessed": "2026-10-01"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "cmmc_id": "AC.L2-3.1.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.2",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "a",
+        "b"
+      ],
+      "gkos_ids": [
+        "GKOS-EFFECT-001",
+        "GKOS-EFFECT-002",
+        "GKOS-EFFECT-003",
+        "GKOS-AUTHUSE-003"
+      ],
+      "candidate_evidence": "Typed permitted-action scope and action-time grant/containment refusal evidence for integrated governed functions.",
+      "remaining_work": "Authenticated user binding, complete function inventory and enforcement at all system paths; execute bypass, queue and revocation tests."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.3",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "d",
+        "e"
+      ],
+      "gkos_ids": [
+        "GKOS-DISCLOSURE-001",
+        "GKOS-POLICY-001",
+        "GKOS-EFFECT-001"
+      ],
+      "candidate_evidence": "Policy-bound protected-disclosure authorizations and observed approved/denied outputs within the governed boundary.",
+      "remaining_work": "Identify actual CUI, flow policies, sources/destinations, and enforce every network/storage/output route; require non-disclosure tests."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.4",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "a"
+      ],
+      "gkos_ids": [
+        "GKOS-AUTHUSE-004",
+        "GKOS-REVIEW-003"
+      ],
+      "candidate_evidence": "Declared separated proposal/review/authorization/execution duties for the integrated process.",
+      "remaining_work": "Assign duties and effective privileges to separate individuals under [b,c]; different models or a shared operator/account do not establish that separation."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.5",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "d"
+      ],
+      "gkos_ids": [
+        "GKOS-EFFECT-002",
+        "GKOS-DELEGATION-001",
+        "GKOS-AUTHUSE-003"
+      ],
+      "candidate_evidence": "Bounded authorization records for a deployment-identified security function.",
+      "remaining_work": "Establish minimum necessary privilege and actual IAM/OS enforcement; identify privileged accounts and security functions for [a,b,c]."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.6",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.7",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "d"
+      ],
+      "gkos_ids": [
+        "GKOS-RECEIPT-001",
+        "GKOS-AUTHUSE-005",
+        "GKOS-AUTHUSE-006"
+      ],
+      "candidate_evidence": "Durable outcome and refusal records for functions the deployment separately declares privileged.",
+      "remaining_work": "Define privileged functions/non-privileged users, block their unauthorized execution for [a,b,c], and prove full privileged-event capture across system paths."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.8",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.9",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.10",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.11",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.12",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.13",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.14",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.15",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.16",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.17",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.18",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.19",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.20",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.21",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AC.L2-3.1.22",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Other access controls need deployment account, session, remote/wireless/mobile, media and public-release safeguards; no positive GKOS requirement nexus is asserted here."
+    },
+    {
+      "cmmc_id": "AT.L2-3.2.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Personnel awareness and role/insider-threat training need an actual training program and records."
+    },
+    {
+      "cmmc_id": "AT.L2-3.2.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Personnel awareness and role/insider-threat training need an actual training program and records."
+    },
+    {
+      "cmmc_id": "AT.L2-3.2.3",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Personnel awareness and role/insider-threat training need an actual training program and records."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "b",
+        "c",
+        "d"
+      ],
+      "gkos_ids": [
+        "GKOS-RECEIPT-001",
+        "GKOS-RECEIPT-002",
+        "GKOS-RECEIPT-003",
+        "GKOS-AUTHUSE-005",
+        "GKOS-AUTHUSE-006"
+      ],
+      "candidate_evidence": "Declared receipt fields and executed durable success/refusal records can contribute governed-event audit content.",
+      "remaining_work": "Supply full security-event catalog, collection, record completeness, storage capacity, retention schedule and retained-record tests. A hold predicate is not the retention schedule."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.2",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "a",
+        "b"
+      ],
+      "gkos_ids": [
+        "GKOS-AUTHUSE-004",
+        "GKOS-AUTHUSE-005",
+        "GKOS-RECEIPT-002"
+      ],
+      "candidate_evidence": "Actor context, distinct roles and delegation history supply the action side of a user-action trace.",
+      "remaining_work": "Bind records to uniquely authenticated individuals with protected identities; actor classes, note UIDs and shared credentials alone do not provide unique-user attribution."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.3",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Audit-event review, failure alerts, correlation, reduction/reporting, time synchronization and audit administration require deployed audit services; proposal review, hashes and timestamps are insufficient."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.4",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Audit-event review, failure alerts, correlation, reduction/reporting, time synchronization and audit administration require deployed audit services; proposal review, hashes and timestamps are insufficient."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.5",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Audit-event review, failure alerts, correlation, reduction/reporting, time synchronization and audit administration require deployed audit services; proposal review, hashes and timestamps are insufficient."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.6",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Audit-event review, failure alerts, correlation, reduction/reporting, time synchronization and audit administration require deployed audit services; proposal review, hashes and timestamps are insufficient."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.7",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Audit-event review, failure alerts, correlation, reduction/reporting, time synchronization and audit administration require deployed audit services; proposal review, hashes and timestamps are insufficient."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.8",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "gkos_ids": [
+        "GKOS-DISCLOSURE-001",
+        "GKOS-REVIEW-004",
+        "GKOS-RETENTION-001",
+        "GKOS-RETENTION-003"
+      ],
+      "candidate_evidence": "Protected audit disclosure, append-only governed review history and authorized governed disposition records can supply bounded protection evidence.",
+      "remaining_work": "Protect actual audit-store access/change/deletion including direct filesystem and privileged paths; separately protect logging tools for [d,e,f]. A hash alone prevents neither deletion nor unauthorized access."
+    },
+    {
+      "cmmc_id": "AU.L2-3.3.9",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Audit-event review, failure alerts, correlation, reduction/reporting, time synchronization and audit administration require deployed audit services; proposal review, hashes and timestamps are insufficient."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.2",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.3",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "gkos_ids": [
+        "GKOS-REVIEW-001",
+        "GKOS-REVIEW-002",
+        "GKOS-REVIEW-004",
+        "GKOS-RECEIPT-001"
+      ],
+      "candidate_evidence": "Reviewed/dispositioned system-change proposals and state-change receipts when integrated with actual in-scope configuration changes.",
+      "remaining_work": "Demonstrate complete system-change inventory, approval workflow, implementation and before/after records; ordinary knowledge-note changes are not system configuration changes."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.4",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.5",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "relationship": "Potential component evidence",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "gkos_ids": [
+        "GKOS-POLICY-001",
+        "GKOS-AUTHUSE-003",
+        "GKOS-EFFECT-002",
+        "GKOS-REVIEW-002"
+      ],
+      "candidate_evidence": "Versioned logical change-access policy, approval and scope-enforced governed configuration change records.",
+      "remaining_work": "Integrate effective OS/IAM restrictions and test all bypasses; physical restrictions [a,b,c,d] and ungoverned logical change routes remain outside these records."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.6",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.7",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.8",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "CM.L2-3.4.9",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "System inventory, secure settings, security-impact evaluation and software/functionality controls need deployed configuration management evidence."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.3",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.4",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.5",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.6",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.7",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.8",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.9",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.10",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IA.L2-3.5.11",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "User/device identification, authentication, MFA, replay-resistant login and credential/account lifecycle require deployed IAM. Artifact UUIDs and actor-role fields are insufficient."
+    },
+    {
+      "cmmc_id": "IR.L2-3.6.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Incident preparation, handling, reporting and testing require an operational incident-response program; ordinary receipts are not incident reports."
+    },
+    {
+      "cmmc_id": "IR.L2-3.6.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Incident preparation, handling, reporting and testing require an operational incident-response program; ordinary receipts are not incident reports."
+    },
+    {
+      "cmmc_id": "IR.L2-3.6.3",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Incident preparation, handling, reporting and testing require an operational incident-response program; ordinary receipts are not incident reports."
+    },
+    {
+      "cmmc_id": "MA.L2-3.7.1",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Maintenance authorization, personnel, remote access, equipment sanitization and media inspection require actual maintenance controls."
+    },
+    {
+      "cmmc_id": "MA.L2-3.7.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Maintenance authorization, personnel, remote access, equipment sanitization and media inspection require actual maintenance controls."
+    },
+    {
+      "cmmc_id": "MA.L2-3.7.3",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Maintenance authorization, personnel, remote access, equipment sanitization and media inspection require actual maintenance controls."
+    },
+    {
+      "cmmc_id": "MA.L2-3.7.4",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Maintenance authorization, personnel, remote access, equipment sanitization and media inspection require actual maintenance controls."
+    },
+    {
+      "cmmc_id": "MA.L2-3.7.5",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Maintenance authorization, personnel, remote access, equipment sanitization and media inspection require actual maintenance controls."
+    },
+    {
+      "cmmc_id": "MA.L2-3.7.6",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Maintenance authorization, personnel, remote access, equipment sanitization and media inspection require actual maintenance controls."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.2",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.3",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.4",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.5",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.6",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.7",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.8",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "MP.L2-3.8.9",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Media safeguards, sanitization, markings, transport and encryption require deployed media protection; governed deletion does not sanitize media."
+    },
+    {
+      "cmmc_id": "PS.L2-3.9.1",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Personnel screening and termination/transfer access processes require human-resources and account lifecycle controls."
+    },
+    {
+      "cmmc_id": "PS.L2-3.9.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Personnel screening and termination/transfer access processes require human-resources and account lifecycle controls."
+    },
+    {
+      "cmmc_id": "PE.L2-3.10.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Facility/visitor/physical-access and alternate-site safeguards require actual physical security controls."
+    },
+    {
+      "cmmc_id": "PE.L2-3.10.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Facility/visitor/physical-access and alternate-site safeguards require actual physical security controls."
+    },
+    {
+      "cmmc_id": "PE.L2-3.10.3",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Facility/visitor/physical-access and alternate-site safeguards require actual physical security controls."
+    },
+    {
+      "cmmc_id": "PE.L2-3.10.4",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Facility/visitor/physical-access and alternate-site safeguards require actual physical security controls."
+    },
+    {
+      "cmmc_id": "PE.L2-3.10.5",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Facility/visitor/physical-access and alternate-site safeguards require actual physical security controls."
+    },
+    {
+      "cmmc_id": "PE.L2-3.10.6",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Facility/visitor/physical-access and alternate-site safeguards require actual physical security controls."
+    },
+    {
+      "cmmc_id": "RA.L2-3.11.1",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Risk assessment, vulnerability scanning and remediation require executed security processes; storing their reports does not implement them."
+    },
+    {
+      "cmmc_id": "RA.L2-3.11.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Risk assessment, vulnerability scanning and remediation require executed security processes; storing their reports does not implement them."
+    },
+    {
+      "cmmc_id": "RA.L2-3.11.3",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Risk assessment, vulnerability scanning and remediation require executed security processes; storing their reports does not implement them."
+    },
+    {
+      "cmmc_id": "CA.L2-3.12.1",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Security control assessment, corrective plans, monitoring and an approved SSP require actual in-scope security assessment; GKOS profile tests do not replace it."
+    },
+    {
+      "cmmc_id": "CA.L2-3.12.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Security control assessment, corrective plans, monitoring and an approved SSP require actual in-scope security assessment; GKOS profile tests do not replace it."
+    },
+    {
+      "cmmc_id": "CA.L2-3.12.3",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Security control assessment, corrective plans, monitoring and an approved SSP require actual in-scope security assessment; GKOS profile tests do not replace it."
+    },
+    {
+      "cmmc_id": "CA.L2-3.12.4",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Security control assessment, corrective plans, monitoring and an approved SSP require actual in-scope security assessment; GKOS profile tests do not replace it."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.2",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.3",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.4",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.5",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.6",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.7",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.8",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.9",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.10",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.11",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.12",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.13",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.14",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.15",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SC.L2-3.13.16",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Boundary, communications, system separation, resource, key, cryptographic and data-protection safeguards require deployed technical controls. Canonical hashes are not CUI encryption."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.1",
+      "all_objectives": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.2",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.3",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.4",
+      "all_objectives": [
+        "a"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.5",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.6",
+      "all_objectives": [
+        "a",
+        "b",
+        "c"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    },
+    {
+      "cmmc_id": "SI.L2-3.14.7",
+      "all_objectives": [
+        "a",
+        "b"
+      ],
+      "relationship": "No direct mapping asserted",
+      "assessment_result": "NOT_ASSESSED",
+      "candidate_objectives": [],
+      "gkos_ids": [],
+      "candidate_evidence": "No positive requirement-level correspondence proposed in this draft.",
+      "remaining_work": "Flaw handling, malicious-code defenses, security alerts, scanning, monitoring and detection require deployed system-integrity controls."
+    }
+  ]
+}
