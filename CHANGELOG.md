@@ -125,6 +125,11 @@
 - Record the owner's 2026-10-07 answers to R26 questions Q1–Q6 (R26 §7.1).
   R26 stays proposed; its chosen items are built on the v0.83 line as an
   evidence package for acceptance.
+- R26-A17 (accepted 2026-10-18, owner instruction): `requirements/REGISTRY.md`
+  gains a dated ledger row recording the interpretation of
+  GKOS-IDENTITY-001 ("GKX 2.3 note" denotes a note in the GKX 2.0 machine
+  namespace under R14). The original requirement text is unchanged. R26-A01,
+  A04 and A18 stay proposed.
 
 ## GKOS-2026-09-24 v0.82.1
 

@@ -5,8 +5,9 @@ Status: Accepted in part
 **Date:** 2026-10-07
 
 **Acceptance date:** 2026-10-07, by item (section 7.3). The owner accepted
-R26-A02, A03, A05–A16 and R26-S01–S07. R26-A01, A04, A17 and A18 stay
-proposed until GKOS-Engine reference evidence exists for them.
+R26-A02, A03, A05–A16 and R26-S01–S07. R26-A01, A04 and A18 stay
+proposed until GKOS-Engine reference evidence exists for them. R26-A17 was
+accepted 2026-10-18 (section 7.3).
 
 **Deciding authority:** Shaun “Oden” Marshall, Founder and Initial Editor
 (accepted in part 2026-10-07; section 7.3)
@@ -928,7 +929,7 @@ accepted item:
 | R26-S07 | Accepted 2026-10-07 |
 | R26-A01 | Proposed; awaits GKOS-Engine reference evidence |
 | R26-A04 | Proposed; awaits GKOS-Engine reference evidence |
-| R26-A17 | Proposed; awaits GKOS-Engine reference evidence |
+| R26-A17 | Accepted 2026-10-18 (owner instruction, Claude Code session 2026-10-18; lifts the Engine-reference-evidence precondition for A17 only) |
 | R26-A18 | Proposed; awaits GKOS-Engine reference evidence |
 
 Acceptance authorizes the accepted items on the v0.83 development line. Their

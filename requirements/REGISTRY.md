@@ -95,6 +95,7 @@ v0.81 release.
 | 2026-08-29 | `GKOS-DELEGATION-004` | Human-only lifecycle wording superseded for the v0.81 development line by an authorized independent-review lifecycle retaining mandatory human escalation. | R18-128; owner authorization | `GKOS-REVIEW-001..003` |
 | 2026-09-03 | `GKOS-AUTHUSE-007`, `GKOS-REVIEW-001..004`, `GKOS-DISCLOSURE-001` | Six accepted allocations consolidated into the active v0.81 edition without changing original requirement text; publication remains governed by the final R20 approval and signed release. | Owner finalization authorization; R17, R18, R20 | Original allocation identities preserved |
 | 2026-09-03 | `GKOS-AUTHUSE-007`, `GKOS-REVIEW-001..004`, `GKOS-DISCLOSURE-001` | Release status advanced to published in the signed GKOS-2026-09-03 v0.81 release (tag `v0.81`, commit `8f2a158c`). Status cells updated 2026-09-22 without changing requirement text. | R20 owner publication approval; [publication record](../docs/releases/GKOS_2026-09-03_v0.81_PUBLICATION_RECORD.md) | None |
+| 2026-10-18 | `GKOS-IDENTITY-001` | Interpretation recorded. "GKX 2.3 note" in the original text denotes a note in the current GKX machine namespace, GKX 2.0 under R14. "Newly authored" means a note whose identity the assessed implementation assigns during the assessed operation; it is tested by authoring-operation fixtures, not by inspecting a stored record. Original text unchanged. | R26-A17 | None |
 
 ## Profile applicability for R15 allocations
 
