@@ -23,6 +23,9 @@ For each subject in `scope.json`, resolve the registry row, controlling decision
 | Gate registry | `standard/annexes/Diagnostic_Code_Registry.md` | Gate codes cited by Track A entries | Packet `base_commit` |
 | Release manifest | `releases/2026-09-24-v0.82.1/RELEASE_MANIFEST.yml` | Decision classes, provisional material, active catalog | Packet `base_commit` |
 | Coordinate pins | `docs/releases/V082_COORDINATE_CONSOLIDATION.md` | Historical machine-readable pins | Packet `base_commit` |
+| Version-compatibility matrix | `conformance/provisional-requirements/version-compatibility.matrix.json` | GKX namespace, Engine profile and API names; independent of the namespace | Packet `base_commit` |
+| Naming gap and interpretation | `docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md` (GAP-021); `decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md` (R26-A17) | GKX-version questions | Packet `base_commit` |
+| Engine coordinates (external, dated) | Router section "Implementation state (informative, dated 2026-10-18)" | Package, tag, release, npm and pin coordinates of the private GKOS-Engine repository | Coordinator verification 2026-10-18 |
 
 ## Dependencies
 
