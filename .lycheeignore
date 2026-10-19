@@ -10,3 +10,8 @@
 ^https://www\.iso\.org/standard/42005$
 ^https://www\.iso\.org/standard/77304\.html$
 ^https://www\.iso\.org/about/members$
+
+# GKOS-Engine is a private repository; unauthenticated CI receives 404 for every
+# URL under it. The links are retained as owner-visible evidence references.
+# Added 2026-10-19 after the Link check began failing on main-based branches.
+^https://github\.com/Odenknight/GKOS-Engine(/.*)?$
