@@ -7,7 +7,7 @@ ratification, independent certification, accreditation, or regulator approval.
 
 ## Proposed decisions
 
-No R-record is wholly proposed. R26 items R26-A01, A04, A17 and A18 stay
+No R-record is wholly proposed. R26 items R26-A01, A04 and A18 stay
 proposed inside the partly accepted R26 record below.
 
 ## Owner clarifications
@@ -30,8 +30,8 @@ These clarify existing decisions without allocating an R-number.
 
 - **Date:** 2026-10-07
 - **Status:** Accepted in part (by item); v0.83 development line
-- **Acceptance:** 2026-10-07 for R26-A02, A03, A05–A16 and R26-S01–S07 (R26 §7.3).
-  R26-A01, A04, A17 and A18 stay proposed until GKOS-Engine reference evidence exists
+- **Acceptance:** 2026-10-07 for R26-A02, A03, A05–A16 and R26-S01–S07, and 2026-10-18 for R26-A17 (R26 §7.3).
+  R26-A01, A04 and A18 stay proposed until GKOS-Engine reference evidence exists
 - **Development line:** v0.83 development line opened by R25 (accepted 2026-10-07)
 - **Owner answers:** Q1–Q6 answered 2026-10-07 (R26 §7.1); second-round answers 2026-10-07 (R26 §7.2), including GKOS-GATE-L4-009 for R26-A15
 - **Decision:** Close technical-detail gaps `GAP-001..024` recorded in
