@@ -23,6 +23,13 @@ Freeze one answerable question, its question class, the canonical subject IDs, t
 | Track A catalog | `fixtures/track-a/fixtures.manifest.json` | Same fields | Packet `base_commit` |
 | Provisional suites | `fixtures/provisional/` | Folder listing only | Packet `base_commit` |
 | Current edition | `CITATION.cff` | `version`, `date-released` | Packet `base_commit` |
+| GKX version names | `conformance/provisional-requirements/version-compatibility.matrix.json` | `current`, `implementation_symbols`, `independent_current_coordinates` | Packet `base_commit` |
+| GKX naming gap | `docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md` | GAP-021 | Packet `base_commit` |
+| GKX naming interpretation (proposed) | `decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md` | R26-A17, with R14 and R12-093 as controlling records | Packet `base_commit` |
+
+## GKX-version questions
+
+A question about "GKX 2.3", `gkx-2.3-validating-projection` or `buildGkx23Projection` against GKX 2.0 is class "decision lineage". Start from R14, R12-093, the version-compatibility matrix, GAP-021 and R26-A17. The 2.3 names are a GKOS-Engine profile and API, not a namespace; the public GKX namespace is 2.0. Dated Engine coordinates are in the router section "Implementation state (informative, dated 2026-10-18)" and are informative data, not evidence bytes.
 
 ## Dependencies
 

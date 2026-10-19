@@ -47,3 +47,4 @@ Append-only. `planned` until merged.
 | 2026-10-07 | `docs/icm/graphics/` | planned: new workflow, four stage contracts | - | edit-20261007-v083-consolidation (A) |
 | 2026-10-07 | `docs/icm/map/` | planned: map README, `01-update` contract, generated map, area trackers | - | edit-20261007-v083-consolidation (A) |
 | 2026-10-07 | `docs/icm/map/REPO-MAP.md`, `repo-map.json` | integrated on the integration branch, not merged: regenerated with `node scripts/icm-map.mjs` after integrating C1, C2, D, B and A; `--check` passes | pending | edit-20261007-v083-consolidation (I1) |
+| 2026-10-18 | `docs/icm/CONTEXT.md`, `docs/icm/conformance-review/01-scope/`, `02-sources/` | planned: base commit refreshed to 446b2d4; GKX-version route; dated implementation-state section; sources for GKX-version questions; map regenerated | - | docs/icm-engine-state-20261018 |
