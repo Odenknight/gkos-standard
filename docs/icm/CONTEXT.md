@@ -1,10 +1,12 @@
 # ICM router for gkos-standard
 
-Status: **proposed**, 2026-10-07, prepared by Fable-FAC for the Founder and Initial Editor. Base commit `b308ff7137bdbb109c31f0ace7e6c49b8988e0d5`. Agent operating instructions live outside this repository at `_Agents/_work/ICM/gkos-standard/INSTRUCTIONS.md` on the KnightsAI agent share.
+Status: **proposed**, 2026-10-07, prepared by Fable-FAC for the Founder and Initial Editor. Base commit `446b2d4526c09150bed0d7d699b010850b2dd68d` (refreshed 2026-10-18; originally `b308ff7137bdbb109c31f0ace7e6c49b8988e0d5`). Agent operating instructions live outside this repository at `_Agents/_work/ICM/gkos-standard/INSTRUCTIONS.md` on the KnightsAI agent share.
 
 This folder grants no authority. It does not amend `GOVERNANCE.md`, `CONTRIBUTING.md`, the requirement registry, any development decision record, any release control or any GitHub ruleset. It is not a GKOS requirement, profile, conformance claim, certification or publication record. Where this folder and those records disagree, those records control.
 
 Updated 2026-10-07 (run `edit-20261007-v083-consolidation`, task A, proposed): routes for the organization map, the beginner's guide and graphics.
+
+Updated 2026-10-18 (proposed): base commit refreshed; route for GKX-version questions; dated implementation state between the standard and GKOS-Engine.
 
 ICM (Interpretable Context Methodology) here means three things: this router, one stage contract per bounded job (`NN-<stage>/CONTEXT.md`), and run records kept outside the repository.
 
@@ -34,6 +36,7 @@ Read these in full before any stage. Do not trim them to save context.
 | What remains incomplete for profile X? | [conformance-review](conformance-review/README.md) | `01-scope` | `requirements/PROFILE_APPLICABILITY.md`, `conformance/provisional-requirements/`, `fixtures/track-a/fixtures.manifest.json` |
 | Does fixture run X meet its catalog expectation? | [conformance-review](conformance-review/README.md) | `01-scope` | The fixture entry, `conformance/runner/package.json` |
 | Which decision is current for topic X? | [conformance-review](conformance-review/README.md) | `01-scope` | `decisions/GKOS_Decision_Register.md`, `docs/ecosystem/AMBIGUITY_REGISTER.md` |
+| Is GKX 2.3, `gkx-2.3-validating-projection` or `buildGkx23Projection` a version conflict with GKX 2.0? | [conformance-review](conformance-review/README.md) | `01-scope` | `decisions/R14_GKX_2_0_Breaking_Machine_Namespace_Development_Decision_Record.md`, R12-093 in `decisions/R12_Ecosystem_Compatibility_Development_Decision_Record.md`, `conformance/provisional-requirements/version-compatibility.matrix.json`, GAP-021 in `docs/proposals/GKOS-SPEC-DETAIL-001_Technical_Detail_Gap_Register.md`, R26-A17 in `decisions/R26_Specification_Detail_Amendments_Development_Decision_Record.md` |
 | What can be claimed publicly right now? | [conformance-review](conformance-review/README.md) | `01-scope` | `conformance/CLAIMS_POLICY.md`, `docs/releases/GKOS_2026-09-24_v0.82.1_PUBLICATION_RECORD.md` |
 | Prepare a release candidate, a dated release package or a DOI receipt | [release](release/README.md) | `01-gate` | `decisions/R24_V082_Informative_Release_Gate_and_Publication_Control_Development_Decision_Record.md`, `docs/releases/V0821_PUBLICATION_CONTROL.md` |
 | Verify a tag, GitHub Release or Zenodo record after a publication action | [release](release/README.md) | `05-owner-actions` or `06-archive-receipt` (late entry, see below) | The control record and publication record the packet names, by path and blob SHA-256 |
@@ -46,6 +49,21 @@ Read these in full before any stage. Do not trim them to save context.
 Before choosing a route, the [organization map](map/README.md) tells you which area a file belongs to, its standing, whether it is on a frozen path and which tracker records its edits. The map is a finding aid; the document's own status line and the records above control.
 
 A one-file editorial fix needs one packet and one handoff. The packet may send it from `01-intake` straight to `03-draft` under the rule below.
+
+## Implementation state (informative, dated 2026-10-18)
+
+Informative data; it grants no authority and supports no conformance, qualification or publication claim. Sources: repository files at the base commit, and coordinator verification 2026-10-18 against live GitHub and npm.
+
+GKX naming. The public GKX machine namespace is 2.0 under R14, and the frontmatter schema fixes `gkx_version` to `2.0`. R12-093 describes GKX 2.3 as the renamed continuation of the OKF+ 2.2/2.3 exchange line. `gkx-2.3-validating-projection` is a GKOS-Engine profile name and `buildGkx23Projection` is a GKOS-Engine API name. Neither is a namespace, and the version-compatibility matrix records both as not to be inferred from the GKX namespace. The wording "GKX 2.3 note" in `GKOS-IDENTITY-001` is tracked as GAP-021, and R26-A17 proposes an interpretation row for it. Read a GKX-version question against those records and do not correct it as a version defect without them.
+
+GKOS-Engine coordinates (private repository `Odenknight/GKOS-Engine`, checked 2026-10-18):
+
+- `package.json` on `main` is 2.2.0, which is unreleased. The newest git tag is v2.1.2 and the newest GitHub Release is v2.1.1 (2026-08-18). The npm package `gkos-engine` publishes 2.0.1 (2026-08-05). The Engine README states that the public exchange namespace remains GKX 2.0.
+- Kosmos-Oden pins `github:Odenknight/GKOS-Engine#777ba170b905952817e364f125c794152f118fa4`, which resolves as 2.2.0. GKOS-Engine-Lite pins `#e7cc0dd478af3d0bda216c5258dec5f77932def7`, which is 2.1.2.
+
+Adapter in this repository. The runner adapter is `conformance/runner/adapters/gkos-engine.mjs` and it needs the environment variable `GKOS_ENGINE_DIST`. Its test, `conformance/runner/test/gkos-engine-adapter.test.mjs`, uses the stub `test/fixtures/fake-engine-core.mjs`. No run of the runner against a real GKOS-Engine build is recorded in this repository.
+
+Repository state at `446b2d4`: the main CI checks (Release validation, Markdown lint, Link check, Conformance runner, Release checksums) were green on 2026-10-08. The Link check failed on the branch `proposal/computation-attestation-profile-20261012` on 2026-10-12. The repository has 89 remote branches.
 
 ## Skips and late entry
 
