@@ -1,6 +1,15 @@
 name: Release validation
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+    tags: ['**']
+  pull_request:
 permissions: {contents: read}
+# Only newer commits to the same PR supersede running validation.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   validate:
     runs-on: ${{ (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) && 'ubuntu-latest' || fromJSON('["self-hosted","Linux","X64","r720-ci"]') }}
