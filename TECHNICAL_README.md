@@ -45,7 +45,7 @@ Use **Selection Envelope** in prose. The existing schema filename `selection-set
 | --- | --- | --- |
 | Specification | **GKOS** | Defines responsibilities, lifecycle, authority, controls, and conformance |
 | Exchange contract | **GKX 2.0** | Defines current machine-facing names and interoperable records governed by GKOS |
-| Implementation | **GKOS Engine** | Implements deterministic machinery; does not define or amend the specification |
+| Implementation | **GKOS-Engine** | Implements deterministic machinery; does not define or amend the specification |
 | Profile | **GCP-1 through GCP-7** and Viewer/Projection Profile | Defines the exact responsibilities a claimant must demonstrate |
 | Domain draft | **Scientific Research Trace Profile (SRTP)** | Informative and provisional; currently establishes no qualifying profile |
 | Record/artifact | Source Record, Decision Record, Context Manifest, receipts, projections | Carries governed evidence or state; it is not a product name |
@@ -341,9 +341,9 @@ See the [profile proposal](docs/proposals/SRTP_DRAFT_PROFILE.md),
 
 ## Implementation boundaries
 
-### GKOS Engine
+### GKOS-Engine
 
-GKOS Engine is the reference implementation of deterministic machinery used to
+GKOS-Engine is the reference implementation of deterministic machinery used to
 validate, assess, project, and test GKOS/GKX artifacts. It is downstream of the
 specification. Engine behavior cannot silently amend GKOS, and implementation
 experience enters the specification only through the governed proposal and decision
@@ -365,7 +365,7 @@ must not accept invalid material merely by redefining the specification.
 A viewer or navigation surface may project governed records without gaining
 promotion, decision, or activation authority. Kosmos-Oden v0.8.0 is an
 implementation example of this boundary: its public package and lockfile pin
-GKOS Engine 2.1.1 at commit
+GKOS-Engine 2.1.1 at commit
 `f4dfda16eac746c667cf042f908a918d9acc6713`, and its product update is bound to
 Kosmos-Oden commit `a7113c0ca3be8dd230a9549940e2f387d4cb2a96`.
 

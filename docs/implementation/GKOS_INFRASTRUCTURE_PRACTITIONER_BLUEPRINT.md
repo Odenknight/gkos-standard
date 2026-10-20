@@ -13,7 +13,7 @@ Publication references reconciled to GKOS-2026-09-24 v0.82.1. Earlier implementa
 - **Machine exchange contract:** GKX 2.0
 - **Canonical profile:** GKX-CBOR-1 where required by the applicable artifact
   contract
-- **Reference implementation:** signed GKOS Engine tag `v2.1.2` at
+- **Reference implementation:** signed GKOS-Engine tag `v2.1.2` at
   `7bf14b481e78c5ae9d1e14661602be4f24559d0e`
 - **External-source register:**
   [`../ecosystem/EXTERNAL_SOURCE_REGISTER.md`](../ecosystem/EXTERNAL_SOURCE_REGISTER.md)
@@ -36,7 +36,7 @@ This guide recommends practical ways to satisfy those responsibilities.
 
 ### Implementation example
 
-A named product, protocol, database, policy engine, or GKOS Engine behavior is
+A named product, protocol, database, policy engine, or GKOS-Engine behavior is
 an implementation fact and must be pinned to an exact version and deployment.
 
 ### Not in the Standard
@@ -91,7 +91,7 @@ effect obligations are satisfied.
 
 ## 4. Reference implementation note
 
-GKOS Engine is one public reference implementation. Its signed `v2.1.2` release
+GKOS-Engine is one public reference implementation. Its signed `v2.1.2` release
 implements deterministic GKX parsing, validation, projection, graphs,
 source-content-read-only Navigation, retrieval, adapter surfaces, and selected
 receipt/policy mechanisms.
@@ -198,7 +198,7 @@ applicable mandatory gates.
 | --- | --- | --- |
 | Managed/commercial | Immuta, Privacera, managed data-quality and policy services | Policy administration, access restrictions, checks, and audit evidence |
 | Enterprise/self-managed | OPA, Cedar, Cerbos, dbt tests, Deequ | Deterministic policy and data-quality evaluation |
-| Open-source/open-standard | GKOS Engine, pySHACL, Pandera, JSON Schema validators | GKX/shape validation, diagnostics, and repeatable checks |
+| Open-source/open-standard | GKOS-Engine, pySHACL, Pandera, JSON Schema validators | GKX/shape validation, diagnostics, and repeatable checks |
 
 LLM graders, RAG evaluators, and model judges may produce evidence or monitoring
 signals. They cannot silently satisfy or override an applicable mandatory

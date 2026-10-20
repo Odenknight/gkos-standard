@@ -103,7 +103,7 @@ explains implementation independence and historical-record preservation.
   UNEVALUATED are not profile passes. The starter runner currently emits
   per-fixture PASS, FAIL, KNOWN-DIVERGENCE, SKIP, or UNEVALUATED.
 - No current implementation has satisfied the v1.0 second-independent-implementation gate.
-- Engine-Lite cannot satisfy that gate because using the pinned Engine's deterministic execution path is its compatibility contract.
+- GKOS-Engine-Lite cannot satisfy that gate because using the pinned Engine's deterministic execution path is its compatibility contract.
 - A claim does not carry forward automatically to a later edition, including
   the current GKOS-2026-09-24 v0.82.1. Reassess against the exact requirement
   and fixture baseline of the edition you claim. Since v0.80, claims against

@@ -47,3 +47,4 @@ Append-only. `planned` until merged.
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `docs/implementation/` | planned: D2 nomenclature and current-edition consistency | - | edit-20261007-v083-consolidation (C2) |
 | 2026-10-07 | `docs/implementation/` earmarks | integrated on the integration branch, not merged: GN-005, GN-012, GN-013 and GN-034 (practitioner blueprint), GN-012 (reference infrastructure), GN-033 (version compatibility matrix) | pending | edit-20261007-v083-consolidation (I1) |
+| 2026-10-19 | `docs/implementation/` practitioner blueprint and reference infrastructure | planned: informative naming pass, "GKOS Engine" to "GKOS-Engine" (4 and 3 occurrences) | - | edit-20261019-naming-uniformity |

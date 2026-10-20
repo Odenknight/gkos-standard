@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Informative naming pass (no normative, schema, fixture or release-record change): "GKOS Engine" becomes "GKOS-Engine" in `TECHNICAL_README.md` and two documents under `docs/implementation/`, and bare "Engine-Lite" becomes "GKOS-Engine-Lite" in `conformance/README.md`. Historical records, dated governance records and the lineage explanations of OKF+ and pre-standard wording are unchanged.
 - R26 implementation of the accepted items (v0.83 development line; R26
   accepted in part 2026-10-07, R26 §7.3). Annex text, marked
   `<!-- R26-Axx (accepted 2026-10-07; ...) -->`: Authority and Refusal
