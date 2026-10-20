@@ -78,6 +78,14 @@ The current v0.82.1 documentation patch clarifies publication status and existin
 [Documentation corpus status](docs/CORPUS-STATUS.md) distinguishes historical
 July inputs from current guidance, domain pilots and standards engagement.
 
+## Published release and current development
+
+The signed v0.82.1 documentation patch is the published edition; its technical baseline is unchanged from v0.82 and its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
+
+<!-- GRAPHIC-NEEDED: GN-002 Edition and publication flow: main, release candidate, signed tag, release package, GitHub Release, Zenodo DOI, publication record; v0.81 to v0.82.1 and the v0.83 line -->
+
+The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation. It remains informative, pinned to its recorded GKOS baseline, and establishes no implementation conformance or NIST endorsement; its ISO Annex A mapping remains verification-held.
+
 ## GKX namespace rebase and version history
 
 The GKX 2.0 naming consolidation is a machine-namespace transition, not a
@@ -99,8 +107,8 @@ The recorded sequence is:
   [standard compatibility matrix](conformance/provisional-requirements/version-compatibility.matrix.json)
   and [Engine compatibility guide](https://github.com/Odenknight/GKOS-Engine/blob/main/docs/VERSION-PROFILE-COMPATIBILITY.md).
 
-The [frontmatter schema](schemas/gkx-frontmatter-2.0.schema.json) defines the
-flat record header; its optional `supersedes` and `superseded_by` arrays express
+The development [frontmatter schema](schemas/gkx-frontmatter-2.0.schema.json)
+defines the flat record header; its optional `supersedes` and `superseded_by` arrays express
 predecessor and successor references. Supersession is established behavior,
 not an application-specific invention. These declarations do not themselves
 supply authority; see [supersession](guide/03-core-ideas.md#supersession) and the
@@ -108,14 +116,8 @@ supply authority; see [supersession](guide/03-core-ideas.md#supersession) and th
 Under [R13-101](decisions/R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md),
 new authored note UIDs use lowercase UUIDv7; valid lowercase UUIDv4 legacy
 identities remain permanent. Schema acceptance of both does not relax writer policy.
-
-## Published release and current development
-
-The signed v0.82.1 documentation patch is the published edition; its technical baseline is unchanged from v0.82 and its normative population is unchanged from v0.81. Current `main` also contains [accepted R22 informative architecture](decisions/R22_Canonical_Informative_Architecture_Development_Decision_Record.md) and [accepted R23 Layer-3 semantics](decisions/R23_Layer3_Interoperability_Semantics_Development_Decision_Record.md). Under R24, R22 is carried into the informative v0.82 edition; R23 remains prospective for the next normative edition after v0.82. Neither acceptance publishes an edition or qualifies an implementation. The [Layer-3 work packet](docs/v082/V82-01_L3_INTEROPERABILITY_WORK_PACKET.md) and [ambiguity register](docs/ecosystem/AMBIGUITY_REGISTER.md) identify remaining evidence work.
-
-<!-- GRAPHIC-NEEDED: GN-002 Edition and publication flow: main, release candidate, signed tag, release package, GitHub Release, Zenodo DOI, publication record; v0.81 to v0.82.1 and the v0.83 line -->
-
-The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation. It remains informative, pinned to its recorded GKOS baseline, and establishes no implementation conformance or NIST endorsement; its ISO Annex A mapping remains verification-held.
+The explicit supersession-field validation is a development change; the signed
+v0.82.1 edition and its archived schemas retain their published contents.
 
 ## Why GKOS exists
 
