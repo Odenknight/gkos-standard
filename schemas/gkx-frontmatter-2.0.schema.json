@@ -13,7 +13,19 @@
     "updated_at": { "$ref": "gkx-common.defs.json#/$defs/timestamp" },
     "epistemic_state": { "$ref": "gkx-common.defs.json#/$defs/epistemicState" },
     "sensitivity": { "$ref": "gkx-common.defs.json#/$defs/sensitivity" },
-    "authorship_origin": { "$ref": "gkx-common.defs.json#/$defs/origin" }
+    "authorship_origin": { "$ref": "gkx-common.defs.json#/$defs/origin" },
+    "supersedes": {
+      "description": "Explicit predecessor references; declaration does not authorize supersession.",
+      "type": "array",
+      "items": { "$ref": "gkx-common.defs.json#/$defs/relationshipTarget" },
+      "uniqueItems": true
+    },
+    "superseded_by": {
+      "description": "Explicit successor references; declaration does not authorize supersession.",
+      "type": "array",
+      "items": { "$ref": "gkx-common.defs.json#/$defs/relationshipTarget" },
+      "uniqueItems": true
+    }
   },
   "additionalProperties": true
 }
