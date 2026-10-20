@@ -25,6 +25,11 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate cached Python
+        run: python -c "import ssl, sqlite3, ctypes, bz2, lzma, venv; print(ssl.OPENSSL_VERSION)"
       - name: Validate guest runtime and Docker
         run: |
           hostname
