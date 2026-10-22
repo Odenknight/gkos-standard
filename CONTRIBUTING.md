@@ -25,4 +25,4 @@ A proposal author may not describe their own work as independently approved or c
 
 Documentation contributions are submitted under CC BY 4.0. Software-oriented contributions are submitted under Apache-2.0.
 
-All commits intended for merge MUST carry a Developer Certificate of Origin 1.1 sign-off using `git commit -s`. The sign-off certifies that the contributor has the right to submit the contribution under the applicable license. No CLA is currently required.
+All commits intended for merge MUST carry a Developer Certificate of Origin 1.1 sign-off using `git commit -s`. The sign-off certifies that the contributor has the right to submit the contribution under the applicable license. Outside contributions additionally require acceptance of [CLA.md](CLA.md) (interim v0.1, pending attorney review); maintainer commits are covered by [AUTHORSHIP.md](AUTHORSHIP.md).
