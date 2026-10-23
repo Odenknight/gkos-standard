@@ -14,7 +14,8 @@ tar --no-same-owner -xzf "$archive" -C "$lychee_dir"
 lychee_bin="$lychee_dir/lychee-x86_64-unknown-linux-gnu/lychee"
 "$lychee_bin" --version
 mkdir -p lychee
-# Preserve the existing archive exclusions and exact anti-bot URL exceptions.
+# Preserve existing exclusions. The two EC pages return 200 locally but 403
+# from the R720 CI network (verified 2026-10-23); exempt only those exact URLs.
 "$lychee_bin" --no-progress --verbose --format markdown --output lychee/out.md \
   --exclude-path archive \
   --exclude-path docs/archive \
@@ -23,6 +24,8 @@ mkdir -p lychee
   --exclude-path schemas/archive \
   --exclude 'https://www\.hhs\.gov/hipaa/for-professionals/faq/2003/are-we-required-to-certify-our-organizations-compliance-with-the-standards/index\.html' \
   --exclude 'https://ansi\.org/american-national-standards/ans-introduction/essential-requirements' \
+  --exclude '^https://digital-strategy\.ec\.europa\.eu/en/news/ai-omnibus-enters-force$' \
+  --exclude '^https://digital-strategy\.ec\.europa\.eu/en/faqs/understanding-standardisation-ai-act$' \
   '**/*.md'
 if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
   cat lychee/out.md >> "$GITHUB_STEP_SUMMARY"
