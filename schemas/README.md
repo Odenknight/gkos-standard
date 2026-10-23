@@ -63,3 +63,38 @@ completion, independent verification, or v1.0 readiness.
 R13 continues to separate authored GKX note identity from broader relationship
 targets. New authored note UIDs use lowercase UUIDv7; valid lowercase UUIDv4
 legacy identities remain permanent.
+
+## Frontmatter lineage
+
+The development frontmatter schema explicitly types the established optional
+`supersedes` (predecessors) and `superseded_by` (successors) properties as arrays
+of unique `relationshipTarget` strings. Omission and empty arrays are valid.
+The shared target grammar permits UUIDs, namespaced identifiers and `[[...]]`
+references; acceptance of a target string does not establish successful resolution.
+Use stable note UIDs for rename-safe local note lineage, as in the GCP-3 fixtures.
+`superseded_with` is not a defined synonym. Unknown extension properties remain
+permitted, so a misspelled field is not automatically rejected by this base schema.
+
+This closes a validation gap: these fields already occur in the guide, fixtures,
+proposal vocabulary and Engine. They previously passed as untyped extra fields.
+Present non-array values, malformed targets and exact duplicate entries now fail.
+This is a validation-tightening change on the development branch, not a change
+to the signed v0.82.1 release or historical schema snapshots. Consumers pinning
+schema bytes or hashes must review and update their pins explicitly. No Engine
+contract is updated automatically, and no new qualifying profile is created.
+
+Graph checks, rather than this JSON Schema, evaluate self-links, cycles,
+unresolved targets, equivalent references to the same target, reciprocal
+consistency and branching lineage under the applicable requirements and scope.
+Do not infer one authoritative successor from order, timestamps or similarity.
+An authorized disposition or valid bounded delegation establishes supersession;
+frontmatter and a projection-profile label alone do not prove authorization or
+Engine compatibility. See `GKOS-LINEAGE-001` through `003` in the
+[requirement registry](../requirements/REGISTRY.md),
+[R13-101](../decisions/R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md),
+and the [governed state change annex](../standard/annexes/Governed_State_Change_Reentry_and_Bounded_Delegation.md).
+
+Rollback is restoration of the preceding development schema and consumer pin;
+it does not delete records, rewrite identities, or reverse authorized decisions.
+The regression tests in `conformance/runner/test/frontmatter-lineage-schema.test.mjs`
+exercise the structural boundary; existing graph fixtures cover lineage behavior.

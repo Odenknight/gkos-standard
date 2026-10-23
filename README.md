@@ -86,6 +86,39 @@ The signed v0.82.1 documentation patch is the published edition; its technical b
 
 The separate ISO, EU and NIST add-ins below are informative proposals. The more detailed [NIST requirement crosswalk](docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md) was merged through [PR #42](https://github.com/Odenknight/gkos-standard/pull/42) after bounded source review and validation. It remains informative, pinned to its recorded GKOS baseline, and establishes no implementation conformance or NIST endorsement; its ISO Annex A mapping remains verification-held.
 
+## GKX namespace rebase and version history
+
+The GKX 2.0 naming consolidation is a machine-namespace transition, not a
+flattening of record structure or a reset of every component's version number.
+The recorded sequence is:
+
+- **August 3, 2026 — [R12-093](decisions/R12_Ecosystem_Compatibility_Development_Decision_Record.md):**
+  GKX 2.3 continued the former OKF+ 2.2/2.3 exchange line, initially preserving
+  compatibility identifiers.
+- **August 5, 2026 — [R14](decisions/R14_GKX_2_0_Breaking_Machine_Namespace_Development_Decision_Record.md):**
+  GKX 2.0 became the sole current machine namespace, superseding the earlier
+  identifier-preservation policy. Current standard frontmatter declares
+  `gkx_version: "2.0"`; commands and state use `gkx`, `.gkx/`, and `GKX-*`.
+- **Engine compatibility:** the historical projection identifier
+  `gkx-2.3-validating-projection` and API `buildGkx23Projection` are retained.
+  They are separate coordinates from the public namespace, frontmatter schema,
+  Engine package version, and GKOS publication version. Do not rewrite stored
+  records or profile identifiers merely to make their numbers match. See the
+  [standard compatibility matrix](conformance/provisional-requirements/version-compatibility.matrix.json)
+  and [Engine compatibility guide](https://github.com/Odenknight/GKOS-Engine/blob/main/docs/VERSION-PROFILE-COMPATIBILITY.md).
+
+The development [frontmatter schema](schemas/gkx-frontmatter-2.0.schema.json)
+defines the flat record header; its optional `supersedes` and `superseded_by` arrays express
+predecessor and successor references. Supersession is established behavior,
+not an application-specific invention. These declarations do not themselves
+supply authority; see [supersession](guide/03-core-ideas.md#supersession) and the
+[schema validation boundaries](schemas/README.md#frontmatter-lineage).
+Under [R13-101](decisions/R13_Conformance_Honesty_and_Alignment_Development_Decision_Record.md),
+new authored note UIDs use lowercase UUIDv7; valid lowercase UUIDv4 legacy
+identities remain permanent. Schema acceptance of both does not relax writer policy.
+The explicit supersession-field validation is a development change; the signed
+v0.82.1 edition and its archived schemas retain their published contents.
+
 ## Why GKOS exists
 
 Modern AI systems can retrieve records, combine evidence, create assertions, call tools, delegate work, and change external systems faster than a person can inspect every intermediate step. Conventional logs often show that a call occurred, but not whether the source was current, which contradictions were known, which policy version controlled the operation, which authority was valid at action time, or what corrective route existed afterward.
