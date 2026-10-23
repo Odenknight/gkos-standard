@@ -2,6 +2,8 @@ name: XW-002 consistency
 
 on:
   push:
+    branches: [main]
+    tags: ['**']
     paths:
       - "docs/GKOS_ISO42001_NIST_AIRMF_CROSSWALK.md"
       - "docs/ecosystem/EXTERNAL_CROSSWALK.json"
@@ -16,6 +18,11 @@ on:
 
 permissions:
   contents: read
+
+# Only newer commits to the same PR supersede running validation.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   generated-representations:
