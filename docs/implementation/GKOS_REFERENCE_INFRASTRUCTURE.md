@@ -12,7 +12,7 @@ Publication references reconciled to GKOS-2026-09-24 v0.82.1. Earlier implementa
 - **Development controls:** R20 and R21 on `main`
 - **Machine exchange contract:** GKX 2.0
 - **Canonical artifact profile:** GKX-CBOR-1 where required by the applicable artifact contract
-- **Reference implementation release coordinate:** GKOS Engine tag `v2.1.2` at `7bf14b481e78c5ae9d1e14661602be4f24559d0e`; later Engine development heads are distinct coordinates
+- **Reference implementation release coordinate:** GKOS-Engine tag `v2.1.2` at `7bf14b481e78c5ae9d1e14661602be4f24559d0e`; later Engine development heads are distinct coordinates
 - **Public second implementation:** awaiting a public second implementation
 
 This guide explains how existing systems can participate in a GKOS deployment without turning a vendor, protocol, framework, or reference implementation into the Standard. Its bounded documentation review is preserved in `docs/reviews/PR30_FABLE51_BOUNDED_REVIEW_20260902.md`.
@@ -112,7 +112,7 @@ Graph/projection behavior has historically been an interoperability area where i
 
 **Architecture recommends:** identify policy version, input identity, decision result, stable diagnostic or gate code, and blocking behavior.
 
-**Implementation examples:** GKOS Engine, OPA, Cedar, JSON Schema validators, pySHACL, Pandera, Great Expectations, dbt tests, Deequ, Cerbos.
+**Implementation examples:** GKOS-Engine, OPA, Cedar, JSON Schema validators, pySHACL, Pandera, Great Expectations, dbt tests, Deequ, Cerbos.
 
 A non-deterministic model judge or RAG evaluator may provide evidence or monitoring. It cannot silently satisfy a mandatory deterministic GKOS gate.
 
@@ -173,7 +173,7 @@ R21 keeps protocol work outside the normative v0.81 dependency set.
 
 Current R21 reviewed input: **MCP `2026-07-28`**.
 
-The current bounded GKOS Engine MCP implementation remains a separate implementation fact on protocol `2025-11-25`; migration must be explicit rather than silently relabeled.
+The current bounded GKOS-Engine MCP implementation remains a separate implementation fact on protocol `2025-11-25`; migration must be explicit rather than silently relabeled.
 
 An MCP adapter should declare its exact protocol version, supported surfaces, transport assumptions, identity and authorization inputs, purpose and sensitivity boundaries, read/proposal/write/effect/admin classification, downgrade behavior, refusal mapping, and fixture evidence.
 

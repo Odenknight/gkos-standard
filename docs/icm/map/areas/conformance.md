@@ -45,3 +45,4 @@ Append-only. `planned` until merged.
 | Date | Item | Change | PR | Run |
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `conformance/` | No change planned for this area in this run. Read as input by F. | - | edit-20261007-v083-consolidation (F) |
+| 2026-10-19 | `conformance/README.md` | planned: informative naming pass, bare "Engine-Lite" to "GKOS-Engine-Lite" (1 occurrence, line 106) | - | edit-20261019-naming-uniformity |
