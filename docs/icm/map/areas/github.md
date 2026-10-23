@@ -41,3 +41,4 @@ Append-only. `planned` until merged.
 | Date | Item | Change | PR | Run |
 | --- | --- | --- | --- | --- |
 | 2026-10-07 | `.github/` | No change planned for this area in this run. CI step for the map is proposed only. | - | edit-20261007-v083-consolidation (A) |
+| 2026-10-23 | `.github/workflows/link-check.yml` | planned: invoke pinned Lychee in one shell step so R720 PATH resets cannot hide the installed binary | - | ci-20261023-followup |
