@@ -42,3 +42,4 @@ Append-only. `planned` until merged.
 | 2026-10-07 | `scripts/icm-map.mjs` | planned: new dependency-free map generator with `--check` | - | edit-20261007-v083-consolidation (A) |
 | 2026-10-07 | `scripts/verify-v0821-release.mjs` | planned: `--development` mode gated on R25 acceptance; reject untracked files under frozen paths (REV-012) | - | edit-20261007-v083-consolidation (E) |
 | 2026-10-07 | Tests for the development guard | planned: negative-check list or tests under `scripts/` | - | edit-20261007-v083-consolidation (E) |
+| 2026-10-23 | `scripts/check-links.sh` | planned: checksum-verified Lychee 0.24.2, absolute execution path, existing link exclusions retained | - | ci-20261023-followup |
